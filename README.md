@@ -10,7 +10,7 @@
 
 ## Current hosts
 
-Seeded with 34 hosts for now, with facts checked against official public pages on 2026-04-26.
+Seeded with 38 hosts for now, with facts checked against official public pages on 2026-04-26.
 
 | Name | Max file size | Retention | Bandwidth | Account required | API | CLI-friendly | E2EE | Tags |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -25,12 +25,16 @@ Seeded with 34 hosts for now, with facts checked against official public pages o
 | [DropMeFiles](https://dropmefiles.com/) | 50 GB | 14 days | See notes | No | No | No | No | file-sharing, no-account-required, password-protection, link-expiry |
 | [file.io](https://www.file.io/) | 4 GB | 1 download | See notes | No | [Yes](https://www.file.io/developers) | Yes* | No | api, cli-friendly, ephemeral, anonymous-friendly |
 | [files.dp.ua](https://files.dp.ua/en/) | 100 GB | 25 days | See notes | No | No | No | No | file-sharing, no-account-required, password-protection, large-file-limit |
+| [files.fm](https://files.fm/) | 5 GB | 1 month | See notes | Yes | [Yes](https://files.fm/api/) | Yes | No | cloud-storage, apps, api, eu-based |
 | [Free Transfert](https://transfert.free.fr/) | 10 GB | 30 days | See notes | No | No | No | No | file-sharing, password-protection, direct-links, france-hosted |
 | [Gofile](https://gofile.io/) | See notes | 10 days | See notes | No | [Yes](https://gofile.io/api) | Yes* | No | guest-uploads, api, cli-friendly, premium-upgrade |
 | [Google Drive](https://drive.google.com/) | See notes | See notes | See notes | Yes | [Yes](https://developers.google.com/drive/api/guides/about-sdk) | No | No | cloud-storage, apps, api, shared-google-quota |
+| [Hightail](https://www.hightail.com/) | 100 MB | 7 days | See notes | Yes | No | No | No | file-sharing, creative-workflows, free-tier, recipient-no-account |
+| [Hostr](https://hostr.co/) | 20 MB | See notes | See notes | Yes | No | No | No | file-sharing, desktop-apps, free-account, instant-sharing |
 | [Jumpshare](https://jumpshare.com/) | 250 MB | See notes | See notes | Yes | No | No | No | file-sharing, desktop-apps, ios-app, screen-recording |
 | [LimeWire](https://limewire.com/) | 4 GB | See notes | See notes | No | No | No | Yes | file-sharing, guest-uploads, e2ee, browser-based |
 | [MediaFire](https://www.mediafire.com/) | 5 GB | See notes | See notes | Yes | No | No | No | cloud-storage, mobile-apps, ad-supported, sharing |
+| [MiMedia](https://www.mimedia.com/) | See notes | 30 days | See notes | Yes | No | No | No | cloud-storage, desktop-apps, mobile-apps, media-focused |
 | [MobiDrive](https://www.mobidrive.com/) | See notes | See notes | See notes | Yes | No | No | No | cloud-storage, apps, privacy-first, office-integration |
 | [MyAirBridge](https://www.myairbridge.com/) | 20 GB | See notes | See notes | No | [Yes](https://info.myairbridge.com/cs/faq) | No | No | file-sharing, large-transfers, no-account-required, password-options |
 | [Oblako Mail.ru](https://cloud.mail.ru/) | 1 GB | 3 months | See notes | Yes | No | Yes* | No | cloud-storage, mobile-apps, windows-app, webdav |
@@ -197,6 +201,19 @@ Anonymous file-sharing service with selectable expiry, optional password protect
 - Security: The service offers password-protected files, but the cited public pages do not claim end-to-end encryption.
 - Sources: [Homepage](https://files.dp.ua/en/), [Terms of Use](https://www.files.dp.ua/en/terms_of_use/)
 
+### files.fm
+
+EU-based cloud storage and file-sharing platform with a free Basic tier, 5 GB max file size, apps across major platforms, and official developer API support.
+
+- Max file size: The current Basic plan lists a 5 GB file size limit.
+- Retention: The current Basic plan lists 20 GB of storage for a month.
+- Bandwidth: The current Basic plan does not publish a numeric data-transfer cap on the cited pricing page.
+- Account: A free account provides the Basic tier with storage, private sharing, file inbox, and conversion tools.
+- Allowed file types: The homepage positions Files.fm as handling photos, videos, audio, and documents, but contributors should still verify prohibited-content rules from the service terms before refining this field further.
+- Developer support: Files.fm publicly advertises an API for developers, plus WebDAV and FTP access in its apps and tools section.
+- Security: Files.fm markets secure European data-center storage, GDPR compliance, and advanced encryption, but the cited pages do not claim end-to-end encryption.
+- Sources: [Homepage](https://files.fm/), [Developer API](https://files.fm/api/)
+
 ### Free Transfert
 
 Free's browser-based file transfer service with direct-link sharing, optional password protection, and a larger free allowance for Freebox subscribers.
@@ -237,6 +254,32 @@ Google's cloud storage service with 15 GB of free account storage and official d
 - Security: The cited storage and app pages do not claim end-to-end encryption for standard Google Drive storage.
 - Sources: [Storage Help](https://support.google.com/drive/answer/9312312?hl=en-en), [Drive for Desktop](https://support.google.com/drive/answer/7329379?hl=en), [Download a File](https://support.google.com/drive/answer/2423534?co=GENIE.Platform%3DAndroid&hl=en), [Drive API Overview](https://developers.google.com/drive/api/guides/about-sdk)
 
+### Hightail
+
+Creative-focused file-sharing service with a free Lite plan for smaller transfers, 2 GB of storage, and no-account-required recipient access.
+
+- Max file size: The Lite plan currently lists a 100 MB file size send limit.
+- Retention: The Lite plan currently lists a 7-day file expiration.
+- Bandwidth: The cited pricing page does not publish a numeric bandwidth cap for the Lite plan.
+- Account: A Hightail Lite account provides free storage and smaller-file sharing, while recipients do not need an account to access shared files.
+- Allowed file types: The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.
+- Developer support: The cited public pages do not document a public developer API or CLI workflow.
+- Security: The cited public pages describe secure file sharing but do not claim end-to-end encryption.
+- Sources: [Pricing](https://www.hightail.com/pricing), [File Sharing](https://www.hightail.com/file-sharing)
+
+### Hostr
+
+Simple instant-sharing service with free accounts, broad file-type support, desktop apps, and generous public limits for small everyday uploads.
+
+- Max file size: The homepage FAQ currently says the largest file size is 20 MB.
+- Retention: The homepage FAQ currently says files are stored as long as the account is active.
+- Bandwidth: The homepage FAQ currently says there are no bandwidth limits, aside from possible hotlinking suspension in abuse cases.
+- Account: A Hostr account is required; free accounts can upload up to 15 files per day and keep files as long as the account remains active.
+- Allowed file types: The homepage currently says all file types are supported, though prohibited or abusive content may still be restricted under the service rules.
+- Developer support: The cited public pages do not document a public API or CLI workflow.
+- Security: The homepage says files are redundantly backed up to Amazon Web Services, but it does not claim end-to-end encryption.
+- Sources: [Homepage](https://hostr.co/)
+
 ### Jumpshare
 
 Visual file-sharing and screen-recording platform with a free Basic plan, desktop apps, and an iOS app.
@@ -275,6 +318,19 @@ File storage and sharing service with a free ad-supported basic plan and first-p
 - Developer support: The cited current public pages for this batch do not document a public developer API.
 - Security: MediaFire describes secure storage in marketing copy, but the cited pages do not claim end-to-end encryption.
 - Sources: [Upgrade](https://www.mediafire.com/upgrade/?promo=1), [Mobile](https://mediafire.mediafire.com/software/mobile/), [About](https://www.mediafire.com/about/)
+
+### MiMedia
+
+Personal cloud service with a free 10 GB starter tier, desktop and mobile apps, and a media-first sharing experience.
+
+- Max file size: The cited public pages do not publish a current per-file upload cap for the free plan.
+- Retention: MiMedia's terms say files may be deleted within 30 days after a subscription ends, and the free tier itself does not list an automatic file-expiry period while active.
+- Bandwidth: The cited public pages do not publish a current bandwidth limit.
+- Account: A MiMedia account is required for the free Starter tier with desktop, web, and mobile access.
+- Allowed file types: MiMedia officially supports common image, video, audio, and document formats including JPG, PNG, MP4, MP3, PDF, DOCX, XLSX, and PPTX.
+- Developer support: The cited public pages do not document a public developer API or CLI workflow.
+- Security: MiMedia markets privacy and secure storage, but the cited public pages do not claim end-to-end encryption.
+- Sources: [Homepage](https://www.mimedia.com/), [Terms of Service](https://mimedia.com/support/article/mimedia-terms-of-service/), [Supported File Types](https://support.mimedia.com/article/what-file-types-are-supported-by-mimedia/)
 
 ### MobiDrive
 
@@ -509,60 +565,208 @@ Simple no-account file upload service with private download links, optional pass
 
 ## Candidate backlog
 
-Captured 51 user-submitted candidates that are still pending review or have already been verified and promoted. Rejected entries stay in `data/candidates.json` but are omitted from this README.
+Captured 199 user-submitted candidates that are still pending review or have already been verified and promoted. Rejected entries stay in `data/candidates.json` but are omitted from this README.
 
 | Name | Type | Free volume | Shelf life | Download count | Languages | Apps | Status |
 | --- | --- | --- | --- | --- | --- | --- | --- |
+| ????????? | Unverified lead | - | - | - | - | - | pending |
 | 1fichier | File sharing | 300 GB | 15+ | - | English | - | pending |
+| 1filesharing | Unverified lead | - | - | - | - | - | pending |
+| 2Share | Unverified lead | - | - | - | - | - | pending |
 | 360 Yunpan | Cloud storage | - | - | - | - | - | pending |
 | 4shared | Cloud storage | 15 GB | - | - | - | Android, iOS | verified |
-| 4sync | Cloud storage | - | - | - | - | - | pending |
+| 9xupload | Unverified lead | - | - | - | - | - | pending |
+| Alfafile | Unverified lead | - | - | - | - | - | pending |
+| AndroidFileHost | Unverified lead | - | - | - | - | - | pending |
+| AnonFile | Unverified lead | - | - | - | - | - | pending |
+| AnonFiles | Unverified lead | - | - | - | - | - | pending |
+| AusFile | Unverified lead | - | - | - | - | - | pending |
 | Baidu Pan | Cloud storage | - | - | - | - | - | pending |
+| BayFiles | Unverified lead | - | - | - | - | - | pending |
+| BdUpload | Unverified lead | - | - | - | - | - | pending |
+| BezSms | Unverified lead | - | - | - | - | - | pending |
 | Box | Cloud storage | 10 GB | - | - | English | Windows, MacOS, Android, iOS | verified |
 | Chomikuj.pl | Cloud storage | No limit | - | false | Polish | Windows, Android, iOS | pending |
 | Clicknupload | File sharing | 2 GB | 7+ | - | English | - | verified |
 | CloudBeeline | Cloud storage | 10 GB | - | - | Russian | - | pending |
+| CloudGhost | Unverified lead | - | - | - | - | - | pending |
 | Cloudup | File sharing | - | - | - | - | - | pending |
 | Cozy Cloud | Cloud storage | 5 GB | - | - | English, Russian | Windows, Linux, MacOS, Android, iOS | verified |
+| DataFileHost | Unverified lead | - | - | - | - | - | pending |
+| DataHu | Unverified lead | - | - | - | - | - | pending |
+| Datei | Unverified lead | - | - | - | - | - | pending |
+| Dateiload | Unverified lead | - | - | - | - | - | pending |
+| DdlTo | Unverified lead | - | - | - | - | - | pending |
 | Degoo | Cloud storage | 20 GB | 90 days inactivity | - | - | Web, Android, iOS | verified |
+| DesuFiles | Unverified lead | - | - | - | - | - | pending |
+| Dir50 | Unverified lead | - | - | - | - | - | pending |
+| DirectUpload | Unverified lead | - | - | - | - | - | pending |
 | Disroot | File sharing | 1 GB | - | - | English | - | verified |
+| DoraUpload | Unverified lead | - | - | - | - | - | pending |
+| DoUploads | Unverified lead | - | - | - | - | - | pending |
+| Downace | Unverified lead | - | - | - | - | - | pending |
+| DriveUploader | Unverified lead | - | - | - | - | - | pending |
+| DropApk | Unverified lead | - | - | - | - | - | pending |
 | Dropbox | Cloud storage | 2 GB | - | - | - | Windows, Linux, MacOS, Android, iOS | verified |
+| DropFiles | Unverified lead | - | - | - | - | - | pending |
 | DropMeAFile | File sharing | - | 3 | false | English | - | pending |
 | DropMeFiles | File sharing | 50 GB | 14 | true | English, Russian | - | verified |
+| Earn4Files | Unverified lead | - | - | - | - | - | pending |
+| EasyBytez | Unverified lead | - | - | - | - | - | pending |
+| EuropeUp | Unverified lead | - | - | - | - | - | pending |
+| ExLoad | Unverified lead | - | - | - | - | - | pending |
+| ExtMatrix | Unverified lead | - | - | - | - | - | pending |
+| FastStore | Unverified lead | - | - | - | - | - | pending |
 | Fex | File sharing | 50 GB | 7 | - | English, Russian | - | pending |
+| File Al | Unverified lead | - | - | - | - | - | pending |
+| File-Space | Unverified lead | - | - | - | - | - | pending |
+| File-Upload | Unverified lead | - | - | - | - | - | pending |
+| FileBin | Unverified lead | - | - | - | - | - | pending |
+| FileBlade | Unverified lead | - | - | - | - | - | pending |
+| FileBonus | Unverified lead | - | - | - | - | - | pending |
+| FileBoom | Unverified lead | - | - | - | - | - | pending |
+| FileBz | Unverified lead | - | - | - | - | - | pending |
+| FileCandy | Unverified lead | - | - | - | - | - | pending |
+| FileDot | Unverified lead | - | - | - | - | - | pending |
+| FileFactory | Unverified lead | - | - | - | - | - | pending |
+| FileJoker | Unverified lead | - | - | - | - | - | pending |
 | FileKarelia | File sharing | 1 GB | 7+ | false | Russian | - | pending |
+| FileNext | Unverified lead | - | - | - | - | - | pending |
+| Filer | Unverified lead | - | - | - | - | - | pending |
+| FileRio | Unverified lead | - | - | - | - | - | pending |
 | files.dp.ua | File sharing | - | 25 | false | English, Ukrainian, Russian | - | verified |
-| files.fm | Cloud storage | - | - | - | - | - | pending |
+| files.fm | Cloud storage | 20 GB | 1 month | - | - | Windows, macOS, Linux, Android, iOS | verified |
+| FilesABC | Unverified lead | - | - | - | - | - | pending |
+| FileShark | Unverified lead | - | - | - | - | - | pending |
+| FilesMonster | Unverified lead | - | - | - | - | - | pending |
+| FileSpace | Unverified lead | - | - | - | - | - | pending |
+| FileTown | Unverified lead | - | - | - | - | - | pending |
+| FileTUT | Unverified lead | - | - | - | - | - | pending |
+| FileUpload | Unverified lead | - | - | - | - | - | pending |
 | FireDrop | File sharing | - | - | - | - | - | pending |
+| Firefox Send | Unverified lead | - | - | - | - | - | pending |
 | FlipDrive | Cloud storage | - | - | - | - | - | pending |
 | Free | File sharing | 10 GB | 30 | - | French | - | verified |
+| fShare | Unverified lead | - | - | - | - | - | pending |
+| GeTT | Unverified lead | - | - | - | - | - | pending |
+| GFXfile | Unverified lead | - | - | - | - | - | pending |
 | Giga | Cloud storage | - | - | - | - | - | pending |
+| GigaPeta | Unverified lead | - | - | - | - | - | pending |
+| Global-Files | Unverified lead | - | - | - | - | - | pending |
+| Gofile | Unverified lead | - | - | - | - | - | pending |
 | Google Drive | Cloud storage | 15 GB | - | - | English, Russian | Windows, MacOS, Android, iOS | verified |
-| HighTail | File sharing | - | - | - | - | - | pending |
-| Hostr | File sharing | - | - | - | - | - | pending |
-| hubiC | Cloud storage | - | - | - | - | - | pending |
+| HighTail | File sharing | 2 GB | 7 days | - | - | - | verified |
+| HitFile | Unverified lead | - | - | - | - | - | pending |
+| Hostr | File sharing | - | - | - | - | Windows, MacOS | verified |
+| HotLink | Unverified lead | - | - | - | - | - | pending |
+| HulkLoad | Unverified lead | - | - | - | - | - | pending |
+| IcerBox | Unverified lead | - | - | - | - | - | pending |
+| Images.Gameru | Unverified lead | - | - | - | - | - | pending |
+| IndiShare | Unverified lead | - | - | - | - | - | pending |
 | Jumpshare | Cloud storage | 2 GB | - | - | English | Windows, MacOS, iOS | verified |
+| KatFile | Unverified lead | - | - | - | - | - | pending |
+| LetsUpload | Unverified lead | - | - | - | - | - | pending |
 | LimeWire | File sharing | 4 GB | 7 | - | English | - | verified |
+| Linx | Unverified lead | - | - | - | - | - | pending |
+| LoadTo | Unverified lead | - | - | - | - | - | pending |
+| MacUpload | Unverified lead | - | - | - | - | - | pending |
 | MediaFire | Cloud storage | 10 GB | - | - | English | Android, iOS | verified |
 | MEGA | Cloud storage | 15 GB | - | false | English, Russian | Windows, Linux, MacOS, Android, iOS | pending |
-| MiMedia | Cloud storage | - | - | - | - | - | pending |
+| MegaFile | Unverified lead | - | - | - | - | - | pending |
+| MegaUp | Unverified lead | - | - | - | - | - | pending |
+| MegaUpload | Unverified lead | - | - | - | - | - | pending |
+| Mexa Share | Unverified lead | - | - | - | - | - | pending |
+| MightyUpload | Unverified lead | - | - | - | - | - | pending |
+| MiMedia | Cloud storage | 10 GB | - | - | - | Windows, MacOS, Android, iOS, Web | verified |
+| MixLoads | Unverified lead | - | - | - | - | - | pending |
 | MobiDrive | Cloud storage | 20 GB | - | - | English | Windows, Android, iOS, Web | verified |
+| mShare | Unverified lead | - | - | - | - | - | pending |
+| My-Files | Unverified lead | - | - | - | - | - | pending |
 | MyAirBridge | File sharing | 20 GB | 2-3 days | - | English | - | verified |
+| MyFile | Unverified lead | - | - | - | - | - | pending |
+| MyFiles | Unverified lead | - | - | - | - | - | pending |
+| NitroFlare | Unverified lead | - | - | - | - | - | pending |
+| NovaFile | Unverified lead | - | - | - | - | - | pending |
+| Oboom | Unverified lead | - | - | - | - | - | pending |
 | OneDrive | Cloud storage | 5 GB | - | - | English, Russian | Windows, MacOS, Android, iOS | verified |
 | OpenDrive | Cloud storage | 5 GB | - | - | English | Windows, Linux, MacOS, Android, iOS | verified |
+| OpenLoad | Unverified lead | - | - | - | - | - | pending |
+| OrtoFiles | Unverified lead | - | - | - | - | - | pending |
 | OwnDrive | Cloud storage | 1 GB | - | - | - | Web | verified |
+| OxyCloud | Unverified lead | - | - | - | - | - | pending |
 | pCloud | Cloud storage | 10 GB | - | - | English, Russian | Windows, Linux, MacOS, Android, iOS | verified |
 | Pixeldrain | Cloud storage | 6 GB | 120 | - | English | - | verified |
+| Plustransfer | Unverified lead | - | - | - | - | - | pending |
+| PreFiles | Unverified lead | - | - | - | - | - | pending |
+| PutRe | Unverified lead | - | - | - | - | - | pending |
+| Racaty | Unverified lead | - | - | - | - | - | pending |
+| Rapidgator | Unverified lead | - | - | - | - | - | pending |
+| RapidShare | Unverified lead | - | - | - | - | - | pending |
+| Rapidu | Unverified lead | - | - | - | - | - | pending |
+| RarLink | Unverified lead | - | - | - | - | - | pending |
+| RedBunker | Unverified lead | - | - | - | - | - | pending |
+| SaberCatHost | Unverified lead | - | - | - | - | - | pending |
 | SendFile | File sharing | 600 MB | 25+ | false | Russian | - | pending |
+| SendFiles | Unverified lead | - | - | - | - | - | pending |
+| SendIt | Unverified lead | - | - | - | - | - | pending |
+| SendSpace | Unverified lead | - | - | - | - | - | pending |
+| Share-Online | Unverified lead | - | - | - | - | - | pending |
+| ShareMods | Unverified lead | - | - | - | - | - | pending |
+| SharePlace | Unverified lead | - | - | - | - | - | pending |
+| SnowFiles | Unverified lead | - | - | - | - | - | pending |
+| SolidFiles | Unverified lead | - | - | - | - | - | pending |
+| SubyShare | Unverified lead | - | - | - | - | - | pending |
+| SundryFiles | Unverified lead | - | - | - | - | - | pending |
 | Sync | Cloud storage | 5 GB | - | - | English | Windows, MacOS, Android, iOS | verified |
+| SyncsOnline | Unverified lead | - | - | - | - | - | pending |
 | TempSend | File sharing | 2 GB | 1 year | - | English | - | verified |
 | TeraBox | Cloud storage | 1 TB | - | - | English, Russian | Windows, MacOS, Android, iOS | verified |
+| TezFiles | Unverified lead | - | - | - | - | - | pending |
+| TinyUpload | Unverified lead | - | - | - | - | - | pending |
+| Top4top | Unverified lead | - | - | - | - | - | pending |
 | Tresorit Send | File sharing | 5 GB | 7 | 10 | English | - | verified |
+| Turbobit | Unverified lead | - | - | - | - | - | pending |
+| TusFiles | Unverified lead | - | - | - | - | - | pending |
+| UaFile | Unverified lead | - | - | - | - | - | pending |
+| Ulozto | Unverified lead | - | - | - | - | - | pending |
+| UniBytes | Unverified lead | - | - | - | - | - | pending |
+| up07 | Unverified lead | - | - | - | - | - | pending |
+| Up4Ever | Unverified lead | - | - | - | - | - | pending |
+| Upera | Unverified lead | - | - | - | - | - | pending |
+| Upload | Unverified lead | - | - | - | - | - | pending |
+| Upload Ac | Unverified lead | - | - | - | - | - | pending |
+| Upload4Earn | Unverified lead | - | - | - | - | - | pending |
+| UploadBox | Unverified lead | - | - | - | - | - | pending |
+| UploadBoy | Unverified lead | - | - | - | - | - | pending |
+| UploadCD | Unverified lead | - | - | - | - | - | pending |
+| UploadCloud | Unverified lead | - | - | - | - | - | pending |
+| Uploaded | Unverified lead | - | - | - | - | - | pending |
+| Uploadev | Unverified lead | - | - | - | - | - | pending |
+| UploadFiles | Unverified lead | - | - | - | - | - | pending |
+| UploadGig | Unverified lead | - | - | - | - | - | pending |
+| Uploadify | Unverified lead | - | - | - | - | - | pending |
+| UploadOcean | Unverified lead | - | - | - | - | - | pending |
+| UploadProper | Unverified lead | - | - | - | - | - | pending |
+| UploadRar | Unverified lead | - | - | - | - | - | pending |
+| UploadServ | Unverified lead | - | - | - | - | - | pending |
+| UploadSt | Unverified lead | - | - | - | - | - | pending |
+| UPPIT | Unverified lead | - | - | - | - | - | pending |
+| Upstore | Unverified lead | - | - | - | - | - | pending |
+| UptoBox | Unverified lead | - | - | - | - | - | pending |
+| UsersCloud | Unverified lead | - | - | - | - | - | pending |
 | UsersDrive | File sharing | - | - | - | English | - | verified |
+| vShare | Unverified lead | - | - | - | - | - | pending |
+| WdFiles | Unverified lead | - | - | - | - | - | pending |
+| WebchinUpload | Unverified lead | - | - | - | - | - | pending |
 | Weiyun | Cloud storage | - | - | - | - | - | pending |
 | WeTransfer | File sharing | 3 GB | 1-3 days | - | English | Android, iOS | verified |
+| WorkUpload | Unverified lead | - | - | - | - | - | pending |
+| WupFile | Unverified lead | - | - | - | - | - | pending |
+| WuShare | Unverified lead | - | - | - | - | - | pending |
 | Yandex.Disk | Cloud storage | 5 GB | - | true | English, Russian | Windows, Linux, MacOS, Android, iOS | verified |
 | YourFileStore | File sharing | 500 MB | - | - | English | - | verified |
+| ZippyShare | Unverified lead | - | - | - | - | - | pending |
+| Zofile | Unverified lead | - | - | - | - | - | pending |
 | Облако Mail.ru | Cloud storage | 8 GB | - | - | Russian | Windows, Linux (WebDAV), Android, iOS | verified |
 
 ## Usage

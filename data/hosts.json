@@ -805,6 +805,76 @@
     }
   },
   {
+    "name": "files.fm",
+    "url": "https://files.fm/",
+    "summary": "EU-based cloud storage and file-sharing platform with a free Basic tier, 5 GB max file size, apps across major platforms, and official developer API support.",
+    "limits": {
+      "max_file_size": {
+        "value": 5,
+        "unit": "GB",
+        "notes": "The current Basic plan lists a 5 GB file size limit."
+      },
+      "retention": {
+        "value": 1,
+        "unit": "months",
+        "notes": "The current Basic plan lists 20 GB of storage for a month."
+      },
+      "storage": {
+        "value": 20,
+        "unit": "GB",
+        "notes": "The current Basic plan lists 20 GB for a month."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The current Basic plan does not publish a numeric data-transfer cap on the cited pricing page."
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "A free account provides the Basic tier with storage, private sharing, file inbox, and conversion tools."
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://files.fm/api/",
+      "cli_friendly": true,
+      "cli_example": null,
+      "notes": "Files.fm publicly advertises an API for developers, plus WebDAV and FTP access in its apps and tools section."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": true,
+      "notes": "Files.fm markets secure European data-center storage, GDPR compliance, and advanced encryption, but the cited pages do not claim end-to-end encryption."
+    },
+    "tags": [
+      "cloud-storage",
+      "apps",
+      "api",
+      "eu-based"
+    ],
+    "sources": [
+      {
+        "label": "Homepage",
+        "url": "https://files.fm/",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current Basic plan storage, file size, app availability, WebDAV/FTP, and API references."
+      },
+      {
+        "label": "Developer API",
+        "url": "https://files.fm/api/",
+        "retrieved_at": "2026-04-26",
+        "notes": "Official API documentation."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "all_except_prohibited",
+        "notes": "The homepage positions Files.fm as handling photos, videos, audio, and documents, but contributors should still verify prohibited-content rules from the service terms before refining this field further."
+      }
+    }
+  },
+  {
     "name": "Free Transfert",
     "url": "https://transfert.free.fr/",
     "summary": "Free's browser-based file transfer service with direct-link sharing, optional password protection, and a larger free allowance for Freebox subscribers.",
@@ -1039,6 +1109,140 @@
     }
   },
   {
+    "name": "Hightail",
+    "url": "https://www.hightail.com/",
+    "summary": "Creative-focused file-sharing service with a free Lite plan for smaller transfers, 2 GB of storage, and no-account-required recipient access.",
+    "limits": {
+      "max_file_size": {
+        "value": 100,
+        "unit": "MB",
+        "notes": "The Lite plan currently lists a 100 MB file size send limit."
+      },
+      "retention": {
+        "value": 7,
+        "unit": "days",
+        "notes": "The Lite plan currently lists a 7-day file expiration."
+      },
+      "storage": {
+        "value": 2,
+        "unit": "GB",
+        "notes": "The Lite plan currently lists 2 GB of storage space."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited pricing page does not publish a numeric bandwidth cap for the Lite plan."
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "A Hightail Lite account provides free storage and smaller-file sharing, while recipients do not need an account to access shared files."
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The cited public pages do not document a public developer API or CLI workflow."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The cited public pages describe secure file sharing but do not claim end-to-end encryption."
+    },
+    "tags": [
+      "file-sharing",
+      "creative-workflows",
+      "free-tier",
+      "recipient-no-account"
+    ],
+    "sources": [
+      {
+        "label": "Pricing",
+        "url": "https://www.hightail.com/pricing",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current Lite plan storage, upload size, and file expiration."
+      },
+      {
+        "label": "File Sharing",
+        "url": "https://www.hightail.com/file-sharing",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current statement that recipients do not need an account to access shared files."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+      }
+    }
+  },
+  {
+    "name": "Hostr",
+    "url": "https://hostr.co/",
+    "summary": "Simple instant-sharing service with free accounts, broad file-type support, desktop apps, and generous public limits for small everyday uploads.",
+    "limits": {
+      "max_file_size": {
+        "value": 20,
+        "unit": "MB",
+        "notes": "The homepage FAQ currently says the largest file size is 20 MB."
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "The homepage FAQ currently says files are stored as long as the account is active."
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a storage quota, but they do publish a daily upload-count limit."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The homepage FAQ currently says there are no bandwidth limits, aside from possible hotlinking suspension in abuse cases."
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "A Hostr account is required; free accounts can upload up to 15 files per day and keep files as long as the account remains active."
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The cited public pages do not document a public API or CLI workflow."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The homepage says files are redundantly backed up to Amazon Web Services, but it does not claim end-to-end encryption."
+    },
+    "tags": [
+      "file-sharing",
+      "desktop-apps",
+      "free-account",
+      "instant-sharing"
+    ],
+    "sources": [
+      {
+        "label": "Homepage",
+        "url": "https://hostr.co/",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current FAQ on pricing, upload count, file retention, max size, bandwidth, and desktop apps."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "all_except_prohibited",
+        "notes": "The homepage currently says all file types are supported, though prohibited or abusive content may still be restricted under the service rules."
+      }
+    }
+  },
+  {
     "name": "Jumpshare",
     "url": "https://jumpshare.com/",
     "summary": "Visual file-sharing and screen-recording platform with a free Basic plan, desktop apps, and an iOS app.",
@@ -1263,6 +1467,82 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+      }
+    }
+  },
+  {
+    "name": "MiMedia",
+    "url": "https://www.mimedia.com/",
+    "summary": "Personal cloud service with a free 10 GB starter tier, desktop and mobile apps, and a media-first sharing experience.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a current per-file upload cap for the free plan."
+      },
+      "retention": {
+        "value": 30,
+        "unit": "days",
+        "notes": "MiMedia's terms say files may be deleted within 30 days after a subscription ends, and the free tier itself does not list an automatic file-expiry period while active."
+      },
+      "storage": {
+        "value": 10,
+        "unit": "GB",
+        "notes": "MiMedia currently markets a 10 GB Starter plan as free."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a current bandwidth limit."
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "A MiMedia account is required for the free Starter tier with desktop, web, and mobile access."
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The cited public pages do not document a public developer API or CLI workflow."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": true,
+      "notes": "MiMedia markets privacy and secure storage, but the cited public pages do not claim end-to-end encryption."
+    },
+    "tags": [
+      "cloud-storage",
+      "desktop-apps",
+      "mobile-apps",
+      "media-focused"
+    ],
+    "sources": [
+      {
+        "label": "Homepage",
+        "url": "https://www.mimedia.com/",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current free Starter tier, app availability, and personal-cloud positioning."
+      },
+      {
+        "label": "Terms of Service",
+        "url": "https://mimedia.com/support/article/mimedia-terms-of-service/",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current downgrade language and 10 GB free-subscription limit."
+      },
+      {
+        "label": "Supported File Types",
+        "url": "https://support.mimedia.com/article/what-file-types-are-supported-by-mimedia/",
+        "retrieved_at": "2026-04-26",
+        "notes": "Official supported image, video, audio, and document file types."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "documents-images-media",
+        "notes": "MiMedia officially supports common image, video, audio, and document formats including JPG, PNG, MP4, MP3, PDF, DOCX, XLSX, and PPTX."
       }
     }
   },

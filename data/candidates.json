@@ -1,5 +1,16 @@
 [
   {
+    "name": "?????????",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
     "name": "1fichier",
     "type": "File sharing",
     "free_volume": "300 GB",
@@ -11,6 +22,174 @@
     "applications": [],
     "verification_status": "pending",
     "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "1filesharing",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "2Share",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "360 Yunpan",
+    "type": "Cloud storage",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "4shared",
+    "type": "Cloud storage",
+    "free_volume": "15 GB",
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [
+      "Android",
+      "iOS"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "4sync",
+    "type": "Cloud storage",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "9xupload",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Alfafile",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "AndroidFileHost",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "AnonFile",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "AnonFiles",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "AusFile",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Baidu Pan",
+    "type": "Cloud storage",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "BayFiles",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "BdUpload",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "BezSms",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
   },
   {
     "name": "Box",
@@ -74,6 +253,28 @@
     "source": "User-provided import list on 2026-04-26"
   },
   {
+    "name": "CloudGhost",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Cloudup",
+    "type": "File sharing",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
     "name": "Cozy Cloud",
     "type": "Cloud storage",
     "free_volume": "5 GB",
@@ -108,6 +309,109 @@
     "source": "User-provided import list on 2026-04-26"
   },
   {
+    "name": "DataFileHost",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "DataHu",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Datei",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Dateiload",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "DdlTo",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Degoo",
+    "type": "Cloud storage",
+    "free_volume": "20 GB",
+    "shelf_life": "90 days inactivity",
+    "download_count": null,
+    "languages": [],
+    "applications": [
+      "Web",
+      "Android",
+      "iOS"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "DesuFiles",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Dir50",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "DirectUpload",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
     "name": "Disroot",
     "type": "File sharing",
     "free_volume": "1 GB",
@@ -119,6 +423,89 @@
     "applications": [],
     "verification_status": "verified",
     "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "DoraUpload",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "DoUploads",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Downace",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "DriveUploader",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "DropApk",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Dropbox",
+    "type": "Cloud storage",
+    "free_volume": "2 GB",
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [
+      "Windows",
+      "Linux",
+      "MacOS",
+      "Android",
+      "iOS"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "DropFiles",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
   },
   {
     "name": "DropMeAFile",
@@ -148,6 +535,28 @@
     "source": "User-provided import list on 2026-04-26"
   },
   {
+    "name": "Earn4Files",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "EasyBytez",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
     "name": "ElephantDrive",
     "type": "Cloud storage",
     "free_volume": "2 GB",
@@ -168,6 +577,50 @@
     "source": "User-provided import list on 2026-04-26"
   },
   {
+    "name": "EuropeUp",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "ExLoad",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "ExtMatrix",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "FastStore",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
     "name": "Fex",
     "type": "File sharing",
     "free_volume": "50 GB",
@@ -180,6 +633,105 @@
     "applications": [],
     "verification_status": "pending",
     "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "File Al",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "File-Space",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "File-Upload",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "FileBin",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "FileBlade",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "FileBonus",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "FileBoom",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "FileBz",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "FileCandy",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
   },
   {
     "name": "Filecloud",
@@ -208,6 +760,39 @@
     "source": "User-provided import list on 2026-04-26"
   },
   {
+    "name": "FileDot",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "FileFactory",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "FileJoker",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
     "name": "FileKarelia",
     "type": "File sharing",
     "free_volume": "1 GB",
@@ -219,6 +804,39 @@
     "applications": [],
     "verification_status": "pending",
     "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "FileNext",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Filer",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "FileRio",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
   },
   {
     "name": "files.dp.ua",
@@ -234,6 +852,133 @@
     "applications": [],
     "verification_status": "verified",
     "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "files.fm",
+    "type": "Cloud storage",
+    "free_volume": "20 GB",
+    "shelf_life": "1 month",
+    "download_count": null,
+    "languages": [],
+    "applications": [
+      "Windows",
+      "macOS",
+      "Linux",
+      "Android",
+      "iOS"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "FilesABC",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "FileShark",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "FilesMonster",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "FileSpace",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "FileTown",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "FileTUT",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "FileUpload",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "FireDrop",
+    "type": "File sharing",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Firefox Send",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "FlipDrive",
+    "type": "Cloud storage",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
   },
   {
     "name": "Framadrop",
@@ -262,6 +1007,83 @@
     "source": "User-provided import list on 2026-04-26"
   },
   {
+    "name": "fShare",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "GeTT",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "GFXfile",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Giga",
+    "type": "Cloud storage",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "GigaPeta",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Global-Files",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Gofile",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
     "name": "Google Drive",
     "type": "Cloud storage",
     "free_volume": "15 GB",
@@ -281,6 +1103,108 @@
     "source": "User-provided import list on 2026-04-26"
   },
   {
+    "name": "HighTail",
+    "type": "File sharing",
+    "free_volume": "2 GB",
+    "shelf_life": "7 days",
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "HitFile",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Hostr",
+    "type": "File sharing",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [
+      "Windows",
+      "MacOS"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "HotLink",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "hubiC",
+    "type": "Cloud storage",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "HulkLoad",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "IcerBox",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Images.Gameru",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "IndiShare",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
     "name": "Jumpshare",
     "type": "Cloud storage",
     "free_volume": "2 GB",
@@ -298,6 +1222,28 @@
     "source": "User-provided import list on 2026-04-26"
   },
   {
+    "name": "KatFile",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "LetsUpload",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
     "name": "LimeWire",
     "type": "File sharing",
     "free_volume": "4 GB",
@@ -309,6 +1255,39 @@
     "applications": [],
     "verification_status": "verified",
     "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "Linx",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "LoadTo",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "MacUpload",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
   },
   {
     "name": "MediaFire",
@@ -347,6 +1326,89 @@
     "source": "User-provided import list on 2026-04-26"
   },
   {
+    "name": "MegaFile",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "MegaUp",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "MegaUpload",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Mexa Share",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "MightyUpload",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "MiMedia",
+    "type": "Cloud storage",
+    "free_volume": "10 GB",
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [
+      "Windows",
+      "MacOS",
+      "Android",
+      "iOS",
+      "Web"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "MixLoads",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
     "name": "MobiDrive",
     "type": "Cloud storage",
     "free_volume": "20 GB",
@@ -365,6 +1427,28 @@
     "source": "User-provided import list on 2026-04-26"
   },
   {
+    "name": "mShare",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "My-Files",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
     "name": "MyAirBridge",
     "type": "File sharing",
     "free_volume": "20 GB",
@@ -376,6 +1460,61 @@
     "applications": [],
     "verification_status": "verified",
     "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "MyFile",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "MyFiles",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "NitroFlare",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "NovaFile",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Oboom",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
   },
   {
     "name": "OneDrive",
@@ -416,6 +1555,52 @@
     "source": "User-provided import list on 2026-04-26"
   },
   {
+    "name": "OpenLoad",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "OrtoFiles",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "OwnDrive",
+    "type": "Cloud storage",
+    "free_volume": "1 GB",
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [
+      "Web"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "OxyCloud",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
     "name": "pCloud",
     "type": "Cloud storage",
     "free_volume": "10 GB",
@@ -449,6 +1634,116 @@
     "source": "User-provided import list on 2026-04-26"
   },
   {
+    "name": "Plustransfer",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "PreFiles",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "PutRe",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Racaty",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Rapidgator",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "RapidShare",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Rapidu",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "RarLink",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "RedBunker",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "SaberCatHost",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
     "name": "SendFile",
     "type": "File sharing",
     "free_volume": "600 MB",
@@ -460,6 +1755,116 @@
     "applications": [],
     "verification_status": "pending",
     "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "SendFiles",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "SendIt",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "SendSpace",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Share-Online",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "ShareMods",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "SharePlace",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "SnowFiles",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "SolidFiles",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "SubyShare",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "SundryFiles",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
   },
   {
     "name": "Sync",
@@ -478,6 +1883,17 @@
     ],
     "verification_status": "verified",
     "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "SyncsOnline",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
   },
   {
     "name": "TempSend",
@@ -512,6 +1928,39 @@
     "source": "User-provided import list on 2026-04-26"
   },
   {
+    "name": "TezFiles",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "TinyUpload",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Top4top",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
     "name": "Tresorit Send",
     "type": "File sharing",
     "free_volume": "5 GB",
@@ -525,6 +1974,325 @@
     "source": "User-provided import list on 2026-04-26"
   },
   {
+    "name": "Turbobit",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "TusFiles",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "UaFile",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Ulozto",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "UniBytes",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "up07",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Up4Ever",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Upera",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Upload",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Upload Ac",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Upload4Earn",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "UploadBox",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "UploadBoy",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "UploadCD",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "UploadCloud",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Uploaded",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Uploadev",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "UploadFiles",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "UploadGig",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Uploadify",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "UploadOcean",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "UploadProper",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "UploadRar",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "UploadServ",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "UploadSt",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "UPPIT",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Upstore",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "UptoBox",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "UsersCloud",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
     "name": "UsersDrive",
     "type": "File sharing",
     "free_volume": null,
@@ -536,6 +2304,50 @@
     "applications": [],
     "verification_status": "verified",
     "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "vShare",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "WdFiles",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "WebchinUpload",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Weiyun",
+    "type": "Cloud storage",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
   },
   {
     "name": "WeTransfer",
@@ -552,6 +2364,39 @@
     ],
     "verification_status": "verified",
     "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "WorkUpload",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "WupFile",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "WuShare",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
   },
   {
     "name": "Yandex.Disk",
@@ -587,6 +2432,28 @@
     "source": "User-provided import list on 2026-04-26"
   },
   {
+    "name": "ZippyShare",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Zofile",
+    "type": "Unverified lead",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
     "name": "Облако Mail.ru",
     "type": "Cloud storage",
     "free_volume": "8 GB",
@@ -603,207 +2470,5 @@
     ],
     "verification_status": "verified",
     "source": "User-provided import list on 2026-04-26"
-  },
-  {
-    "name": "4shared",
-    "type": "Cloud storage",
-    "free_volume": "15 GB",
-    "shelf_life": null,
-    "download_count": null,
-    "languages": [],
-    "applications": [
-      "Android",
-      "iOS"
-    ],
-    "verification_status": "verified",
-    "source": "User-provided lead list on 2026-04-26"
-  },
-  {
-    "name": "4sync",
-    "type": "Cloud storage",
-    "free_volume": null,
-    "shelf_life": null,
-    "download_count": null,
-    "languages": [],
-    "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
-  },
-  {
-    "name": "360 Yunpan",
-    "type": "Cloud storage",
-    "free_volume": null,
-    "shelf_life": null,
-    "download_count": null,
-    "languages": [],
-    "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
-  },
-  {
-    "name": "Baidu Pan",
-    "type": "Cloud storage",
-    "free_volume": null,
-    "shelf_life": null,
-    "download_count": null,
-    "languages": [],
-    "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
-  },
-  {
-    "name": "Cloudup",
-    "type": "File sharing",
-    "free_volume": null,
-    "shelf_life": null,
-    "download_count": null,
-    "languages": [],
-    "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
-  },
-  {
-    "name": "Degoo",
-    "type": "Cloud storage",
-    "free_volume": "20 GB",
-    "shelf_life": "90 days inactivity",
-    "download_count": null,
-    "languages": [],
-    "applications": [
-      "Web",
-      "Android",
-      "iOS"
-    ],
-    "verification_status": "verified",
-    "source": "User-provided lead list on 2026-04-26"
-  },
-  {
-    "name": "Dropbox",
-    "type": "Cloud storage",
-    "free_volume": "2 GB",
-    "shelf_life": null,
-    "download_count": null,
-    "languages": [],
-    "applications": [
-      "Windows",
-      "Linux",
-      "MacOS",
-      "Android",
-      "iOS"
-    ],
-    "verification_status": "verified",
-    "source": "User-provided lead list on 2026-04-26"
-  },
-  {
-    "name": "files.fm",
-    "type": "Cloud storage",
-    "free_volume": null,
-    "shelf_life": null,
-    "download_count": null,
-    "languages": [],
-    "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
-  },
-  {
-    "name": "FireDrop",
-    "type": "File sharing",
-    "free_volume": null,
-    "shelf_life": null,
-    "download_count": null,
-    "languages": [],
-    "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
-  },
-  {
-    "name": "FlipDrive",
-    "type": "Cloud storage",
-    "free_volume": null,
-    "shelf_life": null,
-    "download_count": null,
-    "languages": [],
-    "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
-  },
-  {
-    "name": "Giga",
-    "type": "Cloud storage",
-    "free_volume": null,
-    "shelf_life": null,
-    "download_count": null,
-    "languages": [],
-    "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
-  },
-  {
-    "name": "HighTail",
-    "type": "File sharing",
-    "free_volume": null,
-    "shelf_life": null,
-    "download_count": null,
-    "languages": [],
-    "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
-  },
-  {
-    "name": "Hostr",
-    "type": "File sharing",
-    "free_volume": null,
-    "shelf_life": null,
-    "download_count": null,
-    "languages": [],
-    "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
-  },
-  {
-    "name": "hubiC",
-    "type": "Cloud storage",
-    "free_volume": null,
-    "shelf_life": null,
-    "download_count": null,
-    "languages": [],
-    "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
-  },
-  {
-    "name": "MiMedia",
-    "type": "Cloud storage",
-    "free_volume": null,
-    "shelf_life": null,
-    "download_count": null,
-    "languages": [],
-    "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
-  },
-  {
-    "name": "OwnDrive",
-    "type": "Cloud storage",
-    "free_volume": "1 GB",
-    "shelf_life": null,
-    "download_count": null,
-    "languages": [],
-    "applications": [
-      "Web"
-    ],
-    "verification_status": "verified",
-    "source": "User-provided lead list on 2026-04-26"
-  },
-  {
-    "name": "Weiyun",
-    "type": "Cloud storage",
-    "free_volume": null,
-    "shelf_life": null,
-    "download_count": null,
-    "languages": [],
-    "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
   }
 ]
