@@ -1,0 +1,809 @@
+[
+  {
+    "name": "1fichier",
+    "type": "File sharing",
+    "free_volume": "300 GB",
+    "shelf_life": "15+",
+    "download_count": null,
+    "languages": [
+      "English"
+    ],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "Box",
+    "type": "Cloud storage",
+    "free_volume": "10 GB",
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [
+      "English"
+    ],
+    "applications": [
+      "Windows",
+      "MacOS",
+      "Android",
+      "iOS"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "Chomikuj.pl",
+    "type": "Cloud storage",
+    "free_volume": "No limit",
+    "shelf_life": null,
+    "download_count": "false",
+    "languages": [
+      "Polish"
+    ],
+    "applications": [
+      "Windows",
+      "Android",
+      "iOS"
+    ],
+    "verification_status": "pending",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "Clicknupload",
+    "type": "File sharing",
+    "free_volume": "2 GB",
+    "shelf_life": "7+",
+    "download_count": null,
+    "languages": [
+      "English"
+    ],
+    "applications": [],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "CloudBeeline",
+    "type": "Cloud storage",
+    "free_volume": "10 GB",
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [
+      "Russian"
+    ],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "Cozy Cloud",
+    "type": "Cloud storage",
+    "free_volume": "5 GB",
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [
+      "English",
+      "Russian"
+    ],
+    "applications": [
+      "Windows",
+      "Linux",
+      "MacOS",
+      "Android",
+      "iOS"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "Dailyuploads",
+    "type": "File sharing",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [
+      "English",
+      "Russian"
+    ],
+    "applications": [],
+    "verification_status": "rejected",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "Disroot",
+    "type": "File sharing",
+    "free_volume": "1 GB",
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [
+      "English"
+    ],
+    "applications": [],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "DropMeAFile",
+    "type": "File sharing",
+    "free_volume": null,
+    "shelf_life": "3",
+    "download_count": "false",
+    "languages": [
+      "English"
+    ],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "DropMeFiles",
+    "type": "File sharing",
+    "free_volume": "50 GB",
+    "shelf_life": "14",
+    "download_count": "true",
+    "languages": [
+      "English",
+      "Russian"
+    ],
+    "applications": [],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "ElephantDrive",
+    "type": "Cloud storage",
+    "free_volume": "2 GB",
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [
+      "English",
+      "Russian"
+    ],
+    "applications": [
+      "Windows",
+      "Linux",
+      "MacOS",
+      "Android",
+      "iOS"
+    ],
+    "verification_status": "rejected",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "Fex",
+    "type": "File sharing",
+    "free_volume": "50 GB",
+    "shelf_life": "7",
+    "download_count": null,
+    "languages": [
+      "English",
+      "Russian"
+    ],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "Filecloud",
+    "type": "File sharing",
+    "free_volume": "2 Gb",
+    "shelf_life": "7",
+    "download_count": null,
+    "languages": [
+      "Russian"
+    ],
+    "applications": [],
+    "verification_status": "rejected",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "FileConvoy",
+    "type": "File sharing",
+    "free_volume": "3 GB",
+    "shelf_life": "21",
+    "download_count": "false",
+    "languages": [
+      "English"
+    ],
+    "applications": [],
+    "verification_status": "rejected",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "FileKarelia",
+    "type": "File sharing",
+    "free_volume": "1 GB",
+    "shelf_life": "7+",
+    "download_count": "false",
+    "languages": [
+      "Russian"
+    ],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "files.dp.ua",
+    "type": "File sharing",
+    "free_volume": null,
+    "shelf_life": "25",
+    "download_count": "false",
+    "languages": [
+      "English",
+      "Ukrainian",
+      "Russian"
+    ],
+    "applications": [],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "Framadrop",
+    "type": "File sharing",
+    "free_volume": "500 MB",
+    "shelf_life": "1",
+    "download_count": null,
+    "languages": [
+      "English"
+    ],
+    "applications": [],
+    "verification_status": "rejected",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "Free",
+    "type": "File sharing",
+    "free_volume": "10 GB",
+    "shelf_life": "30",
+    "download_count": null,
+    "languages": [
+      "French"
+    ],
+    "applications": [],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "Google Drive",
+    "type": "Cloud storage",
+    "free_volume": "15 GB",
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [
+      "English",
+      "Russian"
+    ],
+    "applications": [
+      "Windows",
+      "MacOS",
+      "Android",
+      "iOS"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "Jumpshare",
+    "type": "Cloud storage",
+    "free_volume": "2 GB",
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [
+      "English"
+    ],
+    "applications": [
+      "Windows",
+      "MacOS",
+      "iOS"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "LimeWire",
+    "type": "File sharing",
+    "free_volume": "4 GB",
+    "shelf_life": "7",
+    "download_count": null,
+    "languages": [
+      "English"
+    ],
+    "applications": [],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "MediaFire",
+    "type": "Cloud storage",
+    "free_volume": "10 GB",
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [
+      "English"
+    ],
+    "applications": [
+      "Android",
+      "iOS"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "MEGA",
+    "type": "Cloud storage",
+    "free_volume": "15 GB",
+    "shelf_life": null,
+    "download_count": "false",
+    "languages": [
+      "English",
+      "Russian"
+    ],
+    "applications": [
+      "Windows",
+      "Linux",
+      "MacOS",
+      "Android",
+      "iOS"
+    ],
+    "verification_status": "pending",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "MobiDrive",
+    "type": "Cloud storage",
+    "free_volume": "20 GB",
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [
+      "English"
+    ],
+    "applications": [
+      "Windows",
+      "Android",
+      "iOS",
+      "Web"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "MyAirBridge",
+    "type": "File sharing",
+    "free_volume": "20 GB",
+    "shelf_life": "2-3 days",
+    "download_count": null,
+    "languages": [
+      "English"
+    ],
+    "applications": [],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "OneDrive",
+    "type": "Cloud storage",
+    "free_volume": "5 GB",
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [
+      "English",
+      "Russian"
+    ],
+    "applications": [
+      "Windows",
+      "MacOS",
+      "Android",
+      "iOS"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "OpenDrive",
+    "type": "Cloud storage",
+    "free_volume": "5 GB",
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [
+      "English"
+    ],
+    "applications": [
+      "Windows",
+      "Linux",
+      "MacOS",
+      "Android",
+      "iOS"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "pCloud",
+    "type": "Cloud storage",
+    "free_volume": "10 GB",
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [
+      "English",
+      "Russian"
+    ],
+    "applications": [
+      "Windows",
+      "Linux",
+      "MacOS",
+      "Android",
+      "iOS"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "Pixeldrain",
+    "type": "Cloud storage",
+    "free_volume": "6 GB",
+    "shelf_life": "120",
+    "download_count": null,
+    "languages": [
+      "English"
+    ],
+    "applications": [],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "SendFile",
+    "type": "File sharing",
+    "free_volume": "600 MB",
+    "shelf_life": "25+",
+    "download_count": "false",
+    "languages": [
+      "Russian"
+    ],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "Sync",
+    "type": "Cloud storage",
+    "free_volume": "5 GB",
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [
+      "English"
+    ],
+    "applications": [
+      "Windows",
+      "MacOS",
+      "Android",
+      "iOS"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "TempSend",
+    "type": "File sharing",
+    "free_volume": "2 GB",
+    "shelf_life": "1 year",
+    "download_count": null,
+    "languages": [
+      "English"
+    ],
+    "applications": [],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "TeraBox",
+    "type": "Cloud storage",
+    "free_volume": "1 TB",
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [
+      "English",
+      "Russian"
+    ],
+    "applications": [
+      "Windows",
+      "MacOS",
+      "Android",
+      "iOS"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "Tresorit Send",
+    "type": "File sharing",
+    "free_volume": "5 GB",
+    "shelf_life": "7",
+    "download_count": "10",
+    "languages": [
+      "English"
+    ],
+    "applications": [],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "UsersDrive",
+    "type": "File sharing",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [
+      "English"
+    ],
+    "applications": [],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "WeTransfer",
+    "type": "File sharing",
+    "free_volume": "3 GB",
+    "shelf_life": "1-3 days",
+    "download_count": null,
+    "languages": [
+      "English"
+    ],
+    "applications": [
+      "Android",
+      "iOS"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "Yandex.Disk",
+    "type": "Cloud storage",
+    "free_volume": "5 GB",
+    "shelf_life": null,
+    "download_count": "true",
+    "languages": [
+      "English",
+      "Russian"
+    ],
+    "applications": [
+      "Windows",
+      "Linux",
+      "MacOS",
+      "Android",
+      "iOS"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "YourFileStore",
+    "type": "File sharing",
+    "free_volume": "500 MB",
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [
+      "English"
+    ],
+    "applications": [],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "Облако Mail.ru",
+    "type": "Cloud storage",
+    "free_volume": "8 GB",
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [
+      "Russian"
+    ],
+    "applications": [
+      "Windows",
+      "Linux (WebDAV)",
+      "Android",
+      "iOS"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26"
+  },
+  {
+    "name": "4shared",
+    "type": "Cloud storage",
+    "free_volume": "15 GB",
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [
+      "Android",
+      "iOS"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "4sync",
+    "type": "Cloud storage",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "360 Yunpan",
+    "type": "Cloud storage",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Baidu Pan",
+    "type": "Cloud storage",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Cloudup",
+    "type": "File sharing",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Degoo",
+    "type": "Cloud storage",
+    "free_volume": "20 GB",
+    "shelf_life": "90 days inactivity",
+    "download_count": null,
+    "languages": [],
+    "applications": [
+      "Web",
+      "Android",
+      "iOS"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Dropbox",
+    "type": "Cloud storage",
+    "free_volume": "2 GB",
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [
+      "Windows",
+      "Linux",
+      "MacOS",
+      "Android",
+      "iOS"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "files.fm",
+    "type": "Cloud storage",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "FireDrop",
+    "type": "File sharing",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "FlipDrive",
+    "type": "Cloud storage",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Giga",
+    "type": "Cloud storage",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "HighTail",
+    "type": "File sharing",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Hostr",
+    "type": "File sharing",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "hubiC",
+    "type": "Cloud storage",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "MiMedia",
+    "type": "Cloud storage",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "OwnDrive",
+    "type": "Cloud storage",
+    "free_volume": "1 GB",
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [
+      "Web"
+    ],
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26"
+  },
+  {
+    "name": "Weiyun",
+    "type": "Cloud storage",
+    "free_volume": null,
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [],
+    "applications": [],
+    "verification_status": "pending",
+    "source": "User-provided lead list on 2026-04-26"
+  }
+]

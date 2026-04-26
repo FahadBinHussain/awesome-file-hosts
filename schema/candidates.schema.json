@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/awesome-file-hosts/candidates.schema.json",
+  "title": "awesome-file-hosts candidate imports",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "name",
+      "type",
+      "free_volume",
+      "shelf_life",
+      "download_count",
+      "languages",
+      "applications",
+      "verification_status",
+      "source"
+    ],
+    "properties": {
+      "name": {
+        "type": "string",
+        "minLength": 1
+      },
+      "type": {
+        "type": "string",
+        "minLength": 1
+      },
+      "free_volume": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "shelf_life": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "download_count": {
+        "type": [
+          "string",
+          "null"
+        ]
+      },
+      "languages": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "applications": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "verification_status": {
+        "type": "string",
+        "enum": [
+          "pending",
+          "verified",
+          "rejected"
+        ]
+      },
+      "source": {
+        "type": "string",
+        "minLength": 1
+      }
+    }
+  }
+}

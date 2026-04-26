@@ -1,0 +1,13 @@
+{
+  "name": "awesome-file-hosts",
+  "private": true,
+  "version": "0.1.0",
+  "description": "JSON-first awesome list of file hosting services.",
+  "scripts": {
+    "generate": "node scripts/generate-readme.js",
+    "check": "node scripts/generate-readme.js --check"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
