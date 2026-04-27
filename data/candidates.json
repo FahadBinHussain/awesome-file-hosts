@@ -518,8 +518,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "Datei.to appears to be a historical dead host rather than a current service. The strongest public trail is the 2019 shutdown reporting, and current search results do not surface a credible modern active product surface to verify.",
+    "verification_references": [
+      {
+        "label": "Tarnkappe report on Datei.to shutdown",
+        "url": "https://tarnkappe.info/artikel/szene/warez/sharehoster/datei-to-filehoster-hat-das-zeitliche-gesegnet-38787.html",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Digital Eliteboard mirror of the Datei.to shutdown report",
+        "url": "https://www.digital-eliteboard.com/threads/datei-to-filehoster-hat-das-zeitliche-gesegnet.483007/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Dateiload",
@@ -804,7 +817,7 @@
       "English"
     ],
     "applications": [],
-    "verification_status": "pending",
+    "verification_status": "verified",
     "source": "User-provided import list on 2026-04-26"
   },
   {
@@ -1190,8 +1203,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The current file.bz trail points to a recent FileBuzz-branded domain rather than a stable, clearly documented free host that can be verified to this repo's standard.",
+    "verification_references": [
+      {
+        "label": "ipaddress.com summary for file.bz",
+        "url": "https://www.ipaddress.com/website/file.bz/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "notopening.com status page for file.bz",
+        "url": "https://notopening.com/site/file.bz",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "FileCandy",
@@ -1409,8 +1435,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The surviving current trail is a mix of down-status reports and premium-link-generator ecosystem pages, which is not strong enough to keep it in the curated active-host track.",
+    "verification_references": [
+      {
+        "label": "Juniper application signature for FILERIO",
+        "url": "https://www.juniper.net/us/en/threatlabs/application-signatures/detail.FILERIO.html",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "SaaSHub status page reporting Filerio down",
+        "url": "https://www.saashub.com/filerio-status",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "PrimeLeech Filerio generator page",
+        "url": "https://www.primeleech.com/generator/filerio",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "files.dp.ua",
@@ -1452,8 +1496,16 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The remaining current traces point to a very stale file host footprint with no HTTPS support and old 2015-era headers, which is not strong enough for the verified dataset.",
+    "verification_references": [
+      {
+        "label": "HypeStat summary for filesabc.com",
+        "url": "https://hypestat.com/info/filesabc.com",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "FileShark",
@@ -1463,8 +1515,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The current official Fileshark site is a document-management and retrieval product rather than the kind of public file host represented by the imported lead list.",
+    "verification_references": [
+      {
+        "label": "Fileshark homepage",
+        "url": "https://fileshark.app/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Fileshark terms of service",
+        "url": "https://fileshark.app/terms-of-service",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "FilesMonster",
@@ -1493,8 +1558,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The live service openly presents affiliate payouts, premium features, and uploader-earning terms on its own pages, which places it in the premium-locker bucket rather than the curated verified list.",
+    "verification_references": [
+      {
+        "label": "FileSpace affiliate agreement",
+        "url": "https://filespace.com/affiliateagreement.html",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "FileSpace sample registration/upload page",
+        "url": "https://filespace.com/free173542.html",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "FileTown",
@@ -1547,8 +1625,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The current public trail points to a blocked, hostile anti-bot surface and a premium-link-generator ecosystem around fileupload.pw, which is not a strong fit for the verified list.",
+    "verification_references": [
+      {
+        "label": "fileupload.pw blocked contact page",
+        "url": "https://fileupload.pw/contact.html",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Premium-Leech Fileupload generator page",
+        "url": "https://www.premium-leech.com/premium-generator/fileupload-generator",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "PrimeLeech Fileupload generator page",
+        "url": "https://www.primeleech.com/generator/fileupload",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "FireDrop",
@@ -1558,8 +1654,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The old Firedrop service no longer has a clean active first-party host trail; the current domain is parked and the surviving public evidence is historical rather than a live service surface.",
+    "verification_references": [
+      {
+        "label": "WHOIS firedrop.com",
+        "url": "https://www.whois.com/whois/firedrop.com",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Firedrop APK listing",
+        "url": "https://apkpure.com/firedrop/com.firedrop.app",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Firedrop Trustpilot page",
+        "url": "https://www.trustpilot.com/review/firedrop.com",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Firefox Send",
@@ -1588,8 +1702,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "Current public evidence suggests FlipDrive is no longer a dependable live public host: the main domain is down, while the surviving app listings describe an old 10 GB free cloud storage offer and stale mobile clients.",
+    "verification_references": [
+      {
+        "label": "NotOpening status for flipdrive.com",
+        "url": "https://notopening.com/site/flipdrive.com",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Apple App Store listing for FlipDrive",
+        "url": "https://apps.apple.com/us/app/flipdrive/id1020653814",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "AppBrain note that FlipDrive was unpublished from Google Play",
+        "url": "https://www.appbrain.com/app/flipdrive/com.flipdrive",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Framadrop",
@@ -1633,8 +1765,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "Promoted after verifying current official Fshare product pages, feature tables, and support documentation.",
+    "verification_references": [
+      {
+        "label": "Fshare features",
+        "url": "https://www.fshare.vn/features",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "FPT Telecom Fshare overview",
+        "url": "https://fpt.vn/en/personal/products-services/online-services/fshare.html",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "FPT Telecom Fshare FAQ",
+        "url": "https://fpt.vn/en/personal/support/information-support/faqs/fshare",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "GeTT",
@@ -1663,8 +1813,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The official site openly uses a premium-locker model with paid no-wait downloads, premium speed advantages, and upgrade gating, which places it outside the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "GFXfile homepage",
+        "url": "https://www.gfxfile.com/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "GFXfile FAQ",
+        "url": "https://www.gfxfile.com/faq.html",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "GFXfile upgrade page",
+        "url": "https://www.gfxfile.com/upgrade.html",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Giga",
@@ -1674,8 +1842,31 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "Promoted after verifying the active GiGa.GG service, current mobile support pages, and the official API/SDK trail.",
+    "verification_references": [
+      {
+        "label": "GiGa homepage",
+        "url": "https://giga.gg/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "General Questions FAQ",
+        "url": "https://faq.giga.gg/category/general-questions/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Official C++ SDK",
+        "url": "https://faq.giga.gg/2019/12/20/official-c-sdk/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "GiGa iPhone and iPad guide",
+        "url": "https://faq.giga.gg/2025/08/27/how-to-use-giga-gg-on-iphone-ipad/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "GigaPeta",
@@ -1685,8 +1876,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The surviving current public trail overwhelmingly frames Gigapeta as a premium-download cyberlocker with free-mode limitations and premium-generator demand, which puts it outside the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "Premium-Leech Gigapeta generator page",
+        "url": "https://www.premium-leech.com/premium-generator/gigapeta-generator",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Rapideo Gigapeta premium page",
+        "url": "https://www.rapideo.net/konta-premium/konto-premium-gigapeta",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "FileFox Gigapeta premium page",
+        "url": "https://www.filefox.pl/gigapeta-premium",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Global-Files",
@@ -1707,8 +1916,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "This lead duplicates the existing verified Gofile entry already present in the main dataset.",
+    "verification_references": [
+      {
+        "label": "FAQ",
+        "url": "https://gofile.io/faq",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "API Docs",
+        "url": "https://gofile.io/api",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "Premium",
+        "url": "https://gofile.io/premium",
+        "retrieved_at": "2026-04-26"
+      }
+    ]
   },
   {
     "name": "Google Drive",
@@ -1791,8 +2018,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The current public HotLink trail openly describes a premium-locker model with 100 Kbps free speed, one file per IP every 24 hours, ads, wait times, and paid speed/storage-duration upgrades, which places it outside the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "HotLink FAQS",
+        "url": "https://hotlinkss.com/faqs/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "HotLink premium promotional site",
+        "url": "https://hotlink.sbs/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "HotLink terms and conditions",
+        "url": "https://hotlinkss.com/terms-and-conditions/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "hubiC",
@@ -1821,8 +2066,31 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The surviving HulkLoad trail points to a parking setup plus classic premium-hosting and uploader-payout behavior, which is not strong enough for the verified list and does not meet the project's curation bar.",
+    "verification_references": [
+      {
+        "label": "WHOIS for hulkload.com",
+        "url": "https://www.whois.com/whois/hulkload.com",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Scam Detector review for hulkload.com",
+        "url": "https://www.scam-detector.com/validator/hulkload-com-review/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "ipaddress.com summary for HulkLoad",
+        "url": "https://www.ipaddress.com/website/hulkload.com/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "WJunction HulkLoad PPD thread",
+        "url": "https://www.wjunction.com/threads/hulkload-com-official-support-ppd-1-year-of-success.182436/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "IcerBox",
@@ -1832,8 +2100,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The current official IcerBox pages expose a premium-and-earn-money locker structure even in the non-JavaScript fallback, which places it outside the curated verified list.",
+    "verification_references": [
+      {
+        "label": "IcerBox homepage",
+        "url": "https://icerbox.com/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "IcerBox premium page",
+        "url": "https://icerbox.com/premium",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "IcerBox anti-debrid page",
+        "url": "https://icerbox.com/antidebrid",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Images.Gameru",
@@ -1854,8 +2140,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The official Indishare pages clearly present a premium-locker model with free-versus-premium download restrictions, short retention windows, and paid upgrades, which puts it outside the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "Indishare homepage",
+        "url": "https://indishare.org/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Indishare premium page",
+        "url": "https://www.indishare.org/premium.html",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Indishare FAQ",
+        "url": "https://www.indishare.org/faq.html",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Jumpshare",
@@ -1882,8 +2186,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The current KatFile surfaces openly push premium plans, daily traffic quotas, faster paid downloads, referrals, and paid upgrades, which places it outside the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "KatFile homepage",
+        "url": "https://katfile.org/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "KatFile premium comparison page",
+        "url": "https://katfile.org/premium/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "KatFile terms of service",
+        "url": "https://katfile.org/es/terms-of-service/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "LetsUpload",
@@ -1893,8 +2215,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The current public trail for LetsUpload is too weak and unreliable for the verified list: analyzers repeatedly fail to inspect the site content cleanly and uptime checks show long-running down status.",
+    "verification_references": [
+      {
+        "label": "ScamAdviser letsupload.cc report",
+        "url": "https://www.scamadviser.com/check-website/letsupload.cc",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "notopening.com letsupload.cc status page",
+        "url": "https://notopening.com/site/letsupload.cc",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "HypeStat letsupload.cc summary",
+        "url": "https://hypestat.com/info/letsupload.cc",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "LimeWire",
@@ -1917,8 +2257,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The remaining public evidence points to Linx as self-hosted file-sharing software rather than a dependable public host to curate here. The historic linx.li demo trail appears stale, and current references focus on the software project or removed demo instances instead of a stable hosted service.",
+    "verification_references": [
+      {
+        "label": "Linx project listing via ecosyste.ms / awesome-selfhosted context",
+        "url": "https://awesome.ecosyste.ms/projects/github.com%2Fandreimarcu%2Flinx-server",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "VTLUUG infrastructure note referencing linx.li removal",
+        "url": "https://vtluug.org/w/index.php?mobileaction=toggle_view_desktop&title=Infrastructure%3ASczi",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "LoadTo",
@@ -1928,8 +2281,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "Current public evidence suggests Load.to is not a good active verified host candidate: the domain does not appear to support HTTPS, third-party status pages report it as down for an extended period, and the current public trail is mostly premium-leech ecosystem references.",
+    "verification_references": [
+      {
+        "label": "IPAddress summary for load.to",
+        "url": "https://www.ipaddress.com/website/load.to/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "SaaSHub status page for Load.to",
+        "url": "https://www.saashub.com/load-to-status",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "PrimeLeech generator page for Load.to",
+        "url": "https://www.primeleech.com/generator/loadto",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "MacUpload",
@@ -1986,8 +2357,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The lead points to megafile.io, but the current public trail for that domain is broken or misaligned. The active modern service appears to be megafile.it instead, so the original lead is not a clean current match for verification.",
+    "verification_references": [
+      {
+        "label": "ScamAdviser snapshot for megafile.io showing invalid SSL and HTTP 404",
+        "url": "https://www.scamadviser.com/check-website/megafile.io",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Active MegaFile.it English site",
+        "url": "https://www.megafile.it/?lang=en",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "MegaUp",
@@ -1997,8 +2381,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "MegaUp is active, but its current public model looks like a searchable public cyberlocker with wait-timer download pages and broad public file indexing. That fails the curation bar for the verified list.",
+    "verification_references": [
+      {
+        "label": "MegaUp homepage",
+        "url": "https://megaup.net/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Example MegaUp download page with wait timer",
+        "url": "https://megaup.net/UEqo/Understand.rar",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "MegaUp report abuse page",
+        "url": "https://megaup.net/report_file",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "MegaUpload",
@@ -2008,8 +2410,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The current megaupload.is lead no longer resolves to a real file host. Current public checks show it as a parked or for-sale domain, so it is not a valid active host for the verified list.",
+    "verification_references": [
+      {
+        "label": "ScamAdviser review showing megaupload.is as a parked domain",
+        "url": "https://www.scamadviser.com/check-website/megaupload.is",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "2IP analysis showing megaupload.is sale-page metadata",
+        "url": "https://2ip.io/a/megaupload.is/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Mexa Share",
@@ -2019,8 +2434,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "Mexa Share currently presents the classic premium-locker pattern: maintenance-gated account flows, premium-vs-free download restrictions, and public file pages built around ad-free premium upgrades. That fails the curation bar for the verified list.",
+    "verification_references": [
+      {
+        "label": "MexaShare login page",
+        "url": "https://mexa.sh/login.html",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "MexaShare registration page showing maintenance state",
+        "url": "https://mexa.sh/?op=registration",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "MexaShare example file page showing free vs premium restrictions",
+        "url": "https://mexa.sh/1tyvfqpbz8my/%28C103%29_%5B%E3%81%A9%E3%81%A1%E3%82%83%E3%81%8F%E3%81%9D%E3%81%AF%E3%81%A3%E3%81%B4%E3%83%BC%21_%28%E5%A4%A2%E5%8F%B6%E7%BE%BD%E3%81%A9%E3%81%A9%E3%81%A9%E3%81%A1%E3%82%83%E3%82%93%29%5D_%E5%83%95%E3%81%A8%E5%BD%BC%E5%A5%B3%E3%81%A8%E3%81%94%E4%B8%BB%E4%BA%BA%E6%A7%98%E3%81%AE%E5%86%AC%E4%BC%91%E3%81%BF3_%28%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%29.rar.html",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "MightyUpload",
@@ -2030,8 +2463,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "MightyUpload no longer looks like a dependable active host. Current public checks point to an effectively dead domain trail, with the main site reported down and historical traces showing an expired domain state rather than a healthy current service.",
+    "verification_references": [
+      {
+        "label": "NotOpening status for mightyupload.com",
+        "url": "https://notopening.com/site/mightyupload.com",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "CuteStat snapshot showing expired-domain / pending-renewal state for mightyupload.com",
+        "url": "https://mightyupload.com.cutestat.com/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "MiMedia",
@@ -2058,8 +2504,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "MixLoads is active, but its own current pages clearly show a premium-locker model with paid premium tiers, downloader rewards, capped free traffic, and time-based file deletion. That fails the curation bar for the verified list.",
+    "verification_references": [
+      {
+        "label": "MixLoads premium page",
+        "url": "https://mixloads.to/premium/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "MixLoads FAQ",
+        "url": "https://mixloads.to/faq.html",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "MixLoads make money page",
+        "url": "https://mixloads.to/make_money/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "MobiDrive",
@@ -2087,8 +2551,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "mShare no longer looks like a working file host. Current public checks show parking nameservers and parking infrastructure instead of an active service surface, so it is not a valid current host for the verified list.",
+    "verification_references": [
+      {
+        "label": "ScamAdviser review showing parkingcrew nameservers for mshare.io",
+        "url": "https://www.scamadviser.com/check-website/mshare.io",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "IPAddress DNS view for mshare.io showing Bodis / parked-domain configuration",
+        "url": "https://www.ipaddress.com/website/mshare.io/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "WHOIS record for mshare.io showing Bodis nameservers",
+        "url": "https://www.whois.com/whois/mshare.io",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "My-Files",
@@ -2098,7 +2580,7 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
+    "verification_status": "verified",
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -2122,8 +2604,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "MyFile no longer looks like a dependable current host. The surviving public trail is mostly an old unofficial Android client plus current down-status checks, which is not strong enough for the verified list.",
+    "verification_references": [
+      {
+        "label": "APKPure listing for the unofficial MyFile Android client",
+        "url": "https://apkpure.com/myfile/org.myfile.app.android.uploader",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "IsItDownOrJustMe status page showing myfile.is as currently down",
+        "url": "https://isitdownorjustme.net/status/myfile-is/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "MyFiles",
@@ -2133,8 +2628,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "MyFiles.onl looks like a cyberlocker-style host rather than a curated verified host. The live official FAQ path is protected by anti-bot blocking, and surviving public usage trails explicitly push premium access for faster, resumable downloads.",
+    "verification_references": [
+      {
+        "label": "Official myfiles.onl FAQ path showing anti-bot / firewall blocking",
+        "url": "https://myfiles.onl/faq.html",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Scribd document describing MyFiles.onl links with premium-account upsell",
+        "url": "https://www.scribd.com/document/847957454/Wirtgen-WIDOS-2013-Multilanguage",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "NotOpening status page for myfiles.onl",
+        "url": "https://notopening.com/site/myfiles.onl",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "NitroFlare",
@@ -2173,8 +2686,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "NovaFile clearly fits the premium-locker pattern. Current public evidence centers on premium resellers, premium-link generators, and explicit free-user limitations such as waits, slow speeds, and capped traffic.",
+    "verification_references": [
+      {
+        "label": "KeyOneClick NovaFile premium reseller page",
+        "url": "https://keyoneclick.com/novafile-premium.html",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Premium-Leech NovaFile generator page describing free-user limits",
+        "url": "https://www.premium-leech.com/premium-generator/novafile-generator",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Novafile.com uptime/status page",
+        "url": "https://notopening.com/site/novafile.com",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Oboom",
@@ -2184,8 +2715,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "Oboom no longer looks like a dependable current host. Current public checks repeatedly show the main domain as down, while the surviving trail is mostly premium-locker residue describing free-user bypasses and premium download perks.",
+    "verification_references": [
+      {
+        "label": "NotOpening status page showing oboom.com as down",
+        "url": "https://notopening.com/site/oboom.com",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Websitedown.info status check for oboom.com",
+        "url": "https://www.websitedown.info/oboom.com",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Premium-Leech Oboom generator page showing premium-locker bypass pattern",
+        "url": "https://www.premium-leech.com/premium-generator/oboom-generator",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "OneDrive",
@@ -2252,8 +2801,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "OrtoFiles looks like obsolete file-host residue rather than a dependable current host. Current public status traces are weak, and contemporary filehost-maintenance tooling already treats ortofiles.com as obsolete.",
+    "verification_references": [
+      {
+        "label": "NotOpening status page for ortofiles.com",
+        "url": "https://notopening.com/site/ortofiles.com",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "W.A.R. Links Checker Premium source listing ortofiles.com as obsolete",
+        "url": "https://greasyfork.org/en/scripts/2024-w-a-r-links-checker-premium/code",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "OwnDrive",
@@ -2276,8 +2838,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "OxyCloud is not a consumer/public file host in the sense this repo tracks. The current live public surfaces describe cloud infrastructure and SME operating-system services rather than a public file-sharing host.",
+    "verification_references": [
+      {
+        "label": "OxyOne official site describing SME operating system / business platform",
+        "url": "https://www.oxyone.net/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "oxycloud.cloud official site describing VMware alternative / cloud workloads",
+        "url": "https://oxycloud.cloud/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "pCloud",
@@ -2320,7 +2895,7 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
+    "verification_status": "verified",
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -2331,8 +2906,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "PreFiles clearly fits the premium-locker pattern. Current public evidence centers on premium-link generators, premium resellers, and explicit free-user bypass language rather than a trustworthy free host experience.",
+    "verification_references": [
+      {
+        "label": "NeoDebrid Prefiles premium link generator page",
+        "url": "https://neodebrid.com/premium-link-generator/prefiles",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Cocoleech Prefiles premium link generator page",
+        "url": "https://cocoleech.com/premium-link-generator/prefiles",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Premium-Leech Prefiles generator page",
+        "url": "https://www.premium-leech.com/premium-generator/prefiles-generator",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "PutRe",
@@ -2342,7 +2935,7 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
+    "verification_status": "verified",
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -2353,8 +2946,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "Racaty no longer behaves like a dependable active host. Current public DNS/domain checks show parking infrastructure and ?see relevant content? style parking behavior rather than a trustworthy file-hosting service.",
+    "verification_references": [
+      {
+        "label": "IPAddress domain summary for racaty.com showing parklogic nameservers",
+        "url": "https://www.ipaddress.com/website/racaty.com/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "ScamAdviser review showing racaty.com parked-style page title and hidden ownership",
+        "url": "https://www.scamadviser.com/check-website/racaty.com",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Robtex DNS lookup showing parklogic delegation for racaty.com",
+        "url": "https://www.robtex.com/en/dns-lookup/com/racaty",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Rapidgator",
@@ -2364,8 +2975,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "Rapidgator is a clear premium-locker reject. The current public trail is dominated by premium-key resellers and premium-link-generator language centered on bypassing waits, ads, and speed limits, which fails the curation bar for the verified list.",
+    "verification_references": [
+      {
+        "label": "NeoDebrid Rapidgator premium link generator page",
+        "url": "https://neodebrid.com/premium-link-generator/rapidgator",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Premium.us Rapidgator premium reseller page",
+        "url": "https://premium.us/rapidgator-premium.html",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "KeyOneClick Rapidgator premium voucher page",
+        "url": "https://keyoneclick.com/rapidgator-premium.html",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "RapidShare",
@@ -2394,8 +3023,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "Rapidu is not a fit for the verified list. The public trail shows it living inside the premium-link-generator ecosystem, and contemporary reporting also ties the domain to piracy-site enforcement and takeover rather than a trustworthy current host.",
+    "verification_references": [
+      {
+        "label": "PrimeLeech Rapidu premium link generator page",
+        "url": "https://www.primeleech.com/generator/rapidu",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "CANAL+ / anti-piracy takeover reporting on rapidu.net",
+        "url": "https://www.dobreprogramy.pl/canal-dokonal-legalnego-abordazu-przejal-pirackie-serwisy-z-filmami%2C6793981197802368a",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "NotOpening status page for rapidu.net",
+        "url": "https://notopening.com/site/rapidu.net",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "RarLink",
@@ -2405,8 +3052,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "RarLink is a clear premium-locker reject. The current public trail is dominated by premium-key reseller pages and affiliate/payout language focused on bypassing waiting times and selling premium access.",
+    "verification_references": [
+      {
+        "label": "PremiumKey RarLink premium reseller page",
+        "url": "https://premiumkey.co/premium-key/rarlink-paypal-reseller",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "WJunction RarLink PPS-oriented file-hosting thread",
+        "url": "https://www.wjunction.com/threads/rarlink-com-pps-oriented-file-hosting-80-initial-sales-80-rebills.226525/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "BeerMoneyForum RarLink review thread",
+        "url": "https://www.beermoneyforum.com/threads/rarlink-com-reviews-scam-or-legit.120798/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "RedBunker",
@@ -2416,8 +3081,16 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "RedBunker no longer looks like a dependable current host. Current public status checks show the site down, with only old historical uptime traces instead of a healthy live service surface.",
+    "verification_references": [
+      {
+        "label": "NotOpening status page for redbunker.net",
+        "url": "https://notopening.com/site/redbunker.net",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "SaberCatHost",
@@ -2427,8 +3100,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "SaberCatHost is live, but its public product surface clearly shows the classic file-locker pattern with premium and rewards flows. That fails the curation bar for the verified list.",
+    "verification_references": [
+      {
+        "label": "ScamAdviser review for sabercathost.com showing product title and file-sharing model",
+        "url": "https://www.scamadviser.com/check-website/sabercathost.com",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Example SaberCat file page showing upload, register, rewards, premium, faq links",
+        "url": "https://sabercathost.com/ii5B~i",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "SendFile",
@@ -2440,8 +3126,26 @@
       "Russian"
     ],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided import list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided import list on 2026-04-26",
+    "verification_notes": "SendFile.su still shows an active file-hosting footprint, but it does not currently satisfy the project's HTTPS bar for verified hosts. Current public checks indicate no valid HTTPS surface, so it belongs in rejected rather than verified.",
+    "verification_references": [
+      {
+        "label": "Scamvoid check showing no valid HTTPS for sendfile.su",
+        "url": "https://www.scamvoid.net/check/sendfile.su/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "IPAddress summary for sendfile.su",
+        "url": "https://www.ipaddress.com/website/sendfile.su/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "votted snapshot of sendfile.su title and upload surface",
+        "url": "https://sendfile-su.votted.net/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "SendFiles",
@@ -2451,8 +3155,16 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "SendFiles no longer looks like a dependable current host. The current domain is effectively parked / sale-listed, with Afternic nameservers and no trustworthy live file-transfer product surface to verify.",
+    "verification_references": [
+      {
+        "label": "IPAddress domain summary for sendfiles.net showing Afternic nameservers",
+        "url": "https://www.ipaddress.com/website/sendfiles.net/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "SendIt",
@@ -2462,8 +3174,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "SendIt no longer looks like a dependable current host. The current domain shows repeated downtime and misconfigured redirect behavior into an invalid Send.cm license surface rather than a healthy file-transfer product.",
+    "verification_references": [
+      {
+        "label": "NotOpening status page for sendit.cloud",
+        "url": "https://notopening.com/site/sendit.cloud",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "ScamAdviser facts showing sendit.cloud redirect title as invalid license_key Send.cm",
+        "url": "https://www.scamadviser.com/check-website/sendit.cloud",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Sur.ly snapshot of sendit.cloud / Send.cm redirect behavior",
+        "url": "https://sur.ly/i/sendit.cloud/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "SendSpace",
@@ -2503,8 +3233,31 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "ShareMods is active and useful for game mods, but its own live pages clearly show the rewards / premium locker model. That fails the curation bar for the verified list even though the domain itself is alive.",
+    "verification_references": [
+      {
+        "label": "ShareMods homepage",
+        "url": "https://sharemods.com/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "ShareMods earn money page",
+        "url": "https://sharemods.com/make_money.html",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "ShareMods premium page",
+        "url": "https://sharemods.com/premium.html",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "ShareMods FAQ",
+        "url": "https://sharemods.com/faq.html",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "SharePlace",
@@ -2514,7 +3267,7 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
+    "verification_status": "verified",
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -2525,8 +3278,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "SnowFiles is no longer an active host. The current domain is explicitly being sold and no trustworthy live file-hosting product surface remains.",
+    "verification_references": [
+      {
+        "label": "IPAddress summary showing snowfiles.com being sold by Offsweet",
+        "url": "https://www.ipaddress.com/website/snowfiles.com/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "MailboxValidator domain check showing active domain but no mail / product surface",
+        "url": "https://www.mailboxvalidator.com/domain/snowfiles.com",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "SolidFiles",
@@ -2536,8 +3302,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "SolidFiles still has a recognizable file-hosting footprint, but the current public trail is not strong enough for the verified list. Current checks point to a degraded/no-valid-HTTPS surface and a surrounding premium-link-generator bypass ecosystem, which fails the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "ScamAdviser review for solidfiles.com showing invalid SSL and file-sharing warnings",
+        "url": "https://www.scamadviser.com/check-website/solidfiles.com",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "IPAddress summary for solidfiles.com showing HTTP-only / no SSL warning",
+        "url": "https://www.ipaddress.com/website/solidfiles.com/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "PrimeLeech Solidfiles premium-link-generator page",
+        "url": "https://www.primeleech.com/generator/solidfiles",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "SubyShare",
@@ -2576,8 +3360,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "SundryFiles no longer looks like a trustworthy current file host. Current public snapshots show the main domain presenting gambling content under a slot-site title rather than a coherent file-hosting service.",
+    "verification_references": [
+      {
+        "label": "ScamAdviser facts showing current sundryfiles.com title as a gambling site",
+        "url": "https://www.scamadviser.com/check-website/sundryfiles.com",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "urlscan domain summary for sundryfiles.com",
+        "url": "https://urlscan.io/domain/sundryfiles.com",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Sync",
@@ -2605,8 +3402,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "SyncsOnline is active, but current public reputation data is bad enough that it should not stay in the curated backlog. Multiple current security/reputation sources flag it as suspicious or possible malware despite the domain being live.",
+    "verification_references": [
+      {
+        "label": "ScamAdviser review marking syncs.online very likely unsafe",
+        "url": "https://www.scamadviser.com/check-website/syncs.online",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Gridinsoft reputation page marking syncs.online suspicious",
+        "url": "https://gridinsoft.com/online-virus-scanner/url/syncs-online",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "TempSend",
@@ -2648,8 +3458,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "TezFiles is a premium-locker reject. The current public ecosystem around it is dominated by premium-account upsell pages and premium-link-generator bypass language, which clearly fails the curation bar for the verified list.",
+    "verification_references": [
+      {
+        "label": "TezFiles premium-account page",
+        "url": "https://tezfiless.com/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "TezFiles pricing page",
+        "url": "https://tezfiless.com/price/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "NeoDebrid TezFiles premium-link-generator page",
+        "url": "https://neodebrid.com/premium-link-generator/tezfiles",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "TinyUpload",
@@ -2659,8 +3487,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "TinyUpload no longer looks like a live service. Multiple current status trackers show it down for a long period, and software directories now classify it as discontinued.",
+    "verification_references": [
+      {
+        "label": "NotOpening status page for tinyupload.com",
+        "url": "https://notopening.com/site/tinyupload.com",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "SaaSHub status page for TinyUpload",
+        "url": "https://www.saashub.com/tinyupload-status",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "AlternativeTo page marking TinyUpload as discontinued",
+        "url": "https://alternativeto.net/software/tinyupload-com/about/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Top4top",
@@ -2670,8 +3516,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "Top4top is active, but the current public reputation trail is too noisy for the curated verified list. Multiple recent security/reputation sources flag it as suspicious or blacklisted despite the domain being live.",
+    "verification_references": [
+      {
+        "label": "Gridinsoft review flagging top4top.net as suspicious / blacklisted",
+        "url": "https://gridinsoft.com/online-virus-scanner/url/top4top-net",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Scam Detector review for top4top.net",
+        "url": "https://www.scam-detector.com/validator/top4top-net-review/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "ScamAdviser facts for top4top.io / top4top.net redirects",
+        "url": "https://www.scamadviser.com/check-website/www.top4top.io",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Tresorit Send",
@@ -2724,7 +3588,7 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
+    "verification_status": "verified",
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -2772,8 +3636,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "Up4Ever is active, but its own current pages openly show a rewards-and-premium locker model with downloader payouts, referral commissions, premium upsell, and sharply restricted free tiers. That fails the curation bar for the verified list.",
+    "verification_references": [
+      {
+        "label": "Up-4ever make money page",
+        "url": "https://www.up-4ever.net/make_money.html",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Up-4ever FAQ",
+        "url": "https://www.up-4ever.net/pages/faq/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Up-4ever homepage pricing section",
+        "url": "https://www.up-4ever.net/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Upera",
@@ -2815,8 +3697,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "Upload Ac currently presents itself as a file host built around uploader monetization: the strongest current public trail explicitly describes it as fast and free file hosting with money-making incentives, and community traces place it in the pay-per-download rewards ecosystem. That fails the curation bar for the verified list.",
+    "verification_references": [
+      {
+        "label": "Scam Detector review quoting Upload.ac homepage positioning",
+        "url": "https://www.scam-detector.com/validator/upload-ac-review/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "BeerMoneyForum thread documenting Upload.ac rewards model",
+        "url": "https://www.beermoneyforum.com/threads/upload-ac-reviews-scam-or-legit.47434/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Upload4Earn",
@@ -2826,8 +3721,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "Upload4Earn is active, but the current public trail clearly frames it as an earn-from-downloads file host. Its site summaries emphasize making money from uploads rather than a neutral file-sharing product, so it fails the curation bar for the verified list.",
+    "verification_references": [
+      {
+        "label": "Hypestat summary for upload4earn.org",
+        "url": "https://hypestat.com/info/upload4earn.org",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Scam Detector review for upload4earn.org",
+        "url": "https://www.scam-detector.com/validator/upload4earn-org-review/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "WJunction discussion about Upload4Earn payout behavior",
+        "url": "https://www.wjunction.com/threads/upload4earn-scam.227647/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "UploadBox",
@@ -2878,8 +3791,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "UploadCloud is active, but its own current pages openly show the classic premium-locker structure: premium accounts, reseller terms, referral commissions, anonymous/free expiry windows, and a free-versus-premium capability split. That fails the curation bar for the verified list.",
+    "verification_references": [
+      {
+        "label": "UploadCloud homepage",
+        "url": "https://www.uploadcloud.pro/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "UploadCloud FAQ",
+        "url": "https://www.uploadcloud.pro/pages/faq/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "UploadCloud terms of service",
+        "url": "https://www.uploadcloud.pro/pages/tos/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Uploaded",
@@ -2889,8 +3820,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "Uploaded is no longer a trustworthy current host for the verified list. Multiple contemporaneous reports in late 2022 described the service shutting down permanently, and the modern public trail is mostly residual uptime and premium-link-generator traces rather than a healthy current product.",
+    "verification_references": [
+      {
+        "label": "TorrentFreak report on Uploaded.net permanent shutdown",
+        "url": "https://torrentfreak.com/cyando-kills-uploaded-net-before-copyright-quagmire-drowns-it-221129/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Ultima Hora report on Uploaded.net closure",
+        "url": "https://www.ultimahora.es/noticias/tecnologia-videojuegos/2022/11/30/1838161/cierra-pagina-descarga-archivos-uploaded-net.html",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "PrimeLeech Uploaded.net generator page showing residual premium-leech ecosystem",
+        "url": "https://www.primeleech.com/generator/uploaded",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Uploadev",
@@ -3018,8 +3967,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The current public Upstore trail centers on premium upgrades, affiliate commissions, and heavily constrained free use rather than a trustworthy modern host we want to recommend. That makes it a poor fit for the verified list.",
+    "verification_references": [
+      {
+        "label": "Upstore FAQS",
+        "url": "https://upstore.info/faqs/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Upstore affiliate page",
+        "url": "https://upstore.info/affiliate/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Trustpilot reviews for upstore.net",
+        "url": "https://www.trustpilot.com/review/upstore.net",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "UptoBox",
@@ -3029,8 +3996,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "UptoBox was shut down in 2023 after enforcement action and server seizures. That makes it a historical host rather than a valid active service for the verified list.",
+    "verification_references": [
+      {
+        "label": "ACE announcement on Uptobox shutdown",
+        "url": "https://www.alliance4creativity.com/news/ace-shuts-down-massive-scale-illegal-video-hosting-services-in-france/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "TorrentFreak report on Uptobox shutdown and legal aftermath",
+        "url": "https://torrentfreak.com/uptobox-was-shut-down-in-2023-a-court-will-decide-whether-to-resurrect-it-240418/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Arcom decision registering Uptobox on the piracy-watch list",
+        "url": "https://www.arcom.fr/en/find-out-more/legal-area/legal-resources/decision-april-26-2023-registering-uptobox-service-list-mentioned-i-article-l331-25-french-intellectual-property-code",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "UsersCloud",

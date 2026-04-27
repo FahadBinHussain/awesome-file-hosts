@@ -18,8 +18,8 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 
 ## What this includes
 
-- 59 verified hosts checked against current public sources as of 2026-04-27.
-- 93 leads still in review and 58 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
+- 67 verified hosts checked against current public sources as of 2026-04-27.
+- 27 leads still in review and 115 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
 - A source-backed dataset designed for both human browsing and machine reuse.
 - A site UI for filtering, comparison, and dense spreadsheet-style inspection.
 
@@ -50,7 +50,8 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [DFiles](https://dfiles.eu/) - Long-running file hosting service under the DepositFiles brand with free uploads up to 10 GB, 90-day retention after downloads, mobile apps, and FTP/remote upload support. _(Max: 10 GB | Retention: 90 days | Account: No | CLI)_
 - [DirectUpload](https://www.directupload.eu/) - Long-running German image host with free anonymous uploads, short custom auto-delete options, and a 1-year minimum storage period. _(Max: 8 MB | Retention: 1 year | Account: No)_
 - [Disroot Upload](https://disroot.org/en/services/upload) - Privacy-focused temporary file sharing from Disroot, powered by Lufi and encrypted in the browser before upload. _(Max: Not published | Retention: Not published | Account: No | E2EE)_
-- [Dropbox](https://www.dropbox.com/) - Mainstream cloud storage service with a free 2 GB Basic plan, official desktop and mobile apps, and a well-documented developer API. _(Max: 2 TB | Retention: Not published | Account: Yes | API)_
+- [Dropbox](https://www.dropbox.com/) - Mainstream cloud storage service with a free 2 GB Basic plan, official desktop and mobile apps, and a well-documented developer API. _(Max: 2 GB | Retention: Not published | Account: Yes | API)_
+- [DropMeAFile](https://dropmeafile.com/) - Simple no-account file-sharing service for sending files between computers or to other people. _(Max: Not published | Retention: Not published | Account: No)_
 - [DropMeFiles](https://dropmefiles.com/) - Browser-based file sharing service with no registration requirement, large free uploads, password protection, and selectable link lifetime. _(Max: 50 GB | Retention: 14 days | Account: No)_
 - [FEX.NET](https://new.fex.net/en/) - Modern cloud storage and file-sharing service with online viewing, link sharing, Android app support, and encrypted-in-transit data handling. _(Max: Not published | Retention: Not published | Account: Yes)_
 - [File-Upload.net](https://www.file-upload.net/en/) - Guest-friendly German file host with 1 GB uploads, up to one year of storage, optional registration for management features, and desktop/mobile upload tools. _(Max: 1 GB | Retention: 365 days | Account: No)_
@@ -62,8 +63,10 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [files.dp.ua](https://files.dp.ua/en/) - Anonymous file-sharing service with selectable expiry, optional password protection, and unusually large free upload limits. _(Max: 100 GB | Retention: 25 days | Account: No)_
 - [files.fm](https://files.fm/) - EU-based cloud storage and file-sharing platform with a free Basic tier, 5 GB max file size, apps across major platforms, and official developer API support. _(Max: 5 GB | Retention: 1 month | Account: Yes | API | CLI)_
 - [Free Transfert](https://transfert.free.fr/) - Free's browser-based file transfer service with direct-link sharing, optional password protection, and a larger free allowance for Freebox subscribers. _(Max: 10 GB | Retention: 30 days | Account: No)_
+- [Fshare](https://www.fshare.vn/) - Vietnamese cloud storage and file-sharing service with 50 GB free storage, browser/email sharing, and official desktop and mobile apps. _(Max: Not published | Retention: Conditional | Account: Yes)_
+- [GiGa.GG](https://giga.gg/) - Private cloud storage and sharing service with 1 GB free storage, 5 GB per-file uploads, mobile apps, and official API documentation. _(Max: 1 GB | Retention: Not published | Account: Yes | API)_
 - [Gofile](https://gofile.io/) - Cloud storage and content distribution platform with guest uploads and a beta REST API. _(Max: Not published | Retention: 10 days | Account: No | API | CLI)_
-- [Google Drive](https://drive.google.com/) - Google's cloud storage service with 15 GB of free account storage and official desktop/mobile clients. _(Max: 5 TB | Retention: Not published | Account: Yes | API)_
+- [Google Drive](https://drive.google.com/) - Google's cloud storage service with 15 GB of free account storage and official desktop/mobile clients. _(Max: 15 GB | Retention: Not published | Account: Yes | API)_
 - [Hightail](https://www.hightail.com/) - Creative-focused file-sharing service with a free Lite plan for smaller transfers, 2 GB of storage, and no-account-required recipient access. _(Max: 100 MB | Retention: 7 days | Account: Yes)_
 - [Hostr](https://hostr.co/) - Simple instant-sharing service with free accounts, broad file-type support, desktop apps, and generous public limits for small everyday uploads. _(Max: 20 MB | Retention: Not published | Account: Yes)_
 - [Jumpshare](https://jumpshare.com/) - Visual file-sharing and screen-recording platform with a free Basic plan, desktop apps, and an iOS app. _(Max: 250 MB | Retention: Not published | Account: Yes)_
@@ -71,19 +74,24 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [MediaFire](https://www.mediafire.com/) - File storage and sharing service with a free ad-supported basic plan and first-party mobile apps. _(Max: 5 GB | Retention: Not published | Account: Yes)_
 - [MiMedia](https://www.mimedia.com/) - Personal cloud service with a free 10 GB starter tier, desktop and mobile apps, and a media-first sharing experience. _(Max: Not published | Retention: 30 days | Account: Yes)_
 - [MobiDrive](https://www.mobidrive.com/) - Privacy-first cloud storage from MobiSystems with a free 20 GB tier and official web, Windows, Android, and iOS apps. _(Max: 200 MB | Retention: Not published | Account: Yes)_
+- [My-Files.SU](https://my-files.ru/) - Russian file-hosting service positioned around no-registration uploads, direct links, and minimal download friction. _(Max: Not published | Retention: Not published | Account: No)_
 - [MyAirBridge](https://www.myairbridge.com/) - Large-file transfer and sharing service with free transfers up to 20 GB and optional online storage features. _(Max: 20 GB | Retention: Conditional | Account: No | API)_
 - [Oblako Mail.ru](https://cloud.mail.ru/) - Mail.ru cloud storage service with 8 GB free space, link sharing, mobile apps, a Windows desktop app, and Linux access via WebDAV. _(Max: 1 GB | Retention: 3 months | Account: Yes | CLI)_
-- [OneDrive](https://www.microsoft.com/en-us/microsoft-365/onedrive/) - Microsoft's cloud storage service with a 5 GB free tier and official apps across desktop and mobile platforms. _(Max: 250 GB | Retention: Not published | Account: Yes | API)_
+- [OneDrive](https://www.microsoft.com/en-us/microsoft-365/onedrive/) - Microsoft's cloud storage service with a 5 GB free tier and official apps across desktop and mobile platforms. _(Max: 5 GB | Retention: Not published | Account: Yes | API)_
 - [OpenDrive](https://www.opendrive.com/) - Cloud storage, backup, and sync service with a free personal plan, official apps across major platforms, and a public API. _(Max: 100 MB | Retention: Not published | Account: Yes | API)_
 - [OwnDrive](https://owndrive.com/) - Hosted personal cloud service with a 1 GB free tier and limited access to built-in apps, positioned as a lightweight Nextcloud-style drive. _(Max: Not published | Retention: Not published | Account: Yes)_
-- [pCloud](https://www.pcloud.com/) - Cloud storage service with a free tier, official apps across major desktop and mobile platforms, and a public developer API. _(Max: Not published | Retention: Not published | Account: Yes | API)_
+- [pCloud](https://www.pcloud.com/) - Cloud storage service with a free tier, official apps across major desktop and mobile platforms, and a public developer API. _(Max: 10 GB | Retention: Not published | Account: Yes | API)_
 - [Pixeldrain](https://pixeldrain.com/) - Fast file sharing service with expiry-on-inactivity behavior, plus FTPS and rclone support for paid filesystem usage. _(Max: 100 GB | Retention: 60 days | Account: Unknown | API | CLI)_
+- [PlusTransfer](https://www.plustransfer.com/) - No-account large-file transfer service now served through DataTransfer, with free transfers up to 10 GB and expiry controls. _(Max: 10 GB | Retention: 2 weeks | Account: No)_
+- [put.re](https://put.re/) - Minimal file-sharing service with direct browser uploads and a public API surface. _(Max: Not published | Retention: Not published | Account: Unknown | API)_
 - [SendSpace](https://www.sendspace.com/) - Transfer-oriented file sharing service with a current 300 MB free upload limit and optional recipient delivery without requiring recipient accounts. _(Max: 300 MB | Retention: Not published | Account: No)_
+- [SharePlace](https://shareplace.org/) - File hosting service with browser uploads, account-based management, and a documented public API. _(Max: Not published | Retention: Not published | Account: Unknown | API)_
 - [Sync](https://www.sync.com/) - Privacy-focused cloud storage service with a 5 GB free tier and end-to-end encrypted apps across desktop and mobile. _(Max: Not published | Retention: Not published | Account: Yes | E2EE)_
 - [TempSend](https://tempsend.com/) - Anonymous file-sharing service with selectable link lifetime, no registration requirement, and command-line-friendly uploads. _(Max: 2 GB | Retention: 1 year | Account: No | CLI)_
 - [TeraBox](https://www.terabox.com/) - Consumer cloud storage service that currently markets 1 TB of free storage and apps across Android, iOS, PC, and Mac. _(Max: 20 GB | Retention: Not published | Account: Yes)_
 - [Tresorit Send](https://send.tresorit.com/) - Free browser-based file transfer service from Tresorit with end-to-end encrypted link sharing. _(Max: 5 GB | Retention: 7 days | Account: No | E2EE)_
-- [Ulozto](https://ulozto.net/) - Modern cloud storage service with a free 25 GB plan, official mobile apps, Windows backup tooling, end-to-end encryption claims, and a resumable upload API. _(Max: Not published | Retention: Not published | Account: Yes | API | CLI | E2EE)_
+- [UAFile.COM](https://www.uafile.com/) - Ukrainian free file host with browser uploads, direct sharing links, and plainly published per-file and inactivity limits. _(Max: 200 MB | Retention: 30 days | Account: No)_
+- [Ulozto](https://ulozto.net/) - Modern cloud storage service with a free 25 GB plan, official mobile apps, Windows backup tooling, end-to-end encryption claims, and a resumable upload API. _(Max: 25 GB | Retention: Not published | Account: Yes | API | CLI | E2EE)_
 - [Upload.ee](https://www.upload.ee/) - Estonian file host with anonymous uploads, broad file-type support, and clear free retention rules for guest and registered users. _(Max: 100 MB | Retention: 50 days | Account: No)_
 - [UploadFiles.io](https://ufile.io/) - Free file sharing service with no-registration guest uploads, 5 GB max file size, optional expiry controls, and an upgrade path to free managed storage. _(Max: 5 GB | Retention: 30 days | Account: No)_
 - [UsersDrive](https://usersdrive.com/) - No-account file hosting service with password-protected links, remote URL uploads, and a clearly published max upload size on the public upload form. _(Max: 5250 MB | Retention: Not published | Account: No)_

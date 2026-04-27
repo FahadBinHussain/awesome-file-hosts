@@ -18,8 +18,12 @@ type Host = {
   summary: string;
   limits: {
     max_file_size: LimitField;
+    max_file_size_guest?: LimitField;
+    max_file_size_account?: LimitField;
     retention: LimitField;
     storage: LimitField;
+    storage_guest?: LimitField;
+    storage_account?: LimitField;
     bandwidth: LimitField;
   };
   account: {
@@ -77,9 +81,27 @@ export type HostRecord = Host & {
   accountLabel: "Required" | "Guest" | "Unknown";
   filters: {
     maxFileLabel: string;
+    maxFileGuestLabel: string;
+    maxFileAccountLabel: string;
     retentionLabel: string;
     storageLabel: string;
+    storageGuestLabel: string;
+    storageAccountLabel: string;
     bandwidthLabel: string;
+  };
+  datasetLabels: {
+    maxFileGuestLabel: string;
+    maxFileAccountLabel: string;
+    storageGuestLabel: string;
+    storageAccountLabel: string;
+  };
+  sortMetrics: {
+    maxFileGuestMb: number | null;
+    maxFileAccountMb: number | null;
+    storageGuestMb: number | null;
+    storageAccountMb: number | null;
+    bandwidthMb: number | null;
+    retentionDays: number | null;
   };
 };
 
@@ -126,10 +148,157 @@ function limitLabel(limit: LimitField) {
   return `${limit.value} ${limit.unit}`;
 }
 
+function mbComparableLabel(limit: LimitField) {
+  if (limit.value === null || limit.unit === null) {
+    return limitLabel(limit);
+  }
+
+  const valueInMb = normalizeToMb(limit.value, limit.unit);
+  if (valueInMb === null) {
+    return limitLabel(limit);
+  }
+
+  if (valueInMb >= 1024 * 1024) {
+    return `${formatComparableNumber(valueInMb / (1024 * 1024))} TB`;
+  }
+
+  if (valueInMb >= 1024) {
+    return `${formatComparableNumber(valueInMb / 1024)} GB`;
+  }
+
+  return `${formatComparableNumber(valueInMb)} MB`;
+}
+
+function formatComparableNumber(value: number) {
+  if (Number.isInteger(value)) {
+    return value.toLocaleString();
+  }
+
+  return value.toLocaleString(undefined, {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2
+  });
+}
+
+function normalizeToMb(value: number | null, unit: string | null) {
+  if (value === null || unit === null) return null;
+
+  const normalized = unit.toUpperCase();
+  if (normalized === "MB") return value;
+  if (normalized === "GB") return value * 1024;
+  if (normalized === "TB") return value * 1024 * 1024;
+
+  const baseUnit = normalized.split("/")[0];
+  if (baseUnit === "MB") return value;
+  if (baseUnit === "GB") return value * 1024;
+  if (baseUnit === "TB") return value * 1024 * 1024;
+
+  return null;
+}
+
+function normalizeRetentionToDays(value: number | null, unit: string | null) {
+  if (value === null || unit === null) return null;
+
+  const normalized = unit.toLowerCase();
+  if (normalized === "days") return value;
+  if (normalized === "hours") return value / 24;
+  if (normalized === "months") return value * 30;
+  if (normalized === "year") return value * 365;
+  if (normalized === "years") return value * 365;
+
+  return null;
+}
+
 function accountLabel(required: boolean | null): HostRecord["accountLabel"] {
   if (required === true) return "Required";
   if (required === false) return "Guest";
   return "Unknown";
+}
+
+function guestMaxField(host: Host) {
+  if (host.limits.max_file_size_guest) return host.limits.max_file_size_guest;
+  if (host.account.required === false) return host.limits.max_file_size;
+  return null;
+}
+
+function accountMaxField(host: Host) {
+  if (host.limits.max_file_size_account) return host.limits.max_file_size_account;
+  if (host.account.required === true) return host.limits.max_file_size;
+  if (host.account.required === false && host.limits.max_file_size_guest) {
+    return host.limits.max_file_size_guest;
+  }
+  return null;
+}
+
+function guestMaxLabel(host: Host) {
+  const field = guestMaxField(host);
+  if (field) return limitLabel(field);
+  if (host.account.required === true) return "Account only";
+  return "Not published";
+}
+
+function accountMaxLabel(host: Host) {
+  const explicit = host.limits.max_file_size_account;
+  if (explicit) return limitLabel(explicit);
+  if (host.account.required === true) return limitLabel(host.limits.max_file_size);
+  if (host.account.required === false && host.limits.max_file_size_guest) return "Same as guest";
+  return "Not published";
+}
+
+function guestMaxComparableLabel(host: Host) {
+  const field = guestMaxField(host);
+  if (field) return mbComparableLabel(field);
+  return guestMaxLabel(host);
+}
+
+function accountMaxComparableLabel(host: Host) {
+  const explicit = host.limits.max_file_size_account;
+  if (explicit) return mbComparableLabel(explicit);
+  if (host.account.required === true) return mbComparableLabel(host.limits.max_file_size);
+  if (host.account.required === false && host.limits.max_file_size_guest) return "Same as guest";
+  return "Not published";
+}
+
+function guestStorageField(host: Host) {
+  if (host.limits.storage_guest) return host.limits.storage_guest;
+  if (host.account.required === false) return host.limits.storage;
+  return null;
+}
+
+function accountStorageField(host: Host) {
+  if (host.limits.storage_account) return host.limits.storage_account;
+  if (host.account.required === true) return host.limits.storage;
+  if (host.account.required === false && guestStorageField(host)) return guestStorageField(host);
+  return null;
+}
+
+function guestStorageLabel(host: Host) {
+  const field = guestStorageField(host);
+  if (field) return limitLabel(field);
+  if (host.account.required === true) return "Account only";
+  return "Not published";
+}
+
+function accountStorageLabel(host: Host) {
+  const explicit = host.limits.storage_account;
+  if (explicit) return limitLabel(explicit);
+  if (host.account.required === true) return limitLabel(host.limits.storage);
+  if (host.account.required === false && guestStorageField(host)) return "Same as guest";
+  return "Not published";
+}
+
+function guestStorageComparableLabel(host: Host) {
+  const field = guestStorageField(host);
+  if (field) return mbComparableLabel(field);
+  return guestStorageLabel(host);
+}
+
+function accountStorageComparableLabel(host: Host) {
+  const explicit = host.limits.storage_account;
+  if (explicit) return mbComparableLabel(explicit);
+  if (host.account.required === true) return mbComparableLabel(host.limits.storage);
+  if (host.account.required === false && guestStorageField(host)) return "Same as guest";
+  return "Not published";
 }
 
 export function getSiteData(): SiteData {
@@ -139,9 +308,39 @@ export function getSiteData(): SiteData {
     accountLabel: accountLabel(host.account.required),
     filters: {
       maxFileLabel: limitLabel(host.limits.max_file_size),
+      maxFileGuestLabel: guestMaxLabel(host),
+      maxFileAccountLabel: accountMaxLabel(host),
       retentionLabel: limitLabel(host.limits.retention),
       storageLabel: limitLabel(host.limits.storage),
+      storageGuestLabel: guestStorageLabel(host),
+      storageAccountLabel: accountStorageLabel(host),
       bandwidthLabel: limitLabel(host.limits.bandwidth)
+    },
+    datasetLabels: {
+      maxFileGuestLabel: guestMaxComparableLabel(host),
+      maxFileAccountLabel: accountMaxComparableLabel(host),
+      storageGuestLabel: guestStorageComparableLabel(host),
+      storageAccountLabel: accountStorageComparableLabel(host)
+    },
+    sortMetrics: {
+      maxFileGuestMb: normalizeToMb(
+        guestMaxField(host)?.value ?? null,
+        guestMaxField(host)?.unit ?? null
+      ),
+      maxFileAccountMb: normalizeToMb(
+        accountMaxField(host)?.value ?? null,
+        accountMaxField(host)?.unit ?? null
+      ),
+      storageGuestMb: normalizeToMb(
+        guestStorageField(host)?.value ?? null,
+        guestStorageField(host)?.unit ?? null
+      ),
+      storageAccountMb: normalizeToMb(
+        accountStorageField(host)?.value ?? null,
+        accountStorageField(host)?.unit ?? null
+      ),
+      bandwidthMb: normalizeToMb(host.limits.bandwidth.value, host.limits.bandwidth.unit),
+      retentionDays: normalizeRetentionToDays(host.limits.retention.value, host.limits.retention.unit)
     }
   }));
 

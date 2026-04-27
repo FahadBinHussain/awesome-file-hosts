@@ -40,6 +40,25 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
     );
   }
 
+  const guestMaxField =
+    host.limits.max_file_size_guest ?? (host.account.required === false ? host.limits.max_file_size : undefined);
+  const accountMaxField =
+    host.limits.max_file_size_account ??
+    (host.account.required === true
+      ? host.limits.max_file_size
+      : host.account.required === false && host.limits.max_file_size_guest
+        ? host.limits.max_file_size_guest
+        : undefined);
+  const guestStorageField =
+    host.limits.storage_guest ?? (host.account.required === false ? host.limits.storage : undefined);
+  const accountStorageField =
+    host.limits.storage_account ??
+    (host.account.required === true
+      ? host.limits.storage
+      : host.account.required === false && guestStorageField
+        ? guestStorageField
+        : undefined);
+
   return (
     <aside className="rounded-[var(--radius-card)] border border-[var(--line)] bg-[var(--panel)] p-5">
       <div className="space-y-5">
@@ -67,25 +86,48 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
 
         <div className="grid gap-4 sm:grid-cols-2">
           <InfoPair
-            label="Max file size"
-            value={host.filters.maxFileLabel}
+            label="Max file (guest)"
+            value={host.filters.maxFileGuestLabel}
             host={host}
-            refs={host.limits.max_file_size.source_refs}
-            notes={host.limits.max_file_size.notes}
+            refs={guestMaxField?.source_refs}
+            notes={
+              guestMaxField?.notes ??
+              (host.account.required === true ? "A free account is required for uploads on this service." : "-")
+            }
           />
           <InfoPair
-            label="Retention"
-            value={host.filters.retentionLabel}
+            label="Max file (account)"
+            value={host.filters.maxFileAccountLabel}
             host={host}
-            refs={host.limits.retention.source_refs}
-            notes={host.limits.retention.notes}
+            refs={accountMaxField?.source_refs}
+            notes={
+              accountMaxField?.notes ??
+              (host.account.required === false && host.limits.max_file_size_guest
+                ? "No separate free-account cap is published; the free account appears to use the same ceiling as guest uploads."
+                : "-")
+            }
           />
           <InfoPair
-            label="Storage"
-            value={host.filters.storageLabel}
+            label="Storage (guest)"
+            value={host.filters.storageGuestLabel}
             host={host}
-            refs={host.limits.storage.source_refs}
-            notes={host.limits.storage.notes}
+            refs={guestStorageField?.source_refs}
+            notes={
+              guestStorageField?.notes ??
+              (host.account.required === true ? "A free account is required for persistent storage on this service." : "-")
+            }
+          />
+          <InfoPair
+            label="Storage (account)"
+            value={host.filters.storageAccountLabel}
+            host={host}
+            refs={accountStorageField?.source_refs}
+            notes={
+              accountStorageField?.notes ??
+              (host.account.required === false && guestStorageField
+                ? "No separate free-account storage quota is published; the free account appears to use the same storage ceiling as guest use."
+                : "-")
+            }
           />
           <InfoPair
             label="Bandwidth"
@@ -93,6 +135,13 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
             host={host}
             refs={host.limits.bandwidth.source_refs}
             notes={host.limits.bandwidth.notes}
+          />
+          <InfoPair
+            label="Retention"
+            value={host.filters.retentionLabel}
+            host={host}
+            refs={host.limits.retention.source_refs}
+            notes={host.limits.retention.notes}
           />
         </div>
 

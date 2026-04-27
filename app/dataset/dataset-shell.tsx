@@ -29,11 +29,12 @@ type Props = {
 type DatasetMode = "hosts" | "queue";
 type HostSortKey =
   | "name"
-  | "max"
+  | "max_guest"
+  | "max_account"
+  | "storage_guest"
+  | "storage_account"
   | "retention"
-  | "storage"
   | "bandwidth"
-  | "account"
   | "api"
   | "cli"
   | "e2ee"
@@ -91,13 +92,78 @@ const hostColumnDefs: HostColumn[] = [
     )
   },
   {
-    id: "max",
-    label: "Max file",
-    width: "118px",
+    id: "max_guest",
+    label: "Max (guest)",
+    width: "124px",
     render: (host) => (
       <div className="flex items-center gap-1.5">
-        <span>{host.filters.maxFileLabel}</span>
-        <SourceRefLinks host={host} refs={host.limits.max_file_size.source_refs} className="inline-flex gap-1" />
+        <span>{host.datasetLabels.maxFileGuestLabel}</span>
+        <SourceRefLinks
+          host={host}
+          refs={
+            host.limits.max_file_size_guest?.source_refs ??
+            (host.account.required === false ? host.limits.max_file_size.source_refs : undefined)
+          }
+          className="inline-flex gap-1"
+        />
+      </div>
+    )
+  },
+  {
+    id: "max_account",
+    label: "Max (acct)",
+    width: "124px",
+    render: (host) => (
+      <div className="flex items-center gap-1.5">
+        <span>{host.datasetLabels.maxFileAccountLabel}</span>
+        <SourceRefLinks
+          host={host}
+          refs={
+            (
+              host.limits.max_file_size_account ??
+              (host.account.required === true ? host.limits.max_file_size : host.limits.max_file_size_guest)
+            )?.source_refs
+          }
+          className="inline-flex gap-1"
+        />
+      </div>
+    )
+  },
+  {
+    id: "storage_guest",
+    label: "Storage (guest)",
+    width: "124px",
+    render: (host) => (
+      <div className="flex items-center gap-1.5">
+        <span>{host.datasetLabels.storageGuestLabel}</span>
+        <SourceRefLinks
+          host={host}
+          refs={
+            host.limits.storage_guest?.source_refs ??
+            (host.account.required === false ? host.limits.storage.source_refs : undefined)
+          }
+          className="inline-flex gap-1"
+        />
+      </div>
+    )
+  },
+  {
+    id: "storage_account",
+    label: "Storage (acct)",
+    width: "124px",
+    render: (host) => (
+      <div className="flex items-center gap-1.5">
+        <span>{host.datasetLabels.storageAccountLabel}</span>
+        <SourceRefLinks
+          host={host}
+          refs={
+            (
+              host.limits.storage_account ??
+              (host.account.required === true ? host.limits.storage : host.limits.storage_guest)
+            )?.source_refs
+          }
+          className="inline-flex gap-1"
+        />
       </div>
     )
   },
@@ -112,17 +178,7 @@ const hostColumnDefs: HostColumn[] = [
       </div>
     )
   },
-  {
-    id: "storage",
-    label: "Storage",
-    width: "122px",
-    render: (host) => (
-      <div className="flex items-center gap-1.5">
-        <span>{host.filters.storageLabel}</span>
-        <SourceRefLinks host={host} refs={host.limits.storage.source_refs} className="inline-flex gap-1" />
-      </div>
-    )
-  },
+  { id: "api", label: "API", width: "72px", render: (host) => (host.developer.api_available ? "Yes" : "No") },
   {
     id: "bandwidth",
     label: "Bandwidth",
@@ -134,8 +190,6 @@ const hostColumnDefs: HostColumn[] = [
       </div>
     )
   },
-  { id: "account", label: "Account", width: "96px", render: (host) => host.accountLabel },
-  { id: "api", label: "API", width: "72px", render: (host) => (host.developer.api_available ? "Yes" : "No") },
   { id: "cli", label: "CLI", width: "72px", render: (host) => (host.developer.cli_friendly ? "Yes" : "No") },
   { id: "e2ee", label: "E2EE", width: "72px", render: (host) => (host.security.e2ee ? "Yes" : "No") },
   { id: "https", label: "HTTPS", width: "72px", render: (host) => (host.security.https_only ? "Yes" : "No") },
@@ -261,20 +315,30 @@ function gridTemplate(columns: Array<{ width: string }>) {
   return columns.map((column) => column.width).join(" ");
 }
 
+function hostHeaderLabel(column: HostColumn) {
+  if (column.id === "max_guest") return "w/o acc";
+  if (column.id === "max_account") return "w/ acc";
+  if (column.id === "storage_guest") return "w/o acc";
+  if (column.id === "storage_account") return "w/ acc";
+  return column.label;
+}
+
 function hostSortValue(host: HostRecord, key: HostSortKey) {
   switch (key) {
     case "name":
       return host.name.toLowerCase();
-    case "max":
-      return host.limits.max_file_size.value ?? -1;
+    case "max_guest":
+      return host.sortMetrics.maxFileGuestMb ?? -1;
+    case "max_account":
+      return host.sortMetrics.maxFileAccountMb ?? -1;
     case "retention":
-      return host.limits.retention.value ?? -1;
-    case "storage":
-      return host.limits.storage.value ?? -1;
+      return host.sortMetrics.retentionDays ?? -1;
+    case "storage_guest":
+      return host.sortMetrics.storageGuestMb ?? -1;
+    case "storage_account":
+      return host.sortMetrics.storageAccountMb ?? -1;
     case "bandwidth":
-      return host.limits.bandwidth.value ?? -1;
-    case "account":
-      return host.accountLabel;
+      return host.sortMetrics.bandwidthMb ?? -1;
     case "api":
       return host.developer.api_available ? 1 : 0;
     case "cli":
@@ -470,6 +534,14 @@ export function DatasetApp({ data }: Props) {
   const visibleQueueColumns = queueColumnDefs.filter((column) => !hiddenQueueColumns.includes(column.id));
   const hostGridTemplate = gridTemplate(visibleHostColumns);
   const queueGridTemplate = gridTemplate(visibleQueueColumns);
+  const maxGuestColumnIndex = visibleHostColumns.findIndex((column) => column.id === "max_guest");
+  const maxAccountColumnIndex = visibleHostColumns.findIndex((column) => column.id === "max_account");
+  const storageGuestColumnIndex = visibleHostColumns.findIndex((column) => column.id === "storage_guest");
+  const storageAccountColumnIndex = visibleHostColumns.findIndex((column) => column.id === "storage_account");
+  const showGroupedMaxHeader =
+    maxGuestColumnIndex !== -1 && maxAccountColumnIndex === maxGuestColumnIndex + 1;
+  const showGroupedStorageHeader =
+    storageGuestColumnIndex !== -1 && storageAccountColumnIndex === storageGuestColumnIndex + 1;
 
   const filteredHosts = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -478,9 +550,11 @@ export function DatasetApp({ data }: Props) {
         host.name,
         host.summary,
         host.tags.join(" "),
-        host.filters.maxFileLabel,
+        host.datasetLabels.maxFileGuestLabel,
+        host.datasetLabels.maxFileAccountLabel,
         host.filters.retentionLabel,
-        host.filters.storageLabel,
+        host.datasetLabels.storageGuestLabel,
+        host.datasetLabels.storageAccountLabel,
         host.filters.bandwidthLabel
       ]
         .join(" ")
@@ -568,7 +642,7 @@ export function DatasetApp({ data }: Props) {
   return (
     <AppFrame current="dataset">
       <div className="min-h-0 flex-1">
-        <section className="min-h-0 overflow-visible rounded-[var(--radius-card)] border border-[var(--line)] bg-[var(--panel)]">
+        <section className="min-h-0 overflow-visible bg-transparent">
           <div className="relative z-20 flex flex-col gap-4 border-b border-[var(--line)] p-4">
             <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
               <div className="animate-fade-in-up">
@@ -728,42 +802,148 @@ export function DatasetApp({ data }: Props) {
           <div className="relative z-0">
             {mode === "hosts" ? (
               <div className="min-w-max text-sm">
-                <div
-                  className="sticky top-0 z-10 grid border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl"
-                  style={{ gridTemplateColumns: hostGridTemplate }}
-                >
-                  {visibleHostColumns.map((column) => {
-                    const sortable = column.id !== "tags";
-                    const isSorted = hostSort.key === column.id;
-                    return (
-                      <div
-                        key={column.id}
-                        className={[
-                          "px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
-                          column.id === "name" ? "sticky left-0 z-20 bg-[var(--bg-elevated)]" : "",
-                          isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
-                        ].join(" ")}
-                      >
-                        {sortable ? (
-                          <button
-                            onClick={() => changeHostSort(column.id as HostSortKey)}
-                            className="inline-flex items-center gap-1.5 transition-all hover:opacity-80"
+                <div className="sticky top-0 z-30 border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
+                  {showGroupedMaxHeader || showGroupedStorageHeader ? (
+                    <div
+                      className="grid"
+                      style={{ gridTemplateColumns: hostGridTemplate, gridTemplateRows: "auto auto" }}
+                    >
+                      {visibleHostColumns.map((column, index) => {
+                        if (
+                          (showGroupedMaxHeader && (column.id === "max_guest" || column.id === "max_account")) ||
+                          (showGroupedStorageHeader && (column.id === "storage_guest" || column.id === "storage_account"))
+                        ) {
+                          return null;
+                        }
+
+                        const sortable = column.id !== "tags";
+                        const isSorted = hostSort.key === column.id;
+
+                        return (
+                          <div
+                            key={column.id}
+                            style={{ gridColumn: String(index + 1), gridRow: "1 / span 2" }}
+                            className={[
+                              "flex items-center px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
+                              column.id === "name" ? "sticky left-0 z-20 bg-[var(--bg-elevated)]" : "",
+                              isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
+                            ].join(" ")}
                           >
-                            {column.label}
-                            {isSorted ? (
-                              <span className="flex h-4 w-4 items-center justify-center rounded bg-[var(--accent-soft)] text-[11px]">
-                                {hostSort.direction === "asc" ? "↑" : "↓"}
-                              </span>
+                            {sortable ? (
+                              <button
+                                onClick={() => changeHostSort(column.id as HostSortKey)}
+                                className="inline-flex items-center gap-1.5 transition-all hover:opacity-80"
+                              >
+                                {hostHeaderLabel(column)}
+                                {isSorted ? (
+                                  <span className="flex h-4 w-4 items-center justify-center rounded bg-[var(--accent-soft)] text-[11px]">
+                                    {hostSort.direction === "asc" ? "↑" : "↓"}
+                                  </span>
+                                ) : (
+                                  <ArrowsDownUp size={11} />
+                                )}
+                              </button>
                             ) : (
-                              <ArrowsDownUp size={11} />
+                              hostHeaderLabel(column)
                             )}
-                          </button>
-                        ) : (
-                          column.label
-                        )}
-                      </div>
-                    );
-                  })}
+                          </div>
+                        );
+                      })}
+
+                      {showGroupedMaxHeader ? (
+                        <div
+                          style={{ gridColumn: `${maxGuestColumnIndex + 1} / span 2`, gridRow: "1" }}
+                          className="flex items-center justify-center border-x border-b border-[var(--line)]/60 px-4 py-2 text-center text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--text-muted)]"
+                        >
+                          Max file size
+                        </div>
+                      ) : null}
+
+                      {showGroupedStorageHeader ? (
+                        <div
+                          style={{ gridColumn: `${storageGuestColumnIndex + 1} / span 2`, gridRow: "1" }}
+                          className="flex items-center justify-center border-x border-b border-[var(--line)]/60 px-4 py-2 text-center text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--text-muted)]"
+                        >
+                          Storage
+                        </div>
+                      ) : null}
+
+                      {visibleHostColumns
+                        .filter(
+                          (column) =>
+                            (showGroupedMaxHeader && (column.id === "max_guest" || column.id === "max_account")) ||
+                            (showGroupedStorageHeader &&
+                              (column.id === "storage_guest" || column.id === "storage_account"))
+                        )
+                        .map((column) => {
+                          const isSorted = hostSort.key === column.id;
+                          const columnIndex = visibleHostColumns.findIndex((item) => item.id === column.id);
+
+                          return (
+                            <div
+                              key={column.id}
+                              style={{ gridColumn: String(columnIndex + 1), gridRow: "2" }}
+                              className={[
+                                "px-4 py-3 text-left text-[11px] uppercase tracking-[0.25em] font-bold transition-colors whitespace-nowrap",
+                                isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
+                              ].join(" ")}
+                            >
+                              <button
+                                onClick={() => changeHostSort(column.id as HostSortKey)}
+                                className="inline-flex items-center gap-1.5 transition-all hover:opacity-80"
+                              >
+                                {hostHeaderLabel(column)}
+                                {isSorted ? (
+                                  <span className="flex h-4 w-4 items-center justify-center rounded bg-[var(--accent-soft)] text-[11px]">
+                                    {hostSort.direction === "asc" ? "↑" : "↓"}
+                                  </span>
+                                ) : (
+                                  <ArrowsDownUp size={11} />
+                                )}
+                              </button>
+                            </div>
+                          );
+                        })}
+                    </div>
+                  ) : (
+                    <div
+                      className="grid"
+                      style={{ gridTemplateColumns: hostGridTemplate }}
+                    >
+                      {visibleHostColumns.map((column) => {
+                        const sortable = column.id !== "tags";
+                        const isSorted = hostSort.key === column.id;
+                        return (
+                          <div
+                            key={column.id}
+                            className={[
+                              "px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
+                              column.id === "name" ? "sticky left-0 z-20 bg-[var(--bg-elevated)]" : "",
+                              isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
+                            ].join(" ")}
+                          >
+                            {sortable ? (
+                              <button
+                                onClick={() => changeHostSort(column.id as HostSortKey)}
+                                className="inline-flex items-center gap-1.5 transition-all hover:opacity-80"
+                              >
+                                {hostHeaderLabel(column)}
+                                {isSorted ? (
+                                  <span className="flex h-4 w-4 items-center justify-center rounded bg-[var(--accent-soft)] text-[11px]">
+                                    {hostSort.direction === "asc" ? "↑" : "↓"}
+                                  </span>
+                                ) : (
+                                  <ArrowsDownUp size={11} />
+                                )}
+                              </button>
+                            ) : (
+                              hostHeaderLabel(column)
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
                 {filteredHosts.map((host, index) => (
                   <button

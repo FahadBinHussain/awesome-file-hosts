@@ -45,10 +45,22 @@
           "max_file_size": {
             "$ref": "#/$defs/limitField"
           },
+          "max_file_size_guest": {
+            "$ref": "#/$defs/limitField"
+          },
+          "max_file_size_account": {
+            "$ref": "#/$defs/limitField"
+          },
           "retention": {
             "$ref": "#/$defs/limitField"
           },
           "storage": {
+            "$ref": "#/$defs/limitField"
+          },
+          "storage_guest": {
+            "$ref": "#/$defs/limitField"
+          },
+          "storage_account": {
             "$ref": "#/$defs/limitField"
           },
           "bandwidth": {

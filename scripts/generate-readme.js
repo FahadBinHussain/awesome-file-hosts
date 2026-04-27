@@ -67,8 +67,20 @@ function validateHost(host) {
   assert(typeof host.summary === "string" && host.summary.trim(), "summary must be a non-empty string");
 
   validateLimitField(`${host.name}.limits.max_file_size`, host.limits.max_file_size);
+  if (host.limits.max_file_size_guest !== undefined) {
+    validateLimitField(`${host.name}.limits.max_file_size_guest`, host.limits.max_file_size_guest);
+  }
+  if (host.limits.max_file_size_account !== undefined) {
+    validateLimitField(`${host.name}.limits.max_file_size_account`, host.limits.max_file_size_account);
+  }
   validateLimitField(`${host.name}.limits.retention`, host.limits.retention);
   validateLimitField(`${host.name}.limits.storage`, host.limits.storage);
+  if (host.limits.storage_guest !== undefined) {
+    validateLimitField(`${host.name}.limits.storage_guest`, host.limits.storage_guest);
+  }
+  if (host.limits.storage_account !== undefined) {
+    validateLimitField(`${host.name}.limits.storage_account`, host.limits.storage_account);
+  }
   validateLimitField(`${host.name}.limits.bandwidth`, host.limits.bandwidth);
 
   assert(
@@ -143,8 +155,12 @@ function validateHost(host) {
   const maxSourceIndex = host.sources.length - 1;
   for (const refs of [
     host.limits.max_file_size.source_refs,
+    host.limits.max_file_size_guest?.source_refs,
+    host.limits.max_file_size_account?.source_refs,
     host.limits.retention.source_refs,
     host.limits.storage.source_refs,
+    host.limits.storage_guest?.source_refs,
+    host.limits.storage_account?.source_refs,
     host.limits.bandwidth.source_refs,
     host.account.source_refs,
     host.developer.source_refs,
