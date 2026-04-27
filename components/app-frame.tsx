@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Database, House, Table } from "@phosphor-icons/react/dist/ssr";
+import { ThemeSwitcher } from "./theme-switcher";
 
 type Props = {
   children: ReactNode;
@@ -24,8 +25,8 @@ function NavLink({
       className={[
         "group relative inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-medium transition-all duration-250",
         active
-          ? "border-[var(--accent)]/30 bg-[var(--accent-soft)] text-white shadow-[0_0_20px_-4px_var(--accent-glow)]"
-          : "border-[var(--line)] bg-[rgba(255,255,255,0.025)] text-[var(--text-secondary)] hover:border-[var(--accent)]/40 hover:text-white hover:shadow-[0_0_20px_-6px_rgba(59,130,246,0.15)]"
+          ? "rounded-[var(--radius-pill)] border-[var(--accent)]/30 bg-[var(--accent-soft)] text-[var(--accent-content)] shadow-[0_0_20px_-4px_var(--accent-glow)]"
+          : "rounded-[var(--radius-pill)] border-[var(--line)] bg-[var(--surface-1)] text-[var(--text-secondary)] hover:border-[var(--accent)]/40 hover:text-[var(--text-primary)] hover:shadow-[0_0_20px_-6px_var(--accent-glow)]"
       ].join(" ")}
     >
       <span className={[
@@ -46,7 +47,7 @@ export function AppFrame({ children, current }: Props) {
   return (
     <main className="min-h-[100dvh]">
       <div className="mx-auto flex min-h-[100dvh] max-w-[1920px] flex-col">
-        <header className="border-b border-[var(--line)] bg-[rgba(8,10,14,0.85)] px-4 py-4 backdrop-blur-2xl md:px-6">
+        <header className="relative z-50 isolate border-b border-[var(--line)] bg-[color-mix(in_oklab,var(--bg)_78%,transparent)] px-4 py-4 backdrop-blur-2xl md:px-6">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div className="animate-fade-in-up">
               <div className="flex items-center gap-2">
@@ -72,10 +73,11 @@ export function AppFrame({ children, current }: Props) {
                 icon={<Table size={17} weight="fill" />}
                 label="Dataset"
               />
-              <div className="ml-1 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[rgba(255,255,255,0.02)] px-4 py-2 text-[11px] text-[var(--text-muted)] font-mono transition-all hover:border-[var(--accent)]/30">
+              <div className="ml-1 inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-1)] px-4 py-2 text-[11px] text-[var(--text-muted)] font-mono transition-all hover:border-[var(--accent)]/30">
                 <Database size={14} weight="duotone" className="text-[var(--accent)]" />
                 <span>Source: data/*.json</span>
               </div>
+              <ThemeSwitcher />
             </nav>
           </div>
         </header>

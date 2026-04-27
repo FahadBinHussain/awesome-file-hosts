@@ -26,5 +26,8 @@
     "react-dom": "^19.2.5",
     "tailwindcss": "^4.2.4",
     "typescript": "^6.0.3"
+  },
+  "devDependencies": {
+    "daisyui": "^5.5.19"
   }
 }

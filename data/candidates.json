@@ -1748,8 +1748,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The official service uses a premium-gated cyberlocker model with minimum free speed, one-file-per-hour restrictions, and limits on large-file downloads for free users, which puts it outside the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "HitFile premium page",
+        "url": "https://hitfile.net/premium",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "HitFile FAQ",
+        "url": "https://hitfile.net/faq",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "HitFile sample free download page",
+        "url": "https://hitfile.net/download/free/0H1XQBd",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Hostr",
@@ -2126,8 +2144,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The official service openly uses a premium-gated cyberlocker model with 180-second waits, 20 kb/s free speed, ads, non-resumable free downloads, and affiliate payouts, which places it outside the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "NitroFlare FAQ",
+        "url": "https://nitroflare.com/howto",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "NitroFlare sample download page showing free vs premium limits",
+        "url": "https://nitroflare.com/view/9079EA6941CC7DA/affiliatesFAQ",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "NitroFlare affiliates FAQ",
+        "url": "https://nitroflare.com/affiliatesFAQ",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "NovaFile",
@@ -2511,8 +2547,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The official site openly uses a premium-gated cyberlocker model with very slow free speeds, session intervals, small free upload limits, and uploader payout plans, which places it outside the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "SubyShare FAQ",
+        "url": "https://subyshare.com/help/faq",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "SubyShare Terms of Service",
+        "url": "https://subyshare.com/us/tos",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "SubyShare live download page showing premium vs free speed",
+        "url": "https://subyshare.com/6n8i5r03owvr/EgMGV6YxnAE1.mp4.html",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "SundryFiles",
@@ -2640,8 +2694,16 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The official FAQ openly describes a premium-gated cyberlocker model with 55-60 KB/s free speed, wait times, IP-based queues, premium traffic quotas, and paid acceleration, which puts it outside the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "Turbobit FAQ",
+        "url": "https://turbobit.net/faq",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "TusFiles",
@@ -2721,8 +2783,16 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The current public.upera.co trail points to a suspended or expired domain state rather than a dependable active host for the verified list.",
+    "verification_references": [
+      {
+        "label": "ScamAdviser report showing public.upera.co title as Home - domain expired",
+        "url": "https://www.scamadviser.com/check-website/public.upera.co",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Upload",
@@ -2778,8 +2848,16 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The official site openly promotes premium plans, affiliate-style earning programs, and reseller flows, which puts it outside the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "UploadBoy homepage",
+        "url": "https://uploadboy.com/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "UploadCD",
@@ -2844,8 +2922,16 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The official service openly presents premium packages, reseller access, and affiliate tooling, which places it in the premium-locker category rather than the curated verified list.",
+    "verification_references": [
+      {
+        "label": "UploadGig homepage",
+        "url": "https://uploadgig.com/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Uploadify",
@@ -3049,8 +3135,16 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The official site openly promotes premium membership, reseller access, and a make-money program, which puts it outside the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "WupFile homepage",
+        "url": "https://wupfile.com/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "WuShare",

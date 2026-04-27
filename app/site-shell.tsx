@@ -26,9 +26,9 @@ type Props = {
 type ViewMode = "hosts" | "queue" | "method";
 
 const statusTone: Record<CandidateRecord["verification_status"], string> = {
-  pending: "text-[var(--warn)] bg-[rgba(243,187,91,0.12)] border-[rgba(243,187,91,0.18)]",
-  verified: "text-[var(--good)] bg-[rgba(99,211,143,0.12)] border-[rgba(99,211,143,0.18)]",
-  rejected: "text-[var(--bad)] bg-[rgba(240,106,106,0.12)] border-[rgba(240,106,106,0.18)]"
+  pending: "text-[var(--warn)] bg-[var(--warn-soft)] border-[var(--warn)]/20",
+  verified: "text-[var(--good)] bg-[var(--good-soft)] border-[var(--good)]/20",
+  rejected: "text-[var(--bad)] bg-[var(--bad-soft)] border-[var(--bad)]/20"
 };
 
 function StatTile({
@@ -41,9 +41,9 @@ function StatTile({
   helper: string;
 }) {
   return (
-    <div className="rounded-[2rem] border border-[var(--line)] bg-[var(--panel)] px-5 py-4 shadow-[0_20px_50px_-24px_rgba(0,0,0,0.6)]">
+    <div className="rounded-[var(--radius-card)] border border-[var(--line)] bg-[var(--panel)] px-5 py-4 shadow-[var(--shadow-soft)]">
       <div className="text-xs uppercase tracking-[0.24em] text-[var(--soft)]">{label}</div>
-      <div className="mt-3 text-3xl font-semibold tracking-tight text-white">{value}</div>
+      <div className="mt-3 text-3xl font-semibold tracking-tight text-[var(--text-primary)]">{value}</div>
       <div className="mt-1 text-sm text-[var(--muted)]">{helper}</div>
     </div>
   );
@@ -64,8 +64,8 @@ function PillButton({
       className={[
         "rounded-full border px-4 py-2 text-sm transition duration-300",
         active
-          ? "border-[rgba(73,179,255,0.3)] bg-[var(--accent-soft)] text-white"
-          : "border-[var(--line)] bg-[rgba(255,255,255,0.02)] text-[var(--muted)] hover:border-[rgba(255,255,255,0.16)] hover:text-white"
+          ? "rounded-[var(--radius-pill)] border-[var(--accent)]/30 bg-[var(--accent-soft)] text-[var(--accent-content)]"
+          : "rounded-[var(--radius-pill)] border-[var(--line)] bg-[var(--surface-1)] text-[var(--muted)] hover:border-[var(--line-strong)] hover:text-[var(--text-primary)]"
       ].join(" ")}
     >
       {children}
@@ -86,12 +86,12 @@ function HostRow({
     <button
       onClick={onSelect}
       className={[
-        "grid w-full grid-cols-[minmax(0,1.4fr)_minmax(0,0.8fr)_minmax(0,0.8fr)_minmax(0,0.6fr)] gap-4 border-b border-[rgba(255,255,255,0.06)] px-4 py-4 text-left transition duration-300",
-        active ? "bg-[rgba(73,179,255,0.12)]" : "hover:bg-[rgba(255,255,255,0.03)]"
+        "grid w-full grid-cols-[minmax(0,1.4fr)_minmax(0,0.8fr)_minmax(0,0.8fr)_minmax(0,0.6fr)] gap-4 border-b border-[var(--line)] px-4 py-4 text-left transition duration-300",
+        active ? "bg-[var(--accent-soft)]" : "hover:bg-[var(--surface-2)]"
       ].join(" ")}
     >
       <div className="min-w-0">
-        <div className="truncate text-sm font-medium text-white">{host.name}</div>
+        <div className="truncate text-sm font-medium text-[var(--text-primary)]">{host.name}</div>
         <div className="mt-1 line-clamp-2 text-sm text-[var(--muted)]">{host.summary}</div>
       </div>
       <div className="text-sm text-[var(--text)]">{host.filters.maxFileLabel}</div>
@@ -106,9 +106,9 @@ function HostRow({
 
 function CandidateRow({ candidate }: { candidate: CandidateRecord }) {
   return (
-    <div className="grid gap-3 border-b border-[rgba(255,255,255,0.06)] px-4 py-4 md:grid-cols-[minmax(0,1.2fr)_120px_140px_minmax(0,1fr)]">
+    <div className="grid gap-3 border-b border-[var(--line)] px-4 py-4 md:grid-cols-[minmax(0,1.2fr)_120px_140px_minmax(0,1fr)]">
       <div className="min-w-0">
-        <div className="truncate text-sm font-medium text-white">{candidate.name}</div>
+        <div className="truncate text-sm font-medium text-[var(--text-primary)]">{candidate.name}</div>
         <div className="mt-1 text-sm text-[var(--muted)]">{candidate.type}</div>
       </div>
       <div className="text-sm text-[var(--text)]">{candidate.free_volume ?? "Unknown"}</div>
@@ -175,13 +175,13 @@ export function ExplorerApp({ data }: Props) {
 
   return (
     <AppFrame current="home">
-        <section className="grid gap-4 border-b border-[rgba(255,255,255,0.08)] pb-4 lg:grid-cols-[minmax(0,1.5fr)_minmax(520px,1fr)]">
+        <section className="grid gap-4 border-b border-[var(--line)] pb-4 lg:grid-cols-[minmax(0,1.5fr)_minmax(520px,1fr)]">
           <div className="space-y-4">
-            <div className="inline-flex rounded-full border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.03)] px-3 py-1 text-xs uppercase tracking-[0.28em] text-[var(--soft)]">
+            <div className="inline-flex rounded-full border border-[var(--line)] bg-[var(--surface-2)] px-3 py-1 text-xs uppercase tracking-[0.28em] text-[var(--soft)]">
               Structured host intelligence
             </div>
             <div className="max-w-4xl">
-              <h1 className="text-balance text-4xl font-semibold tracking-tight text-white md:text-6xl">
+              <h1 className="text-balance text-4xl font-semibold tracking-tight text-[var(--text-primary)] md:text-6xl">
                 The dataset outgrew the README, so now it has a proper control room.
               </h1>
             </div>
@@ -202,8 +202,8 @@ export function ExplorerApp({ data }: Props) {
         </section>
 
         <section className="grid min-h-0 flex-1 gap-4 lg:grid-cols-[300px_minmax(0,1fr)_420px]">
-          <aside className="rounded-[2rem] border border-[var(--line)] bg-[var(--panel)] p-4">
-            <div className="flex items-center gap-2 text-sm font-medium text-white">
+          <aside className="rounded-[var(--radius-card)] border border-[var(--line)] bg-[var(--panel)] p-4">
+            <div className="flex items-center gap-2 text-sm font-medium text-[var(--text-primary)]">
               <Funnel size={18} />
               Explorer controls
             </div>
@@ -224,13 +224,13 @@ export function ExplorerApp({ data }: Props) {
               <label className="mb-2 block text-[11px] uppercase tracking-[0.22em] text-[var(--soft)]">
                 Search
               </label>
-              <div className="flex items-center gap-3 rounded-[1.25rem] border border-[var(--line)] bg-[rgba(255,255,255,0.03)] px-3 py-3">
+              <div className="flex items-center gap-3 rounded-[var(--radius-xl)] border border-[var(--line)] bg-[var(--surface-2)] px-3 py-3">
                 <MagnifyingGlass size={18} className="text-[var(--soft)]" />
                 <input
                   value={search}
                   onChange={(event) => setSearch(event.target.value)}
                   placeholder="Host, tag, behavior"
-                  className="w-full bg-transparent text-sm text-white outline-none placeholder:text-[var(--soft)]"
+                  className="w-full bg-transparent text-sm text-[var(--text-primary)] outline-none placeholder:text-[var(--soft)]"
                 />
               </div>
             </div>
@@ -238,10 +238,10 @@ export function ExplorerApp({ data }: Props) {
             <div className="mt-5 space-y-3">
               <button
                 onClick={() => setApiOnly((value) => !value)}
-                className={`flex w-full items-center justify-between rounded-[1.2rem] border px-3 py-3 text-sm transition ${
+                className={`flex w-full items-center justify-between rounded-[var(--radius-panel)] border px-3 py-3 text-sm transition ${
                   apiOnly
-                    ? "border-[rgba(73,179,255,0.3)] bg-[var(--accent-soft)] text-white"
-                    : "border-[var(--line)] text-[var(--muted)] hover:text-white"
+                    ? "border-[var(--accent)]/30 bg-[var(--accent-soft)] text-[var(--accent-content)]"
+                    : "border-[var(--line)] text-[var(--muted)] hover:text-[var(--text-primary)]"
                 }`}
               >
                 <span className="flex items-center gap-2">
@@ -252,10 +252,10 @@ export function ExplorerApp({ data }: Props) {
               </button>
               <button
                 onClick={() => setGuestOnly((value) => !value)}
-                className={`flex w-full items-center justify-between rounded-[1.2rem] border px-3 py-3 text-sm transition ${
+                className={`flex w-full items-center justify-between rounded-[var(--radius-panel)] border px-3 py-3 text-sm transition ${
                   guestOnly
-                    ? "border-[rgba(73,179,255,0.3)] bg-[var(--accent-soft)] text-white"
-                    : "border-[var(--line)] text-[var(--muted)] hover:text-white"
+                    ? "border-[var(--accent)]/30 bg-[var(--accent-soft)] text-[var(--accent-content)]"
+                    : "border-[var(--line)] text-[var(--muted)] hover:text-[var(--text-primary)]"
                 }`}
               >
                 <span className="flex items-center gap-2">
@@ -266,10 +266,10 @@ export function ExplorerApp({ data }: Props) {
               </button>
               <button
                 onClick={() => setE2eeOnly((value) => !value)}
-                className={`flex w-full items-center justify-between rounded-[1.2rem] border px-3 py-3 text-sm transition ${
+                className={`flex w-full items-center justify-between rounded-[var(--radius-panel)] border px-3 py-3 text-sm transition ${
                   e2eeOnly
-                    ? "border-[rgba(73,179,255,0.3)] bg-[var(--accent-soft)] text-white"
-                    : "border-[var(--line)] text-[var(--muted)] hover:text-white"
+                    ? "border-[var(--accent)]/30 bg-[var(--accent-soft)] text-[var(--accent-content)]"
+                    : "border-[var(--line)] text-[var(--muted)] hover:text-[var(--text-primary)]"
                 }`}
               >
                 <span className="flex items-center gap-2">
@@ -298,8 +298,8 @@ export function ExplorerApp({ data }: Props) {
                       className={[
                         "rounded-full border px-3 py-1.5 text-xs transition",
                         active
-                          ? "border-[rgba(99,211,143,0.3)] bg-[rgba(99,211,143,0.14)] text-white"
-                          : "border-[var(--line)] text-[var(--muted)] hover:text-white"
+                          ? "border-[var(--good)]/30 bg-[var(--good-soft)] text-[var(--good-content)]"
+                          : "border-[var(--line)] text-[var(--muted)] hover:text-[var(--text-primary)]"
                       ].join(" ")}
                     >
                       {tag}
@@ -310,10 +310,10 @@ export function ExplorerApp({ data }: Props) {
             </div>
           </aside>
 
-          <section className="min-h-0 rounded-[2rem] border border-[var(--line)] bg-[var(--panel)]">
+          <section className="min-h-0 rounded-[var(--radius-card)] border border-[var(--line)] bg-[var(--panel)]">
             {view === "hosts" && (
               <div className="flex h-full min-h-0 flex-col">
-                <div className="sticky top-0 z-10 grid grid-cols-[minmax(0,1.4fr)_minmax(0,0.8fr)_minmax(0,0.8fr)_minmax(0,0.6fr)] gap-4 border-b border-[rgba(255,255,255,0.08)] bg-[var(--panel)] px-4 py-4 text-[11px] uppercase tracking-[0.22em] text-[var(--soft)] backdrop-blur-sm">
+                <div className="sticky top-0 z-10 grid grid-cols-[minmax(0,1.4fr)_minmax(0,0.8fr)_minmax(0,0.8fr)_minmax(0,0.6fr)] gap-4 border-b border-[var(--line)] bg-[var(--panel)] px-4 py-4 text-[11px] uppercase tracking-[0.22em] text-[var(--soft)] backdrop-blur-sm">
                   <div>Host</div>
                   <div>Max file size</div>
                   <div>Retention</div>
@@ -339,7 +339,7 @@ export function ExplorerApp({ data }: Props) {
 
             {view === "queue" && (
               <div className="flex h-full min-h-0 flex-col">
-                <div className="sticky top-0 z-10 grid grid-cols-[minmax(0,1.2fr)_120px_140px_minmax(0,1fr)] gap-3 border-b border-[rgba(255,255,255,0.08)] bg-[var(--panel)] px-4 py-4 text-[11px] uppercase tracking-[0.22em] text-[var(--soft)] backdrop-blur-sm">
+                <div className="sticky top-0 z-10 grid grid-cols-[minmax(0,1.2fr)_120px_140px_minmax(0,1fr)] gap-3 border-b border-[var(--line)] bg-[var(--panel)] px-4 py-4 text-[11px] uppercase tracking-[0.22em] text-[var(--soft)] backdrop-blur-sm">
                   <div>Candidate</div>
                   <div>Imported limit</div>
                   <div>Status</div>
@@ -356,19 +356,19 @@ export function ExplorerApp({ data }: Props) {
             {view === "method" && (
               <div className="grid gap-6 p-6 md:grid-cols-2">
                 <div className="space-y-4">
-                  <div className="text-sm font-medium text-white">What counts as verified</div>
-                  <div className="rounded-[1.75rem] border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-5 text-sm leading-7 text-[var(--muted)]">
+                  <div className="text-sm font-medium text-[var(--text-primary)]">What counts as verified</div>
+                  <div className="rounded-[var(--radius-3xl)] border border-[var(--line)] bg-[var(--surface-1)] p-5 text-sm leading-7 text-[var(--muted)]">
                     The explorer only promotes hosts into the live dataset when the current public
                     source trail is strong enough to support structured facts. If a service is live
                     but slippery, it stays in the queue until the evidence improves.
                   </div>
-                  <div className="rounded-[1.75rem] border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-5 text-sm leading-7 text-[var(--muted)]">
+                  <div className="rounded-[var(--radius-3xl)] border border-[var(--line)] bg-[var(--surface-1)] p-5 text-sm leading-7 text-[var(--muted)]">
                     Rejected entries are not deleted. They keep their rejection reason and
                     references so the queue does not forget why a domain was moved out.
                   </div>
                 </div>
                 <div className="space-y-4">
-                  <div className="text-sm font-medium text-white">How to read the fields</div>
+                  <div className="text-sm font-medium text-[var(--text-primary)]">How to read the fields</div>
                   <div className="grid gap-4">
                     <InfoPair label="Not published" value="The source pages do not expose a reliable current number." />
                     <InfoPair label="Conditional" value="The limit depends on account type, downloads, inactivity, or another rule in the notes." />
@@ -383,7 +383,7 @@ export function ExplorerApp({ data }: Props) {
           <HostDetailPanel host={selectedHost} />
         </section>
 
-        <footer className="grid gap-3 border-t border-[rgba(255,255,255,0.08)] pt-4 text-sm text-[var(--muted)] md:grid-cols-[1fr_auto]">
+        <footer className="grid gap-3 border-t border-[var(--line)] pt-4 text-sm text-[var(--muted)] md:grid-cols-[1fr_auto]">
           <div className="max-w-[70ch]">
             The JSON files remain the source of truth. This interface is only a better lens for the
             same research, evidence, and structured decisions.

@@ -1,57 +1,85 @@
 @import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default, dark --prefersdark, cupcake, bumblebee, emerald, corporate, synthwave,
+    retro, cyberpunk, valentine, halloween, garden, forest, aqua, lofi, pastel, fantasy,
+    wireframe, black, luxury, dracula, cmyk, autumn, business, acid, lemonade, night, coffee,
+    winter, dim, nord, sunset;
+}
 
 @theme {
   --font-sans: "SF Pro Display", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
   --font-mono: "SF Mono", "JetBrains Mono", "Fira Code", monospace;
   
-  --radius-card: 1.75rem;
-  --radius-pill: 9999px;
-  --radius-lg: 0.75rem;
-  
   --ease-fluid: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-  
-  --shadow-glass: 0 50px 120px -50px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.06);
-  --shadow-glow-accent: 0 0 60px -12px rgba(73, 179, 255, 0.25);
-  --shadow-glow-success: 0 0 60px -12px rgba(99, 211, 143, 0.25);
-  --shadow-glow-warn: 0 0 60px -12px rgba(243, 187, 91, 0.25);
-  --shadow-glow-danger: 0 0 60px -12px rgba(240, 106, 106, 0.25);
+  --radius-card: calc(var(--radius-box) * 1.4);
+  --radius-panel: var(--radius-box);
+  --radius-control: var(--radius-field);
+  --radius-badge: var(--radius-selector);
+  --radius-pill: 9999px;
 }
 
 :root {
-  color-scheme: dark;
-  
-  /* Base colors */
-  --bg: #0a0c10;
-  --bg-elevated: #0d1117;
-  --panel: rgba(255, 255, 255, 0.035);
-  --panel-strong: rgba(255, 255, 255, 0.065);
-  --line: rgba(255, 255, 255, 0.08);
-  --line-strong: rgba(255, 255, 255, 0.12);
-  
+  color-scheme: light dark;
+
+  /* daisyUI v5 theme colors */
+  --bg: var(--color-base-100);
+  --bg-elevated: var(--color-base-200);
+  --bg-deep: var(--color-base-300);
+  --panel: color-mix(in oklab, var(--color-base-content) 5%, transparent);
+  --panel-strong: color-mix(in oklab, var(--color-base-content) 9%, transparent);
+  --line: color-mix(in oklab, var(--color-base-content) 10%, transparent);
+  --line-strong: color-mix(in oklab, var(--color-base-content) 16%, transparent);
+
   /* Text hierarchy */
-  --text-primary: #f0f6fc;
-  --text-secondary: #9ca3af;
-  --text-muted: #6b7280;
-  --text-subtle: #4b5563;
-  
+  --text-primary: var(--color-base-content);
+  --text-secondary: color-mix(in oklab, var(--color-base-content) 72%, transparent);
+  --text-muted: color-mix(in oklab, var(--color-base-content) 52%, transparent);
+  --text-subtle: color-mix(in oklab, var(--color-base-content) 34%, transparent);
+  --text: var(--text-primary);
+  --muted: var(--text-secondary);
+  --soft: var(--text-muted);
+
   /* Accent palette */
-  --accent: #3b82f6;
-  --accent-hover: #60a5fa;
-  --accent-soft: rgba(59, 130, 246, 0.12);
-  --accent-glow: rgba(59, 130, 246, 0.25);
-  
+  --accent: var(--color-primary);
+  --accent-content: var(--color-primary-content);
+  --accent-hover: color-mix(in oklab, var(--color-primary) 84%, white);
+  --accent-soft: color-mix(in oklab, var(--color-primary) 16%, transparent);
+  --accent-glow: color-mix(in oklab, var(--color-primary) 28%, transparent);
+
+  /* Reusable surfaces */
+  --surface-1: color-mix(in oklab, var(--color-base-content) 2.5%, transparent);
+  --surface-2: color-mix(in oklab, var(--color-base-content) 4%, transparent);
+  --surface-3: color-mix(in oklab, var(--color-base-content) 6%, transparent);
+  --surface-4: color-mix(in oklab, var(--color-base-content) 9%, transparent);
+  --shadow-soft: 0 20px 50px -24px color-mix(in oklab, black 60%, transparent);
+  --shadow-raised: 0 24px 80px -24px color-mix(in oklab, black 72%, transparent);
+
   /* Status colors */
-  --good: #22c55e;
-  --good-soft: rgba(34, 197, 94, 0.12);
-  --warn: #f59e0b;
-  --warn-soft: rgba(245, 158, 11, 0.12);
-  --bad: #ef4444;
-  --bad-soft: rgba(239, 68, 68, 0.12);
+  --good: var(--color-success);
+  --good-content: var(--color-success-content);
+  --good-soft: color-mix(in oklab, var(--color-success) 18%, transparent);
+  --warn: var(--color-warning);
+  --warn-content: var(--color-warning-content);
+  --warn-soft: color-mix(in oklab, var(--color-warning) 18%, transparent);
+  --bad: var(--color-error);
+  --bad-content: var(--color-error-content);
+  --bad-soft: color-mix(in oklab, var(--color-error) 18%, transparent);
+  --hero-heading: white;
+  --hero-surface: color-mix(in oklab, white 5%, transparent);
+  --hero-surface-strong: color-mix(in oklab, white 8%, transparent);
+  --hero-secondary-glow: color-mix(in oklab, var(--color-secondary) 70%, white);
   
   /* Animation curves */
   --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
   --ease-in-out-circ: cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+:root[data-theme="light"] {
+  --hero-heading: var(--text-primary);
+  --hero-surface: color-mix(in oklab, var(--bg) 82%, var(--accent) 3%);
+  --hero-surface-strong: color-mix(in oklab, var(--bg) 74%, var(--accent) 5%);
+  --hero-secondary-glow: color-mix(in oklab, var(--color-secondary) 78%, white);
 }
 
 * {
@@ -60,10 +88,10 @@
 
 html {
   background: 
-    radial-gradient(ellipse at 20% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 40%, rgba(139, 92, 246, 0.1) 0%, transparent 45%),
-    radial-gradient(ellipse at 40% 100%, rgba(34, 197, 94, 0.08) 0%, transparent 40%),
-    linear-gradient(180deg, var(--bg) 0%, var(--bg-elevated) 50%, #0c0e14 100%);
+    radial-gradient(ellipse at 20% 0%, color-mix(in oklab, var(--accent) 18%, transparent) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 40%, color-mix(in oklab, var(--color-secondary) 14%, transparent) 0%, transparent 45%),
+    radial-gradient(ellipse at 40% 100%, color-mix(in oklab, var(--good) 10%, transparent) 0%, transparent 40%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-elevated) 50%, var(--bg-deep) 100%);
   background-attachment: fixed;
 }
 
@@ -98,8 +126,8 @@ body::after {
   inset: 0;
   pointer-events: none;
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    linear-gradient(color-mix(in oklab, var(--color-base-content) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in oklab, var(--color-base-content) 6%, transparent) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: radial-gradient(ellipse at center, black 30%, transparent 100%);
   opacity: 0.5;
@@ -122,7 +150,7 @@ select {
 
 .scrollbar-subtle {
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
+  scrollbar-color: color-mix(in oklab, var(--color-base-content) 18%, transparent) transparent;
 }
 
 .scrollbar-subtle::-webkit-scrollbar {
@@ -135,14 +163,14 @@ select {
 }
 
 .scrollbar-subtle::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: color-mix(in oklab, var(--color-base-content) 16%, transparent);
   border-radius: 9999px;
   border: 2px solid transparent;
   background-clip: padding-box;
 }
 
 .scrollbar-subtle::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.18);
+  background: color-mix(in oklab, var(--color-base-content) 24%, transparent);
   border: 1px solid transparent;
   background-clip: padding-box;
 }
@@ -213,9 +241,9 @@ select {
 .skeleton-shimmer {
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255, 0.04) 0%,
-    rgba(255, 255, 255, 0.08) 50%,
-    rgba(255, 255, 255, 0.04) 100%
+    color-mix(in oklab, var(--color-base-content) 4%, transparent) 0%,
+    color-mix(in oklab, var(--color-base-content) 8%, transparent) 50%,
+    color-mix(in oklab, var(--color-base-content) 4%, transparent) 100%
   );
   background-size: 400px 100%;
   animation: shimmer 2s infinite linear;

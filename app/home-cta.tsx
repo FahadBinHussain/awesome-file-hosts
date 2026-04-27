@@ -12,7 +12,7 @@ export function HomeCTA() {
       </div>
 
       <div className="relative mx-auto max-w-5xl px-4">
-        <div className="overflow-hidden rounded-[3rem] border border-[var(--line)] bg-gradient-to-br from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.01)] p-12 backdrop-blur-2xl md:p-16">
+        <div className="overflow-hidden rounded-[calc(var(--radius-card)*1.5)] border border-[var(--line)] bg-gradient-to-br from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.01)] p-12 backdrop-blur-2xl md:p-16">
           <div className="text-center">
             {/* Badge */}
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/30 bg-[var(--accent-soft)] px-4 py-2">
@@ -37,7 +37,7 @@ export function HomeCTA() {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/dataset"
-                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-2xl border border-[var(--accent)]/30 bg-[var(--accent)] px-8 py-4 font-semibold text-white shadow-[0_0_40px_-8px_var(--accent-glow)] transition-all hover:scale-[1.02] hover:shadow-[0_0_60px_-8px_var(--accent-glow)]"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-[var(--radius-2xl)] border border-[var(--accent)]/30 bg-[var(--accent)] px-8 py-4 font-semibold text-white shadow-[0_0_40px_-8px_var(--accent-glow)] transition-all hover:scale-[1.02] hover:shadow-[0_0_60px_-8px_var(--accent-glow)]"
               >
                 <span className="relative z-10">View Full Dataset</span>
                 <ArrowRight size={20} weight="bold" className="relative z-10 transition-transform group-hover:translate-x-1" />
@@ -48,7 +48,7 @@ export function HomeCTA() {
                 href="https://github.com/yourusername/awesome-file-hosts"
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex items-center gap-2 rounded-2xl border border-[var(--line)] bg-[rgba(255,255,255,0.03)] px-8 py-4 font-semibold text-white backdrop-blur-xl transition-all hover:border-[var(--line-strong)] hover:bg-[rgba(255,255,255,0.06)]"
+                className="group inline-flex items-center gap-2 rounded-[var(--radius-2xl)] border border-[var(--line)] bg-[rgba(255,255,255,0.03)] px-8 py-4 font-semibold text-white backdrop-blur-xl transition-all hover:border-[var(--line-strong)] hover:bg-[rgba(255,255,255,0.06)]"
               >
                 <GitBranch size={20} weight="bold" />
                 <span>Contribute on GitHub</span>

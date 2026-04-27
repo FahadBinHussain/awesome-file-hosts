@@ -67,11 +67,11 @@ export function HomeFeatures() {
           {features.map((feature, i) => (
             <div
               key={feature.title}
-              className="group relative overflow-hidden rounded-3xl border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-8 backdrop-blur-xl transition-all hover:border-[var(--line-strong)] hover:bg-[rgba(255,255,255,0.04)] animate-fade-in-up"
+              className="group relative overflow-hidden rounded-[var(--radius-3xl)] border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-8 backdrop-blur-xl transition-all hover:border-[var(--line-strong)] hover:bg-[rgba(255,255,255,0.04)] animate-fade-in-up"
               style={{ animationDelay: `${i * 0.1}s` }}
             >
               <div className="relative z-10">
-                <div className={`mb-5 inline-flex rounded-2xl bg-gradient-to-br ${feature.gradient} p-4 shadow-lg`}>
+                <div className={`mb-5 inline-flex rounded-[var(--radius-2xl)] bg-gradient-to-br ${feature.gradient} p-4 shadow-lg`}>
                   <feature.icon size={28} weight="bold" className="text-white" />
                 </div>
                 <h3 className="mb-3 text-xl font-bold text-white">{feature.title}</h3>
@@ -91,10 +91,10 @@ export function HomeFeatures() {
           ].map((item, i) => (
             <div
               key={item.label}
-              className="flex items-center gap-4 rounded-2xl border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-6 backdrop-blur-xl animate-fade-in-up"
+              className="flex items-center gap-4 rounded-[var(--radius-2xl)] border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-6 backdrop-blur-xl animate-fade-in-up"
               style={{ animationDelay: `${0.6 + i * 0.1}s` }}
             >
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--accent-soft)]">
+              <div className="flex h-14 w-14 items-center justify-center rounded-[var(--radius-2xl)] bg-[var(--accent-soft)]">
                 <item.icon size={24} weight="bold" className="text-[var(--accent)]" />
               </div>
               <div>

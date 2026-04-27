@@ -19,7 +19,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 ## What this includes
 
 - 59 verified hosts checked against current public sources as of 2026-04-27.
-- 101 leads still in review and 50 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
+- 93 leads still in review and 58 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
 - A source-backed dataset designed for both human browsing and machine reuse.
 - A site UI for filtering, comparison, and dense spreadsheet-style inspection.
 

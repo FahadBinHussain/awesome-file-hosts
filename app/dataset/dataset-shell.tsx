@@ -75,7 +75,7 @@ const hostColumnDefs: HostColumn[] = [
     id: "name",
     label: "Host",
     width: "180px",
-    className: "min-w-[170px] sticky left-0 z-10 bg-[rgba(13,17,23,0.98)] before:absolute before:inset-y-0 before:left-0 before:w-[2px] before:bg-gradient-to-b before:from-[var(--accent)] before:to-transparent before:content-['']",
+    className: "min-w-[170px] sticky left-0 z-10 bg-[var(--bg-elevated)] before:absolute before:inset-y-0 before:left-0 before:w-[2px] before:bg-gradient-to-b before:from-[var(--accent)] before:to-transparent before:content-['']",
     render: (host) => (
       <div className="min-w-0">
         <a
@@ -83,7 +83,7 @@ const hostColumnDefs: HostColumn[] = [
           target="_blank"
           rel="noreferrer"
           onClick={(event) => event.stopPropagation()}
-          className="block truncate font-medium text-white transition-all hover:translate-x-[2px] hover:text-[var(--accent)]"
+          className="block truncate font-medium text-[var(--text-primary)] transition-all hover:translate-x-[2px] hover:text-[var(--accent)]"
         >
           {host.name}
         </a>
@@ -158,9 +158,9 @@ const queueColumnDefs: QueueColumn[] = [
     id: "name",
     label: "Candidate",
     width: "clamp(132px, 28vw, 180px)",
-    className: "min-w-[132px] sticky left-0 z-10 bg-[rgba(13,17,23,0.98)] before:absolute before:inset-y-0 before:left-0 before:w-[2px] before:bg-gradient-to-b before:from-[var(--accent)] before:to-transparent before:content-['']",
+    className: "min-w-[132px] sticky left-0 z-10 bg-[var(--bg-elevated)] before:absolute before:inset-y-0 before:left-0 before:w-[2px] before:bg-gradient-to-b before:from-[var(--accent)] before:to-transparent before:content-['']",
     render: (candidate) => (
-      <div className="truncate text-[14px] font-medium text-white sm:text-[15px]">
+      <div className="truncate text-[14px] font-medium text-[var(--text-primary)] sm:text-[15px]">
         {candidate.name}
       </div>
     )
@@ -239,7 +239,7 @@ function ToolbarButton({
         "group relative inline-flex items-center gap-2 rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-200",
         active
           ? "border-[var(--accent)]/30 bg-[var(--accent-soft)] text-white shadow-[0_0_24px_-6px_var(--accent-glow)]"
-          : "border-[var(--line)] bg-[rgba(255,255,255,0.025)] text-[var(--text-secondary)] hover:border-[var(--accent)]/50 hover:text-white hover:shadow-[0_0_20px_-6px_rgba(59,130,246,0.12)]"
+          : "border-[var(--line)] bg-[var(--surface-1)] text-[var(--text-secondary)] hover:border-[var(--accent)]/50 hover:text-white hover:shadow-[0_0_20px_-6px_var(--accent-glow)]"
       ].join(" ")}
     >
       {icon && <span className={["transition-transform", active ? "scale-110" : "group-hover:scale-110"].join(" ")}>{icon}</span>}
@@ -331,7 +331,7 @@ function CandidateDetailPanel({ candidate }: { candidate: CandidateRecord | null
                 Candidate detail
               </div>
             </div>
-            <h2 className="mt-2.5 text-xl font-semibold tracking-tight text-white">{candidate.name}</h2>
+            <h2 className="mt-2.5 text-xl font-semibold tracking-tight text-[var(--text-primary)]">{candidate.name}</h2>
           </div>
           <span
             className={[
@@ -362,7 +362,7 @@ function CandidateDetailPanel({ candidate }: { candidate: CandidateRecord | null
           </div>
         </div>
 
-        <div className="rounded-2xl border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-4 text-sm leading-7 text-[var(--text-secondary)] backdrop-blur-sm">
+        <div className="rounded-[var(--radius-panel)] border border-[var(--line)] bg-[var(--surface-1)] p-4 text-sm leading-7 text-[var(--text-secondary)] backdrop-blur-sm">
           {candidate.verification_notes ?? candidate.source}
         </div>
 
@@ -382,8 +382,8 @@ function CandidateDetailPanel({ candidate }: { candidate: CandidateRecord | null
         </div>
 
         {candidate.verification_references?.length ? (
-          <div className="rounded-2xl border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-4 backdrop-blur-sm">
-            <div className="flex items-center gap-2 text-sm font-semibold text-white">
+          <div className="rounded-[var(--radius-panel)] border border-[var(--line)] bg-[var(--surface-1)] p-4 backdrop-blur-sm">
+            <div className="flex items-center gap-2 text-sm font-semibold text-[var(--text-primary)]">
               <Database size={16} weight="fill" />
               Evidence trail
             </div>
@@ -394,10 +394,10 @@ function CandidateDetailPanel({ candidate }: { candidate: CandidateRecord | null
                   href={reference.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="group block rounded-2xl border border-[var(--line)] bg-[rgba(255,255,255,0.02)] px-4 py-3 transition-all hover:border-[var(--accent)]/30 hover:bg-[var(--accent-soft)]/50 hover:shadow-[0_0_20px_-4px_var(--accent-glow)]"
+                  className="group block rounded-[var(--radius-panel)] border border-[var(--line)] bg-[var(--surface-1)] px-4 py-3 transition-all hover:border-[var(--accent)]/30 hover:bg-[var(--accent-soft)]/50 hover:shadow-[0_0_20px_-4px_var(--accent-glow)]"
                 >
                   <div className="flex items-center justify-between gap-3">
-                    <div className="flex items-center gap-2 text-sm font-medium text-white">
+                    <div className="flex items-center gap-2 text-sm font-medium text-[var(--text-primary)]">
                       <LinkSimple size={16} weight="fill" />
                       <span>{reference.label}</span>
                     </div>
@@ -424,15 +424,15 @@ function FloatingInspector({
 }) {
   return (
     <div className="pointer-events-none fixed inset-y-6 right-6 z-40 flex w-[min(460px,calc(100vw-2rem))] items-start justify-end">
-      <div className="pointer-events-auto max-h-[calc(100dvh-3rem)] w-full overflow-auto rounded-[var(--radius-card)] border border-[var(--line)] bg-[rgba(10,12,16,0.92)] p-4 shadow-[0_36px_120px_-36px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur-2xl animate-slide-in-right">
-        <div className="mb-4 flex items-center justify-between rounded-2xl border border-[var(--line)] bg-[rgba(255,255,255,0.02)] px-4 py-3 backdrop-blur-sm">
+      <div className="pointer-events-auto max-h-[calc(100dvh-3rem)] w-full overflow-auto rounded-[var(--radius-card)] border border-[var(--line)] bg-[color-mix(in_oklab,var(--bg)_92%,transparent)] p-4 shadow-[var(--shadow-raised),0_0_0_1px_var(--line)] backdrop-blur-2xl animate-slide-in-right">
+        <div className="mb-4 flex items-center justify-between rounded-[var(--radius-panel)] border border-[var(--line)] bg-[var(--surface-1)] px-4 py-3 backdrop-blur-sm">
           <div className="flex items-center gap-2">
             <div className="h-1 w-1 rounded-full bg-[var(--accent)] animate-pulse" style={{ animationDuration: "2s" }} />
-            <div className="text-sm font-semibold text-white tracking-tight">{title}</div>
+            <div className="text-sm font-semibold text-[var(--text-primary)] tracking-tight">{title}</div>
           </div>
           <button
             onClick={onClose}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--line)] text-[var(--text-muted)] transition-all hover:border-[var(--accent)]/30 hover:bg-[var(--accent-soft)] hover:text-white hover:shadow-[0_0_16px_-4px_var(--accent-glow)]"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-[var(--radius-pill)] border border-[var(--line)] text-[var(--text-muted)] transition-all hover:border-[var(--accent)]/30 hover:bg-[var(--accent-soft)] hover:text-[var(--text-primary)] hover:shadow-[0_0_16px_-4px_var(--accent-glow)]"
             aria-label="Close inspector"
           >
             <X size={16} weight="bold" />
@@ -569,7 +569,7 @@ export function DatasetApp({ data }: Props) {
     <AppFrame current="dataset">
       <div className="min-h-0 flex-1">
         <section className="min-h-0 overflow-visible rounded-[var(--radius-card)] border border-[var(--line)] bg-[var(--panel)]">
-          <div className="flex flex-col gap-4 border-b border-[var(--line)] p-4">
+          <div className="relative z-20 flex flex-col gap-4 border-b border-[var(--line)] p-4">
             <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
               <div className="animate-fade-in-up">
                 <div className="flex items-center gap-2">
@@ -578,7 +578,7 @@ export function DatasetApp({ data }: Props) {
                     Dataset view
                   </div>
                 </div>
-                <h1 className="mt-2.5 text-2xl font-semibold tracking-tight text-white md:text-3xl">
+                <h1 className="mt-2.5 text-2xl font-semibold tracking-tight text-[var(--text-primary)] md:text-3xl">
                   Scan, compare, and explore the full dataset with precision.
                 </h1>
               </div>
@@ -591,13 +591,13 @@ export function DatasetApp({ data }: Props) {
                 ].map((stat, i) => (
                   <div 
                     key={stat.label} 
-                    className="rounded-2xl border border-[var(--line)] bg-[rgba(255,255,255,0.02)] px-3.5 py-2.5 backdrop-blur-sm transition-all hover:border-[var(--line-strong)] hover:bg-[rgba(255,255,255,0.04)] animate-fade-in-up"
+                    className="rounded-2xl border border-[var(--line)] bg-[var(--surface-1)] px-3.5 py-2.5 backdrop-blur-sm transition-all hover:border-[var(--line-strong)] hover:bg-[var(--surface-3)] animate-fade-in-up"
                     style={{ animationDelay: `${i * 0.05}s` }}
                   >
                     <div className="text-[9px] uppercase tracking-[0.2em] text-[var(--text-muted)] font-medium">
                       {stat.label}
                     </div>
-                    <div className="mt-1.5 text-xl font-semibold text-white tracking-tight">
+                    <div className="mt-1.5 text-xl font-semibold text-[var(--text-primary)] tracking-tight">
                       {typeof stat.value === "number" ? stat.value.toLocaleString() : stat.value}
                     </div>
                   </div>
@@ -615,7 +615,7 @@ export function DatasetApp({ data }: Props) {
                 </ToolbarButton>
               </div>
 
-              <div className="relative flex min-w-0 flex-1 items-center gap-3 rounded-2xl border border-[var(--line)] bg-[rgba(255,255,255,0.025)] px-4 py-2.5 shadow-sm xl:max-w-[28rem]">
+              <div className="relative flex min-w-0 flex-1 items-center gap-3 rounded-2xl border border-[var(--line)] bg-[var(--surface-1)] px-4 py-2.5 shadow-sm xl:max-w-[28rem]">
                 <MagnifyingGlass size={18} className="text-[var(--text-muted)]" />
                 <input
                   value={search}
@@ -623,12 +623,12 @@ export function DatasetApp({ data }: Props) {
                   placeholder={
                     mode === "hosts" ? "Search host, tag, or limit…" : "Search candidate, source, or reason…"
                   }
-                  className="w-full bg-transparent text-sm text-white outline-none placeholder:text-[var(--text-subtle)]"
+                  className="w-full bg-transparent text-sm text-[var(--text-primary)] outline-none placeholder:text-[var(--text-subtle)]"
                 />
                 {search && (
                   <button
                     onClick={() => setSearch("")}
-                    className="rounded-full p-1 text-[var(--text-muted)] transition hover:bg-[rgba(255,255,255,0.08)] hover:text-white"
+                    className="rounded-[var(--radius-pill)] p-1 text-[var(--text-muted)] transition hover:bg-[var(--surface-4)] hover:text-[var(--text-primary)]"
                   >
                     <X size={14} />
                   </button>
@@ -660,10 +660,10 @@ export function DatasetApp({ data }: Props) {
                         key={column.id}
                         onClick={() => toggleHostColumn(column.id)}
                         className={[
-                          "group relative inline-flex items-center gap-2 rounded-full border px-2.5 py-1.5 text-[11px] font-medium transition-all duration-200",
+                          "group relative inline-flex items-center gap-2 rounded-[var(--radius-pill)] border px-2.5 py-1.5 text-[11px] font-medium transition-all duration-200",
                           hidden
                             ? "border-[var(--line)] bg-transparent text-[var(--text-muted)] hover:border-[var(--text-muted)]/40 hover:text-[var(--text-secondary)]"
-                            : "border-[var(--accent)]/20 bg-[var(--accent-soft)] text-white"
+                            : "border-[var(--accent)]/20 bg-[var(--accent-soft)] text-[var(--accent-content)]"
                         ].join(" ")}
                       >
                         {hidden ? <EyeSlash size={13} /> : <Eye size={13} />}
@@ -725,11 +725,11 @@ export function DatasetApp({ data }: Props) {
             )}
           </div>
 
-          <div className="relative">
+          <div className="relative z-0">
             {mode === "hosts" ? (
               <div className="min-w-max text-sm">
                 <div
-                  className="sticky top-0 z-30 grid border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[0_4px_12px_-2px_rgba(0,0,0,0.5)] backdrop-blur-xl"
+                  className="sticky top-0 z-10 grid border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl"
                   style={{ gridTemplateColumns: hostGridTemplate }}
                 >
                   {visibleHostColumns.map((column) => {
@@ -740,7 +740,7 @@ export function DatasetApp({ data }: Props) {
                         key={column.id}
                         className={[
                           "px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
-                          column.id === "name" ? "sticky left-0 z-40 bg-[rgba(13,17,23,0.98)]" : "",
+                          column.id === "name" ? "sticky left-0 z-20 bg-[var(--bg-elevated)]" : "",
                           isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
                         ].join(" ")}
                       >
@@ -773,7 +773,7 @@ export function DatasetApp({ data }: Props) {
                       "group relative grid w-full cursor-pointer border-b border-[var(--line)]/50 text-left transition-all duration-200 row-enter",
                       selectedHostId === host.id
                         ? "bg-[var(--accent-soft)]/50 hover:bg-[var(--accent-soft)]/70"
-                        : "hover:-translate-x-0.5 hover:bg-[rgba(255,255,255,0.03)]"
+                        : "hover:-translate-x-0.5 hover:bg-[var(--surface-2)]"
                     ].join(" ")}
                     style={{ 
                       gridTemplateColumns: hostGridTemplate,
@@ -787,7 +787,7 @@ export function DatasetApp({ data }: Props) {
                         className={[
                           "px-3 py-2.5 align-top text-[var(--text-primary)] transition-colors",
                           selectedHostId === host.id ? "bg-[var(--accent-soft)]/20" : "",
-                          column.id === "name" ? "sticky left-0 z-10 bg-[rgba(13,17,23,0.98)]" : ""
+                          column.id === "name" ? "sticky left-0 z-10 bg-[var(--bg-elevated)]" : ""
                         ].join(" ")}
                       >
                         {column.render(host)}
@@ -799,7 +799,7 @@ export function DatasetApp({ data }: Props) {
             ) : (
               <div className="min-w-max text-sm">
                 <div
-                  className="sticky top-0 z-30 grid border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[0_4px_12px_-2px_rgba(0,0,0,0.5)] backdrop-blur-xl"
+                  className="sticky top-0 z-10 grid border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl"
                   style={{ gridTemplateColumns: queueGridTemplate }}
                 >
                   {visibleQueueColumns.map((column) => {
@@ -810,7 +810,7 @@ export function DatasetApp({ data }: Props) {
                         key={column.id}
                         className={[
                           "px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
-                          column.id === "name" ? "sticky left-0 z-40 bg-[rgba(13,17,23,0.98)]" : "",
+                          column.id === "name" ? "sticky left-0 z-20 bg-[var(--bg-elevated)]" : "",
                           isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
                         ].join(" ")}
                       >
@@ -843,7 +843,7 @@ export function DatasetApp({ data }: Props) {
                       "group relative grid w-full cursor-pointer border-b border-[var(--line)]/50 text-left transition-all duration-200 row-enter",
                       selectedCandidateId === candidate.id
                         ? "bg-[var(--accent-soft)]/50 hover:bg-[var(--accent-soft)]/70"
-                        : "hover:-translate-x-0.5 hover:bg-[rgba(255,255,255,0.03)]"
+                        : "hover:-translate-x-0.5 hover:bg-[var(--surface-2)]"
                     ].join(" ")}
                     style={{ 
                       gridTemplateColumns: queueGridTemplate,
@@ -857,7 +857,7 @@ export function DatasetApp({ data }: Props) {
                         className={[
                           "px-3 py-2.5 align-top text-[var(--text-primary)] transition-colors",
                           selectedCandidateId === candidate.id ? "bg-[var(--accent-soft)]/20" : "",
-                          column.id === "name" ? "sticky left-0 z-10 bg-[rgba(13,17,23,0.98)]" : ""
+                          column.id === "name" ? "sticky left-0 z-10 bg-[var(--bg-elevated)]" : ""
                         ].join(" ")}
                       >
                         {column.id === "status" ? (

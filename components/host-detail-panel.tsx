@@ -51,13 +51,13 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
                 Host detail
               </div>
             </div>
-            <h2 className="mt-2.5 text-xl font-semibold tracking-tight text-white">{host.name}</h2>
+            <h2 className="mt-2.5 text-xl font-semibold tracking-tight text-[var(--text-primary)]">{host.name}</h2>
           </div>
           <a
             href={host.url}
             target="_blank"
             rel="noreferrer"
-            className="rounded-full border border-[var(--line)] bg-[rgba(255,255,255,0.02)] px-3.5 py-2 text-xs font-medium text-[var(--text-secondary)] transition-all hover:border-[var(--accent)]/30 hover:text-white hover:shadow-[0_0_20px_-4px_var(--accent-glow)]"
+            className="rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-1)] px-3.5 py-2 text-xs font-medium text-[var(--text-secondary)] transition-all hover:border-[var(--accent)]/30 hover:text-[var(--text-primary)] hover:shadow-[0_0_20px_-4px_var(--accent-glow)]"
           >
             Open site
           </a>
@@ -119,8 +119,8 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
         </div>
 
         <div className="grid gap-3 sm:grid-cols-3">
-          <div className="rounded-2xl border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-4 backdrop-blur-sm transition-all hover:border-[var(--line-strong)] hover:bg-[rgba(255,255,255,0.04)]">
-            <div className="flex items-center gap-2 text-sm font-semibold text-white">
+          <div className="rounded-[var(--radius-panel)] border border-[var(--line)] bg-[var(--surface-1)] p-4 backdrop-blur-sm transition-all hover:border-[var(--line-strong)] hover:bg-[var(--surface-3)]">
+            <div className="flex items-center gap-2 text-sm font-semibold text-[var(--text-primary)]">
               <TerminalWindow size={16} weight="fill" />
               Dev
             </div>
@@ -128,8 +128,8 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
               {host.developer.api_available ? "API available" : "No public API"}
             </div>
           </div>
-          <div className="rounded-2xl border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-4 backdrop-blur-sm transition-all hover:border-[var(--line-strong)] hover:bg-[rgba(255,255,255,0.04)]">
-            <div className="flex items-center gap-2 text-sm font-semibold text-white">
+          <div className="rounded-[var(--radius-panel)] border border-[var(--line)] bg-[var(--surface-1)] p-4 backdrop-blur-sm transition-all hover:border-[var(--line-strong)] hover:bg-[var(--surface-3)]">
+            <div className="flex items-center gap-2 text-sm font-semibold text-[var(--text-primary)]">
               <ShieldCheck size={16} weight="fill" />
               Encryption
             </div>
@@ -137,8 +137,8 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
               {host.security.e2ee ? "End-to-end claims present" : "No E2EE claim"}
             </div>
           </div>
-          <div className="rounded-2xl border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-4 backdrop-blur-sm transition-all hover:border-[var(--line-strong)] hover:bg-[rgba(255,255,255,0.04)]">
-            <div className="flex items-center gap-2 text-sm font-semibold text-white">
+          <div className="rounded-[var(--radius-panel)] border border-[var(--line)] bg-[var(--surface-1)] p-4 backdrop-blur-sm transition-all hover:border-[var(--line-strong)] hover:bg-[var(--surface-3)]">
+            <div className="flex items-center gap-2 text-sm font-semibold text-[var(--text-primary)]">
               <Lock size={16} weight="fill" />
               Access
             </div>
@@ -146,8 +146,8 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-4 backdrop-blur-sm">
-          <div className="flex items-center gap-2 text-sm font-semibold text-white">
+        <div className="rounded-[var(--radius-panel)] border border-[var(--line)] bg-[var(--surface-1)] p-4 backdrop-blur-sm">
+          <div className="flex items-center gap-2 text-sm font-semibold text-[var(--text-primary)]">
             <Database size={18} weight="fill" />
             Source references
           </div>
@@ -159,10 +159,10 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
                 href={source.url}
                 target="_blank"
                 rel="noreferrer"
-                className="group block rounded-2xl border border-[var(--line)] bg-[rgba(255,255,255,0.02)] px-4 py-3 transition-all hover:border-[var(--accent)]/30 hover:bg-[var(--accent-soft)]/40 hover:shadow-[0_0_20px_-4px_var(--accent-glow)]"
+                className="group block rounded-[var(--radius-panel)] border border-[var(--line)] bg-[var(--surface-1)] px-4 py-3 transition-all hover:border-[var(--accent)]/30 hover:bg-[var(--accent-soft)]/40 hover:shadow-[0_0_20px_-4px_var(--accent-glow)]"
               >
                 <div className="flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-2 text-sm font-medium text-white">
+                  <div className="flex items-center gap-2 text-sm font-medium text-[var(--text-primary)]">
                     <LinkSimple size={16} weight="fill" />
                     <span>
                       [{index + 1}] {source.label}
@@ -180,7 +180,7 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
           {host.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-[var(--line)] bg-[rgba(255,255,255,0.02)] px-3 py-1.5 text-[11px] text-[var(--text-secondary)] transition-all hover:border-[var(--accent)]/30 hover:text-white hover:shadow-[0_0_12px_-2px_var(--accent-glow)]"
+              className="rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-1)] px-3 py-1.5 text-[11px] text-[var(--text-secondary)] transition-all hover:border-[var(--accent)]/30 hover:text-[var(--text-primary)] hover:shadow-[0_0_12px_-2px_var(--accent-glow)]"
             >
               {tag}
             </span>
