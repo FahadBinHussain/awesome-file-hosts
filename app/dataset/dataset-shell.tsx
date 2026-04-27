@@ -16,6 +16,7 @@ import {
 } from "@phosphor-icons/react";
 import { AppFrame } from "@/components/app-frame";
 import { HostDetailPanel } from "@/components/host-detail-panel";
+import { SourceRefLinks } from "@/components/source-ref-links";
 import type { CandidateRecord, HostRecord, SiteData } from "@/lib/site-data";
 
 type Props = {
@@ -23,6 +24,7 @@ type Props = {
 };
 
 type DatasetMode = "hosts" | "queue";
+type PanelLayout = "hidden" | "split" | "wide";
 type HostSortKey =
   | "name"
   | "max"
@@ -71,15 +73,59 @@ const hostColumnDefs: HostColumn[] = [
     className: "min-w-[220px] sticky left-0 z-10 bg-[rgba(11,13,18,0.96)]",
     render: (host) => (
       <div className="min-w-0">
-        <div className="truncate font-medium text-white">{host.name}</div>
+        <a
+          href={host.url}
+          target="_blank"
+          rel="noreferrer"
+          onClick={(event) => event.stopPropagation()}
+          className="truncate font-medium text-white underline decoration-[rgba(73,179,255,0.28)] underline-offset-4 transition hover:text-[var(--accent)]"
+        >
+          {host.name}
+        </a>
         <div className="mt-1 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{host.summary}</div>
       </div>
     )
   },
-  { id: "max", label: "Max file", render: (host) => host.filters.maxFileLabel },
-  { id: "retention", label: "Retention", render: (host) => host.filters.retentionLabel },
-  { id: "storage", label: "Storage", render: (host) => host.filters.storageLabel },
-  { id: "bandwidth", label: "Bandwidth", render: (host) => host.filters.bandwidthLabel },
+  {
+    id: "max",
+    label: "Max file",
+    render: (host) => (
+      <>
+        {host.filters.maxFileLabel}{" "}
+        <SourceRefLinks host={host} refs={host.limits.max_file_size.source_refs} className="inline-flex gap-1" />
+      </>
+    )
+  },
+  {
+    id: "retention",
+    label: "Retention",
+    render: (host) => (
+      <>
+        {host.filters.retentionLabel}{" "}
+        <SourceRefLinks host={host} refs={host.limits.retention.source_refs} className="inline-flex gap-1" />
+      </>
+    )
+  },
+  {
+    id: "storage",
+    label: "Storage",
+    render: (host) => (
+      <>
+        {host.filters.storageLabel}{" "}
+        <SourceRefLinks host={host} refs={host.limits.storage.source_refs} className="inline-flex gap-1" />
+      </>
+    )
+  },
+  {
+    id: "bandwidth",
+    label: "Bandwidth",
+    render: (host) => (
+      <>
+        {host.filters.bandwidthLabel}{" "}
+        <SourceRefLinks host={host} refs={host.limits.bandwidth.source_refs} className="inline-flex gap-1" />
+      </>
+    )
+  },
   { id: "account", label: "Account", render: (host) => host.accountLabel },
   { id: "api", label: "API", render: (host) => (host.developer.api_available ? "Yes" : "No") },
   { id: "cli", label: "CLI", render: (host) => (host.developer.cli_friendly ? "Yes" : "No") },
@@ -161,6 +207,33 @@ function ToolbarButton({
     >
       {children}
     </button>
+  );
+}
+
+function LayoutGlyph({ layout }: { layout: PanelLayout }) {
+  if (layout === "hidden") {
+    return (
+      <span className="grid h-4 w-5 grid-cols-[1fr_0.38fr] gap-[2px]">
+        <span className="rounded-[2px] bg-current opacity-95" />
+        <span className="rounded-[2px] border border-current opacity-65" />
+      </span>
+    );
+  }
+
+  if (layout === "wide") {
+    return (
+      <span className="grid h-4 w-5 grid-cols-[0.82fr_1fr] gap-[2px]">
+        <span className="rounded-[2px] border border-current opacity-65" />
+        <span className="rounded-[2px] bg-current opacity-95" />
+      </span>
+    );
+  }
+
+  return (
+    <span className="grid h-4 w-5 grid-cols-2 gap-[2px]">
+      <span className="rounded-[2px] bg-current opacity-95" />
+      <span className="rounded-[2px] border border-current opacity-65" />
+    </span>
   );
 }
 
@@ -311,6 +384,7 @@ function CandidateDetailPanel({ candidate }: { candidate: CandidateRecord | null
 
 export function DatasetApp({ data }: Props) {
   const [mode, setMode] = useState<DatasetMode>("hosts");
+  const [panelLayout, setPanelLayout] = useState<PanelLayout>("split");
   const [hostSort, setHostSort] = useState<SortState<HostSortKey>>({
     key: "name",
     direction: "asc"
@@ -430,7 +504,16 @@ export function DatasetApp({ data }: Props) {
 
   return (
     <AppFrame current="dataset">
-      <div className="grid min-h-0 flex-1 gap-4 xl:grid-cols-[minmax(0,1fr)_420px]">
+      <div
+        className={[
+          "grid min-h-0 flex-1 gap-4",
+          panelLayout === "hidden"
+            ? "xl:grid-cols-[minmax(0,1fr)]"
+            : panelLayout === "wide"
+              ? "xl:grid-cols-[minmax(0,1fr)_520px]"
+              : "xl:grid-cols-[minmax(0,1fr)_420px]"
+        ].join(" ")}
+      >
         <section className="min-h-0 overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--panel)]">
           <div className="flex flex-col gap-4 border-b border-[rgba(255,255,255,0.08)] p-4">
             <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
@@ -467,13 +550,33 @@ export function DatasetApp({ data }: Props) {
             </div>
 
             <div className="flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between">
-              <div className="flex flex-wrap gap-2">
-                <ToolbarButton active={mode === "hosts"} onClick={() => setMode("hosts")}>
-                  Verified hosts
-                </ToolbarButton>
-                <ToolbarButton active={mode === "queue"} onClick={() => setMode("queue")}>
-                  Review queue
-                </ToolbarButton>
+              <div className="flex flex-wrap items-center gap-2">
+                <div className="flex flex-wrap gap-2">
+                  <ToolbarButton active={mode === "hosts"} onClick={() => setMode("hosts")}>
+                    Verified hosts
+                  </ToolbarButton>
+                  <ToolbarButton active={mode === "queue"} onClick={() => setMode("queue")}>
+                    Review queue
+                  </ToolbarButton>
+                </div>
+
+                <div className="ml-0 flex items-center gap-1 rounded-full border border-[var(--line)] bg-[rgba(255,255,255,0.03)] p-1 xl:ml-2">
+                  {(["hidden", "split", "wide"] as const).map((layout) => (
+                    <button
+                      key={layout}
+                      onClick={() => setPanelLayout(layout)}
+                      aria-label={`Set ${layout} detail layout`}
+                      className={[
+                        "inline-flex h-9 w-9 items-center justify-center rounded-full transition",
+                        panelLayout === layout
+                          ? "bg-[var(--accent-soft)] text-white"
+                          : "text-[var(--muted)] hover:text-white"
+                      ].join(" ")}
+                    >
+                      <LayoutGlyph layout={layout} />
+                    </button>
+                  ))}
+                </div>
               </div>
 
               <div className="flex min-w-0 flex-1 items-center gap-3 rounded-[1.2rem] border border-[var(--line)] bg-[rgba(255,255,255,0.03)] px-3 py-3 xl:max-w-[28rem]">
@@ -690,11 +793,12 @@ export function DatasetApp({ data }: Props) {
           </div>
         </section>
 
-        {mode === "hosts" ? (
-          <HostDetailPanel host={selectedHost} />
-        ) : (
-          <CandidateDetailPanel candidate={selectedCandidate} />
-        )}
+        {panelLayout !== "hidden" &&
+          (mode === "hosts" ? (
+            <HostDetailPanel host={selectedHost} />
+          ) : (
+            <CandidateDetailPanel candidate={selectedCandidate} />
+          ))}
       </div>
     </AppFrame>
   );

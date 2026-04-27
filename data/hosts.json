@@ -447,7 +447,10 @@
       "max_file_size": {
         "value": 250,
         "unit": "MB",
-        "notes": "The Individual free plan currently lists a 250 MB file upload limit."
+        "notes": "The Individual free plan currently lists a 250 MB file upload limit.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
@@ -457,24 +460,37 @@
       "storage": {
         "value": 10,
         "unit": "GB",
-        "notes": "The Individual free plan currently lists 10 GB of storage."
+        "notes": "The Individual free plan currently lists 10 GB of storage.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "Box pricing currently documents fair-use thresholds of 10 GB per user per month for shared-link downloads on Individual plans and 1 TB per user per month for uploaded/downloaded traffic.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "The free Individual plan is a single-user Box account with storage, native e-signatures, and app access."
+      "benefits": "The free Individual plan is a single-user Box account with storage, native e-signatures, and app access.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": true,
       "api_docs_url": "https://developer.box.com/reference/",
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "Box provides official developer documentation and API reference through Box Dev Docs."
+      "notes": "Box provides official developer documentation and API reference through Box Dev Docs.",
+      "source_refs": [
+        2
+      ]
     },
     "security": {
       "https_only": true,
@@ -492,19 +508,19 @@
       {
         "label": "Pricing",
         "url": "https://www.box.com/pricing",
-        "retrieved_at": "2026-04-26",
-        "notes": "Free Individual plan storage and upload limit."
+        "retrieved_at": "2026-04-27",
+        "notes": "Free Individual plan storage, upload limit, and fair-use bandwidth thresholds."
       },
       {
         "label": "Downloads",
         "url": "https://www.box.com/en-gb/resources/downloads?url_redirect=direct",
-        "retrieved_at": "2026-04-26",
+        "retrieved_at": "2026-04-27",
         "notes": "Windows, macOS, iPhone/iPad, and Android app availability."
       },
       {
         "label": "API Reference",
         "url": "https://developer.box.com/reference/",
-        "retrieved_at": "2026-04-26",
+        "retrieved_at": "2026-04-27",
         "notes": "Official API documentation."
       }
     ],
@@ -1330,9 +1346,12 @@
     "summary": "Mainstream cloud storage service with a free 2 GB Basic plan, official desktop and mobile apps, and a well-documented developer API.",
     "limits": {
       "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "The cited current public free-plan pages do not publish a per-file upload cap for Dropbox Basic."
+        "value": 2,
+        "unit": "TB",
+        "notes": "Dropbox currently supports uploads up to 2 TB, with browser uploads above 375 GB potentially timing out; any upload must still fit within the account's available storage.",
+        "source_refs": [
+          1
+        ]
       },
       "retention": {
         "value": null,
@@ -1342,7 +1361,10 @@
       "storage": {
         "value": 2,
         "unit": "GB",
-        "notes": "Dropbox Basic currently offers 2 GB of free storage."
+        "notes": "Dropbox Basic currently offers 2 GB of free storage.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
@@ -1352,20 +1374,32 @@
     },
     "account": {
       "required": true,
-      "benefits": "A Dropbox account is required to use the Basic free plan, sync files, and access desktop and mobile apps."
+      "benefits": "A Dropbox account is required to use the Basic free plan, sync files, and access desktop and mobile apps.",
+      "source_refs": [
+        0,
+        2,
+        3,
+        4
+      ]
     },
     "developer": {
       "api_available": true,
       "api_docs_url": "https://www.dropbox.com/developers/documentation",
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "Dropbox provides official developer documentation and APIs for file storage and sharing integrations."
+      "notes": "Dropbox provides official developer documentation and APIs for file storage and sharing integrations.",
+      "source_refs": [
+        5
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": true,
-      "notes": "Dropbox publicly documents encryption and secure sharing, but the cited Basic-plan pages do not present the service as end-to-end encrypted by default."
+      "notes": "Dropbox publicly documents encryption and secure sharing, but the cited Basic-plan pages do not present the service as end-to-end encrypted by default.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "cloud-storage",
@@ -1377,25 +1411,37 @@
       {
         "label": "Dropbox Basic",
         "url": "https://help.dropbox.com/plans/dropbox-basic-faq",
-        "retrieved_at": "2026-04-26",
+        "retrieved_at": "2026-04-27",
         "notes": "Current 2 GB free storage and Basic-plan overview."
+      },
+      {
+        "label": "Upload Limitations",
+        "url": "https://help.dropbox.com/sync/upload-limitations",
+        "retrieved_at": "2026-04-27",
+        "notes": "Current 2 TB maximum upload size and browser guidance."
       },
       {
         "label": "Desktop App",
         "url": "https://help.dropbox.com/installs/download-dropbox",
-        "retrieved_at": "2026-04-26",
-        "notes": "Official Windows, Mac, and Linux desktop app support."
+        "retrieved_at": "2026-04-27",
+        "notes": "Official Windows and macOS desktop app support."
+      },
+      {
+        "label": "Linux Desktop App",
+        "url": "https://help.dropbox.com/installs/dropbox-desktop-app-for-linux",
+        "retrieved_at": "2026-04-27",
+        "notes": "Official Linux desktop app support."
       },
       {
         "label": "Mobile App",
         "url": "https://help.dropbox.com/installs/access-dropbox",
-        "retrieved_at": "2026-04-26",
+        "retrieved_at": "2026-04-27",
         "notes": "Official Android, iPhone, and iPad mobile app support."
       },
       {
         "label": "Developer Docs",
         "url": "https://www.dropbox.com/developers/documentation",
-        "retrieved_at": "2026-04-26",
+        "retrieved_at": "2026-04-27",
         "notes": "Official Dropbox API documentation."
       }
     ],
@@ -2296,9 +2342,12 @@
     "summary": "Google's cloud storage service with 15 GB of free account storage and official desktop/mobile clients.",
     "limits": {
       "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "The cited public pages used for this batch do not publish a current per-file upload limit."
+        "value": 5,
+        "unit": "TB",
+        "notes": "Google Drive currently allows storing files up to 5 TB, as documented in Google's file-size help page.",
+        "source_refs": [
+          1
+        ]
       },
       "retention": {
         "value": null,
@@ -2308,7 +2357,10 @@
       "storage": {
         "value": 15,
         "unit": "GB",
-        "notes": "Each Google Account includes 15 GB of storage shared across Gmail, Google Drive, and Google Photos."
+        "notes": "Each Google Account includes 15 GB of storage shared across Gmail, Google Drive, and Google Photos.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
@@ -2318,14 +2370,21 @@
     },
     "account": {
       "required": true,
-      "benefits": "A Google Account provides shared Google storage and access to Drive across web, desktop, and mobile."
+      "benefits": "A Google Account provides shared Google storage and access to Drive across web, desktop, and mobile.",
+      "source_refs": [
+        0,
+        2
+      ]
     },
     "developer": {
       "api_available": true,
       "api_docs_url": "https://developers.google.com/drive/api/guides/about-sdk",
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "Google provides official Google Drive API documentation for apps that integrate with Drive storage."
+      "notes": "Google provides official Google Drive API documentation for apps that integrate with Drive storage.",
+      "source_refs": [
+        3
+      ]
     },
     "security": {
       "https_only": true,
@@ -2343,32 +2402,35 @@
       {
         "label": "Storage Help",
         "url": "https://support.google.com/drive/answer/9312312?hl=en-en",
-        "retrieved_at": "2026-04-26",
-        "notes": "15 GB free storage allocation."
+        "retrieved_at": "2026-04-27",
+        "notes": "15 GB free storage allocation shared across Google services."
+      },
+      {
+        "label": "File Types and Sizes",
+        "url": "https://support.google.com/drive/answer/37603?hl=en-to",
+        "retrieved_at": "2026-04-27",
+        "notes": "Current 5 TB file limit and file-type support guidance."
       },
       {
         "label": "Drive for Desktop",
         "url": "https://support.google.com/drive/answer/7329379?hl=en",
-        "retrieved_at": "2026-04-26",
+        "retrieved_at": "2026-04-27",
         "notes": "Windows and macOS app availability."
-      },
-      {
-        "label": "Download a File",
-        "url": "https://support.google.com/drive/answer/2423534?co=GENIE.Platform%3DAndroid&hl=en",
-        "retrieved_at": "2026-04-26",
-        "notes": "Android and iOS device support is documented in the download help article."
       },
       {
         "label": "Drive API Overview",
         "url": "https://developers.google.com/drive/api/guides/about-sdk",
-        "retrieved_at": "2026-04-26",
+        "retrieved_at": "2026-04-27",
         "notes": "Official API documentation."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "mode": "all_except_prohibited",
+        "notes": "Google's help pages state that any file type can be stored in Drive, with preview support for many common formats.",
+        "source_refs": [
+          1
+        ]
       }
     }
   },
@@ -2514,7 +2576,10 @@
       "max_file_size": {
         "value": 250,
         "unit": "MB",
-        "notes": "Jumpshare's free Basic plan currently lists a 250 MB maximum file size per upload."
+        "notes": "Jumpshare's free Basic plan currently lists a 250 MB maximum file size per upload.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
@@ -2522,9 +2587,12 @@
         "notes": "The cited current public pages for this batch do not state an automatic file expiry period on the free Basic plan."
       },
       "storage": {
-        "value": 2,
-        "unit": "GB",
-        "notes": "Jumpshare's current public marketing pages describe 2 GB of free storage space."
+        "value": null,
+        "unit": null,
+        "notes": "Jumpshare's current public pricing emphasizes upload count and per-upload size for the free Basic plan rather than a clearly published current storage quota.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
@@ -2534,7 +2602,11 @@
     },
     "account": {
       "required": true,
-      "benefits": "A free Basic account enables uploads, screenshot capture, screen recording, and shareable links."
+      "benefits": "A free Basic account enables uploads, screenshot capture, screen recording, and shareable links.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
@@ -2547,7 +2619,10 @@
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "Jumpshare's pricing page mentions secure sharing over SSL, but the cited pages do not claim end-to-end encryption."
+      "notes": "Jumpshare's pricing page mentions secure sharing over SSL, but the cited pages do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -2559,20 +2634,14 @@
       {
         "label": "Pricing",
         "url": "https://jumpshare.com/pricing",
-        "retrieved_at": "2026-04-26",
-        "notes": "Free Basic plan details and 250 MB upload limit."
+        "retrieved_at": "2026-04-27",
+        "notes": "Free Basic plan details, 50 upload limit, and 250 MB maximum file size per upload."
       },
       {
         "label": "Apps",
         "url": "https://jumpshare.com/apps",
-        "retrieved_at": "2026-04-26",
+        "retrieved_at": "2026-04-27",
         "notes": "Windows, macOS, and iOS availability; Android marked as coming soon."
-      },
-      {
-        "label": "Free Cloud Storage",
-        "url": "https://jumpshare.com/cloud-storage-photos",
-        "retrieved_at": "2026-04-26",
-        "notes": "2 GB free storage statement."
       }
     ],
     "content": {
@@ -2666,7 +2735,10 @@
       "max_file_size": {
         "value": 5,
         "unit": "GB",
-        "notes": "The Basic plan currently lists a 5 GB per-file limit."
+        "notes": "The Basic plan currently lists a 5 GB per-file limit.",
+        "source_refs": [
+          1
+        ]
       },
       "retention": {
         "value": null,
@@ -2676,17 +2748,28 @@
       "storage": {
         "value": 10,
         "unit": "GB",
-        "notes": "MediaFire's current Basic plan lists 10 GB of active-account storage."
+        "notes": "MediaFire's current Basic plan lists 10 GB of active-account storage.",
+        "source_refs": [
+          0,
+          1
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "MediaFire's homepage and plan pages describe unlimited ad-supported downloads and no wait times for Basic users, but they do not publish a clean numeric bandwidth cap.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "A Basic account provides storage, sharing, and access to MediaFire's apps."
+      "benefits": "A Basic account provides storage, sharing, and access to MediaFire's apps.",
+      "source_refs": [
+        0,
+        2
+      ]
     },
     "developer": {
       "api_available": false,
@@ -2709,22 +2792,22 @@
     ],
     "sources": [
       {
+        "label": "Homepage",
+        "url": "https://www2.mediafire.com/index.php",
+        "retrieved_at": "2026-04-27",
+        "notes": "Current free-storage marketing, unlimited-download claims, and product overview."
+      },
+      {
         "label": "Upgrade",
         "url": "https://www.mediafire.com/upgrade/?promo=1",
-        "retrieved_at": "2026-04-26",
+        "retrieved_at": "2026-04-27",
         "notes": "Basic plan storage and per-file limit."
       },
       {
         "label": "Mobile",
-        "url": "https://mediafire.mediafire.com/software/mobile/",
-        "retrieved_at": "2026-04-26",
+        "url": "https://www.mediafire.com/software/mobile/",
+        "retrieved_at": "2026-04-27",
         "notes": "Official iOS and Android app availability."
-      },
-      {
-        "label": "About",
-        "url": "https://www.mediafire.com/about/",
-        "retrieved_at": "2026-04-26",
-        "notes": "Product description and platform overview."
       }
     ],
     "content": {
@@ -2816,9 +2899,12 @@
     "summary": "Privacy-first cloud storage from MobiSystems with a free 20 GB tier and official web, Windows, Android, and iOS apps.",
     "limits": {
       "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "The cited current public pages for this batch do not publish a per-file upload limit."
+        "value": 200,
+        "unit": "MB",
+        "notes": "MobiDrive Starter 20 GB currently lists a 200 MB maximum file size for uploads.",
+        "source_refs": [
+          1
+        ]
       },
       "retention": {
         "value": null,
@@ -2828,7 +2914,10 @@
       "storage": {
         "value": 20,
         "unit": "GB",
-        "notes": "MobiDrive currently advertises 20 GB free storage."
+        "notes": "MobiDrive currently advertises 20 GB free storage.",
+        "source_refs": [
+          1
+        ]
       },
       "bandwidth": {
         "value": null,
@@ -2838,7 +2927,11 @@
     },
     "account": {
       "required": true,
-      "benefits": "A MobiDrive account provides cloud storage, syncing, and integration with MobiOffice and MobiPDF."
+      "benefits": "A MobiDrive account provides cloud storage, syncing, and integration with MobiOffice and MobiPDF.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
@@ -2851,7 +2944,10 @@
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": true,
-      "notes": "MobiDrive describes a privacy-first approach and says user data is encrypted and not reviewed, but the cited pages do not claim end-to-end encryption."
+      "notes": "MobiDrive describes a privacy-first approach and says user data is encrypted and not reviewed, but the cited pages do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "cloud-storage",
@@ -2863,8 +2959,14 @@
       {
         "label": "Homepage",
         "url": "https://www.mobidrive.com/",
-        "retrieved_at": "2026-04-26",
-        "notes": "20 GB free storage and platform availability."
+        "retrieved_at": "2026-04-27",
+        "notes": "Current product positioning and cross-device storage messaging."
+      },
+      {
+        "label": "Pricing",
+        "url": "https://mobisystems.com/en-us/mobidrive/pricing",
+        "retrieved_at": "2026-04-27",
+        "notes": "Starter 20 GB free plan, 200 MB file size, and Windows/Android/iOS availability."
       }
     ],
     "content": {
@@ -3044,9 +3146,12 @@
     "summary": "Microsoft's cloud storage service with a 5 GB free tier and official apps across desktop and mobile platforms.",
     "limits": {
       "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "The cited public free-plan pages do not publish a per-file upload cap."
+        "value": 250,
+        "unit": "GB",
+        "notes": "Microsoft currently documents uploads up to 250 GB per file in modern browsers and in the OneDrive app for personal accounts.",
+        "source_refs": [
+          1
+        ]
       },
       "retention": {
         "value": null,
@@ -3056,7 +3161,10 @@
       "storage": {
         "value": 5,
         "unit": "GB",
-        "notes": "Microsoft's free OneDrive tier currently lists 5 GB of cloud storage."
+        "notes": "Microsoft's free OneDrive tier currently lists 5 GB of cloud storage.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
@@ -3066,20 +3174,29 @@
     },
     "account": {
       "required": true,
-      "benefits": "A Microsoft account unlocks OneDrive storage, backup, sharing, and access across devices."
+      "benefits": "A Microsoft account unlocks OneDrive storage, backup, sharing, and access across devices.",
+      "source_refs": [
+        0
+      ]
     },
     "developer": {
       "api_available": true,
       "api_docs_url": "https://learn.microsoft.com/en-us/onedrive/developer/rest-api/getting-started/?view=odsp-graph-online",
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "Microsoft provides official OneDrive API documentation through Microsoft Learn."
+      "notes": "Microsoft provides official OneDrive API documentation through Microsoft Learn.",
+      "source_refs": [
+        2
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The cited free-plan pages mention file encryption and ransomware protection, but they do not present OneDrive personal storage as end-to-end encrypted by default."
+      "notes": "The cited free-plan pages mention file encryption and ransomware protection, but they do not present OneDrive personal storage as end-to-end encrypted by default.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "cloud-storage",
@@ -3091,13 +3208,19 @@
       {
         "label": "Free Plan",
         "url": "https://www.microsoft.com/en-us/microsoft-365/onedrive/free-online-cloud-storage",
-        "retrieved_at": "2026-04-26",
+        "retrieved_at": "2026-04-27",
         "notes": "5 GB free storage and Windows/macOS/iOS/Android app availability."
+      },
+      {
+        "label": "Upload Files Support",
+        "url": "https://support.microsoft.com/en-us/office/upload-photos-and-files-to-onedrive-b00ad3fe-6643-4b16-9212-de00ef02b586",
+        "retrieved_at": "2026-04-27",
+        "notes": "Current 250 GB upload guidance for personal OneDrive."
       },
       {
         "label": "OneDrive API",
         "url": "https://learn.microsoft.com/en-us/onedrive/developer/rest-api/getting-started/?view=odsp-graph-online",
-        "retrieved_at": "2026-04-26",
+        "retrieved_at": "2026-04-27",
         "notes": "Official API overview."
       }
     ],
@@ -3116,7 +3239,10 @@
       "max_file_size": {
         "value": 100,
         "unit": "MB",
-        "notes": "OpenDrive's free personal plan currently lists a 100 MB max file size."
+        "notes": "OpenDrive's free personal plan currently lists a 100 MB max file size.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
@@ -3126,24 +3252,37 @@
       "storage": {
         "value": 5,
         "unit": "GB",
-        "notes": "OpenDrive's free personal plan currently lists 5 GB of online storage."
+        "notes": "OpenDrive's free personal plan currently lists 5 GB of online storage.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "value": 1,
+        "unit": "GB/day",
+        "notes": "OpenDrive's free personal plan currently lists 1 GB per day bandwidth, along with a 200 KB/s speed limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "A free OpenDrive account provides storage, syncing, backup, online tools, notes, and tasks."
+      "benefits": "A free OpenDrive account provides storage, syncing, backup, online tools, notes, and tasks.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": true,
       "api_docs_url": "https://www.opendrive.com/api",
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "OpenDrive publishes an official HTTP-based API for storage and file operations."
+      "notes": "OpenDrive publishes an official HTTP-based API for storage and file operations.",
+      "source_refs": [
+        2
+      ]
     },
     "security": {
       "https_only": true,
@@ -3161,19 +3300,19 @@
       {
         "label": "Pricing",
         "url": "https://www.opendrive.com/pricing",
-        "retrieved_at": "2026-04-26",
-        "notes": "Free plan storage and 100 MB max file size."
+        "retrieved_at": "2026-04-27",
+        "notes": "Free plan storage, 100 MB max file size, and 1 GB/day bandwidth."
       },
       {
         "label": "Apps",
         "url": "https://www.opendrive.com/opendrive-apps",
-        "retrieved_at": "2026-04-26",
+        "retrieved_at": "2026-04-27",
         "notes": "Windows, Mac, Linux, Android, and iOS app availability."
       },
       {
         "label": "API",
         "url": "https://www.opendrive.com/api",
-        "retrieved_at": "2026-04-26",
+        "retrieved_at": "2026-04-27",
         "notes": "Official API documentation."
       }
     ],
@@ -3272,30 +3411,45 @@
       "storage": {
         "value": 10,
         "unit": "GB",
-        "notes": "pCloud's free Basic plan offers up to 10 GB, with 2 GB available at signup and the remainder unlocked through onboarding or referrals."
+        "notes": "pCloud's free Basic plan offers up to 10 GB, with 2 GB available at signup and the remainder unlocked through onboarding or referrals.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "value": 50,
+        "unit": "GB/month",
+        "notes": "pCloud Basic currently includes 50 GB per month of shared-link traffic; upload traffic is limited to up to twice the account storage within 30 days.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "A pCloud account provides cloud storage, sharing, and access to desktop/mobile apps."
+      "benefits": "A pCloud account provides cloud storage, sharing, and access to desktop/mobile apps.",
+      "source_refs": [
+        1
+      ]
     },
     "developer": {
       "api_available": true,
       "api_docs_url": "https://docs.pcloud.com/",
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "pCloud publishes official developer documentation, SDK references, and HTTP/JSON API docs."
+      "notes": "pCloud publishes official developer documentation, SDK references, and HTTP/JSON API docs.",
+      "source_refs": [
+        2
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The cited app/download pages describe an optional zero-knowledge encrypted Crypto area rather than default end-to-end encryption for the whole account."
+      "notes": "The cited app/download pages describe an optional zero-knowledge encrypted Crypto area rather than default end-to-end encryption for the whole account.",
+      "source_refs": [
+        1
+      ]
     },
     "tags": [
       "cloud-storage",
@@ -3307,19 +3461,19 @@
       {
         "label": "Plan Details",
         "url": "https://help.pcloud.com/article/plan-details",
-        "retrieved_at": "2026-04-26",
+        "retrieved_at": "2026-04-27",
         "notes": "Free plan storage and traffic details."
       },
       {
         "label": "Downloads",
         "url": "https://www.pcloud.com/download-free-online-cloud-file-storage.html",
-        "retrieved_at": "2026-04-26",
-        "notes": "Windows, MacOS, Linux, iOS, and Android app availability."
+        "retrieved_at": "2026-04-27",
+        "notes": "Windows, MacOS, Linux, iOS, and Android app availability plus product upload claims."
       },
       {
         "label": "Developer Docs",
         "url": "https://docs.pcloud.com/",
-        "retrieved_at": "2026-04-26",
+        "retrieved_at": "2026-04-27",
         "notes": "Official API and SDK documentation."
       }
     ],
@@ -3612,7 +3766,10 @@
       "max_file_size": {
         "value": 20,
         "unit": "GB",
-        "notes": "TeraBox's official blog currently states that large file transfers can be up to 20 GB."
+        "notes": "TeraBox's official blog currently states that large file transfers can be up to 20 GB.",
+        "source_refs": [
+          1
+        ]
       },
       "retention": {
         "value": null,
@@ -3622,7 +3779,11 @@
       "storage": {
         "value": 1,
         "unit": "TB",
-        "notes": "TeraBox currently markets 1 TB (1024 GB) of free cloud storage."
+        "notes": "TeraBox currently markets 1 TB (1024 GB) of free cloud storage.",
+        "source_refs": [
+          0,
+          1
+        ]
       },
       "bandwidth": {
         "value": null,
@@ -3632,7 +3793,10 @@
     },
     "account": {
       "required": true,
-      "benefits": "A TeraBox account provides cloud storage, sync, backup, and cross-device access."
+      "benefits": "A TeraBox account provides cloud storage, sync, backup, and cross-device access.",
+      "source_refs": [
+        0
+      ]
     },
     "developer": {
       "api_available": false,
@@ -3657,13 +3821,13 @@
       {
         "label": "Android Download Page",
         "url": "https://www.terabox.com/terabox-cloud-storage-for-apk-free-download",
-        "retrieved_at": "2026-04-26",
+        "retrieved_at": "2026-04-27",
         "notes": "1 TB free storage and Android/iPhone/Mac/PC platform marketing."
       },
       {
         "label": "Official Blog",
         "url": "https://blog.terabox.com/ultimate-solution-for-1tb-free-cloud-storage/",
-        "retrieved_at": "2026-04-26",
+        "retrieved_at": "2026-04-27",
         "notes": "1 TB free storage and 20 GB transfer claim."
       }
     ],

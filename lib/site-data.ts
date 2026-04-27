@@ -5,6 +5,11 @@ type LimitField = {
   value: number | null;
   unit: string | null;
   notes: string;
+  source_refs?: number[];
+};
+
+type SourceRefsField = {
+  source_refs?: number[];
 };
 
 type Host = {
@@ -20,20 +25,20 @@ type Host = {
   account: {
     required: boolean | null;
     benefits: string;
-  };
+  } & SourceRefsField;
   developer: {
     api_available: boolean;
     api_docs_url: string | null;
     cli_friendly: boolean;
     cli_example: string | null;
     notes: string;
-  };
+  } & SourceRefsField;
   security: {
     https_only: boolean;
     e2ee: boolean;
     server_side_encryption: boolean | null;
     notes: string;
-  };
+  } & SourceRefsField;
   tags: string[];
   sources: Array<{
     label: string;
@@ -45,7 +50,7 @@ type Host = {
     allowed_file_types: {
       mode: string;
       notes: string;
-    };
+    } & SourceRefsField;
   };
 };
 

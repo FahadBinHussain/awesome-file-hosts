@@ -72,6 +72,9 @@
           },
           "benefits": {
             "type": "string"
+          },
+          "source_refs": {
+            "$ref": "#/$defs/sourceRefList"
           }
         }
       },
@@ -107,6 +110,9 @@
           },
           "notes": {
             "type": "string"
+          },
+          "source_refs": {
+            "$ref": "#/$defs/sourceRefList"
           }
         }
       },
@@ -131,6 +137,9 @@
               },
               "notes": {
                 "type": "string"
+              },
+              "source_refs": {
+                "$ref": "#/$defs/sourceRefList"
               }
             }
           }
@@ -160,6 +169,9 @@
           },
           "notes": {
             "type": "string"
+          },
+          "source_refs": {
+            "$ref": "#/$defs/sourceRefList"
           }
         }
       },
@@ -230,8 +242,20 @@
         },
         "notes": {
           "type": "string"
+        },
+        "source_refs": {
+          "$ref": "#/$defs/sourceRefList"
         }
       }
+    },
+    "sourceRefList": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "minItems": 1,
+      "uniqueItems": true
     }
   }
 }

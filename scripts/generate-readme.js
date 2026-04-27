@@ -30,6 +30,18 @@ function validateLimitField(name, field) {
     `${name}.unit must be a string or null`
   );
   assert(typeof field.notes === "string", `${name}.notes must be a string`);
+  validateSourceRefs(`${name}.source_refs`, field.source_refs);
+}
+
+function validateSourceRefs(name, refs) {
+  if (refs === undefined) {
+    return;
+  }
+
+  assert(Array.isArray(refs) && refs.length > 0, `${name} must be a non-empty array when present`);
+  for (const ref of refs) {
+    assert(Number.isInteger(ref) && ref >= 0, `${name} must contain non-negative integers`);
+  }
 }
 
 function validateHost(host) {
@@ -64,6 +76,7 @@ function validateHost(host) {
     `${host.name}.account.required must be boolean or null`
   );
   assert(typeof host.account.benefits === "string", `${host.name}.account.benefits must be a string`);
+  validateSourceRefs(`${host.name}.account.source_refs`, host.account.source_refs);
 
   assert(typeof host.developer.api_available === "boolean", `${host.name}.developer.api_available must be boolean`);
   assert(
@@ -76,6 +89,7 @@ function validateHost(host) {
     `${host.name}.developer.cli_example must be string or null`
   );
   assert(typeof host.developer.notes === "string", `${host.name}.developer.notes must be a string`);
+  validateSourceRefs(`${host.name}.developer.source_refs`, host.developer.source_refs);
 
   assert(host.content && typeof host.content === "object", `${host.name}.content must be an object`);
   assert(
@@ -92,6 +106,10 @@ function validateHost(host) {
     typeof host.content.allowed_file_types.notes === "string",
     `${host.name}.content.allowed_file_types.notes must be a string`
   );
+  validateSourceRefs(
+    `${host.name}.content.allowed_file_types.source_refs`,
+    host.content.allowed_file_types.source_refs
+  );
 
   assert(typeof host.security.https_only === "boolean", `${host.name}.security.https_only must be boolean`);
   assert(typeof host.security.e2ee === "boolean", `${host.name}.security.e2ee must be boolean`);
@@ -101,6 +119,7 @@ function validateHost(host) {
     `${host.name}.security.server_side_encryption must be boolean or null`
   );
   assert(typeof host.security.notes === "string", `${host.name}.security.notes must be a string`);
+  validateSourceRefs(`${host.name}.security.source_refs`, host.security.source_refs);
 
   assert(Array.isArray(host.tags) && host.tags.length > 0, `${host.name}.tags must be a non-empty array`);
   for (const tag of host.tags) {
@@ -119,6 +138,22 @@ function validateHost(host) {
       `${host.name}.sources.retrieved_at must be YYYY-MM-DD`
     );
     assert(typeof source.notes === "string", `${host.name}.sources.notes must be a string`);
+  }
+
+  const maxSourceIndex = host.sources.length - 1;
+  for (const refs of [
+    host.limits.max_file_size.source_refs,
+    host.limits.retention.source_refs,
+    host.limits.storage.source_refs,
+    host.limits.bandwidth.source_refs,
+    host.account.source_refs,
+    host.developer.source_refs,
+    host.security.source_refs,
+    host.content.allowed_file_types.source_refs
+  ]) {
+    for (const ref of refs || []) {
+      assert(ref <= maxSourceIndex, `${host.name} source ref ${ref} is out of range`);
+    }
   }
 }
 
@@ -208,10 +243,17 @@ function formatLimit(field) {
     if (
       notes.includes("do not publish") ||
       notes.includes("do not state") ||
+      notes.includes("do not clearly publish") ||
+      notes.includes("do not clearly state") ||
+      notes.includes("do not clearly document") ||
       notes.includes("does not publish") ||
       notes.includes("does not state") ||
+      notes.includes("does not clearly publish") ||
+      notes.includes("does not clearly state") ||
+      notes.includes("does not clearly document") ||
       notes.includes("not publish") ||
-      notes.includes("not stated")
+      notes.includes("not stated") ||
+      notes.includes("not documented")
     ) {
       return "Not published";
     }
@@ -229,7 +271,7 @@ function formatLimit(field) {
       return "Conditional";
     }
 
-    return "See notes";
+    return "Not published";
   }
 
   if (field.unit) {
@@ -280,61 +322,74 @@ function formatCli(host) {
   return "Yes";
 }
 
+function formatFeatureSummary(host) {
+  const parts = [
+    `Max: ${formatLimit(host.limits.max_file_size)}`,
+    `Retention: ${formatLimit(host.limits.retention)}`,
+    `Account: ${formatAccount(host.account.required)}`
+  ];
+
+  if (host.developer.api_available) {
+    parts.push("API");
+  }
+
+  if (host.developer.cli_friendly) {
+    parts.push("CLI");
+  }
+
+  if (host.security.e2ee) {
+    parts.push("E2EE");
+  }
+
+  return parts.join(" | ");
+}
+
 function buildReadme(hosts, candidates) {
   const sortedHosts = [...hosts].sort((a, b) => a.name.localeCompare(b.name));
   const lastUpdated = new Date().toISOString().slice(0, 10);
+  const pendingCount = candidates.filter((candidate) => candidate.verification_status === "pending").length;
+  const rejectedCount = candidates.filter((candidate) => candidate.verification_status === "rejected").length;
 
   const lines = [];
   lines.push("# awesome-file-hosts");
   lines.push("");
-  lines.push("> A JSON-first awesome list of file hosting services. `data/hosts.json` is the source of truth; `README.md` is generated.");
+  lines.push("[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)");
   lines.push("");
-  lines.push("## Why this repo exists");
+  lines.push("> A curated list of file hosting services with structured data, source-backed verification, and a proper explorer site.");
   lines.push("");
-  lines.push("- Keep file host metadata structured and reviewable.");
-  lines.push("- Generate a human-friendly awesome-list style README from JSON.");
-  lines.push("- Make contributions safer by pushing edits through schema-backed data instead of ad hoc Markdown.");
+  lines.push("The repo is JSON-first: [`data/hosts.json`](data/hosts.json) is the source of truth, [`README.md`](README.md) is generated, and the site carries the dense dataset view.");
   lines.push("");
-  lines.push("## Current hosts");
+  lines.push("Explore the full interface in the site app at `/` and the spreadsheet-style dataset view at `/dataset`.");
   lines.push("");
-  lines.push(`Seeded with ${sortedHosts.length} hosts for now, with facts checked against official public pages on ${lastUpdated}.`);
+  lines.push("## Contents");
   lines.push("");
-  lines.push("| Name | Max file size | Retention | Bandwidth | Account required | API | CLI-friendly | E2EE | Tags |");
-  lines.push("| --- | --- | --- | --- | --- | --- | --- | --- | --- |");
+  lines.push("- [What this includes](#what-this-includes)");
+  lines.push("- [Hosts](#hosts)");
+  lines.push("- [Data](#data)");
+  lines.push("- [Contributing](#contributing)");
+  lines.push("- [License](#license)");
+  lines.push("");
+  lines.push("## What this includes");
+  lines.push("");
+  lines.push(`- ${sortedHosts.length} verified hosts checked against current public sources as of ${lastUpdated}.`);
+  lines.push(`- ${pendingCount} leads still in review and ${rejectedCount} rejected entries preserved in [` + "`data/candidates.json`" + "](data/candidates.json) with reasons and references.");
+  lines.push("- A source-backed dataset designed for both human browsing and machine reuse.");
+  lines.push("- A site UI for filtering, comparison, and dense spreadsheet-style inspection.");
+  lines.push("");
+  lines.push("### Inclusion bar");
+  lines.push("");
+  lines.push("- Supports HTTPS.");
+  lines.push("- Is meaningfully usable today.");
+  lines.push("- Has enough current public evidence to support structured facts.");
+  lines.push("- Avoids obvious spam, malware traps, and dead services.");
+  lines.push("");
+  lines.push("## Hosts");
+  lines.push("");
   for (const host of sortedHosts) {
-    lines.push(
-      `| [${host.name}](${host.url}) | ${formatLimit(host.limits.max_file_size)} | ${formatLimit(host.limits.retention)} | ${formatLimit(host.limits.bandwidth)} | ${formatAccount(host.account.required)} | ${formatApi(host)} | ${formatCli(host)} | ${formatBool(host.security.e2ee)} | ${host.tags.join(", ")} |`
-    );
+    lines.push(`- [${host.name}](${host.url}) - ${host.summary} _(${formatFeatureSummary(host)})_`);
   }
   lines.push("");
-  lines.push("`Yes*` in the CLI-friendly column means a concrete command or access example is included in the notes.");
-  lines.push("`Not published` means the cited public pages did not give a clean current number. `Conditional` means the limit depends on account type, inactivity, downloads, or another rule described in the notes.");
-  lines.push("");
-  lines.push("## Notes");
-  lines.push("");
-  for (const host of sortedHosts) {
-    lines.push(`### ${host.name}`);
-    lines.push("");
-    lines.push(host.summary);
-    lines.push("");
-    lines.push(`- Max file size: ${host.limits.max_file_size.notes}`);
-    lines.push(`- Retention: ${host.limits.retention.notes}`);
-    lines.push(`- Bandwidth: ${host.limits.bandwidth.notes}`);
-    lines.push(`- Account: ${host.account.benefits}`);
-    lines.push(`- Allowed file types: ${host.content.allowed_file_types.notes}`);
-    if (host.developer.cli_example) {
-      lines.push(`- CLI example: \`${host.developer.cli_example}\``);
-    }
-    lines.push(`- Developer support: ${host.developer.notes}`);
-    lines.push(`- Security: ${host.security.notes}`);
-    lines.push(
-      `- Sources: ${host.sources
-        .map((source) => `[${source.label}](${source.url})`)
-        .join(", ")}`
-    );
-    lines.push("");
-  }
-  lines.push("## Data model");
+  lines.push("## Data");
   lines.push("");
   lines.push("- Dataset: [`data/hosts.json`](data/hosts.json)");
   lines.push("- Candidate backlog: [`data/candidates.json`](data/candidates.json)");
@@ -342,7 +397,9 @@ function buildReadme(hosts, candidates) {
   lines.push("- Candidate schema: [`schema/candidates.schema.json`](schema/candidates.schema.json)");
   lines.push("- Generator: [`scripts/generate-readme.js`](scripts/generate-readme.js)");
   lines.push("");
-  lines.push("## Usage");
+  lines.push("The site is the best place to explore all columns, notes, references, queue status, and layout controls. The README stays intentionally compact so the list still reads like an awesome list instead of a database dump.");
+  lines.push("");
+  lines.push("### Generate");
   lines.push("");
   lines.push("```bash");
   lines.push("npm run generate");

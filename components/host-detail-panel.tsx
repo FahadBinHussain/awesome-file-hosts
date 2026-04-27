@@ -2,12 +2,26 @@
 
 import { Database, LinkSimple, Lock, ShieldCheck, TerminalWindow } from "@phosphor-icons/react";
 import type { HostRecord } from "@/lib/site-data";
+import { SourceRefLinks } from "./source-ref-links";
 
-function InfoPair({ label, value }: { label: string; value: string }) {
+function InfoPair({
+  label,
+  value,
+  host,
+  refs
+}: {
+  label: string;
+  value: string;
+  host: HostRecord;
+  refs?: number[];
+}) {
   return (
     <div className="space-y-1">
       <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--soft)]">{label}</div>
-      <div className="text-sm leading-6 text-[var(--text)]">{value}</div>
+      <div className="text-sm leading-6 text-[var(--text)]">
+        {value}{" "}
+        <SourceRefLinks host={host} refs={refs} className="inline-flex flex-wrap gap-1 align-middle" />
+      </div>
     </div>
   );
 }
@@ -49,31 +63,53 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
           <InfoPair
             label="Max file size"
             value={`${host.filters.maxFileLabel} - ${host.limits.max_file_size.notes}`}
+            host={host}
+            refs={host.limits.max_file_size.source_refs}
           />
           <InfoPair
             label="Retention"
             value={`${host.filters.retentionLabel} - ${host.limits.retention.notes}`}
+            host={host}
+            refs={host.limits.retention.source_refs}
           />
           <InfoPair
             label="Storage"
             value={`${host.filters.storageLabel} - ${host.limits.storage.notes}`}
+            host={host}
+            refs={host.limits.storage.source_refs}
           />
           <InfoPair
             label="Bandwidth"
             value={`${host.filters.bandwidthLabel} - ${host.limits.bandwidth.notes}`}
+            host={host}
+            refs={host.limits.bandwidth.source_refs}
           />
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
-          <InfoPair label="Account" value={host.account.benefits} />
-          <InfoPair label="Allowed file types" value={host.content.allowed_file_types.notes} />
+          <InfoPair
+            label="Account"
+            value={host.account.benefits}
+            host={host}
+            refs={host.account.source_refs}
+          />
+          <InfoPair
+            label="Allowed file types"
+            value={host.content.allowed_file_types.notes}
+            host={host}
+            refs={host.content.allowed_file_types.source_refs}
+          />
           <InfoPair
             label="Developer support"
             value={`${host.developer.api_available ? "API" : "No API"}, ${host.developer.cli_friendly ? "CLI-friendly" : "no CLI"} - ${host.developer.notes}`}
+            host={host}
+            refs={host.developer.source_refs}
           />
           <InfoPair
             label="Security"
             value={`${host.security.e2ee ? "E2EE" : "No E2EE"} - ${host.security.notes}`}
+            host={host}
+            refs={host.security.source_refs}
           />
         </div>
 
@@ -111,9 +147,10 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
             Source references
           </div>
           <div className="mt-4 space-y-3">
-            {host.sources.map((source) => (
+            {host.sources.map((source, index) => (
               <a
                 key={`${source.label}-${source.url}`}
+                id={`host-source-${host.id}-${index}`}
                 href={source.url}
                 target="_blank"
                 rel="noreferrer"
@@ -122,7 +159,7 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
                 <div className="flex items-center justify-between gap-3">
                   <div className="flex items-center gap-2 text-sm font-medium text-white">
                     <LinkSimple size={16} />
-                    {source.label}
+                    [{index + 1}] {source.label}
                   </div>
                   <div className="text-xs text-[var(--soft)]">{source.retrieved_at}</div>
                 </div>
