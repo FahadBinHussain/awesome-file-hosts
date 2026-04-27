@@ -568,8 +568,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "Current public evidence points to a dead or unreliable clone-style host rather than a trustworthy active service for the verified list.",
+    "verification_references": [
+      {
+        "label": "Website Informer listing showing DesuFiles as AnonFiles-branded upload host",
+        "url": "https://website.informer.com/desufiles.com",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "NotOpening status history showing desufiles.com repeatedly down",
+        "url": "https://notopening.com/site/desufiles.com",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Dir50",
@@ -579,8 +592,16 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The current domain resolves to a parked / redirecting setup rather than an active file-hosting service.",
+    "verification_references": [
+      {
+        "label": "IPAddress report for dir50.com showing Parklogic nameservers and redirecting page",
+        "url": "https://www.ipaddress.com/website/dir50.com/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "DirectUpload",
@@ -1180,8 +1201,16 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The domain now appears offline / expired and no longer supports an active file-hosting service.",
+    "verification_references": [
+      {
+        "label": "Webrate status page showing filecandy.net offline",
+        "url": "https://webrate.org/site/filecandy.net/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Filecloud",
@@ -1445,8 +1474,16 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The official site openly presents a premium-gated digital-content locker with API, reseller, and webmaster flows, which puts it outside the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "FilesMonster homepage",
+        "url": "https://filesmonster.com/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "FileSpace",
@@ -1467,8 +1504,16 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The domain currently redirects to a GoDaddy for-sale page rather than an active file host.",
+    "verification_references": [
+      {
+        "label": "file.town current page showing the domain is for sale",
+        "url": "https://file.town/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "FileTUT",
@@ -1478,8 +1523,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The current asmfile.com trail points to a payout-driven cyberlocker lineage rather than a strong verified host for this list.",
+    "verification_references": [
+      {
+        "label": "IPAddress summary for asmfile.com",
+        "url": "https://www.ipaddress.com/website/asmfile.com/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "BeerMoneyForum note describing Asmfile as the previous FileTUT service with premium and PPS model",
+        "url": "https://www.beermoneyforum.com/threads/asmfile-com-reviews-scam-or-legit.120808/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "FileUpload",

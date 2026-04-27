@@ -5,13 +5,16 @@ import { useMemo, useState } from "react";
 import {
   ArrowsDownUp,
   CheckCircle,
+  Database,
   Eye,
   EyeSlash,
   Funnel,
   GlobeHemisphereWest,
+  LinkSimple,
   MagnifyingGlass,
   ShieldCheck,
   TerminalWindow,
+  X,
   XCircle
 } from "@phosphor-icons/react";
 import { AppFrame } from "@/components/app-frame";
@@ -24,7 +27,6 @@ type Props = {
 };
 
 type DatasetMode = "hosts" | "queue";
-type PanelLayout = "hidden" | "split" | "wide";
 type HostSortKey =
   | "name"
   | "max"
@@ -55,6 +57,7 @@ type SortState<T extends string> = {
 type HostColumn = {
   id: string;
   label: string;
+  width: string;
   className?: string;
   render: (host: HostRecord) => ReactNode;
 };
@@ -62,6 +65,7 @@ type HostColumn = {
 type QueueColumn = {
   id: string;
   label: string;
+  width: string;
   className?: string;
   render: (candidate: CandidateRecord) => ReactNode;
 };
@@ -70,7 +74,8 @@ const hostColumnDefs: HostColumn[] = [
   {
     id: "name",
     label: "Host",
-    className: "min-w-[220px] sticky left-0 z-10 bg-[rgba(11,13,18,0.96)]",
+    width: "180px",
+    className: "min-w-[170px] sticky left-0 z-10 bg-[rgba(13,17,23,0.98)] before:absolute before:inset-y-0 before:left-0 before:w-[2px] before:bg-gradient-to-b before:from-[var(--accent)] before:to-transparent before:content-['']",
     render: (host) => (
       <div className="min-w-0">
         <a
@@ -78,167 +83,182 @@ const hostColumnDefs: HostColumn[] = [
           target="_blank"
           rel="noreferrer"
           onClick={(event) => event.stopPropagation()}
-          className="truncate font-medium text-white underline decoration-[rgba(73,179,255,0.28)] underline-offset-4 transition hover:text-[var(--accent)]"
+          className="block truncate font-medium text-white transition-all hover:translate-x-[2px] hover:text-[var(--accent)]"
         >
           {host.name}
         </a>
-        <div className="mt-1 line-clamp-2 text-xs leading-5 text-[var(--muted)]">{host.summary}</div>
       </div>
     )
   },
   {
     id: "max",
     label: "Max file",
+    width: "118px",
     render: (host) => (
-      <>
-        {host.filters.maxFileLabel}{" "}
+      <div className="flex items-center gap-1.5">
+        <span>{host.filters.maxFileLabel}</span>
         <SourceRefLinks host={host} refs={host.limits.max_file_size.source_refs} className="inline-flex gap-1" />
-      </>
+      </div>
     )
   },
   {
     id: "retention",
     label: "Retention",
+    width: "122px",
     render: (host) => (
-      <>
-        {host.filters.retentionLabel}{" "}
+      <div className="flex items-center gap-1.5">
+        <span>{host.filters.retentionLabel}</span>
         <SourceRefLinks host={host} refs={host.limits.retention.source_refs} className="inline-flex gap-1" />
-      </>
+      </div>
     )
   },
   {
     id: "storage",
     label: "Storage",
+    width: "122px",
     render: (host) => (
-      <>
-        {host.filters.storageLabel}{" "}
+      <div className="flex items-center gap-1.5">
+        <span>{host.filters.storageLabel}</span>
         <SourceRefLinks host={host} refs={host.limits.storage.source_refs} className="inline-flex gap-1" />
-      </>
+      </div>
     )
   },
   {
     id: "bandwidth",
     label: "Bandwidth",
+    width: "134px",
     render: (host) => (
-      <>
-        {host.filters.bandwidthLabel}{" "}
+      <div className="flex items-center gap-1.5">
+        <span>{host.filters.bandwidthLabel}</span>
         <SourceRefLinks host={host} refs={host.limits.bandwidth.source_refs} className="inline-flex gap-1" />
-      </>
+      </div>
     )
   },
-  { id: "account", label: "Account", render: (host) => host.accountLabel },
-  { id: "api", label: "API", render: (host) => (host.developer.api_available ? "Yes" : "No") },
-  { id: "cli", label: "CLI", render: (host) => (host.developer.cli_friendly ? "Yes" : "No") },
-  { id: "e2ee", label: "E2EE", render: (host) => (host.security.e2ee ? "Yes" : "No") },
-  { id: "https", label: "HTTPS", render: (host) => (host.security.https_only ? "Yes" : "No") },
+  { id: "account", label: "Account", width: "96px", render: (host) => host.accountLabel },
+  { id: "api", label: "API", width: "72px", render: (host) => (host.developer.api_available ? "Yes" : "No") },
+  { id: "cli", label: "CLI", width: "72px", render: (host) => (host.developer.cli_friendly ? "Yes" : "No") },
+  { id: "e2ee", label: "E2EE", width: "72px", render: (host) => (host.security.e2ee ? "Yes" : "No") },
+  { id: "https", label: "HTTPS", width: "72px", render: (host) => (host.security.https_only ? "Yes" : "No") },
   {
     id: "tags",
     label: "Tags",
-    className: "min-w-[220px]",
-    render: (host) => host.tags.slice(0, 3).join(", ")
+    width: "240px",
+    className: "min-w-[160px]",
+    render: (host) => (
+      <span className="block truncate" title={host.tags.join(", ")}>
+        {host.tags.slice(0, 3).join(", ")}
+      </span>
+    )
   },
-  { id: "sources", label: "Sources", render: (host) => String(host.sources.length) }
+  { id: "sources", label: "Sources", width: "68px", render: (host) => String(host.sources.length) }
 ];
 
 const queueColumnDefs: QueueColumn[] = [
   {
     id: "name",
     label: "Candidate",
-    className: "min-w-[220px] sticky left-0 z-10 bg-[rgba(11,13,18,0.96)]",
-    render: (candidate) => candidate.name
+    width: "clamp(132px, 28vw, 180px)",
+    className: "min-w-[132px] sticky left-0 z-10 bg-[rgba(13,17,23,0.98)] before:absolute before:inset-y-0 before:left-0 before:w-[2px] before:bg-gradient-to-b before:from-[var(--accent)] before:to-transparent before:content-['']",
+    render: (candidate) => (
+      <div className="truncate text-[14px] font-medium text-white sm:text-[15px]">
+        {candidate.name}
+      </div>
+    )
   },
-  { id: "type", label: "Type", render: (candidate) => candidate.type },
-  { id: "free_volume", label: "Free volume", render: (candidate) => candidate.free_volume ?? "-" },
-  { id: "shelf_life", label: "Shelf life", render: (candidate) => candidate.shelf_life ?? "-" },
+  { id: "type", label: "Type", width: "122px", render: (candidate) => candidate.type },
+  { id: "free_volume", label: "Free volume", width: "118px", render: (candidate) => candidate.free_volume ?? "-" },
+  { id: "shelf_life", label: "Shelf life", width: "118px", render: (candidate) => candidate.shelf_life ?? "-" },
   {
     id: "download_count",
     label: "Downloads",
+    width: "102px",
     render: (candidate) => candidate.download_count ?? "-"
   },
   {
     id: "languages",
     label: "Languages",
-    className: "min-w-[160px]",
-    render: (candidate) => candidate.languages.join(", ") || "-"
+    width: "156px",
+    className: "min-w-[140px]",
+    render: (candidate) => (
+      <span className="block truncate" title={candidate.languages.join(", ")}>
+        {candidate.languages.join(", ") || "-"}
+      </span>
+    )
   },
   {
     id: "applications",
     label: "Apps",
-    className: "min-w-[160px]",
-    render: (candidate) => candidate.applications.join(", ") || "-"
+    width: "156px",
+    className: "min-w-[140px]",
+    render: (candidate) => (
+      <span className="block truncate" title={candidate.applications.join(", ")}>
+        {candidate.applications.join(", ") || "-"}
+      </span>
+    )
   },
   {
     id: "status",
     label: "Status",
+    width: "112px",
     render: (candidate) => candidate.verification_status
   },
   {
     id: "notes",
     label: "Why",
-    className: "min-w-[260px]",
-    render: (candidate) => candidate.verification_notes ?? candidate.source
+    width: "260px",
+    className: "min-w-[220px]",
+    render: (candidate) => (
+      <span className="block truncate" title={candidate.verification_notes ?? candidate.source}>
+        {candidate.verification_notes ?? candidate.source}
+      </span>
+    )
   }
 ];
 
 function statusTone(status: CandidateRecord["verification_status"]) {
-  if (status === "verified") return "text-[var(--good)] bg-[rgba(99,211,143,0.12)]";
-  if (status === "rejected") return "text-[var(--bad)] bg-[rgba(240,106,106,0.12)]";
-  return "text-[var(--warn)] bg-[rgba(243,187,91,0.12)]";
+  if (status === "verified") return "text-[var(--good)] bg-[var(--good-soft)] border-[var(--good)]/20 shadow-[0_0_16px_-4px_var(--good-soft)]";
+  if (status === "rejected") return "text-[var(--bad)] bg-[var(--bad-soft)] border-[var(--bad)]/20 shadow-[0_0_16px_-4px_var(--bad-soft)]";
+  return "text-[var(--warn)] bg-[var(--warn-soft)] border-[var(--warn)]/20 shadow-[0_0_16px_-4px_var(--warn-soft)]";
 }
 
 function ToolbarButton({
   active,
   onClick,
-  children
+  children,
+  icon
 }: {
   active: boolean;
   onClick: () => void;
   children: ReactNode;
+  icon?: ReactNode;
 }) {
   return (
     <button
       onClick={onClick}
       className={[
-        "inline-flex items-center gap-2 rounded-full border px-3 py-2 text-sm transition",
+        "group relative inline-flex items-center gap-2 rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-200",
         active
-          ? "border-[rgba(73,179,255,0.3)] bg-[var(--accent-soft)] text-white"
-          : "border-[var(--line)] bg-[rgba(255,255,255,0.03)] text-[var(--muted)] hover:text-white"
+          ? "border-[var(--accent)]/30 bg-[var(--accent-soft)] text-white shadow-[0_0_24px_-6px_var(--accent-glow)]"
+          : "border-[var(--line)] bg-[rgba(255,255,255,0.025)] text-[var(--text-secondary)] hover:border-[var(--accent)]/50 hover:text-white hover:shadow-[0_0_20px_-6px_rgba(59,130,246,0.12)]"
       ].join(" ")}
     >
+      {icon && <span className={["transition-transform", active ? "scale-110" : "group-hover:scale-110"].join(" ")}>{icon}</span>}
       {children}
+      {active && (
+        <div className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-r from-[var(--accent)]/8 to-transparent opacity-60" />
+      )}
     </button>
   );
 }
 
-function LayoutGlyph({ layout }: { layout: PanelLayout }) {
-  if (layout === "hidden") {
-    return (
-      <span className="grid h-4 w-5 grid-cols-[1fr_0.38fr] gap-[2px]">
-        <span className="rounded-[2px] bg-current opacity-95" />
-        <span className="rounded-[2px] border border-current opacity-65" />
-      </span>
-    );
-  }
-
-  if (layout === "wide") {
-    return (
-      <span className="grid h-4 w-5 grid-cols-[0.82fr_1fr] gap-[2px]">
-        <span className="rounded-[2px] border border-current opacity-65" />
-        <span className="rounded-[2px] bg-current opacity-95" />
-      </span>
-    );
-  }
-
-  return (
-    <span className="grid h-4 w-5 grid-cols-2 gap-[2px]">
-      <span className="rounded-[2px] bg-current opacity-95" />
-      <span className="rounded-[2px] border border-current opacity-65" />
-    </span>
-  );
+function sortDirectionLabel(direction: "asc" | "desc") {
+  return direction === "asc" 
+    ? "↑ Ascending" 
+    : "↓ Descending";
 }
 
-function sortDirectionLabel(direction: "asc" | "desc") {
-  return direction === "asc" ? "ascending" : "descending";
+function gridTemplate(columns: Array<{ width: string }>) {
+  return columns.map((column) => column.width).join(" ");
 }
 
 function hostSortValue(host: HostRecord, key: HostSortKey) {
@@ -292,8 +312,8 @@ function queueSortValue(candidate: CandidateRecord, key: QueueSortKey) {
 function CandidateDetailPanel({ candidate }: { candidate: CandidateRecord | null }) {
   if (!candidate) {
     return (
-      <aside className="rounded-[2rem] border border-[var(--line)] bg-[var(--panel)] p-5">
-        <div className="flex h-full min-h-[18rem] items-center justify-center text-sm text-[var(--muted)]">
+      <aside className="rounded-[var(--radius-card)] border border-[var(--line)] bg-[var(--panel)] p-5">
+        <div className="flex h-full min-h-[18rem] items-center justify-center text-sm text-[var(--text-muted)]">
           Pick a candidate to inspect.
         </div>
       </aside>
@@ -301,18 +321,21 @@ function CandidateDetailPanel({ candidate }: { candidate: CandidateRecord | null
   }
 
   return (
-    <aside className="rounded-[2rem] border border-[var(--line)] bg-[var(--panel)] p-5">
+    <aside className="rounded-[var(--radius-card)] border border-[var(--line)] bg-[var(--panel)] p-5">
       <div className="space-y-5">
         <div className="flex items-start justify-between gap-3">
           <div>
-            <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--soft)]">
-              Candidate detail
+            <div className="flex items-center gap-2">
+              <div className="h-1 w-1 rounded-full bg-[var(--accent)] animate-pulse" style={{ animationDuration: "2s" }} />
+              <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">
+                Candidate detail
+              </div>
             </div>
-            <h2 className="mt-2 text-2xl font-semibold tracking-tight text-white">{candidate.name}</h2>
+            <h2 className="mt-2.5 text-xl font-semibold tracking-tight text-white">{candidate.name}</h2>
           </div>
           <span
             className={[
-              "inline-flex rounded-full px-3 py-1 text-xs font-medium capitalize",
+              "inline-flex rounded-full px-3 py-1 text-[10px] font-medium capitalize backdrop-blur-sm border",
               statusTone(candidate.verification_status)
             ].join(" ")}
           >
@@ -321,46 +344,49 @@ function CandidateDetailPanel({ candidate }: { candidate: CandidateRecord | null
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
-          <div>
-            <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--soft)]">Type</div>
-            <div className="mt-1 text-sm text-[var(--text)]">{candidate.type}</div>
+          <div className="space-y-1.5">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Type</div>
+            <div className="text-sm text-[var(--text-primary)]">{candidate.type}</div>
           </div>
-          <div>
-            <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--soft)]">Free volume</div>
-            <div className="mt-1 text-sm text-[var(--text)]">{candidate.free_volume ?? "Unknown"}</div>
+          <div className="space-y-1.5">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Free volume</div>
+            <div className="text-sm text-[var(--text-primary)]">{candidate.free_volume ?? "Unknown"}</div>
           </div>
-          <div>
-            <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--soft)]">Shelf life</div>
-            <div className="mt-1 text-sm text-[var(--text)]">{candidate.shelf_life ?? "Unknown"}</div>
+          <div className="space-y-1.5">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Shelf life</div>
+            <div className="text-sm text-[var(--text-primary)]">{candidate.shelf_life ?? "Unknown"}</div>
           </div>
-          <div>
-            <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--soft)]">Download count</div>
-            <div className="mt-1 text-sm text-[var(--text)]">{candidate.download_count ?? "Unknown"}</div>
+          <div className="space-y-1.5">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Download count</div>
+            <div className="text-sm text-[var(--text-primary)]">{candidate.download_count ?? "Unknown"}</div>
           </div>
         </div>
 
-        <div className="rounded-[1.75rem] border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-4 text-sm leading-7 text-[var(--muted)]">
+        <div className="rounded-2xl border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-4 text-sm leading-7 text-[var(--text-secondary)] backdrop-blur-sm">
           {candidate.verification_notes ?? candidate.source}
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
-          <div>
-            <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--soft)]">Languages</div>
-            <div className="mt-1 text-sm text-[var(--text)]">
+          <div className="space-y-1.5">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Languages</div>
+            <div className="text-sm text-[var(--text-primary)]">
               {candidate.languages.join(", ") || "Unknown"}
             </div>
           </div>
-          <div>
-            <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--soft)]">Applications</div>
-            <div className="mt-1 text-sm text-[var(--text)]">
+          <div className="space-y-1.5">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Applications</div>
+            <div className="text-sm text-[var(--text-primary)]">
               {candidate.applications.join(", ") || "Unknown"}
             </div>
           </div>
         </div>
 
         {candidate.verification_references?.length ? (
-          <div className="rounded-[1.75rem] border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-4">
-            <div className="text-sm font-medium text-white">Evidence trail</div>
+          <div className="rounded-2xl border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-4 backdrop-blur-sm">
+            <div className="flex items-center gap-2 text-sm font-semibold text-white">
+              <Database size={16} weight="fill" />
+              Evidence trail
+            </div>
             <div className="mt-4 space-y-3">
               {candidate.verification_references.map((reference) => (
                 <a
@@ -368,10 +394,15 @@ function CandidateDetailPanel({ candidate }: { candidate: CandidateRecord | null
                   href={reference.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="block rounded-[1.25rem] border border-[rgba(255,255,255,0.06)] px-4 py-3 transition hover:border-[rgba(73,179,255,0.25)] hover:bg-[rgba(73,179,255,0.06)]"
+                  className="group block rounded-2xl border border-[var(--line)] bg-[rgba(255,255,255,0.02)] px-4 py-3 transition-all hover:border-[var(--accent)]/30 hover:bg-[var(--accent-soft)]/50 hover:shadow-[0_0_20px_-4px_var(--accent-glow)]"
                 >
-                  <div className="text-sm font-medium text-white">{reference.label}</div>
-                  <div className="mt-1 text-xs text-[var(--soft)]">{reference.retrieved_at}</div>
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-2 text-sm font-medium text-white">
+                      <LinkSimple size={16} weight="fill" />
+                      <span>{reference.label}</span>
+                    </div>
+                    <div className="text-xs text-[var(--text-muted)] font-mono">{reference.retrieved_at}</div>
+                  </div>
                 </a>
               ))}
             </div>
@@ -382,9 +413,41 @@ function CandidateDetailPanel({ candidate }: { candidate: CandidateRecord | null
   );
 }
 
+function FloatingInspector({
+  title,
+  onClose,
+  children
+}: {
+  title: string;
+  onClose: () => void;
+  children: ReactNode;
+}) {
+  return (
+    <div className="pointer-events-none fixed inset-y-6 right-6 z-40 flex w-[min(460px,calc(100vw-2rem))] items-start justify-end">
+      <div className="pointer-events-auto max-h-[calc(100dvh-3rem)] w-full overflow-auto rounded-[var(--radius-card)] border border-[var(--line)] bg-[rgba(10,12,16,0.92)] p-4 shadow-[0_36px_120px_-36px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur-2xl animate-slide-in-right">
+        <div className="mb-4 flex items-center justify-between rounded-2xl border border-[var(--line)] bg-[rgba(255,255,255,0.02)] px-4 py-3 backdrop-blur-sm">
+          <div className="flex items-center gap-2">
+            <div className="h-1 w-1 rounded-full bg-[var(--accent)] animate-pulse" style={{ animationDuration: "2s" }} />
+            <div className="text-sm font-semibold text-white tracking-tight">{title}</div>
+          </div>
+          <button
+            onClick={onClose}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--line)] text-[var(--text-muted)] transition-all hover:border-[var(--accent)]/30 hover:bg-[var(--accent-soft)] hover:text-white hover:shadow-[0_0_16px_-4px_var(--accent-glow)]"
+            aria-label="Close inspector"
+          >
+            <X size={16} weight="bold" />
+          </button>
+        </div>
+        <div className="animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          {children}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function DatasetApp({ data }: Props) {
   const [mode, setMode] = useState<DatasetMode>("hosts");
-  const [panelLayout, setPanelLayout] = useState<PanelLayout>("split");
   const [hostSort, setHostSort] = useState<SortState<HostSortKey>>({
     key: "name",
     direction: "asc"
@@ -400,13 +463,13 @@ export function DatasetApp({ data }: Props) {
   const [queueStatus, setQueueStatus] = useState<"all" | CandidateRecord["verification_status"]>("all");
   const [hiddenHostColumns, setHiddenHostColumns] = useState<string[]>([]);
   const [hiddenQueueColumns, setHiddenQueueColumns] = useState<string[]>([]);
-  const [selectedHostId, setSelectedHostId] = useState(data.hosts[0]?.id ?? "");
-  const [selectedCandidateId, setSelectedCandidateId] = useState(
-    data.candidates[0]?.id ?? ""
-  );
+  const [selectedHostId, setSelectedHostId] = useState<string | null>(null);
+  const [selectedCandidateId, setSelectedCandidateId] = useState<string | null>(null);
 
   const visibleHostColumns = hostColumnDefs.filter((column) => !hiddenHostColumns.includes(column.id));
   const visibleQueueColumns = queueColumnDefs.filter((column) => !hiddenQueueColumns.includes(column.id));
+  const hostGridTemplate = gridTemplate(visibleHostColumns);
+  const queueGridTemplate = gridTemplate(visibleQueueColumns);
 
   const filteredHosts = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -468,11 +531,13 @@ export function DatasetApp({ data }: Props) {
   }, [data.candidates, queueSort, queueStatus, search]);
 
   const selectedHost =
-    filteredHosts.find((host) => host.id === selectedHostId) ?? filteredHosts[0] ?? null;
+    selectedHostId === null
+      ? null
+      : filteredHosts.find((host) => host.id === selectedHostId) ?? null;
   const selectedCandidate =
-    filteredCandidates.find((candidate) => candidate.id === selectedCandidateId) ??
-    filteredCandidates[0] ??
-    null;
+    selectedCandidateId === null
+      ? null
+      : filteredCandidates.find((candidate) => candidate.id === selectedCandidateId) ?? null;
 
   function toggleHostColumn(id: string) {
     setHiddenHostColumns((current) =>
@@ -487,108 +552,87 @@ export function DatasetApp({ data }: Props) {
   }
 
   function changeHostSort(key: HostSortKey) {
-    setHostSort((current) =>
-      current.key === key
-        ? { key, direction: current.direction === "asc" ? "desc" : "asc" }
-        : { key, direction: "asc" }
-    );
+    setHostSort((current) => {
+      if (current.key !== key) return { key, direction: "asc" };
+      return { key, direction: current.direction === "asc" ? "desc" : "asc" };
+    });
   }
 
   function changeQueueSort(key: QueueSortKey) {
-    setQueueSort((current) =>
-      current.key === key
-        ? { key, direction: current.direction === "asc" ? "desc" : "asc" }
-        : { key, direction: "asc" }
-    );
+    setQueueSort((current) => {
+      if (current.key !== key) return { key, direction: "asc" };
+      return { key, direction: current.direction === "asc" ? "desc" : "asc" };
+    });
   }
 
   return (
     <AppFrame current="dataset">
-      <div
-        className={[
-          "grid min-h-0 flex-1 gap-4",
-          panelLayout === "hidden"
-            ? "xl:grid-cols-[minmax(0,1fr)]"
-            : panelLayout === "wide"
-              ? "xl:grid-cols-[minmax(0,1fr)_520px]"
-              : "xl:grid-cols-[minmax(0,1fr)_420px]"
-        ].join(" ")}
-      >
-        <section className="min-h-0 overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--panel)]">
-          <div className="flex flex-col gap-4 border-b border-[rgba(255,255,255,0.08)] p-4">
+      <div className="min-h-0 flex-1">
+        <section className="min-h-0 overflow-visible rounded-[var(--radius-card)] border border-[var(--line)] bg-[var(--panel)]">
+          <div className="flex flex-col gap-4 border-b border-[var(--line)] p-4">
             <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
-              <div>
-                <div className="text-[11px] uppercase tracking-[0.28em] text-[var(--soft)]">
-                  Dense dataset view
+              <div className="animate-fade-in-up">
+                <div className="flex items-center gap-2">
+                  <div className="h-[16px] w-[3px] rounded-full bg-gradient-to-b from-[var(--accent)] to-[var(--accent-glow)]" />
+                  <div className="text-[9px] uppercase tracking-[0.4em] text-[var(--text-muted)] font-semibold">
+                    Dataset view
+                  </div>
                 </div>
-                <h1 className="mt-2 text-3xl font-semibold tracking-tight text-white md:text-4xl">
-                  A proper scan-and-compare surface for all the rows and columns.
+                <h1 className="mt-2.5 text-2xl font-semibold tracking-tight text-white md:text-3xl">
+                  Scan, compare, and explore the full dataset with precision.
                 </h1>
               </div>
-              <div className="grid gap-2 sm:grid-cols-3">
-                <div className="rounded-[1.5rem] border border-[var(--line)] bg-[rgba(255,255,255,0.03)] px-4 py-3">
-                  <div className="text-[11px] uppercase tracking-[0.2em] text-[var(--soft)]">Rows</div>
-                  <div className="mt-2 text-2xl font-semibold text-white">
-                    {mode === "hosts" ? filteredHosts.length : filteredCandidates.length}
+              
+              <div className="grid grid-cols-3 gap-2 sm:gap-3">
+                {[
+                  { label: "Rows", value: mode === "hosts" ? filteredHosts.length : filteredCandidates.length },
+                  { label: "Visible cols", value: mode === "hosts" ? visibleHostColumns.length : visibleQueueColumns.length },
+                  { label: "Sort", value: mode === "hosts" ? `${hostSort.key} · ${sortDirectionLabel(hostSort.direction)}` : `${queueSort.key} · ${sortDirectionLabel(queueSort.direction)}` }
+                ].map((stat, i) => (
+                  <div 
+                    key={stat.label} 
+                    className="rounded-2xl border border-[var(--line)] bg-[rgba(255,255,255,0.02)] px-3.5 py-2.5 backdrop-blur-sm transition-all hover:border-[var(--line-strong)] hover:bg-[rgba(255,255,255,0.04)] animate-fade-in-up"
+                    style={{ animationDelay: `${i * 0.05}s` }}
+                  >
+                    <div className="text-[9px] uppercase tracking-[0.2em] text-[var(--text-muted)] font-medium">
+                      {stat.label}
+                    </div>
+                    <div className="mt-1.5 text-xl font-semibold text-white tracking-tight">
+                      {typeof stat.value === "number" ? stat.value.toLocaleString() : stat.value}
+                    </div>
                   </div>
-                </div>
-                <div className="rounded-[1.5rem] border border-[var(--line)] bg-[rgba(255,255,255,0.03)] px-4 py-3">
-                  <div className="text-[11px] uppercase tracking-[0.2em] text-[var(--soft)]">Visible cols</div>
-                  <div className="mt-2 text-2xl font-semibold text-white">
-                    {mode === "hosts" ? visibleHostColumns.length : visibleQueueColumns.length}
-                  </div>
-                </div>
-                <div className="rounded-[1.5rem] border border-[var(--line)] bg-[rgba(255,255,255,0.03)] px-4 py-3">
-                  <div className="text-[11px] uppercase tracking-[0.2em] text-[var(--soft)]">Sort</div>
-                  <div className="mt-2 text-sm text-white">
-                    {mode === "hosts"
-                      ? `${hostSort.key} · ${sortDirectionLabel(hostSort.direction)}`
-                      : `${queueSort.key} · ${sortDirectionLabel(queueSort.direction)}`}
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
             <div className="flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between">
-              <div className="flex flex-wrap items-center gap-2">
-                <div className="flex flex-wrap gap-2">
-                  <ToolbarButton active={mode === "hosts"} onClick={() => setMode("hosts")}>
-                    Verified hosts
-                  </ToolbarButton>
-                  <ToolbarButton active={mode === "queue"} onClick={() => setMode("queue")}>
-                    Review queue
-                  </ToolbarButton>
-                </div>
-
-                <div className="ml-0 flex items-center gap-1 rounded-full border border-[var(--line)] bg-[rgba(255,255,255,0.03)] p-1 xl:ml-2">
-                  {(["hidden", "split", "wide"] as const).map((layout) => (
-                    <button
-                      key={layout}
-                      onClick={() => setPanelLayout(layout)}
-                      aria-label={`Set ${layout} detail layout`}
-                      className={[
-                        "inline-flex h-9 w-9 items-center justify-center rounded-full transition",
-                        panelLayout === layout
-                          ? "bg-[var(--accent-soft)] text-white"
-                          : "text-[var(--muted)] hover:text-white"
-                      ].join(" ")}
-                    >
-                      <LayoutGlyph layout={layout} />
-                    </button>
-                  ))}
-                </div>
+              <div className="flex flex-wrap gap-2">
+                <ToolbarButton active={mode === "hosts"} onClick={() => setMode("hosts")}>
+                  Verified hosts
+                </ToolbarButton>
+                <ToolbarButton active={mode === "queue"} onClick={() => setMode("queue")}>
+                  Review queue
+                </ToolbarButton>
               </div>
 
-              <div className="flex min-w-0 flex-1 items-center gap-3 rounded-[1.2rem] border border-[var(--line)] bg-[rgba(255,255,255,0.03)] px-3 py-3 xl:max-w-[28rem]">
-                <MagnifyingGlass size={18} className="text-[var(--soft)]" />
+              <div className="relative flex min-w-0 flex-1 items-center gap-3 rounded-2xl border border-[var(--line)] bg-[rgba(255,255,255,0.025)] px-4 py-2.5 shadow-sm xl:max-w-[28rem]">
+                <MagnifyingGlass size={18} className="text-[var(--text-muted)]" />
                 <input
                   value={search}
                   onChange={(event) => setSearch(event.target.value)}
                   placeholder={
-                    mode === "hosts" ? "Search host, tag, or limit" : "Search candidate, source, or reason"
+                    mode === "hosts" ? "Search host, tag, or limit…" : "Search candidate, source, or reason…"
                   }
-                  className="w-full bg-transparent text-sm text-white outline-none placeholder:text-[var(--soft)]"
+                  className="w-full bg-transparent text-sm text-white outline-none placeholder:text-[var(--text-subtle)]"
                 />
+                {search && (
+                  <button
+                    onClick={() => setSearch("")}
+                    className="rounded-full p-1 text-[var(--text-muted)] transition hover:bg-[rgba(255,255,255,0.08)] hover:text-white"
+                  >
+                    <X size={14} />
+                  </button>
+                )}
               </div>
             </div>
 
@@ -615,10 +659,15 @@ export function DatasetApp({ data }: Props) {
                       <button
                         key={column.id}
                         onClick={() => toggleHostColumn(column.id)}
-                        className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] px-3 py-1.5 text-xs text-[var(--muted)] transition hover:text-white"
+                        className={[
+                          "group relative inline-flex items-center gap-2 rounded-full border px-2.5 py-1.5 text-[11px] font-medium transition-all duration-200",
+                          hidden
+                            ? "border-[var(--line)] bg-transparent text-[var(--text-muted)] hover:border-[var(--text-muted)]/40 hover:text-[var(--text-secondary)]"
+                            : "border-[var(--accent)]/20 bg-[var(--accent-soft)] text-white"
+                        ].join(" ")}
                       >
-                        {hidden ? <EyeSlash size={14} /> : <Eye size={14} />}
-                        {column.label}
+                        {hidden ? <EyeSlash size={13} /> : <Eye size={13} />}
+                        <span>{column.label}</span>
                       </button>
                     );
                   })}
@@ -659,10 +708,15 @@ export function DatasetApp({ data }: Props) {
                       <button
                         key={column.id}
                         onClick={() => toggleQueueColumn(column.id)}
-                        className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] px-3 py-1.5 text-xs text-[var(--muted)] transition hover:text-white"
+                        className={[
+                          "group relative inline-flex items-center gap-2 rounded-full border px-2.5 py-1.5 text-[11px] font-medium transition-all duration-200",
+                          hidden
+                            ? "border-[var(--line)] bg-transparent text-[var(--text-muted)] hover:border-[var(--text-muted)]/40 hover:text-[var(--text-secondary)]"
+                            : "border-[var(--accent)]/20 bg-[var(--accent-soft)] text-white"
+                        ].join(" ")}
                       >
-                        {hidden ? <EyeSlash size={14} /> : <Eye size={14} />}
-                        {column.label}
+                        {hidden ? <EyeSlash size={13} /> : <Eye size={13} />}
+                        <span>{column.label}</span>
                       </button>
                     );
                   })}
@@ -671,135 +725,173 @@ export function DatasetApp({ data }: Props) {
             )}
           </div>
 
-          <div className="min-h-0 overflow-auto scrollbar-subtle">
+          <div className="relative">
             {mode === "hosts" ? (
-              <table className="min-w-full border-separate border-spacing-0 text-sm">
-                <thead className="sticky top-0 z-20 bg-[rgba(11,13,18,0.96)]">
-                  <tr>
-                    {visibleHostColumns.map((column) => {
-                      const sortable = column.id !== "tags";
-                      return (
-                        <th
-                          key={column.id}
-                          className={[
-                            "border-b border-[rgba(255,255,255,0.08)] px-4 py-3 text-left text-[11px] uppercase tracking-[0.22em] text-[var(--soft)]",
-                            column.className ?? ""
-                          ].join(" ")}
-                        >
-                          {sortable ? (
-                            <button
-                              onClick={() => changeHostSort(column.id as HostSortKey)}
-                              className="inline-flex items-center gap-2 transition hover:text-white"
-                            >
-                              {column.label}
-                              <ArrowsDownUp size={13} />
-                            </button>
-                          ) : (
-                            column.label
-                          )}
-                        </th>
-                      );
-                    })}
-                  </tr>
-                </thead>
-                <tbody>
-                  {filteredHosts.map((host) => (
-                    <tr
-                      key={host.id}
-                      onClick={() => setSelectedHostId(host.id)}
-                      className="cursor-pointer transition hover:bg-[rgba(255,255,255,0.03)]"
-                    >
-                      {visibleHostColumns.map((column) => (
-                        <td
-                          key={`${host.id}-${column.id}`}
-                          className={[
-                            "border-b border-[rgba(255,255,255,0.06)] px-4 py-3 align-top text-[var(--text)]",
-                            selectedHost?.id === host.id ? "bg-[rgba(73,179,255,0.08)]" : "",
-                            column.className ?? ""
-                          ].join(" ")}
-                        >
-                          {column.render(host)}
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <div className="min-w-max text-sm">
+                <div
+                  className="sticky top-0 z-30 grid border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[0_4px_12px_-2px_rgba(0,0,0,0.5)] backdrop-blur-xl"
+                  style={{ gridTemplateColumns: hostGridTemplate }}
+                >
+                  {visibleHostColumns.map((column) => {
+                    const sortable = column.id !== "tags";
+                    const isSorted = hostSort.key === column.id;
+                    return (
+                      <div
+                        key={column.id}
+                        className={[
+                          "px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
+                          column.id === "name" ? "sticky left-0 z-40 bg-[rgba(13,17,23,0.98)]" : "",
+                          isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
+                        ].join(" ")}
+                      >
+                        {sortable ? (
+                          <button
+                            onClick={() => changeHostSort(column.id as HostSortKey)}
+                            className="inline-flex items-center gap-1.5 transition-all hover:opacity-80"
+                          >
+                            {column.label}
+                            {isSorted ? (
+                              <span className="flex h-4 w-4 items-center justify-center rounded bg-[var(--accent-soft)] text-[11px]">
+                                {hostSort.direction === "asc" ? "↑" : "↓"}
+                              </span>
+                            ) : (
+                              <ArrowsDownUp size={11} />
+                            )}
+                          </button>
+                        ) : (
+                          column.label
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+                {filteredHosts.map((host, index) => (
+                  <button
+                    key={host.id}
+                    onClick={() => setSelectedHostId(host.id)}
+                    className={[
+                      "group relative grid w-full cursor-pointer border-b border-[var(--line)]/50 text-left transition-all duration-200 row-enter",
+                      selectedHostId === host.id
+                        ? "bg-[var(--accent-soft)]/50 hover:bg-[var(--accent-soft)]/70"
+                        : "hover:-translate-x-0.5 hover:bg-[rgba(255,255,255,0.03)]"
+                    ].join(" ")}
+                    style={{ 
+                      gridTemplateColumns: hostGridTemplate,
+                      animationDelay: `${Math.min(index * 0.012, 0.5)}s`
+                    }}
+                  >
+                    <div className="absolute left-0 top-0 h-full w-[2px] bg-gradient-to-b from-[var(--accent)] to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+                    {visibleHostColumns.map((column) => (
+                      <div
+                        key={`${host.id}-${column.id}`}
+                        className={[
+                          "px-3 py-2.5 align-top text-[var(--text-primary)] transition-colors",
+                          selectedHostId === host.id ? "bg-[var(--accent-soft)]/20" : "",
+                          column.id === "name" ? "sticky left-0 z-10 bg-[rgba(13,17,23,0.98)]" : ""
+                        ].join(" ")}
+                      >
+                        {column.render(host)}
+                      </div>
+                    ))}
+                  </button>
+                ))}
+              </div>
             ) : (
-              <table className="min-w-full border-separate border-spacing-0 text-sm">
-                <thead className="sticky top-0 z-20 bg-[rgba(11,13,18,0.96)]">
-                  <tr>
-                    {visibleQueueColumns.map((column) => {
-                      const sortable = column.id !== "notes";
-                      return (
-                        <th
-                          key={column.id}
-                          className={[
-                            "border-b border-[rgba(255,255,255,0.08)] px-4 py-3 text-left text-[11px] uppercase tracking-[0.22em] text-[var(--soft)]",
-                            column.className ?? ""
-                          ].join(" ")}
-                        >
-                          {sortable ? (
-                            <button
-                              onClick={() => changeQueueSort(column.id as QueueSortKey)}
-                              className="inline-flex items-center gap-2 transition hover:text-white"
-                            >
-                              {column.label}
-                              <ArrowsDownUp size={13} />
-                            </button>
-                          ) : (
-                            column.label
-                          )}
-                        </th>
-                      );
-                    })}
-                  </tr>
-                </thead>
-                <tbody>
-                  {filteredCandidates.map((candidate) => (
-                    <tr
-                      key={candidate.id}
-                      onClick={() => setSelectedCandidateId(candidate.id)}
-                      className="cursor-pointer transition hover:bg-[rgba(255,255,255,0.03)]"
-                    >
-                      {visibleQueueColumns.map((column) => (
-                        <td
-                          key={`${candidate.id}-${column.id}`}
-                          className={[
-                            "border-b border-[rgba(255,255,255,0.06)] px-4 py-3 align-top text-[var(--text)]",
-                            selectedCandidate?.id === candidate.id ? "bg-[rgba(73,179,255,0.08)]" : "",
-                            column.className ?? ""
-                          ].join(" ")}
-                        >
-                          {column.id === "status" ? (
-                            <span
-                              className={[
-                                "inline-flex rounded-full px-2.5 py-1 text-xs font-medium capitalize",
-                                statusTone(candidate.verification_status)
-                              ].join(" ")}
-                            >
-                              {candidate.verification_status}
-                            </span>
-                          ) : (
-                            column.render(candidate)
-                          )}
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <div className="min-w-max text-sm">
+                <div
+                  className="sticky top-0 z-30 grid border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[0_4px_12px_-2px_rgba(0,0,0,0.5)] backdrop-blur-xl"
+                  style={{ gridTemplateColumns: queueGridTemplate }}
+                >
+                  {visibleQueueColumns.map((column) => {
+                    const sortable = column.id !== "notes";
+                    const isSorted = queueSort.key === column.id;
+                    return (
+                      <div
+                        key={column.id}
+                        className={[
+                          "px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
+                          column.id === "name" ? "sticky left-0 z-40 bg-[rgba(13,17,23,0.98)]" : "",
+                          isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
+                        ].join(" ")}
+                      >
+                        {sortable ? (
+                          <button
+                            onClick={() => changeQueueSort(column.id as QueueSortKey)}
+                            className="inline-flex items-center gap-1.5 transition-all hover:opacity-80"
+                          >
+                            {column.label}
+                            {isSorted ? (
+                              <span className="flex h-4 w-4 items-center justify-center rounded bg-[var(--accent-soft)] text-[11px]">
+                                {queueSort.direction === "asc" ? "↑" : "↓"}
+                              </span>
+                            ) : (
+                              <ArrowsDownUp size={11} />
+                            )}
+                          </button>
+                        ) : (
+                          column.label
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+                {filteredCandidates.map((candidate, index) => (
+                  <button
+                    key={candidate.id}
+                    onClick={() => setSelectedCandidateId(candidate.id)}
+                    className={[
+                      "group relative grid w-full cursor-pointer border-b border-[var(--line)]/50 text-left transition-all duration-200 row-enter",
+                      selectedCandidateId === candidate.id
+                        ? "bg-[var(--accent-soft)]/50 hover:bg-[var(--accent-soft)]/70"
+                        : "hover:-translate-x-0.5 hover:bg-[rgba(255,255,255,0.03)]"
+                    ].join(" ")}
+                    style={{ 
+                      gridTemplateColumns: queueGridTemplate,
+                      animationDelay: `${Math.min(index * 0.012, 0.5)}s`
+                    }}
+                  >
+                    <div className="absolute left-0 top-0 h-full w-[2px] bg-gradient-to-b from-[var(--accent)] to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+                    {visibleQueueColumns.map((column) => (
+                      <div
+                        key={`${candidate.id}-${column.id}`}
+                        className={[
+                          "px-3 py-2.5 align-top text-[var(--text-primary)] transition-colors",
+                          selectedCandidateId === candidate.id ? "bg-[var(--accent-soft)]/20" : "",
+                          column.id === "name" ? "sticky left-0 z-10 bg-[rgba(13,17,23,0.98)]" : ""
+                        ].join(" ")}
+                      >
+                        {column.id === "status" ? (
+                          <span
+                            className={[
+                              "inline-flex rounded-full px-2.5 py-1 text-[10px] font-medium capitalize backdrop-blur-sm border",
+                              statusTone(candidate.verification_status)
+                            ].join(" ")}
+                          >
+                            {candidate.verification_status}
+                          </span>
+                        ) : (
+                          column.render(candidate)
+                        )}
+                      </div>
+                    ))}
+                  </button>
+                ))}
+              </div>
             )}
           </div>
         </section>
 
-        {panelLayout !== "hidden" &&
-          (mode === "hosts" ? (
-            <HostDetailPanel host={selectedHost} />
-          ) : (
-            <CandidateDetailPanel candidate={selectedCandidate} />
-          ))}
       </div>
+      {mode === "hosts" && selectedHost ? (
+        <FloatingInspector title={selectedHost.name} onClose={() => setSelectedHostId(null)}>
+          <HostDetailPanel host={selectedHost} />
+        </FloatingInspector>
+      ) : null}
+      {mode === "queue" && selectedCandidate ? (
+        <FloatingInspector title={selectedCandidate.name} onClose={() => setSelectedCandidateId(null)}>
+          <CandidateDetailPanel candidate={selectedCandidate} />
+        </FloatingInspector>
+      ) : null}
     </AppFrame>
   );
 }

@@ -310,16 +310,16 @@ export function ExplorerApp({ data }: Props) {
             </div>
           </aside>
 
-          <section className="min-h-0 overflow-hidden rounded-[2rem] border border-[var(--line)] bg-[var(--panel)]">
+          <section className="min-h-0 rounded-[2rem] border border-[var(--line)] bg-[var(--panel)]">
             {view === "hosts" && (
               <div className="flex h-full min-h-0 flex-col">
-                <div className="grid grid-cols-[minmax(0,1.4fr)_minmax(0,0.8fr)_minmax(0,0.8fr)_minmax(0,0.6fr)] gap-4 border-b border-[rgba(255,255,255,0.08)] px-4 py-4 text-[11px] uppercase tracking-[0.22em] text-[var(--soft)]">
+                <div className="sticky top-0 z-10 grid grid-cols-[minmax(0,1.4fr)_minmax(0,0.8fr)_minmax(0,0.8fr)_minmax(0,0.6fr)] gap-4 border-b border-[rgba(255,255,255,0.08)] bg-[var(--panel)] px-4 py-4 text-[11px] uppercase tracking-[0.22em] text-[var(--soft)] backdrop-blur-sm">
                   <div>Host</div>
                   <div>Max file size</div>
                   <div>Retention</div>
                   <div>Account</div>
                 </div>
-                <div className="min-h-0 overflow-auto scrollbar-subtle">
+                <div>
                   {filteredHosts.map((host) => (
                     <HostRow
                       key={host.id}
@@ -339,13 +339,13 @@ export function ExplorerApp({ data }: Props) {
 
             {view === "queue" && (
               <div className="flex h-full min-h-0 flex-col">
-                <div className="grid grid-cols-[minmax(0,1.2fr)_120px_140px_minmax(0,1fr)] gap-3 border-b border-[rgba(255,255,255,0.08)] px-4 py-4 text-[11px] uppercase tracking-[0.22em] text-[var(--soft)]">
+                <div className="sticky top-0 z-10 grid grid-cols-[minmax(0,1.2fr)_120px_140px_minmax(0,1fr)] gap-3 border-b border-[rgba(255,255,255,0.08)] bg-[var(--panel)] px-4 py-4 text-[11px] uppercase tracking-[0.22em] text-[var(--soft)] backdrop-blur-sm">
                   <div>Candidate</div>
                   <div>Imported limit</div>
                   <div>Status</div>
                   <div>Why it sits there</div>
                 </div>
-                <div className="min-h-0 overflow-auto scrollbar-subtle">
+                <div>
                   {[...queueGroups.pending, ...queueGroups.rejected.slice(0, 40), ...queueGroups.verified.slice(0, 20)].map((candidate) => (
                     <CandidateRow key={candidate.id} candidate={candidate} />
                   ))}

@@ -8,20 +8,23 @@ function InfoPair({
   label,
   value,
   host,
-  refs
+  refs,
+  notes
 }: {
   label: string;
   value: string;
   host: HostRecord;
   refs?: number[];
+  notes?: string;
 }) {
   return (
-    <div className="space-y-1">
-      <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--soft)]">{label}</div>
-      <div className="text-sm leading-6 text-[var(--text)]">
+    <div className="space-y-1.5">
+      <div className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[var(--text-muted)]">{label}</div>
+      <div className="text-sm leading-6 text-[var(--text-primary)]">
         {value}{" "}
         <SourceRefLinks host={host} refs={refs} className="inline-flex flex-wrap gap-1 align-middle" />
       </div>
+      {notes && notes !== "-" ? <div className="text-xs italic text-[var(--text-muted)]">{notes}</div> : null}
     </div>
   );
 }
@@ -29,8 +32,8 @@ function InfoPair({
 export function HostDetailPanel({ host }: { host: HostRecord | null }) {
   if (!host) {
     return (
-      <aside className="rounded-[2rem] border border-[var(--line)] bg-[var(--panel)] p-5">
-        <div className="flex h-full min-h-[18rem] items-center justify-center text-sm text-[var(--muted)]">
+      <aside className="rounded-[var(--radius-card)] border border-[var(--line)] bg-[var(--panel)] p-5">
+        <div className="flex h-full min-h-[18rem] items-center justify-center text-sm text-[var(--text-muted)]">
           Pick a host to inspect.
         </div>
       </aside>
@@ -38,61 +41,63 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
   }
 
   return (
-    <aside className="rounded-[2rem] border border-[var(--line)] bg-[var(--panel)] p-5">
+    <aside className="rounded-[var(--radius-card)] border border-[var(--line)] bg-[var(--panel)] p-5">
       <div className="space-y-5">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--soft)]">
-              Host detail
+            <div className="flex items-center gap-2">
+              <div className="h-1 w-1 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]" />
+              <div className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[var(--text-muted)]">
+                Host detail
+              </div>
             </div>
-            <h2 className="mt-2 text-2xl font-semibold tracking-tight text-white">{host.name}</h2>
+            <h2 className="mt-2.5 text-xl font-semibold tracking-tight text-white">{host.name}</h2>
           </div>
           <a
             href={host.url}
             target="_blank"
             rel="noreferrer"
-            className="rounded-full border border-[var(--line)] px-3 py-2 text-xs text-[var(--muted)] transition hover:text-white"
+            className="rounded-full border border-[var(--line)] bg-[rgba(255,255,255,0.02)] px-3.5 py-2 text-xs font-medium text-[var(--text-secondary)] transition-all hover:border-[var(--accent)]/30 hover:text-white hover:shadow-[0_0_20px_-4px_var(--accent-glow)]"
           >
             Open site
           </a>
         </div>
 
-        <p className="text-sm leading-7 text-[var(--muted)]">{host.summary}</p>
+        <p className="text-sm leading-7 text-[var(--text-secondary)]">{host.summary}</p>
 
         <div className="grid gap-4 sm:grid-cols-2">
           <InfoPair
             label="Max file size"
-            value={`${host.filters.maxFileLabel} - ${host.limits.max_file_size.notes}`}
+            value={host.filters.maxFileLabel}
             host={host}
             refs={host.limits.max_file_size.source_refs}
+            notes={host.limits.max_file_size.notes}
           />
           <InfoPair
             label="Retention"
-            value={`${host.filters.retentionLabel} - ${host.limits.retention.notes}`}
+            value={host.filters.retentionLabel}
             host={host}
             refs={host.limits.retention.source_refs}
+            notes={host.limits.retention.notes}
           />
           <InfoPair
             label="Storage"
-            value={`${host.filters.storageLabel} - ${host.limits.storage.notes}`}
+            value={host.filters.storageLabel}
             host={host}
             refs={host.limits.storage.source_refs}
+            notes={host.limits.storage.notes}
           />
           <InfoPair
             label="Bandwidth"
-            value={`${host.filters.bandwidthLabel} - ${host.limits.bandwidth.notes}`}
+            value={host.filters.bandwidthLabel}
             host={host}
             refs={host.limits.bandwidth.source_refs}
+            notes={host.limits.bandwidth.notes}
           />
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
-          <InfoPair
-            label="Account"
-            value={host.account.benefits}
-            host={host}
-            refs={host.account.source_refs}
-          />
+          <InfoPair label="Account" value={host.account.benefits} host={host} refs={host.account.source_refs} />
           <InfoPair
             label="Allowed file types"
             value={host.content.allowed_file_types.notes}
@@ -101,49 +106,49 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
           />
           <InfoPair
             label="Developer support"
-            value={`${host.developer.api_available ? "API" : "No API"}, ${host.developer.cli_friendly ? "CLI-friendly" : "no CLI"} - ${host.developer.notes}`}
+            value={`${host.developer.api_available ? "API" : "No API"}, ${host.developer.cli_friendly ? "CLI-friendly" : "No CLI"}`}
             host={host}
             refs={host.developer.source_refs}
           />
           <InfoPair
             label="Security"
-            value={`${host.security.e2ee ? "E2EE" : "No E2EE"} - ${host.security.notes}`}
+            value={host.security.e2ee ? "E2EE" : "No E2EE"}
             host={host}
             refs={host.security.source_refs}
           />
         </div>
 
         <div className="grid gap-3 sm:grid-cols-3">
-          <div className="rounded-[1.5rem] border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-4">
-            <div className="flex items-center gap-2 text-sm font-medium text-white">
-              <TerminalWindow size={16} />
+          <div className="rounded-2xl border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-4 backdrop-blur-sm transition-all hover:border-[var(--line-strong)] hover:bg-[rgba(255,255,255,0.04)]">
+            <div className="flex items-center gap-2 text-sm font-semibold text-white">
+              <TerminalWindow size={16} weight="fill" />
               Dev
             </div>
-            <div className="mt-3 text-sm text-[var(--muted)]">
+            <div className="mt-2.5 text-sm text-[var(--text-secondary)]">
               {host.developer.api_available ? "API available" : "No public API"}
             </div>
           </div>
-          <div className="rounded-[1.5rem] border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-4">
-            <div className="flex items-center gap-2 text-sm font-medium text-white">
-              <ShieldCheck size={16} />
+          <div className="rounded-2xl border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-4 backdrop-blur-sm transition-all hover:border-[var(--line-strong)] hover:bg-[rgba(255,255,255,0.04)]">
+            <div className="flex items-center gap-2 text-sm font-semibold text-white">
+              <ShieldCheck size={16} weight="fill" />
               Encryption
             </div>
-            <div className="mt-3 text-sm text-[var(--muted)]">
+            <div className="mt-2.5 text-sm text-[var(--text-secondary)]">
               {host.security.e2ee ? "End-to-end claims present" : "No E2EE claim"}
             </div>
           </div>
-          <div className="rounded-[1.5rem] border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-4">
-            <div className="flex items-center gap-2 text-sm font-medium text-white">
-              <Lock size={16} />
+          <div className="rounded-2xl border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-4 backdrop-blur-sm transition-all hover:border-[var(--line-strong)] hover:bg-[rgba(255,255,255,0.04)]">
+            <div className="flex items-center gap-2 text-sm font-semibold text-white">
+              <Lock size={16} weight="fill" />
               Access
             </div>
-            <div className="mt-3 text-sm text-[var(--muted)]">{host.accountLabel}</div>
+            <div className="mt-2.5 text-sm text-[var(--text-secondary)]">{host.accountLabel}</div>
           </div>
         </div>
 
-        <div className="rounded-[1.75rem] border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-4">
-          <div className="flex items-center gap-2 text-sm font-medium text-white">
-            <Database size={18} />
+        <div className="rounded-2xl border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-4 backdrop-blur-sm">
+          <div className="flex items-center gap-2 text-sm font-semibold text-white">
+            <Database size={18} weight="fill" />
             Source references
           </div>
           <div className="mt-4 space-y-3">
@@ -154,16 +159,18 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
                 href={source.url}
                 target="_blank"
                 rel="noreferrer"
-                className="block rounded-[1.25rem] border border-[rgba(255,255,255,0.06)] px-4 py-3 transition hover:border-[rgba(73,179,255,0.25)] hover:bg-[rgba(73,179,255,0.06)]"
+                className="group block rounded-2xl border border-[var(--line)] bg-[rgba(255,255,255,0.02)] px-4 py-3 transition-all hover:border-[var(--accent)]/30 hover:bg-[var(--accent-soft)]/40 hover:shadow-[0_0_20px_-4px_var(--accent-glow)]"
               >
                 <div className="flex items-center justify-between gap-3">
                   <div className="flex items-center gap-2 text-sm font-medium text-white">
-                    <LinkSimple size={16} />
-                    [{index + 1}] {source.label}
+                    <LinkSimple size={16} weight="fill" />
+                    <span>
+                      [{index + 1}] {source.label}
+                    </span>
                   </div>
-                  <div className="text-xs text-[var(--soft)]">{source.retrieved_at}</div>
+                  <div className="font-mono text-xs text-[var(--text-muted)]">{source.retrieved_at}</div>
                 </div>
-                <div className="mt-2 text-sm leading-6 text-[var(--muted)]">{source.notes}</div>
+                <div className="mt-2 text-sm leading-6 text-[var(--text-secondary)]">{source.notes}</div>
               </a>
             ))}
           </div>
@@ -173,7 +180,7 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
           {host.tags.map((tag) => (
             <span
               key={tag}
-              className="rounded-full border border-[var(--line)] px-3 py-1.5 text-xs text-[var(--muted)]"
+              className="rounded-full border border-[var(--line)] bg-[rgba(255,255,255,0.02)] px-3 py-1.5 text-[11px] text-[var(--text-secondary)] transition-all hover:border-[var(--accent)]/30 hover:text-white hover:shadow-[0_0_12px_-2px_var(--accent-glow)]"
             >
               {tag}
             </span>

@@ -7,40 +7,62 @@
       "max_file_size": {
         "value": 1,
         "unit": "GB",
-        "notes": "The current upload page states a 1.00 GB maximum file size for free uploads."
+        "notes": "The current upload page states a 1.00 GB maximum file size for free uploads.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "Current public pages describe free files as sharable for 30 days, while also saying free-member files may be removed after 7 days without downloads."
+        "notes": "Current public pages describe free files as sharable for 30 days, while also saying free-member files may be removed after 7 days without downloads.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clear total free storage quota for guest or free use."
+        "notes": "The cited public pages do not publish a clear total free storage quota for guest or free use.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages describe free download speed and waiting-time limits, but do not publish a clean bandwidth cap."
+        "notes": "The cited public pages describe free download speed and waiting-time limits, but do not publish a clean bandwidth cap.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "Guest uploads work without an account; paid accounts add faster downloads, larger uploads, and longer file retention."
+      "benefits": "Guest uploads work without an account; paid accounts add faster downloads, larger uploads, and longer file retention.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited public pages do not document a public API or CLI upload workflow."
+      "notes": "The cited public pages do not document a public API or CLI upload workflow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The cited public pages do not claim end-to-end encryption for uploads."
+      "notes": "The cited public pages do not claim end-to-end encryption for uploads.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -65,7 +87,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -77,40 +102,61 @@
       "max_file_size": {
         "value": 200,
         "unit": "MB",
-        "notes": "The current upload page explicitly states a max. 200 MB upload size."
+        "notes": "The current upload page explicitly states a max. 200 MB upload size.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not clearly publish an automatic expiry policy for uploaded files."
+        "notes": "The cited public pages do not clearly publish an automatic expiry policy for uploaded files.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean current total free storage quota."
+        "notes": "The cited public pages do not publish a clean current total free storage quota.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean current bandwidth cap."
+        "notes": "The cited public pages do not publish a clean current bandwidth cap.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "The public upload page allows direct browser uploads without requiring login before selecting a file."
+      "benefits": "The public upload page allows direct browser uploads without requiring login before selecting a file.",
+      "source_refs": [
+        0
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited public pages do not document a public API or CLI upload flow."
+      "notes": "The cited public pages do not document a public API or CLI upload flow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The cited public pages do not claim end-to-end encryption."
+      "notes": "The cited public pages do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -129,7 +175,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -141,40 +190,62 @@
       "max_file_size": {
         "value": 2048,
         "unit": "MB",
-        "notes": "The official features page currently lists a 2048 MB maximum upload file size for the free plan."
+        "notes": "The official features page currently lists a 2048 MB maximum upload file size for the free plan.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not state an automatic expiry period for files stored on the free plan."
+        "notes": "The cited public pages do not state an automatic expiry period for files stored on the free plan.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 15,
         "unit": "GB",
-        "notes": "The official features page currently lists 15 GB of storage space for the free plan."
+        "notes": "The official features page currently lists 15 GB of storage space for the free plan.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The official features page lists the free plan bandwidth limitation as 0, but it does not clearly explain this as a numeric cap."
+        "notes": "The official features page lists the free plan bandwidth limitation as 0, but it does not clearly explain this as a numeric cap.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "A 4shared account is required to use the free storage plan and mobile apps."
+      "benefits": "A 4shared account is required to use the free storage plan and mobile apps.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited public pages do not document a public developer API or CLI workflow."
+      "notes": "The cited public pages do not document a public developer API or CLI workflow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The cited public pages do not claim end-to-end encryption for the free plan."
+      "notes": "The cited public pages do not claim end-to-end encryption for the free plan.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "cloud-storage",
@@ -205,7 +276,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -217,40 +291,62 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a general per-file upload cap for the free tier."
+        "notes": "The cited public pages do not publish a general per-file upload cap for the free tier.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish an automatic expiry period for hosted files."
+        "notes": "The cited public pages do not publish an automatic expiry period for hosted files.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a total storage quota for free developers."
+        "notes": "The cited public pages do not publish a total storage quota for free developers.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "Android File Host publicly states it does not limit download speeds or bandwidth usage."
+        "notes": "Android File Host publicly states it does not limit download speeds or bandwidth usage.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "Developers need an account to upload and manage files; free visitors can browse and download files without registration."
+      "benefits": "Developers need an account to upload and manage files; free visitors can browse and download files without registration.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": true,
       "api_docs_url": "https://androidfilehost.com/api/docs/",
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "Android File Host publishes a beta API for browsing devices, developers, folders, updates, and files."
+      "notes": "Android File Host publishes a beta API for browsing devices, developers, folders, updates, and files.",
+      "source_refs": [
+        2
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The cited public pages emphasize high-speed delivery and hosted storage, but do not claim end-to-end encryption."
+      "notes": "The cited public pages emphasize high-speed delivery and hosted storage, but do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-hosting",
@@ -281,7 +377,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -293,40 +392,62 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "The public upload page currently advertises unlimited max file size for uploads."
+        "notes": "The public upload page currently advertises unlimited max file size for uploads.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean automatic expiry policy for stored files."
+        "notes": "The cited public pages do not publish a clean automatic expiry policy for stored files.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 50,
         "unit": "GB",
-        "notes": "The public FAQ currently says free accounts get 50 GB of storage."
+        "notes": "The public FAQ currently says free accounts get 50 GB of storage.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": 10,
         "unit": "GB/day",
-        "notes": "The public FAQ currently says free accounts get 10 GB daily transfer."
+        "notes": "The public FAQ currently says free accounts get 10 GB daily transfer.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "Anyone can share files by link without an account; free accounts add stored space and account-managed uploads."
+      "benefits": "Anyone can share files by link without an account; free accounts add stored space and account-managed uploads.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": true,
       "api_docs_url": "https://anonfile.link/docs/api",
       "cli_friendly": true,
       "cli_example": "curl -F \"file=@example.txt\" \"https://api.anonfile.link/upload?key={YOUR_API_KEY}\"",
-      "notes": "AnonFile publishes API docs with upload and file-info endpoints."
+      "notes": "AnonFile publishes API docs with upload and file-info endpoints.",
+      "source_refs": [
+        1
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": true,
       "server_side_encryption": null,
-      "notes": "The current public pages claim files are encrypted before they leave the browser and that the service cannot read file contents."
+      "notes": "The current public pages claim files are encrypted before they leave the browser and that the service cannot read file contents.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -352,7 +473,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The API docs imply some disallowed and banned file types through error codes, but the cited public pages do not publish a full allowlist."
+        "notes": "The API docs imply some disallowed and banned file types through error codes, but the cited public pages do not publish a full allowlist.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -364,40 +488,62 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean current per-file upload limit."
+        "notes": "The cited public pages do not publish a clean current per-file upload limit.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean automatic expiry policy for stored files."
+        "notes": "The cited public pages do not publish a clean automatic expiry policy for stored files.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The App Store listing describes very large available space and mentions expansion up to 16 TB, but the cited public pages do not cleanly state the current default free quota."
+        "notes": "The App Store listing describes very large available space and mentions expansion up to 16 TB, but the cited public pages do not cleanly state the current default free quota.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean numeric bandwidth cap for free users."
+        "notes": "The cited public pages do not publish a clean numeric bandwidth cap for free users.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "A Baidu account is required for cloud backup, syncing, and sharing across devices."
+      "benefits": "A Baidu account is required for cloud backup, syncing, and sharing across devices.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited public consumer pages do not document a public API or CLI upload workflow."
+      "notes": "The cited public consumer pages do not document a public API or CLI upload workflow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The App Store listing says the service uses multiple data centers and cites ISO27001 and ISO27018 security certifications, but it does not claim end-to-end encryption."
+      "notes": "The App Store listing says the service uses multiple data centers and cites ISO27001 and ISO27018 security certifications, but it does not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "cloud-storage",
@@ -435,7 +581,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "all_except_prohibited",
-        "notes": "The cited public pages describe support for photos, videos, documents, app files, messages, and call records, but do not publish a narrow allowlist."
+        "notes": "The cited public pages describe support for photos, videos, documents, app files, messages, and call records, but do not publish a narrow allowlist.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -455,7 +604,10 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not state an automatic expiry period for files on the free plan."
+        "notes": "The cited public pages do not state an automatic expiry period for files on the free plan.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 10,
@@ -496,7 +648,10 @@
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The cited pages emphasize secure file sharing and 2-factor authentication, but they do not claim end-to-end encryption for the consumer plan."
+      "notes": "The cited pages emphasize secure file sharing and 2-factor authentication, but they do not claim end-to-end encryption for the consumer plan.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "cloud-storage",
@@ -527,7 +682,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -539,40 +697,62 @@
       "max_file_size": {
         "value": 200,
         "unit": "MB",
-        "notes": "Homepage currently states uploads up to 200 MB."
+        "notes": "Homepage currently states uploads up to 200 MB.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "Files are kept indefinitely according to the FAQ."
+        "notes": "Files are kept indefinitely according to the FAQ.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "No total storage cap is stated on the cited public pages."
+        "notes": "No total storage cap is stated on the cited public pages.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": null,
-      "benefits": "Accounts exist, but the cited public pages do not clearly describe account-specific benefits."
+      "benefits": "Accounts exist, but the cited public pages do not clearly describe account-specific benefits.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited homepage and FAQ do not document an official API or CLI workflow."
+      "notes": "The cited homepage and FAQ do not document an official API or CLI workflow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "No end-to-end encryption claim is made on the cited pages."
+      "notes": "No end-to-end encryption claim is made on the cited pages.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "anonymous-friendly",
@@ -596,7 +776,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -608,40 +791,62 @@
       "max_file_size": {
         "value": 2,
         "unit": "GB",
-        "notes": "The current official FAQ states free and guest users can upload files up to 2 GB each, while registered users can upload up to 3 GB."
+        "notes": "The current official FAQ states free and guest users can upload files up to 2 GB each, while registered users can upload up to 3 GB.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 7,
         "unit": "days",
-        "notes": "The current official FAQ says inactive guest-uploaded files are removed after about a week, while inactive member files are removed after 20 to 30 days."
+        "notes": "The current official FAQ says inactive guest-uploaded files are removed after about a week, while inactive member files are removed after 20 to 30 days.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The current official FAQ describes unlimited storage for active files, but says the service should not be used to back up huge numbers of inactive files."
+        "notes": "The current official FAQ describes unlimited storage for active files, but says the service should not be used to back up huge numbers of inactive files.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The official FAQ currently says bandwidth is unlimited for free users."
+        "notes": "The official FAQ currently says bandwidth is unlimited for free users.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "Guests can upload without an account, while members get a higher per-file upload limit and can manage files through My Files."
+      "benefits": "Guests can upload without an account, while members get a higher per-file upload limit and can manage files through My Files.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited current public pages do not document a public API or CLI upload workflow."
+      "notes": "The cited current public pages do not document a public API or CLI upload workflow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The cited FAQ mentions account security controls such as a security lock, but the public pages do not claim end-to-end encryption."
+      "notes": "The cited FAQ mentions account security controls such as a security lock, but the public pages do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-hosting",
@@ -666,7 +871,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -678,40 +886,62 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean current per-file upload limit."
+        "notes": "The cited public pages do not publish a clean current per-file upload limit.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean automatic expiry policy for stored or shared files."
+        "notes": "The cited public pages do not publish a clean automatic expiry policy for stored or shared files.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 10,
         "unit": "GB",
-        "notes": "The current public app listing says 10 GB of cloud storage is free and forever for customers of any telecom operator."
+        "notes": "The current public app listing says 10 GB of cloud storage is free and forever for customers of any telecom operator.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The public pages say Beeline customers can use the service without traffic limits on the Beeline network, but do not publish a clean general bandwidth cap."
+        "notes": "The public pages say Beeline customers can use the service without traffic limits on the Beeline network, but do not publish a clean general bandwidth cap.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "The current sign-in flow uses phone-number login; accounts enable storage, sharing, backups, and app access."
+      "benefits": "The current sign-in flow uses phone-number login; accounts enable storage, sharing, backups, and app access.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited public pages do not document a public API or CLI upload flow."
+      "notes": "The cited public pages do not document a public API or CLI upload flow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The public pages position it as secure cloud storage and mention password-protected access to files and folders, but do not claim end-to-end encryption."
+      "notes": "The public pages position it as secure cloud storage and mention password-protected access to files and folders, but do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "cloud-storage",
@@ -742,7 +972,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "all_except_prohibited",
-        "notes": "The public pages describe storage for photos, videos, presentations, contacts, and other files, but do not publish a narrow allowlist."
+        "notes": "The public pages describe storage for photos, videos, presentations, contacts, and other files, but do not publish a narrow allowlist.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -754,40 +987,62 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "The cited official public pages do not publish a clean current maximum upload size."
+        "notes": "The cited official public pages do not publish a clean current maximum upload size.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited official public pages do not publish a clean automatic expiry policy for files or streams."
+        "notes": "The cited official public pages do not publish a clean automatic expiry policy for files or streams.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The cited official public pages do not publish a clean total free storage quota."
+        "notes": "The cited official public pages do not publish a clean total free storage quota.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited official public pages do not publish a clean current bandwidth cap."
+        "notes": "The cited official public pages do not publish a clean current bandwidth cap.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "Cloudup accounts are required for authenticated API use, stream management, and application registration."
+      "benefits": "Cloudup accounts are required for authenticated API use, stream management, and application registration.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": true,
       "api_docs_url": "https://n.cloudup.com/",
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "Cloudup publishes official API documentation for streams, items, uploads, OAuth, and oEmbed."
+      "notes": "Cloudup publishes official API documentation for streams, items, uploads, OAuth, and oEmbed.",
+      "source_refs": [
+        2
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The official docs require HTTPS and describe private-by-default sharing, but do not claim end-to-end encryption."
+      "notes": "The official docs require HTTPS and describe private-by-default sharing, but do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -819,7 +1074,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "all_except_prohibited",
-        "notes": "Official posts describe support for files, URLs, HTML, XML, SVG, and media embeds, but do not publish a full restrictive allowlist."
+        "notes": "Official posts describe support for files, URLs, HTML, XML, SVG, and media embeds, but do not publish a full restrictive allowlist.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -831,40 +1089,62 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "The cited current public pages describe storage tiers but do not publish a per-file upload limit for the free plan."
+        "notes": "The cited current public pages describe storage tiers but do not publish a per-file upload limit for the free plan.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited current public pages do not state an automatic expiry period for files stored on the free plan."
+        "notes": "The cited current public pages do not state an automatic expiry period for files stored on the free plan.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 5,
         "unit": "GB",
-        "notes": "The Discovery free plan currently lists 5 GB of cloud storage."
+        "notes": "The Discovery free plan currently lists 5 GB of cloud storage.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "A free account includes 5 GB of storage, unlimited authorized devices, chat, and collaborative notes."
+      "benefits": "A free account includes 5 GB of storage, unlimited authorized devices, chat, and collaborative notes.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited current public pages document end-user apps and self-hosting, but they do not present a public developer API."
+      "notes": "The cited current public pages document end-user apps and self-hosting, but they do not present a public developer API.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "Twake emphasizes privacy, GDPR compliance, and French hosting on the cited pages, but these pages do not claim end-to-end encryption for the hosted free plan."
+      "notes": "Twake emphasizes privacy, GDPR compliance, and French hosting on the cited pages, but these pages do not claim end-to-end encryption for the hosted free plan.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "cloud-storage",
@@ -895,7 +1175,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -907,40 +1190,62 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "The official public pages promote large-file sharing but do not publish a clean current maximum upload size."
+        "notes": "The official public pages promote large-file sharing but do not publish a clean current maximum upload size.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited official public pages do not publish a clean automatic expiry policy for hosted files."
+        "notes": "The cited official public pages do not publish a clean automatic expiry policy for hosted files.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The homepage advertises unlimited storage for accounts, but does not publish a structured quota table beyond that claim."
+        "notes": "The homepage advertises unlimited storage for accounts, but does not publish a structured quota table beyond that claim.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The official pages do not publish a clean bandwidth cap, but free downloads above 200 MB are restricted to premium users."
+        "notes": "The official pages do not publish a clean bandwidth cap, but free downloads above 200 MB are restricted to premium users.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "Guest uploads work through the homepage; registered users can track uploads, organize files, and use free FTP upload access."
+      "benefits": "Guest uploads work through the homepage; registered users can track uploads, organize files, and use free FTP upload access.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": true,
       "cli_example": "Use any FTP client after logging in; the help page says FTP upload is free for registered users.",
-      "notes": "The service does not publish a public API, but official help documents free FTP upload for registered users."
+      "notes": "The service does not publish a public API, but official help documents free FTP upload for registered users.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The cited official public pages do not claim end-to-end encryption."
+      "notes": "The cited official public pages do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -978,7 +1283,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "all_except_prohibited",
-        "notes": "The homepage explicitly mentions videos, music, and large files; the cited public pages do not publish a narrow allowlist."
+        "notes": "The homepage explicitly mentions videos, music, and large files; the cited public pages do not publish a narrow allowlist.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -990,40 +1298,62 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "The cited official public pages do not publish a clean current maximum upload size."
+        "notes": "The cited official public pages do not publish a clean current maximum upload size.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 30,
         "unit": "days",
-        "notes": "The official pricing page currently lists 30 days of file inactivity for the free plan."
+        "notes": "The official pricing page currently lists 30 days of file inactivity for the free plan.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 5,
         "unit": "TB",
-        "notes": "The official pricing page currently lists 5 TB of storage space for the free plan."
+        "notes": "The official pricing page currently lists 5 TB of storage space for the free plan.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The official pricing page says the free plan has limited traffic per day, but does not publish a clean numeric cap."
+        "notes": "The official pricing page says the free plan has limited traffic per day, but does not publish a clean numeric cap.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "Guest uploads appear to be supported; creating an account unlocks the free storage plan, file manager, folders, stats, and API key access."
+      "benefits": "Guest uploads appear to be supported; creating an account unlocks the free storage plan, file manager, folders, stats, and API key access.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": true,
       "api_docs_url": "https://ddownload.com/api",
       "cli_friendly": true,
       "cli_example": "curl \"https://api-v2.ddownload.com/api/account/info?key=YOUR_KEY\"",
-      "notes": "DDownload publishes official API documentation for account info, uploads, files, and folders."
+      "notes": "DDownload publishes official API documentation for account info, uploads, files, and folders.",
+      "source_refs": [
+        2
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The official pages describe secure storage and HTTPS delivery, but do not claim end-to-end encryption."
+      "notes": "The official pages describe secure storage and HTTPS delivery, but do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "cloud-storage",
@@ -1055,7 +1385,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "all_except_prohibited",
-        "notes": "The official FAQ says all kinds of files may be uploaded except pornography, nudity, sexual images, offensive material, and copyrighted material."
+        "notes": "The official FAQ says all kinds of files may be uploaded except pornography, nudity, sexual images, offensive material, and copyrighted material.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -1067,40 +1400,62 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "The cited official public pages do not publish a current per-file upload limit for the free plan."
+        "notes": "The cited official public pages do not publish a current per-file upload limit for the free plan.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 90,
         "unit": "days",
-        "notes": "The Degoo homepage currently says free accounts are subject to 90 days of account inactivity."
+        "notes": "The Degoo homepage currently says free accounts are subject to 90 days of account inactivity.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 20,
         "unit": "GB",
-        "notes": "The Degoo homepage currently lists 20 GB of free cloud space."
+        "notes": "The Degoo homepage currently lists 20 GB of free cloud space.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "A Degoo account is required for the free plan, which currently includes web access and up to 3 devices."
+      "benefits": "A Degoo account is required for the free plan, which currently includes web access and up to 3 devices.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited public pages do not document a public developer API or CLI workflow."
+      "notes": "The cited public pages do not document a public developer API or CLI workflow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": true,
-      "notes": "Degoo publicly markets encrypted communication and an optional zero-knowledge storage feature, but the cited pages do not establish end-to-end encryption as the default free-plan model."
+      "notes": "Degoo publicly markets encrypted communication and an optional zero-knowledge storage feature, but the cited pages do not establish end-to-end encryption as the default free-plan model.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "cloud-storage",
@@ -1131,7 +1486,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -1143,40 +1501,62 @@
       "max_file_size": {
         "value": 10,
         "unit": "GB",
-        "notes": "The official DepositFiles FAQ and homepage state that users can upload files up to 10 GB."
+        "notes": "The official DepositFiles FAQ and homepage state that users can upload files up to 10 GB.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 90,
         "unit": "days",
-        "notes": "The official FAQ says uploaded files are stored for 90 days, and each download extends retention by another 90 days."
+        "notes": "The official FAQ says uploaded files are stored for 90 days, and each download extends retention by another 90 days.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The official pages describe file storage time and space as unlimited, but do not publish a structured free-tier quota table."
+        "notes": "The official pages describe file storage time and space as unlimited, but do not publish a structured free-tier quota table.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The official public pages do not publish a clean numeric bandwidth cap for free users."
+        "notes": "The official public pages do not publish a clean numeric bandwidth cap for free users.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "Free use is available without payment; creating an account enables easier file management, removal options, and additional account features."
+      "benefits": "Free use is available without payment; creating an account enables easier file management, removal options, and additional account features.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": true,
       "cli_example": "Upload by FTP or remote HTTP/FTP transfer after creating an account.",
-      "notes": "The official pages document FTP upload and remote HTTP/FTP upload, but do not publish a public developer API."
+      "notes": "The official pages document FTP upload and remote HTTP/FTP upload, but do not publish a public developer API.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The official pages position it as safe file transfer and storage, but do not claim end-to-end encryption."
+      "notes": "The official pages position it as safe file transfer and storage, but do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -1202,7 +1582,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "all_except_prohibited",
-        "notes": "The official FAQ says many file types are allowed, while copyrighted or illegal content may be removed."
+        "notes": "The official FAQ says many file types are allowed, while copyrighted or illegal content may be removed.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -1214,40 +1597,61 @@
       "max_file_size": {
         "value": 8,
         "unit": "MB",
-        "notes": "The current upload page lists a maximum of 8 MB per file."
+        "notes": "The current upload page lists a maximum of 8 MB per file.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 1,
         "unit": "years",
-        "notes": "The homepage currently advertises a 1-year minimum storage duration, while uploaders can also choose shorter auto-delete periods during upload."
+        "notes": "The homepage currently advertises a 1-year minimum storage duration, while uploaders can also choose shorter auto-delete periods during upload.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "DirectUpload is an image-hosting service rather than a published quota-based cloud storage plan."
+        "notes": "DirectUpload is an image-hosting service rather than a published quota-based cloud storage plan.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "Anonymous uploads are supported; registered members can store images free and long-term."
+      "benefits": "Anonymous uploads are supported; registered members can store images free and long-term.",
+      "source_refs": [
+        0
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited public pages do not document a public API or CLI workflow."
+      "notes": "The cited public pages do not document a public API or CLI workflow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The cited public pages focus on image hosting features and do not claim end-to-end encryption."
+      "notes": "The cited public pages focus on image hosting features and do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "image-hosting",
@@ -1266,7 +1670,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "images-and-pdf",
-        "notes": "The current upload page supports JPG, GIF, PNG, WEBP, BMP, HEIC, and PDF uploads, with some formats converted automatically."
+        "notes": "The current upload page supports JPG, GIF, PNG, WEBP, BMP, HEIC, and PDF uploads, with some formats converted automatically.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -1278,40 +1685,62 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "The cited current public Upload pages for this batch do not publish a maximum file size."
+        "notes": "The cited current public Upload pages for this batch do not publish a maximum file size.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "Disroot describes the service as temporary and Lufi-based, but the cited current public pages do not state a specific expiry duration."
+        "notes": "Disroot describes the service as temporary and Lufi-based, but the cited current public pages do not state a specific expiry duration.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "Disroot Upload is a temporary sharing service rather than persistent account storage."
+        "notes": "Disroot Upload is a temporary sharing service rather than persistent account storage.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "No account is needed to upload files; users receive download and deletion links."
+      "benefits": "No account is needed to upload files; users receive download and deletion links.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited current public pages do not document a public API or CLI workflow for this hosted instance."
+      "notes": "The cited current public pages do not document a public API or CLI workflow for this hosted instance.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": true,
       "server_side_encryption": true,
-      "notes": "Disroot states files are encrypted in the browser before upload, so administrators cannot see the file contents."
+      "notes": "Disroot states files are encrypted in the browser before upload, so administrators cannot see the file contents.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -1336,7 +1765,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -1356,7 +1788,10 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public free-plan pages do not state an automatic expiry period for stored files."
+        "notes": "The cited public free-plan pages do not state an automatic expiry period for stored files.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 2,
@@ -1369,7 +1804,10 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit for the free plan."
+        "notes": "The cited public pages do not publish a current bandwidth limit for the free plan.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
@@ -1448,7 +1886,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -1460,40 +1901,61 @@
       "max_file_size": {
         "value": 50,
         "unit": "GB",
-        "notes": "The homepage currently states the maximum size of uploaded files is up to 50 GB."
+        "notes": "The homepage currently states the maximum size of uploaded files is up to 50 GB.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 14,
         "unit": "days",
-        "notes": "The current upload flow offers 3-day, 7-day, and 14-day storage options, plus a one-download deletion option."
+        "notes": "The current upload flow offers 3-day, 7-day, and 14-day storage options, plus a one-download deletion option.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "DropMeFiles is transfer-oriented rather than a persistent account storage service."
+        "notes": "DropMeFiles is transfer-oriented rather than a persistent account storage service.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "No registration is required for the standard upload and sharing flow."
+      "benefits": "No registration is required for the standard upload and sharing flow.",
+      "source_refs": [
+        0
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The current public site does not document an official API or command-line upload workflow."
+      "notes": "The current public site does not document an official API or command-line upload workflow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The service supports password-protected links, but the cited public page does not claim end-to-end encryption."
+      "notes": "The service supports password-protected links, but the cited public page does not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -1512,7 +1974,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -1524,40 +1989,62 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean current maximum upload size."
+        "notes": "The cited public pages do not publish a clean current maximum upload size.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean automatic expiry policy for shared files."
+        "notes": "The cited public pages do not publish a clean automatic expiry policy for shared files.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages describe cloud storage and sharing, but do not expose a clean current free-quota number in accessible text."
+        "notes": "The cited public pages describe cloud storage and sharing, but do not expose a clean current free-quota number in accessible text.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean numeric bandwidth cap."
+        "notes": "The cited public pages do not publish a clean numeric bandwidth cap.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "The current product pages and app positioning revolve around account-based cloud storage, online viewing, and shared links."
+      "benefits": "The current product pages and app positioning revolve around account-based cloud storage, online viewing, and shared links.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited public pages do not document a public API or CLI upload workflow."
+      "notes": "The cited public pages do not document a public API or CLI upload workflow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The Google Play listing says data is encrypted in transit and can be deleted on request, but the cited pages do not claim end-to-end encryption."
+      "notes": "The Google Play listing says data is encrypted in transit and can be deleted on request, but the cited pages do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "cloud-storage",
@@ -1589,7 +2076,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages describe storing photos, videos, documents, and music, but do not publish a full allowlist."
+        "notes": "The cited public pages describe storing photos, videos, documents, and music, but do not publish a full allowlist.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -1601,40 +2091,62 @@
       "max_file_size": {
         "value": 1,
         "unit": "GB",
-        "notes": "The English upload page currently states a maximum size of 1 GB per file."
+        "notes": "The English upload page currently states a maximum size of 1 GB per file.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 365,
         "unit": "days",
-        "notes": "The English upload page says files are stored up to one year, and the FAQ says images stay at least one year before later cleanup rules apply."
+        "notes": "The English upload page says files are stored up to one year, and the FAQ says images stay at least one year before later cleanup rules apply.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The registration page advertises non-limited space for free members, but the public pages do not present a clean structured quota table."
+        "notes": "The registration page advertises non-limited space for free members, but the public pages do not present a clean structured quota table.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The registration page advertises no traffic limit, but the public pages do not present a clean numeric bandwidth cap."
+        "notes": "The registration page advertises no traffic limit, but the public pages do not present a clean numeric bandwidth cap.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "Guest uploads work without registration; free registration adds file overview, statistics, and management features."
+      "benefits": "Guest uploads work without registration; free registration adds file overview, statistics, and management features.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The service offers upload tools and an uploader app, but the cited public pages do not document a public developer API or CLI workflow."
+      "notes": "The service offers upload tools and an uploader app, but the cited public pages do not document a public developer API or CLI workflow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The FAQ describes randomly generated file names and delete links, but the public pages do not claim end-to-end encryption."
+      "notes": "The FAQ describes randomly generated file names and delete links, but the public pages do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -1672,7 +2184,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "all_except_prohibited",
-        "notes": "The FAQ says there are no file-format limits as long as uploads do not violate the terms and conditions."
+        "notes": "The FAQ says there are no file-format limits as long as uploads do not violate the terms and conditions.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -1684,40 +2199,62 @@
       "max_file_size": {
         "value": 20,
         "unit": "GB",
-        "notes": "The premium comparison currently lists a 20 GB maximum upload file size for registered users."
+        "notes": "The premium comparison currently lists a 20 GB maximum upload file size for registered users.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 30,
         "unit": "days",
-        "notes": "The premium comparison currently says registered-user files are deleted 30 days after the last download."
+        "notes": "The premium comparison currently says registered-user files are deleted 30 days after the last download.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 1,
         "unit": "TB",
-        "notes": "The premium comparison currently lists 1 TB of storage space for registered users."
+        "notes": "The premium comparison currently lists 1 TB of storage space for registered users.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": 5,
         "unit": "GB/day",
-        "notes": "The premium comparison currently lists 5 GB of download volume per day for registered users."
+        "notes": "The premium comparison currently lists 5 GB of download volume per day for registered users.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "Uploads are enabled for confirmed users only, and registration enables remote URL upload plus the published registered-user tier."
+      "benefits": "Uploads are enabled for confirmed users only, and registration enables remote URL upload plus the published registered-user tier.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The site navigation mentions API, but the cited public pages do not expose a clear public developer documentation page for verification."
+      "notes": "The site navigation mentions API, but the cited public pages do not expose a clear public developer documentation page for verification.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The public pages position File.AL as secure storage and sharing, but do not claim end-to-end encryption."
+      "notes": "The public pages position File.AL as secure storage and sharing, but do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -1748,7 +2285,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -1760,40 +2300,62 @@
       "max_file_size": {
         "value": 4,
         "unit": "GB",
-        "notes": "Homepage FAQ says file transfers are limited to a total of 4 GB. The plans page lists 2 GB for the free managed plan, so this entry reflects the public upload flow on the homepage."
+        "notes": "Homepage FAQ says file transfers are limited to a total of 4 GB. The plans page lists 2 GB for the free managed plan, so this entry reflects the public upload flow on the homepage.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 1,
         "unit": "downloads",
-        "notes": "Files are deleted after the first download by default. The homepage also documents a default 14-day expiry if the file is not downloaded."
+        "notes": "Files are deleted after the first download by default. The homepage also documents a default 14-day expiry if the file is not downloaded.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The service focuses on transfer-style sharing rather than a public storage quota."
+        "notes": "The service focuses on transfer-style sharing rather than a public storage quota.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "Accounts let you manage shared files in the web app."
+      "benefits": "Accounts let you manage shared files in the web app.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": true,
       "api_docs_url": "https://www.file.io/developers",
       "cli_friendly": true,
       "cli_example": "curl -F \"file=@example.txt\" https://file.io",
-      "notes": "The homepage and developer docs both show curl-based upload flows."
+      "notes": "The homepage and developer docs both show curl-based upload flows.",
+      "source_refs": [
+        2
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": true,
-      "notes": "Homepage states files are encrypted in transit and at rest, but the service can still access them server-side."
+      "notes": "Homepage states files are encrypted in transit and at rest, but the service can still access them server-side.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "api",
@@ -1824,7 +2386,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -1836,40 +2401,62 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a per-file upload size limit."
+        "notes": "The cited public pages do not publish a per-file upload size limit.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 6,
         "unit": "days",
-        "notes": "The homepage currently states uploaded files are automatically deleted 6 days after upload."
+        "notes": "The homepage currently states uploaded files are automatically deleted 6 days after upload.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "Filebin is a temporary sharing service rather than a published quota-based storage plan."
+        "notes": "Filebin is a temporary sharing service rather than a published quota-based storage plan.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a numeric bandwidth cap, but uploads can be blocked when the overall service storage capacity is reached."
+        "notes": "The cited public pages do not publish a numeric bandwidth cap, but uploads can be blocked when the overall service storage capacity is reached.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "No registration is required; anyone with the link can upload, download, or manually delete the bin contents."
+      "benefits": "No registration is required; anyone with the link can upload, download, or manually delete the bin contents.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": true,
       "api_docs_url": "https://filebin.net/api",
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "Filebin publishes API documentation for uploading, listing, downloading, and deleting files."
+      "notes": "Filebin publishes API documentation for uploading, listing, downloading, and deleting files.",
+      "source_refs": [
+        3
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": false,
-      "notes": "Filebin says HTTPS protects data in transit, but files are not encrypted on the server side and should be client-encrypted if needed."
+      "notes": "Filebin says HTTPS protects data in transit, but files are not encrypted on the server side and should be client-encrypted if needed.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -1906,7 +2493,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "all_except_prohibited",
-        "notes": "The terms prohibit illegal, copyrighted, malicious, obscene, and abusive uses, but the service otherwise accepts arbitrary uploaded content."
+        "notes": "The terms prohibit illegal, copyrighted, malicious, obscene, and abusive uses, but the service otherwise accepts arbitrary uploaded content.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -1918,40 +2508,61 @@
       "max_file_size": {
         "value": 5,
         "unit": "GB",
-        "notes": "The current premium comparison page lists a 5 GB max upload file size for free members."
+        "notes": "The current premium comparison page lists a 5 GB max upload file size for free members.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 90,
         "unit": "days",
-        "notes": "The current premium comparison page lists 90 days of file storage time for free members."
+        "notes": "The current premium comparison page lists 90 days of file storage time for free members.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a total storage quota for free members."
+        "notes": "The cited public pages do not publish a total storage quota for free members.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The current comparison page says free members face hourly download limits but does not publish a clean numeric bandwidth cap."
+        "notes": "The current comparison page says free members face hourly download limits but does not publish a clean numeric bandwidth cap.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "A free member account is required for uploads and 90-day storage; anonymous users can only download with heavier limits."
+      "benefits": "A free member account is required for uploads and 90-day storage; anonymous users can only download with heavier limits.",
+      "source_refs": [
+        0
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited public pages do not document a public API or CLI workflow."
+      "notes": "The cited public pages do not document a public API or CLI workflow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The cited public pages emphasize hosted download service features but do not claim end-to-end encryption."
+      "notes": "The cited public pages emphasize hosted download service features but do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-hosting",
@@ -1970,7 +2581,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -1982,40 +2596,62 @@
       "max_file_size": {
         "value": 2,
         "unit": "GB",
-        "notes": "The published terms currently allow files up to 2 GB for registered users, while the landing page advertises smaller limits in some unauthenticated states."
+        "notes": "The published terms currently allow files up to 2 GB for registered users, while the landing page advertises smaller limits in some unauthenticated states.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 30,
         "unit": "days",
-        "notes": "The published terms say files are deleted after 30 days since the last access for ordinary uploads."
+        "notes": "The published terms say files are deleted after 30 days since the last access for ordinary uploads.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 10,
         "unit": "GB",
-        "notes": "The published terms say the maximum total upload volume for registered users is 10 GB."
+        "notes": "The published terms say the maximum total upload volume for registered users is 10 GB.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean numeric bandwidth cap."
+        "notes": "The cited public pages do not publish a clean numeric bandwidth cap.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "The current landing page says only registered users can upload, and registration enables larger upload sizes and upload management."
+      "benefits": "The current landing page says only registered users can upload, and registration enables larger upload sizes and upload management.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited public pages do not document a public API or CLI upload flow."
+      "notes": "The cited public pages do not document a public API or CLI upload flow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The service is delivered over HTTPS, but the cited public pages do not claim end-to-end encryption."
+      "notes": "The service is delivered over HTTPS, but the cited public pages do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -2040,7 +2676,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "all_except_prohibited",
-        "notes": "The terms prohibit malware, copyrighted material without permission, spam, encrypted archive file lists, and other disallowed content."
+        "notes": "The terms prohibit malware, copyrighted material without permission, spam, encrypted archive file lists, and other disallowed content.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -2052,40 +2691,62 @@
       "max_file_size": {
         "value": 100,
         "unit": "GB",
-        "notes": "The current homepage and terms say the maximum upload size is 100 GB."
+        "notes": "The current homepage and terms say the maximum upload size is 100 GB.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 25,
         "unit": "days",
-        "notes": "The homepage and terms say files are stored for up to 25 days, with shorter options like 24 hours, 7 days, and 20 days available at upload time."
+        "notes": "The homepage and terms say files are stored for up to 25 days, with shorter options like 24 hours, 7 days, and 20 days available at upload time.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish an overall account storage quota because uploads work without registration."
+        "notes": "The cited public pages do not publish an overall account storage quota because uploads work without registration.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "Files can be uploaded and shared without registration, with optional password protection and one-download expiry."
+      "benefits": "Files can be uploaded and shared without registration, with optional password protection and one-download expiry.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited public pages do not document a public API or CLI workflow."
+      "notes": "The cited public pages do not document a public API or CLI workflow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The service offers password-protected files, but the cited public pages do not claim end-to-end encryption."
+      "notes": "The service offers password-protected files, but the cited public pages do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -2110,7 +2771,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "all_except_prohibited",
-        "notes": "The current terms broadly allow file uploads but prohibit malware, illegal material, certain copyright violations, misleading files, and some public-file categories."
+        "notes": "The current terms broadly allow file uploads but prohibit malware, illegal material, certain copyright violations, misleading files, and some public-file categories.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -2122,40 +2786,62 @@
       "max_file_size": {
         "value": 5,
         "unit": "GB",
-        "notes": "The current Basic plan lists a 5 GB file size limit."
+        "notes": "The current Basic plan lists a 5 GB file size limit.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 1,
         "unit": "months",
-        "notes": "The current Basic plan lists 20 GB of storage for a month."
+        "notes": "The current Basic plan lists 20 GB of storage for a month.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 20,
         "unit": "GB",
-        "notes": "The current Basic plan lists 20 GB for a month."
+        "notes": "The current Basic plan lists 20 GB for a month.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The current Basic plan does not publish a numeric data-transfer cap on the cited pricing page."
+        "notes": "The current Basic plan does not publish a numeric data-transfer cap on the cited pricing page.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "A free account provides the Basic tier with storage, private sharing, file inbox, and conversion tools."
+      "benefits": "A free account provides the Basic tier with storage, private sharing, file inbox, and conversion tools.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": true,
       "api_docs_url": "https://files.fm/api/",
       "cli_friendly": true,
       "cli_example": null,
-      "notes": "Files.fm publicly advertises an API for developers, plus WebDAV and FTP access in its apps and tools section."
+      "notes": "Files.fm publicly advertises an API for developers, plus WebDAV and FTP access in its apps and tools section.",
+      "source_refs": [
+        1
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": true,
-      "notes": "Files.fm markets secure European data-center storage, GDPR compliance, and advanced encryption, but the cited pages do not claim end-to-end encryption."
+      "notes": "Files.fm markets secure European data-center storage, GDPR compliance, and advanced encryption, but the cited pages do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "cloud-storage",
@@ -2180,7 +2866,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "all_except_prohibited",
-        "notes": "The homepage positions Files.fm as handling photos, videos, audio, and documents, but contributors should still verify prohibited-content rules from the service terms before refining this field further."
+        "notes": "The homepage positions Files.fm as handling photos, videos, audio, and documents, but contributors should still verify prohibited-content rules from the service terms before refining this field further.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -2192,40 +2881,62 @@
       "max_file_size": {
         "value": 10,
         "unit": "GB",
-        "notes": "Official support currently states transfers are free up to 10 GB for non-Freebox users, while Freebox subscribers get unlimited volume."
+        "notes": "Official support currently states transfers are free up to 10 GB for non-Freebox users, while Freebox subscribers get unlimited volume.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 30,
         "unit": "days",
-        "notes": "Official support says transfer validity can be set up to 30 days for Freebox subscribers and up to 7 days for non-Freebox users."
+        "notes": "Official support says transfer validity can be set up to 30 days for Freebox subscribers and up to 7 days for non-Freebox users.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "Free Transfert is a temporary transfer service rather than persistent cloud storage."
+        "notes": "Free Transfert is a temporary transfer service rather than persistent cloud storage.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "The service is free to use from a browser, with expanded limits for Freebox subscribers."
+      "benefits": "The service is free to use from a browser, with expanded limits for Freebox subscribers.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited official support pages describe browser-based sharing only and do not document a public API or CLI flow."
+      "notes": "The cited official support pages describe browser-based sharing only and do not document a public API or CLI flow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": true,
-      "notes": "Free states transferred files are encrypted with HTTPS and stored in datacenters in Paris until expiration; the cited pages do not claim end-to-end encryption."
+      "notes": "Free states transferred files are encrypted with HTTPS and stored in datacenters in Paris until expiration; the cited pages do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -2256,7 +2967,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -2268,40 +2982,62 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "The cited FAQ and API docs do not publish a current max upload size."
+        "notes": "The cited FAQ and API docs do not publish a current max upload size.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 10,
         "unit": "days",
-        "notes": "Free content is ephemeral by default and kept for 10 days, with longer retention if it remains actively downloaded."
+        "notes": "Free content is ephemeral by default and kept for 10 days, with longer retention if it remains actively downloaded.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 3,
         "unit": "TB",
-        "notes": "The Premium page advertises 3 TB storage for the subscription plan."
+        "notes": "The Premium page advertises 3 TB storage for the subscription plan.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages position Gofile as having no download limits, but they do not publish a numeric bandwidth quota."
+        "notes": "The cited public pages position Gofile as having no download limits, but they do not publish a numeric bandwidth quota.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "Free accounts keep uploads across sessions; Premium unlocks permanent storage and advanced features."
+      "benefits": "Free accounts keep uploads across sessions; Premium unlocks permanent storage and advanced features.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": true,
       "api_docs_url": "https://gofile.io/api",
       "cli_friendly": true,
       "cli_example": "curl -F \"file=@example.txt\" https://upload.gofile.io/uploadfile",
-      "notes": "API is in beta. Most endpoints require Premium, but basic upload and content management are available to free accounts."
+      "notes": "API is in beta. Most endpoints require Premium, but basic upload and content management are available to free accounts.",
+      "source_refs": [
+        2
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": true,
-      "notes": "FAQ states content is encrypted on Gofile servers, but not end-to-end encrypted."
+      "notes": "FAQ states content is encrypted on Gofile servers, but not end-to-end encrypted.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "guest-uploads",
@@ -2332,7 +3068,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -2352,7 +3091,10 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not state an automatic expiry period for stored files."
+        "notes": "The cited public pages do not state an automatic expiry period for stored files.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 15,
@@ -2365,7 +3107,10 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
@@ -2390,7 +3135,10 @@
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The cited storage and app pages do not claim end-to-end encryption for standard Google Drive storage."
+      "notes": "The cited storage and app pages do not claim end-to-end encryption for standard Google Drive storage.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "cloud-storage",
@@ -2442,40 +3190,62 @@
       "max_file_size": {
         "value": 100,
         "unit": "MB",
-        "notes": "The Lite plan currently lists a 100 MB file size send limit."
+        "notes": "The Lite plan currently lists a 100 MB file size send limit.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 7,
         "unit": "days",
-        "notes": "The Lite plan currently lists a 7-day file expiration."
+        "notes": "The Lite plan currently lists a 7-day file expiration.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 2,
         "unit": "GB",
-        "notes": "The Lite plan currently lists 2 GB of storage space."
+        "notes": "The Lite plan currently lists 2 GB of storage space.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited pricing page does not publish a numeric bandwidth cap for the Lite plan."
+        "notes": "The cited pricing page does not publish a numeric bandwidth cap for the Lite plan.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "A Hightail Lite account provides free storage and smaller-file sharing, while recipients do not need an account to access shared files."
+      "benefits": "A Hightail Lite account provides free storage and smaller-file sharing, while recipients do not need an account to access shared files.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited public pages do not document a public developer API or CLI workflow."
+      "notes": "The cited public pages do not document a public developer API or CLI workflow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The cited public pages describe secure file sharing but do not claim end-to-end encryption."
+      "notes": "The cited public pages describe secure file sharing but do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -2500,7 +3270,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -2512,40 +3285,61 @@
       "max_file_size": {
         "value": 20,
         "unit": "MB",
-        "notes": "The homepage FAQ currently says the largest file size is 20 MB."
+        "notes": "The homepage FAQ currently says the largest file size is 20 MB.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The homepage FAQ currently says files are stored as long as the account is active."
+        "notes": "The homepage FAQ currently says files are stored as long as the account is active.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a storage quota, but they do publish a daily upload-count limit."
+        "notes": "The cited public pages do not publish a storage quota, but they do publish a daily upload-count limit.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The homepage FAQ currently says there are no bandwidth limits, aside from possible hotlinking suspension in abuse cases."
+        "notes": "The homepage FAQ currently says there are no bandwidth limits, aside from possible hotlinking suspension in abuse cases.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "A Hostr account is required; free accounts can upload up to 15 files per day and keep files as long as the account remains active."
+      "benefits": "A Hostr account is required; free accounts can upload up to 15 files per day and keep files as long as the account remains active.",
+      "source_refs": [
+        0
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited public pages do not document a public API or CLI workflow."
+      "notes": "The cited public pages do not document a public API or CLI workflow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The homepage says files are redundantly backed up to Amazon Web Services, but it does not claim end-to-end encryption."
+      "notes": "The homepage says files are redundantly backed up to Amazon Web Services, but it does not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -2564,7 +3358,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "all_except_prohibited",
-        "notes": "The homepage currently says all file types are supported, though prohibited or abusive content may still be restricted under the service rules."
+        "notes": "The homepage currently says all file types are supported, though prohibited or abusive content may still be restricted under the service rules.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -2584,7 +3381,10 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited current public pages for this batch do not state an automatic file expiry period on the free Basic plan."
+        "notes": "The cited current public pages for this batch do not state an automatic file expiry period on the free Basic plan.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
@@ -2597,7 +3397,10 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
@@ -2613,7 +3416,10 @@
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited current public pages for this batch do not document a public developer API or CLI workflow."
+      "notes": "The cited current public pages for this batch do not document a public developer API or CLI workflow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
@@ -2647,7 +3453,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -2659,40 +3468,62 @@
       "max_file_size": {
         "value": 4,
         "unit": "GB",
-        "notes": "The current upload page states files can be uploaded free up to 4 GB."
+        "notes": "The current upload page states files can be uploaded free up to 4 GB.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "LimeWire's terms say automatic deletion policies exist for the basic tier, but the current cited public pages do not publish a fixed public retention duration."
+        "notes": "LimeWire's terms say automatic deletion policies exist for the basic tier, but the current cited public pages do not publish a fixed public retention duration.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The current cited public pages position LimeWire as a transfer and collaboration platform rather than advertising a persistent free storage quota."
+        "notes": "The current cited public pages position LimeWire as a transfer and collaboration platform rather than advertising a persistent free storage quota.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "Basic features like uploading and sharing files can be used without an account; creating an account enables permanent access and file management."
+      "benefits": "Basic features like uploading and sharing files can be used without an account; creating an account enables permanent access and file management.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited public pages do not document a public developer API or command-line workflow."
+      "notes": "The cited public pages do not document a public developer API or command-line workflow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": true,
       "server_side_encryption": true,
-      "notes": "LimeWire publicly markets its file sharing platform as end-to-end encrypted, and its terms state file transfers are encrypted."
+      "notes": "LimeWire publicly markets its file sharing platform as end-to-end encrypted, and its terms state file transfers are encrypted.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -2723,7 +3554,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -2743,7 +3577,10 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish an automatic shelf-life value for the free plan."
+        "notes": "The cited public pages do not publish an automatic shelf-life value for the free plan.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 10,
@@ -2776,13 +3613,19 @@
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited current public pages for this batch do not document a public developer API."
+      "notes": "The cited current public pages for this batch do not document a public developer API.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "MediaFire describes secure storage in marketing copy, but the cited pages do not claim end-to-end encryption."
+      "notes": "MediaFire describes secure storage in marketing copy, but the cited pages do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "cloud-storage",
@@ -2813,7 +3656,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -2825,40 +3671,62 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current per-file upload cap for the free plan."
+        "notes": "The cited public pages do not publish a current per-file upload cap for the free plan.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 30,
         "unit": "days",
-        "notes": "MiMedia's terms say files may be deleted within 30 days after a subscription ends, and the free tier itself does not list an automatic file-expiry period while active."
+        "notes": "MiMedia's terms say files may be deleted within 30 days after a subscription ends, and the free tier itself does not list an automatic file-expiry period while active.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 10,
         "unit": "GB",
-        "notes": "MiMedia currently markets a 10 GB Starter plan as free."
+        "notes": "MiMedia currently markets a 10 GB Starter plan as free.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "A MiMedia account is required for the free Starter tier with desktop, web, and mobile access."
+      "benefits": "A MiMedia account is required for the free Starter tier with desktop, web, and mobile access.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited public pages do not document a public developer API or CLI workflow."
+      "notes": "The cited public pages do not document a public developer API or CLI workflow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": true,
-      "notes": "MiMedia markets privacy and secure storage, but the cited public pages do not claim end-to-end encryption."
+      "notes": "MiMedia markets privacy and secure storage, but the cited public pages do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "cloud-storage",
@@ -2889,7 +3757,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "documents-images-media",
-        "notes": "MiMedia officially supports common image, video, audio, and document formats including JPG, PNG, MP4, MP3, PDF, DOCX, XLSX, and PPTX."
+        "notes": "MiMedia officially supports common image, video, audio, and document formats including JPG, PNG, MP4, MP3, PDF, DOCX, XLSX, and PPTX.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -2909,7 +3780,10 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not state an automatic expiry period for stored files."
+        "notes": "The cited public pages do not state an automatic expiry period for stored files.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 20,
@@ -2922,7 +3796,10 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
@@ -2938,7 +3815,10 @@
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited current public pages for this batch do not document a public developer API."
+      "notes": "The cited current public pages for this batch do not document a public developer API.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
@@ -2972,7 +3852,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -2984,40 +3867,62 @@
       "max_file_size": {
         "value": 20,
         "unit": "GB",
-        "notes": "MyAirBridge currently states that free individual transfers can be up to 20 GB."
+        "notes": "MyAirBridge currently states that free individual transfers can be up to 20 GB.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "For free use, MyAirBridge's FAQ says data is deleted after 3 days, or after 2 days for transfers larger than 2 GB."
+        "notes": "For free use, MyAirBridge's FAQ says data is deleted after 3 days, or after 2 days for transfers larger than 2 GB.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "Persistent storage is positioned as a paid-plan feature rather than part of the free transfer offer."
+        "notes": "Persistent storage is positioned as a paid-plan feature rather than part of the free transfer offer.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "Basic sending and downloading do not require registration, though registration and paid plans unlock extra benefits."
+      "benefits": "Basic sending and downloading do not require registration, though registration and paid plans unlock extra benefits.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": true,
       "api_docs_url": "https://info.myairbridge.com/cs/faq",
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "MyAirBridge's FAQ navigation exposes an API section, but the cited accessible pages for this batch do not provide public endpoint documentation."
+      "notes": "MyAirBridge's FAQ navigation exposes an API section, but the cited accessible pages for this batch do not provide public endpoint documentation.",
+      "source_refs": [
+        1
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "MyAirBridge emphasizes encrypted transfers and strong transport security, but the cited pages do not claim end-to-end encryption."
+      "notes": "MyAirBridge emphasizes encrypted transfers and strong transport security, but the cited pages do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -3042,7 +3947,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -3054,40 +3962,62 @@
       "max_file_size": {
         "value": 1,
         "unit": "GB",
-        "notes": "Current official help says the free tier includes 8 GB and allows uploads up to 1 GB per file, with paid plans increasing this to 100 GB."
+        "notes": "Current official help says the free tier includes 8 GB and allows uploads up to 1 GB per file, with paid plans increasing this to 100 GB.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 3,
         "unit": "months",
-        "notes": "Official help says if you do not use the cloud for 3 months, it is frozen."
+        "notes": "Official help says if you do not use the cloud for 3 months, it is frozen.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 8,
         "unit": "GB",
-        "notes": "Current official help and promo pages state that 8 GB is available for free."
+        "notes": "Current official help and promo pages state that 8 GB is available for free.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "A Mail account is required; the same account is used for Mail and Cloud, with web access, mobile apps, and desktop features."
+      "benefits": "A Mail account is required; the same account is used for Mail and Cloud, with web access, mobile apps, and desktop features.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": true,
       "cli_example": "davs://<login>@webdav.cloud.mail.ru:443",
-      "notes": "The public help pages do not document a general developer API, but they do document WebDAV access including Linux setup."
+      "notes": "The public help pages do not document a general developer API, but they do document WebDAV access including Linux setup.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": true,
-      "notes": "Mail.ru highlights account protection, antivirus scanning, and link controls on current official pages, but it does not claim end-to-end encryption."
+      "notes": "Mail.ru highlights account protection, antivirus scanning, and link controls on current official pages, but it does not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "cloud-storage",
@@ -3136,7 +4066,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -3156,7 +4089,10 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not state an automatic expiry period for stored files."
+        "notes": "The cited public pages do not state an automatic expiry period for stored files.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 5,
@@ -3169,7 +4105,10 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
@@ -3227,7 +4166,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -3247,7 +4189,10 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not state an automatic expiry period for files on the free plan."
+        "notes": "The cited public pages do not state an automatic expiry period for files on the free plan.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 5,
@@ -3288,7 +4233,10 @@
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The cited free-plan pages do not claim end-to-end encryption for the standard free account. Premium-only secure files are described separately."
+      "notes": "The cited free-plan pages do not claim end-to-end encryption for the standard free account. Premium-only secure files are described separately.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "cloud-storage",
@@ -3319,7 +4267,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -3331,40 +4282,62 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "The cited public free-plan pages do not publish a per-file upload cap."
+        "notes": "The cited public free-plan pages do not publish a per-file upload cap.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public free-plan pages do not state an automatic expiry period for stored files."
+        "notes": "The cited public free-plan pages do not state an automatic expiry period for stored files.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 1,
         "unit": "GB",
-        "notes": "OwnDrive's Free Drive currently lists 1 GB of free storage."
+        "notes": "OwnDrive's Free Drive currently lists 1 GB of free storage.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "A free OwnDrive account provides 1 GB of storage with limited access to apps and can be upgraded later."
+      "benefits": "A free OwnDrive account provides 1 GB of storage with limited access to apps and can be upgraded later.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited public pages do not document a public developer API or CLI workflow for the hosted free plan."
+      "notes": "The cited public pages do not document a public developer API or CLI workflow for the hosted free plan.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The cited public pages describe a trusted hosted environment and in-transit TLS for hosted plans, but they do not claim end-to-end encryption for the free plan."
+      "notes": "The cited public pages describe a trusted hosted environment and in-transit TLS for hosted plans, but they do not claim end-to-end encryption for the free plan.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "cloud-storage",
@@ -3389,7 +4362,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -3401,12 +4377,18 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "The cited public free-plan pages for this batch do not publish a current per-file upload limit."
+        "notes": "The cited public free-plan pages for this batch do not publish a current per-file upload limit.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not state an automatic expiry period for standard stored files."
+        "notes": "The cited public pages do not state an automatic expiry period for standard stored files.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 10,
@@ -3480,7 +4462,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -3492,40 +4477,62 @@
       "max_file_size": {
         "value": 100,
         "unit": "GB",
-        "notes": "The documented 100 GB limit applies to the paid filesystem feature."
+        "notes": "The documented 100 GB limit applies to the paid filesystem feature.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 60,
         "unit": "days",
-        "notes": "Files are removed if they are not accessed for 60 days; downloading more than 10% of the file resets the timer."
+        "notes": "Files are removed if they are not accessed for 60 days; downloading more than 10% of the file resets the timer.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 2,
         "unit": "TB",
-        "notes": "The filesystem guide says the Pro subscription has a 2 TB storage limit."
+        "notes": "The filesystem guide says the Pro subscription has a 2 TB storage limit.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": 5,
         "unit": "GB/day",
-        "notes": "The cited public pages state that anonymous downloads are limited to 5 GB per day."
+        "notes": "The cited public pages state that anonymous downloads are limited to 5 GB per day.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": null,
-      "benefits": "Paid accounts unlock the filesystem feature and higher transfer-related capabilities."
+      "benefits": "Paid accounts unlock the filesystem feature and higher transfer-related capabilities.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": true,
       "api_docs_url": "https://pdx02.pixeldrain.com/api",
       "cli_friendly": true,
       "cli_example": "rclone copy ./backup pixeldrain:/me/backup",
-      "notes": "Official docs mention a public filesystem API, FTPS access, and rclone support."
+      "notes": "Official docs mention a public filesystem API, FTPS access, and rclone support.",
+      "source_refs": [
+        2
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The cited docs do not claim end-to-end encryption."
+      "notes": "The cited docs do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "rclone",
@@ -3556,7 +4563,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -3568,40 +4578,61 @@
       "max_file_size": {
         "value": 300,
         "unit": "MB",
-        "notes": "The current upload page says the free-user upload limit is temporarily set to 300 MB while new servers are brought online."
+        "notes": "The current upload page says the free-user upload limit is temporarily set to 300 MB while new servers are brought online.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public upload pages do not publish a clean automatic expiry period for free uploads."
+        "notes": "The cited public upload pages do not publish a clean automatic expiry period for free uploads.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "SendSpace is presented as a transfer service rather than a published free storage quota."
+        "notes": "SendSpace is presented as a transfer service rather than a published free storage quota.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public upload pages do not publish a numeric bandwidth cap for free users."
+        "notes": "The cited public upload pages do not publish a numeric bandwidth cap for free users.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "Files can be uploaded and shared instantly from the public upload page, while paid plans unlock password protection and higher limits."
+      "benefits": "Files can be uploaded and shared instantly from the public upload page, while paid plans unlock password protection and higher limits.",
+      "source_refs": [
+        0
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited public pages do not document a public API or CLI workflow."
+      "notes": "The cited public pages do not document a public API or CLI workflow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The cited public pages position SendSpace as secure file transfer, but do not claim end-to-end encryption."
+      "notes": "The cited public pages position SendSpace as secure file transfer, but do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -3620,7 +4651,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -3632,40 +4666,62 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "The cited current public free-plan pages for this batch do not publish a per-file upload cap."
+        "notes": "The cited current public free-plan pages for this batch do not publish a per-file upload cap.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited current free-plan pages do not state a default file expiry period for stored files."
+        "notes": "The cited current free-plan pages do not state a default file expiry period for stored files.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 5,
         "unit": "GB",
-        "notes": "Sync's free plan currently includes 5 GB of cloud storage."
+        "notes": "Sync's free plan currently includes 5 GB of cloud storage.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "A free Sync account provides storage, sharing, and apps for Windows, macOS, iOS, Android, and the web."
+      "benefits": "A free Sync account provides storage, sharing, and apps for Windows, macOS, iOS, Android, and the web.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited current public pages for this batch do not document a public developer API."
+      "notes": "The cited current public pages for this batch do not document a public developer API.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": true,
       "server_side_encryption": true,
-      "notes": "Sync describes its cloud storage as end-to-end encrypted and says only the user can access the files."
+      "notes": "Sync describes its cloud storage as end-to-end encrypted and says only the user can access the files.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "cloud-storage",
@@ -3690,7 +4746,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -3702,40 +4761,61 @@
       "max_file_size": {
         "value": 2,
         "unit": "GB",
-        "notes": "TempSend currently lists a 2 GB file size limit."
+        "notes": "TempSend currently lists a 2 GB file size limit.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 1,
         "unit": "year",
-        "notes": "The upload form currently allows links to be valid for one hour, one day, one week, one month, or one year."
+        "notes": "The upload form currently allows links to be valid for one hour, one day, one week, one month, or one year.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "TempSend is presented as a sharing service rather than persistent cloud storage."
+        "notes": "TempSend is presented as a sharing service rather than persistent cloud storage.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "Anyone can upload or download without registration."
+      "benefits": "Anyone can upload or download without registration.",
+      "source_refs": [
+        0
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": true,
       "cli_example": null,
-      "notes": "TempSend explicitly states JavaScript is not required and that uploads can be done with terminal-based command-line programs."
+      "notes": "TempSend explicitly states JavaScript is not required and that uploads can be done with terminal-based command-line programs.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": true,
-      "notes": "TempSend states that files are stored with AES-256 encryption at rest and protected by strong TLS in transit."
+      "notes": "TempSend states that files are stored with AES-256 encryption at rest and protected by strong TLS in transit.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -3754,7 +4834,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -3774,7 +4857,10 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited current public pages for this batch do not state an automatic expiry period for standard stored files."
+        "notes": "The cited current public pages for this batch do not state an automatic expiry period for standard stored files.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 1,
@@ -3788,7 +4874,10 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
@@ -3803,13 +4892,19 @@
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited current public pages for this batch do not document a public developer API."
+      "notes": "The cited current public pages for this batch do not document a public developer API.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The cited marketing pages describe secure storage and privacy protection, but they do not claim end-to-end encryption."
+      "notes": "The cited marketing pages describe secure storage and privacy protection, but they do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "cloud-storage",
@@ -3834,7 +4929,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -3846,40 +4944,62 @@
       "max_file_size": {
         "value": 5,
         "unit": "GB",
-        "notes": "Tresorit Send currently supports up to 5 GB per upload and 5 GB total at once."
+        "notes": "Tresorit Send currently supports up to 5 GB per upload and 5 GB total at once.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 7,
         "unit": "days",
-        "notes": "Shared links remain available for 7 days before files are automatically deleted from availability."
+        "notes": "Shared links remain available for 7 days before files are automatically deleted from availability.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "Tresorit Send is a transfer service rather than persistent account storage."
+        "notes": "Tresorit Send is a transfer service rather than persistent account storage.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "You do not need a Tresorit account to use Tresorit Send, though email verification and an admin link are used for link management."
+      "benefits": "You do not need a Tresorit account to use Tresorit Send, though email verification and an admin link are used for link management.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited current public pages for this batch do not document a public developer API."
+      "notes": "The cited current public pages for this batch do not document a public developer API.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": true,
       "server_side_encryption": true,
-      "notes": "Tresorit Send is described as using client-side, end-to-end encryption before files leave the device."
+      "notes": "Tresorit Send is described as using client-side, end-to-end encryption before files leave the device.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -3910,7 +5030,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -3922,40 +5045,62 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "The cited public product pages do not publish a general single-file upload cap for the free plan."
+        "notes": "The cited public product pages do not publish a general single-file upload cap for the free plan.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public free-plan pages do not state an automatic expiry period for stored files in an active account."
+        "notes": "The cited public free-plan pages do not state an automatic expiry period for stored files in an active account.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 25,
         "unit": "GB",
-        "notes": "Ulozto Disk currently offers a free plan with 25 GB of storage."
+        "notes": "Ulozto Disk currently offers a free plan with 25 GB of storage.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": 150,
         "unit": "GB/month",
-        "notes": "The current pricing page lists 150 GB of data transfer per month for the free plan."
+        "notes": "The current pricing page lists 150 GB of data transfer per month for the free plan.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "A Ulozto account is required for the free 25 GB cloud plan, app access, sync, and API-based uploads."
+      "benefits": "A Ulozto account is required for the free 25 GB cloud plan, app access, sync, and API-based uploads.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": true,
       "api_docs_url": "https://ulozto.net/upload-resumable-api-beta",
       "cli_friendly": true,
       "cli_example": "bash sample uploader available from the official resumable upload API page",
-      "notes": "Ulozto publishes a resumable upload API and includes official Bash and Python example scripts."
+      "notes": "Ulozto publishes a resumable upload API and includes official Bash and Python example scripts.",
+      "source_refs": [
+        4
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": true,
       "server_side_encryption": true,
-      "notes": "Ulozto Disk currently markets its cloud plan as end-to-end encrypted and says the service does not know the file contents."
+      "notes": "Ulozto Disk currently markets its cloud plan as end-to-end encrypted and says the service does not know the file contents.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "cloud-storage",
@@ -3998,7 +5143,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -4010,40 +5158,62 @@
       "max_file_size": {
         "value": 100,
         "unit": "MB",
-        "notes": "The FAQ currently says unregistered users can upload up to 100 MB files, while registered users can upload up to 200 MB."
+        "notes": "The FAQ currently says unregistered users can upload up to 100 MB files, while registered users can upload up to 200 MB.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 50,
         "unit": "days",
-        "notes": "The FAQ and rules currently say anonymous files expire 50 days after last download, while registered users' files expire after 120 days."
+        "notes": "The FAQ and rules currently say anonymous files expire 50 days after last download, while registered users' files expire after 120 days.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a total storage quota for the service."
+        "notes": "The cited public pages do not publish a total storage quota for the service.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The upload page says there is no waiting time and references maximum download speed, but the cited pages do not publish a numeric bandwidth cap."
+        "notes": "The upload page says there is no waiting time and references maximum download speed, but the cited pages do not publish a numeric bandwidth cap.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "Anonymous uploads are supported; registered users get larger uploads, longer retention, galleries, and privacy controls."
+      "benefits": "Anonymous uploads are supported; registered users get larger uploads, longer retention, galleries, and privacy controls.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited public pages show iframe embedding and an old Java upload helper, but they do not document a public developer API or CLI workflow."
+      "notes": "The cited public pages show iframe embedding and an old Java upload helper, but they do not document a public developer API or CLI workflow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The cited public pages do not claim end-to-end encryption."
+      "notes": "The cited public pages do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -4074,7 +5244,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "all_except_prohibited",
-        "notes": "The FAQ currently says Upload.ee supports all known and unknown file formats, but executables like exe, msi, pif, com, and bat can only be uploaded by registered users, and illegal/copyrighted content is forbidden."
+        "notes": "The FAQ currently says Upload.ee supports all known and unknown file formats, but executables like exe, msi, pif, com, and bat can only be uploaded by registered users, and illegal/copyrighted content is forbidden.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -4086,40 +5259,61 @@
       "max_file_size": {
         "value": 5,
         "unit": "GB",
-        "notes": "The current homepage lists a 5 GB per-file limit for free users."
+        "notes": "The current homepage lists a 5 GB per-file limit for free users.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 30,
         "unit": "days",
-        "notes": "The homepage currently says guest uploads are hosted for a maximum of 30 days, with optional shorter settings like 1 hour, 1 day, 7 days, or 1 download."
+        "notes": "The homepage currently says guest uploads are hosted for a maximum of 30 days, with optional shorter settings like 1 hour, 1 day, 7 days, or 1 download.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 10,
         "unit": "GB",
-        "notes": "The homepage currently says a free account unlocks 10 GB of permanent storage."
+        "notes": "The homepage currently says a free account unlocks 10 GB of permanent storage.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The homepage markets the service as having no restrictions for sharing and advertises direct downloads up to 1,000 times per day, but it does not publish a clean numeric bandwidth cap."
+        "notes": "The homepage markets the service as having no restrictions for sharing and advertises direct downloads up to 1,000 times per day, but it does not publish a clean numeric bandwidth cap.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "Guest uploads work without registration; a free account unlocks management features, 10 GB permanent storage, more simultaneous uploads, passwords, and other controls."
+      "benefits": "Guest uploads work without registration; a free account unlocks management features, 10 GB permanent storage, more simultaneous uploads, passwords, and other controls.",
+      "source_refs": [
+        0
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited public pages do not document a public API or CLI workflow."
+      "notes": "The cited public pages do not document a public API or CLI workflow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": true,
-      "notes": "The homepage says uploads use SHA-256 SSL in transit and encrypted cloud storage, but these claims do not establish end-to-end encryption."
+      "notes": "The homepage says uploads use SHA-256 SSL in transit and encrypted cloud storage, but these claims do not establish end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -4138,7 +5332,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "all_except_prohibited",
-        "notes": "The homepage currently says there are no restrictions on file types for uploads, though prohibited content may still be restricted under the service terms."
+        "notes": "The homepage currently says there are no restrictions on file types for uploads, though prohibited content may still be restricted under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -4150,40 +5347,62 @@
       "max_file_size": {
         "value": 5250,
         "unit": "MB",
-        "notes": "The current upload page publicly states a maximum file size of 5250 MB."
+        "notes": "The current upload page publicly states a maximum file size of 5250 MB.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited FAQ says expired files are automatically removed, but the public pages do not publish a fixed retention period."
+        "notes": "The cited FAQ says expired files are automatically removed, but the public pages do not publish a fixed retention period.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a free storage quota."
+        "notes": "The cited public pages do not publish a free storage quota.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "Uploads can be started directly from the public form without creating an account, with optional recipient email, folders, and password-protected links."
+      "benefits": "Uploads can be started directly from the public form without creating an account, with optional recipient email, folders, and password-protected links.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited public pages do not document a public API or CLI upload workflow."
+      "notes": "The cited public pages do not document a public API or CLI upload workflow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The service supports password-protected links, but the cited public pages do not claim end-to-end encryption."
+      "notes": "The service supports password-protected links, but the cited public pages do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-hosting",
@@ -4214,7 +5433,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "all_except_prohibited",
-        "notes": "The current FAQ says all kinds of files can be uploaded except pornography, offensive material, and copyrighted material restricted by the service terms."
+        "notes": "The current FAQ says all kinds of files can be uploaded except pornography, offensive material, and copyrighted material restricted by the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -4226,40 +5448,62 @@
       "max_file_size": {
         "value": 3,
         "unit": "GB",
-        "notes": "WeTransfer's current free plan supports transfers up to 3 GB."
+        "notes": "WeTransfer's current free plan supports transfers up to 3 GB.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "Free-account transfers can currently remain active for 1 to 3 days depending on the chosen setting."
+        "notes": "Free-account transfers can currently remain active for 1 to 3 days depending on the chosen setting.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "WeTransfer is positioned as a transfer service rather than persistent cloud storage."
+        "notes": "WeTransfer is positioned as a transfer service rather than persistent cloud storage.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "A free WeTransfer account provides transfer management, requests, password protection, and mobile app access."
+      "benefits": "A free WeTransfer account provides transfer management, requests, password protection, and mobile app access.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited current public support pages for this batch do not document a public developer API."
+      "notes": "The cited current public support pages for this batch do not document a public developer API.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The cited pages document password-protected transfers, but they do not claim end-to-end encryption."
+      "notes": "The cited pages document password-protected transfers, but they do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -4284,7 +5528,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -4296,40 +5543,62 @@
       "max_file_size": {
         "value": 5,
         "unit": "GB",
-        "notes": "Files up to 5 GB are stored on Wormhole servers for 24 hours. Larger files use peer-to-peer transfer while the sender keeps the page open."
+        "notes": "Files up to 5 GB are stored on Wormhole servers for 24 hours. Larger files use peer-to-peer transfer while the sender keeps the page open.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 24,
         "unit": "hours",
-        "notes": "Server-stored files are permanently deleted after 24 hours."
+        "notes": "Server-stored files are permanently deleted after 24 hours.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "Wormhole is transfer-oriented rather than a persistent storage host."
+        "notes": "Wormhole is transfer-oriented rather than a persistent storage host.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a numeric bandwidth cap for transfers."
+        "notes": "The cited public pages do not publish a numeric bandwidth cap for transfers.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": null,
-      "benefits": "The cited FAQ focuses on the transfer flow and does not describe account requirements."
+      "benefits": "The cited FAQ focuses on the transfer flow and does not describe account requirements.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited FAQ does not document an official public API or CLI flow."
+      "notes": "The cited FAQ does not document an official public API or CLI flow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": true,
       "server_side_encryption": true,
-      "notes": "FAQ states Wormhole uses end-to-end encryption and encrypts files before they leave the browser."
+      "notes": "FAQ states Wormhole uses end-to-end encryption and encrypts files before they leave the browser.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "e2ee",
@@ -4354,7 +5623,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -4366,40 +5638,62 @@
       "max_file_size": {
         "value": 1,
         "unit": "GB",
-        "notes": "Without an active Yandex 360 plan, the maximum size of a single uploaded file is currently 1 GB."
+        "notes": "Without an active Yandex 360 plan, the maximum size of a single uploaded file is currently 1 GB.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not state an automatic expiry for files stored within a normal Yandex Disk account."
+        "notes": "The cited public pages do not state an automatic expiry for files stored within a normal Yandex Disk account.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": 5,
         "unit": "GB",
-        "notes": "Current public help pages use 5 GB as the base Yandex Disk capacity in their examples."
+        "notes": "Current public help pages use 5 GB as the base Yandex Disk capacity in their examples.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "A Yandex account is required to use Yandex Disk storage, sharing, desktop sync, and mobile apps."
+      "benefits": "A Yandex account is required to use Yandex Disk storage, sharing, desktop sync, and mobile apps.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited current public pages describe official apps and a Linux console client, but they do not document a public developer API."
+      "notes": "The cited current public pages describe official apps and a Linux console client, but they do not document a public developer API.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The cited help pages do not claim end-to-end encryption for standard Yandex Disk storage."
+      "notes": "The cited help pages do not claim end-to-end encryption for standard Yandex Disk storage.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "cloud-storage",
@@ -4436,7 +5730,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -4448,40 +5745,62 @@
       "max_file_size": {
         "value": 500,
         "unit": "MB",
-        "notes": "The current official upload page and FAQ both state files can be up to 500 MB in size."
+        "notes": "The current official upload page and FAQ both state files can be up to 500 MB in size.",
+        "source_refs": [
+          0
+        ]
       },
       "retention": {
         "value": 60,
         "unit": "days",
-        "notes": "Files remain available indefinitely as long as they are accessed at least once every 60 days."
+        "notes": "Files remain available indefinitely as long as they are accessed at least once every 60 days.",
+        "source_refs": [
+          0
+        ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a total storage quota; the service is framed as a simple free file uploader."
+        "notes": "The cited public pages do not publish a total storage quota; the service is framed as a simple free file uploader.",
+        "source_refs": [
+          0
+        ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit."
+        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "No membership or signup is required to upload and share files."
+      "benefits": "No membership or signup is required to upload and share files.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited public pages do not document a public API or command-line upload workflow."
+      "notes": "The cited public pages do not document a public API or command-line upload workflow.",
+      "source_refs": [
+        0
+      ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The service uses private download links and optional password protection, but the cited public pages do not claim end-to-end encryption."
+      "notes": "The service uses private download links and optional password protection, but the cited public pages do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
     },
     "tags": [
       "file-sharing",
@@ -4512,7 +5831,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
       }
     }
   }
