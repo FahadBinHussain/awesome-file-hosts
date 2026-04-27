@@ -18,8 +18,8 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 
 ## What this includes
 
-- 67 verified hosts checked against current public sources as of 2026-04-27.
-- 27 leads still in review and 115 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
+- 69 verified hosts checked against current public sources as of 2026-04-27.
+- 12 leads still in review and 128 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
 - A source-backed dataset designed for both human browsing and machine reuse.
 - A site UI for filtering, comparison, and dense spreadsheet-style inspection.
 
@@ -72,6 +72,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [Jumpshare](https://jumpshare.com/) - Visual file-sharing and screen-recording platform with a free Basic plan, desktop apps, and an iOS app. _(Max: 250 MB | Retention: Not published | Account: Yes)_
 - [LimeWire](https://limewire.com/) - Modern browser-based file sharing platform with end-to-end encrypted transfers, guest uploads, and a free 4 GB upload allowance. _(Max: 4 GB | Retention: Not published | Account: No | E2EE)_
 - [MediaFire](https://www.mediafire.com/) - File storage and sharing service with a free ad-supported basic plan and first-party mobile apps. _(Max: 5 GB | Retention: Not published | Account: Yes)_
+- [MEGA](https://mega.nz/) - Privacy-focused cloud storage and file-sharing service with user-controlled encryption, web access, and official mobile apps. _(Max: Not published | Retention: Not published | Account: Yes | E2EE)_
 - [MiMedia](https://www.mimedia.com/) - Personal cloud service with a free 10 GB starter tier, desktop and mobile apps, and a media-first sharing experience. _(Max: Not published | Retention: 30 days | Account: Yes)_
 - [MobiDrive](https://www.mobidrive.com/) - Privacy-first cloud storage from MobiSystems with a free 20 GB tier and official web, Windows, Android, and iOS apps. _(Max: 200 MB | Retention: Not published | Account: Yes)_
 - [My-Files.SU](https://my-files.ru/) - Russian file-hosting service positioned around no-registration uploads, direct links, and minimal download friction. _(Max: Not published | Retention: Not published | Account: No)_
@@ -88,6 +89,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [SharePlace](https://shareplace.org/) - File hosting service with browser uploads, account-based management, and a documented public API. _(Max: Not published | Retention: Not published | Account: Unknown | API)_
 - [Sync](https://www.sync.com/) - Privacy-focused cloud storage service with a 5 GB free tier and end-to-end encrypted apps across desktop and mobile. _(Max: Not published | Retention: Not published | Account: Yes | E2EE)_
 - [TempSend](https://tempsend.com/) - Anonymous file-sharing service with selectable link lifetime, no registration requirement, and command-line-friendly uploads. _(Max: 2 GB | Retention: 1 year | Account: No | CLI)_
+- [Tencent Weiyun](https://www.weiyun.com/index.html?WYTAG=weiyun.app.web.plugin_install) - Tencent cloud storage service with QQ or WeChat login, multi-device access, online document workflows, and official desktop and mobile apps. _(Max: Not published | Retention: Not published | Account: Yes)_
 - [TeraBox](https://www.terabox.com/) - Consumer cloud storage service that currently markets 1 TB of free storage and apps across Android, iOS, PC, and Mac. _(Max: 20 GB | Retention: Not published | Account: Yes)_
 - [Tresorit Send](https://send.tresorit.com/) - Free browser-based file transfer service from Tresorit with end-to-end encrypted link sharing. _(Max: 5 GB | Retention: 7 days | Account: No | E2EE)_
 - [UAFile.COM](https://www.uafile.com/) - Ukrainian free file host with browser uploads, direct sharing links, and plainly published per-file and inactivity limits. _(Max: 200 MB | Retention: 30 days | Account: No)_

@@ -2346,7 +2346,7 @@
       "Android",
       "iOS"
     ],
-    "verification_status": "pending",
+    "verification_status": "verified",
     "source": "User-provided import list on 2026-04-26"
   },
   {
@@ -3577,8 +3577,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The current public trail for TusFiles sits squarely in the premium-link-generator and premium-account ecosystem. That is enough to place it outside the repo's curation bar for verified hosts.",
+    "verification_references": [
+      {
+        "label": "Premium-Leech TusFiles generator page",
+        "url": "https://www.premium-leech.com/premium-generator/tusfiles-generator",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "PrimeLeech TusFiles generator page",
+        "url": "https://www.primeleech.com/generator/tusfiles",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Multihoster TusFiles premium account overview",
+        "url": "https://multihoster.org/tusfiles/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "UaFile",
@@ -3750,8 +3768,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "UploadBox has a live domain trail, but the current public evidence is too thin and ambiguous to support it as a trustworthy verified host. Current summaries reduce it to a generic ?Mega File? identity with weak product detail, and some public checks cannot even see a configured web server. That keeps it out of the verified list.",
+    "verification_references": [
+      {
+        "label": "ScamAdviser summary for uploadbox.io",
+        "url": "https://www.scamadviser.com/check-website/uploadbox.io",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Hypestat summary for uploadbox.io",
+        "url": "https://hypestat.com/info/uploadbox.io",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "IPAddress summary for uploadbox.io",
+        "url": "https://www.ipaddress.com/website/uploadbox.io/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "UploadBoy",
@@ -3780,8 +3816,16 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "Upload.cd no longer presents a functioning file-hosting service. Current public domain checks show no web server configured, so it is not a valid active host for the verified list.",
+    "verification_references": [
+      {
+        "label": "IPAddress summary for upload.cd showing no configured web server",
+        "url": "https://www.ipaddress.com/website/upload.cd/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "UploadCloud",
@@ -3849,8 +3893,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "UploadEv is active, but the current public trail explicitly describes it as a file host where users upload files and earn money from downloads. That payout-oriented positioning fails the curation bar for the verified list.",
+    "verification_references": [
+      {
+        "label": "ScamAdviser summary for uploadev.org",
+        "url": "https://www.scamadviser.com/check-website/uploadev.org",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Sur.ly summary for uploadev.org",
+        "url": "https://sur.ly/i/uploadev.org/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Scam Detector review for uploadev.org",
+        "url": "https://www.scam-detector.com/validator/uploadev-org-review/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "UploadFiles",
@@ -3890,8 +3952,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "Uploadify currently presents itself as a host where users can earn from downloads, and the current public trail frames it as a PPD-style file host rather than the kind of neutral file-sharing service we want in the verified list.",
+    "verification_references": [
+      {
+        "label": "IPAddress summary for uploadify.net showing site title and meta description",
+        "url": "https://www.ipaddress.com/website/uploadify.net/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Sur.ly summary for uploadify.net",
+        "url": "https://sur.ly/i/uploadify.net/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Trustpilot review mentioning prior PPD behavior",
+        "url": "https://www.trustpilot.com/review/uploadify.net",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "UploadOcean",
@@ -3901,8 +3981,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "UploadOcean no longer looks like a trustworthy current file host. The current domain surface is repurposed into unrelated gambling-style content, and supporting domain summaries no longer show a clean product identity. That makes it invalid for the verified list.",
+    "verification_references": [
+      {
+        "label": "Current uploadocean.com page showing unrelated gambling-style content",
+        "url": "https://uploadocean.com/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "IPAddress summary for uploadocean.com showing host mismatch to heartbd2k.org",
+        "url": "https://www.ipaddress.com/website/uploadocean.com/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "ScamAdviser summary for uploadocean.com",
+        "url": "https://www.scamadviser.com/check-website/uploadocean.com",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "UploadProper",
@@ -3912,8 +4010,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "UploadProper no longer looks like a dependable current file host. Recent public traces show the domain returning 503 errors, and newer domain summaries indicate the name has drifted into unrelated gambling content. That makes it an invalid current host for the verified list.",
+    "verification_references": [
+      {
+        "label": "ScamAdviser summary for uploadproper.net showing file-host title but 503 status",
+        "url": "https://www.scamadviser.com/check-website/uploadproper.net",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Scam Detector review for uploadproper.net",
+        "url": "https://www.scam-detector.com/validator/uploadproper-net-review/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "IPAddress summary showing current uploadproper.net title as gambling content",
+        "url": "https://www.ipaddress.com/website/uploadproper.net/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "UploadRar",
@@ -3923,8 +4039,31 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "UploadRar is active, but its own current pages clearly expose a premium-locker and payout-host model: premium tiers, premium-pro tiers, downloader restrictions, short free retention, and explicit earn-money download rates. That fails the curation bar for the verified list.",
+    "verification_references": [
+      {
+        "label": "Uploadrar homepage",
+        "url": "https://uploadrar.com/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Uploadrar premium page",
+        "url": "https://uploadrar.com/premium/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Uploadrar make money page",
+        "url": "https://uploadrar.com/make_money/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Uploadrar example download page showing free vs premium limits",
+        "url": "https://uploadrar.com/0316eiuqfsv1",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "UploadServ",
@@ -3956,8 +4095,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "Uppit no longer presents a functioning file-hosting product. The current official surface is just a ?Coming soon!? Discourse shell, so it is not a valid active host for the verified list.",
+    "verification_references": [
+      {
+        "label": "Uppit homepage",
+        "url": "https://www.uppit.com/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Uppit sandbox subdomain",
+        "url": "https://sandbox.uppit.com/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Upstore",
@@ -4025,8 +4177,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "UsersCloud belongs to the premium-host / leech-generator ecosystem rather than the curated verified list we are building. The modern public trail is dominated by premium-link-generator support and poor reputation reports, which is enough to keep it out of the verified set.",
+    "verification_references": [
+      {
+        "label": "Trustpilot reviews for userscloud.com",
+        "url": "https://www.trustpilot.com/review/userscloud.com",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Premium-Leech Userscloud generator page",
+        "url": "https://www.premium-leech.com/premium-generator/userscloud-generator",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Cocoleech Userscloud premium generator page",
+        "url": "https://members.cocoleech.com/premium-link-generator/userscloud",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "UsersDrive",
@@ -4049,8 +4219,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The original vshare.io lead no longer points to a dependable active host. Current public checks show it parked on Bodis with generic ?relevant content? behavior, and downtime trackers report it as down. That makes the lead invalid for the verified list.",
+    "verification_references": [
+      {
+        "label": "ScamAdviser summary for vshare.io showing parked-domain behavior",
+        "url": "https://www.scamadviser.com/check-website/vshare.io",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "NotOpening status for vshare.io",
+        "url": "https://notopening.com/site/vshare.io",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "WdFiles",
@@ -4060,8 +4243,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "WdFiles is active, but its own current pages show a classic premium-cyberlocker pattern and public warez-style indexing, including pirated software and infected files. That fails the curation bar for the verified list.",
+    "verification_references": [
+      {
+        "label": "WdFiles English homepage",
+        "url": "https://wdfiles.ru/index.html?_t=English+%28en%29",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "WdFiles folder page with bootleg media archive listings",
+        "url": "https://wdfiles.ru/folder/5836/BZMD",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "WdFiles folder page showing pirated software and infected files",
+        "url": "https://wdfiles.ru/folder/1095/%D0%9F%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D1%8B_%D0%B8_%D0%A1%D0%BE%D1%84%D1%82",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "WebchinUpload",
@@ -4082,7 +4283,7 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
+    "verification_status": "verified",
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -4202,8 +4403,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "Zofile remains file-host-like, but current public checks show it without valid HTTPS, which fails the repo?s verified-host bar. Other current domain summaries also suggest drift into unrelated content, so it does not make the verified list.",
+    "verification_references": [
+      {
+        "label": "ScamAdviser summary for zofile.com showing no valid SSL certificate",
+        "url": "https://www.scamadviser.com/check-website/zofile.com",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "IPAddress summary for zofile.com showing redirect to unrelated vfxdownload content",
+        "url": "https://www.ipaddress.com/website/zofile.com/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Zofile FAQ page",
+        "url": "https://zofile.com/faq.html",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Облако Mail.ru",

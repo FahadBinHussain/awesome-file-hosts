@@ -4050,6 +4050,110 @@
     }
   },
   {
+    "name": "MEGA",
+    "url": "https://mega.nz/",
+    "summary": "Privacy-focused cloud storage and file-sharing service with user-controlled encryption, web access, and official mobile apps.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public app listings do not publish a clean current maximum upload size.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public app listings do not publish a clean automatic expiry policy for stored files.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public app listings describe generous free storage for registered users, but do not expose a clean numeric quota in accessible current text.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public app listings mention transfer quota, but do not expose a clean numeric allowance in accessible current text.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "The current product surfaces describe encrypted cloud storage for registered users with syncing, sharing, and cross-device access.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The cited public app listings do not document a public API or CLI workflow.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": true,
+      "server_side_encryption": null,
+      "notes": "The current public app listings describe user-controlled encryption where data is encrypted and decrypted on user devices.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "tags": [
+      "cloud-storage",
+      "file-sharing",
+      "privacy",
+      "e2ee",
+      "mobile-apps",
+      "web-app"
+    ],
+    "sources": [
+      {
+        "label": "MEGA App Store listing",
+        "url": "https://apps.apple.com/us/app/mega/id706857885",
+        "retrieved_at": "2026-04-27",
+        "notes": "Current iPhone/iPad app listing describing user-controlled encrypted cloud storage, free storage, sharing, and subscription upgrades."
+      },
+      {
+        "label": "MEGA Google Play listing",
+        "url": "https://play.google.com/store/apps/details?id=mega.privacy.android.app",
+        "retrieved_at": "2026-04-27",
+        "notes": "Current Android app listing describing encrypted cloud storage, sync, backup, and cross-device access."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "The cited public app listings describe general file storage and sharing, but do not publish a full allowlist.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    }
+  },
+  {
     "name": "MiMedia",
     "url": "https://www.mimedia.com/",
     "summary": "Personal cloud service with a free 10 GB starter tier, desktop and mobile apps, and a media-first sharing experience.",
@@ -5679,6 +5783,115 @@
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
         "source_refs": [
           0
+        ]
+      }
+    }
+  },
+  {
+    "name": "Tencent Weiyun",
+    "url": "https://www.weiyun.com/index.html?WYTAG=weiyun.app.web.plugin_install",
+    "summary": "Tencent cloud storage service with QQ or WeChat login, multi-device access, online document workflows, and official desktop and mobile apps.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a clean current maximum upload size.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a clean automatic expiry policy for stored files.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages describe cloud storage and backup, but do not expose a clean current free quota in accessible text.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a clean numeric bandwidth cap.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "The current official web entry points require QQ or WeChat login and position the service as account-based cloud storage.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The cited public pages do not document a public API or CLI workflow.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The cited public pages describe secure file transfer, storage, and privacy protection, but do not claim end-to-end encryption.",
+      "source_refs": [
+        0,
+        2
+      ]
+    },
+    "tags": [
+      "cloud-storage",
+      "document-collaboration",
+      "desktop-app",
+      "mobile-apps",
+      "tencent"
+    ],
+    "sources": [
+      {
+        "label": "Tencent Weiyun homepage",
+        "url": "https://www.weiyun.com/index.html?WYTAG=weiyun.app.web.plugin_install",
+        "retrieved_at": "2026-04-27",
+        "notes": "Current official homepage describing cloud storage, file sharing, online office workflows, and QQ/WeChat login."
+      },
+      {
+        "label": "Tencent Weiyun download page",
+        "url": "https://www.weiyun.com/download.html",
+        "retrieved_at": "2026-04-27",
+        "notes": "Current official download page listing desktop client, sync helper, and iPhone, iPad, and Android apps."
+      },
+      {
+        "label": "Tencent Weiyun privacy guide",
+        "url": "https://www.weiyun.com/xy-privacy.html",
+        "retrieved_at": "2026-04-27",
+        "notes": "Current privacy page describing the product as a Tencent cloud drive service and outlining privacy protections."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "The cited public pages describe storing and previewing many file formats, but do not publish a full allowlist.",
+        "source_refs": [
+          0,
+          1
         ]
       }
     }
