@@ -3,11 +3,12 @@
 import type { ReactNode } from "react";
 import { useMemo, useState } from "react";
 import type { CandidateRecord, HostRecord, SiteData } from "@/lib/site-data";
+import { AppFrame } from "@/components/app-frame";
+import { HostDetailPanel } from "@/components/host-detail-panel";
 import {
   ArrowsClockwise,
   CaretRight,
   CheckCircle,
-  Database,
   FileText,
   Funnel,
   GlobeHemisphereWest,
@@ -72,15 +73,6 @@ function PillButton({
   );
 }
 
-function InfoPair({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="space-y-1">
-      <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--soft)]">{label}</div>
-      <div className="text-sm leading-6 text-[var(--text)]">{value}</div>
-    </div>
-  );
-}
-
 function HostRow({
   host,
   active,
@@ -137,6 +129,15 @@ function CandidateRow({ candidate }: { candidate: CandidateRecord }) {
   );
 }
 
+function InfoPair({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="space-y-1">
+      <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--soft)]">{label}</div>
+      <div className="text-sm leading-6 text-[var(--text)]">{value}</div>
+    </div>
+  );
+}
+
 export function ExplorerApp({ data }: Props) {
   const [view, setView] = useState<ViewMode>("hosts");
   const [search, setSearch] = useState("");
@@ -173,8 +174,7 @@ export function ExplorerApp({ data }: Props) {
   );
 
   return (
-    <main className="min-h-[100dvh] px-4 py-4 md:px-6 md:py-6">
-      <div className="mx-auto flex min-h-[calc(100dvh-2rem)] max-w-[1600px] flex-col gap-4 rounded-[2.75rem] border border-[rgba(255,255,255,0.08)] bg-[rgba(7,9,13,0.82)] p-4 shadow-[0_50px_120px_-50px_rgba(0,0,0,0.75)] backdrop-blur-xl md:min-h-[calc(100dvh-3rem)] md:p-6">
+    <AppFrame current="home">
         <section className="grid gap-4 border-b border-[rgba(255,255,255,0.08)] pb-4 lg:grid-cols-[minmax(0,1.5fr)_minmax(520px,1fr)]">
           <div className="space-y-4">
             <div className="inline-flex rounded-full border border-[rgba(255,255,255,0.08)] bg-[rgba(255,255,255,0.03)] px-3 py-1 text-xs uppercase tracking-[0.28em] text-[var(--soft)]">
@@ -380,91 +380,7 @@ export function ExplorerApp({ data }: Props) {
             )}
           </section>
 
-          <aside className="rounded-[2rem] border border-[var(--line)] bg-[var(--panel)] p-5">
-            {selectedHost ? (
-              <div className="space-y-5">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--soft)]">
-                      Host detail
-                    </div>
-                    <h2 className="mt-2 text-2xl font-semibold tracking-tight text-white">
-                      {selectedHost.name}
-                    </h2>
-                  </div>
-                  <a
-                    href={selectedHost.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="rounded-full border border-[var(--line)] px-3 py-2 text-xs text-[var(--muted)] transition hover:text-white"
-                  >
-                    Open site
-                  </a>
-                </div>
-
-                <p className="text-sm leading-7 text-[var(--muted)]">{selectedHost.summary}</p>
-
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <InfoPair label="Max file size" value={`${selectedHost.filters.maxFileLabel} - ${selectedHost.limits.max_file_size.notes}`} />
-                  <InfoPair label="Retention" value={`${selectedHost.filters.retentionLabel} - ${selectedHost.limits.retention.notes}`} />
-                  <InfoPair label="Storage" value={`${selectedHost.filters.storageLabel} - ${selectedHost.limits.storage.notes}`} />
-                  <InfoPair label="Bandwidth" value={`${selectedHost.filters.bandwidthLabel} - ${selectedHost.limits.bandwidth.notes}`} />
-                </div>
-
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <InfoPair label="Account" value={selectedHost.account.benefits} />
-                  <InfoPair label="Allowed file types" value={selectedHost.content.allowed_file_types.notes} />
-                  <InfoPair
-                    label="Developer support"
-                    value={`${selectedHost.developer.api_available ? "API" : "No API"}, ${selectedHost.developer.cli_friendly ? "CLI-friendly" : "no CLI"} - ${selectedHost.developer.notes}`}
-                  />
-                  <InfoPair
-                    label="Security"
-                    value={`${selectedHost.security.e2ee ? "E2EE" : "No E2EE"} - ${selectedHost.security.notes}`}
-                  />
-                </div>
-
-                <div className="rounded-[1.75rem] border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-4">
-                  <div className="flex items-center gap-2 text-sm font-medium text-white">
-                    <Database size={18} />
-                    Source references
-                  </div>
-                  <div className="mt-4 space-y-3">
-                    {selectedHost.sources.map((source) => (
-                      <a
-                        key={`${source.label}-${source.url}`}
-                        href={source.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="block rounded-[1.25rem] border border-[rgba(255,255,255,0.06)] px-4 py-3 transition hover:border-[rgba(73,179,255,0.25)] hover:bg-[rgba(73,179,255,0.06)]"
-                      >
-                        <div className="flex items-center justify-between gap-3">
-                          <div className="text-sm font-medium text-white">{source.label}</div>
-                          <div className="text-xs text-[var(--soft)]">{source.retrieved_at}</div>
-                        </div>
-                        <div className="mt-2 text-sm leading-6 text-[var(--muted)]">{source.notes}</div>
-                      </a>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap gap-2">
-                  {selectedHost.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-[var(--line)] px-3 py-1.5 text-xs text-[var(--muted)]"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ) : (
-              <div className="flex h-full items-center justify-center text-sm text-[var(--muted)]">
-                Pick a host to inspect.
-              </div>
-            )}
-          </aside>
+          <HostDetailPanel host={selectedHost} />
         </section>
 
         <footer className="grid gap-3 border-t border-[rgba(255,255,255,0.08)] pt-4 text-sm text-[var(--muted)] md:grid-cols-[1fr_auto]">
@@ -487,7 +403,6 @@ export function ExplorerApp({ data }: Props) {
             </span>
           </div>
         </footer>
-      </div>
-    </main>
+    </AppFrame>
   );
 }
