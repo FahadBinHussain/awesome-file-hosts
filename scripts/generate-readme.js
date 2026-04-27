@@ -168,11 +168,67 @@ function validateCandidate(candidate) {
     typeof candidate.verification_status === "string",
     `${candidate.name}.verification_status must be a string`
   );
+  assert(
+    candidate.verification_notes === undefined ||
+      candidate.verification_notes === null ||
+      typeof candidate.verification_notes === "string",
+    `${candidate.name}.verification_notes must be a string, null, or omitted`
+  );
+  assert(
+    candidate.verification_references === undefined ||
+      Array.isArray(candidate.verification_references),
+    `${candidate.name}.verification_references must be an array or omitted`
+  );
+  for (const reference of candidate.verification_references || []) {
+    assert(
+      typeof reference.label === "string" && reference.label.trim(),
+      `${candidate.name}.verification_references.label is required`
+    );
+    assert(
+      typeof reference.url === "string" && /^https:\/\//.test(reference.url),
+      `${candidate.name}.verification_references.url must be an https URL`
+    );
+    assert(
+      typeof reference.retrieved_at === "string" &&
+        /^\d{4}-\d{2}-\d{2}$/.test(reference.retrieved_at),
+      `${candidate.name}.verification_references.retrieved_at must be YYYY-MM-DD`
+    );
+  }
   assert(typeof candidate.source === "string" && candidate.source.trim(), `${candidate.name}.source must be a non-empty string`);
 }
 
 function formatLimit(field) {
   if (field.value === null) {
+    const notes = field.notes.toLowerCase();
+
+    if (notes.includes("unlimited")) {
+      return "Unlimited";
+    }
+
+    if (
+      notes.includes("do not publish") ||
+      notes.includes("do not state") ||
+      notes.includes("does not publish") ||
+      notes.includes("does not state") ||
+      notes.includes("not publish") ||
+      notes.includes("not stated")
+    ) {
+      return "Not published";
+    }
+
+    if (
+      notes.includes("depends") ||
+      notes.includes("varies") ||
+      notes.includes("different") ||
+      notes.includes("while") ||
+      notes.includes("or after") ||
+      notes.includes("based on") ||
+      notes.includes("download") ||
+      notes.includes("inactivity")
+    ) {
+      return "Conditional";
+    }
+
     return "See notes";
   }
 
@@ -226,10 +282,6 @@ function formatCli(host) {
 
 function buildReadme(hosts, candidates) {
   const sortedHosts = [...hosts].sort((a, b) => a.name.localeCompare(b.name));
-  const publicCandidates = candidates.filter(
-    (candidate) => candidate.verification_status !== "rejected"
-  );
-  const sortedCandidates = [...publicCandidates].sort((a, b) => a.name.localeCompare(b.name));
   const lastUpdated = new Date().toISOString().slice(0, 10);
 
   const lines = [];
@@ -256,6 +308,7 @@ function buildReadme(hosts, candidates) {
   }
   lines.push("");
   lines.push("`Yes*` in the CLI-friendly column means a concrete command or access example is included in the notes.");
+  lines.push("`Not published` means the cited public pages did not give a clean current number. `Conditional` means the limit depends on account type, inactivity, downloads, or another rule described in the notes.");
   lines.push("");
   lines.push("## Notes");
   lines.push("");
@@ -288,20 +341,6 @@ function buildReadme(hosts, candidates) {
   lines.push("- Schema: [`schema/hosts.schema.json`](schema/hosts.schema.json)");
   lines.push("- Candidate schema: [`schema/candidates.schema.json`](schema/candidates.schema.json)");
   lines.push("- Generator: [`scripts/generate-readme.js`](scripts/generate-readme.js)");
-  lines.push("");
-  lines.push("## Candidate backlog");
-  lines.push("");
-  lines.push(
-    `Captured ${sortedCandidates.length} user-submitted candidates that are still pending review or have already been verified and promoted. Rejected entries stay in \`data/candidates.json\` but are omitted from this README.`
-  );
-  lines.push("");
-  lines.push("| Name | Type | Free volume | Shelf life | Download count | Languages | Apps | Status |");
-  lines.push("| --- | --- | --- | --- | --- | --- | --- | --- |");
-  for (const candidate of sortedCandidates) {
-    lines.push(
-      `| ${candidate.name} | ${candidate.type} | ${candidate.free_volume ?? "-"} | ${candidate.shelf_life ?? "-"} | ${candidate.download_count ?? "-"} | ${candidate.languages.join(", ") || "-"} | ${candidate.applications.join(", ") || "-"} | ${candidate.verification_status} |`
-    );
-  }
   lines.push("");
   lines.push("## Usage");
   lines.push("");

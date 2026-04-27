@@ -10,52 +10,100 @@
 
 ## Current hosts
 
-Seeded with 38 hosts for now, with facts checked against official public pages on 2026-04-26.
+Seeded with 59 hosts for now, with facts checked against official public pages on 2026-04-27.
 
 | Name | Max file size | Retention | Bandwidth | Account required | API | CLI-friendly | E2EE | Tags |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [4shared](https://www.4shared.com/) | 2048 MB | See notes | See notes | Yes | No | No | No | cloud-storage, mobile-apps, free-tier, sharing |
-| [Box](https://www.box.com/) | 250 MB | See notes | See notes | Yes | [Yes](https://developer.box.com/reference/) | No | No | cloud-storage, apps, api, single-user-free-plan |
-| [Catbox](https://catbox.moe/) | 200 MB | See notes | See notes | Unknown | No | No | No | anonymous-friendly, simple-upload, permanent-links |
-| [Clicknupload](https://clicknupload.click/) | 2 GB | 7 days | See notes | No | No | No | No | file-hosting, guest-uploads, unlimited-bandwidth, ad-supported |
-| [Cozy Cloud](https://en.cozy.io/) | See notes | See notes | See notes | Yes | No | No | No | cloud-storage, apps, france-hosted, open-source-adjacent |
-| [Degoo](https://degoo.com/) | See notes | 90 days | See notes | Yes | No | No | No | cloud-storage, mobile-apps, web-app, backup |
-| [Disroot Upload](https://disroot.org/en/services/upload) | See notes | See notes | See notes | No | No | No | Yes | file-sharing, temporary, e2ee, no-account-required |
-| [Dropbox](https://www.dropbox.com/) | See notes | See notes | See notes | Yes | [Yes](https://www.dropbox.com/developers/documentation) | No | No | cloud-storage, apps, api, mainstream |
-| [DropMeFiles](https://dropmefiles.com/) | 50 GB | 14 days | See notes | No | No | No | No | file-sharing, no-account-required, password-protection, link-expiry |
-| [file.io](https://www.file.io/) | 4 GB | 1 download | See notes | No | [Yes](https://www.file.io/developers) | Yes* | No | api, cli-friendly, ephemeral, anonymous-friendly |
-| [files.dp.ua](https://files.dp.ua/en/) | 100 GB | 25 days | See notes | No | No | No | No | file-sharing, no-account-required, password-protection, large-file-limit |
-| [files.fm](https://files.fm/) | 5 GB | 1 month | See notes | Yes | [Yes](https://files.fm/api/) | Yes | No | cloud-storage, apps, api, eu-based |
-| [Free Transfert](https://transfert.free.fr/) | 10 GB | 30 days | See notes | No | No | No | No | file-sharing, password-protection, direct-links, france-hosted |
-| [Gofile](https://gofile.io/) | See notes | 10 days | See notes | No | [Yes](https://gofile.io/api) | Yes* | No | guest-uploads, api, cli-friendly, premium-upgrade |
-| [Google Drive](https://drive.google.com/) | See notes | See notes | See notes | Yes | [Yes](https://developers.google.com/drive/api/guides/about-sdk) | No | No | cloud-storage, apps, api, shared-google-quota |
-| [Hightail](https://www.hightail.com/) | 100 MB | 7 days | See notes | Yes | No | No | No | file-sharing, creative-workflows, free-tier, recipient-no-account |
+| [1FileSharing](https://1filesharing.com/) | 1 GB | Conditional | Not published | No | No | No | No | file-sharing, guest-upload, premium-upgrade, timed-hosting |
+| [2Shared](https://www.2shared.com/) | 200 MB | See notes | Not published | No | No | No | No | file-sharing, guest-upload, public-index, browser-upload |
+| [4shared](https://www.4shared.com/) | 2048 MB | Not published | See notes | Yes | No | No | No | cloud-storage, mobile-apps, free-tier, sharing |
+| [Android File Host](https://androidfilehost.com/) | Not published | Not published | Conditional | Yes | [Yes](https://androidfilehost.com/api/docs/) | No | No | file-hosting, android-dev, api, mirror-downloads |
+| [AnonFile](https://anonfile.co/) | Unlimited | Not published | 10 GB/day | No | [Yes](https://anonfile.link/docs/api) | Yes* | Yes | file-sharing, privacy, e2ee, guest-upload, api |
+| [Baidu Pan](https://pan.baidu.com/) | Not published | Not published | Not published | Yes | No | No | No | cloud-storage, backup, file-sharing, ios, mac |
+| [Box](https://www.box.com/) | 250 MB | Not published | Not published | Yes | [Yes](https://developer.box.com/reference/) | No | No | cloud-storage, apps, api, single-user-free-plan |
+| [Catbox](https://catbox.moe/) | 200 MB | See notes | Not published | Unknown | No | No | No | anonymous-friendly, simple-upload, permanent-links |
+| [Clicknupload](https://clicknupload.click/) | 2 GB | 7 days | Unlimited | No | No | No | No | file-hosting, guest-uploads, unlimited-bandwidth, ad-supported |
+| [CloudBeeline](https://cloudbeeline.ru/) | Not published | Not published | Not published | Yes | No | No | No | cloud-storage, mobile-apps, password-protected-sharing, free-tier |
+| [Cloudup](https://cloudup.com/) | Not published | Not published | Not published | Yes | [Yes](https://n.cloudup.com/) | No | No | file-sharing, api, private-by-default, direct-links, oembed |
+| [Cozy Cloud](https://en.cozy.io/) | Not published | Not published | Not published | Yes | No | No | No | cloud-storage, apps, france-hosted, open-source-adjacent |
+| [Data.hu](https://data.hu/) | Not published | Not published | Not published | No | No | Yes* | No | file-sharing, guest-upload, ftp-upload, hungary, premium-download-gating |
+| [DDownload](https://ddownload.com/) | Not published | 30 days | Not published | No | [Yes](https://ddownload.com/api) | Yes* | No | cloud-storage, file-sharing, api, guest-upload, free-tier |
+| [Degoo](https://degoo.com/) | Not published | 90 days | Not published | Yes | No | No | No | cloud-storage, mobile-apps, web-app, backup |
+| [DFiles](https://dfiles.eu/) | 10 GB | 90 days | Not published | No | No | Yes* | No | file-sharing, ftp-upload, remote-upload, mobile-apps, free-tier |
+| [DirectUpload](https://www.directupload.eu/) | 8 MB | 1 year | Not published | No | No | No | No | image-hosting, anonymous-friendly, auto-delete-options, german-service |
+| [Disroot Upload](https://disroot.org/en/services/upload) | Not published | Not published | Not published | No | No | No | Yes | file-sharing, temporary, e2ee, no-account-required |
+| [Dropbox](https://www.dropbox.com/) | Not published | Not published | Not published | Yes | [Yes](https://www.dropbox.com/developers/documentation) | No | No | cloud-storage, apps, api, mainstream |
+| [DropMeFiles](https://dropmefiles.com/) | 50 GB | 14 days | Not published | No | No | No | No | file-sharing, no-account-required, password-protection, link-expiry |
+| [FEX.NET](https://new.fex.net/en/) | Not published | Not published | Not published | Yes | No | No | No | cloud-storage, file-sharing, android-app, online-viewing, link-sharing |
+| [File-Upload.net](https://www.file-upload.net/en/) | 1 GB | 365 days | See notes | No | No | No | No | file-sharing, guest-upload, desktop-tool, android-app, affiliate |
+| [File.AL](https://file.al/) | 20 GB | 30 days | 5 GB/day | Yes | No | No | No | file-sharing, remote-upload, registered-tier, browser-upload |
+| [file.io](https://www.file.io/) | 4 GB | 1 download | Not published | No | [Yes](https://www.file.io/developers) | Yes* | No | api, cli-friendly, ephemeral, anonymous-friendly |
+| [Filebin](https://filebin.net/) | Not published | 6 days | Not published | No | [Yes](https://filebin.net/api) | No | No | file-sharing, no-account-required, api, open-source |
+| [FileFactory](https://www.filefactory.com/) | 5 GB | 90 days | Not published | Yes | No | No | No | file-hosting, free-membership, large-files, long-running |
+| [FileKarelia](https://file.karelia.ru/) | 2 GB | 30 days | Not published | Yes | No | No | No | file-sharing, account-required, russian, link-sharing |
+| [files.dp.ua](https://files.dp.ua/en/) | 100 GB | 25 days | Not published | No | No | No | No | file-sharing, no-account-required, password-protection, large-file-limit |
+| [files.fm](https://files.fm/) | 5 GB | 1 month | Not published | Yes | [Yes](https://files.fm/api/) | Yes | No | cloud-storage, apps, api, eu-based |
+| [Free Transfert](https://transfert.free.fr/) | 10 GB | 30 days | Not published | No | No | No | No | file-sharing, password-protection, direct-links, france-hosted |
+| [Gofile](https://gofile.io/) | Not published | 10 days | Not published | No | [Yes](https://gofile.io/api) | Yes* | No | guest-uploads, api, cli-friendly, premium-upgrade |
+| [Google Drive](https://drive.google.com/) | Not published | Not published | Not published | Yes | [Yes](https://developers.google.com/drive/api/guides/about-sdk) | No | No | cloud-storage, apps, api, shared-google-quota |
+| [Hightail](https://www.hightail.com/) | 100 MB | 7 days | Not published | Yes | No | No | No | file-sharing, creative-workflows, free-tier, recipient-no-account |
 | [Hostr](https://hostr.co/) | 20 MB | See notes | See notes | Yes | No | No | No | file-sharing, desktop-apps, free-account, instant-sharing |
-| [Jumpshare](https://jumpshare.com/) | 250 MB | See notes | See notes | Yes | No | No | No | file-sharing, desktop-apps, ios-app, screen-recording |
-| [LimeWire](https://limewire.com/) | 4 GB | See notes | See notes | No | No | No | Yes | file-sharing, guest-uploads, e2ee, browser-based |
-| [MediaFire](https://www.mediafire.com/) | 5 GB | See notes | See notes | Yes | No | No | No | cloud-storage, mobile-apps, ad-supported, sharing |
-| [MiMedia](https://www.mimedia.com/) | See notes | 30 days | See notes | Yes | No | No | No | cloud-storage, desktop-apps, mobile-apps, media-focused |
-| [MobiDrive](https://www.mobidrive.com/) | See notes | See notes | See notes | Yes | No | No | No | cloud-storage, apps, privacy-first, office-integration |
-| [MyAirBridge](https://www.myairbridge.com/) | 20 GB | See notes | See notes | No | [Yes](https://info.myairbridge.com/cs/faq) | No | No | file-sharing, large-transfers, no-account-required, password-options |
-| [Oblako Mail.ru](https://cloud.mail.ru/) | 1 GB | 3 months | See notes | Yes | No | Yes* | No | cloud-storage, mobile-apps, windows-app, webdav |
-| [OneDrive](https://www.microsoft.com/en-us/microsoft-365/onedrive/) | See notes | See notes | See notes | Yes | [Yes](https://learn.microsoft.com/en-us/onedrive/developer/rest-api/getting-started/?view=odsp-graph-online) | No | No | cloud-storage, apps, api, microsoft-ecosystem |
-| [OpenDrive](https://www.opendrive.com/) | 100 MB | See notes | See notes | Yes | [Yes](https://www.opendrive.com/api) | No | No | cloud-storage, apps, api, backup-and-sync |
-| [OwnDrive](https://owndrive.com/) | See notes | See notes | See notes | Yes | No | No | No | cloud-storage, free-tier, limited-apps, hosted-cloud |
-| [pCloud](https://www.pcloud.com/) | See notes | See notes | See notes | Yes | [Yes](https://docs.pcloud.com/) | No | No | cloud-storage, apps, api, optional-client-side-encryption |
+| [Jumpshare](https://jumpshare.com/) | 250 MB | Not published | Not published | Yes | No | No | No | file-sharing, desktop-apps, ios-app, screen-recording |
+| [LimeWire](https://limewire.com/) | 4 GB | Not published | Not published | No | No | No | Yes | file-sharing, guest-uploads, e2ee, browser-based |
+| [MediaFire](https://www.mediafire.com/) | 5 GB | Not published | Not published | Yes | No | No | No | cloud-storage, mobile-apps, ad-supported, sharing |
+| [MiMedia](https://www.mimedia.com/) | Not published | 30 days | Not published | Yes | No | No | No | cloud-storage, desktop-apps, mobile-apps, media-focused |
+| [MobiDrive](https://www.mobidrive.com/) | Not published | Not published | Not published | Yes | No | No | No | cloud-storage, apps, privacy-first, office-integration |
+| [MyAirBridge](https://www.myairbridge.com/) | 20 GB | Conditional | Not published | No | [Yes](https://info.myairbridge.com/cs/faq) | No | No | file-sharing, large-transfers, no-account-required, password-options |
+| [Oblako Mail.ru](https://cloud.mail.ru/) | 1 GB | 3 months | Not published | Yes | No | Yes* | No | cloud-storage, mobile-apps, windows-app, webdav |
+| [OneDrive](https://www.microsoft.com/en-us/microsoft-365/onedrive/) | Not published | Not published | Not published | Yes | [Yes](https://learn.microsoft.com/en-us/onedrive/developer/rest-api/getting-started/?view=odsp-graph-online) | No | No | cloud-storage, apps, api, microsoft-ecosystem |
+| [OpenDrive](https://www.opendrive.com/) | 100 MB | Not published | Not published | Yes | [Yes](https://www.opendrive.com/api) | No | No | cloud-storage, apps, api, backup-and-sync |
+| [OwnDrive](https://owndrive.com/) | Not published | Not published | Not published | Yes | No | No | No | cloud-storage, free-tier, limited-apps, hosted-cloud |
+| [pCloud](https://www.pcloud.com/) | Not published | Not published | Not published | Yes | [Yes](https://docs.pcloud.com/) | No | No | cloud-storage, apps, api, optional-client-side-encryption |
 | [Pixeldrain](https://pixeldrain.com/) | 100 GB | 60 days | 5 GB/day | Unknown | [Yes](https://pdx02.pixeldrain.com/api) | Yes* | No | rclone, ftps, api, expiry-on-activity |
-| [Sync](https://www.sync.com/) | See notes | See notes | See notes | Yes | No | No | Yes | cloud-storage, apps, e2ee, privacy-focused |
-| [TempSend](https://tempsend.com/) | 2 GB | 1 year | See notes | No | No | Yes | No | file-sharing, anonymous-friendly, cli-friendly, no-account-required |
-| [TeraBox](https://www.terabox.com/) | 20 GB | See notes | See notes | Yes | No | No | No | cloud-storage, apps, large-free-tier, consumer-backup |
-| [Tresorit Send](https://send.tresorit.com/) | 5 GB | 7 days | See notes | No | No | No | Yes | file-sharing, e2ee, browser-based, password-protection |
-| [UsersDrive](https://usersdrive.com/) | 5250 MB | See notes | See notes | No | No | No | No | file-hosting, no-account-required, password-protection, remote-upload |
-| [WeTransfer](https://wetransfer.com/) | 3 GB | See notes | See notes | Yes | No | No | No | file-sharing, mobile-apps, password-protection, rolling-transfer-limit |
-| [Wormhole](https://wormhole.app/) | 5 GB | 24 hours | See notes | Unknown | No | No | Yes | e2ee, peer-to-peer, ephemeral, privacy-focused |
-| [Yandex Disk](https://disk.yandex.com/) | 1 GB | See notes | See notes | Yes | No | No | No | cloud-storage, apps, linux-client, public-links |
-| [Your File Store](https://yourfilestore.com/) | 500 MB | 60 days | See notes | No | No | No | No | file-sharing, no-account-required, password-protection, private-links |
+| [SendSpace](https://www.sendspace.com/) | 300 MB | Not published | Not published | No | No | No | No | file-sharing, no-account-required, temporary-limit, recipient-delivery |
+| [Sync](https://www.sync.com/) | Not published | Not published | Not published | Yes | No | No | Yes | cloud-storage, apps, e2ee, privacy-focused |
+| [TempSend](https://tempsend.com/) | 2 GB | 1 year | Not published | No | No | Yes | No | file-sharing, anonymous-friendly, cli-friendly, no-account-required |
+| [TeraBox](https://www.terabox.com/) | 20 GB | Not published | Not published | Yes | No | No | No | cloud-storage, apps, large-free-tier, consumer-backup |
+| [Tresorit Send](https://send.tresorit.com/) | 5 GB | 7 days | Not published | No | No | No | Yes | file-sharing, e2ee, browser-based, password-protection |
+| [Ulozto](https://ulozto.net/) | Not published | Not published | 150 GB/month | Yes | [Yes](https://ulozto.net/upload-resumable-api-beta) | Yes* | Yes | cloud-storage, apps, api, e2ee |
+| [Upload.ee](https://www.upload.ee/) | 100 MB | 50 days | Not published | No | No | No | No | file-sharing, anonymous-friendly, password-protection, iframe-embed |
+| [UploadFiles.io](https://ufile.io/) | 5 GB | 30 days | Not published | No | No | No | No | file-sharing, no-account-required, free-account-upgrade, expiry-options |
+| [UsersDrive](https://usersdrive.com/) | 5250 MB | Not published | Not published | No | No | No | No | file-hosting, no-account-required, password-protection, remote-upload |
+| [WeTransfer](https://wetransfer.com/) | 3 GB | See notes | Not published | Yes | No | No | No | file-sharing, mobile-apps, password-protection, rolling-transfer-limit |
+| [Wormhole](https://wormhole.app/) | 5 GB | 24 hours | Not published | Unknown | No | No | Yes | e2ee, peer-to-peer, ephemeral, privacy-focused |
+| [Yandex Disk](https://disk.yandex.com/) | 1 GB | Not published | Not published | Yes | No | No | No | cloud-storage, apps, linux-client, public-links |
+| [Your File Store](https://yourfilestore.com/) | 500 MB | 60 days | Not published | No | No | No | No | file-sharing, no-account-required, password-protection, private-links |
 
 `Yes*` in the CLI-friendly column means a concrete command or access example is included in the notes.
+`Not published` means the cited public pages did not give a clean current number. `Conditional` means the limit depends on account type, inactivity, downloads, or another rule described in the notes.
 
 ## Notes
+
+### 1FileSharing
+
+Timed file-hosting service with guest uploads, 1 GB free uploads, and premium upgrades for larger files and longer retention.
+
+- Max file size: The current upload page states a 1.00 GB maximum file size for free uploads.
+- Retention: Current public pages describe free files as sharable for 30 days, while also saying free-member files may be removed after 7 days without downloads.
+- Bandwidth: The cited public pages describe free download speed and waiting-time limits, but do not publish a clean bandwidth cap.
+- Account: Guest uploads work without an account; paid accounts add faster downloads, larger uploads, and longer file retention.
+- Allowed file types: The cited public pages do not clearly publish a complete allowed-file-types policy.
+- Developer support: The cited public pages do not document a public API or CLI upload workflow.
+- Security: The cited public pages do not claim end-to-end encryption for uploads.
+- Sources: [Upload page](https://1filesharing.com/?f=120205716), [Download page](https://1filesharing.com/2dBo)
+
+### 2Shared
+
+Long-running file-sharing service with browser uploads, a 200 MB per-file upload limit, and a searchable public catalog.
+
+- Max file size: The current upload page explicitly states a max. 200 MB upload size.
+- Retention: The cited public pages do not clearly publish an automatic expiry policy for uploaded files.
+- Bandwidth: The cited public pages do not publish a clean current bandwidth cap.
+- Account: The public upload page allows direct browser uploads without requiring login before selecting a file.
+- Allowed file types: The cited public pages do not clearly publish a complete allowed-file-types policy.
+- Developer support: The cited public pages do not document a public API or CLI upload flow.
+- Security: The cited public pages do not claim end-to-end encryption.
+- Sources: [Upload page](https://www.2shared.com/)
 
 ### 4shared
 
@@ -69,6 +117,46 @@ Long-running cloud storage and file-sharing service with a free 15 GB tier, 2 GB
 - Developer support: The cited public pages do not document a public developer API or CLI workflow.
 - Security: The cited public pages do not claim end-to-end encryption for the free plan.
 - Sources: [Features](https://www.4shared.com/features.jsp), [Mobile Overview](https://www.4shared.com/mobile.jsp), [iPhone App](https://www.4shared.com/iphone/)
+
+### Android File Host
+
+Large Android-focused file hosting network for developers with unlimited downloads, multiple mirrors, and a public beta API.
+
+- Max file size: The cited public pages do not publish a general per-file upload cap for the free tier.
+- Retention: The cited public pages do not publish an automatic expiry period for hosted files.
+- Bandwidth: Android File Host publicly states it does not limit download speeds or bandwidth usage.
+- Account: Developers need an account to upload and manage files; free visitors can browse and download files without registration.
+- Allowed file types: The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.
+- Developer support: Android File Host publishes a beta API for browsing devices, developers, folders, updates, and files.
+- Security: The cited public pages emphasize high-speed delivery and hosted storage, but do not claim end-to-end encryption.
+- Sources: [Homepage](https://androidfilehost.com/), [API Docs](https://androidfilehost.com/api/docs/), [Membership Plans](https://androidfilehost.com/user/?w=select-membership-plans)
+
+### AnonFile
+
+Privacy-focused file hosting service with browser-side encryption, no-account sharing, public API docs, and optional free accounts.
+
+- Max file size: The public upload page currently advertises unlimited max file size for uploads.
+- Retention: The cited public pages do not publish a clean automatic expiry policy for stored files.
+- Bandwidth: The public FAQ currently says free accounts get 10 GB daily transfer.
+- Account: Anyone can share files by link without an account; free accounts add stored space and account-managed uploads.
+- Allowed file types: The API docs imply some disallowed and banned file types through error codes, but the cited public pages do not publish a full allowlist.
+- CLI example: `curl -F "file=@example.txt" "https://api.anonfile.link/upload?key={YOUR_API_KEY}"`
+- Developer support: AnonFile publishes API docs with upload and file-info endpoints.
+- Security: The current public pages claim files are encrypted before they leave the browser and that the service cannot read file contents.
+- Sources: [Upload page](https://anonfile.co/), [API documentation](https://anonfile.link/docs/api)
+
+### Baidu Pan
+
+Baidu's large-scale cloud storage service with multi-device backup, file sharing, iPhone/Mac apps, and very large paid expansion tiers.
+
+- Max file size: The cited public pages do not publish a clean current per-file upload limit.
+- Retention: The cited public pages do not publish a clean automatic expiry policy for stored files.
+- Bandwidth: The cited public pages do not publish a clean numeric bandwidth cap for free users.
+- Account: A Baidu account is required for cloud backup, syncing, and sharing across devices.
+- Allowed file types: The cited public pages describe support for photos, videos, documents, app files, messages, and call records, but do not publish a narrow allowlist.
+- Developer support: The cited public consumer pages do not document a public API or CLI upload workflow.
+- Security: The App Store listing says the service uses multiple data centers and cites ISO27001 and ISO27018 security certifications, but it does not claim end-to-end encryption.
+- Sources: [Baidu homepage navigation](https://www.baidu.com/), [Baidu Pan App Store listing](https://apps.apple.com/us/app/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/id547166701), [Baidu Pan HD App Store listing](https://apps.apple.com/us/app/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98-hd/id554602005), [Baidu Pan feature page](https://yun.baidu.com/disk/dilatation)
 
 ### Box
 
@@ -109,6 +197,32 @@ Ad-supported file hosting service with free guest uploads, large per-file limits
 - Security: The cited FAQ mentions account security controls such as a security lock, but the public pages do not claim end-to-end encryption.
 - Sources: [Homepage](https://clicknupload.click/), [FAQ](https://clicknupload.click/faq.html)
 
+### CloudBeeline
+
+Beeline consumer cloud storage service with 10 GB free storage, password-protected sharing, and mobile apps.
+
+- Max file size: The cited public pages do not publish a clean current per-file upload limit.
+- Retention: The cited public pages do not publish a clean automatic expiry policy for stored or shared files.
+- Bandwidth: The public pages say Beeline customers can use the service without traffic limits on the Beeline network, but do not publish a clean general bandwidth cap.
+- Account: The current sign-in flow uses phone-number login; accounts enable storage, sharing, backups, and app access.
+- Allowed file types: The public pages describe storage for photos, videos, presentations, contacts, and other files, but do not publish a narrow allowlist.
+- Developer support: The cited public pages do not document a public API or CLI upload flow.
+- Security: The public pages position it as secure cloud storage and mention password-protected access to files and folders, but do not claim end-to-end encryption.
+- Sources: [CloudBeeline homepage](https://cloudbeeline.ru/), [Google Play listing](https://play.google.com/store/apps/details?hl=en_US&id=ru.beeline.cloud), [App Store listing](https://apps.apple.com/us/app/%D0%BE%D0%B1%D0%BB%D0%B0%D0%BA%D0%BE-%D0%B1%D0%B8%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D0%BE%D1%87%D0%B8%D1%81%D1%82%D0%B8%D1%82%D1%8C-%D0%BF%D0%B0%D0%BC%D1%8F%D1%82%D1%8C/id1495684365)
+
+### Cloudup
+
+Private-by-default file and link sharing service from Automattic with public API docs, direct links, and stream-based sharing.
+
+- Max file size: The cited official public pages do not publish a clean current maximum upload size.
+- Retention: The cited official public pages do not publish a clean automatic expiry policy for files or streams.
+- Bandwidth: The cited official public pages do not publish a clean current bandwidth cap.
+- Account: Cloudup accounts are required for authenticated API use, stream management, and application registration.
+- Allowed file types: Official posts describe support for files, URLs, HTML, XML, SVG, and media embeds, but do not publish a full restrictive allowlist.
+- Developer support: Cloudup publishes official API documentation for streams, items, uploads, OAuth, and oEmbed.
+- Security: The official docs require HTTPS and describe private-by-default sharing, but do not claim end-to-end encryption.
+- Sources: [API documentation](https://n.cloudup.com/), [Direct links update](https://blog.cloudup.com/2017/02/16/a-new-home-for-cloudup-direct-links/), [Privacy policy update](https://blog.cloudup.com/2018/08/24/privacy-policy-update/)
+
 ### Cozy Cloud
 
 French personal cloud platform now branded as Twake Workplace, with a free 5 GB tier and official desktop and mobile apps.
@@ -122,6 +236,34 @@ French personal cloud platform now branded as Twake Workplace, with a free 5 GB 
 - Security: Twake emphasizes privacy, GDPR compliance, and French hosting on the cited pages, but these pages do not claim end-to-end encryption for the hosted free plan.
 - Sources: [Homepage](https://en.cozy.io/), [Pricing](https://en.cozy.io/pricing), [Download](https://en.cozy.io/download)
 
+### Data.hu
+
+Hungarian file-sharing service with free browser uploads, unlimited advertised storage, optional FTP uploads, and premium-gated large downloads.
+
+- Max file size: The official public pages promote large-file sharing but do not publish a clean current maximum upload size.
+- Retention: The cited official public pages do not publish a clean automatic expiry policy for hosted files.
+- Bandwidth: The official pages do not publish a clean bandwidth cap, but free downloads above 200 MB are restricted to premium users.
+- Account: Guest uploads work through the homepage; registered users can track uploads, organize files, and use free FTP upload access.
+- Allowed file types: The homepage explicitly mentions videos, music, and large files; the cited public pages do not publish a narrow allowlist.
+- CLI example: `Use any FTP client after logging in; the help page says FTP upload is free for registered users.`
+- Developer support: The service does not publish a public API, but official help documents free FTP upload for registered users.
+- Security: The cited official public pages do not claim end-to-end encryption.
+- Sources: [Homepage](https://data.hu/), [Help / FAQ](https://data.hu/segitseg), [Example download page](https://data.hu/get/14779606/Gylksmmr_3-grbcstl.z01?pid=1976132609), [Premium page](https://data.hu/premium)
+
+### DDownload
+
+Cloud storage and file-sharing service with a free 5 TB plan, 30-day inactivity policy, guest uploads, and a public API.
+
+- Max file size: The cited official public pages do not publish a clean current maximum upload size.
+- Retention: The official pricing page currently lists 30 days of file inactivity for the free plan.
+- Bandwidth: The official pricing page says the free plan has limited traffic per day, but does not publish a clean numeric cap.
+- Account: Guest uploads appear to be supported; creating an account unlocks the free storage plan, file manager, folders, stats, and API key access.
+- Allowed file types: The official FAQ says all kinds of files may be uploaded except pornography, nudity, sexual images, offensive material, and copyrighted material.
+- CLI example: `curl "https://api-v2.ddownload.com/api/account/info?key=YOUR_KEY"`
+- Developer support: DDownload publishes official API documentation for account info, uploads, files, and folders.
+- Security: The official pages describe secure storage and HTTPS delivery, but do not claim end-to-end encryption.
+- Sources: [Homepage and pricing](https://ddownload.com/), [FAQ](https://ddownload.com/faq.html), [API documentation](https://ddownload.com/api)
+
 ### Degoo
 
 Consumer cloud backup service with a free 20 GB tier, web access, and mobile apps, but no current desktop client.
@@ -134,6 +276,33 @@ Consumer cloud backup service with a free 20 GB tier, web access, and mobile app
 - Developer support: The cited public pages do not document a public developer API or CLI workflow.
 - Security: Degoo publicly markets encrypted communication and an optional zero-knowledge storage feature, but the cited pages do not establish end-to-end encryption as the default free-plan model.
 - Sources: [Homepage](https://degoo.com/), [Android and iOS](https://help.degoo.com/support/solutions/articles/77000065527-can-i-use-degoo-on-android-or-ios-), [Desktop App](https://help.degoo.com/support/solutions/articles/77000065535-do-you-have-a-native-desktop-app-for-windows-osx-or-linux-)
+
+### DFiles
+
+Long-running file hosting service under the DepositFiles brand with free uploads up to 10 GB, 90-day retention after downloads, mobile apps, and FTP/remote upload support.
+
+- Max file size: The official DepositFiles FAQ and homepage state that users can upload files up to 10 GB.
+- Retention: The official FAQ says uploaded files are stored for 90 days, and each download extends retention by another 90 days.
+- Bandwidth: The official public pages do not publish a clean numeric bandwidth cap for free users.
+- Account: Free use is available without payment; creating an account enables easier file management, removal options, and additional account features.
+- Allowed file types: The official FAQ says many file types are allowed, while copyrighted or illegal content may be removed.
+- CLI example: `Upload by FTP or remote HTTP/FTP transfer after creating an account.`
+- Developer support: The official pages document FTP upload and remote HTTP/FTP upload, but do not publish a public developer API.
+- Security: The official pages position it as safe file transfer and storage, but do not claim end-to-end encryption.
+- Sources: [DepositFiles homepage](https://depositfiles.com/), [DepositFiles FAQ](https://depositfiles.com/en/faq.html)
+
+### DirectUpload
+
+Long-running German image host with free anonymous uploads, short custom auto-delete options, and a 1-year minimum storage period.
+
+- Max file size: The current upload page lists a maximum of 8 MB per file.
+- Retention: The homepage currently advertises a 1-year minimum storage duration, while uploaders can also choose shorter auto-delete periods during upload.
+- Bandwidth: The cited public pages do not publish a current bandwidth limit.
+- Account: Anonymous uploads are supported; registered members can store images free and long-term.
+- Allowed file types: The current upload page supports JPG, GIF, PNG, WEBP, BMP, HEIC, and PDF uploads, with some formats converted automatically.
+- Developer support: The cited public pages do not document a public API or CLI workflow.
+- Security: The cited public pages focus on image hosting features and do not claim end-to-end encryption.
+- Sources: [Homepage](https://www.directupload.net/)
 
 ### Disroot Upload
 
@@ -174,6 +343,45 @@ Browser-based file sharing service with no registration requirement, large free 
 - Security: The service supports password-protected links, but the cited public page does not claim end-to-end encryption.
 - Sources: [Homepage](https://dropmefiles.com/)
 
+### FEX.NET
+
+Modern cloud storage and file-sharing service with online viewing, link sharing, Android app support, and encrypted-in-transit data handling.
+
+- Max file size: The cited public pages do not publish a clean current maximum upload size.
+- Retention: The cited public pages do not publish a clean automatic expiry policy for shared files.
+- Bandwidth: The cited public pages do not publish a clean numeric bandwidth cap.
+- Account: The current product pages and app positioning revolve around account-based cloud storage, online viewing, and shared links.
+- Allowed file types: The cited public pages describe storing photos, videos, documents, and music, but do not publish a full allowlist.
+- Developer support: The cited public pages do not document a public API or CLI upload workflow.
+- Security: The Google Play listing says data is encrypted in transit and can be deleted on request, but the cited pages do not claim end-to-end encryption.
+- Sources: [FEX homepage](https://new.fex.net/en/), [Google Play listing](https://play.google.com/store/apps/details?id=net.fex.androidv2), [Pricing page](https://new.fex.net/pricing)
+
+### File-Upload.net
+
+Guest-friendly German file host with 1 GB uploads, up to one year of storage, optional registration for management features, and desktop/mobile upload tools.
+
+- Max file size: The English upload page currently states a maximum size of 1 GB per file.
+- Retention: The English upload page says files are stored up to one year, and the FAQ says images stay at least one year before later cleanup rules apply.
+- Bandwidth: The registration page advertises no traffic limit, but the public pages do not present a clean numeric bandwidth cap.
+- Account: Guest uploads work without registration; free registration adds file overview, statistics, and management features.
+- Allowed file types: The FAQ says there are no file-format limits as long as uploads do not violate the terms and conditions.
+- Developer support: The service offers upload tools and an uploader app, but the cited public pages do not document a public developer API or CLI workflow.
+- Security: The FAQ describes randomly generated file names and delete links, but the public pages do not claim end-to-end encryption.
+- Sources: [English upload page](https://www.file-upload.net/en/), [FAQ](https://www.file-upload.net/hilfe.php), [Register page](https://www.file-upload.net/en/registrieren.php), [Upload tools](https://www.file-upload.net/tools.php)
+
+### File.AL
+
+Account-based file host with browser and remote URL uploads, a free registered tier, and structured premium comparison published on the site.
+
+- Max file size: The premium comparison currently lists a 20 GB maximum upload file size for registered users.
+- Retention: The premium comparison currently says registered-user files are deleted 30 days after the last download.
+- Bandwidth: The premium comparison currently lists 5 GB of download volume per day for registered users.
+- Account: Uploads are enabled for confirmed users only, and registration enables remote URL upload plus the published registered-user tier.
+- Allowed file types: The cited public pages do not clearly publish a complete allowed-file-types policy.
+- Developer support: The site navigation mentions API, but the cited public pages do not expose a clear public developer documentation page for verification.
+- Security: The public pages position File.AL as secure storage and sharing, but do not claim end-to-end encryption.
+- Sources: [Homepage](https://file.al/), [Premium comparison](https://file.al/?op=subscribe&usr_id=302491), [Login navigation page](https://file.al/login.html)
+
 ### file.io
 
 Temporary file sharing service with a public REST API and auto-delete behavior.
@@ -187,6 +395,45 @@ Temporary file sharing service with a public REST API and auto-delete behavior.
 - Developer support: The homepage and developer docs both show curl-based upload flows.
 - Security: Homepage states files are encrypted in transit and at rest, but the service can still access them server-side.
 - Sources: [Homepage](https://www.file.io/), [Developer Docs](https://www.file.io/developers), [Plans](https://www.file.io/plans)
+
+### Filebin
+
+Open-source no-account file sharing service with a public API and automatic short-lived deletion.
+
+- Max file size: The cited public pages do not publish a per-file upload size limit.
+- Retention: The homepage currently states uploaded files are automatically deleted 6 days after upload.
+- Bandwidth: The cited public pages do not publish a numeric bandwidth cap, but uploads can be blocked when the overall service storage capacity is reached.
+- Account: No registration is required; anyone with the link can upload, download, or manually delete the bin contents.
+- Allowed file types: The terms prohibit illegal, copyrighted, malicious, obscene, and abusive uses, but the service otherwise accepts arbitrary uploaded content.
+- Developer support: Filebin publishes API documentation for uploading, listing, downloading, and deleting files.
+- Security: Filebin says HTTPS protects data in transit, but files are not encrypted on the server side and should be client-encrypted if needed.
+- Sources: [Homepage](https://filebin.net/), [API Documentation](https://filebin.net/api), [About](https://filebin.net/about), [Privacy](https://filebin.net/privacy)
+
+### FileFactory
+
+Long-running file hosting service with free accounts, 5 GB upload limits, and 90-day storage for free members.
+
+- Max file size: The current premium comparison page lists a 5 GB max upload file size for free members.
+- Retention: The current premium comparison page lists 90 days of file storage time for free members.
+- Bandwidth: The current comparison page says free members face hourly download limits but does not publish a clean numeric bandwidth cap.
+- Account: A free member account is required for uploads and 90-day storage; anonymous users can only download with heavier limits.
+- Allowed file types: The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.
+- Developer support: The cited public pages do not document a public API or CLI workflow.
+- Security: The cited public pages emphasize hosted download service features but do not claim end-to-end encryption.
+- Sources: [Premium Comparison](https://www.filefactory.com/premium/)
+
+### FileKarelia
+
+Russian file-sharing service with account-based uploads, month-long retention after access, and larger limits for registered users.
+
+- Max file size: The published terms currently allow files up to 2 GB for registered users, while the landing page advertises smaller limits in some unauthenticated states.
+- Retention: The published terms say files are deleted after 30 days since the last access for ordinary uploads.
+- Bandwidth: The cited public pages do not publish a clean numeric bandwidth cap.
+- Account: The current landing page says only registered users can upload, and registration enables larger upload sizes and upload management.
+- Allowed file types: The terms prohibit malware, copyrighted material without permission, spam, encrypted archive file lists, and other disallowed content.
+- Developer support: The cited public pages do not document a public API or CLI upload flow.
+- Security: The service is delivered over HTTPS, but the cited public pages do not claim end-to-end encryption.
+- Sources: [Landing page](https://file.karelia.ru/), [Terms of service](https://file.karelia.ru/terms)
 
 ### files.dp.ua
 
@@ -438,6 +685,19 @@ Fast file sharing service with expiry-on-inactivity behavior, plus FTPS and rclo
 - Security: The cited docs do not claim end-to-end encryption.
 - Sources: [Questions and Answers](https://pixeldrain.com/about), [Filesystem Guide](https://docs.pixeldrain.com/filesystem/), [API Docs](https://pdx02.pixeldrain.com/api)
 
+### SendSpace
+
+Transfer-oriented file sharing service with a current 300 MB free upload limit and optional recipient delivery without requiring recipient accounts.
+
+- Max file size: The current upload page says the free-user upload limit is temporarily set to 300 MB while new servers are brought online.
+- Retention: The cited public upload pages do not publish a clean automatic expiry period for free uploads.
+- Bandwidth: The cited public upload pages do not publish a numeric bandwidth cap for free users.
+- Account: Files can be uploaded and shared instantly from the public upload page, while paid plans unlock password protection and higher limits.
+- Allowed file types: The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.
+- Developer support: The cited public pages do not document a public API or CLI workflow.
+- Security: The cited public pages position SendSpace as secure file transfer, but do not claim end-to-end encryption.
+- Sources: [Homepage](https://www.sendspace.com/)
+
 ### Sync
 
 Privacy-focused cloud storage service with a 5 GB free tier and end-to-end encrypted apps across desktop and mobile.
@@ -489,6 +749,46 @@ Free browser-based file transfer service from Tresorit with end-to-end encrypted
 - Developer support: The cited current public pages for this batch do not document a public developer API.
 - Security: Tresorit Send is described as using client-side, end-to-end encryption before files leave the device.
 - Sources: [What is Tresorit Send](https://support.tresorit.com/hc/en-us/articles/360007285294-What-is-Tresorit-Send), [How it Works](https://support.tresorit.com/hc/en-us/articles/360007285474-How-it-works), [Tresorit Send FAQ](https://support.tresorit.com/hc/en-us/articles/360012183493-Tresorit-Send-FAQ)
+
+### Ulozto
+
+Modern cloud storage service with a free 25 GB plan, official mobile apps, Windows backup tooling, end-to-end encryption claims, and a resumable upload API.
+
+- Max file size: The cited public product pages do not publish a general single-file upload cap for the free plan.
+- Retention: The cited public free-plan pages do not state an automatic expiry period for stored files in an active account.
+- Bandwidth: The current pricing page lists 150 GB of data transfer per month for the free plan.
+- Account: A Ulozto account is required for the free 25 GB cloud plan, app access, sync, and API-based uploads.
+- Allowed file types: The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.
+- CLI example: `bash sample uploader available from the official resumable upload API page`
+- Developer support: Ulozto publishes a resumable upload API and includes official Bash and Python example scripts.
+- Security: Ulozto Disk currently markets its cloud plan as end-to-end encrypted and says the service does not know the file contents.
+- Sources: [Homepage](https://ulozto.net/), [Plans and Pricing](https://ulozto.net/koupit-disk), [Upload API](https://ulozto.net/upload-resumable-api-beta), [Android App](https://ulozto.net/androidapp), [iOS App](https://ulozto.net/iosapp)
+
+### Upload.ee
+
+Estonian file host with anonymous uploads, broad file-type support, and clear free retention rules for guest and registered users.
+
+- Max file size: The FAQ currently says unregistered users can upload up to 100 MB files, while registered users can upload up to 200 MB.
+- Retention: The FAQ and rules currently say anonymous files expire 50 days after last download, while registered users' files expire after 120 days.
+- Bandwidth: The upload page says there is no waiting time and references maximum download speed, but the cited pages do not publish a numeric bandwidth cap.
+- Account: Anonymous uploads are supported; registered users get larger uploads, longer retention, galleries, and privacy controls.
+- Allowed file types: The FAQ currently says Upload.ee supports all known and unknown file formats, but executables like exe, msi, pif, com, and bat can only be uploaded by registered users, and illegal/copyrighted content is forbidden.
+- Developer support: The cited public pages show iframe embedding and an old Java upload helper, but they do not document a public developer API or CLI workflow.
+- Security: The cited public pages do not claim end-to-end encryption.
+- Sources: [Upload Page](https://www.upload.ee/), [FAQ](https://www.upload.ee/faq.html), [Rules](https://www.upload.ee/?page=rules)
+
+### UploadFiles.io
+
+Free file sharing service with no-registration guest uploads, 5 GB max file size, optional expiry controls, and an upgrade path to free managed storage.
+
+- Max file size: The current homepage lists a 5 GB per-file limit for free users.
+- Retention: The homepage currently says guest uploads are hosted for a maximum of 30 days, with optional shorter settings like 1 hour, 1 day, 7 days, or 1 download.
+- Bandwidth: The homepage markets the service as having no restrictions for sharing and advertises direct downloads up to 1,000 times per day, but it does not publish a clean numeric bandwidth cap.
+- Account: Guest uploads work without registration; a free account unlocks management features, 10 GB permanent storage, more simultaneous uploads, passwords, and other controls.
+- Allowed file types: The homepage currently says there are no restrictions on file types for uploads, though prohibited content may still be restricted under the service terms.
+- Developer support: The cited public pages do not document a public API or CLI workflow.
+- Security: The homepage says uploads use SHA-256 SSL in transit and encrypted cloud storage, but these claims do not establish end-to-end encryption.
+- Sources: [Homepage](https://ufile.io/)
 
 ### UsersDrive
 
@@ -562,212 +862,6 @@ Simple no-account file upload service with private download links, optional pass
 - Schema: [`schema/hosts.schema.json`](schema/hosts.schema.json)
 - Candidate schema: [`schema/candidates.schema.json`](schema/candidates.schema.json)
 - Generator: [`scripts/generate-readme.js`](scripts/generate-readme.js)
-
-## Candidate backlog
-
-Captured 199 user-submitted candidates that are still pending review or have already been verified and promoted. Rejected entries stay in `data/candidates.json` but are omitted from this README.
-
-| Name | Type | Free volume | Shelf life | Download count | Languages | Apps | Status |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| ????????? | Unverified lead | - | - | - | - | - | pending |
-| 1fichier | File sharing | 300 GB | 15+ | - | English | - | pending |
-| 1filesharing | Unverified lead | - | - | - | - | - | pending |
-| 2Share | Unverified lead | - | - | - | - | - | pending |
-| 360 Yunpan | Cloud storage | - | - | - | - | - | pending |
-| 4shared | Cloud storage | 15 GB | - | - | - | Android, iOS | verified |
-| 9xupload | Unverified lead | - | - | - | - | - | pending |
-| Alfafile | Unverified lead | - | - | - | - | - | pending |
-| AndroidFileHost | Unverified lead | - | - | - | - | - | pending |
-| AnonFile | Unverified lead | - | - | - | - | - | pending |
-| AnonFiles | Unverified lead | - | - | - | - | - | pending |
-| AusFile | Unverified lead | - | - | - | - | - | pending |
-| Baidu Pan | Cloud storage | - | - | - | - | - | pending |
-| BayFiles | Unverified lead | - | - | - | - | - | pending |
-| BdUpload | Unverified lead | - | - | - | - | - | pending |
-| BezSms | Unverified lead | - | - | - | - | - | pending |
-| Box | Cloud storage | 10 GB | - | - | English | Windows, MacOS, Android, iOS | verified |
-| Chomikuj.pl | Cloud storage | No limit | - | false | Polish | Windows, Android, iOS | pending |
-| Clicknupload | File sharing | 2 GB | 7+ | - | English | - | verified |
-| CloudBeeline | Cloud storage | 10 GB | - | - | Russian | - | pending |
-| CloudGhost | Unverified lead | - | - | - | - | - | pending |
-| Cloudup | File sharing | - | - | - | - | - | pending |
-| Cozy Cloud | Cloud storage | 5 GB | - | - | English, Russian | Windows, Linux, MacOS, Android, iOS | verified |
-| DataFileHost | Unverified lead | - | - | - | - | - | pending |
-| DataHu | Unverified lead | - | - | - | - | - | pending |
-| Datei | Unverified lead | - | - | - | - | - | pending |
-| Dateiload | Unverified lead | - | - | - | - | - | pending |
-| DdlTo | Unverified lead | - | - | - | - | - | pending |
-| Degoo | Cloud storage | 20 GB | 90 days inactivity | - | - | Web, Android, iOS | verified |
-| DesuFiles | Unverified lead | - | - | - | - | - | pending |
-| Dir50 | Unverified lead | - | - | - | - | - | pending |
-| DirectUpload | Unverified lead | - | - | - | - | - | pending |
-| Disroot | File sharing | 1 GB | - | - | English | - | verified |
-| DoraUpload | Unverified lead | - | - | - | - | - | pending |
-| DoUploads | Unverified lead | - | - | - | - | - | pending |
-| Downace | Unverified lead | - | - | - | - | - | pending |
-| DriveUploader | Unverified lead | - | - | - | - | - | pending |
-| DropApk | Unverified lead | - | - | - | - | - | pending |
-| Dropbox | Cloud storage | 2 GB | - | - | - | Windows, Linux, MacOS, Android, iOS | verified |
-| DropFiles | Unverified lead | - | - | - | - | - | pending |
-| DropMeAFile | File sharing | - | 3 | false | English | - | pending |
-| DropMeFiles | File sharing | 50 GB | 14 | true | English, Russian | - | verified |
-| Earn4Files | Unverified lead | - | - | - | - | - | pending |
-| EasyBytez | Unverified lead | - | - | - | - | - | pending |
-| EuropeUp | Unverified lead | - | - | - | - | - | pending |
-| ExLoad | Unverified lead | - | - | - | - | - | pending |
-| ExtMatrix | Unverified lead | - | - | - | - | - | pending |
-| FastStore | Unverified lead | - | - | - | - | - | pending |
-| Fex | File sharing | 50 GB | 7 | - | English, Russian | - | pending |
-| File Al | Unverified lead | - | - | - | - | - | pending |
-| File-Space | Unverified lead | - | - | - | - | - | pending |
-| File-Upload | Unverified lead | - | - | - | - | - | pending |
-| FileBin | Unverified lead | - | - | - | - | - | pending |
-| FileBlade | Unverified lead | - | - | - | - | - | pending |
-| FileBonus | Unverified lead | - | - | - | - | - | pending |
-| FileBoom | Unverified lead | - | - | - | - | - | pending |
-| FileBz | Unverified lead | - | - | - | - | - | pending |
-| FileCandy | Unverified lead | - | - | - | - | - | pending |
-| FileDot | Unverified lead | - | - | - | - | - | pending |
-| FileFactory | Unverified lead | - | - | - | - | - | pending |
-| FileJoker | Unverified lead | - | - | - | - | - | pending |
-| FileKarelia | File sharing | 1 GB | 7+ | false | Russian | - | pending |
-| FileNext | Unverified lead | - | - | - | - | - | pending |
-| Filer | Unverified lead | - | - | - | - | - | pending |
-| FileRio | Unverified lead | - | - | - | - | - | pending |
-| files.dp.ua | File sharing | - | 25 | false | English, Ukrainian, Russian | - | verified |
-| files.fm | Cloud storage | 20 GB | 1 month | - | - | Windows, macOS, Linux, Android, iOS | verified |
-| FilesABC | Unverified lead | - | - | - | - | - | pending |
-| FileShark | Unverified lead | - | - | - | - | - | pending |
-| FilesMonster | Unverified lead | - | - | - | - | - | pending |
-| FileSpace | Unverified lead | - | - | - | - | - | pending |
-| FileTown | Unverified lead | - | - | - | - | - | pending |
-| FileTUT | Unverified lead | - | - | - | - | - | pending |
-| FileUpload | Unverified lead | - | - | - | - | - | pending |
-| FireDrop | File sharing | - | - | - | - | - | pending |
-| Firefox Send | Unverified lead | - | - | - | - | - | pending |
-| FlipDrive | Cloud storage | - | - | - | - | - | pending |
-| Free | File sharing | 10 GB | 30 | - | French | - | verified |
-| fShare | Unverified lead | - | - | - | - | - | pending |
-| GeTT | Unverified lead | - | - | - | - | - | pending |
-| GFXfile | Unverified lead | - | - | - | - | - | pending |
-| Giga | Cloud storage | - | - | - | - | - | pending |
-| GigaPeta | Unverified lead | - | - | - | - | - | pending |
-| Global-Files | Unverified lead | - | - | - | - | - | pending |
-| Gofile | Unverified lead | - | - | - | - | - | pending |
-| Google Drive | Cloud storage | 15 GB | - | - | English, Russian | Windows, MacOS, Android, iOS | verified |
-| HighTail | File sharing | 2 GB | 7 days | - | - | - | verified |
-| HitFile | Unverified lead | - | - | - | - | - | pending |
-| Hostr | File sharing | - | - | - | - | Windows, MacOS | verified |
-| HotLink | Unverified lead | - | - | - | - | - | pending |
-| HulkLoad | Unverified lead | - | - | - | - | - | pending |
-| IcerBox | Unverified lead | - | - | - | - | - | pending |
-| Images.Gameru | Unverified lead | - | - | - | - | - | pending |
-| IndiShare | Unverified lead | - | - | - | - | - | pending |
-| Jumpshare | Cloud storage | 2 GB | - | - | English | Windows, MacOS, iOS | verified |
-| KatFile | Unverified lead | - | - | - | - | - | pending |
-| LetsUpload | Unverified lead | - | - | - | - | - | pending |
-| LimeWire | File sharing | 4 GB | 7 | - | English | - | verified |
-| Linx | Unverified lead | - | - | - | - | - | pending |
-| LoadTo | Unverified lead | - | - | - | - | - | pending |
-| MacUpload | Unverified lead | - | - | - | - | - | pending |
-| MediaFire | Cloud storage | 10 GB | - | - | English | Android, iOS | verified |
-| MEGA | Cloud storage | 15 GB | - | false | English, Russian | Windows, Linux, MacOS, Android, iOS | pending |
-| MegaFile | Unverified lead | - | - | - | - | - | pending |
-| MegaUp | Unverified lead | - | - | - | - | - | pending |
-| MegaUpload | Unverified lead | - | - | - | - | - | pending |
-| Mexa Share | Unverified lead | - | - | - | - | - | pending |
-| MightyUpload | Unverified lead | - | - | - | - | - | pending |
-| MiMedia | Cloud storage | 10 GB | - | - | - | Windows, MacOS, Android, iOS, Web | verified |
-| MixLoads | Unverified lead | - | - | - | - | - | pending |
-| MobiDrive | Cloud storage | 20 GB | - | - | English | Windows, Android, iOS, Web | verified |
-| mShare | Unverified lead | - | - | - | - | - | pending |
-| My-Files | Unverified lead | - | - | - | - | - | pending |
-| MyAirBridge | File sharing | 20 GB | 2-3 days | - | English | - | verified |
-| MyFile | Unverified lead | - | - | - | - | - | pending |
-| MyFiles | Unverified lead | - | - | - | - | - | pending |
-| NitroFlare | Unverified lead | - | - | - | - | - | pending |
-| NovaFile | Unverified lead | - | - | - | - | - | pending |
-| Oboom | Unverified lead | - | - | - | - | - | pending |
-| OneDrive | Cloud storage | 5 GB | - | - | English, Russian | Windows, MacOS, Android, iOS | verified |
-| OpenDrive | Cloud storage | 5 GB | - | - | English | Windows, Linux, MacOS, Android, iOS | verified |
-| OpenLoad | Unverified lead | - | - | - | - | - | pending |
-| OrtoFiles | Unverified lead | - | - | - | - | - | pending |
-| OwnDrive | Cloud storage | 1 GB | - | - | - | Web | verified |
-| OxyCloud | Unverified lead | - | - | - | - | - | pending |
-| pCloud | Cloud storage | 10 GB | - | - | English, Russian | Windows, Linux, MacOS, Android, iOS | verified |
-| Pixeldrain | Cloud storage | 6 GB | 120 | - | English | - | verified |
-| Plustransfer | Unverified lead | - | - | - | - | - | pending |
-| PreFiles | Unverified lead | - | - | - | - | - | pending |
-| PutRe | Unverified lead | - | - | - | - | - | pending |
-| Racaty | Unverified lead | - | - | - | - | - | pending |
-| Rapidgator | Unverified lead | - | - | - | - | - | pending |
-| RapidShare | Unverified lead | - | - | - | - | - | pending |
-| Rapidu | Unverified lead | - | - | - | - | - | pending |
-| RarLink | Unverified lead | - | - | - | - | - | pending |
-| RedBunker | Unverified lead | - | - | - | - | - | pending |
-| SaberCatHost | Unverified lead | - | - | - | - | - | pending |
-| SendFile | File sharing | 600 MB | 25+ | false | Russian | - | pending |
-| SendFiles | Unverified lead | - | - | - | - | - | pending |
-| SendIt | Unverified lead | - | - | - | - | - | pending |
-| SendSpace | Unverified lead | - | - | - | - | - | pending |
-| Share-Online | Unverified lead | - | - | - | - | - | pending |
-| ShareMods | Unverified lead | - | - | - | - | - | pending |
-| SharePlace | Unverified lead | - | - | - | - | - | pending |
-| SnowFiles | Unverified lead | - | - | - | - | - | pending |
-| SolidFiles | Unverified lead | - | - | - | - | - | pending |
-| SubyShare | Unverified lead | - | - | - | - | - | pending |
-| SundryFiles | Unverified lead | - | - | - | - | - | pending |
-| Sync | Cloud storage | 5 GB | - | - | English | Windows, MacOS, Android, iOS | verified |
-| SyncsOnline | Unverified lead | - | - | - | - | - | pending |
-| TempSend | File sharing | 2 GB | 1 year | - | English | - | verified |
-| TeraBox | Cloud storage | 1 TB | - | - | English, Russian | Windows, MacOS, Android, iOS | verified |
-| TezFiles | Unverified lead | - | - | - | - | - | pending |
-| TinyUpload | Unverified lead | - | - | - | - | - | pending |
-| Top4top | Unverified lead | - | - | - | - | - | pending |
-| Tresorit Send | File sharing | 5 GB | 7 | 10 | English | - | verified |
-| Turbobit | Unverified lead | - | - | - | - | - | pending |
-| TusFiles | Unverified lead | - | - | - | - | - | pending |
-| UaFile | Unverified lead | - | - | - | - | - | pending |
-| Ulozto | Unverified lead | - | - | - | - | - | pending |
-| UniBytes | Unverified lead | - | - | - | - | - | pending |
-| up07 | Unverified lead | - | - | - | - | - | pending |
-| Up4Ever | Unverified lead | - | - | - | - | - | pending |
-| Upera | Unverified lead | - | - | - | - | - | pending |
-| Upload | Unverified lead | - | - | - | - | - | pending |
-| Upload Ac | Unverified lead | - | - | - | - | - | pending |
-| Upload4Earn | Unverified lead | - | - | - | - | - | pending |
-| UploadBox | Unverified lead | - | - | - | - | - | pending |
-| UploadBoy | Unverified lead | - | - | - | - | - | pending |
-| UploadCD | Unverified lead | - | - | - | - | - | pending |
-| UploadCloud | Unverified lead | - | - | - | - | - | pending |
-| Uploaded | Unverified lead | - | - | - | - | - | pending |
-| Uploadev | Unverified lead | - | - | - | - | - | pending |
-| UploadFiles | Unverified lead | - | - | - | - | - | pending |
-| UploadGig | Unverified lead | - | - | - | - | - | pending |
-| Uploadify | Unverified lead | - | - | - | - | - | pending |
-| UploadOcean | Unverified lead | - | - | - | - | - | pending |
-| UploadProper | Unverified lead | - | - | - | - | - | pending |
-| UploadRar | Unverified lead | - | - | - | - | - | pending |
-| UploadServ | Unverified lead | - | - | - | - | - | pending |
-| UploadSt | Unverified lead | - | - | - | - | - | pending |
-| UPPIT | Unverified lead | - | - | - | - | - | pending |
-| Upstore | Unverified lead | - | - | - | - | - | pending |
-| UptoBox | Unverified lead | - | - | - | - | - | pending |
-| UsersCloud | Unverified lead | - | - | - | - | - | pending |
-| UsersDrive | File sharing | - | - | - | English | - | verified |
-| vShare | Unverified lead | - | - | - | - | - | pending |
-| WdFiles | Unverified lead | - | - | - | - | - | pending |
-| WebchinUpload | Unverified lead | - | - | - | - | - | pending |
-| Weiyun | Cloud storage | - | - | - | - | - | pending |
-| WeTransfer | File sharing | 3 GB | 1-3 days | - | English | Android, iOS | verified |
-| WorkUpload | Unverified lead | - | - | - | - | - | pending |
-| WupFile | Unverified lead | - | - | - | - | - | pending |
-| WuShare | Unverified lead | - | - | - | - | - | pending |
-| Yandex.Disk | Cloud storage | 5 GB | - | true | English, Russian | Windows, Linux, MacOS, Android, iOS | verified |
-| YourFileStore | File sharing | 500 MB | - | - | English | - | verified |
-| ZippyShare | Unverified lead | - | - | - | - | - | pending |
-| Zofile | Unverified lead | - | - | - | - | - | pending |
-| Облако Mail.ru | Cloud storage | 8 GB | - | - | Russian | Windows, Linux (WebDAV), Android, iOS | verified |
 
 ## Usage
 

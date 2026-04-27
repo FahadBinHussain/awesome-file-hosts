@@ -1,5 +1,139 @@
 [
   {
+    "name": "1FileSharing",
+    "url": "https://1filesharing.com/",
+    "summary": "Timed file-hosting service with guest uploads, 1 GB free uploads, and premium upgrades for larger files and longer retention.",
+    "limits": {
+      "max_file_size": {
+        "value": 1,
+        "unit": "GB",
+        "notes": "The current upload page states a 1.00 GB maximum file size for free uploads."
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Current public pages describe free files as sharable for 30 days, while also saying free-member files may be removed after 7 days without downloads."
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a clear total free storage quota for guest or free use."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages describe free download speed and waiting-time limits, but do not publish a clean bandwidth cap."
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "Guest uploads work without an account; paid accounts add faster downloads, larger uploads, and longer file retention."
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The cited public pages do not document a public API or CLI upload workflow."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The cited public pages do not claim end-to-end encryption for uploads."
+    },
+    "tags": [
+      "file-sharing",
+      "guest-upload",
+      "premium-upgrade",
+      "timed-hosting"
+    ],
+    "sources": [
+      {
+        "label": "Upload page",
+        "url": "https://1filesharing.com/?f=120205716",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current upload flow, 1 GB free upload limit, and retention wording for free uploads."
+      },
+      {
+        "label": "Download page",
+        "url": "https://1filesharing.com/2dBo",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current free vs premium comparison including waiting time, speed, and 30-day vs 180-day file retention wording."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy."
+      }
+    }
+  },
+  {
+    "name": "2Shared",
+    "url": "https://www.2shared.com/",
+    "summary": "Long-running file-sharing service with browser uploads, a 200 MB per-file upload limit, and a searchable public catalog.",
+    "limits": {
+      "max_file_size": {
+        "value": 200,
+        "unit": "MB",
+        "notes": "The current upload page explicitly states a max. 200 MB upload size."
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not clearly publish an automatic expiry policy for uploaded files."
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a clean current total free storage quota."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a clean current bandwidth cap."
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "The public upload page allows direct browser uploads without requiring login before selecting a file."
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The cited public pages do not document a public API or CLI upload flow."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The cited public pages do not claim end-to-end encryption."
+    },
+    "tags": [
+      "file-sharing",
+      "guest-upload",
+      "public-index",
+      "browser-upload"
+    ],
+    "sources": [
+      {
+        "label": "Upload page",
+        "url": "https://www.2shared.com/",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current upload page showing max 200 MB and public upload flow."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy."
+      }
+    }
+  },
+  {
     "name": "4shared",
     "url": "https://www.4shared.com/",
     "summary": "Long-running cloud storage and file-sharing service with a free 15 GB tier, 2 GB max uploads, and official mobile apps.",
@@ -72,6 +206,236 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+      }
+    }
+  },
+  {
+    "name": "Android File Host",
+    "url": "https://androidfilehost.com/",
+    "summary": "Large Android-focused file hosting network for developers with unlimited downloads, multiple mirrors, and a public beta API.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a general per-file upload cap for the free tier."
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish an automatic expiry period for hosted files."
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a total storage quota for free developers."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Android File Host publicly states it does not limit download speeds or bandwidth usage."
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "Developers need an account to upload and manage files; free visitors can browse and download files without registration."
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://androidfilehost.com/api/docs/",
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Android File Host publishes a beta API for browsing devices, developers, folders, updates, and files."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The cited public pages emphasize high-speed delivery and hosted storage, but do not claim end-to-end encryption."
+    },
+    "tags": [
+      "file-hosting",
+      "android-dev",
+      "api",
+      "mirror-downloads"
+    ],
+    "sources": [
+      {
+        "label": "Homepage",
+        "url": "https://androidfilehost.com/",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current positioning, unlimited-download claim, and developer-focused hosting model."
+      },
+      {
+        "label": "API Docs",
+        "url": "https://androidfilehost.com/api/docs/",
+        "retrieved_at": "2026-04-26",
+        "notes": "Official beta API documentation."
+      },
+      {
+        "label": "Membership Plans",
+        "url": "https://androidfilehost.com/user/?w=select-membership-plans",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current premium plan differences, showing uploads and management are account-based."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+      }
+    }
+  },
+  {
+    "name": "AnonFile",
+    "url": "https://anonfile.co/",
+    "summary": "Privacy-focused file hosting service with browser-side encryption, no-account sharing, public API docs, and optional free accounts.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "The public upload page currently advertises unlimited max file size for uploads."
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a clean automatic expiry policy for stored files."
+      },
+      "storage": {
+        "value": 50,
+        "unit": "GB",
+        "notes": "The public FAQ currently says free accounts get 50 GB of storage."
+      },
+      "bandwidth": {
+        "value": 10,
+        "unit": "GB/day",
+        "notes": "The public FAQ currently says free accounts get 10 GB daily transfer."
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "Anyone can share files by link without an account; free accounts add stored space and account-managed uploads."
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://anonfile.link/docs/api",
+      "cli_friendly": true,
+      "cli_example": "curl -F \"file=@example.txt\" \"https://api.anonfile.link/upload?key={YOUR_API_KEY}\"",
+      "notes": "AnonFile publishes API docs with upload and file-info endpoints."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": true,
+      "server_side_encryption": null,
+      "notes": "The current public pages claim files are encrypted before they leave the browser and that the service cannot read file contents."
+    },
+    "tags": [
+      "file-sharing",
+      "privacy",
+      "e2ee",
+      "guest-upload",
+      "api"
+    ],
+    "sources": [
+      {
+        "label": "Upload page",
+        "url": "https://anonfile.co/",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current upload page advertising unlimited max file size and password protection."
+      },
+      {
+        "label": "API documentation",
+        "url": "https://anonfile.link/docs/api",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current API docs with upload endpoint and error codes."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "The API docs imply some disallowed and banned file types through error codes, but the cited public pages do not publish a full allowlist."
+      }
+    }
+  },
+  {
+    "name": "Baidu Pan",
+    "url": "https://pan.baidu.com/",
+    "summary": "Baidu's large-scale cloud storage service with multi-device backup, file sharing, iPhone/Mac apps, and very large paid expansion tiers.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a clean current per-file upload limit."
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a clean automatic expiry policy for stored files."
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "The App Store listing describes very large available space and mentions expansion up to 16 TB, but the cited public pages do not cleanly state the current default free quota."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a clean numeric bandwidth cap for free users."
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "A Baidu account is required for cloud backup, syncing, and sharing across devices."
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The cited public consumer pages do not document a public API or CLI upload workflow."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The App Store listing says the service uses multiple data centers and cites ISO27001 and ISO27018 security certifications, but it does not claim end-to-end encryption."
+    },
+    "tags": [
+      "cloud-storage",
+      "backup",
+      "file-sharing",
+      "ios",
+      "mac"
+    ],
+    "sources": [
+      {
+        "label": "Baidu homepage navigation",
+        "url": "https://www.baidu.com/",
+        "retrieved_at": "2026-04-27",
+        "notes": "Baidu home page currently links directly to ?? (Pan) as a first-party product."
+      },
+      {
+        "label": "Baidu Pan App Store listing",
+        "url": "https://apps.apple.com/us/app/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98/id547166701",
+        "retrieved_at": "2026-04-27",
+        "notes": "Current official iPhone and Mac app listing describing backup, sharing, online file handling, and expansion up to 16 TB."
+      },
+      {
+        "label": "Baidu Pan HD App Store listing",
+        "url": "https://apps.apple.com/us/app/%E7%99%BE%E5%BA%A6%E7%BD%91%E7%9B%98-hd/id554602005",
+        "retrieved_at": "2026-04-27",
+        "notes": "Current official iPad app listing describing cloud backup, lock features, and group sharing."
+      },
+      {
+        "label": "Baidu Pan feature page",
+        "url": "https://yun.baidu.com/disk/dilatation",
+        "retrieved_at": "2026-04-27",
+        "notes": "Current first-party feature page describing automatic photo backup, smart classification, and file sharing."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "all_except_prohibited",
+        "notes": "The cited public pages describe support for photos, videos, documents, app files, messages, and call records, but do not publish a narrow allowlist."
       }
     }
   },
@@ -291,6 +655,159 @@
     }
   },
   {
+    "name": "CloudBeeline",
+    "url": "https://cloudbeeline.ru/",
+    "summary": "Beeline consumer cloud storage service with 10 GB free storage, password-protected sharing, and mobile apps.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a clean current per-file upload limit."
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a clean automatic expiry policy for stored or shared files."
+      },
+      "storage": {
+        "value": 10,
+        "unit": "GB",
+        "notes": "The current public app listing says 10 GB of cloud storage is free and forever for customers of any telecom operator."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The public pages say Beeline customers can use the service without traffic limits on the Beeline network, but do not publish a clean general bandwidth cap."
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "The current sign-in flow uses phone-number login; accounts enable storage, sharing, backups, and app access."
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The cited public pages do not document a public API or CLI upload flow."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The public pages position it as secure cloud storage and mention password-protected access to files and folders, but do not claim end-to-end encryption."
+    },
+    "tags": [
+      "cloud-storage",
+      "mobile-apps",
+      "password-protected-sharing",
+      "free-tier"
+    ],
+    "sources": [
+      {
+        "label": "CloudBeeline homepage",
+        "url": "https://cloudbeeline.ru/",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current product page describing the service, app download flow, and Beeline-network benefits."
+      },
+      {
+        "label": "Google Play listing",
+        "url": "https://play.google.com/store/apps/details?hl=en_US&id=ru.beeline.cloud",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current app description stating 10 GB free forever, password-protected access, and file/photo backup use cases."
+      },
+      {
+        "label": "App Store listing",
+        "url": "https://apps.apple.com/us/app/%D0%BE%D0%B1%D0%BB%D0%B0%D0%BA%D0%BE-%D0%B1%D0%B8%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D0%BE%D1%87%D0%B8%D1%81%D1%82%D0%B8%D1%82%D1%8C-%D0%BF%D0%B0%D0%BC%D1%8F%D1%82%D1%8C/id1495684365",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current iPhone app listing showing active iOS app availability."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "all_except_prohibited",
+        "notes": "The public pages describe storage for photos, videos, presentations, contacts, and other files, but do not publish a narrow allowlist."
+      }
+    }
+  },
+  {
+    "name": "Cloudup",
+    "url": "https://cloudup.com/",
+    "summary": "Private-by-default file and link sharing service from Automattic with public API docs, direct links, and stream-based sharing.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited official public pages do not publish a clean current maximum upload size."
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited official public pages do not publish a clean automatic expiry policy for files or streams."
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited official public pages do not publish a clean total free storage quota."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited official public pages do not publish a clean current bandwidth cap."
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "Cloudup accounts are required for authenticated API use, stream management, and application registration."
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://n.cloudup.com/",
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Cloudup publishes official API documentation for streams, items, uploads, OAuth, and oEmbed."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The official docs require HTTPS and describe private-by-default sharing, but do not claim end-to-end encryption."
+    },
+    "tags": [
+      "file-sharing",
+      "api",
+      "private-by-default",
+      "direct-links",
+      "oembed"
+    ],
+    "sources": [
+      {
+        "label": "API documentation",
+        "url": "https://n.cloudup.com/",
+        "retrieved_at": "2026-04-26",
+        "notes": "Official API docs covering items, streams, authentication, and uploads."
+      },
+      {
+        "label": "Direct links update",
+        "url": "https://blog.cloudup.com/2017/02/16/a-new-home-for-cloudup-direct-links/",
+        "retrieved_at": "2026-04-26",
+        "notes": "Official post describing direct links, file hosting, and supported asset types."
+      },
+      {
+        "label": "Privacy policy update",
+        "url": "https://blog.cloudup.com/2018/08/24/privacy-policy-update/",
+        "retrieved_at": "2026-04-26",
+        "notes": "Official post confirming Cloudup remained an active Automattic service under shared privacy terms."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "all_except_prohibited",
+        "notes": "Official posts describe support for files, URLs, HTML, XML, SVG, and media embeds, but do not publish a full restrictive allowlist."
+      }
+    }
+  },
+  {
     "name": "Cozy Cloud",
     "url": "https://en.cozy.io/",
     "summary": "French personal cloud platform now branded as Twake Workplace, with a free 5 GB tier and official desktop and mobile apps.",
@@ -367,6 +884,166 @@
     }
   },
   {
+    "name": "Data.hu",
+    "url": "https://data.hu/",
+    "summary": "Hungarian file-sharing service with free browser uploads, unlimited advertised storage, optional FTP uploads, and premium-gated large downloads.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "The official public pages promote large-file sharing but do not publish a clean current maximum upload size."
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited official public pages do not publish a clean automatic expiry policy for hosted files."
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "The homepage advertises unlimited storage for accounts, but does not publish a structured quota table beyond that claim."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The official pages do not publish a clean bandwidth cap, but free downloads above 200 MB are restricted to premium users."
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "Guest uploads work through the homepage; registered users can track uploads, organize files, and use free FTP upload access."
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": true,
+      "cli_example": "Use any FTP client after logging in; the help page says FTP upload is free for registered users.",
+      "notes": "The service does not publish a public API, but official help documents free FTP upload for registered users."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The cited official public pages do not claim end-to-end encryption."
+    },
+    "tags": [
+      "file-sharing",
+      "guest-upload",
+      "ftp-upload",
+      "hungary",
+      "premium-download-gating"
+    ],
+    "sources": [
+      {
+        "label": "Homepage",
+        "url": "https://data.hu/",
+        "retrieved_at": "2026-04-26",
+        "notes": "Official homepage describing free uploads, unlimited storage language, and global access."
+      },
+      {
+        "label": "Help / FAQ",
+        "url": "https://data.hu/segitseg",
+        "retrieved_at": "2026-04-26",
+        "notes": "Official help page describing guest uploads, registered-user benefits, and free FTP uploads."
+      },
+      {
+        "label": "Example download page",
+        "url": "https://data.hu/get/14779606/Gylksmmr_3-grbcstl.z01?pid=1976132609",
+        "retrieved_at": "2026-04-26",
+        "notes": "Official download page showing that files above 200 MB require premium access for download."
+      },
+      {
+        "label": "Premium page",
+        "url": "https://data.hu/premium",
+        "retrieved_at": "2026-04-26",
+        "notes": "Official premium page describing unlimited-speed downloads and premium benefits."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "all_except_prohibited",
+        "notes": "The homepage explicitly mentions videos, music, and large files; the cited public pages do not publish a narrow allowlist."
+      }
+    }
+  },
+  {
+    "name": "DDownload",
+    "url": "https://ddownload.com/",
+    "summary": "Cloud storage and file-sharing service with a free 5 TB plan, 30-day inactivity policy, guest uploads, and a public API.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited official public pages do not publish a clean current maximum upload size."
+      },
+      "retention": {
+        "value": 30,
+        "unit": "days",
+        "notes": "The official pricing page currently lists 30 days of file inactivity for the free plan."
+      },
+      "storage": {
+        "value": 5,
+        "unit": "TB",
+        "notes": "The official pricing page currently lists 5 TB of storage space for the free plan."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The official pricing page says the free plan has limited traffic per day, but does not publish a clean numeric cap."
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "Guest uploads appear to be supported; creating an account unlocks the free storage plan, file manager, folders, stats, and API key access."
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://ddownload.com/api",
+      "cli_friendly": true,
+      "cli_example": "curl \"https://api-v2.ddownload.com/api/account/info?key=YOUR_KEY\"",
+      "notes": "DDownload publishes official API documentation for account info, uploads, files, and folders."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The official pages describe secure storage and HTTPS delivery, but do not claim end-to-end encryption."
+    },
+    "tags": [
+      "cloud-storage",
+      "file-sharing",
+      "api",
+      "guest-upload",
+      "free-tier"
+    ],
+    "sources": [
+      {
+        "label": "Homepage and pricing",
+        "url": "https://ddownload.com/",
+        "retrieved_at": "2026-04-26",
+        "notes": "Official page showing free-plan storage, inactivity limit, and limited traffic language."
+      },
+      {
+        "label": "FAQ",
+        "url": "https://ddownload.com/faq.html",
+        "retrieved_at": "2026-04-26",
+        "notes": "Official FAQ describing general file-hosting model, allowed content restrictions, and delete links."
+      },
+      {
+        "label": "API documentation",
+        "url": "https://ddownload.com/api",
+        "retrieved_at": "2026-04-26",
+        "notes": "Official API docs covering account, files, folders, and upload-related endpoints."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "all_except_prohibited",
+        "notes": "The official FAQ says all kinds of files may be uploaded except pornography, nudity, sexual images, offensive material, and copyrighted material."
+      }
+    }
+  },
+  {
     "name": "Degoo",
     "url": "https://degoo.com/",
     "summary": "Consumer cloud backup service with a free 20 GB tier, web access, and mobile apps, but no current desktop client.",
@@ -439,6 +1116,141 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+      }
+    }
+  },
+  {
+    "name": "DFiles",
+    "url": "https://dfiles.eu/",
+    "summary": "Long-running file hosting service under the DepositFiles brand with free uploads up to 10 GB, 90-day retention after downloads, mobile apps, and FTP/remote upload support.",
+    "limits": {
+      "max_file_size": {
+        "value": 10,
+        "unit": "GB",
+        "notes": "The official DepositFiles FAQ and homepage state that users can upload files up to 10 GB."
+      },
+      "retention": {
+        "value": 90,
+        "unit": "days",
+        "notes": "The official FAQ says uploaded files are stored for 90 days, and each download extends retention by another 90 days."
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "The official pages describe file storage time and space as unlimited, but do not publish a structured free-tier quota table."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The official public pages do not publish a clean numeric bandwidth cap for free users."
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "Free use is available without payment; creating an account enables easier file management, removal options, and additional account features."
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": true,
+      "cli_example": "Upload by FTP or remote HTTP/FTP transfer after creating an account.",
+      "notes": "The official pages document FTP upload and remote HTTP/FTP upload, but do not publish a public developer API."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The official pages position it as safe file transfer and storage, but do not claim end-to-end encryption."
+    },
+    "tags": [
+      "file-sharing",
+      "ftp-upload",
+      "remote-upload",
+      "mobile-apps",
+      "free-tier"
+    ],
+    "sources": [
+      {
+        "label": "DepositFiles homepage",
+        "url": "https://depositfiles.com/",
+        "retrieved_at": "2026-04-26",
+        "notes": "Official homepage describing unlimited storage time and space, 10 GB uploads, password protection, remote upload, and apps."
+      },
+      {
+        "label": "DepositFiles FAQ",
+        "url": "https://depositfiles.com/en/faq.html",
+        "retrieved_at": "2026-04-26",
+        "notes": "Official FAQ describing free use, 10 GB upload size, allowed file types, 90-day retention, and privacy model."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "all_except_prohibited",
+        "notes": "The official FAQ says many file types are allowed, while copyrighted or illegal content may be removed."
+      }
+    }
+  },
+  {
+    "name": "DirectUpload",
+    "url": "https://www.directupload.eu/",
+    "summary": "Long-running German image host with free anonymous uploads, short custom auto-delete options, and a 1-year minimum storage period.",
+    "limits": {
+      "max_file_size": {
+        "value": 8,
+        "unit": "MB",
+        "notes": "The current upload page lists a maximum of 8 MB per file."
+      },
+      "retention": {
+        "value": 1,
+        "unit": "years",
+        "notes": "The homepage currently advertises a 1-year minimum storage duration, while uploaders can also choose shorter auto-delete periods during upload."
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "DirectUpload is an image-hosting service rather than a published quota-based cloud storage plan."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a current bandwidth limit."
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "Anonymous uploads are supported; registered members can store images free and long-term."
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The cited public pages do not document a public API or CLI workflow."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The cited public pages focus on image hosting features and do not claim end-to-end encryption."
+    },
+    "tags": [
+      "image-hosting",
+      "anonymous-friendly",
+      "auto-delete-options",
+      "german-service"
+    ],
+    "sources": [
+      {
+        "label": "Homepage",
+        "url": "https://www.directupload.net/",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current file-size limit, supported image formats, auto-delete options, and minimum storage duration."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "images-and-pdf",
+        "notes": "The current upload page supports JPG, GIF, PNG, WEBP, BMP, HEIC, and PDF uploads, with some formats converted automatically."
       }
     }
   },
@@ -659,6 +1471,242 @@
     }
   },
   {
+    "name": "FEX.NET",
+    "url": "https://new.fex.net/en/",
+    "summary": "Modern cloud storage and file-sharing service with online viewing, link sharing, Android app support, and encrypted-in-transit data handling.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a clean current maximum upload size."
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a clean automatic expiry policy for shared files."
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages describe cloud storage and sharing, but do not expose a clean current free-quota number in accessible text."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a clean numeric bandwidth cap."
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "The current product pages and app positioning revolve around account-based cloud storage, online viewing, and shared links."
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The cited public pages do not document a public API or CLI upload workflow."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The Google Play listing says data is encrypted in transit and can be deleted on request, but the cited pages do not claim end-to-end encryption."
+    },
+    "tags": [
+      "cloud-storage",
+      "file-sharing",
+      "android-app",
+      "online-viewing",
+      "link-sharing"
+    ],
+    "sources": [
+      {
+        "label": "FEX homepage",
+        "url": "https://new.fex.net/en/",
+        "retrieved_at": "2026-04-27",
+        "notes": "Current official product entry point for the active FEX.NET service."
+      },
+      {
+        "label": "Google Play listing",
+        "url": "https://play.google.com/store/apps/details?id=net.fex.androidv2",
+        "retrieved_at": "2026-04-27",
+        "notes": "Current Android app description describing cloud storage, online viewing, and link sharing."
+      },
+      {
+        "label": "Pricing page",
+        "url": "https://new.fex.net/pricing",
+        "retrieved_at": "2026-04-27",
+        "notes": "Current official pricing entry point, though the accessible public text is limited by JavaScript rendering."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "The cited public pages describe storing photos, videos, documents, and music, but do not publish a full allowlist."
+      }
+    }
+  },
+  {
+    "name": "File-Upload.net",
+    "url": "https://www.file-upload.net/en/",
+    "summary": "Guest-friendly German file host with 1 GB uploads, up to one year of storage, optional registration for management features, and desktop/mobile upload tools.",
+    "limits": {
+      "max_file_size": {
+        "value": 1,
+        "unit": "GB",
+        "notes": "The English upload page currently states a maximum size of 1 GB per file."
+      },
+      "retention": {
+        "value": 365,
+        "unit": "days",
+        "notes": "The English upload page says files are stored up to one year, and the FAQ says images stay at least one year before later cleanup rules apply."
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "The registration page advertises non-limited space for free members, but the public pages do not present a clean structured quota table."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The registration page advertises no traffic limit, but the public pages do not present a clean numeric bandwidth cap."
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "Guest uploads work without registration; free registration adds file overview, statistics, and management features."
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The service offers upload tools and an uploader app, but the cited public pages do not document a public developer API or CLI workflow."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The FAQ describes randomly generated file names and delete links, but the public pages do not claim end-to-end encryption."
+    },
+    "tags": [
+      "file-sharing",
+      "guest-upload",
+      "desktop-tool",
+      "android-app",
+      "affiliate"
+    ],
+    "sources": [
+      {
+        "label": "English upload page",
+        "url": "https://www.file-upload.net/en/",
+        "retrieved_at": "2026-04-27",
+        "notes": "Current upload page stating 1 GB per file and up to one year of storage."
+      },
+      {
+        "label": "FAQ",
+        "url": "https://www.file-upload.net/hilfe.php",
+        "retrieved_at": "2026-04-27",
+        "notes": "Current FAQ describing retention, allowed file types, and delete links."
+      },
+      {
+        "label": "Register page",
+        "url": "https://www.file-upload.net/en/registrieren.php",
+        "retrieved_at": "2026-04-27",
+        "notes": "Current registration page listing non-limited space and free member advantages."
+      },
+      {
+        "label": "Upload tools",
+        "url": "https://www.file-upload.net/tools.php",
+        "retrieved_at": "2026-04-27",
+        "notes": "Current tools page showing desktop upload tool and Android uploader app."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "all_except_prohibited",
+        "notes": "The FAQ says there are no file-format limits as long as uploads do not violate the terms and conditions."
+      }
+    }
+  },
+  {
+    "name": "File.AL",
+    "url": "https://file.al/",
+    "summary": "Account-based file host with browser and remote URL uploads, a free registered tier, and structured premium comparison published on the site.",
+    "limits": {
+      "max_file_size": {
+        "value": 20,
+        "unit": "GB",
+        "notes": "The premium comparison currently lists a 20 GB maximum upload file size for registered users."
+      },
+      "retention": {
+        "value": 30,
+        "unit": "days",
+        "notes": "The premium comparison currently says registered-user files are deleted 30 days after the last download."
+      },
+      "storage": {
+        "value": 1,
+        "unit": "TB",
+        "notes": "The premium comparison currently lists 1 TB of storage space for registered users."
+      },
+      "bandwidth": {
+        "value": 5,
+        "unit": "GB/day",
+        "notes": "The premium comparison currently lists 5 GB of download volume per day for registered users."
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "Uploads are enabled for confirmed users only, and registration enables remote URL upload plus the published registered-user tier."
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The site navigation mentions API, but the cited public pages do not expose a clear public developer documentation page for verification."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The public pages position File.AL as secure storage and sharing, but do not claim end-to-end encryption."
+    },
+    "tags": [
+      "file-sharing",
+      "remote-upload",
+      "registered-tier",
+      "browser-upload"
+    ],
+    "sources": [
+      {
+        "label": "Homepage",
+        "url": "https://file.al/",
+        "retrieved_at": "2026-04-27",
+        "notes": "Current homepage showing uploads are enabled for confirmed users only and that remote URL upload requires registration."
+      },
+      {
+        "label": "Premium comparison",
+        "url": "https://file.al/?op=subscribe&usr_id=302491",
+        "retrieved_at": "2026-04-27",
+        "notes": "Current comparison table with anon, registered, and premium limits including storage, retention, and daily bandwidth."
+      },
+      {
+        "label": "Login navigation page",
+        "url": "https://file.al/login.html",
+        "retrieved_at": "2026-04-27",
+        "notes": "Current site navigation and account structure, including FAQ, API mention, and earn-money section."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy."
+      }
+    }
+  },
+  {
     "name": "file.io",
     "url": "https://www.file.io/",
     "summary": "Temporary file sharing service with a public REST API and auto-delete behavior.",
@@ -731,6 +1779,222 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+      }
+    }
+  },
+  {
+    "name": "Filebin",
+    "url": "https://filebin.net/",
+    "summary": "Open-source no-account file sharing service with a public API and automatic short-lived deletion.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a per-file upload size limit."
+      },
+      "retention": {
+        "value": 6,
+        "unit": "days",
+        "notes": "The homepage currently states uploaded files are automatically deleted 6 days after upload."
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Filebin is a temporary sharing service rather than a published quota-based storage plan."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a numeric bandwidth cap, but uploads can be blocked when the overall service storage capacity is reached."
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "No registration is required; anyone with the link can upload, download, or manually delete the bin contents."
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://filebin.net/api",
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Filebin publishes API documentation for uploading, listing, downloading, and deleting files."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": false,
+      "notes": "Filebin says HTTPS protects data in transit, but files are not encrypted on the server side and should be client-encrypted if needed."
+    },
+    "tags": [
+      "file-sharing",
+      "no-account-required",
+      "api",
+      "open-source"
+    ],
+    "sources": [
+      {
+        "label": "Homepage",
+        "url": "https://filebin.net/",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current no-registration flow and 6-day automatic deletion."
+      },
+      {
+        "label": "API Documentation",
+        "url": "https://filebin.net/api",
+        "retrieved_at": "2026-04-26",
+        "notes": "Official API docs."
+      },
+      {
+        "label": "About",
+        "url": "https://filebin.net/about",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current open-source positioning."
+      },
+      {
+        "label": "Privacy",
+        "url": "https://filebin.net/privacy",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current statement that files are not encrypted on the server side."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "all_except_prohibited",
+        "notes": "The terms prohibit illegal, copyrighted, malicious, obscene, and abusive uses, but the service otherwise accepts arbitrary uploaded content."
+      }
+    }
+  },
+  {
+    "name": "FileFactory",
+    "url": "https://www.filefactory.com/",
+    "summary": "Long-running file hosting service with free accounts, 5 GB upload limits, and 90-day storage for free members.",
+    "limits": {
+      "max_file_size": {
+        "value": 5,
+        "unit": "GB",
+        "notes": "The current premium comparison page lists a 5 GB max upload file size for free members."
+      },
+      "retention": {
+        "value": 90,
+        "unit": "days",
+        "notes": "The current premium comparison page lists 90 days of file storage time for free members."
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a total storage quota for free members."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The current comparison page says free members face hourly download limits but does not publish a clean numeric bandwidth cap."
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "A free member account is required for uploads and 90-day storage; anonymous users can only download with heavier limits."
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The cited public pages do not document a public API or CLI workflow."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The cited public pages emphasize hosted download service features but do not claim end-to-end encryption."
+    },
+    "tags": [
+      "file-hosting",
+      "free-membership",
+      "large-files",
+      "long-running"
+    ],
+    "sources": [
+      {
+        "label": "Premium Comparison",
+        "url": "https://www.filefactory.com/premium/",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current free-vs-anonymous comparison with upload size, storage time, and download limit details."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+      }
+    }
+  },
+  {
+    "name": "FileKarelia",
+    "url": "https://file.karelia.ru/",
+    "summary": "Russian file-sharing service with account-based uploads, month-long retention after access, and larger limits for registered users.",
+    "limits": {
+      "max_file_size": {
+        "value": 2,
+        "unit": "GB",
+        "notes": "The published terms currently allow files up to 2 GB for registered users, while the landing page advertises smaller limits in some unauthenticated states."
+      },
+      "retention": {
+        "value": 30,
+        "unit": "days",
+        "notes": "The published terms say files are deleted after 30 days since the last access for ordinary uploads."
+      },
+      "storage": {
+        "value": 10,
+        "unit": "GB",
+        "notes": "The published terms say the maximum total upload volume for registered users is 10 GB."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a clean numeric bandwidth cap."
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "The current landing page says only registered users can upload, and registration enables larger upload sizes and upload management."
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The cited public pages do not document a public API or CLI upload flow."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The service is delivered over HTTPS, but the cited public pages do not claim end-to-end encryption."
+    },
+    "tags": [
+      "file-sharing",
+      "account-required",
+      "russian",
+      "link-sharing"
+    ],
+    "sources": [
+      {
+        "label": "Landing page",
+        "url": "https://file.karelia.ru/",
+        "retrieved_at": "2026-04-27",
+        "notes": "Current landing page describing registration requirement and the sharing workflow."
+      },
+      {
+        "label": "Terms of service",
+        "url": "https://file.karelia.ru/terms",
+        "retrieved_at": "2026-04-27",
+        "notes": "Current terms describing file-size limits, total upload volume, prohibited content, and retention after last access."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "all_except_prohibited",
+        "notes": "The terms prohibit malware, copyrighted material without permission, spam, encrypted archive file lists, and other disallowed content."
       }
     }
   },
@@ -2143,6 +3407,70 @@
     }
   },
   {
+    "name": "SendSpace",
+    "url": "https://www.sendspace.com/",
+    "summary": "Transfer-oriented file sharing service with a current 300 MB free upload limit and optional recipient delivery without requiring recipient accounts.",
+    "limits": {
+      "max_file_size": {
+        "value": 300,
+        "unit": "MB",
+        "notes": "The current upload page says the free-user upload limit is temporarily set to 300 MB while new servers are brought online."
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public upload pages do not publish a clean automatic expiry period for free uploads."
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "SendSpace is presented as a transfer service rather than a published free storage quota."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public upload pages do not publish a numeric bandwidth cap for free users."
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "Files can be uploaded and shared instantly from the public upload page, while paid plans unlock password protection and higher limits."
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The cited public pages do not document a public API or CLI workflow."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The cited public pages position SendSpace as secure file transfer, but do not claim end-to-end encryption."
+    },
+    "tags": [
+      "file-sharing",
+      "no-account-required",
+      "temporary-limit",
+      "recipient-delivery"
+    ],
+    "sources": [
+      {
+        "label": "Homepage",
+        "url": "https://www.sendspace.com/",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current free upload flow, 300 MB limit, and optional recipient delivery."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+      }
+    }
+  },
+  {
     "name": "Sync",
     "url": "https://www.sync.com/",
     "summary": "Privacy-focused cloud storage service with a 5 GB free tier and end-to-end encrypted apps across desktop and mobile.",
@@ -2419,6 +3747,234 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+      }
+    }
+  },
+  {
+    "name": "Ulozto",
+    "url": "https://ulozto.net/",
+    "summary": "Modern cloud storage service with a free 25 GB plan, official mobile apps, Windows backup tooling, end-to-end encryption claims, and a resumable upload API.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public product pages do not publish a general single-file upload cap for the free plan."
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public free-plan pages do not state an automatic expiry period for stored files in an active account."
+      },
+      "storage": {
+        "value": 25,
+        "unit": "GB",
+        "notes": "Ulozto Disk currently offers a free plan with 25 GB of storage."
+      },
+      "bandwidth": {
+        "value": 150,
+        "unit": "GB/month",
+        "notes": "The current pricing page lists 150 GB of data transfer per month for the free plan."
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "A Ulozto account is required for the free 25 GB cloud plan, app access, sync, and API-based uploads."
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://ulozto.net/upload-resumable-api-beta",
+      "cli_friendly": true,
+      "cli_example": "bash sample uploader available from the official resumable upload API page",
+      "notes": "Ulozto publishes a resumable upload API and includes official Bash and Python example scripts."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": true,
+      "server_side_encryption": true,
+      "notes": "Ulozto Disk currently markets its cloud plan as end-to-end encrypted and says the service does not know the file contents."
+    },
+    "tags": [
+      "cloud-storage",
+      "apps",
+      "api",
+      "e2ee"
+    ],
+    "sources": [
+      {
+        "label": "Homepage",
+        "url": "https://ulozto.net/",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current free 25 GB plan, end-to-end encryption messaging, and Windows app positioning."
+      },
+      {
+        "label": "Plans and Pricing",
+        "url": "https://ulozto.net/koupit-disk",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current 25 GB free storage and 150 GB/month data-transfer limit."
+      },
+      {
+        "label": "Upload API",
+        "url": "https://ulozto.net/upload-resumable-api-beta",
+        "retrieved_at": "2026-04-26",
+        "notes": "Official resumable upload API with Bash and Python examples."
+      },
+      {
+        "label": "Android App",
+        "url": "https://ulozto.net/androidapp",
+        "retrieved_at": "2026-04-26",
+        "notes": "Official Android app page."
+      },
+      {
+        "label": "iOS App",
+        "url": "https://ulozto.net/iosapp",
+        "retrieved_at": "2026-04-26",
+        "notes": "Official iOS app page."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms."
+      }
+    }
+  },
+  {
+    "name": "Upload.ee",
+    "url": "https://www.upload.ee/",
+    "summary": "Estonian file host with anonymous uploads, broad file-type support, and clear free retention rules for guest and registered users.",
+    "limits": {
+      "max_file_size": {
+        "value": 100,
+        "unit": "MB",
+        "notes": "The FAQ currently says unregistered users can upload up to 100 MB files, while registered users can upload up to 200 MB."
+      },
+      "retention": {
+        "value": 50,
+        "unit": "days",
+        "notes": "The FAQ and rules currently say anonymous files expire 50 days after last download, while registered users' files expire after 120 days."
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a total storage quota for the service."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The upload page says there is no waiting time and references maximum download speed, but the cited pages do not publish a numeric bandwidth cap."
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "Anonymous uploads are supported; registered users get larger uploads, longer retention, galleries, and privacy controls."
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The cited public pages show iframe embedding and an old Java upload helper, but they do not document a public developer API or CLI workflow."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The cited public pages do not claim end-to-end encryption."
+    },
+    "tags": [
+      "file-sharing",
+      "anonymous-friendly",
+      "password-protection",
+      "iframe-embed"
+    ],
+    "sources": [
+      {
+        "label": "Upload Page",
+        "url": "https://www.upload.ee/",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current upload-page limits, anonymous-vs-registered retention summary, and broad file-extension claim."
+      },
+      {
+        "label": "FAQ",
+        "url": "https://www.upload.ee/faq.html",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current max upload size, retention rules, and registered-user advantages."
+      },
+      {
+        "label": "Rules",
+        "url": "https://www.upload.ee/?page=rules",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current prohibited-content rules and retention wording."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "all_except_prohibited",
+        "notes": "The FAQ currently says Upload.ee supports all known and unknown file formats, but executables like exe, msi, pif, com, and bat can only be uploaded by registered users, and illegal/copyrighted content is forbidden."
+      }
+    }
+  },
+  {
+    "name": "UploadFiles.io",
+    "url": "https://ufile.io/",
+    "summary": "Free file sharing service with no-registration guest uploads, 5 GB max file size, optional expiry controls, and an upgrade path to free managed storage.",
+    "limits": {
+      "max_file_size": {
+        "value": 5,
+        "unit": "GB",
+        "notes": "The current homepage lists a 5 GB per-file limit for free users."
+      },
+      "retention": {
+        "value": 30,
+        "unit": "days",
+        "notes": "The homepage currently says guest uploads are hosted for a maximum of 30 days, with optional shorter settings like 1 hour, 1 day, 7 days, or 1 download."
+      },
+      "storage": {
+        "value": 10,
+        "unit": "GB",
+        "notes": "The homepage currently says a free account unlocks 10 GB of permanent storage."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The homepage markets the service as having no restrictions for sharing and advertises direct downloads up to 1,000 times per day, but it does not publish a clean numeric bandwidth cap."
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "Guest uploads work without registration; a free account unlocks management features, 10 GB permanent storage, more simultaneous uploads, passwords, and other controls."
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The cited public pages do not document a public API or CLI workflow."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": true,
+      "notes": "The homepage says uploads use SHA-256 SSL in transit and encrypted cloud storage, but these claims do not establish end-to-end encryption."
+    },
+    "tags": [
+      "file-sharing",
+      "no-account-required",
+      "free-account-upgrade",
+      "expiry-options"
+    ],
+    "sources": [
+      {
+        "label": "Homepage",
+        "url": "https://ufile.io/",
+        "retrieved_at": "2026-04-26",
+        "notes": "Current 5 GB upload limit, guest 30-day hosting, free-account storage, expiry options, and feature overview."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "all_except_prohibited",
+        "notes": "The homepage currently says there are no restrictions on file types for uploads, though prohibited content may still be restricted under the service terms."
       }
     }
   },

@@ -7,7 +7,9 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
+    "verification_status": "rejected",
+    "verification_notes": "This imported lead is encoding-corrupted and cannot be reliably identified or reviewed as a distinct host entry.",
+    "verification_references": [],
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -20,8 +22,21 @@
       "English"
     ],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided import list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided import list on 2026-04-26",
+    "verification_notes": "The service is active, but the accessible current public source trail is too weak for reliable structured verification, and the publicly visible user experience fits a heavily restricted freemium cyberlocker model rather than the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "Trustpilot reviews with official 1fichier replies about free-tier restrictions",
+        "url": "https://www.trustpilot.com/review/1fichier.com",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "The Verge on Nintendo case against 1fichier",
+        "url": "https://www.theverge.com/news/624618/nintendo-piracy-lawsuit-1fichier",
+        "retrieved_at": "2026-04-26"
+      }
+    ]
   },
   {
     "name": "1filesharing",
@@ -31,8 +46,10 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": null,
+    "verification_references": []
   },
   {
     "name": "2Share",
@@ -42,8 +59,10 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": null,
+    "verification_references": []
   },
   {
     "name": "360 Yunpan",
@@ -53,8 +72,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "360 announced that personal cloud-disk service would stop and user data would be deleted by February 1, 2017.",
+    "verification_references": [
+      {
+        "label": "360 community announcement coverage",
+        "url": "https://bbs.360.cn/thread-14621188-1-1.html",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "ChinaTechNews coverage of 360 Cloud Disk shutdown",
+        "url": "https://www.chinatechnews.com/2016/10/27/24402-illegal-activities-push-360-cloud-disk-to-stop-services-in-china",
+        "retrieved_at": "2026-04-26"
+      }
+    ]
   },
   {
     "name": "4shared",
@@ -79,6 +111,14 @@
     "languages": [],
     "applications": [],
     "verification_status": "rejected",
+    "verification_notes": "The current service is a 60-day free trial for a premium product rather than a stable ongoing free tier.",
+    "verification_references": [
+      {
+        "label": "4sync help center",
+        "url": "https://www.4sync.com/web/helpCenter/",
+        "retrieved_at": "2026-04-26"
+      }
+    ],
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -89,8 +129,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The current domain appears parked or degraded, and the surrounding evidence points to an incentive-driven earn-money filehost pattern rather than a trustworthy actively curated host for this list.",
+    "verification_references": [
+      {
+        "label": "IPAddress summary for 9xupload.xyz",
+        "url": "https://www.ipaddress.com/website/9xupload.xyz/",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "SiteIndices summary for 9xupload.xyz",
+        "url": "https://9xupload.xyz.siteindices.com/",
+        "retrieved_at": "2026-04-26"
+      }
+    ]
   },
   {
     "name": "Alfafile",
@@ -100,8 +153,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The current service fits the incentive-driven premium cyberlocker pattern with affiliate payouts and gated premium download features, so it does not meet the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "Alfafile affiliate program",
+        "url": "https://alfafile.net/affiliate",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "Alfafile FAQ: premium benefits",
+        "url": "https://alfafile.net/faq/2",
+        "retrieved_at": "2026-04-26"
+      }
+    ]
   },
   {
     "name": "AndroidFileHost",
@@ -111,7 +177,7 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
+    "verification_status": "verified",
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -122,8 +188,10 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": null,
+    "verification_references": []
   },
   {
     "name": "AnonFiles",
@@ -133,7 +201,20 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
+    "verification_status": "rejected",
+    "verification_notes": "Service shut down in August 2023 after years of abuse and no longer operates as an active host.",
+    "verification_references": [
+      {
+        "label": "TechRadar: Anonymous file-sharing site shuts down",
+        "url": "https://www.techradar.com/pro/security/anonymous-file-sharing-site-has-shut-down-after-years-of-abuse",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "Cybernews: AnonFiles shuts down",
+        "url": "https://cybernews.com/tech/anonfiles-shuts-down/",
+        "retrieved_at": "2026-04-26"
+      }
+    ],
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -144,8 +225,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The current service is an incentive-driven premium filehost with affiliate monetization and throttled free downloads, so it does not meet the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "AusFile homepage",
+        "url": "https://ausfile.com/",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "AusFile make money page",
+        "url": "https://ausfile.com/make_money/",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "AusFile premium comparison",
+        "url": "https://ausfile.com/premium/",
+        "retrieved_at": "2026-04-26"
+      }
+    ]
   },
   {
     "name": "Baidu Pan",
@@ -155,8 +254,10 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": null,
+    "verification_references": []
   },
   {
     "name": "BayFiles",
@@ -166,8 +267,16 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The current BayFiles domain appears to be an unaffiliated rebrand or wrapper rather than a trustworthy continuation of the original service, so it does not meet the repo's verification bar.",
+    "verification_references": [
+      {
+        "label": "BayFiles current site",
+        "url": "https://www.bayfiles.my/",
+        "retrieved_at": "2026-04-26"
+      }
+    ]
   },
   {
     "name": "BdUpload",
@@ -177,8 +286,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The available public evidence frames this as an earn-money file-sharing host, which does not meet the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "Scamadviser summary for files.bdupload.com",
+        "url": "https://www.scamadviser.com/check-website/files.bdupload.com",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "Usitestat summary for bdupload.me",
+        "url": "https://bdupload.me.usitestat.com/",
+        "retrieved_at": "2026-04-26"
+      }
+    ]
   },
   {
     "name": "BezSms",
@@ -223,7 +345,20 @@
       "Android",
       "iOS"
     ],
-    "verification_status": "pending",
+    "verification_status": "rejected",
+    "verification_notes": "The service is active, but the accessible current public source trail is too weak for reliable structured verification, and the publicly visible user experience fits a heavily restricted freemium cyberlocker model rather than the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "Trustpilot reviews with official 1fichier replies about free-tier restrictions",
+        "url": "https://www.trustpilot.com/review/1fichier.com",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "The Verge on Nintendo case against 1fichier",
+        "url": "https://www.theverge.com/news/624618/nintendo-piracy-lawsuit-1fichier",
+        "retrieved_at": "2026-04-26"
+      }
+    ],
     "source": "User-provided import list on 2026-04-26"
   },
   {
@@ -249,8 +384,10 @@
       "Russian"
     ],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided import list on 2026-04-26"
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26",
+    "verification_notes": null,
+    "verification_references": []
   },
   {
     "name": "CloudGhost",
@@ -260,8 +397,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The service follows the incentive-driven premium filehost pattern with download throttling, download timers, and payout pages, so it does not meet the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "CloudGhost FAQ",
+        "url": "https://www.cloudghost.net/faq.html",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "CloudGhost premium/download comparison",
+        "url": "https://www.cloudghost.net/m1x3dnf3wr0m",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "CloudGhost make money page",
+        "url": "https://www.cloudghost.net/make_money.html",
+        "retrieved_at": "2026-04-26"
+      }
+    ]
   },
   {
     "name": "Cloudup",
@@ -271,8 +426,10 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": null,
+    "verification_references": []
   },
   {
     "name": "Cozy Cloud",
@@ -306,7 +463,20 @@
     ],
     "applications": [],
     "verification_status": "rejected",
-    "source": "User-provided import list on 2026-04-26"
+    "source": "User-provided import list on 2026-04-26",
+    "verification_notes": "The service fits the ad-heavy reward-filehost pattern and does not meet the repo's quality bar for verified hosts.",
+    "verification_references": [
+      {
+        "label": "DailyUploads FAQ",
+        "url": "https://dailyuploads.net/pages/faq/",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "DailyUploads terms",
+        "url": "https://dailyuploads.net/pages/tos/",
+        "retrieved_at": "2026-04-26"
+      }
+    ]
   },
   {
     "name": "DataFileHost",
@@ -316,7 +486,15 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
+    "verification_status": "rejected",
+    "verification_notes": "The original file-hosting service is gone; the current domain explicitly says the old DataFileHost is no more.",
+    "verification_references": [
+      {
+        "label": "DataFileHost: What happened to the old DataFileHost",
+        "url": "https://www.datafilehost.com/what-happened-to-the-old-datafilehost",
+        "retrieved_at": "2026-04-26"
+      }
+    ],
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -327,8 +505,10 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": null,
+    "verification_references": []
   },
   {
     "name": "Datei",
@@ -360,8 +540,10 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": null,
+    "verification_references": []
   },
   {
     "name": "Degoo",
@@ -404,11 +586,13 @@
     "name": "DirectUpload",
     "type": "Unverified lead",
     "free_volume": null,
-    "shelf_life": null,
+    "shelf_life": "1 year minimum",
     "download_count": null,
-    "languages": [],
+    "languages": [
+      "German"
+    ],
     "applications": [],
-    "verification_status": "pending",
+    "verification_status": "verified",
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -432,8 +616,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The available public evidence describes DoraUpload as a classic PPD/PPS affiliate cyberlocker, which puts it outside the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "WJunction thread quoting DoraUpload PPD and PPS program",
+        "url": "https://www.wjunction.com/threads/doraupload-com-ppd-pps-simultaneous-earning.201596/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "BeerMoneyForum summary of DoraUpload payouts",
+        "url": "https://www.beermoneyforum.com/threads/doraupload-com-reviews-scam-or-legit.120794/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "DoUploads",
@@ -443,8 +640,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The service openly runs a pay-per-download affiliate program and premium gating model, which puts it outside the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "DoUploads homepage",
+        "url": "https://douploads.net/",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "DoUploads rewards program",
+        "url": "https://douploads.net/make_money.html",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "DoUploads premium comparison",
+        "url": "https://douploads.net/premium.html",
+        "retrieved_at": "2026-04-26"
+      }
+    ]
   },
   {
     "name": "Downace",
@@ -454,8 +669,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The available public evidence points to a cyberlocker-style free file host with weak trustworthy current sourcing, so it does not meet the repo's verification and curation bar.",
+    "verification_references": [
+      {
+        "label": "Hypestat summary for DownAce",
+        "url": "https://hypestat.com/info/downace.com",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "MirrorAce host list entry for DownAce",
+        "url": "https://mirrorace.com/mirrors",
+        "retrieved_at": "2026-04-26"
+      }
+    ]
   },
   {
     "name": "DriveUploader",
@@ -465,7 +693,25 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
+    "verification_status": "rejected",
+    "verification_notes": "This is a Google Drive upload intake layer rather than a standalone public file-hosting service.",
+    "verification_references": [
+      {
+        "label": "DriveUploader homepage",
+        "url": "https://driveuploader.com/",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "DriveUploader features",
+        "url": "https://driveuploader.com/features/",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "DriveUploader plans",
+        "url": "https://driveuploader.com/plans/",
+        "retrieved_at": "2026-04-26"
+      }
+    ],
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -476,8 +722,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The surrounding public evidence frames DropApk as a premium-link-generator target and cyberlocker-style host rather than a trustworthy curated file host for this list.",
+    "verification_references": [
+      {
+        "label": "ScamAdviser summary for dropapk.to",
+        "url": "https://www.scamadviser.com/check-website/dropapk.to",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "Deepbrid host support page for Dropapk",
+        "url": "https://www.deepbrid.com/host?name=dropapk",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "PrimeLeech Dropapk generator page",
+        "url": "https://www.primeleech.com/generator/dropapk",
+        "retrieved_at": "2026-04-26"
+      }
+    ]
   },
   {
     "name": "Dropbox",
@@ -504,8 +768,10 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": null,
+    "verification_references": []
   },
   {
     "name": "DropMeAFile",
@@ -542,8 +808,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The surrounding public evidence points to a premium-link-generator target and cyberlocker-style host with weak trustworthy current sourcing, so it does not meet the repo's curation and verification bar.",
+    "verification_references": [
+      {
+        "label": "Premium-Leech generator page for Earn4files",
+        "url": "https://www.premium-leech.com/premium-generator/earn4files-generator",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "PrimeLeech generator page for Earn4files",
+        "url": "https://www.primeleech.com/generator/earn4files",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "ScamAdviser summary showing earn4files.com as mdiaload alias",
+        "url": "https://www.scamadviser.com/check-website/down.mdiaload.com",
+        "retrieved_at": "2026-04-26"
+      }
+    ]
   },
   {
     "name": "EasyBytez",
@@ -553,8 +837,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The service openly positions itself as an earn-money file host with premium gating, daily limits, ads, and delays for free users, which puts it outside the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "EasyBytez homepage",
+        "url": "https://easybytez.org/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "EasyBytez premium comparison",
+        "url": "https://easybytez.org/premium/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "EasyBytez upload page",
+        "url": "https://easybytez.org/upload/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "ElephantDrive",
@@ -574,7 +876,20 @@
       "iOS"
     ],
     "verification_status": "rejected",
-    "source": "User-provided import list on 2026-04-26"
+    "source": "User-provided import list on 2026-04-26",
+    "verification_notes": "Current official pages present paid plans rather than a clear ongoing free tier for this list.",
+    "verification_references": [
+      {
+        "label": "ElephantDrive homepage",
+        "url": "https://www.elephantdrive.com/",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "ElephantDrive plans",
+        "url": "https://www.elephantdrive.com/plans/",
+        "retrieved_at": "2026-04-26"
+      }
+    ]
   },
   {
     "name": "EuropeUp",
@@ -584,8 +899,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The available public evidence points to an uploader-payout / web-host style service with weak trustworthy current sourcing, so it does not meet the repo's verification and curation bar.",
+    "verification_references": [
+      {
+        "label": "Trustpilot review mentioning EuropeUp minimum payout",
+        "url": "https://www.trustpilot.com/review/europeup.com",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Scam Detector report on europeup.com",
+        "url": "https://www.scam-detector.com/validator/europeup-com-review/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "ExLoad",
@@ -595,8 +923,31 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The service openly uses a premium-gated cyberlocker model with one-file-per-day free downloads, very slow free speeds, and an affiliate payout program, which puts it outside the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "Ex-Load homepage",
+        "url": "https://ex-load.com/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Ex-Load FAQ",
+        "url": "https://ex-load.com/faq.html",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Ex-Load affiliate program",
+        "url": "https://ex-load.com/affiliate",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Ex-Load example download page",
+        "url": "https://ex-load.com/b7yzciigs4lx/SJM.rar",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "ExtMatrix",
@@ -606,8 +957,31 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The service openly uses a premium-gated cyberlocker model with 100 KB/s free speed, 250 MB free upload limits, 30-day free retention, and premium-only downloads for many files, which puts it outside the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "ExtMatrix homepage",
+        "url": "https://www.extmatrix.com/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "ExtMatrix about page",
+        "url": "https://www.extmatrix.com/about.php",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "ExtMatrix premium comparison",
+        "url": "https://www.extmatrix.com/premium.php",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "ExtMatrix example file page",
+        "url": "https://www.extmatrix.com/files/KGHF0GGE/heyzo_hd_1354_full.mp4.html",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "FastStore",
@@ -617,8 +991,16 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The available public evidence frames FastStore as a premium-link-generator target and cyberlocker-style host rather than a trustworthy curated file host for this list.",
+    "verification_references": [
+      {
+        "label": "PrimeLeech Faststore generator page",
+        "url": "https://www.primeleech.com/generator/faststore",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Fex",
@@ -631,8 +1013,10 @@
       "Russian"
     ],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided import list on 2026-04-26"
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26",
+    "verification_notes": null,
+    "verification_references": []
   },
   {
     "name": "File Al",
@@ -642,8 +1026,10 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": null,
+    "verification_references": []
   },
   {
     "name": "File-Space",
@@ -653,8 +1039,21 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The available public evidence frames File-Space / Filespace as a premium file host with waiting-time and premium-account bypass tooling, which places it outside the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "NeoDebrid Filespace generator page",
+        "url": "https://neodebrid.com/premium-link-generator/filespace",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Premium.us Filespace premium page",
+        "url": "https://premium.us/filespace-premium-key.html",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "File-Upload",
@@ -664,18 +1063,20 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "verified",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": null,
+    "verification_references": []
   },
   {
     "name": "FileBin",
     "type": "Unverified lead",
     "free_volume": null,
-    "shelf_life": null,
+    "shelf_life": "6 days",
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
+    "verification_status": "verified",
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -686,8 +1087,31 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The service openly uses a premium-gated cyberlocker model with strong affiliate payouts, low anonymous limits, and higher paid-only quotas, which puts it outside the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "FileBlade homepage",
+        "url": "https://fileblade.com/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "FileBlade pricing",
+        "url": "https://fileblade.com/pricing",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "FileBlade affiliate program",
+        "url": "https://fileblade.com/affiliate",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "FileBlade FAQ",
+        "url": "https://fileblade.com/faq",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "FileBonus",
@@ -697,8 +1121,16 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The available public evidence frames FileBonus as a premium-link-generator target and cyberlocker-style host rather than a trustworthy curated file host for this list.",
+    "verification_references": [
+      {
+        "label": "PrimeLeech Filebonus generator page",
+        "url": "https://www.primeleech.com/generator/filebonus",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "FileBoom",
@@ -708,8 +1140,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The public evidence consistently describes FileBoom as a premium cyberlocker with daily download quotas, waiting, paid acceleration, and partner-site download perks, which puts it outside the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "Fileboom.link premium overview",
+        "url": "https://fileboom.link/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Fileboom.co review with free vs premium limits",
+        "url": "https://fileboom.co/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Fileboom.info review",
+        "url": "https://fileboom.info/en/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "FileBz",
@@ -744,7 +1194,20 @@
     ],
     "applications": [],
     "verification_status": "rejected",
-    "source": "User-provided import list on 2026-04-26"
+    "source": "User-provided import list on 2026-04-26",
+    "verification_notes": "Current official pages describe enterprise software and free trials, not a public free file host matching this repo.",
+    "verification_references": [
+      {
+        "label": "FileCloud homepage",
+        "url": "https://www.filecloud.com/",
+        "retrieved_at": "2026-04-26"
+      },
+      {
+        "label": "FileCloud cloud storage",
+        "url": "https://www.filecloud.com/cloud-storage/",
+        "retrieved_at": "2026-04-26"
+      }
+    ]
   },
   {
     "name": "FileConvoy",
@@ -757,7 +1220,15 @@
     ],
     "applications": [],
     "verification_status": "rejected",
-    "source": "User-provided import list on 2026-04-26"
+    "source": "User-provided import list on 2026-04-26",
+    "verification_notes": "The official site appears effectively offline, so it cannot be treated as a current active host.",
+    "verification_references": [
+      {
+        "label": "FileConvoy homepage",
+        "url": "https://www.fileconvoy.com/",
+        "retrieved_at": "2026-04-26"
+      }
+    ]
   },
   {
     "name": "FileDot",
@@ -767,18 +1238,36 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The available public evidence frames Filedot as a premium file host that is commonly bypassed through premium-link generators, which places it outside the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "NeoDebrid Filedot generator page",
+        "url": "https://neodebrid.com/premium-link-generator/filedot",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Premium-Leech Filedot generator page",
+        "url": "https://www.premium-leech.com/premium-generator/filedot.to-generator",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Cocoleech Filedot generator page",
+        "url": "https://members.cocoleech.com/premium-link-generator/filedot",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "FileFactory",
     "type": "Unverified lead",
     "free_volume": null,
-    "shelf_life": null,
+    "shelf_life": "90 days",
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
+    "verification_status": "verified",
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -789,8 +1278,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The public evidence describes FileJoker as a premium-gated file host with slow free speeds, waiting timers, limited free storage, and strong premium upsell, which puts it outside the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "FileJokers.net premium overview",
+        "url": "https://filejokers.net/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "FileJoker premium page",
+        "url": "https://filejoker.link/pages/premium.html",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "FileJokers.net FAQ",
+        "url": "https://filejokers.net/faqs/",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "FileKarelia",
@@ -802,8 +1309,10 @@
       "Russian"
     ],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided import list on 2026-04-26"
+    "verification_status": "verified",
+    "source": "User-provided import list on 2026-04-26",
+    "verification_notes": null,
+    "verification_references": []
   },
   {
     "name": "FileNext",
@@ -813,8 +1322,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The available public evidence frames FileNext as a premium file host commonly bypassed through premium-link generators, which places it outside the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "OnlyDebrid FileNext generator page",
+        "url": "https://onlydebrid.com/filenext/",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "PrimeLeech FileNext generator page",
+        "url": "https://www.primeleech.com/generator/filenext",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Cocoleech FileNext generator page",
+        "url": "https://members.cocoleech.com/premium-link-generator/filenext",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "Filer",
@@ -824,8 +1351,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The service openly uses a premium-gated cyberlocker model with 60-second waits, 200-300 KB/s free speed, hourly traffic caps, and affiliate payouts, which puts it outside the repo's curation bar.",
+    "verification_references": [
+      {
+        "label": "Filer premium page",
+        "url": "https://filer.net/register",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Filer API docs",
+        "url": "https://filer.net/api",
+        "retrieved_at": "2026-04-27"
+      },
+      {
+        "label": "Filer sample free download page",
+        "url": "https://filer.net/get/c6tncnjeouvxqhob",
+        "retrieved_at": "2026-04-27"
+      }
+    ]
   },
   {
     "name": "FileRio",
@@ -966,7 +1511,15 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
+    "verification_status": "rejected",
+    "verification_notes": "Mozilla discontinued Firefox Send on September 17, 2020.",
+    "verification_references": [
+      {
+        "label": "Mozilla Support: What happened to Firefox Send",
+        "url": "https://support.mozilla.org/en-US/kb/what-happened-firefox-send",
+        "retrieved_at": "2026-04-26"
+      }
+    ],
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -991,7 +1544,15 @@
     ],
     "applications": [],
     "verification_status": "rejected",
-    "source": "User-provided import list on 2026-04-26"
+    "source": "User-provided import list on 2026-04-26",
+    "verification_notes": "Framadrop is listed under Framasoft's archived and closed services, so it should not be treated as an active host.",
+    "verification_references": [
+      {
+        "label": "Framasoft archived projects",
+        "url": "https://docs.framasoft.org/en/archives.html",
+        "retrieved_at": "2026-04-26"
+      }
+    ]
   },
   {
     "name": "Free",
@@ -1025,7 +1586,15 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
+    "verification_status": "rejected",
+    "verification_notes": "The service is offline; ArchiveTeam records Ge.tt as shut down on February 28, 2021.",
+    "verification_references": [
+      {
+        "label": "ArchiveTeam: Ge.tt",
+        "url": "https://wiki.archiveteam.org/index.php/Ge.tt",
+        "retrieved_at": "2026-04-26"
+      }
+    ],
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -1158,6 +1727,14 @@
     "languages": [],
     "applications": [],
     "verification_status": "rejected",
+    "verification_notes": "New subscriptions are closed and OVH says hubiC development stopped in 2018.",
+    "verification_references": [
+      {
+        "label": "OVHcloud: hubiC subscriptions ended",
+        "url": "https://www.ovhcloud.com/en-gb/subscriptions-hubic-ended/",
+        "retrieved_at": "2026-04-26"
+      }
+    ],
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -1562,7 +2139,15 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
+    "verification_status": "rejected",
+    "verification_notes": "Openload ceased operations in October 2019 after ACE action.",
+    "verification_references": [
+      {
+        "label": "ACE: Openload and Streamango cease operations",
+        "url": "https://www.alliance4creativity.com/news/ace-action-prompts-pirate-giants-openload-and-streamango-to-cease-all-operations/",
+        "retrieved_at": "2026-04-26"
+      }
+    ],
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -1696,8 +2281,16 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "RapidShare shut down on March 31, 2015.",
+    "verification_references": [
+      {
+        "label": "TechCrunch: RapidShare shuts down",
+        "url": "https://techcrunch.com/2015/02/10/rapidshare-shuts-down/",
+        "retrieved_at": "2026-04-26"
+      }
+    ]
   },
   {
     "name": "Rapidu",
@@ -1786,7 +2379,7 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
+    "verification_status": "verified",
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -1797,8 +2390,16 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "Share-Online.biz was taken offline after raids in Germany in October 2019.",
+    "verification_references": [
+      {
+        "label": "TorrentFreak: Police raids shut down Share-Online.biz",
+        "url": "https://torrentfreak.com/police-raids-shut-down-share-online-biz-germanys-largest-file-hoster-191017/",
+        "retrieved_at": "2026-04-26"
+      }
+    ]
   },
   {
     "name": "ShareMods",
@@ -2009,12 +2610,16 @@
   {
     "name": "Ulozto",
     "type": "Unverified lead",
-    "free_volume": null,
+    "free_volume": "25 GB",
     "shelf_life": null,
     "download_count": null,
     "languages": [],
-    "applications": [],
-    "verification_status": "pending",
+    "applications": [
+      "Windows",
+      "Android",
+      "iOS"
+    ],
+    "verification_status": "verified",
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -2065,11 +2670,13 @@
     "name": "Upload",
     "type": "Unverified lead",
     "free_volume": null,
-    "shelf_life": null,
+    "shelf_life": "50 days after last download",
     "download_count": null,
-    "languages": [],
+    "languages": [
+      "English"
+    ],
     "applications": [],
-    "verification_status": "pending",
+    "verification_status": "verified",
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -2163,12 +2770,12 @@
   {
     "name": "UploadFiles",
     "type": "Unverified lead",
-    "free_volume": null,
-    "shelf_life": null,
+    "free_volume": "10 GB",
+    "shelf_life": "30 days",
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
+    "verification_status": "verified",
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -2439,8 +3046,16 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "ZippyShare posted an official farewell notice and shut down in March 2023.",
+    "verification_references": [
+      {
+        "label": "ZippyShare official farewell page",
+        "url": "https://support.zippyshare.com/",
+        "retrieved_at": "2026-04-26"
+      }
+    ]
   },
   {
     "name": "Zofile",

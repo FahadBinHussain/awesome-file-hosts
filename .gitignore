@@ -1,0 +1,9 @@
+node_modules/
+.next/
+*.tsbuildinfo
+.next-dev.log
+.next-dev.err
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
