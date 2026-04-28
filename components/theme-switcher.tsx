@@ -45,7 +45,7 @@ export function ThemeSwitcher() {
             className="fixed inset-0 z-[9999] bg-[color-mix(in_oklab,black_18%,transparent)]"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute right-0 top-12 z-[10001] isolate max-h-96 w-48 overflow-auto rounded-2xl border border-[var(--line-strong)] bg-[var(--bg)] p-2 shadow-[0_24px_80px_-24px_rgba(0,0,0,0.92),0_0_0_1px_var(--line)] scrollbar-subtle">
+          <div className="absolute right-0 top-12 z-[10001] isolate max-h-96 w-48 overflow-auto rounded-[var(--radius-card)] border border-[var(--line-strong)] bg-[var(--bg)] p-2 shadow-[0_24px_80px_-24px_rgba(0,0,0,0.92),0_0_0_1px_var(--line)] scrollbar-subtle">
             {themes.map((t) => (
               <button
                 key={t}

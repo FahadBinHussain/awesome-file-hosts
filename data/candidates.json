@@ -310,8 +310,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "BezSms still has an old file-host footprint in public traces, but the modern evidence is too stale and low-confidence for the verified list. The surviving trail is mostly old uptime snapshots, old site summaries, and historical download mirrors rather than a trustworthy current host surface.",
+    "verification_references": [
+      {
+        "label": "NotOpening status for bezsms.org showing only 2022 uptime history",
+        "url": "https://notopening.com/site/bezsms.org",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "Site Overview summary for bezsms.org preserving the old free file upload identity",
+        "url": "https://site-overview.com/stats/bezsms.org",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "Historic mirror usage of bezsms.org on Gangster.su",
+        "url": "https://gangster.su/rock/406021-the-spiritual-machines-awake-alert-alive-almost-2017.html",
+        "retrieved_at": "2026-04-28"
+      }
+    ]
   },
   {
     "name": "Box",
@@ -542,8 +560,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The current Dateiload trail is too degraded and historical to support a trustworthy verified entry. Recent public references are mostly stale uptime checks and old historical mentions, with no clean modern HTTPS product surface.",
+    "verification_references": [
+      {
+        "label": "NotOpening status for dateiload.com showing only a stale 2022 uptime record",
+        "url": "https://notopening.com/site/dateiload.com",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "Historic vBulletin announcement describing Dateiload in 2007",
+        "url": "https://forum.vbulletin.com/forum/general/chit-chat/241625-official-vbh-announcement-for-all-users",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "IPinfo listing showing fs2.dateiload.com in a current IP range without a trustworthy modern product surface",
+        "url": "https://ipinfo.io/ips/207.180.197.0/24",
+        "retrieved_at": "2026-04-28"
+      }
+    ]
   },
   {
     "name": "DdlTo",
@@ -1905,8 +1941,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "Global-Files still appears in current public summaries as a file host, but the modern trust trail is too weak for the verified list. The accessible evidence points to an old direct-link host identity with very low trust signals and historical HTTP warnings rather than a strong current HTTPS product surface.",
+    "verification_references": [
+      {
+        "label": "TrustOrg summary for global-files.net preserving the current file-host description and low trust score",
+        "url": "https://trustorg.com/site/global-files.net",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "EndeavourOS forum post noting HTTP browser warning for global-files.net links",
+        "url": "https://forum.endeavouros.com/t/sail-away-new-eos-wallpaper-created-in-blender/6537?page=2",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "ITP report referencing leaked data previously surfaced on Global-Files.net",
+        "url": "https://www.itp.net/acn/cybersecurity/607376-qatar-national-bank-admits-data-breach",
+        "retrieved_at": "2026-04-28"
+      }
+    ]
   },
   {
     "name": "Gofile",
@@ -2129,8 +2183,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "Images.Gameru has a real historical image-host footprint, but the modern public evidence is too ambiguous to keep it in the verified list. Recent public discussion shows inconsistent availability, and the accessible trail is mostly old hotlinked image usage rather than a trustworthy current product surface.",
+    "verification_references": [
+      {
+        "label": "AP-PRO forum discussion showing mixed reachability for images.gameru.net in 2022",
+        "url": "https://ap-pro.ru/forums/topic/482-lokaciya-derevnya-po-motivam-survarium/",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "Historic guide explaining Images.Gameru direct image links",
+        "url": "https://www.ecigtalk.org/forum/f21/t24904-print.html",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "Recent crawl result still showing hotlinked Images.Gameru assets rather than a current host product page",
+        "url": "https://www.linux.org.ru/forum/linux-hardware/13899228",
+        "retrieved_at": "2026-04-28"
+      }
+    ]
   },
   {
     "name": "IndiShare",
@@ -2310,8 +2382,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The current MacUpload trail is too stale and low-confidence for the verified list. Public snapshots point to an old file-host identity, while newer public reports describe ambiguous or unsafe behavior rather than a trustworthy current host.",
+    "verification_references": [
+      {
+        "label": "SiteIndices summary for macupload.net showing the old Upload Files - Macupload host identity",
+        "url": "https://macupload.net.siteindices.com/",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "WDomain history for macupload.net showing vague 2025 HTTP-only snapshots",
+        "url": "https://wdomain.ru/macupload.net",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "Trustpilot review for macupload.net describing unsafe behavior",
+        "url": "https://dk.trustpilot.com/review/macupload.net",
+        "retrieved_at": "2026-04-28"
+      }
+    ]
   },
   {
     "name": "MediaFire",
@@ -3632,8 +3722,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The current UniBytes trail is no longer strong enough for the verified list. Current public records show the domain using Parklogic parking infrastructure, while the surviving file-host footprint is mostly old payout-host residue and premium-generator references.",
+    "verification_references": [
+      {
+        "label": "WHOIS record for unibytes.com showing Parklogic nameservers",
+        "url": "https://www.whois.com/whois/unibytes.com",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "MyDebrid Unibytes premium host page",
+        "url": "https://mydebrid.com/unibytes-com",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "ScamAdviser summary for unibytes.com showing HTTP 503 status in the captured facts",
+        "url": "https://www.scamadviser.com/check-website/unibytes.com",
+        "retrieved_at": "2026-04-28"
+      }
+    ]
   },
   {
     "name": "up07",
@@ -3643,8 +3751,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "up07.me still appears in host-support and domain summaries, but the current public evidence is too thin for a trustworthy verified entry. The surviving trail is mostly domain-status checks and old host-tool support references rather than a clear modern file-host product surface.",
+    "verification_references": [
+      {
+        "label": "MailboxValidator summary for up07.me showing only basic domain activity",
+        "url": "https://www.mailboxvalidator.com/domain/up07.me",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "Mipony changelog referencing historical up07.me host support",
+        "url": "https://www.mipony.net/en/?p=1673",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "Szenebox thread referencing up07.me in hoster support context",
+        "url": "https://www.szenebox.org/150-filecrypt_cc_-_hoster__unterst%C3%BCtzung/",
+        "retrieved_at": "2026-04-28"
+      }
+    ]
   },
   {
     "name": "Up4Ever",
@@ -4073,7 +4199,7 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
+    "verification_status": "verified",
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -4084,8 +4210,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "Upload.st still has traces of a file-host identity in public summaries, but the modern evidence is too weak and stale for the verified list. The accessible trail is mostly old uptime snapshots and generic third-party descriptions rather than a strong current product surface.",
+    "verification_references": [
+      {
+        "label": "NotOpening status for upload.st showing only 2021 uptime history",
+        "url": "https://notopening.com/site/upload.st",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "SitePrice competitor page preserving the generic Upload.st file-host description",
+        "url": "https://www.siteprice.org/competitors/upload.st",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "IPAddress similar-domain result showing modern ambiguity around upload.st references",
+        "url": "https://www.ipaddress.com/website/upload18.com/",
+        "retrieved_at": "2026-04-28"
+      }
+    ]
   },
   {
     "name": "UPPIT",
@@ -4272,8 +4416,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "The old WebchinUpload file-host links still appear across web archives and forum posts, but the current domain trail has drifted into parking infrastructure rather than a trustworthy active host. That makes it invalid for the verified list.",
+    "verification_references": [
+      {
+        "label": "NotOpening status for webchinupload.com",
+        "url": "https://notopening.com/site/webchinupload.com",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "Robtex record showing webchinupload.com on Above.com parking-style nameservers",
+        "url": "https://www.robtex.com/en/dns-lookup/de/wwwpo",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "Historic Webchin forum post using webchinupload.com file links",
+        "url": "https://www.webchin.org/Meko/viewtopic.php?id=14969",
+        "retrieved_at": "2026-04-28"
+      }
+    ]
   },
   {
     "name": "Weiyun",
@@ -4310,7 +4472,7 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
+    "verification_status": "verified",
     "source": "User-provided lead list on 2026-04-26"
   },
   {
@@ -4340,8 +4502,26 @@
     "download_count": null,
     "languages": [],
     "applications": [],
-    "verification_status": "pending",
-    "source": "User-provided lead list on 2026-04-26"
+    "verification_status": "rejected",
+    "source": "User-provided lead list on 2026-04-26",
+    "verification_notes": "WuShare still has an active-looking domain footprint, but the current public trail is dominated by premium-link-generator and premium-host language, with additional caution flags from reputation services. That places it outside the repo's verified-host curation bar.",
+    "verification_references": [
+      {
+        "label": "ScamAdviser summary for wushare.com",
+        "url": "https://www.scamadviser.com/check-website/wushare.com",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "Scam Detector review for wushare.com",
+        "url": "https://www.scam-detector.com/validator/wushare-com-review/",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "NeoDebrid Wushare premium-link page",
+        "url": "https://neodebrid.com/premium-link-generator/wushare",
+        "retrieved_at": "2026-04-28"
+      }
+    ]
   },
   {
     "name": "Yandex.Disk",

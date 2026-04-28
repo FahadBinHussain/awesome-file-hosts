@@ -290,16 +290,16 @@ function ToolbarButton({
     <button
       onClick={onClick}
       className={[
-        "group relative inline-flex items-center gap-2 rounded-full border px-3.5 py-2 text-xs font-medium transition-all duration-200",
+        "group relative inline-flex items-center gap-2 rounded-[var(--radius-pill)] border px-3.5 py-2 text-xs font-medium transition-all duration-200",
         active
-          ? "border-[var(--accent)]/30 bg-[var(--accent-soft)] text-white shadow-[0_0_24px_-6px_var(--accent-glow)]"
-          : "border-[var(--line)] bg-[var(--surface-1)] text-[var(--text-secondary)] hover:border-[var(--accent)]/50 hover:text-white hover:shadow-[0_0_20px_-6px_var(--accent-glow)]"
+          ? "border-[var(--accent)]/30 bg-[var(--accent-soft)] text-[var(--accent-content)] shadow-[0_0_24px_-6px_var(--accent-glow)]"
+          : "border-[var(--line)] bg-[var(--surface-1)] text-[var(--text-secondary)] hover:border-[var(--accent)]/50 hover:text-[var(--text-primary)] hover:shadow-[0_0_20px_-6px_var(--accent-glow)]"
       ].join(" ")}
     >
       {icon && <span className={["transition-transform", active ? "scale-110" : "group-hover:scale-110"].join(" ")}>{icon}</span>}
       {children}
       {active && (
-        <div className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-r from-[var(--accent)]/8 to-transparent opacity-60" />
+        <div className="pointer-events-none absolute inset-0 rounded-[var(--radius-pill)] bg-gradient-to-r from-[var(--accent)]/8 to-transparent opacity-60" />
       )}
     </button>
   );
@@ -390,7 +390,7 @@ function CandidateDetailPanel({ candidate }: { candidate: CandidateRecord | null
         <div className="flex items-start justify-between gap-3">
           <div>
             <div className="flex items-center gap-2">
-              <div className="h-1 w-1 rounded-full bg-[var(--accent)] animate-pulse" style={{ animationDuration: "2s" }} />
+              <div className="h-1 w-1 rounded-[var(--radius-pill)] bg-[var(--accent)] animate-pulse" style={{ animationDuration: "2s" }} />
               <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">
                 Candidate detail
               </div>
@@ -399,7 +399,7 @@ function CandidateDetailPanel({ candidate }: { candidate: CandidateRecord | null
           </div>
           <span
             className={[
-              "inline-flex rounded-full px-3 py-1 text-[10px] font-medium capitalize backdrop-blur-sm border",
+              "inline-flex rounded-[var(--radius-pill)] px-3 py-1 text-[10px] font-medium capitalize backdrop-blur-sm border",
               statusTone(candidate.verification_status)
             ].join(" ")}
           >
@@ -478,30 +478,22 @@ function CandidateDetailPanel({ candidate }: { candidate: CandidateRecord | null
 }
 
 function FloatingInspector({
-  title,
   onClose,
   children
 }: {
-  title: string;
   onClose: () => void;
   children: ReactNode;
 }) {
   return (
-    <div className="pointer-events-none fixed inset-y-6 right-6 z-40 flex w-[min(460px,calc(100vw-2rem))] items-start justify-end">
-      <div className="pointer-events-auto max-h-[calc(100dvh-3rem)] w-full overflow-auto rounded-[var(--radius-card)] border border-[var(--line)] bg-[color-mix(in_oklab,var(--bg)_92%,transparent)] p-4 shadow-[var(--shadow-raised),0_0_0_1px_var(--line)] backdrop-blur-2xl animate-slide-in-right">
-        <div className="mb-4 flex items-center justify-between rounded-[var(--radius-panel)] border border-[var(--line)] bg-[var(--surface-1)] px-4 py-3 backdrop-blur-sm">
-          <div className="flex items-center gap-2">
-            <div className="h-1 w-1 rounded-full bg-[var(--accent)] animate-pulse" style={{ animationDuration: "2s" }} />
-            <div className="text-sm font-semibold text-[var(--text-primary)] tracking-tight">{title}</div>
-          </div>
-          <button
-            onClick={onClose}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-[var(--radius-pill)] border border-[var(--line)] text-[var(--text-muted)] transition-all hover:border-[var(--accent)]/30 hover:bg-[var(--accent-soft)] hover:text-[var(--text-primary)] hover:shadow-[0_0_16px_-4px_var(--accent-glow)]"
-            aria-label="Close inspector"
-          >
-            <X size={16} weight="bold" />
-          </button>
-        </div>
+    <div className="pointer-events-none fixed right-3 top-24 bottom-3 z-40 flex w-[min(460px,calc(100vw-1.5rem))] items-start justify-end sm:right-4 sm:top-28 sm:bottom-4 sm:w-[min(460px,calc(100vw-2rem))] md:right-6 md:top-32 md:bottom-6 md:w-[min(460px,calc(100vw-3rem))]">
+      <div className="pointer-events-auto relative max-h-full w-full overflow-auto rounded-[var(--radius-card)] border border-[var(--line)] bg-[color-mix(in_oklab,var(--bg)_92%,transparent)] pt-16 p-4 shadow-[var(--shadow-raised),0_0_0_1px_var(--line)] backdrop-blur-2xl animate-slide-in-right">
+        <button
+          onClick={onClose}
+          className="absolute right-4 top-4 z-50 inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-1)] text-[var(--text-muted)] shadow-[var(--shadow-soft)] transition-all hover:border-[var(--accent)]/30 hover:bg-[var(--accent-soft)] hover:text-[var(--text-primary)] hover:shadow-[0_0_16px_-4px_var(--accent-glow)]"
+          aria-label="Close inspector"
+        >
+          <X size={16} weight="bold" />
+        </button>
         <div className="animate-fade-in" style={{ animationDelay: "0.1s" }}>
           {children}
         </div>
@@ -647,7 +639,7 @@ export function DatasetApp({ data }: Props) {
             <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
               <div className="animate-fade-in-up">
                 <div className="flex items-center gap-2">
-                  <div className="h-[16px] w-[3px] rounded-full bg-gradient-to-b from-[var(--accent)] to-[var(--accent-glow)]" />
+                  <div className="h-[16px] w-[3px] rounded-[var(--radius-pill)] bg-gradient-to-b from-[var(--accent)] to-[var(--accent-glow)]" />
                   <div className="text-[9px] uppercase tracking-[0.4em] text-[var(--text-muted)] font-semibold">
                     Dataset view
                   </div>
@@ -665,7 +657,7 @@ export function DatasetApp({ data }: Props) {
                 ].map((stat, i) => (
                   <div 
                     key={stat.label} 
-                    className="rounded-2xl border border-[var(--line)] bg-[var(--surface-1)] px-3.5 py-2.5 backdrop-blur-sm transition-all hover:border-[var(--line-strong)] hover:bg-[var(--surface-3)] animate-fade-in-up"
+                    className="rounded-[var(--radius-card)] border border-[var(--line)] bg-[var(--surface-1)] px-3.5 py-2.5 backdrop-blur-sm transition-all hover:border-[var(--line-strong)] hover:bg-[var(--surface-3)] animate-fade-in-up"
                     style={{ animationDelay: `${i * 0.05}s` }}
                   >
                     <div className="text-[9px] uppercase tracking-[0.2em] text-[var(--text-muted)] font-medium">
@@ -689,7 +681,7 @@ export function DatasetApp({ data }: Props) {
                 </ToolbarButton>
               </div>
 
-              <div className="relative flex min-w-0 flex-1 items-center gap-3 rounded-2xl border border-[var(--line)] bg-[var(--surface-1)] px-4 py-2.5 shadow-sm xl:max-w-[28rem]">
+              <div className="relative flex min-w-0 flex-1 items-center gap-3 rounded-[var(--radius-card)] border border-[var(--line)] bg-[var(--surface-1)] px-4 py-2.5 shadow-sm xl:max-w-[28rem]">
                 <MagnifyingGlass size={18} className="text-[var(--text-muted)]" />
                 <input
                   value={search}
@@ -783,10 +775,10 @@ export function DatasetApp({ data }: Props) {
                         key={column.id}
                         onClick={() => toggleQueueColumn(column.id)}
                         className={[
-                          "group relative inline-flex items-center gap-2 rounded-full border px-2.5 py-1.5 text-[11px] font-medium transition-all duration-200",
+                          "group relative inline-flex items-center gap-2 rounded-[var(--radius-pill)] border px-2.5 py-1.5 text-[11px] font-medium transition-all duration-200",
                           hidden
                             ? "border-[var(--line)] bg-transparent text-[var(--text-muted)] hover:border-[var(--text-muted)]/40 hover:text-[var(--text-secondary)]"
-                            : "border-[var(--accent)]/20 bg-[var(--accent-soft)] text-white"
+                            : "border-[var(--accent)]/20 bg-[var(--accent-soft)] text-[var(--accent-content)]"
                         ].join(" ")}
                       >
                         {hidden ? <EyeSlash size={13} /> : <Eye size={13} />}
@@ -1043,7 +1035,7 @@ export function DatasetApp({ data }: Props) {
                         {column.id === "status" ? (
                           <span
                             className={[
-                              "inline-flex rounded-full px-2.5 py-1 text-[10px] font-medium capitalize backdrop-blur-sm border",
+                              "inline-flex rounded-[var(--radius-pill)] px-2.5 py-1 text-[10px] font-medium capitalize backdrop-blur-sm border",
                               statusTone(candidate.verification_status)
                             ].join(" ")}
                           >
@@ -1063,12 +1055,12 @@ export function DatasetApp({ data }: Props) {
 
       </div>
       {mode === "hosts" && selectedHost ? (
-        <FloatingInspector title={selectedHost.name} onClose={() => setSelectedHostId(null)}>
+        <FloatingInspector onClose={() => setSelectedHostId(null)}>
           <HostDetailPanel host={selectedHost} />
         </FloatingInspector>
       ) : null}
       {mode === "queue" && selectedCandidate ? (
-        <FloatingInspector title={selectedCandidate.name} onClose={() => setSelectedCandidateId(null)}>
+        <FloatingInspector onClose={() => setSelectedCandidateId(null)}>
           <CandidateDetailPanel candidate={selectedCandidate} />
         </FloatingInspector>
       ) : null}

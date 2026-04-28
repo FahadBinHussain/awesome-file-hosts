@@ -32,9 +32,14 @@ function InfoPair({
 export function HostDetailPanel({ host }: { host: HostRecord | null }) {
   if (!host) {
     return (
-      <aside className="rounded-[var(--radius-card)] border border-[var(--line)] bg-[var(--panel)] p-5">
-        <div className="flex h-full min-h-[18rem] items-center justify-center text-sm text-[var(--text-muted)]">
-          Pick a host to inspect.
+      <aside className="rounded-[var(--radius-card)] border border-[var(--line)] bg-gradient-to-br from-[var(--panel)] to-[var(--surface-2)] p-6 backdrop-blur-2xl">
+        <div className="flex h-full min-h-[20rem] items-center justify-center">
+          <div className="text-center">
+            <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-[var(--radius-pill)] bg-[var(--surface-3)] shadow-inner">
+              <Database size={32} weight="duotone" className="text-[var(--text-muted)]" />
+            </div>
+            <p className="text-sm font-medium text-[var(--text-muted)]">Select a host to view details</p>
+          </div>
         </div>
       </aside>
     );
@@ -60,29 +65,34 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
         : undefined);
 
   return (
-    <aside className="rounded-[var(--radius-card)] border border-[var(--line)] bg-[var(--panel)] p-5">
-      <div className="space-y-5">
+    <aside className="group rounded-[var(--radius-card)] border border-[var(--line)] bg-gradient-to-br from-[var(--panel)] to-[var(--surface-2)] p-6 shadow-[var(--shadow-raised)] backdrop-blur-2xl transition-all hover:border-[var(--line-strong)] hover:shadow-[0_32px_100px_-32px_rgba(0,0,0,0.8)]">
+      <div className="space-y-6 animate-fade-in">
         <div className="flex items-start justify-between gap-4">
-          <div>
-            <div className="flex items-center gap-2">
-              <div className="h-1 w-1 rounded-full bg-[var(--accent)] shadow-[0_0_10px_var(--accent)]" />
-              <div className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[var(--text-muted)]">
-                Host detail
+          <div className="flex-1">
+            <div className="mb-3 flex items-center gap-2">
+              <div className="h-2 w-2 animate-pulse rounded-[var(--radius-pill)] bg-[var(--accent)] shadow-[0_0_12px_var(--accent)]" />
+              <div className="text-[9px] font-bold uppercase tracking-[0.35em] text-[var(--text-muted)]">
+                Host Details
               </div>
             </div>
-            <h2 className="mt-2.5 text-xl font-semibold tracking-tight text-[var(--text-primary)]">{host.name}</h2>
+            <h2 className="text-2xl font-bold tracking-tight text-[var(--text-primary)] transition-colors group-hover:text-[var(--accent)]">
+              {host.name}
+            </h2>
           </div>
           <a
             href={host.url}
             target="_blank"
             rel="noreferrer"
-            className="rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-1)] px-3.5 py-2 text-xs font-medium text-[var(--text-secondary)] transition-all hover:border-[var(--accent)]/30 hover:text-[var(--text-primary)] hover:shadow-[0_0_20px_-4px_var(--accent-glow)]"
+            className="group/link flex items-center gap-2 rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-1)] px-4 py-2.5 text-xs font-semibold text-[var(--text-secondary)] shadow-sm transition-all hover:border-[var(--accent)]/40 hover:bg-[var(--accent-soft)] hover:text-[var(--accent-content)] hover:shadow-[0_0_24px_-4px_var(--accent-glow)]"
           >
-            Open site
+            <LinkSimple size={14} weight="bold" className="transition-transform group-hover/link:translate-x-0.5" />
+            <span>Visit</span>
           </a>
         </div>
 
-        <p className="text-sm leading-7 text-[var(--text-secondary)]">{host.summary}</p>
+        <p className="rounded-[var(--radius-panel)] border border-[var(--line)] bg-[var(--surface-1)] p-4 text-sm leading-relaxed text-[var(--text-secondary)] backdrop-blur-sm">
+          {host.summary}
+        </p>
 
         <div className="grid gap-4 sm:grid-cols-2">
           <InfoPair
@@ -168,39 +178,41 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
         </div>
 
         <div className="grid gap-3 sm:grid-cols-3">
-          <div className="rounded-[var(--radius-panel)] border border-[var(--line)] bg-[var(--surface-1)] p-4 backdrop-blur-sm transition-all hover:border-[var(--line-strong)] hover:bg-[var(--surface-3)]">
-            <div className="flex items-center gap-2 text-sm font-semibold text-[var(--text-primary)]">
-              <TerminalWindow size={16} weight="fill" />
-              Dev
+          <div className="group/card rounded-[var(--radius-panel)] border border-[var(--line)] bg-gradient-to-br from-[var(--surface-1)] to-[var(--surface-2)] p-4 backdrop-blur-sm transition-all hover:border-[var(--accent)]/30 hover:shadow-[0_8px_24px_-8px_var(--accent-glow)]">
+            <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-[var(--radius-control)] bg-[var(--accent-soft)] shadow-sm transition-transform group-hover/card:scale-110">
+              <TerminalWindow size={20} weight="fill" className="text-[var(--accent)]" />
             </div>
-            <div className="mt-2.5 text-sm text-[var(--text-secondary)]">
-              {host.developer.api_available ? "API available" : "No public API"}
-            </div>
-          </div>
-          <div className="rounded-[var(--radius-panel)] border border-[var(--line)] bg-[var(--surface-1)] p-4 backdrop-blur-sm transition-all hover:border-[var(--line-strong)] hover:bg-[var(--surface-3)]">
-            <div className="flex items-center gap-2 text-sm font-semibold text-[var(--text-primary)]">
-              <ShieldCheck size={16} weight="fill" />
-              Encryption
-            </div>
-            <div className="mt-2.5 text-sm text-[var(--text-secondary)]">
-              {host.security.e2ee ? "End-to-end claims present" : "No E2EE claim"}
+            <div className="text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">Developer</div>
+            <div className="mt-2 text-sm font-medium text-[var(--text-primary)]">
+              {host.developer.api_available ? "API Available" : "No Public API"}
             </div>
           </div>
-          <div className="rounded-[var(--radius-panel)] border border-[var(--line)] bg-[var(--surface-1)] p-4 backdrop-blur-sm transition-all hover:border-[var(--line-strong)] hover:bg-[var(--surface-3)]">
-            <div className="flex items-center gap-2 text-sm font-semibold text-[var(--text-primary)]">
-              <Lock size={16} weight="fill" />
-              Access
+          <div className="group/card rounded-[var(--radius-panel)] border border-[var(--line)] bg-gradient-to-br from-[var(--surface-1)] to-[var(--surface-2)] p-4 backdrop-blur-sm transition-all hover:border-[var(--accent)]/30 hover:shadow-[0_8px_24px_-8px_var(--accent-glow)]">
+            <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-[var(--radius-control)] bg-[var(--good-soft)] shadow-sm transition-transform group-hover/card:scale-110">
+              <ShieldCheck size={20} weight="fill" className="text-[var(--good)]" />
             </div>
-            <div className="mt-2.5 text-sm text-[var(--text-secondary)]">{host.accountLabel}</div>
+            <div className="text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">Security</div>
+            <div className="mt-2 text-sm font-medium text-[var(--text-primary)]">
+              {host.security.e2ee ? "E2EE Enabled" : "No E2EE"}
+            </div>
+          </div>
+          <div className="group/card rounded-[var(--radius-panel)] border border-[var(--line)] bg-gradient-to-br from-[var(--surface-1)] to-[var(--surface-2)] p-4 backdrop-blur-sm transition-all hover:border-[var(--accent)]/30 hover:shadow-[0_8px_24px_-8px_var(--accent-glow)]">
+            <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-[var(--radius-control)] bg-[var(--warn-soft)] shadow-sm transition-transform group-hover/card:scale-110">
+              <Lock size={20} weight="fill" className="text-[var(--warn)]" />
+            </div>
+            <div className="text-xs font-bold uppercase tracking-wider text-[var(--text-muted)]">Access</div>
+            <div className="mt-2 text-sm font-medium text-[var(--text-primary)]">{host.accountLabel}</div>
           </div>
         </div>
 
-        <div className="rounded-[var(--radius-panel)] border border-[var(--line)] bg-[var(--surface-1)] p-4 backdrop-blur-sm">
-          <div className="flex items-center gap-2 text-sm font-semibold text-[var(--text-primary)]">
-            <Database size={18} weight="fill" />
-            Source references
+        <div className="rounded-[var(--radius-panel)] border border-[var(--line)] bg-gradient-to-br from-[var(--surface-1)] to-[var(--surface-2)] p-5 backdrop-blur-sm">
+          <div className="mb-4 flex items-center gap-2.5 text-sm font-bold text-[var(--text-primary)]">
+            <div className="flex h-8 w-8 items-center justify-center rounded-[var(--radius-control)] bg-[var(--accent-soft)]">
+              <Database size={18} weight="fill" className="text-[var(--accent)]" />
+            </div>
+            <span>Source References</span>
           </div>
-          <div className="mt-4 space-y-3">
+          <div className="space-y-2.5">
             {host.sources.map((source, index) => (
               <a
                 key={`${source.label}-${source.url}`}
@@ -208,18 +220,18 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
                 href={source.url}
                 target="_blank"
                 rel="noreferrer"
-                className="group block rounded-[var(--radius-panel)] border border-[var(--line)] bg-[var(--surface-1)] px-4 py-3 transition-all hover:border-[var(--accent)]/30 hover:bg-[var(--accent-soft)]/40 hover:shadow-[0_0_20px_-4px_var(--accent-glow)]"
+                className="group/source block rounded-[var(--radius-control)] border border-[var(--line)] bg-[var(--surface-1)] p-3.5 transition-all hover:border-[var(--accent)]/40 hover:bg-[var(--accent-soft)]/30 hover:shadow-[0_4px_16px_-4px_var(--accent-glow)]"
               >
                 <div className="flex items-center justify-between gap-3">
-                  <div className="flex items-center gap-2 text-sm font-medium text-[var(--text-primary)]">
-                    <LinkSimple size={16} weight="fill" />
+                  <div className="flex items-center gap-2.5 text-sm font-semibold text-[var(--text-primary)]">
+                    <LinkSimple size={16} weight="fill" className="text-[var(--accent)] transition-transform group-hover/source:translate-x-0.5" />
                     <span>
                       [{index + 1}] {source.label}
                     </span>
                   </div>
-                  <div className="font-mono text-xs text-[var(--text-muted)]">{source.retrieved_at}</div>
+                  <div className="font-mono text-[10px] text-[var(--text-muted)]">{source.retrieved_at}</div>
                 </div>
-                <div className="mt-2 text-sm leading-6 text-[var(--text-secondary)]">{source.notes}</div>
+                <div className="mt-2 text-xs leading-relaxed text-[var(--text-secondary)]">{source.notes}</div>
               </a>
             ))}
           </div>

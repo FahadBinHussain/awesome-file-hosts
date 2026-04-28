@@ -62,7 +62,7 @@ function PillButton({
     <button
       onClick={onClick}
       className={[
-        "rounded-full border px-4 py-2 text-sm transition duration-300",
+        "rounded-[var(--radius-pill)] border px-4 py-2 text-sm transition duration-300",
         active
           ? "rounded-[var(--radius-pill)] border-[var(--accent)]/30 bg-[var(--accent-soft)] text-[var(--accent-content)]"
           : "rounded-[var(--radius-pill)] border-[var(--line)] bg-[var(--surface-1)] text-[var(--muted)] hover:border-[var(--line-strong)] hover:text-[var(--text-primary)]"
@@ -115,7 +115,7 @@ function CandidateRow({ candidate }: { candidate: CandidateRecord }) {
       <div>
         <span
           className={[
-            "inline-flex rounded-full border px-2.5 py-1 text-xs font-medium capitalize",
+            "inline-flex rounded-[var(--radius-pill)] border px-2.5 py-1 text-xs font-medium capitalize",
             statusTone[candidate.verification_status]
           ].join(" ")}
         >
@@ -177,7 +177,7 @@ export function ExplorerApp({ data }: Props) {
     <AppFrame current="home">
         <section className="grid gap-4 border-b border-[var(--line)] pb-4 lg:grid-cols-[minmax(0,1.5fr)_minmax(520px,1fr)]">
           <div className="space-y-4">
-            <div className="inline-flex rounded-full border border-[var(--line)] bg-[var(--surface-2)] px-3 py-1 text-xs uppercase tracking-[0.28em] text-[var(--soft)]">
+            <div className="inline-flex rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-2)] px-3 py-1 text-xs uppercase tracking-[0.28em] text-[var(--soft)]">
               Structured host intelligence
             </div>
             <div className="max-w-4xl">
@@ -296,7 +296,7 @@ export function ExplorerApp({ data }: Props) {
                         )
                       }
                       className={[
-                        "rounded-full border px-3 py-1.5 text-xs transition",
+                        "rounded-[var(--radius-pill)] border px-3 py-1.5 text-xs transition",
                         active
                           ? "border-[var(--good)]/30 bg-[var(--good-soft)] text-[var(--good-content)]"
                           : "border-[var(--line)] text-[var(--muted)] hover:text-[var(--text-primary)]"

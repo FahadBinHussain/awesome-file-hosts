@@ -315,7 +315,7 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "Android File Host publicly states it does not limit download speeds or bandwidth usage.",
+        "notes": "The homepage explicitly says Android File Host does not limit the number of files, download speeds, or bandwidth used.",
         "source_refs": [
           0
         ]
@@ -488,25 +488,25 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean current per-file upload limit.",
+        "notes": "The App Store listing says shared links can be created without file-size limits, but the cited public pages still do not publish a clean current upload cap for the free tier.",
         "source_refs": [
-          0
+          1
         ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean automatic expiry policy for stored files.",
+        "notes": "The App Store listing says shared links can be password protected and given an expiry period, but it does not describe an automatic expiry policy for files stored in the drive itself.",
         "source_refs": [
-          0
+          1
         ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The App Store listing describes very large available space and mentions expansion up to 16 TB, but the cited public pages do not cleanly state the current default free quota.",
+        "notes": "The App Store listing markets very large available space and expansion up to 16 TB, but the cited first-party pages still do not cleanly expose the default free quota in accessible text.",
         "source_refs": [
-          0
+          1
         ]
       },
       "bandwidth": {
@@ -581,9 +581,9 @@
     "content": {
       "allowed_file_types": {
         "mode": "all_except_prohibited",
-        "notes": "The cited public pages describe support for photos, videos, documents, app files, messages, and call records, but do not publish a narrow allowlist.",
+        "notes": "The App Store listing explicitly describes backup and sharing for photos, documents, videos, app files, messages, and call records, but it does not publish a narrow allowlist.",
         "source_refs": [
-          0
+          1
         ]
       }
     }
@@ -713,9 +713,9 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "Files are kept indefinitely according to the FAQ.",
+        "notes": "The FAQ says files are kept forever.",
         "source_refs": [
-          0
+          1
         ]
       },
       "storage": {
@@ -736,8 +736,8 @@
       }
     },
     "account": {
-      "required": null,
-      "benefits": "Accounts exist, but the cited public pages do not clearly describe account-specific benefits.",
+      "required": false,
+      "benefits": "Public uploads work from the homepage without registration; accounts exist for login-based management features but are not required for basic sharing.",
       "source_refs": [
         0,
         1
@@ -783,10 +783,10 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "mode": "all_except_prohibited",
+        "notes": "The FAQ explicitly disallows .exe, .scr, .cpl, .doc*, and .jar files, plus banned content such as malware and certain illegal or abusive content.",
         "source_refs": [
-          0
+          1
         ]
       }
     }
@@ -934,9 +934,17 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The public pages say Beeline customers can use the service without traffic limits on the Beeline network, but do not publish a clean general bandwidth cap.",
+        "notes": "The official homepage says Beeline customers can use the service without limits on the Beeline network; no clean general bandwidth cap is published for other networks.",
         "source_refs": [
           0
+        ]
+      },
+      "storage_account": {
+        "value": 10,
+        "unit": "GB",
+        "notes": "The official app listing says 10 GB of cloud storage is free forever for account holders of any telecom operator.",
+        "source_refs": [
+          1
         ]
       }
     },
@@ -1009,9 +1017,9 @@
     "summary": "Private-by-default file and link sharing service from Automattic with public API docs, direct links, and stream-based sharing.",
     "limits": {
       "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "The cited official public pages do not publish a clean current maximum upload size.",
+        "value": 200,
+        "unit": "MB",
+        "notes": "The official API upload example embeds an S3 content-length-range capped at 209,715,200 bytes, which works out to about 200 MB per authenticated upload.",
         "source_refs": [
           0
         ]
@@ -1036,6 +1044,14 @@
         "value": null,
         "unit": null,
         "notes": "The cited official public pages do not publish a clean current bandwidth cap.",
+        "source_refs": [
+          0
+        ]
+      },
+      "max_file_size_account": {
+        "value": 200,
+        "unit": "MB",
+        "notes": "Cloudup's authenticated upload flow example caps the upload content-length-range at 209,715,200 bytes, or about 200 MB.",
         "source_refs": [
           0
         ]
@@ -1098,9 +1114,9 @@
     "content": {
       "allowed_file_types": {
         "mode": "all_except_prohibited",
-        "notes": "Official posts describe support for files, URLs, HTML, XML, SVG, and media embeds, but do not publish a full restrictive allowlist.",
+        "notes": "Official Cloudup posts explicitly describe uploading, hotlinking, and serving any type of asset, including HTML, XML, and SVG, though normal platform rules still apply.",
         "source_refs": [
-          0
+          1
         ]
       }
     }
@@ -1141,14 +1157,22 @@
         "source_refs": [
           0
         ]
+      },
+      "storage_account": {
+        "value": 5,
+        "unit": "GB",
+        "notes": "The official pricing page lists 5 GB of cloud storage on the Discovery free plan.",
+        "source_refs": [
+          1
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "A free account includes 5 GB of storage, unlimited authorized devices, chat, and collaborative notes.",
+      "benefits": "A free account includes 5 GB of storage, unlimited authorized devices, instant chat messaging, and simplified collaborative notes.",
       "source_refs": [
-        0,
-        1
+        1,
+        2
       ]
     },
     "developer": {
@@ -1212,25 +1236,25 @@
     "summary": "Hungarian file-sharing service with free browser uploads, unlimited advertised storage, optional FTP uploads, and premium-gated large downloads.",
     "limits": {
       "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "The official public pages promote large-file sharing but do not publish a clean current maximum upload size.",
+        "value": 2,
+        "unit": "GB",
+        "notes": "The official help page says the system accepts uploads up to 2 GB at a time, and larger files should be split into smaller parts.",
         "source_refs": [
-          0
+          1
         ]
       },
       "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "The cited official public pages do not publish a clean automatic expiry policy for hosted files.",
+        "value": 60,
+        "unit": "days",
+        "notes": "The help page says non-premium uploads are deleted after 60 days without downloads, while premium users get 1 year of no-download retention.",
         "source_refs": [
-          0
+          1
         ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The homepage advertises unlimited storage for accounts, but does not publish a structured quota table beyond that claim.",
+        "notes": "The homepage explicitly says account size is unlimited.",
         "source_refs": [
           0
         ]
@@ -1241,6 +1265,38 @@
         "notes": "The official pages do not publish a clean bandwidth cap, but free downloads above 200 MB are restricted to premium users.",
         "source_refs": [
           0
+        ]
+      },
+      "max_file_size_guest": {
+        "value": 2,
+        "unit": "GB",
+        "notes": "Guest uploads use the homepage upload flow, and the official help page documents a 2 GB maximum per uploaded file part.",
+        "source_refs": [
+          1
+        ]
+      },
+      "max_file_size_account": {
+        "value": 2,
+        "unit": "GB",
+        "notes": "Registered accounts can also upload through the web flow, and the official help page documents a 2 GB maximum per uploaded file part.",
+        "source_refs": [
+          1
+        ]
+      },
+      "storage_account": {
+        "value": null,
+        "unit": null,
+        "notes": "The homepage explicitly says registered account size is unlimited.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage_guest": {
+        "value": null,
+        "unit": null,
+        "notes": "Guest uploads work without login, but the service does not publish a guest storage quota because uploads are not attached to a persistent guest account.",
+        "source_refs": [
+          1
         ]
       }
     },
@@ -1717,7 +1773,7 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "Disroot describes the service as temporary and Lufi-based, but the cited current public pages do not state a specific expiry duration.",
+        "notes": "Retention depends on file size: files under 100 MB are kept 90 days, files between 100 MB and 1 GB are kept 15 days, and files above 1 GB are kept 2 days.",
         "source_refs": [
           0
         ]
@@ -1788,8 +1844,8 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "mode": "all_except_prohibited",
+        "notes": "The service describes general file hosting with browser-side encryption and references file name, size, and mimetype rather than a narrow allowlist.",
         "source_refs": [
           0
         ]
@@ -2116,9 +2172,9 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean current maximum upload size.",
+        "notes": "The official Android listing says FEX.NET can share links \"without size limits,\" but the cited public pages still do not publish a clean upload cap or free-plan per-file ceiling in accessible text.",
         "source_refs": [
-          0
+          1
         ]
       },
       "retention": {
@@ -2202,10 +2258,11 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages describe storing photos, videos, documents, and music, but do not publish a full allowlist.",
+        "mode": "all_except_prohibited",
+        "notes": "Current official app and product pages explicitly describe storing photos, videos, documents, and music, with no narrow allowlist published.",
         "source_refs": [
-          0
+          0,
+          1
         ]
       }
     }
@@ -4073,12 +4130,11 @@
         ]
       },
       "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "The cited public app listings describe generous free storage for registered users, but do not expose a clean numeric quota in accessible current text.",
+        "value": 20,
+        "unit": "GB",
+        "notes": "The current official App Store listing says users can start free with 20 GB of encrypted cloud storage.",
         "source_refs": [
-          0,
-          1
+          2
         ]
       },
       "bandwidth": {
@@ -4088,6 +4144,14 @@
         "source_refs": [
           0,
           1
+        ]
+      },
+      "storage_account": {
+        "value": 20,
+        "unit": "GB",
+        "notes": "The current official App Store listing says registered users start free with 20 GB of encrypted cloud storage.",
+        "source_refs": [
+          2
         ]
       }
     },
@@ -4140,6 +4204,12 @@
         "url": "https://play.google.com/store/apps/details?id=mega.privacy.android.app",
         "retrieved_at": "2026-04-27",
         "notes": "Current Android app listing describing encrypted cloud storage, sync, backup, and cross-device access."
+      },
+      {
+        "label": "MEGA App Store listing (India region)",
+        "url": "https://apps.apple.com/in/app/mega/id706857885?at=11l3Wi&ct=appfollow&mt=8",
+        "retrieved_at": "2026-04-28",
+        "notes": "Current official App Store text explicitly stating users can start free with 20 GB of encrypted cloud storage."
       }
     ],
     "content": {
@@ -4478,27 +4548,60 @@
         ]
       },
       "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "For free use, MyAirBridge's FAQ says data is deleted after 3 days, or after 2 days for transfers larger than 2 GB.",
+        "value": 3,
+        "unit": "days",
+        "notes": "The official FAQ says free transfers are deleted after 3 days, or after 2 days for transfers larger than 2 GB.",
         "source_refs": [
-          0
+          1
         ]
       },
       "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Persistent storage is positioned as a paid-plan feature rather than part of the free transfer offer.",
+        "value": 0,
+        "unit": "GB",
+        "notes": "The official plans page marks storage capacity as unavailable for both guest and free registered plans; persistent storage begins on paid plans.",
         "source_refs": [
-          0
+          2
         ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "notes": "The official FAQ says transfers up to 2 GB are given priority for free users, while larger free transfers use only currently available capacity; it does not publish a numeric bandwidth cap.",
         "source_refs": [
-          0
+          1,
+          2
+        ]
+      },
+      "max_file_size_guest": {
+        "value": 20,
+        "unit": "GB",
+        "notes": "The official plans page lists a 20 GB single upload transfer limit for guest (unregistered) users.",
+        "source_refs": [
+          2
+        ]
+      },
+      "max_file_size_account": {
+        "value": 20,
+        "unit": "GB",
+        "notes": "The official plans page lists a 20 GB single upload transfer limit for free registered users.",
+        "source_refs": [
+          2
+        ]
+      },
+      "storage_guest": {
+        "value": 0,
+        "unit": "GB",
+        "notes": "The official plans page marks storage capacity as unavailable for guest users.",
+        "source_refs": [
+          2
+        ]
+      },
+      "storage_account": {
+        "value": 0,
+        "unit": "GB",
+        "notes": "The official plans page marks storage capacity as unavailable for free registered users.",
+        "source_refs": [
+          2
         ]
       }
     },
@@ -4539,14 +4642,20 @@
       {
         "label": "Overview",
         "url": "https://info.myairbridge.com/",
-        "retrieved_at": "2026-04-26",
+        "retrieved_at": "2026-04-28",
         "notes": "20 GB free transfer size and high-level feature overview."
       },
       {
         "label": "FAQ",
-        "url": "https://info.myairbridge.com/cs/faq",
-        "retrieved_at": "2026-04-26",
-        "notes": "No-registration flow, free-transfer behavior, and retention details."
+        "url": "https://info.myairbridge.com/en/faq",
+        "retrieved_at": "2026-04-28",
+        "notes": "No-registration flow, free-transfer behavior, speed differences, and retention details."
+      },
+      {
+        "label": "Plans",
+        "url": "https://info.myairbridge.com/en/plans",
+        "retrieved_at": "2026-04-28",
+        "notes": "Current free guest and free registered plan matrix showing 20 GB transfer limits and no included storage capacity."
       }
     ],
     "content": {
@@ -4931,11 +5040,19 @@
         "source_refs": [
           0
         ]
+      },
+      "storage_account": {
+        "value": 1,
+        "unit": "GB",
+        "notes": "The official Free Drive page lists 1 GB of free storage for account holders.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "A free OwnDrive account provides 1 GB of storage with limited access to apps and can be upgraded later.",
+      "benefits": "A free OwnDrive account provides 1 GB of storage and limited access to apps, with upgrade paths to broader app access on paid plans.",
       "source_refs": [
         0,
         1
@@ -5308,27 +5425,30 @@
     "summary": "Minimal file-sharing service with direct browser uploads and a public API surface.",
     "limits": {
       "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "The cited public pages do not publish a clear current maximum file size.",
+        "value": 200,
+        "unit": "MB",
+        "notes": "Recent public comparisons consistently describe put.re uploads up to 200 MB.",
         "source_refs": [
-          0
+          4,
+          5
         ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not clearly publish a current retention policy.",
+        "notes": "Recent public comparisons consistently describe files being kept indefinitely unless deleted or found to violate the terms.",
         "source_refs": [
-          0
+          5,
+          6
         ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a total free storage quota.",
+        "notes": "Recent public comparisons describe put.re as effectively offering unlimited free storage rather than a quota-capped free plan.",
         "source_refs": [
-          0
+          4,
+          5
         ]
       },
       "bandwidth": {
@@ -5338,14 +5458,32 @@
         "source_refs": [
           0
         ]
+      },
+      "max_file_size_guest": {
+        "value": 200,
+        "unit": "MB",
+        "notes": "Recent public comparisons consistently describe put.re uploads up to 200 MB without requiring an account.",
+        "source_refs": [
+          4,
+          5
+        ]
+      },
+      "storage_guest": {
+        "value": null,
+        "unit": null,
+        "notes": "Recent public comparisons describe put.re as effectively offering unlimited free storage for anonymous uploads rather than a quota-capped guest plan.",
+        "source_refs": [
+          4,
+          5
+        ]
       }
     },
     "account": {
-      "required": null,
-      "benefits": "The current public surface suggests direct browser uploads, but the cited pages do not clearly document whether accounts are required or what account benefits exist.",
+      "required": false,
+      "benefits": "Recent public comparisons describe anonymous uploads without account creation, while the API offers additional integration workflows.",
       "source_refs": [
-        0,
-        2
+        4,
+        1
       ]
     },
     "developer": {
@@ -5360,10 +5498,11 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy.",
+        "mode": "all_except_prohibited",
+        "notes": "Recent public comparisons describe no file type restrictions on uploads beyond normal terms-of-service enforcement.",
         "source_refs": [
-          2
+          4,
+          6
         ]
       }
     },
@@ -5406,6 +5545,24 @@
         "url": "https://put.re/status",
         "retrieved_at": "2026-04-27",
         "notes": "Current official status page."
+      },
+      {
+        "label": "TechRadar anonymous image hosting guide",
+        "url": "https://www.techradar.com/best/the-best-anonymous-image-hosting-sites-in-2022",
+        "retrieved_at": "2026-04-28",
+        "notes": "Recent public guide describing put.re as anonymous-friendly, with 200 MB uploads and no account requirement."
+      },
+      {
+        "label": "FileHost Home put.re entry",
+        "url": "https://www.filehosthome.com/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Recent host comparison showing put.re with 200 MB uploads, unlimited storage, and unlimited retention."
+      },
+      {
+        "label": "Trade-Free directory note for put.re",
+        "url": "https://www.directory.trade-free.org/kn/goods-services/put-re/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Public description noting no file type restrictions, encrypted storage, and indefinite retention unless files are removed or violate terms."
       }
     ]
   },
@@ -5423,11 +5580,12 @@
         ]
       },
       "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "The cited public upload pages do not publish a clean automatic expiry period for free uploads.",
+        "value": 30,
+        "unit": "days",
+        "notes": "The help center says non-premium files are deleted automatically 30 days after the last download, while active files remain available.",
         "source_refs": [
-          0
+          2,
+          3
         ]
       },
       "storage": {
@@ -5439,11 +5597,11 @@
         ]
       },
       "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "The cited public upload pages do not publish a numeric bandwidth cap for free users.",
+        "value": 1,
+        "unit": "GB/day",
+        "notes": "The FAQ says free users can download up to 1 GB of files every day.",
         "source_refs": [
-          0
+          1
         ]
       }
     },
@@ -5483,8 +5641,26 @@
       {
         "label": "Homepage",
         "url": "https://www.sendspace.com/",
-        "retrieved_at": "2026-04-26",
+        "retrieved_at": "2026-04-28",
         "notes": "Current free upload flow, 300 MB limit, and optional recipient delivery."
+      },
+      {
+        "label": "Getting Started FAQ",
+        "url": "https://www.sendspace.com/faq.html",
+        "retrieved_at": "2026-04-28",
+        "notes": "Current FAQ stating free users can upload up to 300 MB and download up to 1 GB per day."
+      },
+      {
+        "label": "Help Center deletion-link page",
+        "url": "https://www.sendspace.com/lost_deletion_link.html",
+        "retrieved_at": "2026-04-28",
+        "notes": "Current help center page stating guest files are deleted automatically 30 days after the last download if the delete link is lost."
+      },
+      {
+        "label": "General FAQs page",
+        "url": "https://www.sendspace.com/faqs.html",
+        "retrieved_at": "2026-04-28",
+        "notes": "Current FAQ stating inactive Lite uploads are deleted after 30 days and active files are retained."
       }
     ],
     "content": {
@@ -5503,27 +5679,25 @@
     "summary": "File hosting service with browser uploads, account-based management, and a documented public API.",
     "limits": {
       "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "The cited public pages do not publish a clear current maximum file size.",
+        "value": 500,
+        "unit": "MB",
+        "notes": "The official FAQ says each uploaded file must be less than 500 MB for free/non-account uploads.",
         "source_refs": [
-          0,
           1
         ]
       },
       "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "The cited public pages do not clearly publish a current retention policy.",
+        "value": 60,
+        "unit": "days",
+        "notes": "The official FAQ says free/non-account files are kept for 60 days, while premium account files are kept for unlimited days.",
         "source_refs": [
-          0,
           1
         ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a total free storage quota.",
+        "notes": "The homepage markets keeping files forever, but the FAQ says free/non-account files are kept for 60 days, so the cited public pages still do not provide a clean free storage quota.",
         "source_refs": [
           0,
           1
@@ -5537,11 +5711,27 @@
           0,
           1
         ]
+      },
+      "max_file_size_guest": {
+        "value": 500,
+        "unit": "MB",
+        "notes": "The official FAQ says each uploaded file must be less than 500 MB for free/non-account uploads.",
+        "source_refs": [
+          1
+        ]
+      },
+      "max_file_size_account": {
+        "value": 500,
+        "unit": "MB",
+        "notes": "The official FAQ groups free and non-account users together under the same 500 MB limit; larger 1 GB uploads are described only for premium accounts.",
+        "source_refs": [
+          1
+        ]
       }
     },
     "account": {
-      "required": null,
-      "benefits": "The API docs clearly use authenticated accounts, while the upload surface suggests browser-based hosting and account management features.",
+      "required": false,
+      "benefits": "The homepage offers direct uploads without registration, while registering adds account-based management and API-linked workflows.",
       "source_refs": [
         0,
         1
@@ -5559,10 +5749,9 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy.",
+        "mode": "all_except_prohibited",
+        "notes": "The official FAQ says users may upload any file types as long as they adhere to the terms and conditions.",
         "source_refs": [
-          0,
           1
         ]
       }
@@ -5811,12 +6000,11 @@
         ]
       },
       "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "The cited public pages describe cloud storage and backup, but do not expose a clean current free quota in accessible text.",
+        "value": 10,
+        "unit": "GB",
+        "notes": "The latest accessible official quota announcement says ordinary users were adjusted to 10 GB of free storage; no newer public quota page was found in accessible official text during this pass.",
         "source_refs": [
-          0,
-          1
+          3
         ]
       },
       "bandwidth": {
@@ -5826,6 +6014,14 @@
         "source_refs": [
           0,
           1
+        ]
+      },
+      "storage_account": {
+        "value": 10,
+        "unit": "GB",
+        "notes": "The latest accessible official quota announcement says ordinary users were adjusted to 10 GB of free storage; no newer public quota page was found in accessible official text during this pass.",
+        "source_refs": [
+          3
         ]
       }
     },
@@ -5883,15 +6079,27 @@
         "url": "https://www.weiyun.com/xy-privacy.html",
         "retrieved_at": "2026-04-27",
         "notes": "Current privacy page describing the product as a Tencent cloud drive service and outlining privacy protections."
+      },
+      {
+        "label": "Tencent Weiyun storage adjustment announcement",
+        "url": "https://www.weiyun.com/mobile/reduce-space-announcement.html",
+        "retrieved_at": "2026-04-28",
+        "notes": "Latest accessible official quota announcement stating ordinary users were adjusted to 10 GB of free storage."
+      },
+      {
+        "label": "Tencent Weiyun complaint guide",
+        "url": "https://www.weiyun.com/complaint.html",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official complaint guide clarifying that uploaded content is subject to infringement and unlawful-content restrictions."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages describe storing and previewing many file formats, but do not publish a full allowlist.",
+        "mode": "all_except_prohibited",
+        "notes": "Official pages describe storing and sharing arbitrary files, while the complaint guide makes clear that infringing or unlawful uploaded content is prohibited.",
         "source_refs": [
           0,
-          1
+          4
         ]
       }
     }
@@ -6521,6 +6729,107 @@
     }
   },
   {
+    "name": "UploadServ",
+    "url": "https://uploadserv.com/",
+    "summary": "Long-running browser-based file upload service with simple sharing links and a currently active HTTPS surface.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a clean current maximum upload size.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a clean automatic expiry policy.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages describe a free file upload service, but do not expose a clean account storage quota.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a clean numeric bandwidth cap.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "Current public summaries describe a straightforward free file upload service centered on link sharing without requiring registration in the accessible text.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The cited public pages do not document a public API or CLI workflow.",
+      "source_refs": [
+        0
+      ]
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Current public summaries indicate the site is served over HTTPS, but do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "file-upload",
+      "file-sharing",
+      "direct-links",
+      "browser-based"
+    ],
+    "sources": [
+      {
+        "label": "IPAddress summary for uploadserv.com",
+        "url": "https://www.ipaddress.com/website/uploadserv.com/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Current public domain summary describing UploadServ as a free file upload service with an active HTTPS host."
+      },
+      {
+        "label": "NotOpening status for uploadserv.com",
+        "url": "https://notopening.com/site/uploadserv.com",
+        "retrieved_at": "2026-04-28",
+        "notes": "Current uptime snapshot showing the domain reachable in recent checks."
+      },
+      {
+        "label": "Webrate snapshot for uploadserv.com",
+        "url": "https://webrate.org/site/uploadserv.com/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Current public summary preserving the site title and free file upload description, though some status details are inconsistent."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "The cited public pages do not publish a full allowlist.",
+        "source_refs": [
+          0
+        ]
+      }
+    }
+  },
+  {
     "name": "UsersDrive",
     "url": "https://usersdrive.com/",
     "summary": "No-account file hosting service with password-protected links, remote URL uploads, and a clearly published max upload size on the public upload form.",
@@ -6712,6 +7021,128 @@
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
         "source_refs": [
           0
+        ]
+      }
+    }
+  },
+  {
+    "name": "WorkUpload",
+    "url": "https://workupload.com/",
+    "summary": "Browser-based file-sharing service with guest uploads, password protection, expiry controls, and optional account features for managing shared files.",
+    "limits": {
+      "max_file_size": {
+        "value": 2,
+        "unit": "GB",
+        "notes": "Current public descriptions consistently describe uploads up to 2 GB without registration.",
+        "source_refs": [
+          1,
+          2
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Current public descriptions mention configurable expiry by days or download count, but do not expose a single default retention rule in accessible text.",
+        "source_refs": [
+          2
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a clean account storage quota.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a clean numeric bandwidth cap.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "max_file_size_guest": {
+        "value": 2,
+        "unit": "GB",
+        "notes": "Public descriptions state uploads up to 2 GB without registration.",
+        "source_refs": [
+          1,
+          2
+        ]
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "Public descriptions say uploads can be done without registration, while free accounts add file management and premium features.",
+      "source_refs": [
+        1,
+        2
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The cited public pages do not document a public API or CLI workflow.",
+      "source_refs": [
+        0,
+        2
+      ]
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The active site uses HTTPS, but the cited public pages do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "file-sharing",
+      "guest-upload",
+      "password-protection",
+      "expiry-controls",
+      "direct-sharing"
+    ],
+    "sources": [
+      {
+        "label": "WorkUpload about page",
+        "url": "https://workupload.com/about",
+        "retrieved_at": "2026-04-28",
+        "notes": "Current first-party endpoint is active but challenge-protected, confirming the live product surface."
+      },
+      {
+        "label": "URLert summary for workupload.com",
+        "url": "https://www.urlert.com/domains/workupload.com",
+        "retrieved_at": "2026-04-28",
+        "notes": "Current public summary describing uploads up to 2 GB without registration plus anonymous file-sharing caution."
+      },
+      {
+        "label": "Patreon about page for WorkUpload",
+        "url": "https://www.patreon.com/workupload/about?l=es",
+        "retrieved_at": "2026-04-28",
+        "notes": "Current public profile describing password-protected files, expiry by days or downloads, email sending, and free premium-style features."
+      },
+      {
+        "label": "ScamAdviser summary for workupload.com",
+        "url": "https://www.scamadviser.com/check-website/workupload.com",
+        "retrieved_at": "2026-04-28",
+        "notes": "Current reputation snapshot showing valid SSL, long-lived domain, and strong traffic."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "The cited public pages describe general file uploads and sharing, but do not publish a full allowlist.",
+        "source_refs": [
+          1,
+          2
         ]
       }
     }

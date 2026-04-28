@@ -23,7 +23,7 @@ function NavLink({
     <Link
       href={href}
       className={[
-        "group relative inline-flex items-center gap-2 rounded-full border px-4 py-2 text-xs font-medium transition-all duration-250",
+        "group relative inline-flex items-center gap-2 rounded-[var(--radius-pill)] border px-4 py-2 text-xs font-medium transition-all duration-250",
         active
           ? "rounded-[var(--radius-pill)] border-[var(--accent)]/30 bg-[var(--accent-soft)] text-[var(--accent-content)] shadow-[0_0_20px_-4px_var(--accent-glow)]"
           : "rounded-[var(--radius-pill)] border-[var(--line)] bg-[var(--surface-1)] text-[var(--text-secondary)] hover:border-[var(--accent)]/40 hover:text-[var(--text-primary)] hover:shadow-[0_0_20px_-6px_var(--accent-glow)]"
@@ -37,7 +37,7 @@ function NavLink({
       </span>
       <span>{label}</span>
       {active && (
-        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[var(--accent)]/5 to-transparent opacity-50" />
+        <div className="absolute inset-0 rounded-[var(--radius-pill)] bg-gradient-to-r from-[var(--accent)]/5 to-transparent opacity-50" />
       )}
     </Link>
   );
@@ -51,7 +51,7 @@ export function AppFrame({ children, current }: Props) {
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div className="animate-fade-in-up">
               <div className="flex items-center gap-2">
-                <div className="h-[18px] w-[2px] rounded-full bg-gradient-to-b from-[var(--accent)] to-[var(--accent-glow)]" />
+                <div className="h-[18px] w-[2px] rounded-[var(--radius-pill)] bg-gradient-to-b from-[var(--accent)] to-[var(--accent-glow)]" />
                 <div className="text-[10px] uppercase tracking-[0.35em] text-[var(--text-muted)] font-semibold">
                   Awesome File Hosts
                 </div>

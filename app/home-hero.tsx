@@ -8,20 +8,20 @@ export function HomeHero({ stats }: { stats: { verifiedHosts: number; pendingCan
     <section className="relative overflow-hidden">
       {/* Animated gradient orbs */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-[10%] top-[20%] h-[500px] w-[500px] animate-pulse rounded-full bg-[var(--accent)] opacity-[0.08] blur-[120px]" style={{ animationDuration: "8s" }} />
-        <div className="absolute right-[15%] top-[40%] h-[400px] w-[400px] animate-pulse rounded-full bg-[var(--hero-secondary-glow)] opacity-[0.06] blur-[100px]" style={{ animationDuration: "10s", animationDelay: "2s" }} />
-        <div className="absolute bottom-[10%] left-[40%] h-[350px] w-[350px] animate-pulse rounded-full bg-[var(--good)] opacity-[0.05] blur-[90px]" style={{ animationDuration: "12s", animationDelay: "4s" }} />
+        <div className="absolute left-[10%] top-[20%] h-[500px] w-[500px] animate-pulse rounded-[var(--radius-pill)] bg-[var(--accent)] opacity-[0.08] blur-[120px]" style={{ animationDuration: "8s" }} />
+        <div className="absolute right-[15%] top-[40%] h-[400px] w-[400px] animate-pulse rounded-[var(--radius-pill)] bg-[var(--hero-secondary-glow)] opacity-[0.06] blur-[100px]" style={{ animationDuration: "10s", animationDelay: "2s" }} />
+        <div className="absolute bottom-[10%] left-[40%] h-[350px] w-[350px] animate-pulse rounded-[var(--radius-pill)] bg-[var(--good)] opacity-[0.05] blur-[90px]" style={{ animationDuration: "12s", animationDelay: "4s" }} />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 py-20 md:py-32">
         {/* Badge */}
         <div className="animate-fade-in-up mb-8 flex justify-center">
-          <div className="group inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[var(--hero-surface)] px-4 py-2 backdrop-blur-xl transition-all hover:border-[var(--accent)]/30 hover:bg-[var(--hero-surface-strong)]">
+          <div className="group inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--hero-surface)] px-4 py-2 backdrop-blur-xl transition-all hover:border-[var(--accent)]/30 hover:bg-[var(--hero-surface-strong)]">
             <Sparkle size={16} weight="fill" className="text-[var(--accent)] animate-pulse" />
             <span className="text-xs font-medium tracking-wide text-[var(--text-secondary)]">
               Source-backed file host intelligence
             </span>
-            <div className="h-1 w-1 rounded-full bg-[var(--accent)] animate-pulse" />
+            <div className="h-1 w-1 rounded-[var(--radius-pill)] bg-[var(--accent)] animate-pulse" />
           </div>
         </div>
 
@@ -49,7 +49,7 @@ export function HomeHero({ stats }: { stats: { verifiedHosts: number; pendingCan
         <div className="animate-fade-in-up mb-16 flex flex-wrap items-center justify-center gap-4" style={{ animationDelay: "0.3s" }}>
           <Link
             href="/dataset"
-            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-[var(--radius-2xl)] border border-[var(--accent)]/30 bg-[var(--accent)] px-8 py-4 font-semibold text-white shadow-[0_0_40px_-8px_var(--accent-glow)] transition-all hover:scale-[1.02] hover:shadow-[0_0_60px_-8px_var(--accent-glow)]"
+            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-[var(--radius-2xl)] border border-[var(--accent)]/30 bg-[var(--accent)] px-8 py-4 font-semibold text-[var(--accent-content)] shadow-[0_0_40px_-8px_var(--accent-glow)] transition-all hover:scale-[1.02] hover:shadow-[0_0_60px_-8px_var(--accent-glow)]"
           >
             <span className="relative z-10">Explore Dataset</span>
             <ArrowRight size={20} weight="bold" className="relative z-10 transition-transform group-hover:translate-x-1" />
@@ -82,14 +82,14 @@ export function HomeHero({ stats }: { stats: { verifiedHosts: number; pendingCan
             >
               <div className="relative z-10">
                 <div className={`mb-3 inline-flex rounded-[var(--radius-2xl)] bg-gradient-to-br ${stat.color} p-3 opacity-90`}>
-                  <stat.icon size={24} weight="bold" className="text-white" />
+                  <stat.icon size={24} weight="bold" className="text-[var(--accent-content)]" />
                 </div>
                 <div className="mb-1 text-4xl font-bold tracking-tight text-[var(--hero-heading)]">
                   {stat.value.toLocaleString()}
                 </div>
                 <div className="text-sm font-medium text-[var(--text-muted)]">{stat.label}</div>
               </div>
-              <div className={`absolute -right-8 -top-8 h-32 w-32 rounded-full bg-gradient-to-br ${stat.color} opacity-0 blur-3xl transition-opacity group-hover:opacity-10`} />
+              <div className={`absolute -right-8 -top-8 h-32 w-32 rounded-[var(--radius-pill)] bg-gradient-to-br ${stat.color} opacity-0 blur-3xl transition-opacity group-hover:opacity-10`} />
             </div>
           ))}
         </div>

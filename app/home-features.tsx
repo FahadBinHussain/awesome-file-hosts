@@ -47,13 +47,13 @@ export function HomeFeatures() {
       <div className="mx-auto max-w-7xl px-4">
         {/* Section header */}
         <div className="mb-16 text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[var(--line)] bg-[rgba(255,255,255,0.02)] px-4 py-2 backdrop-blur-xl">
-            <div className="h-2 w-2 rounded-full bg-[var(--accent)] animate-pulse" />
+          <div className="mb-4 inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-1)] px-4 py-2 backdrop-blur-xl">
+            <div className="h-2 w-2 rounded-[var(--radius-pill)] bg-[var(--accent)] animate-pulse" />
             <span className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
               Why This Exists
             </span>
           </div>
-          <h2 className="mx-auto mb-6 max-w-3xl text-4xl font-bold tracking-tight text-white md:text-5xl">
+          <h2 className="mx-auto mb-6 max-w-3xl text-4xl font-bold tracking-tight text-[var(--hero-heading)] md:text-5xl">
             Built for reliability, designed for humans
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-[var(--text-secondary)]">
@@ -67,17 +67,17 @@ export function HomeFeatures() {
           {features.map((feature, i) => (
             <div
               key={feature.title}
-              className="group relative overflow-hidden rounded-[var(--radius-3xl)] border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-8 backdrop-blur-xl transition-all hover:border-[var(--line-strong)] hover:bg-[rgba(255,255,255,0.04)] animate-fade-in-up"
+              className="group relative overflow-hidden rounded-[var(--radius-3xl)] border border-[var(--line)] bg-[var(--surface-1)] p-8 backdrop-blur-xl transition-all hover:border-[var(--line-strong)] hover:bg-[var(--surface-2)] animate-fade-in-up"
               style={{ animationDelay: `${i * 0.1}s` }}
             >
               <div className="relative z-10">
                 <div className={`mb-5 inline-flex rounded-[var(--radius-2xl)] bg-gradient-to-br ${feature.gradient} p-4 shadow-lg`}>
-                  <feature.icon size={28} weight="bold" className="text-white" />
+                  <feature.icon size={28} weight="bold" className="text-[var(--accent-content)]" />
                 </div>
-                <h3 className="mb-3 text-xl font-bold text-white">{feature.title}</h3>
+                <h3 className="mb-3 text-xl font-bold text-[var(--hero-heading)]">{feature.title}</h3>
                 <p className="leading-relaxed text-[var(--text-secondary)]">{feature.description}</p>
               </div>
-              <div className={`absolute -right-12 -top-12 h-48 w-48 rounded-full bg-gradient-to-br ${feature.gradient} opacity-0 blur-3xl transition-opacity group-hover:opacity-[0.08]`} />
+              <div className={`absolute -right-12 -top-12 h-48 w-48 rounded-[var(--radius-pill)] bg-gradient-to-br ${feature.gradient} opacity-0 blur-3xl transition-opacity group-hover:opacity-[0.08]`} />
             </div>
           ))}
         </div>
@@ -91,7 +91,7 @@ export function HomeFeatures() {
           ].map((item, i) => (
             <div
               key={item.label}
-              className="flex items-center gap-4 rounded-[var(--radius-2xl)] border border-[var(--line)] bg-[rgba(255,255,255,0.02)] p-6 backdrop-blur-xl animate-fade-in-up"
+              className="flex items-center gap-4 rounded-[var(--radius-2xl)] border border-[var(--line)] bg-[var(--surface-1)] p-6 backdrop-blur-xl animate-fade-in-up"
               style={{ animationDelay: `${0.6 + i * 0.1}s` }}
             >
               <div className="flex h-14 w-14 items-center justify-center rounded-[var(--radius-2xl)] bg-[var(--accent-soft)]">
@@ -101,7 +101,7 @@ export function HomeFeatures() {
                 <div className="text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)]">
                   {item.label}
                 </div>
-                <div className="text-lg font-bold text-white">{item.value}</div>
+                <div className="text-lg font-bold text-[var(--hero-heading)]">{item.value}</div>
               </div>
             </div>
           ))}

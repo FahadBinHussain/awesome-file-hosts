@@ -241,7 +241,9 @@ function accountMaxLabel(host: Host) {
   const explicit = host.limits.max_file_size_account;
   if (explicit) return limitLabel(explicit);
   if (host.account.required === true) return limitLabel(host.limits.max_file_size);
-  if (host.account.required === false && host.limits.max_file_size_guest) return "Same as guest";
+  if (host.account.required === false && host.limits.max_file_size_guest) {
+    return limitLabel(host.limits.max_file_size_guest);
+  }
   return "Not published";
 }
 
@@ -255,7 +257,9 @@ function accountMaxComparableLabel(host: Host) {
   const explicit = host.limits.max_file_size_account;
   if (explicit) return mbComparableLabel(explicit);
   if (host.account.required === true) return mbComparableLabel(host.limits.max_file_size);
-  if (host.account.required === false && host.limits.max_file_size_guest) return "Same as guest";
+  if (host.account.required === false && host.limits.max_file_size_guest) {
+    return mbComparableLabel(host.limits.max_file_size_guest);
+  }
   return "Not published";
 }
 
@@ -283,7 +287,9 @@ function accountStorageLabel(host: Host) {
   const explicit = host.limits.storage_account;
   if (explicit) return limitLabel(explicit);
   if (host.account.required === true) return limitLabel(host.limits.storage);
-  if (host.account.required === false && guestStorageField(host)) return "Same as guest";
+  if (host.account.required === false && guestStorageField(host)) {
+    return limitLabel(guestStorageField(host)!);
+  }
   return "Not published";
 }
 
@@ -297,7 +303,9 @@ function accountStorageComparableLabel(host: Host) {
   const explicit = host.limits.storage_account;
   if (explicit) return mbComparableLabel(explicit);
   if (host.account.required === true) return mbComparableLabel(host.limits.storage);
-  if (host.account.required === false && guestStorageField(host)) return "Same as guest";
+  if (host.account.required === false && guestStorageField(host)) {
+    return mbComparableLabel(guestStorageField(host)!);
+  }
   return "Not published";
 }
 

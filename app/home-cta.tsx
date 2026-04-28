@@ -8,22 +8,22 @@ export function HomeCTA() {
     <section className="relative overflow-hidden py-20 md:py-32">
       {/* Background effects */}
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--accent)] opacity-[0.12] blur-[150px]" />
+        <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-[var(--radius-pill)] bg-[var(--accent)] opacity-[0.12] blur-[150px]" />
       </div>
 
       <div className="relative mx-auto max-w-5xl px-4">
-        <div className="overflow-hidden rounded-[calc(var(--radius-card)*1.5)] border border-[var(--line)] bg-gradient-to-br from-[rgba(255,255,255,0.04)] to-[rgba(255,255,255,0.01)] p-12 backdrop-blur-2xl md:p-16">
+        <div className="overflow-hidden rounded-[calc(var(--radius-card)*1.5)] border border-[var(--line)] bg-gradient-to-br from-[var(--surface-2)] to-[var(--surface-1)] p-12 backdrop-blur-2xl md:p-16">
           <div className="text-center">
             {/* Badge */}
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/30 bg-[var(--accent-soft)] px-4 py-2">
-              <div className="h-2 w-2 rounded-full bg-[var(--accent)] animate-pulse" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-white">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-[var(--accent)]/30 bg-[var(--accent-soft)] px-4 py-2">
+              <div className="h-2 w-2 rounded-[var(--radius-pill)] bg-[var(--accent)] animate-pulse" />
+              <span className="text-xs font-semibold uppercase tracking-wider text-[var(--accent-content)]">
                 Ready to explore
               </span>
             </div>
 
             {/* Headline */}
-            <h2 className="mb-6 text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+            <h2 className="mb-6 text-4xl font-bold tracking-tight text-[var(--hero-heading)] md:text-5xl lg:text-6xl">
               Start exploring the dataset
             </h2>
 
@@ -37,7 +37,7 @@ export function HomeCTA() {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/dataset"
-                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-[var(--radius-2xl)] border border-[var(--accent)]/30 bg-[var(--accent)] px-8 py-4 font-semibold text-white shadow-[0_0_40px_-8px_var(--accent-glow)] transition-all hover:scale-[1.02] hover:shadow-[0_0_60px_-8px_var(--accent-glow)]"
+                className="group relative inline-flex items-center gap-2 overflow-hidden rounded-[var(--radius-2xl)] border border-[var(--accent)]/30 bg-[var(--accent)] px-8 py-4 font-semibold text-[var(--accent-content)] shadow-[0_0_40px_-8px_var(--accent-glow)] transition-all hover:scale-[1.02] hover:shadow-[0_0_60px_-8px_var(--accent-glow)]"
               >
                 <span className="relative z-10">View Full Dataset</span>
                 <ArrowRight size={20} weight="bold" className="relative z-10 transition-transform group-hover:translate-x-1" />
@@ -48,7 +48,7 @@ export function HomeCTA() {
                 href="https://github.com/yourusername/awesome-file-hosts"
                 target="_blank"
                 rel="noreferrer"
-                className="group inline-flex items-center gap-2 rounded-[var(--radius-2xl)] border border-[var(--line)] bg-[rgba(255,255,255,0.03)] px-8 py-4 font-semibold text-white backdrop-blur-xl transition-all hover:border-[var(--line-strong)] hover:bg-[rgba(255,255,255,0.06)]"
+                className="group inline-flex items-center gap-2 rounded-[var(--radius-2xl)] border border-[var(--line)] bg-[var(--surface-1)] px-8 py-4 font-semibold text-[var(--text-primary)] backdrop-blur-xl transition-all hover:border-[var(--line-strong)] hover:bg-[var(--surface-2)]"
               >
                 <GitBranch size={20} weight="bold" />
                 <span>Contribute on GitHub</span>
@@ -58,17 +58,17 @@ export function HomeCTA() {
             {/* Stats footer */}
             <div className="mt-12 flex flex-wrap items-center justify-center gap-8 border-t border-[var(--line)] pt-8">
               <div className="text-center">
-                <div className="text-3xl font-bold text-white">100%</div>
+                <div className="text-3xl font-bold text-[var(--hero-heading)]">100%</div>
                 <div className="text-sm text-[var(--text-muted)]">Open Source</div>
               </div>
               <div className="h-12 w-px bg-[var(--line)]" />
               <div className="text-center">
-                <div className="text-3xl font-bold text-white">MIT</div>
+                <div className="text-3xl font-bold text-[var(--hero-heading)]">MIT</div>
                 <div className="text-sm text-[var(--text-muted)]">Licensed</div>
               </div>
               <div className="h-12 w-px bg-[var(--line)]" />
               <div className="text-center">
-                <div className="text-3xl font-bold text-white">JSON</div>
+                <div className="text-3xl font-bold text-[var(--hero-heading)]">JSON</div>
                 <div className="text-sm text-[var(--text-muted)]">First</div>
               </div>
             </div>
