@@ -12,9 +12,16 @@ type SourceRefsField = {
   source_refs?: number[];
 };
 
-type Host = {
-  name: string;
+type SourceRecord = {
+  label: string;
   url: string;
+  retrieved_at: string;
+  notes: string;
+};
+
+type HostLikeBase = {
+  name: string;
+  url: string | null;
   summary: string;
   limits: {
     max_file_size: LimitField;
@@ -44,12 +51,7 @@ type Host = {
     notes: string;
   } & SourceRefsField;
   tags: string[];
-  sources: Array<{
-    label: string;
-    url: string;
-    retrieved_at: string;
-    notes: string;
-  }>;
+  sources: SourceRecord[];
   content: {
     allowed_file_types: {
       mode: string;
@@ -58,22 +60,13 @@ type Host = {
   };
 };
 
-type Candidate = {
-  name: string;
-  type: string;
-  free_volume: string | null;
-  shelf_life: string | null;
-  download_count: string | null;
-  languages: string[];
-  applications: string[];
+type Host = HostLikeBase & {
+  url: string;
+};
+
+type Candidate = HostLikeBase & {
   verification_status: "pending" | "verified" | "rejected";
-  verification_notes?: string | null;
-  verification_references?: Array<{
-    label: string;
-    url: string;
-    retrieved_at: string;
-  }>;
-  source: string;
+  reason: string | null;
 };
 
 export type HostRecord = Host & {
@@ -105,9 +98,39 @@ export type HostRecord = Host & {
   };
 };
 
-export type CandidateRecord = Candidate & {
+export type SourceBackedRecord = {
   id: string;
-  hasReferences: boolean;
+  sources: SourceRecord[];
+};
+
+export type CandidateRecord = Candidate &
+  SourceBackedRecord & {
+    hasReferences: boolean;
+    accountLabel: "Required" | "Guest" | "Unknown";
+    filters: {
+      maxFileLabel: string;
+      maxFileGuestLabel: string;
+      maxFileAccountLabel: string;
+      retentionLabel: string;
+      storageLabel: string;
+      storageGuestLabel: string;
+      storageAccountLabel: string;
+      bandwidthLabel: string;
+    };
+    datasetLabels: {
+      maxFileGuestLabel: string;
+      maxFileAccountLabel: string;
+      storageGuestLabel: string;
+      storageAccountLabel: string;
+    };
+    sortMetrics: {
+      maxFileGuestMb: number | null;
+      maxFileAccountMb: number | null;
+      storageGuestMb: number | null;
+      storageAccountMb: number | null;
+      bandwidthMb: number | null;
+      retentionDays: number | null;
+    };
 };
 
 export type SiteData = {
@@ -299,147 +322,150 @@ function accountLabel(required: boolean | null): HostRecord["accountLabel"] {
   return "Unknown";
 }
 
-function guestMaxField(host: Host) {
-  if (host.limits.max_file_size_guest) return host.limits.max_file_size_guest;
-  if (host.account.required === false) return host.limits.max_file_size;
+function guestMaxField(record: HostLikeBase) {
+  if (record.limits.max_file_size_guest) return record.limits.max_file_size_guest;
+  if (record.account.required === false) return record.limits.max_file_size;
   return null;
 }
 
-function accountMaxField(host: Host) {
-  if (host.limits.max_file_size_account) return host.limits.max_file_size_account;
-  if (host.account.required === true) return host.limits.max_file_size;
-  if (host.account.required === false && host.limits.max_file_size_guest) {
-    return host.limits.max_file_size_guest;
+function accountMaxField(record: HostLikeBase) {
+  if (record.limits.max_file_size_account) return record.limits.max_file_size_account;
+  if (record.account.required === true) return record.limits.max_file_size;
+  if (record.account.required === false && record.limits.max_file_size_guest) {
+    return record.limits.max_file_size_guest;
   }
   return null;
 }
 
-function guestMaxLabel(host: Host) {
-  const field = guestMaxField(host);
+function guestMaxLabel(record: HostLikeBase) {
+  const field = guestMaxField(record);
   if (field) return limitLabel(field);
-  if (host.account.required === true) return "Account only";
+  if (record.account.required === true) return "Account only";
   return "Not published";
 }
 
-function accountMaxLabel(host: Host) {
-  const explicit = host.limits.max_file_size_account;
+function accountMaxLabel(record: HostLikeBase) {
+  const explicit = record.limits.max_file_size_account;
   if (explicit) return limitLabel(explicit);
-  if (host.account.required === true) return limitLabel(host.limits.max_file_size);
-  if (host.account.required === false && host.limits.max_file_size_guest) {
-    return limitLabel(host.limits.max_file_size_guest);
+  if (record.account.required === true) return limitLabel(record.limits.max_file_size);
+  if (record.account.required === false && record.limits.max_file_size_guest) {
+    return limitLabel(record.limits.max_file_size_guest);
   }
   return "Not published";
 }
 
-function guestMaxComparableLabel(host: Host) {
-  const field = guestMaxField(host);
+function guestMaxComparableLabel(record: HostLikeBase) {
+  const field = guestMaxField(record);
   if (field) return mbComparableLabel(field);
-  return guestMaxLabel(host);
+  return guestMaxLabel(record);
 }
 
-function accountMaxComparableLabel(host: Host) {
-  const explicit = host.limits.max_file_size_account;
+function accountMaxComparableLabel(record: HostLikeBase) {
+  const explicit = record.limits.max_file_size_account;
   if (explicit) return mbComparableLabel(explicit);
-  if (host.account.required === true) return mbComparableLabel(host.limits.max_file_size);
-  if (host.account.required === false && host.limits.max_file_size_guest) {
-    return mbComparableLabel(host.limits.max_file_size_guest);
+  if (record.account.required === true) return mbComparableLabel(record.limits.max_file_size);
+  if (record.account.required === false && record.limits.max_file_size_guest) {
+    return mbComparableLabel(record.limits.max_file_size_guest);
   }
   return "Not published";
 }
 
-function guestStorageField(host: Host) {
-  if (host.limits.storage_guest) return host.limits.storage_guest;
-  if (host.account.required === false) return host.limits.storage;
+function guestStorageField(record: HostLikeBase) {
+  if (record.limits.storage_guest) return record.limits.storage_guest;
+  if (record.account.required === false) return record.limits.storage;
   return null;
 }
 
-function accountStorageField(host: Host) {
-  if (host.limits.storage_account) return host.limits.storage_account;
-  if (host.account.required === true) return host.limits.storage;
-  if (host.account.required === false && guestStorageField(host)) return guestStorageField(host);
+function accountStorageField(record: HostLikeBase) {
+  if (record.limits.storage_account) return record.limits.storage_account;
+  if (record.account.required === true) return record.limits.storage;
+  if (record.account.required === false && guestStorageField(record)) return guestStorageField(record);
   return null;
 }
 
-function guestStorageLabel(host: Host) {
-  const field = guestStorageField(host);
+function guestStorageLabel(record: HostLikeBase) {
+  const field = guestStorageField(record);
   if (field) return limitLabel(field);
-  if (host.account.required === true) return "Account only";
+  if (record.account.required === true) return "Account only";
   return "Not published";
 }
 
-function accountStorageLabel(host: Host) {
-  const explicit = host.limits.storage_account;
+function accountStorageLabel(record: HostLikeBase) {
+  const explicit = record.limits.storage_account;
   if (explicit) return limitLabel(explicit);
-  if (host.account.required === true) return limitLabel(host.limits.storage);
-  if (host.account.required === false && guestStorageField(host)) {
-    return limitLabel(guestStorageField(host)!);
+  if (record.account.required === true) return limitLabel(record.limits.storage);
+  if (record.account.required === false && guestStorageField(record)) {
+    return limitLabel(guestStorageField(record)!);
   }
   return "Not published";
 }
 
-function guestStorageComparableLabel(host: Host) {
-  const field = guestStorageField(host);
+function guestStorageComparableLabel(record: HostLikeBase) {
+  const field = guestStorageField(record);
   if (field) return mbComparableLabel(field);
-  return guestStorageLabel(host);
+  return guestStorageLabel(record);
 }
 
-function accountStorageComparableLabel(host: Host) {
-  const explicit = host.limits.storage_account;
+function accountStorageComparableLabel(record: HostLikeBase) {
+  const explicit = record.limits.storage_account;
   if (explicit) return mbComparableLabel(explicit);
-  if (host.account.required === true) return mbComparableLabel(host.limits.storage);
-  if (host.account.required === false && guestStorageField(host)) {
-    return mbComparableLabel(guestStorageField(host)!);
+  if (record.account.required === true) return mbComparableLabel(record.limits.storage);
+  if (record.account.required === false && guestStorageField(record)) {
+    return mbComparableLabel(guestStorageField(record)!);
   }
   return "Not published";
 }
 
-export function getSiteData(): SiteData {
-  const hosts = readDataFile<Host[]>("hosts.json").map((host) => ({
-    ...host,
-    id: slugify(host.name),
-    accountLabel: accountLabel(host.account.required),
+function enrichRecord<T extends HostLikeBase>(record: T) {
+  return {
+    ...record,
+    id: slugify(record.name),
+    accountLabel: accountLabel(record.account.required),
     filters: {
-      maxFileLabel: limitLabel(host.limits.max_file_size),
-      maxFileGuestLabel: guestMaxLabel(host),
-      maxFileAccountLabel: accountMaxLabel(host),
-      retentionLabel: retentionLabel(host.limits.retention),
-      storageLabel: limitLabel(host.limits.storage),
-      storageGuestLabel: guestStorageLabel(host),
-      storageAccountLabel: accountStorageLabel(host),
-      bandwidthLabel: limitLabel(host.limits.bandwidth)
+      maxFileLabel: limitLabel(record.limits.max_file_size),
+      maxFileGuestLabel: guestMaxLabel(record),
+      maxFileAccountLabel: accountMaxLabel(record),
+      retentionLabel: retentionLabel(record.limits.retention),
+      storageLabel: limitLabel(record.limits.storage),
+      storageGuestLabel: guestStorageLabel(record),
+      storageAccountLabel: accountStorageLabel(record),
+      bandwidthLabel: limitLabel(record.limits.bandwidth)
     },
     datasetLabels: {
-      maxFileGuestLabel: guestMaxComparableLabel(host),
-      maxFileAccountLabel: accountMaxComparableLabel(host),
-      storageGuestLabel: guestStorageComparableLabel(host),
-      storageAccountLabel: accountStorageComparableLabel(host)
+      maxFileGuestLabel: guestMaxComparableLabel(record),
+      maxFileAccountLabel: accountMaxComparableLabel(record),
+      storageGuestLabel: guestStorageComparableLabel(record),
+      storageAccountLabel: accountStorageComparableLabel(record)
     },
     sortMetrics: {
       maxFileGuestMb: normalizeToMb(
-        guestMaxField(host)?.value ?? null,
-        guestMaxField(host)?.unit ?? null
+        guestMaxField(record)?.value ?? null,
+        guestMaxField(record)?.unit ?? null
       ),
       maxFileAccountMb: normalizeToMb(
-        accountMaxField(host)?.value ?? null,
-        accountMaxField(host)?.unit ?? null
+        accountMaxField(record)?.value ?? null,
+        accountMaxField(record)?.unit ?? null
       ),
       storageGuestMb: normalizeToMb(
-        guestStorageField(host)?.value ?? null,
-        guestStorageField(host)?.unit ?? null
+        guestStorageField(record)?.value ?? null,
+        guestStorageField(record)?.unit ?? null
       ),
       storageAccountMb: normalizeToMb(
-        accountStorageField(host)?.value ?? null,
-        accountStorageField(host)?.unit ?? null
+        accountStorageField(record)?.value ?? null,
+        accountStorageField(record)?.unit ?? null
       ),
-      bandwidthMb: normalizeToMb(host.limits.bandwidth.value, host.limits.bandwidth.unit),
-      retentionDays: retentionSortValue(host.limits.retention)
+      bandwidthMb: normalizeToMb(record.limits.bandwidth.value, record.limits.bandwidth.unit),
+      retentionDays: retentionSortValue(record.limits.retention)
     }
-  }));
+  };
+}
+
+export function getSiteData(): SiteData {
+  const hosts = readDataFile<Host[]>("hosts.json").map((host) => enrichRecord(host));
 
   const candidates = readDataFile<Candidate[]>("candidates.json").map((candidate) => ({
-    ...candidate,
-    id: slugify(candidate.name),
-    hasReferences: Boolean(candidate.verification_references?.length)
+    ...enrichRecord(candidate),
+    hasReferences: candidate.sources.length > 0
   }));
 
   const tagOptions = [...new Set(hosts.flatMap((host) => host.tags))].sort((a, b) =>

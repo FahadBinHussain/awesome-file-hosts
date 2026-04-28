@@ -22,7 +22,7 @@ function InfoPair({
       <div className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[var(--text-muted)]">{label}</div>
       <div className="text-sm leading-6 text-[var(--text-primary)]">
         {value}{" "}
-        <SourceRefLinks host={host} refs={refs} className="inline-flex items-center gap-0.5 whitespace-nowrap align-super" />
+        <SourceRefLinks record={host} refs={refs} className="inline-flex items-center gap-0.5 whitespace-nowrap align-super" />
       </div>
       {notes && notes !== "-" ? <div className="text-xs italic text-[var(--text-muted)]">{notes}</div> : null}
     </div>

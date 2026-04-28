@@ -1,78 +1,188 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://example.com/awesome-file-hosts/candidates.schema.json",
-  "title": "awesome-file-hosts candidate imports",
+  "title": "awesome-file-hosts review queue",
   "type": "array",
   "items": {
     "type": "object",
     "additionalProperties": false,
     "required": [
       "name",
-      "type",
-      "free_volume",
-      "shelf_life",
-      "download_count",
-      "languages",
-      "applications",
+      "url",
+      "summary",
+      "limits",
+      "account",
+      "developer",
+      "content",
+      "security",
+      "tags",
+      "sources",
       "verification_status",
-      "source"
+      "reason"
     ],
     "properties": {
       "name": {
         "type": "string",
         "minLength": 1
       },
-      "type": {
+      "url": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "pattern": "^https://"
+      },
+      "summary": {
         "type": "string",
         "minLength": 1
       },
-      "free_volume": {
-        "type": [
-          "string",
-          "null"
-        ]
+      "limits": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "max_file_size",
+          "retention",
+          "storage",
+          "bandwidth"
+        ],
+        "properties": {
+          "max_file_size": { "$ref": "#/$defs/limitField" },
+          "max_file_size_guest": { "$ref": "#/$defs/limitField" },
+          "max_file_size_account": { "$ref": "#/$defs/limitField" },
+          "retention": { "$ref": "#/$defs/limitField" },
+          "storage": { "$ref": "#/$defs/limitField" },
+          "storage_guest": { "$ref": "#/$defs/limitField" },
+          "storage_account": { "$ref": "#/$defs/limitField" },
+          "bandwidth": { "$ref": "#/$defs/limitField" }
+        }
       },
-      "shelf_life": {
-        "type": [
-          "string",
-          "null"
-        ]
+      "account": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "required",
+          "benefits"
+        ],
+        "properties": {
+          "required": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "benefits": {
+            "type": "string"
+          },
+          "source_refs": {
+            "$ref": "#/$defs/sourceRefs"
+          }
+        }
       },
-      "download_count": {
-        "type": [
-          "string",
-          "null"
-        ]
+      "developer": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "api_available",
+          "api_docs_url",
+          "cli_friendly",
+          "cli_example",
+          "notes"
+        ],
+        "properties": {
+          "api_available": {
+            "type": "boolean"
+          },
+          "api_docs_url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^https://"
+          },
+          "cli_friendly": {
+            "type": "boolean"
+          },
+          "cli_example": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          },
+          "source_refs": {
+            "$ref": "#/$defs/sourceRefs"
+          }
+        }
       },
-      "languages": {
+      "content": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "allowed_file_types"
+        ],
+        "properties": {
+          "allowed_file_types": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "mode",
+              "notes"
+            ],
+            "properties": {
+              "mode": {
+                "type": "string",
+                "minLength": 1
+              },
+              "notes": {
+                "type": "string"
+              },
+              "source_refs": {
+                "$ref": "#/$defs/sourceRefs"
+              }
+            }
+          }
+        }
+      },
+      "security": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "https_only",
+          "e2ee",
+          "server_side_encryption",
+          "notes"
+        ],
+        "properties": {
+          "https_only": {
+            "type": "boolean"
+          },
+          "e2ee": {
+            "type": "boolean"
+          },
+          "server_side_encryption": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "notes": {
+            "type": "string"
+          },
+          "source_refs": {
+            "$ref": "#/$defs/sourceRefs"
+          }
+        }
+      },
+      "tags": {
         "type": "array",
         "items": {
           "type": "string",
           "minLength": 1
         }
       },
-      "applications": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "minLength": 1
-        }
-      },
-      "verification_status": {
-        "type": "string",
-        "enum": [
-          "pending",
-          "verified",
-          "rejected"
-        ]
-      },
-      "verification_notes": {
-        "type": [
-          "string",
-          "null"
-        ]
-      },
-      "verification_references": {
+      "sources": {
         "type": "array",
         "items": {
           "type": "object",
@@ -80,7 +190,8 @@
           "required": [
             "label",
             "url",
-            "retrieved_at"
+            "retrieved_at",
+            "notes"
           ],
           "properties": {
             "label": {
@@ -94,13 +205,65 @@
             "retrieved_at": {
               "type": "string",
               "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "notes": {
+              "type": "string"
             }
           }
         }
       },
-      "source": {
+      "verification_status": {
         "type": "string",
-        "minLength": 1
+        "enum": [
+          "pending",
+          "verified",
+          "rejected"
+        ]
+      },
+      "reason": {
+        "type": [
+          "string",
+          "null"
+        ]
+      }
+    }
+  },
+  "$defs": {
+    "sourceRefs": {
+      "type": "array",
+      "items": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "minItems": 1
+    },
+    "limitField": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "unit",
+        "notes"
+      ],
+      "properties": {
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_refs": {
+          "$ref": "#/$defs/sourceRefs"
+        }
       }
     }
   }

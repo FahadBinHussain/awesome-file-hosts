@@ -1,14 +1,14 @@
 "use client";
 
-import type { HostRecord } from "@/lib/site-data";
+import type { SourceBackedRecord } from "@/lib/site-data";
 
 type Props = {
-  host: HostRecord;
+  record: SourceBackedRecord;
   refs?: number[];
   className?: string;
 };
 
-export function SourceRefLinks({ host, refs, className }: Props) {
+export function SourceRefLinks({ record, refs, className }: Props) {
   if (!refs?.length) {
     return null;
   }
@@ -16,14 +16,14 @@ export function SourceRefLinks({ host, refs, className }: Props) {
   return (
     <span className={className ?? "inline-flex items-center gap-0.5 whitespace-nowrap align-super"}>
       {refs.map((ref) => {
-        const source = host.sources[ref];
+        const source = record.sources[ref];
         if (!source) {
           return null;
         }
 
         return (
           <a
-            key={`${host.id}-ref-${ref}`}
+            key={`${record.id}-ref-${ref}`}
             href={source.url}
             target="_blank"
             rel="noreferrer"

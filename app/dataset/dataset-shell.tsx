@@ -44,12 +44,12 @@ type HostSortKey =
   | "sources";
 type QueueSortKey =
   | "name"
-  | "type"
-  | "free_volume"
-  | "shelf_life"
-  | "download_count"
-  | "languages"
-  | "applications"
+  | "max_guest"
+  | "max_account"
+  | "storage"
+  | "retention"
+  | "api"
+  | "https"
   | "status";
 
 type SortState<T extends string> = {
@@ -100,7 +100,7 @@ const hostColumnDefs: HostColumn[] = [
     render: (host) => (
       <CitedValue
         value={host.datasetLabels.maxFileGuestLabel}
-        host={host}
+        record={host}
         refs={
           host.limits.max_file_size_guest?.source_refs ??
           (host.account.required === false ? host.limits.max_file_size.source_refs : undefined)
@@ -115,7 +115,7 @@ const hostColumnDefs: HostColumn[] = [
     render: (host) => (
       <CitedValue
         value={host.datasetLabels.maxFileAccountLabel}
-        host={host}
+        record={host}
         refs={
           (
             host.limits.max_file_size_account ??
@@ -132,7 +132,7 @@ const hostColumnDefs: HostColumn[] = [
     render: (host) => (
       <CitedValue
         value={host.datasetLabels.storageGuestLabel}
-        host={host}
+        record={host}
         refs={
           host.limits.storage_guest?.source_refs ??
           (host.account.required === false ? host.limits.storage.source_refs : undefined)
@@ -147,7 +147,7 @@ const hostColumnDefs: HostColumn[] = [
     render: (host) => (
       <CitedValue
         value={host.datasetLabels.storageAccountLabel}
-        host={host}
+        record={host}
         refs={
           (
             host.limits.storage_account ??
@@ -162,7 +162,7 @@ const hostColumnDefs: HostColumn[] = [
     label: "Retention",
     width: "122px",
     render: (host) => (
-      <CitedValue value={host.filters.retentionLabel} host={host} refs={host.limits.retention.source_refs} />
+      <CitedValue value={host.filters.retentionLabel} record={host} refs={host.limits.retention.source_refs} />
     )
   },
   { id: "api", label: "API", width: "72px", render: (host) => (host.developer.api_available ? "Yes" : "No") },
@@ -171,7 +171,7 @@ const hostColumnDefs: HostColumn[] = [
     label: "Bandwidth",
     width: "134px",
     render: (host) => (
-      <CitedValue value={host.filters.bandwidthLabel} host={host} refs={host.limits.bandwidth.source_refs} />
+      <CitedValue value={host.filters.bandwidthLabel} record={host} refs={host.limits.bandwidth.source_refs} />
     )
   },
   { id: "cli", label: "CLI", width: "72px", render: (host) => (host.developer.cli_friendly ? "Yes" : "No") },
@@ -203,36 +203,81 @@ const queueColumnDefs: QueueColumn[] = [
       </div>
     )
   },
-  { id: "type", label: "Type", width: "122px", render: (candidate) => candidate.type },
-  { id: "free_volume", label: "Free volume", width: "118px", render: (candidate) => candidate.free_volume ?? "-" },
-  { id: "shelf_life", label: "Shelf life", width: "118px", render: (candidate) => candidate.shelf_life ?? "-" },
   {
-    id: "download_count",
-    label: "Downloads",
-    width: "102px",
-    render: (candidate) => candidate.download_count ?? "-"
-  },
-  {
-    id: "languages",
-    label: "Languages",
-    width: "156px",
-    className: "min-w-[140px]",
+    id: "max_guest",
+    label: "Max (guest)",
+    width: "124px",
     render: (candidate) => (
-      <span className="block truncate" title={candidate.languages.join(", ")}>
-        {candidate.languages.join(", ") || "-"}
-      </span>
+      <CitedValue
+        value={candidate.datasetLabels.maxFileGuestLabel}
+        record={candidate}
+        refs={
+          candidate.limits.max_file_size_guest?.source_refs ??
+          (candidate.account.required === false ? candidate.limits.max_file_size.source_refs : undefined)
+        }
+      />
     )
   },
   {
-    id: "applications",
-    label: "Apps",
-    width: "156px",
-    className: "min-w-[140px]",
+    id: "max_account",
+    label: "Max (acct)",
+    width: "124px",
     render: (candidate) => (
-      <span className="block truncate" title={candidate.applications.join(", ")}>
-        {candidate.applications.join(", ") || "-"}
-      </span>
+      <CitedValue
+        value={candidate.datasetLabels.maxFileAccountLabel}
+        record={candidate}
+        refs={
+          (
+            candidate.limits.max_file_size_account ??
+            (candidate.account.required === true
+              ? candidate.limits.max_file_size
+              : candidate.limits.max_file_size_guest)
+          )?.source_refs
+        }
+      />
     )
+  },
+  {
+    id: "storage",
+    label: "Storage",
+    width: "124px",
+    render: (candidate) => (
+      <CitedValue
+        value={candidate.datasetLabels.storageAccountLabel}
+        record={candidate}
+        refs={
+          (
+            candidate.limits.storage_account ??
+            candidate.limits.storage_guest ??
+            candidate.limits.storage
+          )?.source_refs
+        }
+      />
+    )
+  },
+  {
+    id: "retention",
+    label: "Retention",
+    width: "122px",
+    render: (candidate) => (
+      <CitedValue
+        value={candidate.filters.retentionLabel}
+        record={candidate}
+        refs={candidate.limits.retention.source_refs}
+      />
+    )
+  },
+  {
+    id: "api",
+    label: "API",
+    width: "72px",
+    render: (candidate) => (candidate.developer.api_available ? "Yes" : "No")
+  },
+  {
+    id: "https",
+    label: "HTTPS",
+    width: "72px",
+    render: (candidate) => (candidate.security.https_only ? "Yes" : "No")
   },
   {
     id: "status",
@@ -246,8 +291,8 @@ const queueColumnDefs: QueueColumn[] = [
     width: "260px",
     className: "min-w-[220px]",
     render: (candidate) => (
-      <span className="block truncate" title={candidate.verification_notes ?? candidate.source}>
-        {candidate.verification_notes ?? candidate.source}
+      <span className="block truncate" title={candidate.reason ?? candidate.summary}>
+        {candidate.reason ?? candidate.summary}
       </span>
     )
   }
@@ -309,11 +354,11 @@ function hostHeaderLabel(column: HostColumn) {
 
 function CitedValue({
   value,
-  host,
+  record,
   refs
 }: {
   value: string;
-  host: HostRecord;
+  record: HostRecord | CandidateRecord;
   refs?: number[];
 }) {
   return (
@@ -321,7 +366,7 @@ function CitedValue({
       <span>{value}</span>
       {refs?.length ? " " : null}
       <SourceRefLinks
-        host={host}
+        record={record}
         refs={refs}
         className="inline-flex items-center gap-0.5 whitespace-nowrap align-super"
       />
@@ -389,18 +434,18 @@ function queueSortValue(candidate: CandidateRecord, key: QueueSortKey) {
   switch (key) {
     case "name":
       return candidate.name.toLowerCase();
-    case "type":
-      return candidate.type.toLowerCase();
-    case "free_volume":
-      return (candidate.free_volume ?? "").toLowerCase();
-    case "shelf_life":
-      return (candidate.shelf_life ?? "").toLowerCase();
-    case "download_count":
-      return (candidate.download_count ?? "").toLowerCase();
-    case "languages":
-      return candidate.languages.join(", ").toLowerCase();
-    case "applications":
-      return candidate.applications.join(", ").toLowerCase();
+    case "max_guest":
+      return candidate.sortMetrics.maxFileGuestMb;
+    case "max_account":
+      return candidate.sortMetrics.maxFileAccountMb;
+    case "storage":
+      return candidate.sortMetrics.storageAccountMb ?? candidate.sortMetrics.storageGuestMb;
+    case "retention":
+      return candidate.sortMetrics.retentionDays;
+    case "api":
+      return candidate.developer.api_available ? 1 : 0;
+    case "https":
+      return candidate.security.https_only ? 1 : 0;
     case "status":
       return candidate.verification_status;
   }
@@ -417,6 +462,27 @@ function CandidateDetailPanel({ candidate }: { candidate: CandidateRecord | null
     );
   }
 
+  const guestMaxField =
+    candidate.limits.max_file_size_guest ??
+    (candidate.account.required === false ? candidate.limits.max_file_size : undefined);
+  const accountMaxField =
+    candidate.limits.max_file_size_account ??
+    (candidate.account.required === true
+      ? candidate.limits.max_file_size
+      : candidate.account.required === false && candidate.limits.max_file_size_guest
+        ? candidate.limits.max_file_size_guest
+        : undefined);
+  const guestStorageField =
+    candidate.limits.storage_guest ??
+    (candidate.account.required === false ? candidate.limits.storage : undefined);
+  const accountStorageField =
+    candidate.limits.storage_account ??
+    (candidate.account.required === true
+      ? candidate.limits.storage
+      : candidate.account.required === false && guestStorageField
+        ? guestStorageField
+        : undefined);
+
   return (
     <aside className="rounded-[var(--radius-card)] border border-[var(--line)] bg-[var(--panel)] p-5">
       <div className="space-y-5">
@@ -427,67 +493,126 @@ function CandidateDetailPanel({ candidate }: { candidate: CandidateRecord | null
               <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">
                 Candidate detail
               </div>
+              </div>
+              <h2 className="mt-2.5 text-xl font-semibold tracking-tight text-[var(--text-primary)]">{candidate.name}</h2>
             </div>
-            <h2 className="mt-2.5 text-xl font-semibold tracking-tight text-[var(--text-primary)]">{candidate.name}</h2>
-          </div>
-          <span
-            className={[
-              "inline-flex rounded-[var(--radius-pill)] px-3 py-1 text-[10px] font-medium capitalize backdrop-blur-sm border",
-              statusTone(candidate.verification_status)
-            ].join(" ")}
-          >
-            {candidate.verification_status}
-          </span>
-        </div>
-
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="space-y-1.5">
-            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Type</div>
-            <div className="text-sm text-[var(--text-primary)]">{candidate.type}</div>
-          </div>
-          <div className="space-y-1.5">
-            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Free volume</div>
-            <div className="text-sm text-[var(--text-primary)]">{candidate.free_volume ?? "Unknown"}</div>
-          </div>
-          <div className="space-y-1.5">
-            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Shelf life</div>
-            <div className="text-sm text-[var(--text-primary)]">{candidate.shelf_life ?? "Unknown"}</div>
-          </div>
-          <div className="space-y-1.5">
-            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Download count</div>
-            <div className="text-sm text-[var(--text-primary)]">{candidate.download_count ?? "Unknown"}</div>
+          <div className="flex items-center gap-2">
+            {candidate.url ? (
+              <a
+                href={candidate.url}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-1)] px-3 py-2 text-[11px] font-semibold text-[var(--text-secondary)] transition-all hover:border-[var(--accent)]/40 hover:bg-[var(--accent-soft)] hover:text-[var(--accent-content)]"
+              >
+                <LinkSimple size={14} weight="bold" />
+                <span>Open site</span>
+              </a>
+            ) : null}
+            <span
+              className={[
+                "inline-flex rounded-[var(--radius-pill)] px-3 py-1 text-[10px] font-medium capitalize backdrop-blur-sm border",
+                statusTone(candidate.verification_status)
+              ].join(" ")}
+            >
+              {candidate.verification_status}
+            </span>
           </div>
         </div>
 
         <div className="rounded-[var(--radius-panel)] border border-[var(--line)] bg-[var(--surface-1)] p-4 text-sm leading-7 text-[var(--text-secondary)] backdrop-blur-sm">
-          {candidate.verification_notes ?? candidate.source}
+          {candidate.summary}
+        </div>
+
+        {candidate.reason ? (
+          <div className="rounded-[var(--radius-panel)] border border-[var(--bad)]/20 bg-[var(--bad-soft)]/30 p-4 text-sm leading-7 text-[var(--text-secondary)] backdrop-blur-sm">
+            {candidate.reason}
+          </div>
+        ) : null}
+
+        <div className="grid gap-4 sm:grid-cols-2">
+          <div className="space-y-1.5">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Max file (guest)</div>
+            <div className="text-sm text-[var(--text-primary)]">
+              {candidate.filters.maxFileGuestLabel} <SourceRefLinks record={candidate} refs={guestMaxField?.source_refs} />
+            </div>
+            <div className="text-xs italic text-[var(--text-muted)]">{guestMaxField?.notes ?? "-"}</div>
+          </div>
+          <div className="space-y-1.5">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Max file (account)</div>
+            <div className="text-sm text-[var(--text-primary)]">
+              {candidate.filters.maxFileAccountLabel} <SourceRefLinks record={candidate} refs={accountMaxField?.source_refs} />
+            </div>
+            <div className="text-xs italic text-[var(--text-muted)]">{accountMaxField?.notes ?? "-"}</div>
+          </div>
+          <div className="space-y-1.5">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Storage (guest)</div>
+            <div className="text-sm text-[var(--text-primary)]">
+              {candidate.filters.storageGuestLabel} <SourceRefLinks record={candidate} refs={guestStorageField?.source_refs} />
+            </div>
+            <div className="text-xs italic text-[var(--text-muted)]">{guestStorageField?.notes ?? "-"}</div>
+          </div>
+          <div className="space-y-1.5">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Storage (account)</div>
+            <div className="text-sm text-[var(--text-primary)]">
+              {candidate.filters.storageAccountLabel} <SourceRefLinks record={candidate} refs={accountStorageField?.source_refs} />
+            </div>
+            <div className="text-xs italic text-[var(--text-muted)]">{accountStorageField?.notes ?? "-"}</div>
+          </div>
+          <div className="space-y-1.5">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Retention</div>
+            <div className="text-sm text-[var(--text-primary)]">
+              {candidate.filters.retentionLabel} <SourceRefLinks record={candidate} refs={candidate.limits.retention.source_refs} />
+            </div>
+            <div className="text-xs italic text-[var(--text-muted)]">{candidate.limits.retention.notes}</div>
+          </div>
+          <div className="space-y-1.5">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Bandwidth</div>
+            <div className="text-sm text-[var(--text-primary)]">
+              {candidate.filters.bandwidthLabel} <SourceRefLinks record={candidate} refs={candidate.limits.bandwidth.source_refs} />
+            </div>
+            <div className="text-xs italic text-[var(--text-muted)]">{candidate.limits.bandwidth.notes}</div>
+          </div>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
           <div className="space-y-1.5">
-            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Languages</div>
+            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Account</div>
             <div className="text-sm text-[var(--text-primary)]">
-              {candidate.languages.join(", ") || "Unknown"}
+              {candidate.account.benefits} <SourceRefLinks record={candidate} refs={candidate.account.source_refs} />
             </div>
           </div>
           <div className="space-y-1.5">
-            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Applications</div>
+            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Allowed file types</div>
             <div className="text-sm text-[var(--text-primary)]">
-              {candidate.applications.join(", ") || "Unknown"}
+              {candidate.content.allowed_file_types.notes} <SourceRefLinks record={candidate} refs={candidate.content.allowed_file_types.source_refs} />
             </div>
+          </div>
+          <div className="space-y-1.5">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Developer</div>
+            <div className="text-sm text-[var(--text-primary)]">
+              {candidate.developer.api_available ? "API available" : "No public API"}{candidate.developer.cli_friendly ? ", CLI-friendly" : ""} <SourceRefLinks record={candidate} refs={candidate.developer.source_refs} />
+            </div>
+            <div className="text-xs italic text-[var(--text-muted)]">{candidate.developer.notes}</div>
+          </div>
+          <div className="space-y-1.5">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Security</div>
+            <div className="text-sm text-[var(--text-primary)]">
+              {candidate.security.e2ee ? "E2EE" : "No E2EE"} <SourceRefLinks record={candidate} refs={candidate.security.source_refs} />
+            </div>
+            <div className="text-xs italic text-[var(--text-muted)]">{candidate.security.notes}</div>
           </div>
         </div>
 
-        {candidate.verification_references?.length ? (
+        {candidate.sources.length ? (
           <div className="rounded-[var(--radius-panel)] border border-[var(--line)] bg-[var(--surface-1)] p-4 backdrop-blur-sm">
             <div className="flex items-center gap-2 text-sm font-semibold text-[var(--text-primary)]">
               <Database size={16} weight="fill" />
               Evidence trail
             </div>
             <div className="mt-4 space-y-3">
-              {candidate.verification_references.map((reference) => (
+              {candidate.sources.map((reference, index) => (
                 <a
-                  key={`${reference.label}-${reference.url}`}
+                  key={`${reference.label}-${reference.url}-${index}`}
                   href={reference.url}
                   target="_blank"
                   rel="noreferrer"
@@ -496,10 +621,11 @@ function CandidateDetailPanel({ candidate }: { candidate: CandidateRecord | null
                   <div className="flex items-center justify-between gap-3">
                     <div className="flex items-center gap-2 text-sm font-medium text-[var(--text-primary)]">
                       <LinkSimple size={16} weight="fill" />
-                      <span>{reference.label}</span>
+                      <span>[{index + 1}] {reference.label}</span>
                     </div>
                     <div className="text-xs text-[var(--text-muted)] font-mono">{reference.retrieved_at}</div>
                   </div>
+                  <div className="mt-2 text-xs text-[var(--text-secondary)]">{reference.notes}</div>
                 </a>
               ))}
             </div>
@@ -609,12 +735,12 @@ function MobileQueueCard({
           : "border-[var(--line)] bg-[var(--surface-1)] hover:border-[var(--line-strong)] hover:bg-[var(--surface-2)]"
       ].join(" ")}
     >
-      <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0">
-          <div className="truncate text-base font-semibold text-[var(--text-primary)]">{candidate.name}</div>
-          <div className="mt-1 text-sm text-[var(--text-secondary)]">{candidate.type}</div>
-        </div>
-        <span
+        <div className="flex items-start justify-between gap-3">
+          <div className="min-w-0">
+            <div className="truncate text-base font-semibold text-[var(--text-primary)]">{candidate.name}</div>
+            <div className="mt-1 text-sm text-[var(--text-secondary)]">{candidate.summary}</div>
+          </div>
+          <span
           className={[
             "inline-flex rounded-[var(--radius-pill)] px-2.5 py-1 text-[10px] font-medium capitalize border",
             statusTone(candidate.verification_status)
@@ -623,17 +749,17 @@ function MobileQueueCard({
           {candidate.verification_status}
         </span>
       </div>
-      <div className="mt-4 grid gap-2 text-sm text-[var(--text-secondary)]">
-        <div>
-          <span className="mr-2 text-[10px] uppercase tracking-[0.2em] text-[var(--text-muted)]">Free volume</span>
-          <span className="text-[var(--text-primary)]">{candidate.free_volume ?? "Unknown"}</span>
+        <div className="mt-4 grid gap-2 text-sm text-[var(--text-secondary)]">
+          <div>
+            <span className="mr-2 text-[10px] uppercase tracking-[0.2em] text-[var(--text-muted)]">Retention</span>
+            <span className="text-[var(--text-primary)]">{candidate.filters.retentionLabel}</span>
+          </div>
+          <div className="line-clamp-3">
+            <span className="mr-2 text-[10px] uppercase tracking-[0.2em] text-[var(--text-muted)]">Why</span>
+            <span>{candidate.reason ?? candidate.summary}</span>
+          </div>
         </div>
-        <div className="line-clamp-3">
-          <span className="mr-2 text-[10px] uppercase tracking-[0.2em] text-[var(--text-muted)]">Why</span>
-          <span>{candidate.verification_notes ?? candidate.source}</span>
-        </div>
-      </div>
-    </button>
+      </button>
   );
 }
 
@@ -736,11 +862,13 @@ export function DatasetApp({ data }: Props) {
     const rows = data.candidates.filter((candidate) => {
       const haystack = [
         candidate.name,
-        candidate.type,
-        candidate.source,
-        candidate.verification_notes ?? "",
-        candidate.languages.join(" "),
-        candidate.applications.join(" ")
+        candidate.summary,
+        candidate.reason ?? "",
+        candidate.tags.join(" "),
+        candidate.filters.maxFileGuestLabel,
+        candidate.filters.maxFileAccountLabel,
+        candidate.filters.retentionLabel,
+        candidate.datasetLabels.storageAccountLabel
       ]
         .join(" ")
         .toLowerCase();
@@ -754,6 +882,30 @@ export function DatasetApp({ data }: Props) {
     return [...rows].sort((left, right) => {
       const leftValue = queueSortValue(left, queueSort.key);
       const rightValue = queueSortValue(right, queueSort.key);
+
+      if (queueSort.key === "retention") {
+        const leftRank = retentionSortRank(left as HostRecord);
+        const rightRank = retentionSortRank(right as HostRecord);
+
+        if (leftRank.kind === "unknown" && rightRank.kind === "unknown") return 0;
+        if (leftRank.kind === "unknown") return 1;
+        if (rightRank.kind === "unknown") return -1;
+        if (leftRank.kind === "infinite" && rightRank.kind === "finite") {
+          return queueSort.direction === "asc" ? 1 : -1;
+        }
+        if (leftRank.kind === "finite" && rightRank.kind === "infinite") {
+          return queueSort.direction === "asc" ? -1 : 1;
+        }
+        const comparison = leftRank.value - rightRank.value;
+        return queueSort.direction === "asc" ? comparison : comparison * -1;
+      }
+
+      const leftMissing = leftValue === null || leftValue === undefined;
+      const rightMissing = rightValue === null || rightValue === undefined;
+      if (leftMissing && rightMissing) return 0;
+      if (leftMissing) return 1;
+      if (rightMissing) return -1;
+
       const comparison = leftValue < rightValue ? -1 : leftValue > rightValue ? 1 : 0;
       return queueSort.direction === "asc" ? comparison : comparison * -1;
     });

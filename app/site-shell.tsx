@@ -124,11 +124,11 @@ function CandidateRow({ candidate }: { candidate: CandidateRecord }) {
     <div className="grid gap-3 border-b border-[var(--line)] px-4 py-4 md:grid-cols-[minmax(0,1.2fr)_120px_140px_minmax(0,1fr)]">
       <div className="min-w-0">
         <div className="truncate text-sm font-medium text-[var(--text-primary)]">{candidate.name}</div>
-        <div className="mt-1 text-sm text-[var(--muted)]">{candidate.type}</div>
+        <div className="mt-1 line-clamp-2 text-sm text-[var(--muted)]">{candidate.summary}</div>
       </div>
       <div className="text-sm text-[var(--text)]">
-        <span className="mr-2 text-[11px] uppercase tracking-[0.18em] text-[var(--soft)] md:hidden">Limit</span>
-        {candidate.free_volume ?? "Unknown"}
+        <span className="mr-2 text-[11px] uppercase tracking-[0.18em] text-[var(--soft)] md:hidden">Max</span>
+        {candidate.filters.maxFileLabel}
       </div>
       <div>
         <span
@@ -142,7 +142,7 @@ function CandidateRow({ candidate }: { candidate: CandidateRecord }) {
       </div>
       <div className="text-sm text-[var(--muted)]">
         <span className="mr-2 text-[11px] uppercase tracking-[0.18em] text-[var(--soft)] md:hidden">Notes</span>
-        {candidate.verification_notes ?? candidate.source}
+        {candidate.reason ?? candidate.summary}
       </div>
     </div>
   );
@@ -360,9 +360,9 @@ export function ExplorerApp({ data }: Props) {
               <div className="flex h-full min-h-0 flex-col">
                 <div className="sticky top-0 z-10 hidden grid-cols-[minmax(0,1.2fr)_120px_140px_minmax(0,1fr)] gap-3 border-b border-[var(--line)] bg-[var(--panel)] px-4 py-4 text-[11px] uppercase tracking-[0.22em] text-[var(--soft)] backdrop-blur-sm md:grid">
                   <div>Candidate</div>
-                  <div>Imported limit</div>
+                  <div>Max file</div>
                   <div>Status</div>
-                  <div>Why it sits there</div>
+                  <div>Reason</div>
                 </div>
                 <div>
                   {[...queueGroups.pending, ...queueGroups.rejected.slice(0, 40), ...queueGroups.verified.slice(0, 20)].map((candidate) => (

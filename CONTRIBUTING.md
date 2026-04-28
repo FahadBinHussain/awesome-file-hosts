@@ -17,7 +17,9 @@ Thanks for helping build `awesome-file-hosts`.
 - `data/hosts.json` is for entries backed by source-checked public documentation.
 - `data/candidates.json` is for imports, backlog, and user-submitted leads that still need verification.
 - Move an item from candidates into hosts only after checking the current official source.
-- When a candidate is marked `rejected`, add `verification_notes` and `verification_references` whenever you have a clear closure, discontinuation, archival, or mismatch reason.
+- Candidate entries now use the same core shape as hosts: `summary`, `limits`, `account`, `developer`, `security`, `content`, `tags`, and `sources`.
+- Candidates also add `verification_status` plus a nullable `reason`.
+- When a candidate is marked `rejected`, fill `reason` and preserve the supporting URLs inside `sources`.
 
 ## Entry quality bar
 
@@ -121,8 +123,8 @@ If you change host data, the generated `README.md` should change too.
 
 ## Rejected entries
 
-- Use `verification_notes` to briefly explain why the candidate was rejected, such as `Service discontinued`, `Free tier no longer exists`, or `Product is not actually a public file host`.
-- Use `verification_references` to preserve the URLs that support the rejection decision.
+- Use `reason` to briefly explain why the candidate was rejected, such as `Service discontinued`, `Free tier no longer exists`, or `Product is not actually a public file host`.
+- Use `sources` to preserve the URLs that support the rejection decision.
 - Prefer official vendor or support pages first. If those do not exist anymore, use strong secondary sources for shutdowns, seizures, or public discontinuation notices.
 - Keep rejection notes short and factual.
 

@@ -176,14 +176,17 @@ function validateHost(host) {
 function validateCandidate(candidate) {
   const requiredTopLevel = [
     "name",
-    "type",
-    "free_volume",
-    "shelf_life",
-    "download_count",
-    "languages",
-    "applications",
+    "url",
+    "summary",
+    "limits",
+    "account",
+    "developer",
+    "content",
+    "security",
+    "tags",
+    "sources",
     "verification_status",
-    "source"
+    "reason"
   ];
 
   for (const key of requiredTopLevel) {
@@ -198,54 +201,125 @@ function validateCandidate(candidate) {
     "candidate name must be a non-empty string"
   );
   assert(
-    typeof candidate.type === "string" && candidate.type.trim(),
-    "candidate type must be a non-empty string"
+    candidate.url === null || (typeof candidate.url === "string" && /^https:\/\//.test(candidate.url)),
+    `${candidate.name}.url must be null or an https URL`
   );
   assert(
-    candidate.free_volume === null || typeof candidate.free_volume === "string",
-    `${candidate.name}.free_volume must be a string or null`
+    typeof candidate.summary === "string" && candidate.summary.trim(),
+    `${candidate.name}.summary must be a non-empty string`
+  );
+
+  validateLimitField(`${candidate.name}.limits.max_file_size`, candidate.limits.max_file_size);
+  if (candidate.limits.max_file_size_guest !== undefined) {
+    validateLimitField(`${candidate.name}.limits.max_file_size_guest`, candidate.limits.max_file_size_guest);
+  }
+  if (candidate.limits.max_file_size_account !== undefined) {
+    validateLimitField(`${candidate.name}.limits.max_file_size_account`, candidate.limits.max_file_size_account);
+  }
+  validateLimitField(`${candidate.name}.limits.retention`, candidate.limits.retention);
+  validateLimitField(`${candidate.name}.limits.storage`, candidate.limits.storage);
+  if (candidate.limits.storage_guest !== undefined) {
+    validateLimitField(`${candidate.name}.limits.storage_guest`, candidate.limits.storage_guest);
+  }
+  if (candidate.limits.storage_account !== undefined) {
+    validateLimitField(`${candidate.name}.limits.storage_account`, candidate.limits.storage_account);
+  }
+  validateLimitField(`${candidate.name}.limits.bandwidth`, candidate.limits.bandwidth);
+
+  assert(
+    candidate.account.required === null || typeof candidate.account.required === "boolean",
+    `${candidate.name}.account.required must be boolean or null`
+  );
+  assert(typeof candidate.account.benefits === "string", `${candidate.name}.account.benefits must be a string`);
+  validateSourceRefs(`${candidate.name}.account.source_refs`, candidate.account.source_refs);
+
+  assert(typeof candidate.developer.api_available === "boolean", `${candidate.name}.developer.api_available must be boolean`);
+  assert(
+    candidate.developer.api_docs_url === null || /^https:\/\//.test(candidate.developer.api_docs_url),
+    `${candidate.name}.developer.api_docs_url must be null or an https URL`
+  );
+  assert(typeof candidate.developer.cli_friendly === "boolean", `${candidate.name}.developer.cli_friendly must be boolean`);
+  assert(
+    candidate.developer.cli_example === null || typeof candidate.developer.cli_example === "string",
+    `${candidate.name}.developer.cli_example must be string or null`
+  );
+  assert(typeof candidate.developer.notes === "string", `${candidate.name}.developer.notes must be a string`);
+  validateSourceRefs(`${candidate.name}.developer.source_refs`, candidate.developer.source_refs);
+
+  assert(candidate.content && typeof candidate.content === "object", `${candidate.name}.content must be an object`);
+  assert(
+    candidate.content.allowed_file_types &&
+      typeof candidate.content.allowed_file_types === "object",
+    `${candidate.name}.content.allowed_file_types must be an object`
   );
   assert(
-    candidate.shelf_life === null || typeof candidate.shelf_life === "string",
-    `${candidate.name}.shelf_life must be a string or null`
+    typeof candidate.content.allowed_file_types.mode === "string" &&
+      candidate.content.allowed_file_types.mode.trim(),
+    `${candidate.name}.content.allowed_file_types.mode must be a non-empty string`
   );
   assert(
-    candidate.download_count === null || typeof candidate.download_count === "string",
-    `${candidate.name}.download_count must be a string or null`
+    typeof candidate.content.allowed_file_types.notes === "string",
+    `${candidate.name}.content.allowed_file_types.notes must be a string`
   );
-  assert(Array.isArray(candidate.languages), `${candidate.name}.languages must be an array`);
-  assert(Array.isArray(candidate.applications), `${candidate.name}.applications must be an array`);
+  validateSourceRefs(
+    `${candidate.name}.content.allowed_file_types.source_refs`,
+    candidate.content.allowed_file_types.source_refs
+  );
+
+  assert(typeof candidate.security.https_only === "boolean", `${candidate.name}.security.https_only must be boolean`);
+  assert(typeof candidate.security.e2ee === "boolean", `${candidate.name}.security.e2ee must be boolean`);
+  assert(
+    candidate.security.server_side_encryption === null ||
+      typeof candidate.security.server_side_encryption === "boolean",
+    `${candidate.name}.security.server_side_encryption must be boolean or null`
+  );
+  assert(typeof candidate.security.notes === "string", `${candidate.name}.security.notes must be a string`);
+  validateSourceRefs(`${candidate.name}.security.source_refs`, candidate.security.source_refs);
+
+  assert(Array.isArray(candidate.tags), `${candidate.name}.tags must be an array`);
+  for (const tag of candidate.tags) {
+    assert(typeof tag === "string" && tag.trim(), `${candidate.name}.tags must contain non-empty strings`);
+  }
+
+  assert(Array.isArray(candidate.sources), `${candidate.name}.sources must be an array`);
+  for (const source of candidate.sources) {
+    assert(typeof source.label === "string" && source.label.trim(), `${candidate.name}.sources.label is required`);
+    assert(typeof source.url === "string" && /^https:\/\//.test(source.url), `${candidate.name}.sources.url must be an https URL`);
+    assert(
+      typeof source.retrieved_at === "string" && /^\d{4}-\d{2}-\d{2}$/.test(source.retrieved_at),
+      `${candidate.name}.sources.retrieved_at must be YYYY-MM-DD`
+    );
+    assert(typeof source.notes === "string", `${candidate.name}.sources.notes must be a string`);
+  }
+
   assert(
     typeof candidate.verification_status === "string",
     `${candidate.name}.verification_status must be a string`
   );
   assert(
-    candidate.verification_notes === undefined ||
-      candidate.verification_notes === null ||
-      typeof candidate.verification_notes === "string",
-    `${candidate.name}.verification_notes must be a string, null, or omitted`
+    candidate.reason === null || typeof candidate.reason === "string",
+    `${candidate.name}.reason must be a string or null`
   );
-  assert(
-    candidate.verification_references === undefined ||
-      Array.isArray(candidate.verification_references),
-    `${candidate.name}.verification_references must be an array or omitted`
-  );
-  for (const reference of candidate.verification_references || []) {
-    assert(
-      typeof reference.label === "string" && reference.label.trim(),
-      `${candidate.name}.verification_references.label is required`
-    );
-    assert(
-      typeof reference.url === "string" && /^https:\/\//.test(reference.url),
-      `${candidate.name}.verification_references.url must be an https URL`
-    );
-    assert(
-      typeof reference.retrieved_at === "string" &&
-        /^\d{4}-\d{2}-\d{2}$/.test(reference.retrieved_at),
-      `${candidate.name}.verification_references.retrieved_at must be YYYY-MM-DD`
-    );
+
+  const maxSourceIndex = candidate.sources.length - 1;
+  for (const refs of [
+    candidate.limits.max_file_size.source_refs,
+    candidate.limits.max_file_size_guest?.source_refs,
+    candidate.limits.max_file_size_account?.source_refs,
+    candidate.limits.retention.source_refs,
+    candidate.limits.storage.source_refs,
+    candidate.limits.storage_guest?.source_refs,
+    candidate.limits.storage_account?.source_refs,
+    candidate.limits.bandwidth.source_refs,
+    candidate.account.source_refs,
+    candidate.developer.source_refs,
+    candidate.security.source_refs,
+    candidate.content.allowed_file_types.source_refs
+  ]) {
+    for (const ref of refs || []) {
+      assert(ref <= maxSourceIndex, `${candidate.name} source ref ${ref} is out of range`);
+    }
   }
-  assert(typeof candidate.source === "string" && candidate.source.trim(), `${candidate.name}.source must be a non-empty string`);
 }
 
 function formatLimit(field) {
