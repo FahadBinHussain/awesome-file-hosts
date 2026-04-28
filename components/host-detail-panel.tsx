@@ -65,9 +65,9 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
         : undefined);
 
   return (
-    <aside className="group rounded-[var(--radius-card)] border border-[var(--line)] bg-gradient-to-br from-[var(--panel)] to-[var(--surface-2)] p-6 shadow-[var(--shadow-raised)] backdrop-blur-2xl transition-all hover:border-[var(--line-strong)] hover:shadow-[0_32px_100px_-32px_rgba(0,0,0,0.8)]">
+    <aside className="group rounded-[var(--radius-card)] border border-[var(--line)] bg-gradient-to-br from-[var(--panel)] to-[var(--surface-2)] p-4 shadow-[var(--shadow-raised)] backdrop-blur-2xl transition-all hover:border-[var(--line-strong)] hover:shadow-[0_32px_100px_-32px_rgba(0,0,0,0.8)] sm:p-5 lg:p-6">
       <div className="space-y-6 animate-fade-in">
-        <div className="flex items-start justify-between gap-4">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div className="flex-1">
             <div className="mb-3 flex items-center gap-2">
               <div className="h-2 w-2 animate-pulse rounded-[var(--radius-pill)] bg-[var(--accent)] shadow-[0_0_12px_var(--accent)]" />
@@ -75,7 +75,7 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
                 Host Details
               </div>
             </div>
-            <h2 className="text-2xl font-bold tracking-tight text-[var(--text-primary)] transition-colors group-hover:text-[var(--accent)]">
+            <h2 className="text-2xl font-bold tracking-tight text-[var(--text-primary)] transition-colors group-hover:text-[var(--accent)] sm:text-[1.75rem]">
               {host.name}
             </h2>
           </div>
@@ -86,7 +86,7 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
             className="group/link flex items-center gap-2 rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-1)] px-4 py-2.5 text-xs font-semibold text-[var(--text-secondary)] shadow-sm transition-all hover:border-[var(--accent)]/40 hover:bg-[var(--accent-soft)] hover:text-[var(--accent-content)] hover:shadow-[0_0_24px_-4px_var(--accent-glow)]"
           >
             <LinkSimple size={14} weight="bold" className="transition-transform group-hover/link:translate-x-0.5" />
-            <span>Visit</span>
+            <span>Open site</span>
           </a>
         </div>
 
@@ -177,7 +177,7 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
           />
         </div>
 
-        <div className="grid gap-3 sm:grid-cols-3">
+        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
           <div className="group/card rounded-[var(--radius-panel)] border border-[var(--line)] bg-gradient-to-br from-[var(--surface-1)] to-[var(--surface-2)] p-4 backdrop-blur-sm transition-all hover:border-[var(--accent)]/30 hover:shadow-[0_8px_24px_-8px_var(--accent-glow)]">
             <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-[var(--radius-control)] bg-[var(--accent-soft)] shadow-sm transition-transform group-hover/card:scale-110">
               <TerminalWindow size={20} weight="fill" className="text-[var(--accent)]" />

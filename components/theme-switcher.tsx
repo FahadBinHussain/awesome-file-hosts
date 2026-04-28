@@ -32,11 +32,11 @@ export function ThemeSwitcher() {
     <div className="relative z-[120] isolate">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="inline-flex h-10 items-center gap-2 rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-2)] px-4 text-xs font-medium text-[var(--text-secondary)] backdrop-blur-xl transition-all hover:border-[var(--line-strong)] hover:bg-[var(--surface-4)] hover:text-[var(--text-primary)]"
+        className="inline-flex h-10 items-center gap-1.5 rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-2)] px-3 text-xs font-medium text-[var(--text-secondary)] backdrop-blur-xl transition-all hover:border-[var(--line-strong)] hover:bg-[var(--surface-4)] hover:text-[var(--text-primary)]"
         aria-label="Change theme"
       >
-        <Palette size={16} weight="fill" />
-        <span className="capitalize">{theme}</span>
+        <Palette size={14} weight="fill" />
+        <span className="hidden capitalize sm:inline">{theme}</span>
       </button>
 
       {isOpen && (

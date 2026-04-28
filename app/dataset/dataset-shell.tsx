@@ -485,7 +485,7 @@ function FloatingInspector({
   children: ReactNode;
 }) {
   return (
-    <div className="pointer-events-none fixed right-3 top-24 bottom-3 z-40 flex w-[min(460px,calc(100vw-1.5rem))] items-start justify-end sm:right-4 sm:top-28 sm:bottom-4 sm:w-[min(460px,calc(100vw-2rem))] md:right-6 md:top-32 md:bottom-6 md:w-[min(460px,calc(100vw-3rem))]">
+    <div className="pointer-events-none fixed inset-x-3 bottom-3 top-20 z-40 flex items-start justify-end sm:inset-x-auto sm:right-4 sm:top-28 sm:w-[min(460px,calc(100vw-2rem))] md:right-6 md:top-32 md:bottom-6 md:w-[min(460px,calc(100vw-3rem))]">
       <div className="pointer-events-auto relative max-h-full w-full overflow-auto rounded-[var(--radius-card)] border border-[var(--line)] bg-[color-mix(in_oklab,var(--bg)_92%,transparent)] pt-16 p-4 shadow-[var(--shadow-raised),0_0_0_1px_var(--line)] backdrop-blur-2xl animate-slide-in-right">
         <button
           onClick={onClose}
@@ -499,6 +499,108 @@ function FloatingInspector({
         </div>
       </div>
     </div>
+  );
+}
+
+function MobileHostCard({
+  host,
+  active,
+  onSelect
+}: {
+  host: HostRecord;
+  active: boolean;
+  onSelect: () => void;
+}) {
+  return (
+    <button
+      onClick={onSelect}
+      className={[
+        "w-full rounded-[var(--radius-card)] border p-4 text-left transition-all",
+        active
+          ? "border-[var(--accent)]/30 bg-[var(--accent-soft)]/40 shadow-[0_0_20px_-8px_var(--accent-glow)]"
+          : "border-[var(--line)] bg-[var(--surface-1)] hover:border-[var(--line-strong)] hover:bg-[var(--surface-2)]"
+      ].join(" ")}
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <a
+            href={host.url}
+            target="_blank"
+            rel="noreferrer"
+            onClick={(event) => event.stopPropagation()}
+            className="block truncate text-base font-semibold text-[var(--text-primary)] hover:text-[var(--accent)]"
+          >
+            {host.name}
+          </a>
+          <p className="mt-1 line-clamp-2 text-sm leading-6 text-[var(--text-secondary)]">{host.summary}</p>
+        </div>
+      </div>
+      <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
+        <div className="rounded-[var(--radius-panel)] border border-[var(--line)] bg-[var(--surface-2)] p-3">
+          <div className="text-[10px] uppercase tracking-[0.2em] text-[var(--text-muted)]">Max file</div>
+          <div className="mt-1 text-[var(--text-primary)]">{host.datasetLabels.maxFileAccountLabel}</div>
+        </div>
+        <div className="rounded-[var(--radius-panel)] border border-[var(--line)] bg-[var(--surface-2)] p-3">
+          <div className="text-[10px] uppercase tracking-[0.2em] text-[var(--text-muted)]">Storage</div>
+          <div className="mt-1 text-[var(--text-primary)]">{host.datasetLabels.storageAccountLabel}</div>
+        </div>
+        <div className="rounded-[var(--radius-panel)] border border-[var(--line)] bg-[var(--surface-2)] p-3">
+          <div className="text-[10px] uppercase tracking-[0.2em] text-[var(--text-muted)]">Retention</div>
+          <div className="mt-1 text-[var(--text-primary)]">{host.filters.retentionLabel}</div>
+        </div>
+        <div className="rounded-[var(--radius-panel)] border border-[var(--line)] bg-[var(--surface-2)] p-3">
+          <div className="text-[10px] uppercase tracking-[0.2em] text-[var(--text-muted)]">API</div>
+          <div className="mt-1 text-[var(--text-primary)]">{host.developer.api_available ? "Yes" : "No"}</div>
+        </div>
+      </div>
+    </button>
+  );
+}
+
+function MobileQueueCard({
+  candidate,
+  active,
+  onSelect
+}: {
+  candidate: CandidateRecord;
+  active: boolean;
+  onSelect: () => void;
+}) {
+  return (
+    <button
+      onClick={onSelect}
+      className={[
+        "w-full rounded-[var(--radius-card)] border p-4 text-left transition-all",
+        active
+          ? "border-[var(--accent)]/30 bg-[var(--accent-soft)]/40 shadow-[0_0_20px_-8px_var(--accent-glow)]"
+          : "border-[var(--line)] bg-[var(--surface-1)] hover:border-[var(--line-strong)] hover:bg-[var(--surface-2)]"
+      ].join(" ")}
+    >
+      <div className="flex items-start justify-between gap-3">
+        <div className="min-w-0">
+          <div className="truncate text-base font-semibold text-[var(--text-primary)]">{candidate.name}</div>
+          <div className="mt-1 text-sm text-[var(--text-secondary)]">{candidate.type}</div>
+        </div>
+        <span
+          className={[
+            "inline-flex rounded-[var(--radius-pill)] px-2.5 py-1 text-[10px] font-medium capitalize border",
+            statusTone(candidate.verification_status)
+          ].join(" ")}
+        >
+          {candidate.verification_status}
+        </span>
+      </div>
+      <div className="mt-4 grid gap-2 text-sm text-[var(--text-secondary)]">
+        <div>
+          <span className="mr-2 text-[10px] uppercase tracking-[0.2em] text-[var(--text-muted)]">Free volume</span>
+          <span className="text-[var(--text-primary)]">{candidate.free_volume ?? "Unknown"}</span>
+        </div>
+        <div className="line-clamp-3">
+          <span className="mr-2 text-[10px] uppercase tracking-[0.2em] text-[var(--text-muted)]">Why</span>
+          <span>{candidate.verification_notes ?? candidate.source}</span>
+        </div>
+      </div>
+    </button>
   );
 }
 
@@ -633,7 +735,7 @@ export function DatasetApp({ data }: Props) {
 
   return (
     <AppFrame current="dataset">
-      <div className="min-h-0 flex-1">
+      <div className="min-h-0 flex-1 px-4 py-6 md:px-6">
         <section className="min-h-0 overflow-visible bg-transparent">
           <div className="relative z-20 flex flex-col gap-4 border-b border-[var(--line)] p-4">
             <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
@@ -649,7 +751,7 @@ export function DatasetApp({ data }: Props) {
                 </h1>
               </div>
               
-              <div className="grid grid-cols-3 gap-2 sm:gap-3">
+              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
                 {[
                   { label: "Rows", value: mode === "hosts" ? filteredHosts.length : filteredCandidates.length },
                   { label: "Visible cols", value: mode === "hosts" ? visibleHostColumns.length : visibleQueueColumns.length },
@@ -681,7 +783,7 @@ export function DatasetApp({ data }: Props) {
                 </ToolbarButton>
               </div>
 
-              <div className="relative flex min-w-0 flex-1 items-center gap-3 rounded-[var(--radius-card)] border border-[var(--line)] bg-[var(--surface-1)] px-4 py-2.5 shadow-sm xl:max-w-[28rem]">
+              <div className="relative flex min-w-0 w-full flex-1 items-center gap-3 rounded-[var(--radius-card)] border border-[var(--line)] bg-[var(--surface-1)] px-4 py-2.5 shadow-sm xl:max-w-[28rem]">
                 <MagnifyingGlass size={18} className="text-[var(--text-muted)]" />
                 <input
                   value={search}
@@ -793,8 +895,19 @@ export function DatasetApp({ data }: Props) {
 
           <div className="relative z-0">
             {mode === "hosts" ? (
-              <div className="min-w-max text-sm">
-                <div className="sticky top-0 z-30 border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
+              <>
+                <div className="grid gap-3 md:hidden">
+                  {filteredHosts.map((host) => (
+                    <MobileHostCard
+                      key={host.id}
+                      host={host}
+                      active={selectedHostId === host.id}
+                      onSelect={() => setSelectedHostId(host.id)}
+                    />
+                  ))}
+                </div>
+                <div className="hidden min-w-max text-sm md:block">
+                <div className="sticky top-16 z-30 border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
                   {showGroupedMaxHeader || showGroupedStorageHeader ? (
                     <div
                       className="grid"
@@ -967,11 +1080,23 @@ export function DatasetApp({ data }: Props) {
                     ))}
                   </button>
                 ))}
-              </div>
+                </div>
+              </>
             ) : (
-              <div className="min-w-max text-sm">
+              <>
+                <div className="grid gap-3 md:hidden">
+                  {filteredCandidates.map((candidate) => (
+                    <MobileQueueCard
+                      key={candidate.id}
+                      candidate={candidate}
+                      active={selectedCandidateId === candidate.id}
+                      onSelect={() => setSelectedCandidateId(candidate.id)}
+                    />
+                  ))}
+                </div>
+                <div className="hidden min-w-max text-sm md:block">
                 <div
-                  className="sticky top-0 z-10 grid border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl"
+                  className="sticky top-16 z-10 grid border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl"
                   style={{ gridTemplateColumns: queueGridTemplate }}
                 >
                   {visibleQueueColumns.map((column) => {
@@ -1048,7 +1173,8 @@ export function DatasetApp({ data }: Props) {
                     ))}
                   </button>
                 ))}
-              </div>
+                </div>
+              </>
             )}
           </div>
         </section>

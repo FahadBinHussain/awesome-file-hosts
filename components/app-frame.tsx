@@ -23,21 +23,21 @@ function NavLink({
     <Link
       href={href}
       className={[
-        "group relative inline-flex items-center gap-2 rounded-[var(--radius-pill)] border px-4 py-2 text-xs font-medium transition-all duration-250",
+        "group relative inline-flex items-center gap-1.5 px-2 py-2 text-sm font-medium transition-all duration-200 sm:gap-2 sm:px-3",
         active
-          ? "rounded-[var(--radius-pill)] border-[var(--accent)]/30 bg-[var(--accent-soft)] text-[var(--accent-content)] shadow-[0_0_20px_-4px_var(--accent-glow)]"
-          : "rounded-[var(--radius-pill)] border-[var(--line)] bg-[var(--surface-1)] text-[var(--text-secondary)] hover:border-[var(--accent)]/40 hover:text-[var(--text-primary)] hover:shadow-[0_0_20px_-6px_var(--accent-glow)]"
+          ? "text-[var(--text-primary)]"
+          : "text-[var(--text-muted)] hover:text-[var(--text-primary)]"
       ].join(" ")}
     >
       <span className={[
-        "transition-transform duration-250",
-        active ? "scale-110" : "group-hover:scale-110"
+        "transition-all duration-200",
+        active ? "text-[var(--accent)]" : "group-hover:text-[var(--accent)]"
       ].join(" ")}>
         {icon}
       </span>
-      <span>{label}</span>
+      <span className="hidden text-xs sm:inline sm:text-sm">{label}</span>
       {active && (
-        <div className="absolute inset-0 rounded-[var(--radius-pill)] bg-gradient-to-r from-[var(--accent)]/5 to-transparent opacity-50" />
+        <div className="absolute -bottom-3 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent" />
       )}
     </Link>
   );
@@ -45,44 +45,39 @@ function NavLink({
 
 export function AppFrame({ children, current }: Props) {
   return (
-    <main className="min-h-[100dvh]">
-      <div className="mx-auto flex min-h-[100dvh] max-w-[1920px] flex-col">
-        <header className="relative z-50 isolate border-b border-[var(--line)] bg-[color-mix(in_oklab,var(--bg)_78%,transparent)] px-4 py-4 backdrop-blur-2xl md:px-6">
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div className="animate-fade-in-up">
-              <div className="flex items-center gap-2">
-                <div className="h-[18px] w-[2px] rounded-[var(--radius-pill)] bg-gradient-to-b from-[var(--accent)] to-[var(--accent-glow)]" />
-                <div className="text-[10px] uppercase tracking-[0.35em] text-[var(--text-muted)] font-semibold">
-                  Awesome File Hosts
-                </div>
+    <main className="min-h-[100dvh] w-full">
+      <div className="flex min-h-[100dvh] w-full flex-col">
+        <header className="sticky top-0 z-50 w-full border-b border-[var(--line)] bg-[var(--bg)]/80 backdrop-blur-xl">
+          <div className="mx-auto flex h-16 w-full max-w-[1600px] items-center justify-between gap-2 px-3 sm:gap-4 sm:px-6">
+            <Link href="/" className="group flex shrink-0 items-center gap-2 transition-all sm:gap-3">
+              <div className="flex h-7 w-7 items-center justify-center rounded-[var(--radius-control)] bg-gradient-to-br from-[var(--accent)] to-[var(--accent-hover)] shadow-[0_0_20px_-4px_var(--accent-glow)] transition-all group-hover:shadow-[0_0_24px_-2px_var(--accent-glow)] sm:h-8 sm:w-8">
+                <Database size={16} weight="bold" className="text-white sm:h-[18px] sm:w-[18px]" />
               </div>
-              <div className="mt-2 text-sm text-[var(--text-secondary)] leading-relaxed max-w-2xl">
-                JSON-first dataset, source-backed curation, and a clearer lens than a README.
-              </div>
-            </div>
-            <nav className="flex flex-wrap items-center gap-2">
+              <span className="text-xs font-semibold text-[var(--text-primary)] sm:text-sm md:text-base">
+                Awesome File Hosts
+              </span>
+            </Link>
+
+            <nav className="flex shrink-0 items-center gap-1">
               <NavLink
                 href="/"
                 active={current === "home"}
-                icon={<House size={17} weight="fill" />}
+                icon={<House size={18} weight={current === "home" ? "fill" : "regular"} />}
                 label="Home"
               />
               <NavLink
                 href="/dataset"
                 active={current === "dataset"}
-                icon={<Table size={17} weight="fill" />}
+                icon={<Table size={18} weight={current === "dataset" ? "fill" : "regular"} />}
                 label="Dataset"
               />
-              <div className="ml-1 inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-1)] px-4 py-2 text-[11px] text-[var(--text-muted)] font-mono transition-all hover:border-[var(--accent)]/30">
-                <Database size={14} weight="duotone" className="text-[var(--accent)]" />
-                <span>Source: data/*.json</span>
-              </div>
+              <div className="ml-2 h-6 w-[1px] bg-[var(--line)] sm:ml-4" />
               <ThemeSwitcher />
             </nav>
           </div>
         </header>
 
-        <div className="flex-1 px-4 py-6 md:px-6">{children}</div>
+        <div className="flex-1">{children}</div>
       </div>
     </main>
   );

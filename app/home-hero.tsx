@@ -5,15 +5,15 @@ import Link from "next/link";
 
 export function HomeHero({ stats }: { stats: { verifiedHosts: number; pendingCandidates: number; rejectedCandidates: number } }) {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative w-full overflow-hidden px-4">
       {/* Animated gradient orbs */}
-      <div className="pointer-events-none absolute inset-0">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute left-[10%] top-[20%] h-[500px] w-[500px] animate-pulse rounded-[var(--radius-pill)] bg-[var(--accent)] opacity-[0.08] blur-[120px]" style={{ animationDuration: "8s" }} />
         <div className="absolute right-[15%] top-[40%] h-[400px] w-[400px] animate-pulse rounded-[var(--radius-pill)] bg-[var(--hero-secondary-glow)] opacity-[0.06] blur-[100px]" style={{ animationDuration: "10s", animationDelay: "2s" }} />
         <div className="absolute bottom-[10%] left-[40%] h-[350px] w-[350px] animate-pulse rounded-[var(--radius-pill)] bg-[var(--good)] opacity-[0.05] blur-[90px]" style={{ animationDuration: "12s", animationDelay: "4s" }} />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 py-20 md:py-32">
+      <div className="relative mx-auto max-w-7xl py-16 sm:py-20 md:py-28 lg:py-32">
         {/* Badge */}
         <div className="animate-fade-in-up mb-8 flex justify-center">
           <div className="group inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--hero-surface)] px-4 py-2 backdrop-blur-xl transition-all hover:border-[var(--accent)]/30 hover:bg-[var(--hero-surface-strong)]">
@@ -27,9 +27,9 @@ export function HomeHero({ stats }: { stats: { verifiedHosts: number; pendingCan
 
         {/* Hero headline */}
         <div className="animate-fade-in-up mb-6 text-center" style={{ animationDelay: "0.1s" }}>
-          <h1 className="mx-auto max-w-5xl text-5xl font-bold leading-[1.1] tracking-tight text-[var(--hero-heading)] md:text-7xl lg:text-8xl">
+          <h1 className="mx-auto max-w-5xl text-4xl font-bold leading-[1.08] tracking-tight text-[var(--hero-heading)] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
             The most comprehensive
-            <span className="relative mx-3 inline-block">
+            <span className="relative mx-2 inline-block sm:mx-3">
               <span className="relative z-10 bg-gradient-to-r from-[var(--accent)] via-[var(--hero-secondary-glow)] to-[var(--accent)] bg-clip-text text-transparent">
                 file host
               </span>
@@ -40,16 +40,16 @@ export function HomeHero({ stats }: { stats: { verifiedHosts: number; pendingCan
         </div>
 
         {/* Subheadline */}
-        <p className="animate-fade-in-up mx-auto mb-12 max-w-3xl text-center text-lg leading-relaxed text-[var(--text-secondary)] md:text-xl" style={{ animationDelay: "0.2s" }}>
+        <p className="animate-fade-in-up mx-auto mb-10 max-w-3xl text-center text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg md:mb-12 md:text-xl" style={{ animationDelay: "0.2s" }}>
           Curated, verified, and structured data on {stats.verifiedHosts} file hosting services. 
           Every field backed by public sources. Every decision tracked. Every rejection documented.
         </p>
 
         {/* CTA buttons */}
-        <div className="animate-fade-in-up mb-16 flex flex-wrap items-center justify-center gap-4" style={{ animationDelay: "0.3s" }}>
+        <div className="animate-fade-in-up mb-14 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center md:mb-16 md:gap-4" style={{ animationDelay: "0.3s" }}>
           <Link
             href="/dataset"
-            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-[var(--radius-2xl)] border border-[var(--accent)]/30 bg-[var(--accent)] px-8 py-4 font-semibold text-[var(--accent-content)] shadow-[0_0_40px_-8px_var(--accent-glow)] transition-all hover:scale-[1.02] hover:shadow-[0_0_60px_-8px_var(--accent-glow)]"
+            className="group relative inline-flex min-h-[52px] items-center justify-center gap-2 overflow-hidden rounded-[var(--radius-2xl)] border border-[var(--accent)]/30 bg-[var(--accent)] px-6 py-3.5 text-center font-semibold text-[var(--accent-content)] shadow-[0_0_40px_-8px_var(--accent-glow)] transition-all hover:scale-[1.02] hover:shadow-[0_0_60px_-8px_var(--accent-glow)] sm:px-8 sm:py-4"
           >
             <span className="relative z-10">Explore Dataset</span>
             <ArrowRight size={20} weight="bold" className="relative z-10 transition-transform group-hover:translate-x-1" />
@@ -60,7 +60,7 @@ export function HomeHero({ stats }: { stats: { verifiedHosts: number; pendingCan
             href="https://github.com/yourusername/awesome-file-hosts"
             target="_blank"
             rel="noreferrer"
-            className="group inline-flex items-center gap-2 rounded-[var(--radius-2xl)] border border-[var(--line)] bg-[var(--hero-surface)] px-8 py-4 font-semibold text-[var(--hero-heading)] backdrop-blur-xl transition-all hover:border-[var(--line-strong)] hover:bg-[var(--hero-surface-strong)]"
+            className="group inline-flex min-h-[52px] items-center justify-center gap-2 rounded-[var(--radius-2xl)] border border-[var(--line)] bg-[var(--hero-surface)] px-6 py-3.5 text-center font-semibold text-[var(--hero-heading)] backdrop-blur-xl transition-all hover:border-[var(--line-strong)] hover:bg-[var(--hero-surface-strong)] sm:px-8 sm:py-4"
           >
             <GitBranch size={20} weight="bold" />
             <span>View on GitHub</span>
@@ -68,7 +68,7 @@ export function HomeHero({ stats }: { stats: { verifiedHosts: number; pendingCan
         </div>
 
         {/* Stats grid */}
-        <div className="animate-fade-in-up grid gap-4 sm:grid-cols-2 lg:grid-cols-4" style={{ animationDelay: "0.4s" }}>
+        <div className="animate-fade-in-up grid gap-4 sm:grid-cols-2 xl:grid-cols-4" style={{ animationDelay: "0.4s" }}>
           {[
             { label: "Verified Hosts", value: stats.verifiedHosts, icon: ShieldCheck, color: "from-[var(--good)] to-emerald-400" },
             { label: "Under Review", value: stats.pendingCandidates, icon: Database, color: "from-[var(--warn)] to-amber-400" },

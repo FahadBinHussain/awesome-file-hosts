@@ -43,38 +43,38 @@ const features = [
 
 export function HomeFeatures() {
   return (
-    <section className="relative py-20 md:py-32">
-      <div className="mx-auto max-w-7xl px-4">
+    <section className="relative w-full overflow-hidden px-4 py-20 md:py-32">
+      <div className="mx-auto max-w-7xl">
         {/* Section header */}
-        <div className="mb-16 text-center">
+        <div className="mb-14 text-center md:mb-16">
           <div className="mb-4 inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-1)] px-4 py-2 backdrop-blur-xl">
             <div className="h-2 w-2 rounded-[var(--radius-pill)] bg-[var(--accent)] animate-pulse" />
             <span className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
               Why This Exists
             </span>
           </div>
-          <h2 className="mx-auto mb-6 max-w-3xl text-4xl font-bold tracking-tight text-[var(--hero-heading)] md:text-5xl">
+          <h2 className="mx-auto mb-5 max-w-3xl text-3xl font-bold tracking-tight text-[var(--hero-heading)] sm:text-4xl md:mb-6 md:text-5xl">
             Built for reliability, designed for humans
           </h2>
-          <p className="mx-auto max-w-2xl text-lg text-[var(--text-secondary)]">
+          <p className="mx-auto max-w-2xl text-base text-[var(--text-secondary)] sm:text-lg">
             Most file host lists are unmaintained GitHub READMEs with dead links and zero evidence. 
             This is different.
           </p>
         </div>
 
         {/* Features grid */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           {features.map((feature, i) => (
             <div
               key={feature.title}
-              className="group relative overflow-hidden rounded-[var(--radius-3xl)] border border-[var(--line)] bg-[var(--surface-1)] p-8 backdrop-blur-xl transition-all hover:border-[var(--line-strong)] hover:bg-[var(--surface-2)] animate-fade-in-up"
+              className="group relative overflow-hidden rounded-[var(--radius-3xl)] border border-[var(--line)] bg-[var(--surface-1)] p-5 backdrop-blur-xl transition-all hover:border-[var(--line-strong)] hover:bg-[var(--surface-2)] animate-fade-in-up sm:p-6 lg:p-8"
               style={{ animationDelay: `${i * 0.1}s` }}
             >
               <div className="relative z-10">
                 <div className={`mb-5 inline-flex rounded-[var(--radius-2xl)] bg-gradient-to-br ${feature.gradient} p-4 shadow-lg`}>
                   <feature.icon size={28} weight="bold" className="text-[var(--accent-content)]" />
                 </div>
-                <h3 className="mb-3 text-xl font-bold text-[var(--hero-heading)]">{feature.title}</h3>
+                <h3 className="mb-3 text-lg font-bold text-[var(--hero-heading)] sm:text-xl">{feature.title}</h3>
                 <p className="leading-relaxed text-[var(--text-secondary)]">{feature.description}</p>
               </div>
               <div className={`absolute -right-12 -top-12 h-48 w-48 rounded-[var(--radius-pill)] bg-gradient-to-br ${feature.gradient} opacity-0 blur-3xl transition-opacity group-hover:opacity-[0.08]`} />
@@ -83,7 +83,7 @@ export function HomeFeatures() {
         </div>
 
         {/* Trust indicators */}
-        <div className="mt-20 grid gap-6 md:grid-cols-3">
+        <div className="mt-16 grid gap-4 sm:gap-5 md:grid-cols-3 md:gap-6 lg:mt-20">
           {[
             { icon: FileText, label: "Evidence-First", value: "Every claim sourced" },
             { icon: CheckCircle, label: "Queue-Aware", value: "Rejections preserved" },

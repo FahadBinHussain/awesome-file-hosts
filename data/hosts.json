@@ -3180,10 +3180,11 @@
         ]
       },
       "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "The service documents conditional deletion behavior for unguaranteed capacity after 30 days without downloads, but the cited public pages do not expose a simple universal retention rule for all free files.",
+        "value": 45,
+        "unit": "days",
+        "notes": "Current Fshare policy updates say free-member files stored in the time-limited area get an extra 15 days of guaranteed retention from the earlier 30-day policy, bringing the inactive retention window to 45 days for files without downloads in that area.",
         "source_refs": [
+          3,
           2
         ]
       },
@@ -3202,6 +3203,31 @@
         "notes": "The features page publishes free download speeds and waiting times, such as 150 KB/s for guests and 300 KB/s for free accounts, rather than a clean bandwidth quota.",
         "source_refs": [
           0
+        ]
+      },
+      "max_file_size_guest": {
+        "value": 20,
+        "unit": "GB",
+        "notes": "Fshare's official quick-send feature allows guest users to send attachments up to 20 GB without logging in.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage_guest": {
+        "value": 0,
+        "unit": "GB",
+        "notes": "The guest quick-send feature is a temporary transfer flow rather than a persistent guest storage plan.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage_account": {
+        "value": 50,
+        "unit": "GB",
+        "notes": "Registered free Fshare accounts currently include 50 GB of storage.",
+        "source_refs": [
+          0,
+          1
         ]
       }
     },
@@ -3259,14 +3285,21 @@
         "url": "https://fpt.vn/en/personal/support/information-support/faqs/fshare",
         "retrieved_at": "2026-04-27",
         "notes": "Current FAQ describing account registration and conditional deletion behavior for unguaranteed capacity."
+      },
+      {
+        "label": "Fshare storage policy update January 2026",
+        "url": "https://blog.fshare.vn/cap-nhat-chinh-sach-ve-thoi-gian-luu-tru-du-lieu-tren-fshare-tu-thang-012026.html",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official blog post describing the January 2026 retention-policy increase for free and VIP users on time-limited storage."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "mode": "all_except_prohibited",
+        "notes": "Official Fshare pages explicitly describe handling files, folders, photos, videos, documents, and large email attachments, with no narrow public allowlist published.",
         "source_refs": [
-          0
+          0,
+          1
         ]
       }
     }
@@ -3728,7 +3761,7 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The homepage FAQ currently says files are stored as long as the account is active.",
+        "notes": "The homepage FAQ says files are stored as long as the account remains active, rather than on a fixed countdown timer.",
         "source_refs": [
           0
         ]
@@ -3744,7 +3777,7 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The homepage FAQ currently says there are no bandwidth limits, aside from possible hotlinking suspension in abuse cases.",
+        "notes": "The homepage FAQ explicitly says there are no bandwidth limits, aside from possible hotlinking suspension in abuse cases.",
         "source_refs": [
           0
         ]
@@ -5801,9 +5834,9 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "The cited current public free-plan pages for this batch do not publish a per-file upload cap.",
+        "notes": "Sync says desktop and mobile apps can transfer files of any size, while the web panel has no hard file-size limit but may slow down for individual files larger than 500 MB.",
         "source_refs": [
-          0
+          2
         ]
       },
       "retention": {
@@ -5825,7 +5858,16 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "notes": "Sync says uploads and downloads are not capped so long as you stay within your account storage; free shared links are limited to 20 downloads per day per link.",
+        "source_refs": [
+          2,
+          3
+        ]
+      },
+      "storage_account": {
+        "value": 5,
+        "unit": "GB",
+        "notes": "The free Sync Starter plan currently includes 5 GB of cloud storage.",
         "source_refs": [
           0
         ]
@@ -5876,14 +5918,26 @@
         "url": "https://www.sync.com/cloud-storage/",
         "retrieved_at": "2026-04-26",
         "notes": "End-to-end encryption and privacy claims."
+      },
+      {
+        "label": "General limits help article",
+        "url": "https://help.sync.com/hc/en-us/articles/38275627279379-General-limits-when-using-Sync/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official help article covering file size behavior, storage limits, supported file types, and data transfer rules."
+      },
+      {
+        "label": "Daily download limit help article",
+        "url": "https://help.sync.com/hc/en-us/articles/46410454917907-Error-8031-Link-has-reached-daily-download-limit",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official help article confirming the free-plan shared-link limit of 20 downloads per day per link."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "mode": "all_except_prohibited",
+        "notes": "Sync says you can upload virtually any type of file, including documents, videos, photos, compressed archives, RAW files, and image files, subject to normal service rules and incompatible filename restrictions.",
         "source_refs": [
-          0
+          2
         ]
       }
     }
@@ -6843,11 +6897,11 @@
         ]
       },
       "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "The cited FAQ says expired files are automatically removed, but the public pages do not publish a fixed retention period.",
+        "value": 14,
+        "unit": "days",
+        "notes": "The current pricing page says free uploads are deleted 14 days after the last download; registered free accounts are kept 17 days after the last download.",
         "source_refs": [
-          0
+          3
         ]
       },
       "storage": {
@@ -6859,20 +6913,46 @@
         ]
       },
       "bandwidth": {
+        "value": 54,
+        "unit": "GB/day",
+        "notes": "The current pricing page lists 54 GB/day for free uploads and 73 GB/day for registered free accounts.",
+        "source_refs": [
+          3
+        ]
+      },
+      "max_file_size_guest": {
+        "value": 5250,
+        "unit": "MB",
+        "notes": "The public upload form and current pricing page list a 5250 MB maximum size for free guest uploads.",
+        "source_refs": [
+          0,
+          3
+        ]
+      },
+      "max_file_size_account": {
+        "value": 10500,
+        "unit": "MB",
+        "notes": "The current pricing page lists a 10500 MB maximum upload size for registered free accounts.",
+        "source_refs": [
+          3
+        ]
+      },
+      "storage_account": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "notes": "The current pricing page lists unlimited storage space for registered free accounts, but does not expose a numeric quota to normalize in the dataset.",
         "source_refs": [
-          0
+          3
         ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "Uploads can be started directly from the public form without creating an account, with optional recipient email, folders, and password-protected links.",
+      "benefits": "Guest uploads work without registration, while registered free accounts increase the upload limit to 10500 MB and list unlimited storage space.",
       "source_refs": [
         0,
-        1
+        1,
+        3
       ]
     },
     "developer": {
@@ -6918,6 +6998,12 @@
         "url": "https://usersdrive.com/tos.html",
         "retrieved_at": "2026-04-26",
         "notes": "Current hotlinking restrictions and service framing."
+      },
+      {
+        "label": "Pricing page",
+        "url": "https://usersdrive.com/?op=payments",
+        "retrieved_at": "2026-04-28",
+        "notes": "Current free, registered, and premium comparison including upload size, download volume, and deletion timing."
       }
     ],
     "content": {

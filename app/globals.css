@@ -86,7 +86,14 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 html {
+  width: 100%;
   background: 
     radial-gradient(ellipse at 20% 0%, color-mix(in oklab, var(--accent) 18%, transparent) 0%, transparent 50%),
     radial-gradient(ellipse at 80% 40%, color-mix(in oklab, var(--color-secondary) 14%, transparent) 0%, transparent 45%),
@@ -96,6 +103,7 @@ html {
 }
 
 body {
+  width: 100%;
   min-height: 100dvh;
   margin: 0;
   color: var(--text-primary);

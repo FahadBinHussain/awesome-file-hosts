@@ -86,7 +86,7 @@ function HostRow({
     <button
       onClick={onSelect}
       className={[
-        "grid w-full grid-cols-[minmax(0,1.4fr)_minmax(0,0.8fr)_minmax(0,0.8fr)_minmax(0,0.6fr)] gap-4 border-b border-[var(--line)] px-4 py-4 text-left transition duration-300",
+        "grid w-full gap-3 border-b border-[var(--line)] px-4 py-4 text-left transition duration-300 md:grid-cols-[minmax(0,1.4fr)_minmax(0,0.8fr)_minmax(0,0.8fr)_minmax(0,0.6fr)] md:gap-4",
         active ? "bg-[var(--accent-soft)]" : "hover:bg-[var(--surface-2)]"
       ].join(" ")}
     >
@@ -94,10 +94,25 @@ function HostRow({
         <div className="truncate text-sm font-medium text-[var(--text-primary)]">{host.name}</div>
         <div className="mt-1 line-clamp-2 text-sm text-[var(--muted)]">{host.summary}</div>
       </div>
-      <div className="text-sm text-[var(--text)]">{host.filters.maxFileLabel}</div>
-      <div className="text-sm text-[var(--text)]">{host.filters.retentionLabel}</div>
-      <div className="flex items-center justify-between gap-2 text-sm text-[var(--text)]">
+      <div className="grid grid-cols-3 gap-2 text-xs text-[var(--muted)] md:contents md:text-sm md:text-[var(--text)]">
+        <div>
+          <div className="mb-1 uppercase tracking-[0.18em] md:hidden">Max</div>
+          <div className="text-sm text-[var(--text)]">{host.filters.maxFileLabel}</div>
+        </div>
+        <div>
+          <div className="mb-1 uppercase tracking-[0.18em] md:hidden">Retention</div>
+          <div className="text-sm text-[var(--text)]">{host.filters.retentionLabel}</div>
+        </div>
+        <div className="md:hidden">
+          <div className="mb-1 uppercase tracking-[0.18em]">Account</div>
+          <div className="text-sm text-[var(--text)]">{host.accountLabel}</div>
+        </div>
+      </div>
+      <div className="hidden items-center justify-between gap-2 text-sm text-[var(--text)] md:flex">
         <span>{host.accountLabel}</span>
+        <CaretRight size={14} className="text-[var(--soft)]" />
+      </div>
+      <div className="flex items-center justify-end md:hidden">
         <CaretRight size={14} className="text-[var(--soft)]" />
       </div>
     </button>
@@ -111,7 +126,10 @@ function CandidateRow({ candidate }: { candidate: CandidateRecord }) {
         <div className="truncate text-sm font-medium text-[var(--text-primary)]">{candidate.name}</div>
         <div className="mt-1 text-sm text-[var(--muted)]">{candidate.type}</div>
       </div>
-      <div className="text-sm text-[var(--text)]">{candidate.free_volume ?? "Unknown"}</div>
+      <div className="text-sm text-[var(--text)]">
+        <span className="mr-2 text-[11px] uppercase tracking-[0.18em] text-[var(--soft)] md:hidden">Limit</span>
+        {candidate.free_volume ?? "Unknown"}
+      </div>
       <div>
         <span
           className={[
@@ -123,6 +141,7 @@ function CandidateRow({ candidate }: { candidate: CandidateRecord }) {
         </span>
       </div>
       <div className="text-sm text-[var(--muted)]">
+        <span className="mr-2 text-[11px] uppercase tracking-[0.18em] text-[var(--soft)] md:hidden">Notes</span>
         {candidate.verification_notes ?? candidate.source}
       </div>
     </div>
@@ -175,7 +194,7 @@ export function ExplorerApp({ data }: Props) {
 
   return (
     <AppFrame current="home">
-        <section className="grid gap-4 border-b border-[var(--line)] pb-4 lg:grid-cols-[minmax(0,1.5fr)_minmax(520px,1fr)]">
+        <section className="grid gap-4 border-b border-[var(--line)] pb-4 xl:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)]">
           <div className="space-y-4">
             <div className="inline-flex rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-2)] px-3 py-1 text-xs uppercase tracking-[0.28em] text-[var(--soft)]">
               Structured host intelligence
@@ -191,7 +210,7 @@ export function ExplorerApp({ data }: Props) {
             </p>
           </div>
 
-          <div className="grid gap-3 sm:grid-cols-3">
+          <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
             <StatTile label="Verified" value={data.stats.verifiedHosts} helper="Source-checked hosts in the live explorer." />
             <StatTile label="Pending" value={data.stats.pendingCandidates} helper="Leads still waiting on a hard decision." />
             <StatTile label="Rejected" value={data.stats.rejectedCandidates} helper="Tracked with reasons and references." />
@@ -201,8 +220,8 @@ export function ExplorerApp({ data }: Props) {
           </div>
         </section>
 
-        <section className="grid min-h-0 flex-1 gap-4 lg:grid-cols-[300px_minmax(0,1fr)_420px]">
-          <aside className="rounded-[var(--radius-card)] border border-[var(--line)] bg-[var(--panel)] p-4">
+        <section className="grid min-h-0 flex-1 gap-4 xl:grid-cols-[280px_minmax(0,1fr)_380px] 2xl:grid-cols-[300px_minmax(0,1fr)_420px]">
+          <aside className="rounded-[var(--radius-card)] border border-[var(--line)] bg-[var(--panel)] p-4 xl:sticky xl:top-24 xl:self-start">
             <div className="flex items-center gap-2 text-sm font-medium text-[var(--text-primary)]">
               <Funnel size={18} />
               Explorer controls
@@ -313,7 +332,7 @@ export function ExplorerApp({ data }: Props) {
           <section className="min-h-0 rounded-[var(--radius-card)] border border-[var(--line)] bg-[var(--panel)]">
             {view === "hosts" && (
               <div className="flex h-full min-h-0 flex-col">
-                <div className="sticky top-0 z-10 grid grid-cols-[minmax(0,1.4fr)_minmax(0,0.8fr)_minmax(0,0.8fr)_minmax(0,0.6fr)] gap-4 border-b border-[var(--line)] bg-[var(--panel)] px-4 py-4 text-[11px] uppercase tracking-[0.22em] text-[var(--soft)] backdrop-blur-sm">
+                <div className="sticky top-0 z-10 hidden grid-cols-[minmax(0,1.4fr)_minmax(0,0.8fr)_minmax(0,0.8fr)_minmax(0,0.6fr)] gap-4 border-b border-[var(--line)] bg-[var(--panel)] px-4 py-4 text-[11px] uppercase tracking-[0.22em] text-[var(--soft)] backdrop-blur-sm md:grid">
                   <div>Host</div>
                   <div>Max file size</div>
                   <div>Retention</div>
@@ -339,7 +358,7 @@ export function ExplorerApp({ data }: Props) {
 
             {view === "queue" && (
               <div className="flex h-full min-h-0 flex-col">
-                <div className="sticky top-0 z-10 grid grid-cols-[minmax(0,1.2fr)_120px_140px_minmax(0,1fr)] gap-3 border-b border-[var(--line)] bg-[var(--panel)] px-4 py-4 text-[11px] uppercase tracking-[0.22em] text-[var(--soft)] backdrop-blur-sm">
+                <div className="sticky top-0 z-10 hidden grid-cols-[minmax(0,1.2fr)_120px_140px_minmax(0,1fr)] gap-3 border-b border-[var(--line)] bg-[var(--panel)] px-4 py-4 text-[11px] uppercase tracking-[0.22em] text-[var(--soft)] backdrop-blur-sm md:grid">
                   <div>Candidate</div>
                   <div>Imported limit</div>
                   <div>Status</div>
@@ -354,7 +373,7 @@ export function ExplorerApp({ data }: Props) {
             )}
 
             {view === "method" && (
-              <div className="grid gap-6 p-6 md:grid-cols-2">
+              <div className="grid gap-6 p-5 sm:p-6 md:grid-cols-2">
                 <div className="space-y-4">
                   <div className="text-sm font-medium text-[var(--text-primary)]">What counts as verified</div>
                   <div className="rounded-[var(--radius-3xl)] border border-[var(--line)] bg-[var(--surface-1)] p-5 text-sm leading-7 text-[var(--muted)]">
@@ -380,7 +399,9 @@ export function ExplorerApp({ data }: Props) {
             )}
           </section>
 
-          <HostDetailPanel host={selectedHost} />
+          <div className="xl:sticky xl:top-24 xl:self-start">
+            <HostDetailPanel host={selectedHost} />
+          </div>
         </section>
 
         <footer className="grid gap-3 border-t border-[var(--line)] pt-4 text-sm text-[var(--muted)] md:grid-cols-[1fr_auto]">
