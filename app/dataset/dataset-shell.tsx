@@ -26,6 +26,8 @@ type Props = {
   data: SiteData;
 };
 
+const NO_EXPIRY_RETENTION_SORT_VALUE = 9_999_999;
+
 type DatasetMode = "hosts" | "queue";
 type HostSortKey =
   | "name"
@@ -328,17 +330,17 @@ function hostSortValue(host: HostRecord, key: HostSortKey) {
     case "name":
       return host.name.toLowerCase();
     case "max_guest":
-      return host.sortMetrics.maxFileGuestMb ?? -1;
+      return host.sortMetrics.maxFileGuestMb;
     case "max_account":
-      return host.sortMetrics.maxFileAccountMb ?? -1;
+      return host.sortMetrics.maxFileAccountMb;
     case "retention":
-      return host.sortMetrics.retentionDays ?? -1;
+      return host.sortMetrics.retentionDays;
     case "storage_guest":
-      return host.sortMetrics.storageGuestMb ?? -1;
+      return host.sortMetrics.storageGuestMb;
     case "storage_account":
-      return host.sortMetrics.storageAccountMb ?? -1;
+      return host.sortMetrics.storageAccountMb;
     case "bandwidth":
-      return host.sortMetrics.bandwidthMb ?? -1;
+      return host.sortMetrics.bandwidthMb;
     case "api":
       return host.developer.api_available ? 1 : 0;
     case "cli":
@@ -350,6 +352,33 @@ function hostSortValue(host: HostRecord, key: HostSortKey) {
     case "sources":
       return host.sources.length;
   }
+}
+
+function compareHostSortValues(leftValue: ReturnType<typeof hostSortValue>, rightValue: ReturnType<typeof hostSortValue>) {
+  const leftMissing = leftValue === null || leftValue === undefined;
+  const rightMissing = rightValue === null || rightValue === undefined;
+
+  if (leftMissing && rightMissing) return 0;
+  if (leftMissing) return 1;
+  if (rightMissing) return -1;
+
+  return leftValue < rightValue ? -1 : leftValue > rightValue ? 1 : 0;
+}
+
+function retentionSortRank(host: HostRecord) {
+  const metric = host.sortMetrics.retentionDays;
+  if (metric === null || metric === undefined) {
+    return { kind: "unknown" as const, value: Number.POSITIVE_INFINITY };
+  }
+
+  if (
+    metric === NO_EXPIRY_RETENTION_SORT_VALUE ||
+    host.filters.retentionLabel === "No automatic expiry"
+  ) {
+    return { kind: "infinite" as const, value: NO_EXPIRY_RETENTION_SORT_VALUE };
+  }
+
+  return { kind: "finite" as const, value: metric };
 }
 
 function queueSortValue(candidate: CandidateRecord, key: QueueSortKey) {
@@ -663,9 +692,37 @@ export function DatasetApp({ data }: Props) {
     });
 
     return [...rows].sort((left, right) => {
+      if (hostSort.key === "retention") {
+        const leftRank = retentionSortRank(left);
+        const rightRank = retentionSortRank(right);
+
+        if (leftRank.kind === "unknown" && rightRank.kind === "unknown") return 0;
+        if (leftRank.kind === "unknown") return 1;
+        if (rightRank.kind === "unknown") return -1;
+
+        if (leftRank.kind === "infinite" && rightRank.kind === "finite") {
+          return hostSort.direction === "asc" ? 1 : -1;
+        }
+
+        if (leftRank.kind === "finite" && rightRank.kind === "infinite") {
+          return hostSort.direction === "asc" ? -1 : 1;
+        }
+
+        const comparison =
+          leftRank.value < rightRank.value ? -1 : leftRank.value > rightRank.value ? 1 : 0;
+        return hostSort.direction === "asc" ? comparison : comparison * -1;
+      }
+
       const leftValue = hostSortValue(left, hostSort.key);
       const rightValue = hostSortValue(right, hostSort.key);
-      const comparison = leftValue < rightValue ? -1 : leftValue > rightValue ? 1 : 0;
+      const leftMissing = leftValue === null || leftValue === undefined;
+      const rightMissing = rightValue === null || rightValue === undefined;
+
+      if (leftMissing && rightMissing) return 0;
+      if (leftMissing) return 1;
+      if (rightMissing) return -1;
+
+      const comparison = compareHostSortValues(leftValue, rightValue);
       return hostSort.direction === "asc" ? comparison : comparison * -1;
     });
   }, [apiOnly, data.hosts, e2eeOnly, guestOnly, hostSort, search]);

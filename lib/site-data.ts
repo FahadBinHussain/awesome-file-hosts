@@ -125,6 +125,21 @@ export type SiteData = {
 };
 
 const DATA_DIR = path.join(process.cwd(), "data");
+const NO_EXPIRY_RETENTION_SORT_VALUE = 9_999_999;
+
+function hasNoAutomaticExpiryNotes(notes: string) {
+  const normalized = notes.toLowerCase();
+  return (
+    normalized.includes("no automatic expiry") ||
+    normalized.includes("remain until the user deletes them") ||
+    normalized.includes("remain until the user deletes") ||
+    normalized.includes("remaining until the user deletes them") ||
+    normalized.includes("files remain until deleted") ||
+    normalized.includes("remain until deleted") ||
+    normalized.includes("kept forever") ||
+    normalized.includes("stored forever")
+  );
+}
 
 function readDataFile<T>(filename: "hosts.json" | "candidates.json"): T {
   return JSON.parse(fs.readFileSync(path.join(DATA_DIR, filename), "utf8")) as T;
@@ -142,10 +157,45 @@ function limitLabel(limit: LimitField) {
     const notes = limit.notes.toLowerCase();
     if (notes.includes("unlimited")) return "Unlimited";
     if (notes.includes("depends") || notes.includes("varies")) return "Conditional";
+    if (hasNoAutomaticExpiryNotes(limit.notes)) {
+      return "No automatic expiry";
+    }
     return "Not published";
   }
 
-  return `${limit.value} ${limit.unit}`;
+  return `${formatComparableNumber(limit.value)} ${formatUnit(limit.value, limit.unit)}`;
+}
+
+function retentionLabel(limit: LimitField) {
+  if (limit.value === null || limit.unit === null) {
+    return limitLabel(limit);
+  }
+
+  const normalizedDays = normalizeRetentionToDays(limit.value, limit.unit);
+  if (normalizedDays !== null) {
+    if (normalizedDays >= 365 && normalizedDays % 365 === 0) {
+      const years = normalizedDays / 365;
+      return `${formatComparableNumber(years)} ${formatUnit(years, "year")}`;
+    }
+
+    if (normalizedDays >= 60 && normalizedDays % 30 === 0) {
+      const months = normalizedDays / 30;
+      return `${formatComparableNumber(months)} ${formatUnit(months, "month")}`;
+    }
+
+    if (normalizedDays < 1) {
+      const hours = normalizedDays * 24;
+      if (Number.isInteger(hours)) {
+        return `${formatComparableNumber(hours)} ${formatUnit(hours, "hour")}`;
+      }
+    }
+
+    if (Number.isInteger(normalizedDays)) {
+      return `${formatComparableNumber(normalizedDays)} ${formatUnit(normalizedDays, "day")}`;
+    }
+  }
+
+  return `${formatComparableNumber(limit.value)} ${formatUnit(limit.value, limit.unit)}`;
 }
 
 function mbComparableLabel(limit: LimitField) {
@@ -180,6 +230,27 @@ function formatComparableNumber(value: number) {
   });
 }
 
+function formatUnit(value: number, unit: string) {
+  const normalized = unit.trim().toLowerCase();
+  const singularMap: Record<string, string> = {
+    hour: "hour",
+    hours: "hour",
+    day: "day",
+    days: "day",
+    month: "month",
+    months: "month",
+    year: "year",
+    years: "year"
+  };
+
+  if (normalized in singularMap) {
+    const base = singularMap[normalized];
+    return Math.abs(value) === 1 ? base : `${base}s`;
+  }
+
+  return unit;
+}
+
 function normalizeToMb(value: number | null, unit: string | null) {
   if (value === null || unit === null) return null;
 
@@ -205,6 +276,19 @@ function normalizeRetentionToDays(value: number | null, unit: string | null) {
   if (normalized === "months") return value * 30;
   if (normalized === "year") return value * 365;
   if (normalized === "years") return value * 365;
+
+  return null;
+}
+
+function retentionSortValue(limit: LimitField) {
+  const numericDays = normalizeRetentionToDays(limit.value, limit.unit);
+  if (numericDays !== null) {
+    return numericDays;
+  }
+
+  if (hasNoAutomaticExpiryNotes(limit.notes)) {
+    return NO_EXPIRY_RETENTION_SORT_VALUE;
+  }
 
   return null;
 }
@@ -318,7 +402,7 @@ export function getSiteData(): SiteData {
       maxFileLabel: limitLabel(host.limits.max_file_size),
       maxFileGuestLabel: guestMaxLabel(host),
       maxFileAccountLabel: accountMaxLabel(host),
-      retentionLabel: limitLabel(host.limits.retention),
+      retentionLabel: retentionLabel(host.limits.retention),
       storageLabel: limitLabel(host.limits.storage),
       storageGuestLabel: guestStorageLabel(host),
       storageAccountLabel: accountStorageLabel(host),
@@ -348,7 +432,7 @@ export function getSiteData(): SiteData {
         accountStorageField(host)?.unit ?? null
       ),
       bandwidthMb: normalizeToMb(host.limits.bandwidth.value, host.limits.bandwidth.unit),
-      retentionDays: normalizeRetentionToDays(host.limits.retention.value, host.limits.retention.unit)
+      retentionDays: retentionSortValue(host.limits.retention)
     }
   }));
 

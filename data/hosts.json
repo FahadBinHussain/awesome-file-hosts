@@ -496,9 +496,10 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The App Store listing says shared links can be password protected and given an expiry period, but it does not describe an automatic expiry policy for files stored in the drive itself.",
+        "notes": "The official app listings position Baidu Pan as persistent cloud backup and file storage, while only shared links are described as having optional expiry controls. That supports treating normal stored files as remaining until the user deletes them.",
         "source_refs": [
-          1
+          1,
+          2
         ]
       },
       "storage": {
@@ -604,9 +605,10 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not state an automatic expiry period for files on the free plan.",
+        "notes": "Files remain until deleted. Box stores deleted items in Trash for 30 days by default, after which free Individual accounts do not get the paid recovery grace period.",
         "source_refs": [
-          0
+          0,
+          3
         ]
       },
       "storage": {
@@ -685,6 +687,12 @@
         "url": "https://developer.box.com/reference/",
         "retrieved_at": "2026-04-27",
         "notes": "Official API documentation."
+      },
+      {
+        "label": "Managing Trash",
+        "url": "https://support.box.com/hc/en-us/articles/360044196093-Managing-Trash",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official Box support article saying Trash keeps items for 30 days by default and clarifying free-account recovery limits."
       }
     ],
     "content": {
@@ -918,7 +926,7 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean automatic expiry policy for stored or shared files.",
+        "notes": "The product is presented as persistent cloud storage with 10 GB free forever for account holders. The cited first-party pages do not describe automatic deletion of normal stored files, so this is treated as remaining until the user deletes them.",
         "source_refs": [
           0
         ]
@@ -1137,9 +1145,10 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited current public pages do not state an automatic expiry period for files stored on the free plan.",
+        "notes": "Twake is presented as a synchronized personal cloud where documents stay available across devices, and the pricing FAQ says data remains yours even if you downgrade back to the free plan. That supports treating normal stored files as remaining until the user deletes them.",
         "source_refs": [
-          0
+          0,
+          1
         ]
       },
       "storage": {
@@ -1402,9 +1411,10 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The official pricing page says the free plan has limited traffic per day, but does not publish a clean numeric cap.",
+        "notes": "The public homepage only says traffic is limited, but the account dashboard exposes a configurable free-download-speed range of 5-100 KB/s and a premium-only download toggle, confirming that free delivery can be intentionally throttled to extremely low speeds.",
         "source_refs": [
-          0
+          0,
+          3
         ]
       }
     },
@@ -1460,6 +1470,12 @@
         "url": "https://ddownload.com/api",
         "retrieved_at": "2026-04-26",
         "notes": "Official API docs covering account, files, folders, and upload-related endpoints."
+      },
+      {
+        "label": "Affiliate/dashboard settings (user-provided)",
+        "url": "https://ddownload.com/",
+        "retrieved_at": "2026-04-28",
+        "notes": "User-provided authenticated dashboard text showing a free-download-speed setting of 5-100 KB/s, a premium-only download toggle, a 30-day affiliate cookie notice, and live API-account access."
       }
     ],
     "content": {
@@ -1868,9 +1884,9 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public free-plan pages do not state an automatic expiry period for stored files.",
+        "notes": "Dropbox does not publish an automatic expiry for files kept in storage; files remain until the user deletes them, after which deleted files are recoverable for a plan-dependent window.",
         "source_refs": [
-          0
+          6
         ]
       },
       "storage": {
@@ -1969,6 +1985,12 @@
         "url": "https://www.dropbox.com/developers/documentation",
         "retrieved_at": "2026-04-27",
         "notes": "Official Dropbox API documentation."
+      },
+      {
+        "label": "Deleted files behavior",
+        "url": "https://help.dropbox.com/delete-restore/deleted-files",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official help article explaining deleted-file recovery windows and permanent deletion timing."
       }
     ],
     "content": {
@@ -2180,9 +2202,10 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean automatic expiry policy for shared files.",
+        "notes": "FEX.NET is presented as account-based cloud storage where files remain safely accessible in the cloud from any device. The cited first-party pages do not describe automatic deletion of normal stored files, so this is treated as remaining until the user deletes them.",
         "source_refs": [
-          0
+          0,
+          1
         ]
       },
       "storage": {
@@ -2768,6 +2791,156 @@
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
         "source_refs": [
           0
+        ]
+      }
+    }
+  },
+  {
+    "name": "FileFast",
+    "url": "https://file.fast/",
+    "summary": "Modern file-sharing and cloud-storage service with guest uploads, file analytics, public API access, and a free tier with monthly bandwidth limits.",
+    "limits": {
+      "max_file_size": {
+        "value": 6,
+        "unit": "GB",
+        "notes": "The visible web uploader and homepage currently advertise a 6 GB maximum upload size. The FAQ still says up to 5 GB per transfer, while the API docs cap authenticated large uploads at 5 GB, so the larger 6 GB figure is treated as the current browser-based guest/web flow rather than a universal API ceiling.",
+        "source_refs": [
+          0,
+          1,
+          3,
+          4
+        ]
+      },
+      "retention": {
+        "value": 7,
+        "unit": "days",
+        "notes": "The premium page says free-plan files expire after 7 days of inactivity. The FAQ also describes automatic expiration for free storage, though it does not repeat the exact number.",
+        "source_refs": [
+          2,
+          1
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "FileFast's first-party pages conflict on free storage: the FAQ says 10 GB with automatic expiration, while the premium page says 100 GB storage on the free plan. The dataset leaves the clean numeric quota unpublished until the official surfaces agree.",
+        "source_refs": [
+          1,
+          2
+        ]
+      },
+      "bandwidth": {
+        "value": 100,
+        "unit": "GB/month",
+        "notes": "Both the FAQ and premium page currently describe 100 GB monthly bandwidth on the free plan.",
+        "source_refs": [
+          1,
+          2
+        ]
+      },
+      "max_file_size_guest": {
+        "value": 6,
+        "unit": "GB",
+        "notes": "The visible guest/web upload flow currently shows a 6 GB maximum upload file size and expiry choices including keeping files until 7 days of inactivity.",
+        "source_refs": [
+          0,
+          4
+        ]
+      },
+      "max_file_size_account": {
+        "value": 5,
+        "unit": "GB",
+        "notes": "The API docs require authentication and explicitly support large file uploads up to 5 GB.",
+        "source_refs": [
+          3
+        ]
+      },
+      "storage_account": {
+        "value": null,
+        "unit": null,
+        "notes": "The first-party pages conflict between 10 GB and 100 GB of free storage, so the dataset leaves the account storage quota unpublished pending a cleaner official statement.",
+        "source_refs": [
+          1,
+          2
+        ]
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "Guest uploads are supported from the web interface, while creating an account unlocks file management, statistics, folders, password protection, and API token access.",
+      "source_refs": [
+        0,
+        1,
+        3
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://file.fast/docs/api",
+      "cli_friendly": true,
+      "cli_example": "curl -H \"Authorization: Bearer YOUR_TOKEN\" https://file.fast/api/v1/files",
+      "notes": "FileFast publishes API documentation for uploads, large presigned uploads, file info, file listing, deletion, and folders.",
+      "source_refs": [
+        3
+      ]
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": true,
+      "notes": "FileFast describes industry-standard encryption, TLS1.2+, server-side encryption, and user-controlled privacy settings, but it does not claim end-to-end encryption by default.",
+      "source_refs": [
+        0,
+        1,
+        3
+      ]
+    },
+    "tags": [
+      "file-sharing",
+      "cloud-storage",
+      "guest-upload",
+      "api",
+      "file-analytics"
+    ],
+    "sources": [
+      {
+        "label": "Homepage",
+        "url": "https://file.fast/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Current product homepage describing guest sharing, 6 GB maximum upload claim, API access for all users, and premium permanent storage."
+      },
+      {
+        "label": "FAQ",
+        "url": "https://file.fast/faq",
+        "retrieved_at": "2026-04-28",
+        "notes": "Current FAQ describing the free plan as up to 5 GB per transfer, 100 GB monthly bandwidth, and 10 GB storage with automatic expiration."
+      },
+      {
+        "label": "Premium plans",
+        "url": "https://file.fast/premium",
+        "retrieved_at": "2026-04-28",
+        "notes": "Current pricing page describing free-plan monthly bandwidth, storage, and 7-day inactivity expiry, though some numbers conflict with the FAQ."
+      },
+      {
+        "label": "API documentation",
+        "url": "https://file.fast/docs/api",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official API docs describing authenticated standard uploads up to 100 MB and authenticated large uploads up to 5 GB."
+      },
+      {
+        "label": "Homepage uploader screenshot",
+        "url": "https://file.fast/",
+        "retrieved_at": "2026-04-28",
+        "notes": "User-provided screenshot of the live uploader showing 'Maximum upload file size: 6GB' and retention options including 'Keep Until Inactive (7 days)'."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "all_except_prohibited",
+        "notes": "The homepage warns that illegal or malicious content is forbidden, while the rest of the first-party pages position the service as a general-purpose file-sharing platform.",
+        "source_refs": [
+          0,
+          1
         ]
       }
     }
@@ -3551,9 +3724,9 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not state an automatic expiry period for stored files.",
+        "notes": "Google Drive does not publish an automatic expiry for files kept in storage; files remain until the user deletes them, after which they stay in Trash for 30 days before permanent deletion.",
         "source_refs": [
-          0
+          4
         ]
       },
       "storage": {
@@ -3638,6 +3811,12 @@
         "url": "https://developers.google.com/drive/api/guides/about-sdk",
         "retrieved_at": "2026-04-27",
         "notes": "Official API documentation."
+      },
+      {
+        "label": "Delete file behavior",
+        "url": "https://support.google.com/drive/answer/14933051?hl=en-en",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official help article explaining that files stay in Trash for 30 days after deletion before permanent removal."
       }
     ],
     "content": {
@@ -4156,7 +4335,7 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public app listings do not publish a clean automatic expiry policy for stored files.",
+        "notes": "The official app listings describe user-controlled encrypted cloud storage where files can be uploaded, stored, renamed, shared, and deleted any time from any device. That supports treating normal stored files as remaining until the user deletes them.",
         "source_refs": [
           0,
           1
@@ -4197,14 +4376,14 @@
       ]
     },
     "developer": {
-      "api_available": false,
-      "api_docs_url": null,
-      "cli_friendly": false,
-      "cli_example": null,
-      "notes": "The cited public app listings do not document a public API or CLI workflow.",
+      "api_available": true,
+      "api_docs_url": "https://github.com/meganz/sdk",
+      "cli_friendly": true,
+      "cli_example": "mega-help",
+      "notes": "MEGA publishes an official SDK through its GitHub organization and an official MEGAcmd command-line client for interactive and scriptable access to MEGA services.",
       "source_refs": [
-        0,
-        1
+        3,
+        4
       ]
     },
     "security": {
@@ -4243,6 +4422,18 @@
         "url": "https://apps.apple.com/in/app/mega/id706857885?at=11l3Wi&ct=appfollow&mt=8",
         "retrieved_at": "2026-04-28",
         "notes": "Current official App Store text explicitly stating users can start free with 20 GB of encrypted cloud storage."
+      },
+      {
+        "label": "MEGA GitHub organization",
+        "url": "https://github.com/meganz",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official MEGA organization page linking the company's public repositories, including the SDK and client applications."
+      },
+      {
+        "label": "MEGAcmd repository",
+        "url": "https://github.com/meganz/MEGAcmd",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official command-line client repository describing interactive and scriptable access to MEGA services."
       }
     ],
     "content": {
@@ -4836,9 +5027,9 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not state an automatic expiry period for stored files.",
+        "notes": "OneDrive does not publish an automatic expiry for files kept in storage; files remain until the user deletes them, after which deleted files stay in the personal Recycle Bin for 30 days.",
         "source_refs": [
-          0
+          3
         ]
       },
       "storage": {
@@ -4916,6 +5107,12 @@
         "url": "https://learn.microsoft.com/en-us/onedrive/developer/rest-api/getting-started/?view=odsp-graph-online",
         "retrieved_at": "2026-04-27",
         "notes": "Official API overview."
+      },
+      {
+        "label": "Recycle Bin retention",
+        "url": "https://support.microsoft.com/en-us/office/delete-or-restore-files-from-your-onedrive-recycle-bin-in-android-ios-or-windows-mobile-9656a348-afc3-45de-92f0-a66dc1c09eb5",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official support article stating that deleted files in personal OneDrive stay in the Recycle Bin for 30 days."
       }
     ],
     "content": {
@@ -4944,9 +5141,10 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not state an automatic expiry period for files on the free plan.",
+        "notes": "Files remain until deleted. OpenDrive moves deleted items to Trash and allows restoration for up to 90 days before permanent removal.",
         "source_refs": [
-          0
+          0,
+          3
         ]
       },
       "storage": {
@@ -5025,6 +5223,12 @@
         "url": "https://www.opendrive.com/api",
         "retrieved_at": "2026-04-27",
         "notes": "Official API documentation."
+      },
+      {
+        "label": "Can I recover deleted files?",
+        "url": "https://support.opendrive.com/hc/en-us/articles/200364226-Can-I-recover-deleted-files",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official OpenDrive support article saying deleted items go to Trash and can be restored for up to 90 days."
       }
     ],
     "content": {
@@ -5053,9 +5257,10 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public free-plan pages do not state an automatic expiry period for stored files.",
+        "notes": "OwnDrive sells the free plan as ongoing cloud storage that is upgradable any time, not as a temporary transfer shelf. The cited official pages do not describe automatic deletion of normal stored files, so this is treated as remaining until the user deletes them.",
         "source_refs": [
-          0
+          0,
+          1
         ]
       },
       "storage": {
@@ -5156,9 +5361,9 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not state an automatic expiry period for standard stored files.",
+        "notes": "pCloud does not publish an automatic expiry for standard stored files; files remain until the user deletes them, after which free-plan files stay in Trash for 15 days and paid-plan files for 30 days.",
         "source_refs": [
-          0
+          3
         ]
       },
       "storage": {
@@ -5236,6 +5441,12 @@
         "url": "https://docs.pcloud.com/",
         "retrieved_at": "2026-04-27",
         "notes": "Official API and SDK documentation."
+      },
+      {
+        "label": "File recovery and history",
+        "url": "https://help.pcloud.com/article/file-recovery-and-history",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official help center article explaining Trash retention periods for deleted files on free and paid plans."
       }
     ],
     "content": {
@@ -5842,9 +6053,9 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited current free-plan pages do not state a default file expiry period for stored files.",
+        "notes": "Sync does not publish an automatic expiry for files kept in storage; files remain until the user deletes them, after which deleted files are kept for 30 days on the free plan.",
         "source_refs": [
-          0
+          4
         ]
       },
       "storage": {
@@ -5930,6 +6141,12 @@
         "url": "https://help.sync.com/hc/en-us/articles/46410454917907-Error-8031-Link-has-reached-daily-download-limit",
         "retrieved_at": "2026-04-28",
         "notes": "Official help article confirming the free-plan shared-link limit of 20 downloads per day per link."
+      },
+      {
+        "label": "Deleted files retention",
+        "url": "https://help.sync.com/hc/en-us/articles/38275625866515-My-files-are-missing-How-do-I-get-them-back",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official help article stating that Sync saves deleted files for 30 days, and longer for Pro plans."
       }
     ],
     "content": {
@@ -6047,10 +6264,11 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean automatic expiry policy for stored files.",
+        "notes": "Files remain until deleted. Tencent Weiyun's official mobile product page says deleted files can be recovered from the recycle bin for up to 45 days.",
         "source_refs": [
           0,
-          1
+          1,
+          5
         ]
       },
       "storage": {
@@ -6145,6 +6363,12 @@
         "url": "https://www.weiyun.com/complaint.html",
         "retrieved_at": "2026-04-28",
         "notes": "Official complaint guide clarifying that uploaded content is subject to infringement and unlawful-content restrictions."
+      },
+      {
+        "label": "Tencent Weiyun mobile page",
+        "url": "https://h5.weiyun.com/arouse?schema=weiyun%3A%2F%2Faction%2Fthesedays%3Fdate%3D",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official mobile product page describing recycle-bin recovery for up to 45 days."
       }
     ],
     "content": {
@@ -6174,9 +6398,9 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited current public pages for this batch do not state an automatic expiry period for standard stored files.",
+        "notes": "TeraBox says it does not delete user files without permission, which supports treating normal stored files as having no automatic expiry; deleted files go through the Recycling Bin flow.",
         "source_refs": [
-          0
+          2
         ]
       },
       "storage": {
@@ -6249,6 +6473,18 @@
         "url": "https://blog.terabox.com/ultimate-solution-for-1tb-free-cloud-storage/",
         "retrieved_at": "2026-04-27",
         "notes": "1 TB free storage and 20 GB transfer claim."
+      },
+      {
+        "label": "TeraBox deletion behavior",
+        "url": "https://blog.terabox.com/does-terabox-delete-files/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official TeraBox blog post saying the service does not delete user files without permission and describing the Recycling Bin recovery flow."
+      },
+      {
+        "label": "Integrations documentation",
+        "url": "https://www.terabox.com/integrations/docs",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official TeraBox integrations docs confirming a public developer or integration API surface."
       }
     ],
     "content": {

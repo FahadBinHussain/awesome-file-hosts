@@ -1362,6 +1362,47 @@
     "source": "User-provided lead list on 2026-04-26"
   },
   {
+    "name": "FileFast",
+    "type": "File sharing",
+    "free_volume": "100 GB/month bandwidth",
+    "shelf_life": "7 days inactive",
+    "download_count": null,
+    "languages": [
+      "English"
+    ],
+    "applications": [],
+    "verification_status": "verified",
+    "verification_notes": "Verified from current first-party homepage, FAQ, premium page, live uploader evidence, and API docs. The browser uploader currently shows a 6 GB guest/web limit, while the API docs still cap authenticated large uploads at 5 GB, so the host entry now reflects that split rather than forcing one number across both surfaces.",
+    "verification_references": [
+      {
+        "label": "Homepage",
+        "url": "https://file.fast/",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "FAQ",
+        "url": "https://file.fast/faq",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "Premium plans",
+        "url": "https://file.fast/premium",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "API documentation",
+        "url": "https://file.fast/docs/api",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "Homepage uploader screenshot",
+        "url": "https://file.fast/",
+        "retrieved_at": "2026-04-28"
+      }
+    ],
+    "source": "User-provided URL on 2026-04-28"
+  },
+  {
     "name": "FileJoker",
     "type": "Unverified lead",
     "free_volume": null,
