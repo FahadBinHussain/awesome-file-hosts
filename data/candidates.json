@@ -247,6 +247,45 @@
     ]
   },
   {
+    "name": "Backblaze B2",
+    "type": "Cloud storage",
+    "free_volume": "10 GB",
+    "shelf_life": null,
+    "download_count": null,
+    "languages": [
+      "English"
+    ],
+    "applications": [
+      "Android",
+      "iOS"
+    ],
+    "verification_status": "verified",
+    "source": "Official Backblaze surfaces reviewed on 2026-04-28",
+    "verification_notes": "Verified as an active Backblaze B2 cloud storage service with a 10 GB free tier, 1 GB/day free downloads, public Native and S3-compatible APIs, and official mobile access.",
+    "verification_references": [
+      {
+        "label": "B2 pricing structure",
+        "url": "https://help.backblaze.com/hc/en-us/articles/217667478-Understanding-B2-Pricing-Structure",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "API introduction",
+        "url": "https://www.backblaze.com/apidocs",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "Native API docs",
+        "url": "https://www.backblaze.com/docs/cloud-storage-native-api",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "Mobile app page",
+        "url": "https://www.backblaze.com/apps/mobile",
+        "retrieved_at": "2026-04-28"
+      }
+    ]
+  },
+  {
     "name": "Baidu Pan",
     "type": "Cloud storage",
     "free_volume": null,
@@ -593,6 +632,55 @@
     "source": "User-provided lead list on 2026-04-26",
     "verification_notes": null,
     "verification_references": []
+  },
+  {
+    "name": "DDownload",
+    "type": "File sharing",
+    "free_volume": "5 TB",
+    "shelf_life": "30 days inactivity",
+    "download_count": null,
+    "languages": [
+      "English",
+      "German",
+      "French",
+      "Spanish",
+      "Russian",
+      "Polish",
+      "Turkish",
+      "Dutch",
+      "Arabic",
+      "Hebrew",
+      "Hungarian",
+      "Indonesian",
+      "Japanese",
+      "Thai"
+    ],
+    "applications": [],
+    "verification_status": "rejected",
+    "source": "Reclassified from verified hosts on 2026-04-28",
+    "verification_notes": "The current official product surface and authenticated dashboard show a premium-locker / affiliate-host model rather than the kind of neutral file host we want to verify. The homepage emphasizes revenue tracking, premium sales, rebills, and referral performance; the API key is issued from the Affiliate Dashboard; and the authenticated settings expose free-download throttling down to 5-100 KB/s plus a premium-only download toggle.",
+    "verification_references": [
+      {
+        "label": "DDownload homepage and pricing",
+        "url": "https://ddownload.com/",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "DDownload FAQ",
+        "url": "https://ddownload.com/faq.html",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "DDownload API documentation",
+        "url": "https://ddownload.com/api",
+        "retrieved_at": "2026-04-28"
+      },
+      {
+        "label": "Authenticated affiliate/dashboard settings (user-provided)",
+        "url": "https://ddownload.com/",
+        "retrieved_at": "2026-04-28"
+      }
+    ]
   },
   {
     "name": "Degoo",

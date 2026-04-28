@@ -481,6 +481,124 @@
     }
   },
   {
+    "name": "Backblaze B2",
+    "url": "https://www.backblaze.com/cloud-storage",
+    "summary": "Object storage service with a 10 GB free tier, public APIs, and official iPhone and Android access.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public B2 pages do not publish a clean general free-tier upload cap. The mobile product page only states downloads up to 5 GB on mobile.",
+        "source_refs": [
+          3
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Backblaze positions B2 as persistent cloud storage. Files saved in B2 remain until the user deletes them.",
+        "source_refs": [
+          4
+        ]
+      },
+      "storage": {
+        "value": 10,
+        "unit": "GB",
+        "notes": "Backblaze B2 includes the first 10 GB of total storage for free.",
+        "source_refs": [
+          0,
+          4
+        ]
+      },
+      "bandwidth": {
+        "value": 1,
+        "unit": "GB/day",
+        "notes": "Backblaze B2 includes the first 1 GB of downloads per day for free.",
+        "source_refs": [
+          0,
+          4
+        ]
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "A Backblaze account is required to enable B2, create buckets, manage files, and use the web or mobile apps.",
+      "source_refs": [
+        2,
+        3
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://www.backblaze.com/apidocs",
+      "cli_friendly": true,
+      "cli_example": null,
+      "notes": "Backblaze publishes B2 Native and S3-compatible API documentation, and its cloud storage docs also link to command-line interface resources.",
+      "source_refs": [
+        1,
+        2
+      ]
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Backblaze B2's Native API docs say only HTTPS requests are supported. The cited public pages do not claim end-to-end encryption for stored files.",
+      "source_refs": [
+        2
+      ]
+    },
+    "tags": [
+      "cloud-storage",
+      "object-storage",
+      "api",
+      "mobile-apps",
+      "s3-compatible"
+    ],
+    "sources": [
+      {
+        "label": "B2 pricing structure",
+        "url": "https://help.backblaze.com/hc/en-us/articles/217667478-Understanding-B2-Pricing-Structure",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official free-tier storage and download allowance for Backblaze B2."
+      },
+      {
+        "label": "API introduction",
+        "url": "https://www.backblaze.com/apidocs",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official API documentation landing page listing Native and S3-compatible APIs."
+      },
+      {
+        "label": "Native API docs",
+        "url": "https://www.backblaze.com/docs/cloud-storage-native-api",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official Native API docs covering app keys, download authorization, HTTPS-only transport, and links to CLI resources."
+      },
+      {
+        "label": "Mobile app page",
+        "url": "https://www.backblaze.com/apps/mobile",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official mobile access page for iPhone, iPad, and Android, including B2 Cloud Storage access."
+      },
+      {
+        "label": "Saving files to B2",
+        "url": "https://help.backblaze.com/hc/en-us/articles/360015521773-Saving-Files-to-B2-from-Computer-Backup",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official help article stating 10 GB free storage, 1 GB/day free downloads, and that files saved in B2 are kept until the user removes them."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "The cited public pages position B2 as general object storage, but they do not publish a simple consumer-style allowed-file-types list.",
+        "source_refs": [
+          1,
+          2
+        ]
+      }
+    }
+  },
+  {
     "name": "Baidu Pan",
     "url": "https://pan.baidu.com/",
     "summary": "Baidu's large-scale cloud storage service with multi-device backup, file sharing, iPhone/Mac apps, and very large paid expansion tiers.",
@@ -1373,115 +1491,6 @@
       "allowed_file_types": {
         "mode": "all_except_prohibited",
         "notes": "The homepage explicitly mentions videos, music, and large files; the cited public pages do not publish a narrow allowlist.",
-        "source_refs": [
-          0
-        ]
-      }
-    }
-  },
-  {
-    "name": "DDownload",
-    "url": "https://ddownload.com/",
-    "summary": "Cloud storage and file-sharing service with a free 5 TB plan, 30-day inactivity policy, guest uploads, and a public API.",
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "The cited official public pages do not publish a clean current maximum upload size.",
-        "source_refs": [
-          0
-        ]
-      },
-      "retention": {
-        "value": 30,
-        "unit": "days",
-        "notes": "The official pricing page currently lists 30 days of file inactivity for the free plan.",
-        "source_refs": [
-          0
-        ]
-      },
-      "storage": {
-        "value": 5,
-        "unit": "TB",
-        "notes": "The official pricing page currently lists 5 TB of storage space for the free plan.",
-        "source_refs": [
-          0
-        ]
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "The public homepage only says traffic is limited, but the account dashboard exposes a configurable free-download-speed range of 5-100 KB/s and a premium-only download toggle, confirming that free delivery can be intentionally throttled to extremely low speeds.",
-        "source_refs": [
-          0,
-          3
-        ]
-      }
-    },
-    "account": {
-      "required": false,
-      "benefits": "Guest uploads appear to be supported; creating an account unlocks the free storage plan, file manager, folders, stats, and API key access.",
-      "source_refs": [
-        0,
-        1
-      ]
-    },
-    "developer": {
-      "api_available": true,
-      "api_docs_url": "https://ddownload.com/api",
-      "cli_friendly": true,
-      "cli_example": "curl \"https://api-v2.ddownload.com/api/account/info?key=YOUR_KEY\"",
-      "notes": "DDownload publishes official API documentation for account info, uploads, files, and folders.",
-      "source_refs": [
-        2
-      ]
-    },
-    "security": {
-      "https_only": true,
-      "e2ee": false,
-      "server_side_encryption": null,
-      "notes": "The official pages describe secure storage and HTTPS delivery, but do not claim end-to-end encryption.",
-      "source_refs": [
-        0
-      ]
-    },
-    "tags": [
-      "cloud-storage",
-      "file-sharing",
-      "api",
-      "guest-upload",
-      "free-tier"
-    ],
-    "sources": [
-      {
-        "label": "Homepage and pricing",
-        "url": "https://ddownload.com/",
-        "retrieved_at": "2026-04-26",
-        "notes": "Official page showing free-plan storage, inactivity limit, and limited traffic language."
-      },
-      {
-        "label": "FAQ",
-        "url": "https://ddownload.com/faq.html",
-        "retrieved_at": "2026-04-26",
-        "notes": "Official FAQ describing general file-hosting model, allowed content restrictions, and delete links."
-      },
-      {
-        "label": "API documentation",
-        "url": "https://ddownload.com/api",
-        "retrieved_at": "2026-04-26",
-        "notes": "Official API docs covering account, files, folders, and upload-related endpoints."
-      },
-      {
-        "label": "Affiliate/dashboard settings (user-provided)",
-        "url": "https://ddownload.com/",
-        "retrieved_at": "2026-04-28",
-        "notes": "User-provided authenticated dashboard text showing a free-download-speed setting of 5-100 KB/s, a premium-only download toggle, a 30-day affiliate cookie notice, and live API-account access."
-      }
-    ],
-    "content": {
-      "allowed_file_types": {
-        "mode": "all_except_prohibited",
-        "notes": "The official FAQ says all kinds of files may be uploaded except pornography, nudity, sexual images, offensive material, and copyrighted material.",
         "source_refs": [
           0
         ]
@@ -4264,13 +4273,13 @@
       ]
     },
     "developer": {
-      "api_available": false,
-      "api_docs_url": null,
+      "api_available": true,
+      "api_docs_url": "https://www.mediafire.com/developers/core_api/1.5/getting_started/",
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited current public pages for this batch do not document a public developer API.",
+      "notes": "MediaFire publishes Core API documentation with session-token auth, upload endpoints, SDKs, and an OAuth-style login widget.",
       "source_refs": [
-        0
+        3
       ]
     },
     "security": {
@@ -4306,6 +4315,12 @@
         "url": "https://www.mediafire.com/software/mobile/",
         "retrieved_at": "2026-04-27",
         "notes": "Official iOS and Android app availability."
+      },
+      {
+        "label": "Core API docs",
+        "url": "https://www.mediafire.com/developers/core_api/1.5/getting_started/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official developer docs covering API basics, session tokens, uploads, SDKs, and authentication widgets."
       }
     ],
     "content": {
@@ -6703,14 +6718,14 @@
   {
     "name": "Ulozto",
     "url": "https://ulozto.net/",
-    "summary": "Modern cloud storage service with a free 25 GB plan, official mobile apps, Windows backup tooling, end-to-end encryption claims, and a resumable upload API.",
+    "summary": "Modern cloud storage service whose free account starts at 1 GB and can unlock 25 GB after card verification, with official mobile apps, Windows backup tooling, end-to-end encryption claims, and a resumable upload API.",
     "limits": {
       "max_file_size": {
-        "value": 25,
+        "value": 1,
         "unit": "GB",
-        "notes": "The cited public pages do not publish a lower single-file cap for the free plan; the practical free ceiling follows the 25 GB free storage allocation if the account is empty.",
+        "notes": "The public pages still market up to 25 GB free, but the current authenticated free-account flow shows only 1 GB available by default and 25 GB after card verification. Since no separate per-file cap is published, the practical free single-file ceiling currently follows the available free storage: 1 GB initially, 25 GB after verification.",
         "source_refs": [
-          0
+          5
         ]
       },
       "retention": {
@@ -6722,28 +6737,28 @@
         ]
       },
       "storage": {
-        "value": 25,
+        "value": 1,
         "unit": "GB",
-        "notes": "Ulozto Disk currently offers a free plan with 25 GB of storage.",
+        "notes": "The current authenticated free-account view shows 1 GB available by default. A verification prompt says the account can be increased to 25 GB of free storage after card verification.",
         "source_refs": [
-          0
+          5
         ]
       },
       "bandwidth": {
         "value": 150,
         "unit": "GB/month",
-        "notes": "The current pricing page lists 150 GB of data transfer per month for the free plan.",
+        "notes": "The current authenticated free-account view shows 150 GB of download data for the free plan, matching the public pricing claims.",
         "source_refs": [
-          0
+          5
         ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "A Ulozto account is required for the free 25 GB cloud plan, app access, sync, and API-based uploads.",
+      "benefits": "A Ulozto account is required for the free plan, app access, sync, and API-based uploads. The current free account starts with 1 GB and can unlock 25 GB after card verification.",
       "source_refs": [
-        0,
-        1
+        1,
+        5
       ]
     },
     "developer": {
@@ -6753,7 +6768,7 @@
       "cli_example": "bash sample uploader available from the official resumable upload API page",
       "notes": "Ulozto publishes a resumable upload API and includes official Bash and Python example scripts.",
       "source_refs": [
-        4
+        2
       ]
     },
     "security": {
@@ -6801,6 +6816,12 @@
         "url": "https://ulozto.net/iosapp",
         "retrieved_at": "2026-04-26",
         "notes": "Official iOS app page."
+      },
+      {
+        "label": "Authenticated free-account view (user-provided)",
+        "url": "https://ulozto.net/fm",
+        "retrieved_at": "2026-04-28",
+        "notes": "User-provided screenshots from the logged-in free-account dashboard show 1 GB current disk space, 25 GB after card verification, and 150 GB of download data."
       }
     ],
     "content": {

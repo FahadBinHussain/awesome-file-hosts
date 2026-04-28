@@ -19,7 +19,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 ## What this includes
 
 - 72 verified hosts checked against current public sources as of 2026-04-28.
-- 0 leads still in review and 138 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
+- 0 leads still in review and 139 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
 - A source-backed dataset designed for both human browsing and machine reuse.
 - A site UI for filtering, comparison, and dense spreadsheet-style inspection.
 
@@ -37,6 +37,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [4shared](https://www.4shared.com/) - Long-running cloud storage and file-sharing service with a free 15 GB tier, 2 GB max uploads, and official mobile apps. _(Max: 2048 MB | Retention: Not published | Account: Yes)_
 - [Android File Host](https://androidfilehost.com/) - Large Android-focused file hosting network for developers with unlimited downloads, multiple mirrors, and a public beta API. _(Max: Not published | Retention: Not published | Account: Yes | API)_
 - [AnonFile](https://anonfile.co/) - Privacy-focused file hosting service with browser-side encryption, no-account sharing, public API docs, and optional free accounts. _(Max: Unlimited | Retention: Not published | Account: No | API | CLI | E2EE)_
+- [Backblaze B2](https://www.backblaze.com/cloud-storage) - Object storage service with a 10 GB free tier, public APIs, and official iPhone and Android access. _(Max: Not published | Retention: Not published | Account: Yes | API | CLI)_
 - [Baidu Pan](https://pan.baidu.com/) - Baidu's large-scale cloud storage service with multi-device backup, file sharing, iPhone/Mac apps, and very large paid expansion tiers. _(Max: Not published | Retention: Conditional | Account: Yes)_
 - [Box](https://www.box.com/) - Cloud storage and file-sharing platform with a free single-user plan and first-party desktop and mobile apps. _(Max: 250 MB | Retention: Not published | Account: Yes | API)_
 - [Catbox](https://catbox.moe/) - Long-running, user-funded file host with a simple public upload flow. _(Max: 200 MB | Retention: Not published | Account: No)_
@@ -45,7 +46,6 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [Cloudup](https://cloudup.com/) - Private-by-default file and link sharing service from Automattic with public API docs, direct links, and stream-based sharing. _(Max: 200 MB | Retention: Not published | Account: Yes | API)_
 - [Cozy Cloud](https://en.cozy.io/) - French personal cloud platform now branded as Twake Workplace, with a free 5 GB tier and official desktop and mobile apps. _(Max: Not published | Retention: Not published | Account: Yes)_
 - [Data.hu](https://data.hu/) - Hungarian file-sharing service with free browser uploads, unlimited advertised storage, optional FTP uploads, and premium-gated large downloads. _(Max: 2 GB | Retention: 60 days | Account: No | CLI)_
-- [DDownload](https://ddownload.com/) - Cloud storage and file-sharing service with a free 5 TB plan, 30-day inactivity policy, guest uploads, and a public API. _(Max: Not published | Retention: 30 days | Account: No | API | CLI)_
 - [Degoo](https://degoo.com/) - Consumer cloud backup service with a free 20 GB tier, web access, and mobile apps, but no current desktop client. _(Max: Not published | Retention: 90 days | Account: Yes)_
 - [DFiles](https://dfiles.eu/) - Long-running file hosting service under the DepositFiles brand with free uploads up to 10 GB, 90-day retention after downloads, mobile apps, and FTP/remote upload support. _(Max: 10 GB | Retention: 90 days | Account: No | CLI)_
 - [DirectUpload](https://www.directupload.eu/) - Long-running German image host with free anonymous uploads, short custom auto-delete options, and a 1-year minimum storage period. _(Max: 8 MB | Retention: 1 year | Account: No)_
@@ -72,7 +72,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [Hostr](https://hostr.co/) - Simple instant-sharing service with free accounts, broad file-type support, desktop apps, and generous public limits for small everyday uploads. _(Max: 20 MB | Retention: Not published | Account: Yes)_
 - [Jumpshare](https://jumpshare.com/) - Visual file-sharing and screen-recording platform with a free Basic plan, desktop apps, and an iOS app. _(Max: 250 MB | Retention: Not published | Account: Yes)_
 - [LimeWire](https://limewire.com/) - Modern browser-based file sharing platform with end-to-end encrypted transfers, guest uploads, and a free 4 GB upload allowance. _(Max: 4 GB | Retention: Not published | Account: No | E2EE)_
-- [MediaFire](https://www.mediafire.com/) - File storage and sharing service with a free ad-supported basic plan and first-party mobile apps. _(Max: 5 GB | Retention: Not published | Account: Yes)_
+- [MediaFire](https://www.mediafire.com/) - File storage and sharing service with a free ad-supported basic plan and first-party mobile apps. _(Max: 5 GB | Retention: Not published | Account: Yes | API)_
 - [MEGA](https://mega.nz/) - Privacy-focused cloud storage and file-sharing service with user-controlled encryption, web access, and official mobile apps. _(Max: Not published | Retention: Not published | Account: Yes | API | CLI | E2EE)_
 - [MiMedia](https://www.mimedia.com/) - Personal cloud service with a free 10 GB starter tier, desktop and mobile apps, and a media-first sharing experience. _(Max: Not published | Retention: 30 days | Account: Yes)_
 - [MobiDrive](https://www.mobidrive.com/) - Privacy-first cloud storage from MobiSystems with a free 20 GB tier and official web, Windows, Android, and iOS apps. _(Max: 200 MB | Retention: Not published | Account: Yes)_
@@ -94,7 +94,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [TeraBox](https://www.terabox.com/) - Consumer cloud storage service that currently markets 1 TB of free storage and apps across Android, iOS, PC, and Mac. _(Max: 20 GB | Retention: Not published | Account: Yes)_
 - [Tresorit Send](https://send.tresorit.com/) - Free browser-based file transfer service from Tresorit with end-to-end encrypted link sharing. _(Max: 5 GB | Retention: 7 days | Account: No | E2EE)_
 - [UAFile.COM](https://www.uafile.com/) - Ukrainian free file host with browser uploads, direct sharing links, and plainly published per-file and inactivity limits. _(Max: 200 MB | Retention: 30 days | Account: No)_
-- [Ulozto](https://ulozto.net/) - Modern cloud storage service with a free 25 GB plan, official mobile apps, Windows backup tooling, end-to-end encryption claims, and a resumable upload API. _(Max: 25 GB | Retention: Not published | Account: Yes | API | CLI | E2EE)_
+- [Ulozto](https://ulozto.net/) - Modern cloud storage service whose free account starts at 1 GB and can unlock 25 GB after card verification, with official mobile apps, Windows backup tooling, end-to-end encryption claims, and a resumable upload API. _(Max: 1 GB | Retention: Not published | Account: Yes | API | CLI | E2EE)_
 - [Upload.ee](https://www.upload.ee/) - Estonian file host with anonymous uploads, broad file-type support, and clear free retention rules for guest and registered users. _(Max: 100 MB | Retention: 50 days | Account: No)_
 - [UploadFiles.io](https://ufile.io/) - Free file sharing service with no-registration guest uploads, 5 GB max file size, optional expiry controls, and an upgrade path to free managed storage. _(Max: 5 GB | Retention: 30 days | Account: No)_
 - [UploadServ](https://uploadserv.com/) - Long-running browser-based file upload service with simple sharing links and a currently active HTTPS surface. _(Max: Not published | Retention: Not published | Account: No)_
