@@ -46,10 +46,15 @@ type QueueSortKey =
   | "name"
   | "max_guest"
   | "max_account"
-  | "storage"
+  | "storage_guest"
+  | "storage_account"
   | "retention"
+  | "bandwidth"
   | "api"
+  | "cli"
+  | "e2ee"
   | "https"
+  | "sources"
   | "status";
 
 type SortState<T extends string> = {
@@ -238,8 +243,25 @@ const queueColumnDefs: QueueColumn[] = [
     )
   },
   {
-    id: "storage",
-    label: "Storage",
+    id: "storage_guest",
+    label: "Storage (guest)",
+    width: "124px",
+    render: (candidate) => (
+      <CitedValue
+        value={candidate.datasetLabels.storageGuestLabel}
+        record={candidate}
+        refs={
+          (
+            candidate.limits.storage_guest ??
+            (candidate.account.required === false ? candidate.limits.storage : undefined)
+          )?.source_refs
+        }
+      />
+    )
+  },
+  {
+    id: "storage_account",
+    label: "Storage (acct)",
     width: "124px",
     render: (candidate) => (
       <CitedValue
@@ -248,8 +270,7 @@ const queueColumnDefs: QueueColumn[] = [
         refs={
           (
             candidate.limits.storage_account ??
-            candidate.limits.storage_guest ??
-            candidate.limits.storage
+            (candidate.account.required === true ? candidate.limits.storage : candidate.limits.storage_guest)
           )?.source_refs
         }
       />
@@ -268,16 +289,57 @@ const queueColumnDefs: QueueColumn[] = [
     )
   },
   {
+    id: "bandwidth",
+    label: "Bandwidth",
+    width: "134px",
+    render: (candidate) => (
+      <CitedValue
+        value={candidate.filters.bandwidthLabel}
+        record={candidate}
+        refs={candidate.limits.bandwidth.source_refs}
+      />
+    )
+  },
+  {
     id: "api",
     label: "API",
     width: "72px",
     render: (candidate) => (candidate.developer.api_available ? "Yes" : "No")
   },
   {
+    id: "cli",
+    label: "CLI",
+    width: "72px",
+    render: (candidate) => (candidate.developer.cli_friendly ? "Yes" : "No")
+  },
+  {
+    id: "e2ee",
+    label: "E2EE",
+    width: "72px",
+    render: (candidate) => (candidate.security.e2ee ? "Yes" : "No")
+  },
+  {
     id: "https",
     label: "HTTPS",
     width: "72px",
     render: (candidate) => (candidate.security.https_only ? "Yes" : "No")
+  },
+  {
+    id: "tags",
+    label: "Tags",
+    width: "240px",
+    className: "min-w-[160px]",
+    render: (candidate) => (
+      <span className="block truncate" title={candidate.tags.join(", ")}>
+        {candidate.tags.slice(0, 3).join(", ")}
+      </span>
+    )
+  },
+  {
+    id: "sources",
+    label: "Sources",
+    width: "68px",
+    render: (candidate) => String(candidate.sources.length)
   },
   {
     id: "status",
@@ -345,6 +407,14 @@ function gridTemplate(columns: Array<{ width: string }>) {
 }
 
 function hostHeaderLabel(column: HostColumn) {
+  if (column.id === "max_guest") return "w/o acc";
+  if (column.id === "max_account") return "w/ acc";
+  if (column.id === "storage_guest") return "w/o acc";
+  if (column.id === "storage_account") return "w/ acc";
+  return column.label;
+}
+
+function queueHeaderLabel(column: QueueColumn) {
   if (column.id === "max_guest") return "w/o acc";
   if (column.id === "max_account") return "w/ acc";
   if (column.id === "storage_guest") return "w/o acc";
@@ -438,14 +508,24 @@ function queueSortValue(candidate: CandidateRecord, key: QueueSortKey) {
       return candidate.sortMetrics.maxFileGuestMb;
     case "max_account":
       return candidate.sortMetrics.maxFileAccountMb;
-    case "storage":
-      return candidate.sortMetrics.storageAccountMb ?? candidate.sortMetrics.storageGuestMb;
+    case "storage_guest":
+      return candidate.sortMetrics.storageGuestMb;
+    case "storage_account":
+      return candidate.sortMetrics.storageAccountMb;
     case "retention":
       return candidate.sortMetrics.retentionDays;
+    case "bandwidth":
+      return candidate.sortMetrics.bandwidthMb;
     case "api":
       return candidate.developer.api_available ? 1 : 0;
+    case "cli":
+      return candidate.developer.cli_friendly ? 1 : 0;
+    case "e2ee":
+      return candidate.security.e2ee ? 1 : 0;
     case "https":
       return candidate.security.https_only ? 1 : 0;
+    case "sources":
+      return candidate.sources.length;
     case "status":
       return candidate.verification_status;
   }
@@ -795,6 +875,15 @@ export function DatasetApp({ data }: Props) {
     maxGuestColumnIndex !== -1 && maxAccountColumnIndex === maxGuestColumnIndex + 1;
   const showGroupedStorageHeader =
     storageGuestColumnIndex !== -1 && storageAccountColumnIndex === storageGuestColumnIndex + 1;
+  const queueMaxGuestColumnIndex = visibleQueueColumns.findIndex((column) => column.id === "max_guest");
+  const queueMaxAccountColumnIndex = visibleQueueColumns.findIndex((column) => column.id === "max_account");
+  const queueStorageGuestColumnIndex = visibleQueueColumns.findIndex((column) => column.id === "storage_guest");
+  const queueStorageAccountColumnIndex = visibleQueueColumns.findIndex((column) => column.id === "storage_account");
+  const showGroupedQueueMaxHeader =
+    queueMaxGuestColumnIndex !== -1 && queueMaxAccountColumnIndex === queueMaxGuestColumnIndex + 1;
+  const showGroupedQueueStorageHeader =
+    queueStorageGuestColumnIndex !== -1 &&
+    queueStorageAccountColumnIndex === queueStorageGuestColumnIndex + 1;
 
   const filteredHosts = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -868,7 +957,9 @@ export function DatasetApp({ data }: Props) {
         candidate.filters.maxFileGuestLabel,
         candidate.filters.maxFileAccountLabel,
         candidate.filters.retentionLabel,
-        candidate.datasetLabels.storageAccountLabel
+        candidate.datasetLabels.storageGuestLabel,
+        candidate.datasetLabels.storageAccountLabel,
+        candidate.filters.bandwidthLabel
       ]
         .join(" ")
         .toLowerCase();
@@ -1308,42 +1399,150 @@ export function DatasetApp({ data }: Props) {
                   ))}
                 </div>
                 <div className="hidden min-w-max text-sm md:block">
-                <div
-                  className="sticky top-16 z-10 grid border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl"
-                  style={{ gridTemplateColumns: queueGridTemplate }}
-                >
-                  {visibleQueueColumns.map((column) => {
-                    const sortable = column.id !== "notes";
-                    const isSorted = queueSort.key === column.id;
-                    return (
-                      <div
-                        key={column.id}
-                        className={[
-                          "px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
-                          column.id === "name" ? "sticky left-0 z-20 bg-[var(--bg-elevated)]" : "",
-                          isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
-                        ].join(" ")}
-                      >
-                        {sortable ? (
-                          <button
-                            onClick={() => changeQueueSort(column.id as QueueSortKey)}
-                            className="inline-flex items-center gap-1.5 transition-all hover:opacity-80"
+                <div className="sticky top-16 z-10 border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
+                  {showGroupedQueueMaxHeader || showGroupedQueueStorageHeader ? (
+                    <div
+                      className="grid"
+                      style={{ gridTemplateColumns: queueGridTemplate, gridTemplateRows: "auto auto" }}
+                    >
+                      {visibleQueueColumns.map((column, index) => {
+                        if (
+                          (showGroupedQueueMaxHeader && (column.id === "max_guest" || column.id === "max_account")) ||
+                          (showGroupedQueueStorageHeader &&
+                            (column.id === "storage_guest" || column.id === "storage_account"))
+                        ) {
+                          return null;
+                        }
+
+                        const sortable = column.id !== "notes" && column.id !== "tags";
+                        const isSorted = queueSort.key === column.id;
+
+                        return (
+                          <div
+                            key={column.id}
+                            style={{ gridColumn: String(index + 1), gridRow: "1 / span 2" }}
+                            className={[
+                              "flex items-center px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
+                              column.id === "name" ? "sticky left-0 z-20 bg-[var(--bg-elevated)]" : "",
+                              isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
+                            ].join(" ")}
                           >
-                            {column.label}
-                            {isSorted ? (
-                              <span className="flex h-4 w-4 items-center justify-center rounded bg-[var(--accent-soft)] text-[11px]">
-                                {queueSort.direction === "asc" ? "↑" : "↓"}
-                              </span>
+                            {sortable ? (
+                              <button
+                                onClick={() => changeQueueSort(column.id as QueueSortKey)}
+                                className="inline-flex items-center gap-1.5 transition-all hover:opacity-80"
+                              >
+                                {queueHeaderLabel(column)}
+                                {isSorted ? (
+                                  <span className="flex h-4 w-4 items-center justify-center rounded bg-[var(--accent-soft)] text-[11px]">
+                                    {queueSort.direction === "asc" ? "?" : "?"}
+                                  </span>
+                                ) : (
+                                  <ArrowsDownUp size={11} />
+                                )}
+                              </button>
                             ) : (
-                              <ArrowsDownUp size={11} />
+                              queueHeaderLabel(column)
                             )}
-                          </button>
-                        ) : (
-                          column.label
-                        )}
-                      </div>
-                    );
-                  })}
+                          </div>
+                        );
+                      })}
+
+                      {showGroupedQueueMaxHeader ? (
+                        <div
+                          style={{ gridColumn: `${queueMaxGuestColumnIndex + 1} / span 2`, gridRow: "1" }}
+                          className="flex items-center justify-center border-x border-b border-[var(--line)]/60 px-4 py-2 text-center text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--text-muted)]"
+                        >
+                          Max file size
+                        </div>
+                      ) : null}
+
+                      {showGroupedQueueStorageHeader ? (
+                        <div
+                          style={{ gridColumn: `${queueStorageGuestColumnIndex + 1} / span 2`, gridRow: "1" }}
+                          className="flex items-center justify-center border-x border-b border-[var(--line)]/60 px-4 py-2 text-center text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--text-muted)]"
+                        >
+                          Storage
+                        </div>
+                      ) : null}
+
+                      {visibleQueueColumns
+                        .filter(
+                          (column) =>
+                            (showGroupedQueueMaxHeader &&
+                              (column.id === "max_guest" || column.id === "max_account")) ||
+                            (showGroupedQueueStorageHeader &&
+                              (column.id === "storage_guest" || column.id === "storage_account"))
+                        )
+                        .map((column) => {
+                          const isSorted = queueSort.key === column.id;
+                          const columnIndex = visibleQueueColumns.findIndex((item) => item.id === column.id);
+
+                          return (
+                            <div
+                              key={column.id}
+                              style={{ gridColumn: String(columnIndex + 1), gridRow: "2" }}
+                              className={[
+                                "px-4 py-3 text-left text-[11px] uppercase tracking-[0.25em] font-bold transition-colors whitespace-nowrap",
+                                isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
+                              ].join(" ")}
+                            >
+                              <button
+                                onClick={() => changeQueueSort(column.id as QueueSortKey)}
+                                className="inline-flex items-center gap-1.5 transition-all hover:opacity-80"
+                              >
+                                {queueHeaderLabel(column)}
+                                {isSorted ? (
+                                  <span className="flex h-4 w-4 items-center justify-center rounded bg-[var(--accent-soft)] text-[11px]">
+                                    {queueSort.direction === "asc" ? "?" : "?"}
+                                  </span>
+                                ) : (
+                                  <ArrowsDownUp size={11} />
+                                )}
+                              </button>
+                            </div>
+                          );
+                        })}
+                    </div>
+                  ) : (
+                    <div
+                      className="grid"
+                      style={{ gridTemplateColumns: queueGridTemplate }}
+                    >
+                      {visibleQueueColumns.map((column) => {
+                        const sortable = column.id !== "notes" && column.id !== "tags";
+                        const isSorted = queueSort.key === column.id;
+                        return (
+                          <div
+                            key={column.id}
+                            className={[
+                              "px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
+                              column.id === "name" ? "sticky left-0 z-20 bg-[var(--bg-elevated)]" : "",
+                              isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
+                            ].join(" ")}
+                          >
+                            {sortable ? (
+                              <button
+                                onClick={() => changeQueueSort(column.id as QueueSortKey)}
+                                className="inline-flex items-center gap-1.5 transition-all hover:opacity-80"
+                              >
+                                {queueHeaderLabel(column)}
+                                {isSorted ? (
+                                  <span className="flex h-4 w-4 items-center justify-center rounded bg-[var(--accent-soft)] text-[11px]">
+                                    {queueSort.direction === "asc" ? "?" : "?"}
+                                  </span>
+                                ) : (
+                                  <ArrowsDownUp size={11} />
+                                )}
+                              </button>
+                            ) : (
+                              queueHeaderLabel(column)
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
                 {filteredCandidates.map((candidate, index) => (
                   <button

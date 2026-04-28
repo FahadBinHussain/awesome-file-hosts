@@ -299,34 +299,35 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish an automatic expiry period for hosted files.",
+        "notes": "Retention depends on download activity. The terms say Android File Host generally will not delete uploaded files, but it may remove files with fewer than 10 downloads over 365 consecutive days.",
         "source_refs": [
-          0
+          3
         ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a total storage quota for free developers.",
+        "notes": "The public pages do not publish a numeric total storage quota for free developers, but the terms reserve the right to suspend service for excessive storage use.",
         "source_refs": [
-          0
+          3
         ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The homepage explicitly says Android File Host does not limit the number of files, download speeds, or bandwidth used.",
+        "notes": "The homepage says Android File Host does not limit download speeds or bandwidth, but the terms reserve the right to suspend service for excessive bandwidth use.",
         "source_refs": [
-          0
+          0,
+          3
         ]
       }
     },
     "account": {
       "required": true,
-      "benefits": "Developers need an account to upload and manage files; free visitors can browse and download files without registration.",
+      "benefits": "Developers need an account for uploads and account-managed services; visitors can still browse device pages and download public files without registering.",
       "source_refs": [
         0,
-        1
+        3
       ]
     },
     "developer": {
@@ -334,18 +335,19 @@
       "api_docs_url": "https://androidfilehost.com/api/docs/",
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "Android File Host publishes a beta API for browsing devices, developers, folders, updates, and files.",
+      "notes": "Android File Host publishes a beta API for browsing devices, developers, OTA update checks, folders, and files; direct-download URLs require a beta API key from the user dashboard.",
       "source_refs": [
-        2
+        1
       ]
     },
     "security": {
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The cited public pages emphasize high-speed delivery and hosted storage, but do not claim end-to-end encryption.",
+      "notes": "The site runs over HTTPS and provides hosted storage, but the public pages do not claim end-to-end encryption or promise that stored files are encrypted for you.",
       "source_refs": [
-        0
+        0,
+        3
       ]
     },
     "tags": [
@@ -358,28 +360,34 @@
       {
         "label": "Homepage",
         "url": "https://androidfilehost.com/",
-        "retrieved_at": "2026-04-26",
+        "retrieved_at": "2026-04-28",
         "notes": "Current positioning, unlimited-download claim, and developer-focused hosting model."
       },
       {
         "label": "API Docs",
         "url": "https://androidfilehost.com/api/docs/",
-        "retrieved_at": "2026-04-26",
-        "notes": "Official beta API documentation."
+        "retrieved_at": "2026-04-28",
+        "notes": "Official beta API documentation, including OTA update checks and direct-download API-key gating."
       },
       {
         "label": "Membership Plans",
         "url": "https://androidfilehost.com/user/?w=select-membership-plans",
-        "retrieved_at": "2026-04-26",
+        "retrieved_at": "2026-04-28",
         "notes": "Current premium plan differences, showing uploads and management are account-based."
+      },
+      {
+        "label": "Terms of Service",
+        "url": "https://androidfilehost.com/?w=terms-of-service",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official rules for account access, prohibited content, insufficient-download deletion, and excessive storage or bandwidth use."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "mode": "all_except_prohibited",
+        "notes": "The terms allow general file hosting but prohibit unlawful, infringing, malware, spam, harmful, or otherwise abusive content.",
         "source_refs": [
-          0
+          3
         ]
       }
     }
@@ -601,7 +609,7 @@
   {
     "name": "Baidu Pan",
     "url": "https://pan.baidu.com/",
-    "summary": "Baidu's large-scale cloud storage service with multi-device backup, file sharing, iPhone/Mac apps, and very large paid expansion tiers.",
+    "summary": "Baidu's large-scale cloud storage service with multi-device backup, file sharing, iPhone/Mac apps, an official PCS open platform, and very large paid expansion tiers.",
     "limits": {
       "max_file_size": {
         "value": null,
@@ -639,20 +647,21 @@
     },
     "account": {
       "required": true,
-      "benefits": "A Baidu account is required for cloud backup, syncing, and sharing across devices.",
+      "benefits": "A Baidu account is required for cloud backup, syncing, link sharing, and API-authorized access across devices.",
       "source_refs": [
         0,
-        1
+        1,
+        4
       ]
     },
     "developer": {
-      "api_available": false,
-      "api_docs_url": null,
+      "api_available": true,
+      "api_docs_url": "https://openapi.baidu.com/ms/pcs",
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited public consumer pages do not document a public API or CLI upload workflow.",
+      "notes": "Baidu publishes an official PCS open platform for personal cloud storage with file APIs, structured-data APIs, OAuth-based access, and SDK downloads, but the cited official pages still do not present a simple end-user CLI workflow.",
       "source_refs": [
-        0
+        4
       ]
     },
     "security": {
@@ -669,7 +678,8 @@
       "backup",
       "file-sharing",
       "ios",
-      "mac"
+      "mac",
+      "api"
     ],
     "sources": [
       {
@@ -695,6 +705,12 @@
         "url": "https://yun.baidu.com/disk/dilatation",
         "retrieved_at": "2026-04-27",
         "notes": "Current first-party feature page describing automatic photo backup, smart classification, and file sharing."
+      },
+      {
+        "label": "Baidu PCS open platform",
+        "url": "https://openapi.baidu.com/ms/pcs",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official personal cloud storage open-platform page showing file APIs, structured-data APIs, OAuth access, and SDK downloads."
       }
     ],
     "content": {
