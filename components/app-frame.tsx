@@ -47,7 +47,7 @@ export function AppFrame({ children, current }: Props) {
   return (
     <main className="min-h-[100dvh] w-full">
       <div className="flex min-h-[100dvh] w-full flex-col">
-        <header className="sticky top-0 z-50 w-full border-b border-[var(--line)] bg-[var(--bg)]/80 backdrop-blur-xl">
+        <header className="fixed inset-x-0 top-0 z-50 w-full border-b border-[var(--line)] bg-[var(--bg)]/88 backdrop-blur-xl">
           <div className="mx-auto flex h-16 w-full max-w-[1600px] items-center justify-between gap-2 px-3 sm:gap-4 sm:px-6">
             <Link href="/" className="group flex shrink-0 items-center gap-2 transition-all sm:gap-3">
               <div className="flex h-7 w-7 items-center justify-center rounded-[var(--radius-control)] bg-gradient-to-br from-[var(--accent)] to-[var(--accent-hover)] shadow-[0_0_20px_-4px_var(--accent-glow)] transition-all group-hover:shadow-[0_0_24px_-2px_var(--accent-glow)] sm:h-8 sm:w-8">
@@ -77,7 +77,7 @@ export function AppFrame({ children, current }: Props) {
           </div>
         </header>
 
-        <div className="flex-1">{children}</div>
+        <div className="flex-1 pt-16">{children}</div>
       </div>
     </main>
   );

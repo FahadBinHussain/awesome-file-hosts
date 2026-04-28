@@ -98,17 +98,14 @@ const hostColumnDefs: HostColumn[] = [
     label: "Max (guest)",
     width: "124px",
     render: (host) => (
-      <div className="flex items-center gap-1.5">
-        <span>{host.datasetLabels.maxFileGuestLabel}</span>
-        <SourceRefLinks
-          host={host}
-          refs={
-            host.limits.max_file_size_guest?.source_refs ??
-            (host.account.required === false ? host.limits.max_file_size.source_refs : undefined)
-          }
-          className="inline-flex gap-1"
-        />
-      </div>
+      <CitedValue
+        value={host.datasetLabels.maxFileGuestLabel}
+        host={host}
+        refs={
+          host.limits.max_file_size_guest?.source_refs ??
+          (host.account.required === false ? host.limits.max_file_size.source_refs : undefined)
+        }
+      />
     )
   },
   {
@@ -116,19 +113,16 @@ const hostColumnDefs: HostColumn[] = [
     label: "Max (acct)",
     width: "124px",
     render: (host) => (
-      <div className="flex items-center gap-1.5">
-        <span>{host.datasetLabels.maxFileAccountLabel}</span>
-        <SourceRefLinks
-          host={host}
-          refs={
-            (
-              host.limits.max_file_size_account ??
-              (host.account.required === true ? host.limits.max_file_size : host.limits.max_file_size_guest)
-            )?.source_refs
-          }
-          className="inline-flex gap-1"
-        />
-      </div>
+      <CitedValue
+        value={host.datasetLabels.maxFileAccountLabel}
+        host={host}
+        refs={
+          (
+            host.limits.max_file_size_account ??
+            (host.account.required === true ? host.limits.max_file_size : host.limits.max_file_size_guest)
+          )?.source_refs
+        }
+      />
     )
   },
   {
@@ -136,17 +130,14 @@ const hostColumnDefs: HostColumn[] = [
     label: "Storage (guest)",
     width: "124px",
     render: (host) => (
-      <div className="flex items-center gap-1.5">
-        <span>{host.datasetLabels.storageGuestLabel}</span>
-        <SourceRefLinks
-          host={host}
-          refs={
-            host.limits.storage_guest?.source_refs ??
-            (host.account.required === false ? host.limits.storage.source_refs : undefined)
-          }
-          className="inline-flex gap-1"
-        />
-      </div>
+      <CitedValue
+        value={host.datasetLabels.storageGuestLabel}
+        host={host}
+        refs={
+          host.limits.storage_guest?.source_refs ??
+          (host.account.required === false ? host.limits.storage.source_refs : undefined)
+        }
+      />
     )
   },
   {
@@ -154,19 +145,16 @@ const hostColumnDefs: HostColumn[] = [
     label: "Storage (acct)",
     width: "124px",
     render: (host) => (
-      <div className="flex items-center gap-1.5">
-        <span>{host.datasetLabels.storageAccountLabel}</span>
-        <SourceRefLinks
-          host={host}
-          refs={
-            (
-              host.limits.storage_account ??
-              (host.account.required === true ? host.limits.storage : host.limits.storage_guest)
-            )?.source_refs
-          }
-          className="inline-flex gap-1"
-        />
-      </div>
+      <CitedValue
+        value={host.datasetLabels.storageAccountLabel}
+        host={host}
+        refs={
+          (
+            host.limits.storage_account ??
+            (host.account.required === true ? host.limits.storage : host.limits.storage_guest)
+          )?.source_refs
+        }
+      />
     )
   },
   {
@@ -174,10 +162,7 @@ const hostColumnDefs: HostColumn[] = [
     label: "Retention",
     width: "122px",
     render: (host) => (
-      <div className="flex items-center gap-1.5">
-        <span>{host.filters.retentionLabel}</span>
-        <SourceRefLinks host={host} refs={host.limits.retention.source_refs} className="inline-flex gap-1" />
-      </div>
+      <CitedValue value={host.filters.retentionLabel} host={host} refs={host.limits.retention.source_refs} />
     )
   },
   { id: "api", label: "API", width: "72px", render: (host) => (host.developer.api_available ? "Yes" : "No") },
@@ -186,10 +171,7 @@ const hostColumnDefs: HostColumn[] = [
     label: "Bandwidth",
     width: "134px",
     render: (host) => (
-      <div className="flex items-center gap-1.5">
-        <span>{host.filters.bandwidthLabel}</span>
-        <SourceRefLinks host={host} refs={host.limits.bandwidth.source_refs} className="inline-flex gap-1" />
-      </div>
+      <CitedValue value={host.filters.bandwidthLabel} host={host} refs={host.limits.bandwidth.source_refs} />
     )
   },
   { id: "cli", label: "CLI", width: "72px", render: (host) => (host.developer.cli_friendly ? "Yes" : "No") },
@@ -323,6 +305,28 @@ function hostHeaderLabel(column: HostColumn) {
   if (column.id === "storage_guest") return "w/o acc";
   if (column.id === "storage_account") return "w/ acc";
   return column.label;
+}
+
+function CitedValue({
+  value,
+  host,
+  refs
+}: {
+  value: string;
+  host: HostRecord;
+  refs?: number[];
+}) {
+  return (
+    <div className="min-w-0 leading-6 text-[var(--text-primary)]">
+      <span>{value}</span>
+      {refs?.length ? " " : null}
+      <SourceRefLinks
+        host={host}
+        refs={refs}
+        className="inline-flex items-center gap-0.5 whitespace-nowrap align-super"
+      />
+    </div>
+  );
 }
 
 function hostSortValue(host: HostRecord, key: HostSortKey) {
