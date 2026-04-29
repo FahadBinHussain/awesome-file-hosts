@@ -222,12 +222,12 @@
   {
     "name": "2Shared",
     "url": "https://www.2shared.com/",
-    "summary": "Long-running file-sharing service with browser uploads, a 200 MB per-file upload limit, and a searchable public catalog.",
+    "summary": "Former file-sharing domain that no longer presents a verified file-hosting product on its live homepage.",
     "limits": {
       "max_file_size": {
-        "value": 200,
-        "unit": "MB",
-        "notes": "The current upload page explicitly states a max. 200 MB upload size.",
+        "value": null,
+        "unit": null,
+        "notes": "No current maximum upload size can be verified because the live 2shared.com homepage no longer presents a file-hosting product.",
         "source_refs": [
           0
         ]
@@ -235,7 +235,7 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not clearly publish an automatic expiry policy for uploaded files.",
+        "notes": "No current retention policy can be verified because the live 2shared.com homepage no longer presents a file-hosting product.",
         "source_refs": [
           0
         ]
@@ -243,7 +243,7 @@
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean current total free storage quota.",
+        "notes": "No current storage quota can be verified because the live 2shared.com homepage no longer presents a file-hosting product.",
         "source_refs": [
           0
         ]
@@ -251,15 +251,15 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean current bandwidth cap.",
+        "notes": "No current bandwidth policy can be verified because the live 2shared.com homepage no longer presents a file-hosting product.",
         "source_refs": [
           0
         ]
       }
     },
     "account": {
-      "required": false,
-      "benefits": "The public upload page allows direct browser uploads without requiring login before selecting a file.",
+      "required": null,
+      "benefits": "No current account model can be verified because the live 2shared.com homepage no longer presents a file-hosting product.",
       "source_refs": [
         0
       ]
@@ -269,7 +269,7 @@
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited public pages do not document a public API or CLI upload flow.",
+      "notes": "No current API or CLI workflow can be verified because the live 2shared.com homepage no longer presents a file-hosting product.",
       "source_refs": [
         0
       ]
@@ -278,36 +278,31 @@
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The cited public pages do not claim end-to-end encryption.",
+      "notes": "The domain still responds over HTTPS, but the live homepage content no longer presents a file-hosting product.",
       "source_refs": [
         0
       ]
     },
-    "tags": [
-      "file-sharing",
-      "guest-upload",
-      "public-index",
-      "browser-upload"
-    ],
+    "tags": [],
     "sources": [
       {
-        "label": "Upload page",
+        "label": "Homepage",
         "url": "https://www.2shared.com/",
-        "retrieved_at": "2026-04-26",
-        "notes": "Current upload page showing max 200 MB and public upload flow."
+        "retrieved_at": "2026-04-29",
+        "notes": "Live homepage fetch returned unrelated Swedish online-casino content instead of a file-upload service."
       }
     ],
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy.",
+        "notes": "No current allowed-file-types policy can be verified because the live homepage no longer presents a file-hosting product.",
         "source_refs": [
           0
         ]
       }
     },
-    "verification_status": "verified",
-    "reason": null
+    "verification_status": "rejected",
+    "reason": "The live 2shared.com homepage no longer presents a file-hosting service and now serves unrelated Swedish online-casino content. That site drift makes the old file-host evidence stale and disqualifies it from the verified host list."
   },
   {
     "name": "360 Yunpan",
@@ -15339,21 +15334,20 @@
   {
     "name": "UploadServ",
     "url": "https://uploadserv.com/",
-    "summary": "Long-running browser-based file upload service with simple sharing links and a currently active HTTPS surface.",
+    "summary": "Former file-upload domain whose live homepage now shows only an under-construction placeholder.",
     "limits": {
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean current maximum upload size.",
+        "notes": "No current maximum upload size can be verified because the live uploadserv.com homepage no longer exposes a working file-hosting product.",
         "source_refs": [
-          0,
-          1
+          0
         ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean automatic expiry policy.",
+        "notes": "No current retention policy can be verified because the live uploadserv.com homepage no longer exposes a working file-hosting product.",
         "source_refs": [
           0
         ]
@@ -15361,7 +15355,7 @@
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages describe a free file upload service, but do not expose a clean account storage quota.",
+        "notes": "No current storage quota can be verified because the live uploadserv.com homepage no longer exposes a working file-hosting product.",
         "source_refs": [
           0
         ]
@@ -15369,15 +15363,15 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean numeric bandwidth cap.",
+        "notes": "No current bandwidth policy can be verified because the live uploadserv.com homepage no longer exposes a working file-hosting product.",
         "source_refs": [
           0
         ]
       }
     },
     "account": {
-      "required": false,
-      "benefits": "Current public summaries describe a straightforward free file upload service centered on link sharing without requiring registration in the accessible text.",
+      "required": null,
+      "benefits": "No current account model can be verified because the live uploadserv.com homepage no longer exposes a working file-hosting product.",
       "source_refs": [
         0
       ]
@@ -15387,7 +15381,7 @@
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The cited public pages do not document a public API or CLI workflow.",
+      "notes": "No current API or CLI workflow can be verified because the live uploadserv.com homepage no longer exposes a working file-hosting product.",
       "source_refs": [
         0
       ]
@@ -15396,48 +15390,31 @@
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "Current public summaries indicate the site is served over HTTPS, but do not claim end-to-end encryption.",
+      "notes": "The domain still responds over HTTPS, but the live homepage now shows only an under-construction placeholder.",
       "source_refs": [
         0
       ]
     },
-    "tags": [
-      "file-upload",
-      "file-sharing",
-      "direct-links",
-      "browser-based"
-    ],
+    "tags": [],
     "sources": [
       {
-        "label": "IPAddress summary for uploadserv.com",
-        "url": "https://www.ipaddress.com/website/uploadserv.com/",
-        "retrieved_at": "2026-04-28",
-        "notes": "Current public domain summary describing UploadServ as a free file upload service with an active HTTPS host."
-      },
-      {
-        "label": "NotOpening status for uploadserv.com",
-        "url": "https://notopening.com/site/uploadserv.com",
-        "retrieved_at": "2026-04-28",
-        "notes": "Current uptime snapshot showing the domain reachable in recent checks."
-      },
-      {
-        "label": "Webrate snapshot for uploadserv.com",
-        "url": "https://webrate.org/site/uploadserv.com/",
-        "retrieved_at": "2026-04-28",
-        "notes": "Current public summary preserving the site title and free file upload description, though some status details are inconsistent."
+        "label": "Homepage",
+        "url": "https://uploadserv.com/",
+        "retrieved_at": "2026-04-29",
+        "notes": "Live homepage fetch returned only an under-construction placeholder instead of a usable file-hosting product."
       }
     ],
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The cited public pages do not publish a full allowlist.",
+        "notes": "No current allowed-file-types policy can be verified because the live homepage no longer exposes a working file-hosting product.",
         "source_refs": [
           0
         ]
       }
     },
-    "verification_status": "verified",
-    "reason": null
+    "verification_status": "rejected",
+    "reason": "The live uploadserv.com homepage now shows only an under-construction placeholder rather than a working file-hosting product. Older aggregator summaries conflict with the current first-party surface, so it no longer clears the verification bar."
   },
   {
     "name": "UploadSt",

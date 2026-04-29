@@ -18,8 +18,8 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 
 ## What this includes
 
-- 72 verified hosts checked against current public sources as of 2026-04-29.
-- 0 main-host leads still in review and 139 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
+- 70 verified hosts checked against current public sources as of 2026-04-29.
+- 0 main-host leads still in review and 141 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
 - 7 mirror-uploader candidates and 13 cloud-migration candidates staged in their own pending files.
 - A free-first dataset that prioritizes genuinely usable free tiers, guest flows, and honest headline limits.
 - A source-backed dataset designed for both human browsing and machine reuse.
@@ -38,7 +38,6 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 ## Hosts
 
 - [1FileSharing](https://1filesharing.com/) - Timed file-hosting service with guest uploads, 1 GB free uploads, and premium upgrades for larger files and longer retention. _(Max: 1 GB | Retention: Conditional | Account: No)_
-- [2Shared](https://www.2shared.com/) - Long-running file-sharing service with browser uploads, a 200 MB per-file upload limit, and a searchable public catalog. _(Max: 200 MB | Retention: Not published | Account: No)_
 - [4shared](https://www.4shared.com/) - Long-running cloud storage and file-sharing service with a free 15 GB tier, 2 GB max uploads, and official mobile apps. _(Max: 2048 MB | Retention: Conditional | Account: Yes)_
 - [Android File Host](https://androidfilehost.com/) - Large Android-focused file hosting network for developers with unlimited downloads, multiple mirrors, and a public beta API. _(Max: Not published | Retention: Conditional | Account: Yes | API)_
 - [AnonFile](https://anonfile.co/) - Privacy-focused file hosting service with browser-side encryption, no-account sharing, public API docs, and optional free accounts. _(Max: Unlimited | Retention: No automatic expiry | Account: No | API | CLI | E2EE)_
@@ -102,7 +101,6 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [Ulozto](https://ulozto.net/) - Modern cloud storage service whose free account starts at 1 GB and can unlock 25 GB after card verification, with official mobile apps, Windows backup tooling, end-to-end encryption claims, and a resumable upload API. _(Max: 1 GB | Retention: No automatic expiry | Account: Yes | API | CLI | E2EE)_
 - [Upload.ee](https://www.upload.ee/) - Estonian file host with anonymous uploads, broad file-type support, and clear free retention rules for guest and registered users. _(Max: 100 MB | Retention: 50 days | Account: No)_
 - [UploadFiles.io](https://ufile.io/) - Free file sharing service with no-registration guest uploads, 5 GB max file size, optional expiry controls, and an upgrade path to free managed storage. _(Max: 5 GB | Retention: 30 days | Account: No)_
-- [UploadServ](https://uploadserv.com/) - Long-running browser-based file upload service with simple sharing links and a currently active HTTPS surface. _(Max: Not published | Retention: Not published | Account: No)_
 - [UsersDrive](https://usersdrive.com/) - No-account file hosting service with password-protected links, remote URL uploads, and a clearly published max upload size on the public upload form. _(Max: 5250 MB | Retention: 14 days | Account: No)_
 - [WeTransfer](https://wetransfer.com/) - Transfer-focused sharing service whose current free account includes up to 10 transfers or 3 GB over a rolling 30-day period. _(Max: 3 GB | Retention: Conditional | Account: Yes)_
 - [WorkUpload](https://workupload.com/) - Browser-based file-sharing service with guest uploads, password protection, expiry controls, and optional account features for managing shared files. _(Max: 2 GB | Retention: Conditional | Account: No)_
