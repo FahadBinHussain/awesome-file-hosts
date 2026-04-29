@@ -200,9 +200,11 @@ function limitLabel(limit: LimitField) {
   if (limit.value === null || limit.unit === null) {
     const notes = limit.notes.toLowerCase();
     if (notes.includes("unlimited")) return "Unlimited";
-    if (notes.includes("depends") || notes.includes("varies")) return "Conditional";
     if (hasNoAutomaticExpiryNotes(limit.notes)) {
       return "No automatic expiry";
+    }
+    if (notes.includes("conditional") || notes.includes("depends") || notes.includes("varies")) {
+      return "Conditional";
     }
     return "Not published";
   }

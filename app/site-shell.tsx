@@ -197,16 +197,18 @@ export function ExplorerApp({ data }: Props) {
         <section className="grid gap-4 border-b border-[var(--line)] pb-4 xl:grid-cols-[minmax(0,1.35fr)_minmax(0,1fr)]">
           <div className="space-y-4">
             <div className="inline-flex rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-2)] px-3 py-1 text-xs uppercase tracking-[0.28em] text-[var(--soft)]">
-              Structured host intelligence
+              Free-first host intelligence
             </div>
             <div className="max-w-4xl">
               <h1 className="text-balance text-4xl font-semibold tracking-tight text-[var(--text-primary)] md:text-6xl">
-                The dataset outgrew the README, so now it has a proper control room.
+                A proper control room for free-first file host research.
               </h1>
             </div>
             <p className="max-w-[68ch] text-base leading-7 text-[var(--muted)]">
               Explore verified file hosts, inspect the evidence behind every field, and keep the
-              review queue visible without making the public interface feel like a spreadsheet dump.
+              review queue visible with a bias toward genuinely usable free tiers. When services
+              are otherwise comparable, we also prefer open-source, open-protocol, and
+              automation-friendly tooling.
             </p>
           </div>
 

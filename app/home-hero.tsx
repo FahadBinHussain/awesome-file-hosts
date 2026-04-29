@@ -19,7 +19,7 @@ export function HomeHero({ stats }: { stats: { verifiedHosts: number; pendingCan
           <div className="group inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--hero-surface)] px-4 py-2 backdrop-blur-xl transition-all hover:border-[var(--accent)]/30 hover:bg-[var(--hero-surface-strong)]">
             <Sparkle size={16} weight="fill" className="text-[var(--accent)] animate-pulse" />
             <span className="text-xs font-medium tracking-wide text-[var(--text-secondary)]">
-              Source-backed file host intelligence
+              Free-first, source-backed file host intelligence
             </span>
             <div className="h-1 w-1 rounded-[var(--radius-pill)] bg-[var(--accent)] animate-pulse" />
           </div>
@@ -41,8 +41,9 @@ export function HomeHero({ stats }: { stats: { verifiedHosts: number; pendingCan
 
         {/* Subheadline */}
         <p className="animate-fade-in-up mx-auto mb-10 max-w-3xl text-center text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg md:mb-12 md:text-xl" style={{ animationDelay: "0.2s" }}>
-          Curated, verified, and structured data on {stats.verifiedHosts} file hosting services. 
-          Every field backed by public sources. Every decision tracked. Every rejection documented.
+          Curated, verified, and structured data on {stats.verifiedHosts} file hosting services,
+          designed to spotlight genuinely usable free storage first. We prefer open-source,
+          open-protocol, and automation-friendly services when the evidence holds up.
         </p>
 
         {/* CTA buttons */}

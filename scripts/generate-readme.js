@@ -336,6 +336,33 @@ function formatLimit(field) {
     }
 
     if (
+      notes.includes("no automatic expiry") ||
+      notes.includes("remain until the user deletes them") ||
+      notes.includes("remain until the user deletes") ||
+      notes.includes("remaining until the user deletes them") ||
+      notes.includes("files remain until deleted") ||
+      notes.includes("remain until deleted") ||
+      notes.includes("kept forever") ||
+      notes.includes("stored forever")
+    ) {
+      return "No automatic expiry";
+    }
+
+    if (
+      notes.includes("conditional") ||
+      notes.includes("depends") ||
+      notes.includes("varies") ||
+      notes.includes("different") ||
+      notes.includes("while") ||
+      notes.includes("or after") ||
+      notes.includes("based on") ||
+      notes.includes("download") ||
+      notes.includes("inactivity")
+    ) {
+      return "Conditional";
+    }
+
+    if (
       notes.includes("do not publish") ||
       notes.includes("do not state") ||
       notes.includes("do not clearly publish") ||
@@ -351,19 +378,6 @@ function formatLimit(field) {
       notes.includes("not documented")
     ) {
       return "Not published";
-    }
-
-    if (
-      notes.includes("depends") ||
-      notes.includes("varies") ||
-      notes.includes("different") ||
-      notes.includes("while") ||
-      notes.includes("or after") ||
-      notes.includes("based on") ||
-      notes.includes("download") ||
-      notes.includes("inactivity")
-    ) {
-      return "Conditional";
     }
 
     return "Not published";
@@ -456,7 +470,7 @@ function buildReadme(hosts, candidates, mirrorUploaderCandidates, cloudMigration
   lines.push("");
   lines.push("[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)");
   lines.push("");
-  lines.push("> A curated list of file hosting services with structured data, source-backed verification, and a proper explorer site.");
+  lines.push("> A free-first, source-backed directory of file hosts with structured data, a usable explorer, and a bias toward open-source-friendly services.");
   lines.push("");
   lines.push("The repo is JSON-first: [`data/hosts.json`](data/hosts.json) is the source of truth, [`README.md`](README.md) is generated, and the site carries the dense dataset view.");
   lines.push("");
@@ -477,14 +491,18 @@ function buildReadme(hosts, candidates, mirrorUploaderCandidates, cloudMigration
   lines.push(
     `- ${pendingMirrorCandidates} mirror-uploader candidates and ${pendingCloudMigrationCandidates} cloud-migration candidates staged in their own pending files.`
   );
+  lines.push("- A free-first dataset that prioritizes genuinely usable free tiers, guest flows, and honest headline limits.");
   lines.push("- A source-backed dataset designed for both human browsing and machine reuse.");
+  lines.push("- A bias toward open-source, open-protocol, and automation-friendly services when the evidence supports them.");
   lines.push("- A site UI for filtering, comparison, and dense spreadsheet-style inspection.");
   lines.push("");
   lines.push("### Inclusion bar");
   lines.push("");
   lines.push("- Supports HTTPS.");
   lines.push("- Is meaningfully usable today.");
+  lines.push("- Treats the practical free tier as the main story; paid-only upgrades should not dominate headline fields.");
   lines.push("- Has enough current public evidence to support structured facts.");
+  lines.push("- Prefers open-source, open standards, and transparent developer tooling when services are otherwise comparable.");
   lines.push("- Avoids obvious spam, malware traps, and dead services.");
   lines.push("");
   lines.push("## Hosts");
