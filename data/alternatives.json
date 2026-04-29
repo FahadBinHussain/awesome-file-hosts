@@ -1,0 +1,209 @@
+[
+  {
+    "name": "Telegram",
+    "url": "https://telegram.org/",
+    "summary": "Cloud-based messaging service that can double as an ad hoc file-sharing method through chat attachments, channels, and public links.",
+    "limits": {
+      "max_file_size": {
+        "value": 2,
+        "unit": "GB",
+        "notes": "Telegram says users can send files of any type up to 2 GB each in regular cloud chats.",
+        "source_refs": [
+          1,
+          2
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Files in regular cloud chats remain until deleted by the user or chat participants. Secret Chats are separate and can self-destruct.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Telegram positions regular chats as unlimited cloud storage for shared files and media.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The official pages do not publish a separate bandwidth cap for file sharing.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "A Telegram account is required. Shared files sync across devices and can be distributed through chats, channels, or public links.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://core.telegram.org/api/files",
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Telegram publishes official file-upload and download API docs, but the consumer sharing workflow is chat-centric rather than a normal CLI file-host flow.",
+      "source_refs": [
+        3
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "all_except_prohibited",
+        "notes": "Telegram says users can send and receive files of any type up to 2 GB each in regular cloud chats.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Regular Telegram cloud chats are not end-to-end encrypted. Telegram treats Secret Chats as a separate, device-specific secure mode.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "alternative-method",
+      "messaging",
+      "cloud-sync",
+      "api"
+    ],
+    "sources": [
+      {
+        "label": "Telegram FAQ",
+        "url": "https://telegram.org/faq?setln=en",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official FAQ describing Telegram as cloud-based, supporting unlimited sharing of files up to 2 GB each, with Secret Chats as a separate privacy mode."
+      },
+      {
+        "label": "Telegram 2 GB file sharing announcement",
+        "url": "https://telegram.org/blog/profile-videos-people-nearby-and-more?setln=en",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official blog post announcing unlimited file sharing with files up to 2 GB each."
+      },
+      {
+        "label": "Telegram downloads and attachments update",
+        "url": "https://telegram.org/blog/downloads-attachments-streaming/nl?setln=en",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official update saying users can send files of any type up to 2 GB each and access them from any device with unlimited cloud storage."
+      },
+      {
+        "label": "Telegram file API docs",
+        "url": "https://core.telegram.org/api/files",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official developer documentation for uploading and downloading files through Telegram APIs."
+      }
+    ]
+  },
+  {
+    "name": "VKontakte",
+    "url": "https://vk.com/",
+    "summary": "Social network whose document attachments can also be used as an ad hoc file-sharing method.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed document-attachment limits on the currently accessible official surfaces still need deeper first-party verification.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "The public official surfaces do not currently publish a dedicated retention policy for document attachments used as file sharing.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "The public official surfaces do not publish a separate storage quota for document attachments used this way.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The public official surfaces do not publish a separate bandwidth cap for document attachments.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "A VK account is required to use document attachments as a sharing method inside the social network.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://dev.vk.com/",
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "VK has an official developer platform, but this seed entry has not yet mapped a dedicated document-upload workflow in the public docs.",
+      "source_refs": [
+        1
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Document attachments clearly exist, but detailed current format restrictions still need deeper first-party verification.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "VK runs over HTTPS, but the public official surfaces used here do not position document attachments as end-to-end encrypted file storage.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "tags": [
+      "alternative-method",
+      "social-network",
+      "documents",
+      "api"
+    ],
+    "sources": [
+      {
+        "label": "VKontakte homepage",
+        "url": "https://vk.com/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official VK homepage confirming the service is an active social network product."
+      },
+      {
+        "label": "VK developer portal",
+        "url": "https://dev.vk.com/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official VK developer portal confirming an API surface exists."
+      }
+    ]
+  }
+]

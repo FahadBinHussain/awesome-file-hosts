@@ -1,0 +1,98 @@
+[
+  {
+    "name": "MultiUp",
+    "url": "https://multiup.io/en/",
+    "summary": "Mirror-uploader service that can upload a file once and fan it out to multiple downstream file hosts.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Limits vary by the selected downstream hosts and upload method. The homepage advertises computer, link, torrent, and API uploads but not one universal cap.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention varies by the downstream file hosts used for mirroring.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Persistent storage varies by the downstream hosts rather than a standalone MultiUp quota.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth behavior depends on plan level and the chosen downstream hosts.",
+        "source_refs": [
+          1
+        ]
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "Guest uploads are available from the homepage. Free accounts add queue, file-host selection, and torrent controls, while premium removes ads and expands limits.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The homepage advertises an Upload API, but this seed entry has not yet mapped the public documentation URL.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types and delivery behavior ultimately vary by the downstream hosts selected for mirroring.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The public pages do not claim end-to-end encryption for mirrored uploads.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "mirror-uploader",
+      "remote-upload",
+      "torrent",
+      "api"
+    ],
+    "sources": [
+      {
+        "label": "MultiUp homepage",
+        "url": "https://multiup.io/en/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official homepage describing uploads to multiple file-hosts, plus upload-by-computer, link, torrent, software, and API flows."
+      },
+      {
+        "label": "MultiUp login and plans page",
+        "url": "https://multiup.io/en/login",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official account page describing free and premium account capabilities, including host-selection, queue-size, and torrent-related limits."
+      }
+    ]
+  }
+]

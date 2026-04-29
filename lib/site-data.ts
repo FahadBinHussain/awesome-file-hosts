@@ -69,6 +69,8 @@ type Candidate = HostLikeBase & {
   reason: string | null;
 };
 
+type AdjacentService = Host;
+
 export type HostRecord = Host & {
   id: string;
   accountLabel: "Required" | "Guest" | "Unknown";
@@ -136,6 +138,11 @@ export type CandidateRecord = Candidate &
 export type SiteData = {
   hosts: HostRecord[];
   candidates: CandidateRecord[];
+  alternatives: HostRecord[];
+  mirrorUploaders: HostRecord[];
+  mirrorUploaderCandidates: CandidateRecord[];
+  cloudMigration: HostRecord[];
+  cloudMigrationCandidates: CandidateRecord[];
   stats: {
     verifiedHosts: number;
     pendingCandidates: number;
@@ -143,6 +150,11 @@ export type SiteData = {
     apiHosts: number;
     e2eeHosts: number;
     cliHosts: number;
+    alternativeMethods: number;
+    mirrorUploaders: number;
+    mirrorUploaderCandidates: number;
+    cloudMigrationTools: number;
+    cloudMigrationCandidates: number;
   };
   tagOptions: string[];
 };
@@ -164,7 +176,16 @@ function hasNoAutomaticExpiryNotes(notes: string) {
   );
 }
 
-function readDataFile<T>(filename: "hosts.json" | "candidates.json"): T {
+function readDataFile<T>(
+  filename:
+    | "hosts.json"
+    | "candidates.json"
+    | "alternatives.json"
+    | "mirror_uploaders.json"
+    | "mirror_uploaders_candidates.json"
+    | "cloud_migration.json"
+    | "cloud_migration_candidates.json"
+): T {
   return JSON.parse(fs.readFileSync(path.join(DATA_DIR, filename), "utf8")) as T;
 }
 
@@ -462,26 +483,62 @@ function enrichRecord<T extends HostLikeBase>(record: T) {
 
 export function getSiteData(): SiteData {
   const hosts = readDataFile<Host[]>("hosts.json").map((host) => enrichRecord(host));
+  const alternatives = readDataFile<AdjacentService[]>("alternatives.json").map((service) =>
+    enrichRecord(service)
+  );
+  const mirrorUploaders = readDataFile<AdjacentService[]>("mirror_uploaders.json").map((service) =>
+    enrichRecord(service)
+  );
+  const mirrorUploaderCandidates = readDataFile<Candidate[]>("mirror_uploaders_candidates.json").map(
+    (candidate) => ({
+      ...enrichRecord(candidate),
+      hasReferences: candidate.sources.length > 0
+    })
+  );
+  const cloudMigration = readDataFile<AdjacentService[]>("cloud_migration.json").map((service) =>
+    enrichRecord(service)
+  );
+  const cloudMigrationCandidates = readDataFile<Candidate[]>("cloud_migration_candidates.json").map(
+    (candidate) => ({
+      ...enrichRecord(candidate),
+      hasReferences: candidate.sources.length > 0
+    })
+  );
 
   const candidates = readDataFile<Candidate[]>("candidates.json").map((candidate) => ({
     ...enrichRecord(candidate),
     hasReferences: candidate.sources.length > 0
   }));
 
-  const tagOptions = [...new Set(hosts.flatMap((host) => host.tags))].sort((a, b) =>
-    a.localeCompare(b)
+  const hostLikeCollections = [hosts, alternatives, mirrorUploaders, cloudMigration];
+  const tagOptions = [...new Set(hostLikeCollections.flatMap((collection) => collection.flatMap((record) => record.tags)))].sort(
+    (a, b) => a.localeCompare(b)
   );
 
   return {
     hosts,
     candidates,
+    alternatives,
+    mirrorUploaders,
+    mirrorUploaderCandidates,
+    cloudMigration,
+    cloudMigrationCandidates,
     stats: {
       verifiedHosts: hosts.length,
       pendingCandidates: candidates.filter((candidate) => candidate.verification_status === "pending").length,
       rejectedCandidates: candidates.filter((candidate) => candidate.verification_status === "rejected").length,
       apiHosts: hosts.filter((host) => host.developer.api_available).length,
       e2eeHosts: hosts.filter((host) => host.security.e2ee).length,
-      cliHosts: hosts.filter((host) => host.developer.cli_friendly).length
+      cliHosts: hosts.filter((host) => host.developer.cli_friendly).length,
+      alternativeMethods: alternatives.length,
+      mirrorUploaders: mirrorUploaders.length,
+      mirrorUploaderCandidates: mirrorUploaderCandidates.filter(
+        (candidate) => candidate.verification_status === "pending"
+      ).length,
+      cloudMigrationTools: cloudMigration.length,
+      cloudMigrationCandidates: cloudMigrationCandidates.filter(
+        (candidate) => candidate.verification_status === "pending"
+      ).length
     },
     tagOptions
   };

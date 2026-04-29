@@ -1,0 +1,1097 @@
+[
+  {
+    "name": "Cloudfuze",
+    "url": "https://www.cloudfuze.com/",
+    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention likely depends on the connected storage providers rather than a standalone Cloudfuze storage policy.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Standalone storage behavior for this migration candidate has not yet been verified.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and workflow differences are still pending first-party review.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The seed entry uses an HTTPS homepage, but detailed security claims still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "cloud-migration",
+      "pending-review",
+      "multi-cloud"
+    ],
+    "sources": [
+      {
+        "label": "User-provided seed URL",
+        "url": "https://www.cloudfuze.com/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Seed candidate added from the user-provided cloud-migration list. Full first-party verification is still pending."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
+  },
+  {
+    "name": "CloudHQ",
+    "url": "https://www.cloudhq.net/",
+    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention likely depends on the connected storage providers rather than a standalone CloudHQ storage policy.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Standalone storage behavior for this migration candidate has not yet been verified.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and workflow differences are still pending first-party review.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The seed entry uses an HTTPS homepage, but detailed security claims still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "cloud-migration",
+      "pending-review",
+      "multi-cloud"
+    ],
+    "sources": [
+      {
+        "label": "User-provided seed URL",
+        "url": "https://www.cloudhq.net/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Seed candidate added from the user-provided cloud-migration list. Full first-party verification is still pending."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
+  },
+  {
+    "name": "Cloudsfer",
+    "url": "https://www.cloudsfer.com/",
+    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention likely depends on the connected storage providers rather than a standalone Cloudsfer storage policy.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Standalone storage behavior for this migration candidate has not yet been verified.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and workflow differences are still pending first-party review.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The seed entry uses an HTTPS homepage, but detailed security claims still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "cloud-migration",
+      "pending-review",
+      "multi-cloud"
+    ],
+    "sources": [
+      {
+        "label": "User-provided seed URL",
+        "url": "https://www.cloudsfer.com/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Seed candidate added from the user-provided cloud-migration list. Full first-party verification is still pending."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
+  },
+  {
+    "name": "Ctrlq",
+    "url": null,
+    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources."
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention likely depends on the connected storage providers rather than a standalone Ctrlq storage policy."
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Standalone storage behavior for this migration candidate has not yet been verified."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources."
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and workflow differences are still pending first-party review."
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer and automation support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification."
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The user-provided seed link was HTTP-only, and current HTTPS behavior still needs verification."
+    },
+    "tags": [
+      "cloud-migration",
+      "pending-review",
+      "multi-cloud"
+    ],
+    "sources": [],
+    "verification_status": "pending",
+    "reason": null
+  },
+  {
+    "name": "FileStack",
+    "url": "https://www.filestack.com/",
+    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention likely depends on the connected storage providers rather than a standalone FileStack storage policy.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Standalone storage behavior for this migration candidate has not yet been verified.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and workflow differences are still pending first-party review.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The seed entry uses an HTTPS homepage, but detailed security claims still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "cloud-migration",
+      "pending-review",
+      "multi-cloud"
+    ],
+    "sources": [
+      {
+        "label": "User-provided seed URL",
+        "url": "https://www.filestack.com/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Seed candidate added from the user-provided cloud-migration list. Full first-party verification is still pending."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
+  },
+  {
+    "name": "Mover",
+    "url": "https://mover.io/",
+    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention likely depends on the connected storage providers rather than a standalone Mover storage policy.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Standalone storage behavior for this migration candidate has not yet been verified.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and workflow differences are still pending first-party review.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The seed entry uses an HTTPS homepage, but detailed security claims still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "cloud-migration",
+      "pending-review",
+      "multi-cloud"
+    ],
+    "sources": [
+      {
+        "label": "User-provided seed URL",
+        "url": "https://mover.io/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Seed candidate added from the user-provided cloud-migration list. Full first-party verification is still pending."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
+  },
+  {
+    "name": "NetDrive",
+    "url": "https://netdrive.net/",
+    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention likely depends on the connected storage providers rather than a standalone NetDrive storage policy.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Standalone storage behavior for this migration candidate has not yet been verified.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and workflow differences are still pending first-party review.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The seed entry uses an HTTPS homepage, but detailed security claims still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "cloud-migration",
+      "pending-review",
+      "multi-cloud"
+    ],
+    "sources": [
+      {
+        "label": "User-provided seed URL",
+        "url": "https://netdrive.net/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Seed candidate added from the user-provided cloud-migration list. Full first-party verification is still pending."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
+  },
+  {
+    "name": "Odrive",
+    "url": "https://www.odrive.com/",
+    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention likely depends on the connected storage providers rather than a standalone Odrive storage policy.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Standalone storage behavior for this migration candidate has not yet been verified.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and workflow differences are still pending first-party review.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The seed entry uses an HTTPS homepage, but detailed security claims still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "cloud-migration",
+      "pending-review",
+      "multi-cloud"
+    ],
+    "sources": [
+      {
+        "label": "User-provided seed URL",
+        "url": "https://www.odrive.com/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Seed candidate added from the user-provided cloud-migration list. Full first-party verification is still pending."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
+  },
+  {
+    "name": "Otixo",
+    "url": "https://otixo.com/",
+    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention likely depends on the connected storage providers rather than a standalone Otixo storage policy.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Standalone storage behavior for this migration candidate has not yet been verified.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and workflow differences are still pending first-party review.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The seed entry uses an HTTPS homepage, but detailed security claims still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "cloud-migration",
+      "pending-review",
+      "multi-cloud"
+    ],
+    "sources": [
+      {
+        "label": "User-provided seed URL",
+        "url": "https://otixo.com/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Seed candidate added from the user-provided cloud-migration list. Full first-party verification is still pending."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
+  },
+  {
+    "name": "OxygenCloud",
+    "url": "https://home.oxygencloud.com/",
+    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention likely depends on the connected storage providers rather than a standalone OxygenCloud storage policy.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Standalone storage behavior for this migration candidate has not yet been verified.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and workflow differences are still pending first-party review.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The seed entry uses an HTTPS homepage, but detailed security claims still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "cloud-migration",
+      "pending-review",
+      "multi-cloud"
+    ],
+    "sources": [
+      {
+        "label": "User-provided seed URL",
+        "url": "https://home.oxygencloud.com/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Seed candidate added from the user-provided cloud-migration list. Full first-party verification is still pending."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
+  },
+  {
+    "name": "Skyvia",
+    "url": "https://skyvia.com/",
+    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention likely depends on the connected storage providers rather than a standalone Skyvia storage policy.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Standalone storage behavior for this migration candidate has not yet been verified.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and workflow differences are still pending first-party review.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The seed entry uses an HTTPS homepage, but detailed security claims still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "cloud-migration",
+      "pending-review",
+      "multi-cloud"
+    ],
+    "sources": [
+      {
+        "label": "User-provided seed URL",
+        "url": "https://skyvia.com/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Seed candidate added from the user-provided cloud-migration list. Full first-party verification is still pending."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
+  },
+  {
+    "name": "UploadCloud",
+    "url": "https://uploadcloud.net/",
+    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention likely depends on the connected storage providers rather than a standalone UploadCloud storage policy.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Standalone storage behavior for this migration candidate has not yet been verified.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and workflow differences are still pending first-party review.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "This candidate still needs disambiguation against previously rejected host-style UploadCloud surfaces.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The seed entry uses an HTTPS homepage, but detailed security claims still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "cloud-migration",
+      "pending-review",
+      "multi-cloud"
+    ],
+    "sources": [
+      {
+        "label": "User-provided seed URL",
+        "url": "https://uploadcloud.net/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Seed candidate added from the user-provided cloud-migration list. Full first-party verification is still pending."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
+  },
+  {
+    "name": "Zeropc",
+    "url": null,
+    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources."
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention likely depends on the connected storage providers rather than a standalone Zeropc storage policy."
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Standalone storage behavior for this migration candidate has not yet been verified."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources."
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and workflow differences are still pending first-party review."
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer and automation support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification."
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The user-provided seed link was HTTP-only, and current HTTPS behavior still needs verification."
+    },
+    "tags": [
+      "cloud-migration",
+      "pending-review",
+      "multi-cloud"
+    ],
+    "sources": [],
+    "verification_status": "pending",
+    "reason": null
+  }
+]

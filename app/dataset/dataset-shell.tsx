@@ -28,7 +28,8 @@ type Props = {
 
 const NO_EXPIRY_RETENTION_SORT_VALUE = 9_999_999;
 
-type DatasetMode = "hosts" | "queue";
+type ServiceMode = "hosts" | "alternatives" | "mirrors" | "migration";
+type DatasetMode = ServiceMode | "queue";
 type HostSortKey =
   | "name"
   | "max_guest"
@@ -81,7 +82,7 @@ type QueueColumn = {
 const hostColumnDefs: HostColumn[] = [
   {
     id: "name",
-    label: "Host",
+    label: "Service",
     width: "180px",
     className: "min-w-[170px] sticky left-0 z-10 bg-[var(--bg-elevated)] before:absolute before:inset-y-0 before:left-0 before:w-[2px] before:bg-gradient-to-b before:from-[var(--accent)] before:to-transparent before:content-['']",
     render: (host) => (
@@ -863,6 +864,22 @@ export function DatasetApp({ data }: Props) {
   const [selectedHostId, setSelectedHostId] = useState<string | null>(null);
   const [selectedCandidateId, setSelectedCandidateId] = useState<string | null>(null);
 
+  const serviceCollections: Record<ServiceMode, HostRecord[]> = {
+    hosts: data.hosts,
+    alternatives: data.alternatives,
+    mirrors: data.mirrorUploaders,
+    migration: data.cloudMigration
+  };
+  const isQueueMode = mode === "queue";
+  const currentServiceRows = isQueueMode ? [] : serviceCollections[mode];
+  const currentSearchPlaceholder: Record<DatasetMode, string> = {
+    hosts: "Search host, tag, or limit…",
+    alternatives: "Search service, tag, or behavior…",
+    mirrors: "Search mirror, host coverage, or capability…",
+    migration: "Search migration tool, provider, or workflow…",
+    queue: "Search candidate, source, or reason…"
+  };
+
   const visibleHostColumns = hostColumnDefs.filter((column) => !hiddenHostColumns.includes(column.id));
   const visibleQueueColumns = queueColumnDefs.filter((column) => !hiddenQueueColumns.includes(column.id));
   const hostGridTemplate = gridTemplate(visibleHostColumns);
@@ -887,7 +904,7 @@ export function DatasetApp({ data }: Props) {
 
   const filteredHosts = useMemo(() => {
     const query = search.trim().toLowerCase();
-    const rows = data.hosts.filter((host) => {
+    const rows = currentServiceRows.filter((host) => {
       const haystack = [
         host.name,
         host.summary,
@@ -944,7 +961,7 @@ export function DatasetApp({ data }: Props) {
       const comparison = compareHostSortValues(leftValue, rightValue);
       return hostSort.direction === "asc" ? comparison : comparison * -1;
     });
-  }, [apiOnly, data.hosts, e2eeOnly, guestOnly, hostSort, search]);
+  }, [apiOnly, currentServiceRows, e2eeOnly, guestOnly, hostSort, search]);
 
   const filteredCandidates = useMemo(() => {
     const query = search.trim().toLowerCase();
@@ -1057,9 +1074,9 @@ export function DatasetApp({ data }: Props) {
               
               <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
                 {[
-                  { label: "Rows", value: mode === "hosts" ? filteredHosts.length : filteredCandidates.length },
-                  { label: "Visible cols", value: mode === "hosts" ? visibleHostColumns.length : visibleQueueColumns.length },
-                  { label: "Sort", value: mode === "hosts" ? `${hostSort.key} · ${sortDirectionLabel(hostSort.direction)}` : `${queueSort.key} · ${sortDirectionLabel(queueSort.direction)}` }
+                  { label: "Rows", value: isQueueMode ? filteredCandidates.length : filteredHosts.length },
+                  { label: "Visible cols", value: isQueueMode ? visibleQueueColumns.length : visibleHostColumns.length },
+                  { label: "Sort", value: isQueueMode ? `${queueSort.key} · ${sortDirectionLabel(queueSort.direction)}` : `${hostSort.key} · ${sortDirectionLabel(hostSort.direction)}` }
                 ].map((stat, i) => (
                   <div 
                     key={stat.label} 
@@ -1082,6 +1099,17 @@ export function DatasetApp({ data }: Props) {
                 <ToolbarButton active={mode === "hosts"} onClick={() => setMode("hosts")}>
                   Verified hosts
                 </ToolbarButton>
+                <ToolbarButton active={mode === "alternatives"} onClick={() => setMode("alternatives")}>
+                  Alternative methods
+                </ToolbarButton>
+                <ToolbarButton active={mode === "mirrors"} onClick={() => setMode("mirrors")}>
+                  Mirror uploaders
+                  {data.stats.mirrorUploaderCandidates > 0 ? ` (${data.stats.mirrorUploaderCandidates} pending)` : ""}
+                </ToolbarButton>
+                <ToolbarButton active={mode === "migration"} onClick={() => setMode("migration")}>
+                  Cloud migration
+                  {data.stats.cloudMigrationCandidates > 0 ? ` (${data.stats.cloudMigrationCandidates} pending)` : ""}
+                </ToolbarButton>
                 <ToolbarButton active={mode === "queue"} onClick={() => setMode("queue")}>
                   Review queue
                 </ToolbarButton>
@@ -1093,7 +1121,7 @@ export function DatasetApp({ data }: Props) {
                   value={search}
                   onChange={(event) => setSearch(event.target.value)}
                   placeholder={
-                    mode === "hosts" ? "Search host, tag, or limit…" : "Search candidate, source, or reason…"
+                    currentSearchPlaceholder[mode]
                   }
                   className="w-full bg-transparent text-sm text-[var(--text-primary)] outline-none placeholder:text-[var(--text-subtle)]"
                 />
@@ -1108,7 +1136,21 @@ export function DatasetApp({ data }: Props) {
               </div>
             </div>
 
-            {mode === "hosts" ? (
+            {mode === "mirrors" && data.stats.mirrorUploaderCandidates > 0 ? (
+              <div className="text-sm text-[var(--text-secondary)]">
+                {data.stats.mirrorUploaderCandidates} pending mirror-uploader candidates are parked in{" "}
+                <code>data/mirror_uploaders_candidates.json</code> until we verify them.
+              </div>
+            ) : null}
+
+            {mode === "migration" && data.stats.cloudMigrationCandidates > 0 ? (
+              <div className="text-sm text-[var(--text-secondary)]">
+                {data.stats.cloudMigrationCandidates} pending cloud-migration candidates are parked in{" "}
+                <code>data/cloud_migration_candidates.json</code> until we verify them.
+              </div>
+            ) : null}
+
+            {!isQueueMode ? (
               <div className="flex flex-col gap-3">
                 <div className="flex flex-wrap gap-2">
                   <ToolbarButton active={apiOnly} onClick={() => setApiOnly((value) => !value)}>
@@ -1198,7 +1240,7 @@ export function DatasetApp({ data }: Props) {
           </div>
 
           <div className="relative z-0">
-            {mode === "hosts" ? (
+            {!isQueueMode ? (
               <>
                 <div className="grid gap-3 md:hidden">
                   {filteredHosts.map((host) => (
@@ -1592,7 +1634,7 @@ export function DatasetApp({ data }: Props) {
         </section>
 
       </div>
-      {mode === "hosts" && selectedHost ? (
+      {!isQueueMode && selectedHost ? (
         <FloatingInspector onClose={() => setSelectedHostId(null)}>
           <HostDetailPanel host={selectedHost} />
         </FloatingInspector>

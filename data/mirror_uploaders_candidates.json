@@ -1,0 +1,556 @@
+[
+  {
+    "name": "EmbedUpload",
+    "url": null,
+    "summary": "Candidate mirror-uploader service pending first-party verification for upload-once fan-out across multiple downstream hosts.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed mirror-upload limits for this candidate have not yet been verified from first-party sources."
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention likely depends on downstream mirrored hosts, but that still needs first-party verification."
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Standalone storage behavior for this mirror-uploader candidate has not yet been verified."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth behavior has not yet been verified from first-party sources."
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and feature differences are still pending first-party review."
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer and automation support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types probably depend on downstream hosts, but that still needs first-party verification."
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The user-provided seed link was HTTP-only, and current HTTPS behavior still needs verification."
+    },
+    "tags": [
+      "mirror-uploader",
+      "pending-review"
+    ],
+    "sources": [],
+    "verification_status": "pending",
+    "reason": null
+  },
+  {
+    "name": "Go4up",
+    "url": "https://go4up.com/",
+    "summary": "Candidate mirror-uploader service pending first-party verification for upload-once fan-out across multiple downstream hosts.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed mirror-upload limits for this candidate have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention likely depends on downstream mirrored hosts, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Standalone storage behavior for this mirror-uploader candidate has not yet been verified.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth behavior has not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and feature differences are still pending first-party review.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types probably depend on downstream hosts, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The seed entry uses an HTTPS homepage, but deeper security claims still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "mirror-uploader",
+      "pending-review"
+    ],
+    "sources": [
+      {
+        "label": "User-provided seed URL",
+        "url": "https://go4up.com/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Seed candidate added from the user-provided mirror-uploader list. Full first-party verification is still pending."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
+  },
+  {
+    "name": "Mirrorace",
+    "url": "https://mirrorace.com/",
+    "summary": "Candidate mirror-uploader service pending first-party verification for upload-once fan-out across multiple downstream hosts.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed mirror-upload limits for this candidate have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention likely depends on downstream mirrored hosts, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Standalone storage behavior for this mirror-uploader candidate has not yet been verified.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth behavior has not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and feature differences are still pending first-party review.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types probably depend on downstream hosts, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The seed entry uses an HTTPS homepage, but deeper security claims still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "mirror-uploader",
+      "pending-review"
+    ],
+    "sources": [
+      {
+        "label": "User-provided seed URL",
+        "url": "https://mirrorace.com/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Seed candidate added from the user-provided mirror-uploader list. Full first-party verification is still pending."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
+  },
+  {
+    "name": "Mirrored",
+    "url": "https://www.mirrored.to/",
+    "summary": "Candidate mirror-uploader service pending first-party verification for upload-once fan-out across multiple downstream hosts.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed mirror-upload limits for this candidate have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention likely depends on downstream mirrored hosts, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Standalone storage behavior for this mirror-uploader candidate has not yet been verified.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth behavior has not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and feature differences are still pending first-party review.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types probably depend on downstream hosts, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The seed entry uses an HTTPS homepage, but deeper security claims still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "mirror-uploader",
+      "pending-review"
+    ],
+    "sources": [
+      {
+        "label": "User-provided seed URL",
+        "url": "https://www.mirrored.to/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Seed candidate added from the user-provided mirror-uploader list. Full first-party verification is still pending."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
+  },
+  {
+    "name": "MultiFileMirror",
+    "url": "https://multifilemirror.com/",
+    "summary": "Candidate mirror-uploader service pending first-party verification for upload-once fan-out across multiple downstream hosts.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed mirror-upload limits for this candidate have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention likely depends on downstream mirrored hosts, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Standalone storage behavior for this mirror-uploader candidate has not yet been verified.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth behavior has not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and feature differences are still pending first-party review.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types probably depend on downstream hosts, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The seed entry uses an HTTPS homepage, but deeper security claims still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "mirror-uploader",
+      "pending-review"
+    ],
+    "sources": [
+      {
+        "label": "User-provided seed URL",
+        "url": "https://multifilemirror.com/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Seed candidate added from the user-provided mirror-uploader list. Full first-party verification is still pending."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
+  },
+  {
+    "name": "UploadMagnet",
+    "url": null,
+    "summary": "Candidate mirror-uploader service pending first-party verification for upload-once fan-out across multiple downstream hosts.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed mirror-upload limits for this candidate have not yet been verified from first-party sources."
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention likely depends on downstream mirrored hosts, but that still needs first-party verification."
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Standalone storage behavior for this mirror-uploader candidate has not yet been verified."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth behavior has not yet been verified from first-party sources."
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and feature differences are still pending first-party review."
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer and automation support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types probably depend on downstream hosts, but that still needs first-party verification."
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The user-provided seed link was HTTP-only, and current HTTPS behavior still needs verification."
+    },
+    "tags": [
+      "mirror-uploader",
+      "pending-review"
+    ],
+    "sources": [],
+    "verification_status": "pending",
+    "reason": null
+  },
+  {
+    "name": "UpMirror",
+    "url": "https://www.upmirror.info/",
+    "summary": "Candidate mirror-uploader service pending first-party verification for upload-once fan-out across multiple downstream hosts.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed mirror-upload limits for this candidate have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention likely depends on downstream mirrored hosts, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Standalone storage behavior for this mirror-uploader candidate has not yet been verified.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth behavior has not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and feature differences are still pending first-party review.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types probably depend on downstream hosts, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The seed entry uses an HTTPS homepage, but deeper security claims still need first-party verification.",
+      "source_refs": [
+          0
+      ]
+    },
+    "tags": [
+      "mirror-uploader",
+      "pending-review"
+    ],
+    "sources": [
+      {
+        "label": "User-provided seed URL",
+        "url": "https://www.upmirror.info/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Seed candidate added from the user-provided mirror-uploader list. Full first-party verification is still pending."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
+  }
+]

@@ -38,7 +38,7 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
             <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-[var(--radius-pill)] bg-[var(--surface-3)] shadow-inner">
               <Database size={32} weight="duotone" className="text-[var(--text-muted)]" />
             </div>
-            <p className="text-sm font-medium text-[var(--text-muted)]">Select a host to view details</p>
+            <p className="text-sm font-medium text-[var(--text-muted)]">Select a service to view details</p>
           </div>
         </div>
       </aside>
@@ -72,7 +72,7 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
             <div className="mb-3 flex items-center gap-2">
               <div className="h-2 w-2 animate-pulse rounded-[var(--radius-pill)] bg-[var(--accent)] shadow-[0_0_12px_var(--accent)]" />
               <div className="text-[9px] font-bold uppercase tracking-[0.35em] text-[var(--text-muted)]">
-                Host Details
+                Service Details
               </div>
             </div>
             <h2 className="text-2xl font-bold tracking-tight text-[var(--text-primary)] transition-colors group-hover:text-[var(--accent)] sm:text-[1.75rem]">

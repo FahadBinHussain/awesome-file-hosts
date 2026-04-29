@@ -1,0 +1,118 @@
+[
+  {
+    "name": "MultCloud",
+    "url": "https://www.multcloud.com/",
+    "summary": "Cloud-to-cloud migration tool for transferring, syncing, and backing up files between connected storage providers without manual download and re-upload.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Transfer limits vary by the connected cloud providers, plan level, and chosen transfer workflow.",
+        "source_refs": [
+          0,
+          1,
+          2
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention varies by the connected cloud providers because MultCloud moves or syncs files between them rather than acting as a standalone drive.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage varies by the connected cloud providers rather than a standalone MultCloud storage quota.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Transfer behavior varies by plan and connected providers. The public official pages do not publish one simple file-host-style bandwidth cap.",
+        "source_refs": [
+          1,
+          3
+        ]
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "An account is required to connect clouds, schedule transfers, and manage sync or backup tasks across providers.",
+      "source_refs": [
+        0,
+        2
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The public official pages used here focus on the web product and do not expose a public developer API for this workflow.",
+      "source_refs": [
+        0,
+        2
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "The official pages position MultCloud as handling documents, images, music, videos, email artifacts, and other files present in connected cloud drives.",
+        "source_refs": [
+          0,
+          1,
+          2
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Official pages describe secure transfers and 256-bit AES SSL in transit, but do not position the service as end-to-end encrypted cloud storage.",
+      "source_refs": [
+        1,
+        3
+      ]
+    },
+    "tags": [
+      "cloud-migration",
+      "sync",
+      "backup",
+      "multi-cloud"
+    ],
+    "sources": [
+      {
+        "label": "MultCloud homepage",
+        "url": "https://www.multcloud.com/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official homepage describing cloud transfer, sync, backup, and cloud explorer workflows across 30+ services."
+      },
+      {
+        "label": "MultCloud transfer-across-clouds feature page",
+        "url": "https://www.multcloud.com/features/transfer-data-across-clouds.html",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official feature page explaining server-side cloud transfer, scheduling, and migration between connected providers."
+      },
+      {
+        "label": "MultCloud product page",
+        "url": "https://www.multcloud.com/product.html",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official product page describing cloud transfer, cloud sync, backup, and multi-cloud file management."
+      },
+      {
+        "label": "MultCloud moving-clouds page",
+        "url": "https://www.multcloud.com/moving-clouds.html",
+        "retrieved_at": "2026-04-28",
+        "notes": "Official page describing direct cloud moves and 256-bit AES SSL for cloud-to-cloud transfer."
+      }
+    ]
+  }
+]

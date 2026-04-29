@@ -4,6 +4,11 @@ const path = require("node:path");
 const root = path.resolve(__dirname, "..");
 const dataPath = path.join(root, "data", "hosts.json");
 const candidatesPath = path.join(root, "data", "candidates.json");
+const alternativesPath = path.join(root, "data", "alternatives.json");
+const mirrorUploadersPath = path.join(root, "data", "mirror_uploaders.json");
+const mirrorUploaderCandidatesPath = path.join(root, "data", "mirror_uploaders_candidates.json");
+const cloudMigrationPath = path.join(root, "data", "cloud_migration.json");
+const cloudMigrationCandidatesPath = path.join(root, "data", "cloud_migration_candidates.json");
 const readmePath = path.join(root, "README.md");
 const schemaPath = path.join(root, "schema", "hosts.schema.json");
 const candidatesSchemaPath = path.join(root, "schema", "candidates.schema.json");
@@ -434,11 +439,17 @@ function formatFeatureSummary(host) {
   return parts.join(" | ");
 }
 
-function buildReadme(hosts, candidates) {
+function buildReadme(hosts, candidates, mirrorUploaderCandidates, cloudMigrationCandidates) {
   const sortedHosts = [...hosts].sort((a, b) => a.name.localeCompare(b.name));
   const lastUpdated = new Date().toISOString().slice(0, 10);
   const pendingCount = candidates.filter((candidate) => candidate.verification_status === "pending").length;
   const rejectedCount = candidates.filter((candidate) => candidate.verification_status === "rejected").length;
+  const pendingMirrorCandidates = mirrorUploaderCandidates.filter(
+    (candidate) => candidate.verification_status === "pending"
+  ).length;
+  const pendingCloudMigrationCandidates = cloudMigrationCandidates.filter(
+    (candidate) => candidate.verification_status === "pending"
+  ).length;
 
   const lines = [];
   lines.push("# awesome-file-hosts");
@@ -462,7 +473,10 @@ function buildReadme(hosts, candidates) {
   lines.push("## What this includes");
   lines.push("");
   lines.push(`- ${sortedHosts.length} verified hosts checked against current public sources as of ${lastUpdated}.`);
-  lines.push(`- ${pendingCount} leads still in review and ${rejectedCount} rejected entries preserved in [` + "`data/candidates.json`" + "](data/candidates.json) with reasons and references.");
+  lines.push(`- ${pendingCount} main-host leads still in review and ${rejectedCount} rejected entries preserved in [` + "`data/candidates.json`" + "](data/candidates.json) with reasons and references.");
+  lines.push(
+    `- ${pendingMirrorCandidates} mirror-uploader candidates and ${pendingCloudMigrationCandidates} cloud-migration candidates staged in their own pending files.`
+  );
   lines.push("- A source-backed dataset designed for both human browsing and machine reuse.");
   lines.push("- A site UI for filtering, comparison, and dense spreadsheet-style inspection.");
   lines.push("");
@@ -483,6 +497,11 @@ function buildReadme(hosts, candidates) {
   lines.push("");
   lines.push("- Dataset: [`data/hosts.json`](data/hosts.json)");
   lines.push("- Candidate backlog: [`data/candidates.json`](data/candidates.json)");
+  lines.push("- Alternative methods: [`data/alternatives.json`](data/alternatives.json)");
+  lines.push("- Mirror uploaders: [`data/mirror_uploaders.json`](data/mirror_uploaders.json)");
+  lines.push("- Mirror uploader candidates: [`data/mirror_uploaders_candidates.json`](data/mirror_uploaders_candidates.json)");
+  lines.push("- Cloud migration tools: [`data/cloud_migration.json`](data/cloud_migration.json)");
+  lines.push("- Cloud migration candidates: [`data/cloud_migration_candidates.json`](data/cloud_migration_candidates.json)");
   lines.push("- Schema: [`schema/hosts.schema.json`](schema/hosts.schema.json)");
   lines.push("- Candidate schema: [`schema/candidates.schema.json`](schema/candidates.schema.json)");
   lines.push("- Generator: [`scripts/generate-readme.js`](scripts/generate-readme.js)");
@@ -516,20 +535,53 @@ function buildReadme(hosts, candidates) {
 function main() {
   const hosts = readJson(dataPath);
   const candidates = readJson(candidatesPath);
+  const alternatives = readJson(alternativesPath);
+  const mirrorUploaders = readJson(mirrorUploadersPath);
+  const mirrorUploaderCandidates = readJson(mirrorUploaderCandidatesPath);
+  const cloudMigration = readJson(cloudMigrationPath);
+  const cloudMigrationCandidates = readJson(cloudMigrationCandidatesPath);
   const schema = readJson(schemaPath);
   const candidatesSchema = readJson(candidatesSchemaPath);
 
   assert(Array.isArray(hosts), "Dataset must be an array");
   assert(Array.isArray(candidates), "Candidate dataset must be an array");
+  assert(Array.isArray(alternatives), "Alternatives dataset must be an array");
+  assert(Array.isArray(mirrorUploaders), "Mirror uploaders dataset must be an array");
+  assert(Array.isArray(mirrorUploaderCandidates), "Mirror uploader candidates dataset must be an array");
+  assert(Array.isArray(cloudMigration), "Cloud migration dataset must be an array");
+  assert(Array.isArray(cloudMigrationCandidates), "Cloud migration candidates dataset must be an array");
   assert(schema && typeof schema === "object", "Schema must be valid JSON");
   assert(candidatesSchema && typeof candidatesSchema === "object", "Candidate schema must be valid JSON");
   assert(hosts.length > 0, "Dataset must contain at least one host");
+  assert(alternatives.length > 0, "Alternatives dataset must contain at least one item");
+  assert(mirrorUploaders.length > 0, "Mirror uploaders dataset must contain at least one item");
+  assert(cloudMigration.length > 0, "Cloud migration dataset must contain at least one item");
 
   for (const host of hosts) {
     validateHost(host);
   }
 
+  for (const service of alternatives) {
+    validateHost(service);
+  }
+
+  for (const service of mirrorUploaders) {
+    validateHost(service);
+  }
+
+  for (const service of cloudMigration) {
+    validateHost(service);
+  }
+
   for (const candidate of candidates) {
+    validateCandidate(candidate);
+  }
+
+  for (const candidate of mirrorUploaderCandidates) {
+    validateCandidate(candidate);
+  }
+
+  for (const candidate of cloudMigrationCandidates) {
     validateCandidate(candidate);
   }
 
@@ -540,7 +592,37 @@ function main() {
     "Hosts must be kept in alphabetical order by name"
   );
 
-  const nextReadme = buildReadme(hosts, candidates);
+  for (const [label, collection] of [
+    ["Alternatives", alternatives],
+    ["Mirror uploaders", mirrorUploaders],
+    ["Cloud migration tools", cloudMigration]
+  ]) {
+    const collectionNames = collection.map((item) => item.name);
+    const collectionSorted = [...collectionNames].sort((a, b) => a.localeCompare(b));
+    assert(
+      JSON.stringify(collectionNames) === JSON.stringify(collectionSorted),
+      `${label} must be kept in alphabetical order by name`
+    );
+  }
+
+  for (const [label, collection] of [
+    ["Mirror uploader candidates", mirrorUploaderCandidates],
+    ["Cloud migration candidates", cloudMigrationCandidates]
+  ]) {
+    const collectionNames = collection.map((item) => item.name);
+    const collectionSorted = [...collectionNames].sort((a, b) => a.localeCompare(b));
+    assert(
+      JSON.stringify(collectionNames) === JSON.stringify(collectionSorted),
+      `${label} must be kept in alphabetical order by name`
+    );
+  }
+
+  const nextReadme = buildReadme(
+    hosts,
+    candidates,
+    mirrorUploaderCandidates,
+    cloudMigrationCandidates
+  );
   const checkMode = process.argv.includes("--check");
 
   if (checkMode) {

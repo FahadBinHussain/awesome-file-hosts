@@ -19,7 +19,8 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 ## What this includes
 
 - 72 verified hosts checked against current public sources as of 2026-04-28.
-- 0 leads still in review and 139 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
+- 0 main-host leads still in review and 139 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
+- 7 mirror-uploader candidates and 13 cloud-migration candidates staged in their own pending files.
 - A source-backed dataset designed for both human browsing and machine reuse.
 - A site UI for filtering, comparison, and dense spreadsheet-style inspection.
 
@@ -85,7 +86,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [pCloud](https://www.pcloud.com/) - Cloud storage service with a free tier, official apps across major desktop and mobile platforms, and a public developer API. _(Max: 10 GB | Retention: Not published | Account: Yes | API)_
 - [Pixeldrain](https://pixeldrain.com/) - Fast file sharing service with expiry-on-inactivity behavior, plus FTPS and rclone support for paid filesystem usage. _(Max: 100 GB | Retention: 60 days | Account: Unknown | API | CLI)_
 - [PlusTransfer](https://www.plustransfer.com/) - No-account large-file transfer service now served through DataTransfer, with free transfers up to 10 GB and expiry controls. _(Max: 10 GB | Retention: 2 weeks | Account: No)_
-- [put.re](https://put.re/) - Minimal file-sharing service with direct browser uploads and a public API surface. _(Max: 200 MB | Retention: Not published | Account: No | API)_
+- [put.re](https://put.re/) - Anonymous file-sharing service with browser uploads, direct links, optional albums, and a public API. _(Max: 200 MB | Retention: Not published | Account: No | API | CLI)_
 - [SendSpace](https://www.sendspace.com/) - Transfer-oriented file sharing service with a current 300 MB free upload limit and optional recipient delivery without requiring recipient accounts. _(Max: 300 MB | Retention: 30 days | Account: No)_
 - [SharePlace](https://shareplace.org/) - File hosting service with browser uploads, account-based management, and a documented public API. _(Max: 500 MB | Retention: 60 days | Account: No | API)_
 - [Sync](https://www.sync.com/) - Privacy-focused cloud storage service with a 5 GB free tier and end-to-end encrypted apps across desktop and mobile. _(Max: Conditional | Retention: Not published | Account: Yes | E2EE)_
@@ -109,6 +110,11 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 
 - Dataset: [`data/hosts.json`](data/hosts.json)
 - Candidate backlog: [`data/candidates.json`](data/candidates.json)
+- Alternative methods: [`data/alternatives.json`](data/alternatives.json)
+- Mirror uploaders: [`data/mirror_uploaders.json`](data/mirror_uploaders.json)
+- Mirror uploader candidates: [`data/mirror_uploaders_candidates.json`](data/mirror_uploaders_candidates.json)
+- Cloud migration tools: [`data/cloud_migration.json`](data/cloud_migration.json)
+- Cloud migration candidates: [`data/cloud_migration_candidates.json`](data/cloud_migration_candidates.json)
 - Schema: [`schema/hosts.schema.json`](schema/hosts.schema.json)
 - Candidate schema: [`schema/candidates.schema.json`](schema/candidates.schema.json)
 - Generator: [`scripts/generate-readme.js`](scripts/generate-readme.js)

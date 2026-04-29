@@ -375,24 +375,69 @@ export function ExplorerApp({ data }: Props) {
             {view === "method" && (
               <div className="grid gap-6 p-5 sm:p-6 md:grid-cols-2">
                 <div className="space-y-4">
-                  <div className="text-sm font-medium text-[var(--text-primary)]">What counts as verified</div>
+                  <div className="text-sm font-medium text-[var(--text-primary)]">Adjacent datasets</div>
                   <div className="rounded-[var(--radius-3xl)] border border-[var(--line)] bg-[var(--surface-1)] p-5 text-sm leading-7 text-[var(--muted)]">
-                    The explorer only promotes hosts into the live dataset when the current public
-                    source trail is strong enough to support structured facts. If a service is live
-                    but slippery, it stays in the queue until the evidence improves.
+                    We now keep non-host file workflows in separate datasets so the verified host
+                    list stays clean. These records use the same evidence-backed structure, but
+                    they are intentionally split by job instead of being forced into the main host
+                    comparison.
                   </div>
-                  <div className="rounded-[var(--radius-3xl)] border border-[var(--line)] bg-[var(--surface-1)] p-5 text-sm leading-7 text-[var(--muted)]">
-                    Rejected entries are not deleted. They keep their rejection reason and
-                    references so the queue does not forget why a domain was moved out.
+                  <div className="grid gap-3">
+                    {[
+                      {
+                        label: "Alternative methods",
+                        count: data.stats.alternativeMethods,
+                        helper: data.alternatives.map((item) => item.name).join(", ")
+                      },
+                      {
+                        label: "Mirror uploaders",
+                        count: data.stats.mirrorUploaders,
+                        helper:
+                          `${data.mirrorUploaders.map((item) => item.name).join(", ")} · ` +
+                          `${data.stats.mirrorUploaderCandidates} pending review`
+                      },
+                      {
+                        label: "Cloud migration",
+                        count: data.stats.cloudMigrationTools,
+                        helper:
+                          `${data.cloudMigration.map((item) => item.name).join(", ")} · ` +
+                          `${data.stats.cloudMigrationCandidates} pending review`
+                      }
+                    ].map((item) => (
+                      <div
+                        key={item.label}
+                        className="rounded-[var(--radius-card)] border border-[var(--line)] bg-[var(--surface-1)] p-4"
+                      >
+                        <div className="text-[11px] uppercase tracking-[0.22em] text-[var(--soft)]">
+                          {item.label}
+                        </div>
+                        <div className="mt-2 text-2xl font-semibold text-[var(--text-primary)]">
+                          {item.count}
+                        </div>
+                        <div className="mt-1 text-sm text-[var(--muted)]">{item.helper}</div>
+                      </div>
+                    ))}
                   </div>
                 </div>
                 <div className="space-y-4">
-                  <div className="text-sm font-medium text-[var(--text-primary)]">How to read the fields</div>
+                  <div className="text-sm font-medium text-[var(--text-primary)]">How we separate them</div>
                   <div className="grid gap-4">
-                    <InfoPair label="Not published" value="The source pages do not expose a reliable current number." />
-                    <InfoPair label="Conditional" value="The limit depends on account type, downloads, inactivity, or another rule in the notes." />
-                    <InfoPair label="Yes*" value="The host is CLI-friendly and the detail panel includes a concrete example." />
-                    <InfoPair label="Queue" value="Pending names are leads, not promises. Some will be promoted, and many will be rejected." />
+                    <InfoPair
+                      label="Alternative methods"
+                      value="Products like messaging apps or social networks that can deliver files, even though that is not their primary job."
+                    />
+                    <InfoPair
+                      label="Mirror uploaders"
+                      value="Services that upload once and fan the file out to multiple downstream file hosts."
+                    />
+                    <InfoPair
+                      label="Cloud migration"
+                      value="Tools that move or sync files between connected storage providers without acting as the final host themselves."
+                    />
+                    <InfoPair
+                      label="Verified hosts"
+                      value="Dedicated file-hosting or cloud file-sharing services that still deserve the main comparison surface."
+                    />
                   </div>
                 </div>
               </div>

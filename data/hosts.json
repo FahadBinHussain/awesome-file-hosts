@@ -5697,147 +5697,166 @@
   {
     "name": "put.re",
     "url": "https://put.re/",
-    "summary": "Minimal file-sharing service with direct browser uploads and a public API surface.",
+    "summary": "Anonymous file-sharing service with browser uploads, direct links, optional albums, and a public API.",
     "limits": {
       "max_file_size": {
         "value": 200,
         "unit": "MB",
-        "notes": "Recent public comparisons consistently describe put.re uploads up to 200 MB.",
+        "notes": "The official features page says the web interface supports uploads up to 200 MB, while the documented HTTP API examples describe a 100 MB API limit.",
         "source_refs": [
-          4,
-          5
+          1,
+          2,
+          7
         ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "Recent public comparisons consistently describe files being kept indefinitely unless deleted or found to violate the terms.",
+        "notes": "Files remain until deleted by the uploader or removed for terms-of-service violations.",
         "source_refs": [
-          5,
-          6
+          2,
+          7
         ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "Recent public comparisons describe put.re as effectively offering unlimited free storage rather than a quota-capped free plan.",
+        "notes": "The official pages do not publish a numeric free storage quota.",
         "source_refs": [
-          4,
-          5
+          0,
+          2
         ]
       },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean bandwidth cap.",
+        "notes": "The official pages emphasize CDN-backed delivery and fast access, but they do not publish a clean bandwidth cap.",
         "source_refs": [
-          0
+          2,
+          7
         ]
       },
       "max_file_size_guest": {
         "value": 200,
         "unit": "MB",
-        "notes": "Recent public comparisons consistently describe put.re uploads up to 200 MB without requiring an account.",
+        "notes": "Anonymous browser uploads work without an account and are capped at 200 MB. The uploader source switches from plain HTTP to WebSockets above 50 MB.",
         "source_refs": [
-          4,
-          5
+          0,
+          5,
+          7
         ]
       },
       "storage_guest": {
         "value": null,
         "unit": null,
-        "notes": "Recent public comparisons describe put.re as effectively offering unlimited free storage for anonymous uploads rather than a quota-capped guest plan.",
+        "notes": "No numeric guest-storage quota is published on the official pages.",
         "source_refs": [
-          4,
-          5
+          0,
+          2
         ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "Recent public comparisons describe anonymous uploads without account creation, while the API offers additional integration workflows.",
+      "benefits": "No account is required. Uploads return delete links, and the public API also supports album creation with an ID and secret for later editing.",
       "source_refs": [
-        4,
+        0,
+        6,
         1
       ]
     },
     "developer": {
       "api_available": true,
       "api_docs_url": "https://put.re/api-docs",
-      "cli_friendly": false,
-      "cli_example": null,
-      "notes": "The service exposes a public API documentation surface, but the cited public pages do not document an official CLI workflow.",
+      "cli_friendly": true,
+      "cli_example": "curl -F file=@example.png https://api.put.re/upload",
+      "notes": "The public API docs include curl examples for file upload, deletion, metadata lookup, album creation, health checks, and removal requests.",
       "source_refs": [
-        1
+        1,
+        6
       ]
     },
     "content": {
       "allowed_file_types": {
         "mode": "all_except_prohibited",
-        "notes": "Recent public comparisons describe no file type restrictions on uploads beyond normal terms-of-service enforcement.",
+        "notes": "The features page says there is no file type restriction. Unknown types are served as application/octet-stream, and active content such as HTML or JavaScript is forced to text/plain to prevent browser execution.",
         "source_refs": [
-          4,
-          6
+          2,
+          7
         ]
       }
     },
     "security": {
       "https_only": true,
       "e2ee": false,
-      "server_side_encryption": null,
-      "notes": "The service is available over HTTPS, but the cited public pages do not claim end-to-end encryption.",
+      "server_side_encryption": true,
+      "notes": "The features page says files are stored encrypted in Amazon S3, never written to disk unencrypted, and are served over HTTPS. The service does not claim end-to-end encryption.",
       "source_refs": [
         0,
-        2
+        2,
+        7
       ]
     },
     "tags": [
       "file-sharing",
       "browser-upload",
+      "album",
       "api"
     ],
     "sources": [
       {
-        "label": "2IP summary for put.re",
-        "url": "https://2ip.io/a/put.re/",
-        "retrieved_at": "2026-04-27",
-        "notes": "Current public summary showing the service description ?simple, fast and secure file sharing.?"
+        "label": "put.re homepage",
+        "url": "https://put.re/",
+        "retrieved_at": "2026-04-28",
+        "notes": "Current homepage with a live anonymous upload surface. The noscript fallback posts directly to https://api.put.re/upload."
       },
       {
         "label": "put.re API docs",
         "url": "https://put.re/api-docs",
-        "retrieved_at": "2026-04-27",
-        "notes": "Current official API documentation surface."
+        "retrieved_at": "2026-04-28",
+        "notes": "Current official API documentation surface with curl examples for uploads, deletes, metadata, albums, health checks, and removals."
       },
       {
-        "label": "put.re privacy page",
-        "url": "https://put.re/privacy",
-        "retrieved_at": "2026-04-27",
-        "notes": "Current official privacy page confirming a live product surface with policy pages."
+        "label": "put.re features page",
+        "url": "https://put.re/features",
+        "retrieved_at": "2026-04-28",
+        "notes": "Current official features page describing file-type handling, retention, upload-size limits, encrypted storage, direct links, and CDN-backed delivery."
       },
       {
         "label": "put.re status page",
         "url": "https://put.re/status",
-        "retrieved_at": "2026-04-27",
+        "retrieved_at": "2026-04-28",
         "notes": "Current official status page."
       },
       {
-        "label": "TechRadar anonymous image hosting guide",
-        "url": "https://www.techradar.com/best/the-best-anonymous-image-hosting-sites-in-2022",
+        "label": "put.re public frontend repository",
+        "url": "https://gitlab.com/putre/frontend",
         "retrieved_at": "2026-04-28",
-        "notes": "Recent public guide describing put.re as anonymous-friendly, with 200 MB uploads and no account requirement."
+        "notes": "Current first-party public frontend repository linked from the live bundle."
       },
       {
-        "label": "FileHost Home put.re entry",
-        "url": "https://www.filehosthome.com/",
+        "label": "put.re uploader source",
+        "url": "https://gitlab.com/putre/frontend/-/blob/master/src/partials/home/CFileUploader.tsx",
         "retrieved_at": "2026-04-28",
-        "notes": "Recent host comparison showing put.re with 200 MB uploads, unlimited storage, and unlimited retention."
+        "notes": "First-party uploader source hardcoding a 50 MB HTTP threshold, a 200 MB max web-upload size, and WebSocket uploads via wss://api.put.re/upload_ws."
       },
       {
-        "label": "Trade-Free directory note for put.re",
-        "url": "https://www.directory.trade-free.org/kn/goods-services/put-re/",
+        "label": "put.re API route source",
+        "url": "https://gitlab.com/putre/frontend/-/blob/master/src/routes/CAPI.tsx",
         "retrieved_at": "2026-04-28",
-        "notes": "Public description noting no file type restrictions, encrypted storage, and indefinite retention unless files are removed or violate terms."
+        "notes": "First-party API route source showing curl examples for upload, delete, metadata, album create/modify/delete, health checks, and removal requests."
+      },
+      {
+        "label": "put.re features route source",
+        "url": "https://gitlab.com/putre/frontend/-/blob/master/src/routes/CFeatures.tsx",
+        "retrieved_at": "2026-04-28",
+        "notes": "First-party features source confirming no file-type restriction, 200 MB web uploads, 100 MB API uploads, unlimited retention unless deleted or violating terms, encrypted S3 storage, and direct links."
+      },
+      {
+        "label": "put.re homepage route source",
+        "url": "https://gitlab.com/putre/frontend/-/blob/master/src/routes/CHome.tsx",
+        "retrieved_at": "2026-04-28",
+        "notes": "First-party homepage source showing anonymous upload flows and optional album-aware behavior."
       }
     ]
   },
