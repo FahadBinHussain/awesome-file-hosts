@@ -4051,19 +4051,19 @@
         ]
       },
       "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "The cited current public pages for this batch do not state an automatic file expiry period on the free Basic plan.",
+        "value": 12,
+        "unit": "months",
+        "notes": "If you're a Jumpshare Basic user, your files are deleted after 12 months of inactivity; Jumpshare says it emails a reminder in month 11.",
         "source_refs": [
-          0
+          2
         ]
       },
       "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Jumpshare's current public pricing emphasizes upload count and per-upload size for the free Basic plan rather than a clearly published current storage quota.",
+        "value": 2,
+        "unit": "GB",
+        "notes": "Jumpshare support says files exceeding the free plan's 2 GB storage limit can be deleted after a downgrade, which supports treating 2 GB as the current Basic storage ceiling.",
         "source_refs": [
-          0
+          3
         ]
       },
       "bandwidth": {
@@ -4128,6 +4128,18 @@
         "url": "https://jumpshare.com/apps",
         "retrieved_at": "2026-04-27",
         "notes": "Windows, macOS, and iOS availability; Android marked as coming soon."
+      },
+      {
+        "label": "Inactivity retention help",
+        "url": "https://support.jumpshare.com/article/210-how-long-will-my-files-stay-online-if-im-inactive",
+        "retrieved_at": "2026-04-29",
+        "notes": "Official support article saying Basic-user files are deleted after 12 months of inactivity, with a reminder in month 11."
+      },
+      {
+        "label": "Lost content help",
+        "url": "https://support.jumpshare.com/article/202-i-cannot-find-posted-content-i-have-lost-my-content",
+        "retrieved_at": "2026-04-29",
+        "notes": "Official support article referencing the free plan's 2 GB storage limit when accounts are downgraded."
       }
     ],
     "content": {
@@ -4257,9 +4269,9 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish an automatic shelf-life value for the free plan.",
+        "notes": "Files remain until deleted. MediaFire says content not in Trash is retained indefinitely for free registered accounts that are not abandoned, and a free registered account is not considered abandoned if it is accessed at least once every 8 months.",
         "source_refs": [
-          0
+          4
         ]
       },
       "storage": {
@@ -4337,6 +4349,12 @@
         "url": "https://www.mediafire.com/developers/core_api/1.5/getting_started/",
         "retrieved_at": "2026-04-28",
         "notes": "Official developer docs covering API basics, session tokens, uploads, SDKs, and authentication widgets."
+      },
+      {
+        "label": "Data retention policy",
+        "url": "https://www.mediafire.com/policies/data_retention.php",
+        "retrieved_at": "2026-04-29",
+        "notes": "Official retention policy covering indefinite retention for active free registered accounts, 8-month abandonment threshold, and 30-day Trash retention on free accounts."
       }
     ],
     "content": {
@@ -4595,9 +4613,11 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not state an automatic expiry period for stored files.",
+        "notes": "Files remain until deleted. MobiDrive says synced files stay between the local folder and cloud, deleted files remain in the Bin and can still be accessed online, and permanent removal only happens after Delete Forever from the Bin.",
         "source_refs": [
-          0
+          2,
+          3,
+          4
         ]
       },
       "storage": {
@@ -4662,6 +4682,24 @@
         "url": "https://mobisystems.com/en-us/mobidrive/pricing",
         "retrieved_at": "2026-04-27",
         "notes": "Starter 20 GB free plan, 200 MB file size, and Windows/Android/iOS availability."
+      },
+      {
+        "label": "Delete files from folder help",
+        "url": "https://support.mobisystems.com/hc/en-us/articles/9750437496093-Delete-files-from-MobiDrive-folder-on-Windows",
+        "retrieved_at": "2026-04-29",
+        "notes": "Official support article saying files deleted from the sync folder remain in the Bin and can still be accessed online."
+      },
+      {
+        "label": "Delete forever help",
+        "url": "https://support.mobisystems.com/hc/en-us/articles/9750457864093-Delete-files-permanently-and-free-up-storage-space-in-MobiDrive-on-Windows",
+        "retrieved_at": "2026-04-29",
+        "notes": "Official support article showing that permanent removal happens from the Bin through Delete Forever."
+      },
+      {
+        "label": "Sync status help",
+        "url": "https://support.mobisystems.com/hc/en-us/articles/9750562801437-Have-my-files-been-synced-in-MobiDrive",
+        "retrieved_at": "2026-04-29",
+        "notes": "Official support article saying files sync between the MobiDrive folder and cloud when the status is up to date."
       }
     ],
     "content": {
@@ -7636,9 +7674,10 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not state an automatic expiry for files stored within a normal Yandex Disk account.",
+        "notes": "Files remain until deleted. Yandex says files are stored until you delete them if there are no access issues, with 30 days of Trash recovery, while permanent deletion can still happen after 2 years of not using Yandex Disk or after a space-overage block persists for 90 days.",
         "source_refs": [
-          0
+          0,
+          4
         ]
       },
       "storage": {
@@ -7650,9 +7689,9 @@
         ]
       },
       "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "value": 10,
+        "unit": "GB/month",
+        "notes": "Yandex limits uploads to twice the storage capacity of the current plan each month. With the 5 GB base plan, that works out to 10 GB of uploads per month before uploads are temporarily restricted.",
         "source_refs": [
           0
         ]
@@ -7715,6 +7754,12 @@
         "url": "https://yandex.com/support/yandex-360/customers/disk/web/en/uploading",
         "retrieved_at": "2026-04-26",
         "notes": "Current 1 GB single-file upload limit without a paid plan."
+      },
+      {
+        "label": "Security help",
+        "url": "https://yandex.com/support/yandex-360/customers/disk/web/en/security",
+        "retrieved_at": "2026-04-29",
+        "notes": "Official security help stating files are stored until deleted when there are no access issues, with 30 days of Trash recovery and specific long-term deletion edge cases."
       }
     ],
     "content": {

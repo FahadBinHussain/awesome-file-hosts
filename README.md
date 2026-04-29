@@ -18,7 +18,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 
 ## What this includes
 
-- 72 verified hosts checked against current public sources as of 2026-04-28.
+- 72 verified hosts checked against current public sources as of 2026-04-29.
 - 0 main-host leads still in review and 139 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
 - 7 mirror-uploader candidates and 13 cloud-migration candidates staged in their own pending files.
 - A source-backed dataset designed for both human browsing and machine reuse.
@@ -71,7 +71,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [Google Drive](https://drive.google.com/) - Google's cloud storage service with 15 GB of free account storage and official desktop/mobile clients. _(Max: 15 GB | Retention: Not published | Account: Yes | API)_
 - [Hightail](https://www.hightail.com/) - Creative-focused file-sharing service with a free Lite plan for smaller transfers, 2 GB of storage, and no-account-required recipient access. _(Max: 100 MB | Retention: 7 days | Account: Yes)_
 - [Hostr](https://hostr.co/) - Simple instant-sharing service with free accounts, broad file-type support, desktop apps, and generous public limits for small everyday uploads. _(Max: 20 MB | Retention: Not published | Account: Yes)_
-- [Jumpshare](https://jumpshare.com/) - Visual file-sharing and screen-recording platform with a free Basic plan, desktop apps, and an iOS app. _(Max: 250 MB | Retention: Not published | Account: Yes)_
+- [Jumpshare](https://jumpshare.com/) - Visual file-sharing and screen-recording platform with a free Basic plan, desktop apps, and an iOS app. _(Max: 250 MB | Retention: 12 months | Account: Yes)_
 - [LimeWire](https://limewire.com/) - Modern browser-based file sharing platform with end-to-end encrypted transfers, guest uploads, and a free 4 GB upload allowance. _(Max: 4 GB | Retention: Not published | Account: No | E2EE)_
 - [MediaFire](https://www.mediafire.com/) - File storage and sharing service with a free ad-supported basic plan and first-party mobile apps. _(Max: 5 GB | Retention: Not published | Account: Yes | API)_
 - [MEGA](https://mega.nz/) - Privacy-focused cloud storage and file-sharing service with user-controlled encryption, web access, and official mobile apps. _(Max: Not published | Retention: Not published | Account: Yes | API | CLI | E2EE)_
@@ -103,7 +103,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [WeTransfer](https://wetransfer.com/) - Transfer-focused sharing service whose current free account includes up to 10 transfers or 3 GB over a rolling 30-day period. _(Max: 3 GB | Retention: Not published | Account: Yes)_
 - [WorkUpload](https://workupload.com/) - Browser-based file-sharing service with guest uploads, password protection, expiry controls, and optional account features for managing shared files. _(Max: 2 GB | Retention: Conditional | Account: No)_
 - [Wormhole](https://wormhole.app/) - Privacy-focused file sending service with end-to-end encryption and peer-to-peer support for larger transfers. _(Max: 5 GB | Retention: 24 hours | Account: Unknown | E2EE)_
-- [Yandex Disk](https://disk.yandex.com/) - Cloud storage service with a 5 GB base tier, official desktop and mobile apps, and a Linux console client. _(Max: 1 GB | Retention: Not published | Account: Yes)_
+- [Yandex Disk](https://disk.yandex.com/) - Cloud storage service with a 5 GB base tier, official desktop and mobile apps, and a Linux console client. _(Max: 1 GB | Retention: Conditional | Account: Yes)_
 - [Your File Store](https://yourfilestore.com/) - Simple no-account file upload service with private download links, optional password protection, and long-lived files that stay active with periodic access. _(Max: 500 MB | Retention: 60 days | Account: No)_
 
 ## Data
