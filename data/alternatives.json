@@ -3,42 +3,6 @@
     "name": "Telegram",
     "url": "https://telegram.org/",
     "summary": "Cloud-based messaging service that can double as an ad hoc file-sharing method through chat attachments, channels, and public links.",
-    "limits": {
-      "max_file_size": {
-        "value": 2,
-        "unit": "GB",
-        "notes": "Telegram says users can send files of any type up to 2 GB each in regular cloud chats.",
-        "source_refs": [
-          1,
-          2
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Files in regular cloud chats remain until deleted by the user or chat participants. Secret Chats are separate and can self-destruct.",
-        "source_refs": [
-          0
-        ]
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Telegram positions regular chats as unlimited cloud storage for shared files and media.",
-        "source_refs": [
-          0,
-          1
-        ]
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "The official pages do not publish a separate bandwidth cap for file sharing.",
-        "source_refs": [
-          0
-        ]
-      }
-    },
     "account": {
       "required": true,
       "benefits": "A Telegram account is required. Shared files sync across devices and can be distributed through chats, channels, or public links.",
@@ -106,48 +70,77 @@
         "url": "https://core.telegram.org/api/files",
         "retrieved_at": "2026-04-28",
         "notes": "Official developer documentation for uploading and downloading files through Telegram APIs."
+      },
+      {
+        "label": "Telegram Premium FAQ",
+        "url": "https://telegram.org/faq_premium?setln=en",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official Premium FAQ listing faster download speed as a paid feature and confirming unlimited cloud storage remains free."
+      },
+      {
+        "label": "Telegram CDN docs",
+        "url": "https://core.telegram.org/cdn",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official infrastructure documentation explaining that popular public files may be delivered from CDN data centers depending on regional traffic and popularity."
       }
-    ]
-  },
-  {
-    "name": "VKontakte",
-    "url": "https://vk.com/",
-    "summary": "Social network whose document attachments can also be used as an ad hoc file-sharing method.",
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Detailed document-attachment limits on the currently accessible official surfaces still need deeper first-party verification.",
+    ],
+    "kind": "alternative",
+    "profile": {
+      "primary_use": {
+        "value": "Cloud messaging",
+        "notes": "Telegram is primarily a cloud-based messaging platform that doubles as an ad hoc file-sharing method through conversations, channels, and public posts.",
         "source_refs": [
           0,
           1
         ]
       },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "The public official surfaces do not currently publish a dedicated retention policy for document attachments used as file sharing.",
+      "sharing_surface": {
+        "value": "Chats, channels, and public links",
+        "notes": "Shared files can move through private chats, groups, channels, and publicly reachable links.",
+        "source_refs": [
+          0,
+          1,
+          2
+        ]
+      },
+      "max_file_size": {
+        "value": 2,
+        "unit": "GB",
+        "notes": "Telegram says users can send files of any type up to 2 GB each in regular cloud chats.",
+        "source_refs": [
+          1,
+          2
+        ]
+      },
+      "persistence_model": {
+        "value": "Until deleted by participants",
+        "notes": "Files in regular cloud chats remain until deleted by the user or chat participants. Secret Chats are separate and can self-destruct.",
         "source_refs": [
           0
         ]
       },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "The public official surfaces do not publish a separate storage quota for document attachments used this way.",
+      "storage_model": {
+        "value": "Unlimited chat cloud storage",
+        "notes": "Telegram positions regular chats as unlimited cloud storage for shared files and media.",
         "source_refs": [
-          0
+          0,
+          1
         ]
       },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "The public official surfaces do not publish a separate bandwidth cap for document attachments.",
+      "bandwidth_model": {
+        "value": "Premium speed upsell",
+        "notes": "Conditional: Telegram does not publish a simple file-host-style bandwidth quota. The official Premium FAQ makes faster download speed a paid feature, and Telegram's CDN docs show public-file delivery can depend on infrastructure path and popularity.",
         "source_refs": [
-          0
+          4,
+          5
         ]
       }
-    },
+    }
+  },
+  {
+    "name": "VKontakte",
+    "url": "https://vk.com/",
+    "summary": "Social network whose document attachments can also be used as an ad hoc file-sharing method.",
     "account": {
       "required": true,
       "benefits": "A VK account is required to use document attachments as a sharing method inside the social network.",
@@ -204,6 +197,54 @@
         "retrieved_at": "2026-04-28",
         "notes": "Official VK developer portal confirming an API surface exists."
       }
-    ]
+    ],
+    "kind": "alternative",
+    "profile": {
+      "primary_use": {
+        "value": "Social-network document sharing",
+        "notes": "VK document attachments are secondary to the platform's main social-network workflow.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "sharing_surface": {
+        "value": "Document attachments in chats and social surfaces",
+        "notes": "Files are shared through VK's account-based social and messaging surfaces rather than through a dedicated file-host workflow.",
+        "source_refs": [
+          0
+        ]
+      },
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed document-attachment limits on the currently accessible official surfaces still need deeper first-party verification.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "persistence_model": {
+        "value": "Not published",
+        "notes": "The public official surfaces do not currently publish a dedicated retention policy for document attachments used as file sharing.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage_model": {
+        "value": "Not published",
+        "notes": "The public official surfaces do not publish a separate storage quota for document attachments used this way.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Not published",
+        "notes": "The public official surfaces do not publish a separate bandwidth cap for document attachments.",
+        "source_refs": [
+          0
+        ]
+      }
+    }
   }
 ]

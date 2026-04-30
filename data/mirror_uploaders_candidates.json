@@ -3,28 +3,6 @@
     "name": "EmbedUpload",
     "url": null,
     "summary": "Candidate mirror-uploader service pending first-party verification for upload-once fan-out across multiple downstream hosts.",
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Detailed mirror-upload limits for this candidate have not yet been verified from first-party sources."
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Retention likely depends on downstream mirrored hosts, but that still needs first-party verification."
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Standalone storage behavior for this mirror-uploader candidate has not yet been verified."
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "Bandwidth behavior has not yet been verified from first-party sources."
-      }
-    },
     "account": {
       "required": null,
       "benefits": "Account requirements and feature differences are still pending first-party review."
@@ -53,6 +31,38 @@
       "pending-review"
     ],
     "sources": [],
+    "kind": "mirror_uploader",
+    "profile": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed mirror-upload limits for this candidate have not yet been verified from first-party sources."
+      },
+      "guest_uploads": {
+        "value": null,
+        "notes": "Account requirements and feature differences are still pending first-party review."
+      },
+      "remote_import": {
+        "value": null,
+        "notes": "Current first-party sources for this candidate have not yet verified a remote URL import workflow."
+      },
+      "torrent_import": {
+        "value": null,
+        "notes": "Current first-party sources for this candidate have not yet verified a torrent import workflow."
+      },
+      "stores_files_itself": {
+        "value": null,
+        "notes": "Standalone storage behavior for this mirror-uploader candidate has not yet been verified."
+      },
+      "retention_model": {
+        "value": null,
+        "notes": "Retention likely depends on downstream mirrored hosts, but that still needs first-party verification."
+      },
+      "downstream_dependency": {
+        "value": "Downstream hosts determine delivery",
+        "notes": "Bandwidth behavior has not yet been verified from first-party sources."
+      }
+    },
     "verification_status": "pending",
     "reason": null
   },
@@ -60,40 +70,6 @@
     "name": "Go4up",
     "url": "https://go4up.com/",
     "summary": "Candidate mirror-uploader service pending first-party verification for upload-once fan-out across multiple downstream hosts.",
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Detailed mirror-upload limits for this candidate have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Retention likely depends on downstream mirrored hosts, but that still needs first-party verification.",
-        "source_refs": [
-          0
-        ]
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Standalone storage behavior for this mirror-uploader candidate has not yet been verified.",
-        "source_refs": [
-          0
-        ]
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "Bandwidth behavior has not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      }
-    },
     "account": {
       "required": null,
       "benefits": "Account requirements and feature differences are still pending first-party review.",
@@ -141,62 +117,77 @@
         "notes": "Seed candidate added from the user-provided mirror-uploader list. Full first-party verification is still pending."
       }
     ],
+    "kind": "mirror_uploader",
+    "profile": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed mirror-upload limits for this candidate have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      },
+      "guest_uploads": {
+        "value": null,
+        "notes": "Account requirements and feature differences are still pending first-party review.",
+        "source_refs": [
+          0
+        ]
+      },
+      "remote_import": {
+        "value": null,
+        "notes": "Current first-party sources for this candidate have not yet verified a remote URL import workflow."
+      },
+      "torrent_import": {
+        "value": null,
+        "notes": "Current first-party sources for this candidate have not yet verified a torrent import workflow."
+      },
+      "stores_files_itself": {
+        "value": null,
+        "notes": "Standalone storage behavior for this mirror-uploader candidate has not yet been verified.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention_model": {
+        "value": null,
+        "notes": "Retention likely depends on downstream mirrored hosts, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      },
+      "downstream_dependency": {
+        "value": "Downstream hosts determine delivery",
+        "notes": "Bandwidth behavior has not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
     "verification_status": "pending",
     "reason": null
   },
   {
     "name": "Mirrorace",
     "url": "https://mirrorace.com/",
-    "summary": "Candidate mirror-uploader service pending first-party verification for upload-once fan-out across multiple downstream hosts.",
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Detailed mirror-upload limits for this candidate have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Retention likely depends on downstream mirrored hosts, but that still needs first-party verification.",
-        "source_refs": [
-          0
-        ]
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Standalone storage behavior for this mirror-uploader candidate has not yet been verified.",
-        "source_refs": [
-          0
-        ]
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "Bandwidth behavior has not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      }
-    },
+    "summary": "Mirror-uploader service for uploading a file once and fanning it out to multiple downstream file hosts.",
     "account": {
-      "required": null,
-      "benefits": "Account requirements and feature differences are still pending first-party review.",
+      "required": false,
+      "benefits": "Guest uploads are available. Accounts add file management, own-host credentials, API credentials, and other management features.",
       "source_refs": [
-        0
+        1,
+        2,
+        3
       ]
     },
     "developer": {
-      "api_available": false,
-      "api_docs_url": null,
+      "api_available": true,
+      "api_docs_url": "https://mirrorace.com/api",
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "notes": "MirrorAce publishes official API documentation for upload, remote upload, file info, and account-authenticated requests.",
       "source_refs": [
-        0
+        2
       ]
     },
     "content": {
@@ -223,68 +214,112 @@
     ],
     "sources": [
       {
-        "label": "User-provided seed URL",
+        "label": "MirrorAce homepage",
         "url": "https://mirrorace.com/",
-        "retrieved_at": "2026-04-28",
-        "notes": "Seed candidate added from the user-provided mirror-uploader list. Full first-party verification is still pending."
+        "retrieved_at": "2026-04-30",
+        "notes": "Official homepage describing MirrorAce as a file mirroring service with remote URL uploads and file management."
+      },
+      {
+        "label": "MirrorAce FAQ",
+        "url": "https://mirrorace.com/faq",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official FAQ covering 5 GB upload size, guest uploads, non-hosting behavior, and retention of mirrored links."
+      },
+      {
+        "label": "MirrorAce account types",
+        "url": "https://mirrorace.com/account/types",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official account-types page showing 10 GB file size for no-account and free-account uploads."
+      },
+      {
+        "label": "MirrorAce API documentation",
+        "url": "https://mirrorace.com/api",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official API docs for upload, remote upload, file info, authenticated API credentials, and a current example response showing a 10 GB max_file_size."
       }
     ],
+    "kind": "mirror_uploader",
+    "profile": {
+      "max_file_size": {
+        "value": 10,
+        "unit": "GB",
+        "notes": "Current official account-types and API surfaces show 10 GB limits for active no-account and free-account uploads. The FAQ still mentions 5 GB, so older help text appears stale.",
+        "source_refs": [
+          1,
+          2,
+          3
+        ]
+      },
+      "guest_uploads": {
+        "value": true,
+        "notes": "Guest uploads are available. Accounts add file management, own-host credentials, API credentials, and other management features.",
+        "source_refs": [
+          1,
+          2,
+          3
+        ]
+      },
+      "remote_import": {
+        "value": true,
+        "notes": "MirrorAce publishes remote URL upload workflows on the homepage and in the API docs.",
+        "source_refs": [
+          0,
+          3
+        ]
+      },
+      "torrent_import": {
+        "value": null,
+        "notes": "Current first-party pages reviewed here do not clearly publish a torrent import workflow.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "stores_files_itself": {
+        "value": false,
+        "notes": "MirrorAce says it is not a file-hosting site and keeps mirror links rather than hosting the mirrored files itself.",
+        "source_refs": [
+          1
+        ]
+      },
+      "retention_model": {
+        "value": "Link database plus downstream hosts",
+        "notes": "Conditional: MirrorAce says links remain in its database unless they violate terms, while the underlying mirrored files ultimately depend on downstream hosts.",
+        "source_refs": [
+          1
+        ]
+      },
+      "downstream_dependency": {
+        "value": "Downstream hosts determine delivery",
+        "notes": "Mirrored file availability and download behavior ultimately depend on the selected downstream hosts.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    },
     "verification_status": "pending",
     "reason": null
   },
   {
     "name": "Mirrored",
     "url": "https://www.mirrored.to/",
-    "summary": "Candidate mirror-uploader service pending first-party verification for upload-once fan-out across multiple downstream hosts.",
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Detailed mirror-upload limits for this candidate have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Retention likely depends on downstream mirrored hosts, but that still needs first-party verification.",
-        "source_refs": [
-          0
-        ]
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Standalone storage behavior for this mirror-uploader candidate has not yet been verified.",
-        "source_refs": [
-          0
-        ]
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "Bandwidth behavior has not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      }
-    },
+    "summary": "Mirror-uploader service that uploads files to multiple downstream hosts and returns an aggregate download page.",
     "account": {
-      "required": null,
-      "benefits": "Account requirements and feature differences are still pending first-party review.",
+      "required": false,
+      "benefits": "Guest uploads are supported for hosts that allow anonymous uploads. Accounts add file management and the ability to upload into the user's own accounts on supported hosts.",
       "source_refs": [
-        0
+        1
       ]
     },
     "developer": {
-      "api_available": false,
-      "api_docs_url": null,
+      "api_available": true,
+      "api_docs_url": "https://www.mirrored.to/p/api-doc?lang=en",
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "notes": "Mirrored publishes official HTTPS API documentation for uploads, account info, and file information.",
       "source_refs": [
-        0
+        2
       ]
     },
     "content": {
@@ -311,12 +346,83 @@
     ],
     "sources": [
       {
-        "label": "User-provided seed URL",
+        "label": "Mirrored homepage",
         "url": "https://www.mirrored.to/",
-        "retrieved_at": "2026-04-28",
-        "notes": "Seed candidate added from the user-provided mirror-uploader list. Full first-party verification is still pending."
+        "retrieved_at": "2026-04-30",
+        "notes": "Official homepage describing Mirrored as a multi-host mirror uploader and showing current free-vs-PRO per-file upload limits."
+      },
+      {
+        "label": "Mirrored FAQ",
+        "url": "https://www.mirrored.to/p/faq",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official FAQ covering anonymous uploads, non-hosting behavior, and mirror-service workflow."
+      },
+      {
+        "label": "Mirrored API docs",
+        "url": "https://www.mirrored.to/p/api-doc?lang=en",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official API documentation for authenticated HTTPS uploads and file/account info."
       }
     ],
+    "kind": "mirror_uploader",
+    "profile": {
+      "max_file_size": {
+        "value": 750,
+        "unit": "MB",
+        "notes": "The current official homepage says regular users can upload up to 750 MB per file, while PRO users can upload up to 3 GB per file.",
+        "source_refs": [
+          1,
+          2
+        ]
+      },
+      "guest_uploads": {
+        "value": true,
+        "notes": "Guest uploads are supported for hosts that allow anonymous uploads. Accounts add file management and the ability to upload into the user's own accounts on supported hosts.",
+        "source_refs": [
+          1
+        ]
+      },
+      "remote_import": {
+        "value": null,
+        "notes": "Current first-party pages reviewed here do not clearly publish a remote URL import workflow.",
+        "source_refs": [
+          0,
+          1,
+          2
+        ]
+      },
+      "torrent_import": {
+        "value": null,
+        "notes": "Current first-party pages reviewed here do not clearly publish a torrent import workflow.",
+        "source_refs": [
+          0,
+          1,
+          2
+        ]
+      },
+      "stores_files_itself": {
+        "value": false,
+        "notes": "Official FAQ says Mirrored is not a file-hosting site; mirrored files live on downstream hosts and Mirrored keeps aggregate links.",
+        "source_refs": [
+          1
+        ]
+      },
+      "retention_model": {
+        "value": "Link database plus downstream hosts",
+        "notes": "Conditional: Mirrored stores aggregate links and background-mirrors files to downstream hosts, so long-term availability depends on both Mirrored's link database and the selected mirror hosts.",
+        "source_refs": [
+          1
+        ]
+      },
+      "downstream_dependency": {
+        "value": "Downstream hosts determine delivery",
+        "notes": "Mirrored availability and download behavior depend on the selected downstream hosts and their own rules.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    },
     "verification_status": "pending",
     "reason": null
   },
@@ -324,40 +430,6 @@
     "name": "MultiFileMirror",
     "url": "https://multifilemirror.com/",
     "summary": "Candidate mirror-uploader service pending first-party verification for upload-once fan-out across multiple downstream hosts.",
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Detailed mirror-upload limits for this candidate have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Retention likely depends on downstream mirrored hosts, but that still needs first-party verification.",
-        "source_refs": [
-          0
-        ]
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Standalone storage behavior for this mirror-uploader candidate has not yet been verified.",
-        "source_refs": [
-          0
-        ]
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "Bandwidth behavior has not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      }
-    },
     "account": {
       "required": null,
       "benefits": "Account requirements and feature differences are still pending first-party review.",
@@ -405,6 +477,53 @@
         "notes": "Seed candidate added from the user-provided mirror-uploader list. Full first-party verification is still pending."
       }
     ],
+    "kind": "mirror_uploader",
+    "profile": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed mirror-upload limits for this candidate have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      },
+      "guest_uploads": {
+        "value": null,
+        "notes": "Account requirements and feature differences are still pending first-party review.",
+        "source_refs": [
+          0
+        ]
+      },
+      "remote_import": {
+        "value": null,
+        "notes": "Current first-party sources for this candidate have not yet verified a remote URL import workflow."
+      },
+      "torrent_import": {
+        "value": null,
+        "notes": "Current first-party sources for this candidate have not yet verified a torrent import workflow."
+      },
+      "stores_files_itself": {
+        "value": null,
+        "notes": "Standalone storage behavior for this mirror-uploader candidate has not yet been verified.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention_model": {
+        "value": null,
+        "notes": "Retention likely depends on downstream mirrored hosts, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      },
+      "downstream_dependency": {
+        "value": "Downstream hosts determine delivery",
+        "notes": "Bandwidth behavior has not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
     "verification_status": "pending",
     "reason": null
   },
@@ -412,28 +531,6 @@
     "name": "UploadMagnet",
     "url": null,
     "summary": "Candidate mirror-uploader service pending first-party verification for upload-once fan-out across multiple downstream hosts.",
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Detailed mirror-upload limits for this candidate have not yet been verified from first-party sources."
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Retention likely depends on downstream mirrored hosts, but that still needs first-party verification."
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Standalone storage behavior for this mirror-uploader candidate has not yet been verified."
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "Bandwidth behavior has not yet been verified from first-party sources."
-      }
-    },
     "account": {
       "required": null,
       "benefits": "Account requirements and feature differences are still pending first-party review."
@@ -462,6 +559,38 @@
       "pending-review"
     ],
     "sources": [],
+    "kind": "mirror_uploader",
+    "profile": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed mirror-upload limits for this candidate have not yet been verified from first-party sources."
+      },
+      "guest_uploads": {
+        "value": null,
+        "notes": "Account requirements and feature differences are still pending first-party review."
+      },
+      "remote_import": {
+        "value": null,
+        "notes": "Current first-party sources for this candidate have not yet verified a remote URL import workflow."
+      },
+      "torrent_import": {
+        "value": null,
+        "notes": "Current first-party sources for this candidate have not yet verified a torrent import workflow."
+      },
+      "stores_files_itself": {
+        "value": null,
+        "notes": "Standalone storage behavior for this mirror-uploader candidate has not yet been verified."
+      },
+      "retention_model": {
+        "value": null,
+        "notes": "Retention likely depends on downstream mirrored hosts, but that still needs first-party verification."
+      },
+      "downstream_dependency": {
+        "value": "Downstream hosts determine delivery",
+        "notes": "Bandwidth behavior has not yet been verified from first-party sources."
+      }
+    },
     "verification_status": "pending",
     "reason": null
   },
@@ -469,40 +598,6 @@
     "name": "UpMirror",
     "url": "https://www.upmirror.info/",
     "summary": "Candidate mirror-uploader service pending first-party verification for upload-once fan-out across multiple downstream hosts.",
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Detailed mirror-upload limits for this candidate have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Retention likely depends on downstream mirrored hosts, but that still needs first-party verification.",
-        "source_refs": [
-          0
-        ]
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Standalone storage behavior for this mirror-uploader candidate has not yet been verified.",
-        "source_refs": [
-          0
-        ]
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "Bandwidth behavior has not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      }
-    },
     "account": {
       "required": null,
       "benefits": "Account requirements and feature differences are still pending first-party review.",
@@ -535,7 +630,7 @@
       "server_side_encryption": null,
       "notes": "The seed entry uses an HTTPS homepage, but deeper security claims still need first-party verification.",
       "source_refs": [
-          0
+        0
       ]
     },
     "tags": [
@@ -550,6 +645,53 @@
         "notes": "Seed candidate added from the user-provided mirror-uploader list. Full first-party verification is still pending."
       }
     ],
+    "kind": "mirror_uploader",
+    "profile": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Detailed mirror-upload limits for this candidate have not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      },
+      "guest_uploads": {
+        "value": null,
+        "notes": "Account requirements and feature differences are still pending first-party review.",
+        "source_refs": [
+          0
+        ]
+      },
+      "remote_import": {
+        "value": null,
+        "notes": "Current first-party sources for this candidate have not yet verified a remote URL import workflow."
+      },
+      "torrent_import": {
+        "value": null,
+        "notes": "Current first-party sources for this candidate have not yet verified a torrent import workflow."
+      },
+      "stores_files_itself": {
+        "value": null,
+        "notes": "Standalone storage behavior for this mirror-uploader candidate has not yet been verified.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention_model": {
+        "value": null,
+        "notes": "Retention likely depends on downstream mirrored hosts, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      },
+      "downstream_dependency": {
+        "value": "Downstream hosts determine delivery",
+        "notes": "Bandwidth behavior has not yet been verified from first-party sources.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
     "verification_status": "pending",
     "reason": null
   }

@@ -18,9 +18,9 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 
 ## What this includes
 
-- 90 verified hosts checked against current public sources as of 2026-04-29.
-- 0 main-host leads still in review and 151 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
-- 7 mirror-uploader candidates and 13 cloud-migration candidates staged in their own pending files.
+- 88 verified hosts checked against current public sources as of 2026-04-30.
+- 1 main-host leads still in review and 153 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
+- 0 alternative-method candidates, 7 mirror-uploader candidates, and 7 cloud-migration candidates staged in their own pending files.
 - A free-first dataset that prioritizes genuinely usable free tiers, guest flows, and honest headline limits.
 - A source-backed dataset designed for both human browsing and machine reuse.
 - A bias toward open-source, open-protocol, and automation-friendly services when the evidence supports them.
@@ -70,7 +70,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [Fileditch](https://new.fileditch.com/) - Anonymous file-sharing host with a no-auth HTTP API, 25 GB files, and low-disk cleanup only after 30 days of inactivity. _(Max: 25 GB | Retention: Conditional | Account: No | API | CLI)_
 - [FileFactory](https://www.filefactory.com/) - Long-running file hosting service with free accounts, 5 GB upload limits, and 90-day storage for free members. _(Max: 5 GB | Retention: 90 days | Account: Yes)_
 - [FileFast](https://file.fast/) - Modern file-sharing and cloud-storage service with guest uploads, file analytics, public API access, and a free tier with monthly bandwidth limits. _(Max: 6 GB | Retention: 7 days | Account: No | API | CLI)_
-- [FileGarden](https://filegarden.com/) - Persistent file-linking service that lets users upload files for long-lived sharing, with active user gardens and lightweight account features. _(Max: Not published | Retention: No automatic expiry | Account: Unknown)_
+- [FileGarden](https://filegarden.com/) - Persistent file-linking service that lets users upload files for long-lived sharing, with active user gardens and lightweight account features. _(Max: 100 MiB | Retention: No automatic expiry | Account: Unknown)_
 - [FileKarelia](https://file.karelia.ru/) - Russian file-sharing service with account-based uploads, month-long retention after access, and larger limits for registered users. _(Max: 2 GB | Retention: 30 days | Account: Yes)_
 - [Filen](https://filen.io/) - Open-source, zero-knowledge cloud storage service with end-to-end encryption, 10 GB free accounts, a public API, and an official CLI. _(Max: 10 GB | Retention: Conditional | Account: Yes | API | CLI | E2EE)_
 - [files.dp.ua](https://files.dp.ua/en/) - Anonymous file-sharing service with selectable expiry, optional password protection, and unusually large free upload limits. _(Max: 100 GB | Retention: 25 days | Account: No)_
@@ -92,7 +92,6 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [MEGA](https://mega.nz/) - Privacy-focused cloud storage and file-sharing service with user-controlled encryption, web access, and official mobile apps. _(Max: 20 GB | Retention: No automatic expiry | Account: Yes | API | CLI | E2EE)_
 - [MiMedia](https://www.mimedia.com/) - Personal cloud service with a free 10 GB starter tier, desktop and mobile apps, and a media-first sharing experience. _(Max: 5 GB | Retention: 30 days | Account: Yes)_
 - [MobiDrive](https://www.mobidrive.com/) - Privacy-first cloud storage from MobiSystems with a free 20 GB tier and official web, Windows, Android, and iOS apps. _(Max: 200 MB | Retention: No automatic expiry | Account: Yes)_
-- [My-Files.SU](https://my-files.ru/) - Russian file-hosting service positioned around no-registration uploads, direct links, and minimal download friction. _(Max: 100 GB | Retention: Conditional | Account: No)_
 - [MyAirBridge](https://www.myairbridge.com/) - Large-file transfer and sharing service with free transfers up to 20 GB and optional online storage features. _(Max: 20 GB | Retention: 3 days | Account: No | API)_
 - [Oblako Mail.ru](https://cloud.mail.ru/) - Mail.ru cloud storage service with 8 GB free space, link sharing, mobile apps, a Windows desktop app, and Linux access via WebDAV. _(Max: 1 GB | Retention: Conditional | Account: Yes | CLI)_
 - [OneDrive](https://www.microsoft.com/en-us/microsoft-365/onedrive/) - Microsoft's cloud storage service with a 5 GB free tier and official apps across desktop and mobile platforms. _(Max: 5 GB | Retention: No automatic expiry | Account: Yes | API)_
@@ -104,9 +103,8 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [PlusTransfer](https://www.plustransfer.com/) - No-account large-file transfer service now served through DataTransfer, with free transfers up to 10 GB and expiry controls. _(Max: 10 GB | Retention: Conditional | Account: No)_
 - [put.re](https://put.re/) - Anonymous file-sharing service with browser uploads, direct links, optional albums, and a public API. _(Max: 200 MB | Retention: No automatic expiry | Account: No | API | CLI)_
 - [Rakuten Drive](https://rakuten-drive.com/) - Cloud storage and transfer platform with 10 GB free cloud storage, 10 GB free uploads, 48-hour free transfer links, and mobile/web access. _(Max: 10 GB | Retention: Conditional | Account: Yes)_
-- [Rootz](https://rootz.so/) - File-sharing platform with public upload and remote-upload flows, API documentation, and a free tier limited by bandwidth rather than bundled account storage. _(Max: Not published | Retention: Conditional | Account: No | API)_
+- [Rootz](https://rootz.so/) - File-sharing platform with public upload and remote-upload flows, API documentation, and a free tier limited by bandwidth rather than bundled account storage. _(Max: 25 GB | Retention: Conditional | Account: No | API)_
 - [SendSpace](https://www.sendspace.com/) - Transfer-oriented file sharing service with a current 300 MB free upload limit and optional recipient delivery without requiring recipient accounts. _(Max: 300 MB | Retention: 30 days | Account: No)_
-- [ShareFile](https://sharefile.co/) - Anonymous file-sharing host with 5 GB uploads and a simple no-account upload flow. _(Max: 5000 MB | Retention: Not published | Account: No)_
 - [SharePlace](https://shareplace.org/) - File hosting service with browser uploads, account-based management, and a documented public API. _(Max: 500 MB | Retention: 60 days | Account: No | API)_
 - [Stashr](https://stashr.wtf/) - Guest-friendly file-sharing host with 500 MB files, selectable expiry or download limits, and optional client-side encryption. _(Max: 500 MB | Retention: Conditional | Account: No | E2EE)_
 - [Sync](https://www.sync.com/) - Privacy-focused cloud storage service with a 5 GB free tier and end-to-end encrypted apps across desktop and mobile. _(Max: Conditional | Retention: No automatic expiry | Account: Yes | E2EE)_
@@ -124,7 +122,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [ViKiNG FiLE](https://vikingfile.com/) - Anonymous file host advertising unlimited file size and storage, with a public API and 15-day free retention after the last download. _(Max: Unlimited | Retention: 15 days | Account: No | API | CLI)_
 - [WeTransfer](https://wetransfer.com/) - Transfer-focused sharing service whose current free account includes up to 10 transfers or 3 GB over a rolling 30-day period. _(Max: 3 GB | Retention: Conditional | Account: Yes)_
 - [WorkUpload](https://workupload.com/) - Browser-based file-sharing service with guest uploads, password protection, expiry controls, and optional account features for managing shared files. _(Max: 2 GB | Retention: Conditional | Account: No)_
-- [Wormhole](https://wormhole.app/) - Privacy-focused file sending service with end-to-end encryption, up to 10 GB transfers, and peer-to-peer delivery for larger files. _(Max: 10 GB | Retention: 24 hours | Account: Unknown | E2EE)_
+- [Wormhole](https://wormhole.app/) - Privacy-focused file sending service with end-to-end encryption, up to 10 GB transfers, and peer-to-peer delivery for larger files. _(Max: 10 GB | Retention: 24 hours | Account: No | E2EE)_
 - [Yandex Disk](https://disk.yandex.com/) - Cloud storage service with a 5 GB base tier, official desktop and mobile apps, and a Linux console client. _(Max: 1 GB | Retention: No automatic expiry | Account: Yes)_
 - [Your File Store](https://yourfilestore.com/) - Simple no-account file upload service with private download links, optional password protection, and long-lived files that stay active with periodic access. _(Max: 500 MB | Retention: 60 days | Account: No)_
 
@@ -133,12 +131,15 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - Dataset: [`data/hosts.json`](data/hosts.json)
 - Candidate backlog: [`data/candidates.json`](data/candidates.json)
 - Alternative methods: [`data/alternatives.json`](data/alternatives.json)
+- Alternative method candidates: [`data/alternatives_candidates.json`](data/alternatives_candidates.json)
 - Mirror uploaders: [`data/mirror_uploaders.json`](data/mirror_uploaders.json)
 - Mirror uploader candidates: [`data/mirror_uploaders_candidates.json`](data/mirror_uploaders_candidates.json)
 - Cloud migration tools: [`data/cloud_migration.json`](data/cloud_migration.json)
 - Cloud migration candidates: [`data/cloud_migration_candidates.json`](data/cloud_migration_candidates.json)
 - Schema: [`schema/hosts.schema.json`](schema/hosts.schema.json)
 - Candidate schema: [`schema/candidates.schema.json`](schema/candidates.schema.json)
+- Adjacent schema: [`schema/adjacent.schema.json`](schema/adjacent.schema.json)
+- Adjacent candidate schema: [`schema/adjacent-candidates.schema.json`](schema/adjacent-candidates.schema.json)
 - Generator: [`scripts/generate-readme.js`](scripts/generate-readme.js)
 
 The site is the best place to explore all columns, notes, references, queue status, and layout controls. The README stays intentionally compact so the list still reads like an awesome list instead of a database dump.

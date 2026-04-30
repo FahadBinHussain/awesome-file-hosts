@@ -3,45 +3,6 @@
     "name": "MultCloud",
     "url": "https://www.multcloud.com/",
     "summary": "Cloud-to-cloud migration tool for transferring, syncing, and backing up files between connected storage providers without manual download and re-upload.",
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Transfer limits vary by the connected cloud providers, plan level, and chosen transfer workflow.",
-        "source_refs": [
-          0,
-          1,
-          2
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Retention varies by the connected cloud providers because MultCloud moves or syncs files between them rather than acting as a standalone drive.",
-        "source_refs": [
-          0,
-          1
-        ]
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Storage varies by the connected cloud providers rather than a standalone MultCloud storage quota.",
-        "source_refs": [
-          0,
-          2
-        ]
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "Transfer behavior varies by plan and connected providers. The public official pages do not publish one simple file-host-style bandwidth cap.",
-        "source_refs": [
-          1,
-          3
-        ]
-      }
-    },
     "account": {
       "required": true,
       "benefits": "An account is required to connect clouds, schedule transfers, and manage sync or backup tasks across providers.",
@@ -112,7 +73,78 @@
         "url": "https://www.multcloud.com/moving-clouds.html",
         "retrieved_at": "2026-04-28",
         "notes": "Official page describing direct cloud moves and 256-bit AES SSL for cloud-to-cloud transfer."
+      },
+      {
+        "label": "MultCloud limitations page",
+        "url": "https://www.multcloud.com/help/limitations.html",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official help page explaining provider-specific file size, request, and naming limits that affect MultCloud transfer workflows."
       }
-    ]
+    ],
+    "kind": "cloud_migration",
+    "profile": {
+      "workflow_modes": {
+        "value": "Transfer, sync, backup",
+        "notes": "Official pages position MultCloud around cloud transfer, cloud sync, and cloud backup between connected providers.",
+        "source_refs": [
+          0,
+          1,
+          2
+        ]
+      },
+      "execution_model": {
+        "value": "Server-side cloud-to-cloud",
+        "notes": "Official feature pages describe direct cloud-to-cloud transfers, sync, and backup without manual download and re-upload.",
+        "source_refs": [
+          1,
+          2
+        ]
+      },
+      "item_limit": {
+        "value": null,
+        "unit": null,
+        "notes": "Conditional: transfer limits vary by the connected cloud providers, plan level, and chosen transfer workflow. MultCloud's official limitations page explicitly tells users to account for each cloud drive's own size limits.",
+        "source_refs": [
+          0,
+          1,
+          2,
+          4
+        ]
+      },
+      "included_storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage varies by the connected cloud providers rather than a standalone MultCloud storage quota.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "scheduled_runs": {
+        "value": true,
+        "notes": "Official feature pages describe scheduled transfer, sync, and backup jobs.",
+        "source_refs": [
+          1,
+          2
+        ]
+      },
+      "provider_dependency": {
+        "value": "Connected-provider dependent",
+        "notes": "MultCloud moves or syncs data between connected providers, so storage and retention depend on those source and destination services.",
+        "source_refs": [
+          0,
+          2,
+          4
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Plan and provider dependent",
+        "notes": "Transfer behavior varies by plan and connected providers. The public official pages do not publish one simple file-host-style bandwidth cap.",
+        "source_refs": [
+          1,
+          3
+        ]
+      }
+    }
   }
 ]

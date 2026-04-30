@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import type { CandidateRecord, HostRecord, SiteData } from "@/lib/site-data";
 import { AppFrame } from "@/components/app-frame";
 import { HostDetailPanel } from "@/components/host-detail-panel";
+import { SourceRefLinks } from "@/components/source-ref-links";
 import {
   ArrowsClockwise,
   CaretRight,
@@ -82,6 +83,10 @@ function HostRow({
   active: boolean;
   onSelect: () => void;
 }) {
+  const maxRefs = host.limits.max_file_size.source_refs;
+  const retentionRefs = host.limits.retention.source_refs;
+  const accountRefs = host.account.source_refs;
+
   return (
     <button
       onClick={onSelect}
@@ -97,19 +102,27 @@ function HostRow({
       <div className="grid grid-cols-3 gap-2 text-xs text-[var(--muted)] md:contents md:text-sm md:text-[var(--text)]">
         <div>
           <div className="mb-1 uppercase tracking-[0.18em] md:hidden">Max</div>
-          <div className="text-sm text-[var(--text)]">{host.filters.maxFileLabel}</div>
+          <div className="text-sm text-[var(--text)]">
+            {host.filters.maxFileLabel} <SourceRefLinks record={host} refs={maxRefs} />
+          </div>
         </div>
         <div>
           <div className="mb-1 uppercase tracking-[0.18em] md:hidden">Retention</div>
-          <div className="text-sm text-[var(--text)]">{host.filters.retentionLabel}</div>
+          <div className="text-sm text-[var(--text)]">
+            {host.filters.retentionLabel} <SourceRefLinks record={host} refs={retentionRefs} />
+          </div>
         </div>
         <div className="md:hidden">
           <div className="mb-1 uppercase tracking-[0.18em]">Account</div>
-          <div className="text-sm text-[var(--text)]">{host.accountLabel}</div>
+          <div className="text-sm text-[var(--text)]">
+            {host.accountLabel} <SourceRefLinks record={host} refs={accountRefs} />
+          </div>
         </div>
       </div>
       <div className="hidden items-center justify-between gap-2 text-sm text-[var(--text)] md:flex">
-        <span>{host.accountLabel}</span>
+        <span>
+          {host.accountLabel} <SourceRefLinks record={host} refs={accountRefs} />
+        </span>
         <CaretRight size={14} className="text-[var(--soft)]" />
       </div>
       <div className="flex items-center justify-end md:hidden">
@@ -128,7 +141,7 @@ function CandidateRow({ candidate }: { candidate: CandidateRecord }) {
       </div>
       <div className="text-sm text-[var(--text)]">
         <span className="mr-2 text-[11px] uppercase tracking-[0.18em] text-[var(--soft)] md:hidden">Max</span>
-        {candidate.filters.maxFileLabel}
+        {candidate.filters.maxFileLabel} <SourceRefLinks record={candidate} refs={candidate.limits.max_file_size.source_refs} />
       </div>
       <div>
         <span
@@ -214,7 +227,7 @@ export function ExplorerApp({ data }: Props) {
 
           <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
             <StatTile label="Verified" value={data.stats.verifiedHosts} helper="Source-checked hosts in the live explorer." />
-            <StatTile label="Pending" value={data.stats.pendingCandidates} helper="Leads still waiting on a hard decision." />
+            <StatTile label="Host pending" value={data.stats.pendingCandidates} helper="Host leads still waiting on a hard decision." />
             <StatTile label="Rejected" value={data.stats.rejectedCandidates} helper="Tracked with reasons and references." />
             <StatTile label="API" value={data.stats.apiHosts} helper="Hosts with public API support." />
             <StatTile label="E2EE" value={data.stats.e2eeHosts} helper="Hosts with end-to-end encryption claims." />
@@ -234,7 +247,7 @@ export function ExplorerApp({ data }: Props) {
                 Hosts
               </PillButton>
               <PillButton active={view === "queue"} onClick={() => setView("queue")}>
-                Review queue
+                Hosts review queue
               </PillButton>
               <PillButton active={view === "method"} onClick={() => setView("method")}>
                 Method
@@ -394,16 +407,12 @@ export function ExplorerApp({ data }: Props) {
                       {
                         label: "Mirror uploaders",
                         count: data.stats.mirrorUploaders,
-                        helper:
-                          `${data.mirrorUploaders.map((item) => item.name).join(", ")} · ` +
-                          `${data.stats.mirrorUploaderCandidates} pending review`
+                        helper: data.mirrorUploaders.map((item) => item.name).join(", ")
                       },
                       {
                         label: "Cloud migration",
                         count: data.stats.cloudMigrationTools,
-                        helper:
-                          `${data.cloudMigration.map((item) => item.name).join(", ")} · ` +
-                          `${data.stats.cloudMigrationCandidates} pending review`
+                        helper: data.cloudMigration.map((item) => item.name).join(", ")
                       }
                     ].map((item) => (
                       <div

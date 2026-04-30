@@ -33,7 +33,7 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a separate bandwidth cap.",
+        "notes": "Bandwidth is conditional. The service does not publish a numeric throughput cap, and effective transfer availability is bounded by the fixed 60-minute lifetime of each upload.",
         "source_refs": [
           0,
           1
@@ -110,6 +110,15 @@
         "notes": "The current upload page states a 1.00 GB maximum file size for free uploads.",
         "source_refs": [
           0
+        ]
+      },
+      "max_file_size_account": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum upload size is conditional for account holders. The current public pages say paid accounts get larger uploads than the 1 GB free guest flow, but they do not publish one clean non-premium signed-in cap in accessible text.",
+        "source_refs": [
+          0,
+          1
         ]
       },
       "retention": {
@@ -570,6 +579,14 @@
           0
         ]
       },
+      "max_file_size_account": {
+        "value": null,
+        "unit": null,
+        "notes": "Free signed-in accounts use the same public upload flow, and the public FAQ still presents uploads as having unlimited max file size.",
+        "source_refs": [
+          0
+        ]
+      },
       "retention": {
         "value": null,
         "unit": null,
@@ -920,6 +937,15 @@
           1
         ]
       },
+      "max_file_size_account": {
+        "value": null,
+        "unit": null,
+        "notes": "Unlimited. Buzzheavier accounts add organized storage locations, file-manager APIs, and webhook support, but the official help still says you can upload whatever size you want.",
+        "source_refs": [
+          1,
+          2
+        ]
+      },
       "retention": {
         "value": null,
         "unit": null,
@@ -1036,6 +1062,15 @@
         "value": 200,
         "unit": "MB",
         "notes": "Homepage currently states uploads up to 200 MB; the FAQ separately says .gif files bigger than 20 MB are not allowed.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "max_file_size_account": {
+        "value": 200,
+        "unit": "MB",
+        "notes": "Accounts add login-based management features, but the current homepage and FAQ do not publish a separate higher free account cap beyond the same 200 MB upload limit.",
         "source_refs": [
           0,
           1
@@ -1279,7 +1314,7 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The current public page does not publish a separate bandwidth cap.",
+        "notes": "Bandwidth is conditional. The live upload UI does not publish a numeric throughput cap, but it does make effective transfer availability depend on the sender's chosen share mode, including 10 minutes, 1 hour, 1 day, 1 week, or a one-view burn-after-reading option.",
         "source_refs": [
           0
         ]
@@ -1593,14 +1628,14 @@
           0
         ]
       },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit.",
-        "source_refs": [
-          0
-        ]
-      },
+        "bandwidth": {
+          "value": null,
+          "unit": null,
+          "notes": "Bandwidth is conditional. Cozy's official desktop limitations page does not publish a neat transfer cap, but it explicitly frames sync around personal-use expectations, large files being uploaded or downloaded in one time, and practical network-bandwidth constraints.",
+          "source_refs": [
+            3
+          ]
+        },
       "storage_account": {
         "value": 5,
         "unit": "GB",
@@ -1656,13 +1691,19 @@
         "retrieved_at": "2026-04-26",
         "notes": "Discovery free plan with 5 GB cloud storage."
       },
-      {
-        "label": "Download",
-        "url": "https://en.cozy.io/download",
-        "retrieved_at": "2026-04-26",
-        "notes": "Windows, GNU/Linux, Android, and iOS app availability."
-      }
-    ],
+        {
+          "label": "Download",
+          "url": "https://en.cozy.io/download",
+          "retrieved_at": "2026-04-26",
+          "notes": "Windows, GNU/Linux, Android, and iOS app availability."
+        },
+        {
+          "label": "Desktop limitations",
+          "url": "https://docs.cozy.io/en/cozy-desktop/usage/limitations/",
+          "retrieved_at": "2026-04-29",
+          "notes": "Official Twake Desktop limitations page describing personal-use expectations, large-file handling, and network-bandwidth constraints."
+        }
+      ],
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
@@ -1933,6 +1974,15 @@
           0
         ]
       },
+      "max_file_size_account": {
+        "value": 10,
+        "unit": "GB",
+        "notes": "Creating an account adds easier file management and extra upload workflows like FTP and remote upload, but the official homepage and FAQ still publish the same 10 GB per-file limit.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
       "retention": {
         "value": 90,
         "unit": "days",
@@ -2029,6 +2079,14 @@
           0
         ]
       },
+      "max_file_size_account": {
+        "value": 8,
+        "unit": "MB",
+        "notes": "Registered members gain long-term image storage and management, but the cited public upload surface does not publish a separate higher per-file cap beyond the same 8 MB limit.",
+        "source_refs": [
+          0
+        ]
+      },
       "retention": {
         "value": 1,
         "unit": "years",
@@ -2048,9 +2106,10 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a current bandwidth limit.",
+        "notes": "Unlimited in normal use. DirectUpload's official FAQ says each image can be loaded as often as needed, regardless of how much traffic it generates, while the AGB reserve the right to auto-compress unusually high-traffic images to preserve service performance.",
         "source_refs": [
-          0
+          1,
+          2
         ]
       }
     },
@@ -2092,6 +2151,18 @@
         "url": "https://www.directupload.net/",
         "retrieved_at": "2026-04-26",
         "notes": "Current file-size limit, supported image formats, auto-delete options, and minimum storage duration."
+      },
+      {
+        "label": "FAQ",
+        "url": "https://www.directupload.eu/faq/",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official FAQ stating that each image may be loaded as often as desired regardless of generated traffic, plus the current one-year anonymous retention guarantee and 8 MB file size."
+      },
+      {
+        "label": "Rules & AGB",
+        "url": "https://www.directupload.eu/agb/",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official rules reserving the right to auto-compress a small fraction of unusually high-traffic images to preserve service performance."
       }
     ],
     "content": {
@@ -2136,7 +2207,7 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The official Disroot and hosted Lufi pages do not publish a throughput or transfer-volume cap for this instance.",
+        "notes": "Bandwidth is conditional. The official Disroot and hosted Lufi pages do not publish a numeric throughput cap, and effective transfer availability depends on the sender's chosen delay, the optional delete-at-first-download mode, and the instance's size-based retention limits.",
         "source_refs": [
           0,
           1,
@@ -2672,6 +2743,14 @@
           0
         ]
       },
+      "max_file_size_account": {
+        "value": 4,
+        "unit": "GB",
+        "notes": "Free accounts help users manage uploads, but the homepage does not publish a separate higher free signed-in cap beyond the same 4 GB upload limit.",
+        "source_refs": [
+          0
+        ]
+      },
       "retention": {
         "value": null,
         "unit": null,
@@ -2782,9 +2861,11 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean numeric bandwidth cap.",
+        "notes": "Bandwidth is conditional. FEX.NET is clearly presented as a tiered account-based cloud storage service with an official pricing surface and ongoing plan tiers, but the accessible current public text still does not expose one universal numeric free-user transfer quota or speed cap.",
         "source_refs": [
-          0
+          0,
+          1,
+          2
         ]
       }
     },
@@ -2864,6 +2945,15 @@
         "notes": "The English upload page currently states a maximum size of 1 GB per file.",
         "source_refs": [
           0
+        ]
+      },
+      "max_file_size_account": {
+        "value": 1,
+        "unit": "GB",
+        "notes": "Free registration adds file overview, statistics, and management features, but the cited public pages do not publish a separate higher free account cap beyond the same 1 GB upload limit.",
+        "source_refs": [
+          0,
+          2
         ]
       },
       "retention": {
@@ -3073,6 +3163,14 @@
         "notes": "Homepage FAQ says file transfers are limited to a total of 4 GB. The plans page lists 2 GB for the free managed plan, so this entry reflects the public upload flow on the homepage.",
         "source_refs": [
           0
+        ]
+      },
+      "max_file_size_account": {
+        "value": 2,
+        "unit": "GB",
+        "notes": "The official plans page lists 2 GB for the free managed account plan, which is lower than the broader 4 GB public transfer flow documented on the homepage.",
+        "source_refs": [
+          2
         ]
       },
       "retention": {
@@ -3618,12 +3716,27 @@
     "summary": "Persistent file-linking service that lets users upload files for long-lived sharing, with active user gardens and lightweight account features.",
     "limits": {
       "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "The current public search trail confirms File Garden is active, but it does not expose a trustworthy current maximum upload size on the accessible official surfaces.",
+        "value": 100,
+        "unit": "MiB",
+        "notes": "The current public File Garden pipe interface rejects files above 100 MiB in its live embedded JavaScript, with an explicit error message saying uploads above 100 MiB are not supported.",
         "source_refs": [
-          0,
-          1
+          3
+        ]
+      },
+      "max_file_size_guest": {
+        "value": 100,
+        "unit": "MiB",
+        "notes": "The current public File Garden pipe interface is openly accessible and rejects files above 100 MiB with an explicit client-side error message.",
+        "source_refs": [
+          3
+        ]
+      },
+      "max_file_size_account": {
+        "value": 100,
+        "unit": "MiB",
+        "notes": "The accessible official surfaces do not publish a different account-side free upload cap from the live public pipe interface, so the current documented 100 MiB limit is used for signed-in uploads as well.",
+        "source_refs": [
+          3
         ]
       },
       "retention": {
@@ -3643,13 +3756,33 @@
           1
         ]
       },
+      "storage_guest": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage is conditional for public/guest-facing uploads. File Garden presents files as living forever for free, but the accessible official surfaces do not publish a reusable guest storage quota and instead expose sharing-oriented public pipe flows.",
+        "source_refs": [
+          0,
+          3
+        ]
+      },
+      "storage_account": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage is conditional for signed-in users too. File Garden clearly has account-linked gardens and login flows, but the accessible official surfaces still do not publish a clean numeric personal storage quota.",
+        "source_refs": [
+          0,
+          1,
+          2
+        ]
+      },
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The accessible current official surfaces do not publish a bandwidth or transfer-volume cap.",
+        "notes": "Bandwidth is conditional. File Garden does not publish a numeric throughput cap, and the live first-party frontend makes transfer accessibility depend on privacy mode (public, unlisted, private) and signed-in visibility, warning unsigned viewers that not all items may be visible.",
         "source_refs": [
-          0,
-          1
+          1,
+          2,
+          3
         ]
       }
     },
@@ -3707,6 +3840,12 @@
         "url": "https://filegarden.com/login/%3Fdest%3D%252F",
         "retrieved_at": "2026-04-29",
         "notes": "Current indexed login page confirms active account creation and sign-in flows."
+      },
+      {
+        "label": "Public pipe page",
+        "url": "https://filegarden.com/users/62adccca0726ee2e8b6299ac/pipe/",
+        "retrieved_at": "2026-04-29",
+        "notes": "Current public File Garden pipe page exposes the live upload interface, and its embedded JavaScript rejects files above 100 MiB with an explicit error message."
       }
     ],
     "content": {
@@ -3751,9 +3890,9 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean numeric bandwidth cap.",
+        "notes": "Bandwidth is conditional. The published terms do not give a clean numeric throughput cap, but they prohibit automated interaction and any use that interferes with normal operation, and they reserve the right to suspend, restrict, or terminate access at any time.",
         "source_refs": [
-          0
+          1
         ]
       }
     },
@@ -3845,15 +3984,16 @@
           2
         ]
       },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "The current public docs do not publish a clean free-tier bandwidth cap.",
-        "source_refs": [
-          1
-        ]
-      }
-    },
+        "bandwidth": {
+          "value": null,
+          "unit": null,
+          "notes": "Bandwidth is conditional. Filen's free docs still do not publish a separate transfer quota, while current first-party pages say they do not restrict speed and paid plans explicitly market uncapped transfer and uploads.",
+          "source_refs": [
+            0,
+            6
+          ]
+        }
+      },
     "account": {
       "required": true,
       "benefits": "A Filen account is required to use the encrypted drive, desktop client, mobile apps, API, and CLI workflows.",
@@ -3922,13 +4062,19 @@
         "retrieved_at": "2026-04-29",
         "notes": "Current API docs say the Filen API is publicly documented for external developers."
       },
-      {
-        "label": "CLI docs introduction",
-        "url": "https://docs.filen.io/docs/cli/",
-        "retrieved_at": "2026-04-29",
-        "notes": "Current CLI docs cover installation, syncing, network-drive mounting, and WebDAV/S3 mirror workflows."
-      }
-    ],
+        {
+          "label": "CLI docs introduction",
+          "url": "https://docs.filen.io/docs/cli/",
+          "retrieved_at": "2026-04-29",
+          "notes": "Current CLI docs cover installation, syncing, network-drive mounting, and WebDAV/S3 mirror workflows."
+        },
+        {
+          "label": "Pricing",
+          "url": "https://filen.io/pricing",
+          "retrieved_at": "2026-04-29",
+          "notes": "Current plan page highlighting paid tiers with uncapped transfer and uploads."
+        }
+      ],
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
@@ -4160,6 +4306,14 @@
         "value": 10,
         "unit": "GB",
         "notes": "Official support currently states transfers are free up to 10 GB for non-Freebox users, while Freebox subscribers get unlimited volume.",
+        "source_refs": [
+          0
+        ]
+      },
+      "max_file_size_account": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum transfer size is conditional for account-linked / subscriber use. Official support says non-Freebox users are capped at 10 GB, while Freebox subscribers can transfer files without a published volume limit.",
         "source_refs": [
           0
         ]
@@ -4550,6 +4704,15 @@
           1
         ]
       },
+      "max_file_size_account": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum upload behavior is conditional for free accounts too. Gofile's official FAQ and API docs describe standard uploads, guest-upload flows, regional proxies, and very large-upload troubleshooting, but they still do not publish one hard current max upload size for signed-in free users in accessible text.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
       "retention": {
         "value": null,
         "unit": null,
@@ -4871,6 +5034,14 @@
         "value": 20,
         "unit": "GB",
         "notes": "The current pricing block says the Free plan supports uploads up to 20 GB per file.",
+        "source_refs": [
+          0
+        ]
+      },
+      "max_file_size_account": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum upload size is conditional for signed-in users. The accessible official surfaces clearly separate the no-account Free plan from paid signed-in tiers with extra storage and features, but they do not publish one clean account-side file-size cap in accessible text.",
         "source_refs": [
           0
         ]
@@ -5426,6 +5597,15 @@
           0
         ]
       },
+      "max_file_size_account": {
+        "value": 4,
+        "unit": "GB",
+        "notes": "Creating an account enables permanent access and file management, but the current upload page still presents the same free 4 GB upload allowance.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
       "retention": {
         "value": null,
         "unit": null,
@@ -5548,9 +5728,10 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a separate bandwidth cap for Litterbox.",
+        "notes": "Bandwidth is conditional. Catbox's official FAQ documents provider-level connectivity blocks that can affect access to Catbox-hosted files, and the official Catbox blog says the service already pushes multiple gigabits of traffic and that cutting bandwidth would create a bottleneck. No fixed per-user quota is published for Litterbox.",
         "source_refs": [
-          1
+          1,
+          2
         ]
       }
     },
@@ -5600,6 +5781,12 @@
         "url": "https://catbox.moe/faq.php",
         "retrieved_at": "2026-04-29",
         "notes": "Current FAQ describes Litterbox as Catbox's temporary sister service and documents the shared blocked-extension policy."
+      },
+      {
+        "label": "Catbox Blog",
+        "url": "https://blog.catbox.moe/",
+        "retrieved_at": "2026-04-30",
+        "notes": "Current official blog discusses Catbox service-wide traffic and bandwidth constraints, including multiple-gigabit traffic levels and the risk of bottlenecks if bandwidth is reduced."
       }
     ],
     "content": {
@@ -6101,132 +6288,6 @@
         ]
       }
     }
-  },
-  {
-    "name": "My-Files.SU",
-    "url": "https://my-files.ru/",
-    "summary": "Russian file-hosting service positioned around no-registration uploads, direct links, and minimal download friction.",
-    "limits": {
-      "max_file_size": {
-        "value": 100,
-        "unit": "GB",
-        "notes": "Current public references consistently describe My-Files.SU uploads up to 100 GB. The accessible live summary pages still emphasize the upload flow and configurable storage settings rather than surfacing the limit on a clean first-party marketing page, so this remains based on current public references rather than a directly accessible official cap page.",
-        "source_refs": [
-          0,
-          3,
-          4
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Retention is conditional. Current public summaries show the live upload flow includes configurable storage parameters for each file, but they still do not expose one clean universal default retention window in accessible text.",
-        "source_refs": [
-          0,
-          2
-        ]
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "The cited current public summaries do not publish a total free storage quota.",
-        "source_refs": [
-          0,
-          1,
-          2
-        ]
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "The cited current public summaries do not publish a clean bandwidth cap.",
-        "source_refs": [
-          0,
-          1,
-          2
-        ]
-      }
-    },
-    "account": {
-      "required": false,
-      "benefits": "Current summaries consistently describe the service as working without mandatory registration and offering direct links.",
-      "source_refs": [
-        0,
-        1,
-        2
-      ]
-    },
-    "developer": {
-      "api_available": false,
-      "api_docs_url": null,
-      "cli_friendly": false,
-      "cli_example": null,
-      "notes": "The cited public summaries do not document a public API or CLI workflow.",
-      "source_refs": [
-        0,
-        1,
-        2
-      ]
-    },
-    "content": {
-      "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public summaries do not clearly publish a complete allowed-file-types policy.",
-        "source_refs": [
-          0,
-          1,
-          2
-        ]
-      }
-    },
-    "security": {
-      "https_only": true,
-      "e2ee": false,
-      "server_side_encryption": null,
-      "notes": "Current public summaries indicate HTTPS support, but they do not claim end-to-end encryption.",
-      "source_refs": [
-        1,
-        2
-      ]
-    },
-    "tags": [
-      "file-hosting",
-      "no-registration",
-      "direct-links",
-      "russian"
-    ],
-    "sources": [
-      {
-        "label": "2IP summary for my-files.ru",
-        "url": "https://2ip.io/a/my-files.ru/",
-        "retrieved_at": "2026-04-27",
-        "notes": "Current public summary describing My-Files.SU as a free file exchange and storage service with no mandatory registration and direct links, while also showing the upload flow heading 'Configure storage parameters for this file'."
-      },
-      {
-        "label": "Sur.ly snapshot for my-files.ru",
-        "url": "https://sur.ly/i/my-files.ru/",
-        "retrieved_at": "2026-04-27",
-        "notes": "Current snapshot showing HTTPS and the same no-registration / direct-link positioning."
-      },
-      {
-        "label": "UsiteStat summary for my-files.ru",
-        "url": "https://my-files.ru.usitestat.com/",
-        "retrieved_at": "2026-04-27",
-        "notes": "Current public summary including visible term-page snippets and service positioning."
-      },
-      {
-        "label": "Current guidebook reference mentioning My-Files",
-        "url": "https://gsi-projects.eu/public-councils/articles-and-publications/Guidebook%20on%20the%20development%20of%20the%20activities%20of%20small%20public%20councils%20in%20the%20KR%20%28RUS%29.pdf",
-        "retrieved_at": "2026-04-29",
-        "notes": "Current public guidebook snippet describing my-files.ru as allowing file uploads up to 100 GB."
-      },
-      {
-        "label": "Current Lurkmore PDF article",
-        "url": "https://lurkmore.media/index.php?action=pdf&title=%D0%A4%D0%B0%D0%B9%D0%BB%D0%BE%D0%BE%D0%B1%D0%BC%D0%B5%D0%BD%D0%BD%D0%B8%D0%BA",
-        "retrieved_at": "2026-04-29",
-        "notes": "Current public file-hosting article published recently and describing My-Files.ru with a 100 GB maximum file size."
-      }
-    ]
   },
   {
     "name": "MyAirBridge",
@@ -6756,9 +6817,10 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "The cited public pages do not publish a clean numeric bandwidth cap.",
+        "notes": "Bandwidth is conditional. OwnDrive's public plan pages split the free tier and paid tiers by app access and support level, so effective transfer behavior is plan-dependent even though the cited public pages do not publish a clean numeric traffic cap.",
         "source_refs": [
-          0
+          0,
+          1
         ]
       },
       "storage_account": {
@@ -6981,7 +7043,7 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "Files are stored forever under the normal service flow.",
+        "notes": "No automatic expiry. Files are stored forever under the normal service flow.",
         "source_refs": [
           0
         ]
@@ -7066,6 +7128,23 @@
           0
         ]
       },
+      "max_file_size_guest": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum upload size is conditional for the public free-sharing flow. Pixeldrain's API docs say upload maximum size depends on user subscription, and the accessible official public pages do not publish one clean guest-upload cap.",
+        "source_refs": [
+          2
+        ]
+      },
+      "max_file_size_account": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum upload size is conditional for account-linked use. Pixeldrain's API docs say upload maximum size depends on user subscription, while the filesystem guide publishes a 100 GB limit for the paid filesystem feature rather than a clean free account cap.",
+        "source_refs": [
+          1,
+          2
+        ]
+      },
       "retention": {
         "value": 60,
         "unit": "days",
@@ -7080,6 +7159,23 @@
         "notes": "The filesystem guide says the Pro subscription has a 2 TB storage limit.",
         "source_refs": [
           0
+        ]
+      },
+      "storage_guest": {
+        "value": 0,
+        "unit": "GB",
+        "notes": "Pixeldrain's official Q&A says the free plan is only meant for publicly sharing files and that users wanting real backups or long-term storage should use the separate filesystem product.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage_account": {
+        "value": 0,
+        "unit": "GB",
+        "notes": "Regular account-linked free use is still framed as public sharing rather than real storage, while the documented 2 TB quota belongs to the paid filesystem feature.",
+        "source_refs": [
+          0,
+          1
         ]
       },
       "bandwidth": {
@@ -7459,14 +7555,14 @@
           0
         ]
       },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "The accessible current public pages checked here do not publish a clean separate bandwidth cap.",
-        "source_refs": [
-          1
-        ]
-      }
+        "bandwidth": {
+          "value": null,
+          "unit": null,
+          "notes": "Bandwidth is conditional. Rakuten Drive's official transfer support page does not publish a neat traffic quota, but free transfer behavior is still constrained by workflow and plan: free links expire after 48 hours, the Chrome extension large-attachment flow is capped at 3 times in 48 hours with one-time recovery, and paid tiers lift those limits.",
+          "source_refs": [
+            1
+          ]
+        }
     },
     "account": {
       "required": true,
@@ -7538,9 +7634,17 @@
     "summary": "File-sharing platform with public upload and remote-upload flows, API documentation, and a free tier limited by bandwidth rather than bundled account storage.",
     "limits": {
       "max_file_size": {
+        "value": 25,
+        "unit": "GB",
+        "notes": "Rootz's public FAQ says non-login users can upload files up to 25 GB each. The same official docs say authenticated users can upload files larger than 25 GB, but they do not expose a separate numeric authenticated cap.",
+        "source_refs": [
+          1
+        ]
+      },
+      "max_file_size_account": {
         "value": null,
         "unit": null,
-        "notes": "The public documentation explicitly says there is a file-size limit, but the currently accessible docs snippet does not expose the actual cap.",
+        "notes": "Maximum upload size is conditional for authenticated users. Rootz's public docs explicitly say signed-in users can upload files larger than 25 GB, but the accessible official surfaces still do not publish a separate numeric authenticated cap.",
         "source_refs": [
           1
         ]
@@ -7655,6 +7759,15 @@
           0
         ]
       },
+      "max_file_size_account": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum upload size is conditional for account-linked use. The public pages clearly say paid plans unlock higher limits than the 300 MB free upload flow, but they do not publish one clean signed-in Lite-account cap in the currently accessible official text.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
       "retention": {
         "value": 30,
         "unit": "days",
@@ -7744,93 +7857,6 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
-        "source_refs": [
-          0
-        ]
-      }
-    }
-  },
-  {
-    "name": "ShareFile",
-    "url": "https://sharefile.co/",
-    "summary": "Anonymous file-sharing host with 5 GB uploads and a simple no-account upload flow.",
-    "limits": {
-      "max_file_size": {
-        "value": 5000,
-        "unit": "MB",
-        "notes": "The current indexed homepage says the maximum upload file size is 5000 MB.",
-        "source_refs": [
-          0
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "The accessible current official surface does not cleanly publish a retention rule.",
-        "source_refs": [
-          0
-        ]
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "The accessible current official surface does not publish a personal storage quota.",
-        "source_refs": [
-          0
-        ]
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "The accessible current official surface does not publish a bandwidth or transfer-volume cap.",
-        "source_refs": [
-          0
-        ]
-      }
-    },
-    "account": {
-      "required": false,
-      "benefits": "The current indexed homepage describes ShareFile as anonymous and free, with uploads available without a visible login requirement.",
-      "source_refs": [
-        0
-      ]
-    },
-    "developer": {
-      "api_available": false,
-      "api_docs_url": null,
-      "cli_friendly": false,
-      "cli_example": null,
-      "notes": "The accessible current public surface does not document a public API or CLI workflow.",
-      "source_refs": [
-        0
-      ]
-    },
-    "security": {
-      "https_only": true,
-      "e2ee": false,
-      "server_side_encryption": null,
-      "notes": "ShareFile runs over HTTPS, but the accessible current public surface does not claim end-to-end encryption.",
-      "source_refs": [
-        0
-      ]
-    },
-    "tags": [
-      "file-sharing",
-      "guest-upload",
-      "simple-upload"
-    ],
-    "sources": [
-      {
-        "label": "Homepage",
-        "url": "https://sharefile.co/",
-        "retrieved_at": "2026-04-29",
-        "notes": "Current indexed homepage says ShareFile is anonymous and free, supports uploads up to 5000 MB, and forbids malicious content."
-      }
-    ],
-    "content": {
-      "allowed_file_types": {
-        "mode": "all_except_prohibited",
-        "notes": "The current indexed homepage warns that files with malicious content are forbidden to upload.",
         "source_refs": [
           0
         ]
@@ -7973,6 +7999,15 @@
         "value": 500,
         "unit": "MB",
         "notes": "The homepage and FAQ state a 500 MB maximum file size.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "max_file_size_account": {
+        "value": 500,
+        "unit": "MB",
+        "notes": "Free accounts add a dashboard and file management, but the current homepage and FAQ do not publish a separate higher free account cap beyond the same 500 MB file-size limit.",
         "source_refs": [
           0,
           1
@@ -9123,6 +9158,14 @@
           0
         ]
       },
+      "max_file_size_account": {
+        "value": 5,
+        "unit": "GB",
+        "notes": "The same free tier applies to signed-in free accounts, and the homepage does not publish a separate higher free account file-size limit beyond 5 GB.",
+        "source_refs": [
+          0
+        ]
+      },
       "retention": {
         "value": 30,
         "unit": "days",
@@ -9351,6 +9394,16 @@
           0
         ]
       },
+      "max_file_size_account": {
+        "value": 20,
+        "unit": "MB",
+        "notes": "The homepage says all users get 20 MB per image, while free accounts add linked uploads and a user key for integrations rather than a higher free image-size cap.",
+        "source_refs": [
+          0,
+          1,
+          3
+        ]
+      },
       "retention": {
         "value": null,
         "unit": null,
@@ -9459,6 +9512,15 @@
         "notes": "Unlimited. The homepage advertises unlimited filesize for regular free uploads.",
         "source_refs": [
           0
+        ]
+      },
+      "max_file_size_account": {
+        "value": null,
+        "unit": null,
+        "notes": "Unlimited. Registered users can manage files and use account-linked API flows, but the homepage still advertises unlimited filesize for the regular free service.",
+        "source_refs": [
+          0,
+          1
         ]
       },
       "retention": {
@@ -9817,11 +9879,11 @@
       }
     },
     "account": {
-      "required": null,
-      "benefits": "The cited FAQ focuses on the transfer flow and does not describe account requirements.",
+      "required": false,
+      "benefits": "The current official homepage and FAQ present Wormhole as a direct web send flow without requiring account creation or sign-in for normal use.",
       "source_refs": [
         0,
-        1
+        2
       ]
     },
     "developer": {

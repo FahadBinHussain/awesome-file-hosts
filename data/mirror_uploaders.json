@@ -3,41 +3,6 @@
     "name": "MultiUp",
     "url": "https://multiup.io/en/",
     "summary": "Mirror-uploader service that can upload a file once and fan it out to multiple downstream file hosts.",
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Limits vary by the selected downstream hosts and upload method. The homepage advertises computer, link, torrent, and API uploads but not one universal cap.",
-        "source_refs": [
-          0,
-          1
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Retention varies by the downstream file hosts used for mirroring.",
-        "source_refs": [
-          0
-        ]
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Persistent storage varies by the downstream hosts rather than a standalone MultiUp quota.",
-        "source_refs": [
-          0
-        ]
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "Bandwidth behavior depends on plan level and the chosen downstream hosts.",
-        "source_refs": [
-          1
-        ]
-      }
-    },
     "account": {
       "required": false,
       "benefits": "Guest uploads are available from the homepage. Free accounts add queue, file-host selection, and torrent controls, while premium removes ads and expands limits.",
@@ -48,12 +13,13 @@
     },
     "developer": {
       "api_available": true,
-      "api_docs_url": null,
-      "cli_friendly": false,
+      "api_docs_url": "https://multiup.io/en/upload/from-api",
+      "cli_friendly": true,
       "cli_example": null,
-      "notes": "The homepage advertises an Upload API, but this seed entry has not yet mapped the public documentation URL.",
+      "notes": "MultiUp publishes official API upload docs and an official shell-script upload guide for Linux, making the service automation-friendly even though the workflow is mirror-centric.",
       "source_refs": [
-        0
+        2,
+        3
       ]
     },
     "content": {
@@ -92,7 +58,78 @@
         "url": "https://multiup.io/en/login",
         "retrieved_at": "2026-04-28",
         "notes": "Official account page describing free and premium account capabilities, including host-selection, queue-size, and torrent-related limits."
+      },
+      {
+        "label": "MultiUp API upload docs",
+        "url": "https://multiup.io/en/upload/from-api",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official API documentation for login, fastest-server lookup, file upload, remote upload, torrent workflows, and link checking."
+      },
+      {
+        "label": "MultiUp upload from softwares page",
+        "url": "https://multiup.io/en/upload/from-softwares",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official page with a shell upload script for Linux, showing first-party CLI-oriented automation support."
       }
-    ]
+    ],
+    "kind": "mirror_uploader",
+    "profile": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Conditional: limits vary by the selected downstream hosts and upload method. The official homepage, FAQ, and API docs advertise computer, link, torrent, software, and API uploads but do not publish one universal cap.",
+        "source_refs": [
+          0,
+          1,
+          2
+        ]
+      },
+      "guest_uploads": {
+        "value": true,
+        "notes": "Guest uploads are available from the homepage. Free accounts add queue, file-host selection, and torrent controls, while premium removes ads and expands limits.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "remote_import": {
+        "value": true,
+        "notes": "Official pages and API docs describe upload-by-link / remote upload workflows.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "torrent_import": {
+        "value": true,
+        "notes": "Official pages and API docs describe torrent-based mirroring workflows.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "stores_files_itself": {
+        "value": false,
+        "notes": "Persistent storage varies by downstream hosts rather than by a standalone MultiUp storage bucket.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention_model": {
+        "value": "Downstream-host dependent",
+        "notes": "Retention varies by the downstream file hosts used for mirroring.",
+        "source_refs": [
+          0
+        ]
+      },
+      "downstream_dependency": {
+        "value": "Downstream hosts determine delivery",
+        "notes": "Availability and download behavior ultimately depend on the downstream hosts chosen for mirroring.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    }
   }
 ]

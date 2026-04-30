@@ -2,46 +2,12 @@
   {
     "name": "Cloudfuze",
     "url": "https://www.cloudfuze.com/",
-    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Retention likely depends on the connected storage providers rather than a standalone Cloudfuze storage policy.",
-        "source_refs": [
-          0
-        ]
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Standalone storage behavior for this migration candidate has not yet been verified.",
-        "source_refs": [
-          0
-        ]
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      }
-    },
+    "summary": "Cloud migration platform for moving files, chats, emails, and tenant data between connected storage providers and SaaS environments.",
     "account": {
-      "required": null,
-      "benefits": "Account requirements and workflow differences are still pending first-party review.",
+      "required": true,
+      "benefits": "An account is required to start a free trial, add source and destination clouds, and run migration jobs.",
       "source_refs": [
-        0
+        1
       ]
     },
     "developer": {
@@ -67,9 +33,9 @@
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The seed entry uses an HTTPS homepage, but detailed security claims still need first-party verification.",
+      "notes": "Official FAQ says CloudFuze uses OAuth to access connected clouds, does not store cloud passwords, and is SOC 2 compliant.",
       "source_refs": [
-        0
+        1
       ]
     },
     "tags": [
@@ -79,58 +45,89 @@
     ],
     "sources": [
       {
-        "label": "User-provided seed URL",
+        "label": "CloudFuze homepage",
         "url": "https://www.cloudfuze.com/",
-        "retrieved_at": "2026-04-28",
-        "notes": "Seed candidate added from the user-provided cloud-migration list. Full first-party verification is still pending."
+        "retrieved_at": "2026-04-30",
+        "notes": "Official homepage describing CloudFuze as an enterprise migration and SaaS-governance platform."
+      },
+      {
+        "label": "CloudFuze FAQ",
+        "url": "https://www.cloudfuze.com/faqs/",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official FAQ covering free-trial limits, account creation, plan-dependent migration size, provider throttling, and security behavior."
       }
     ],
+    "kind": "cloud_migration",
+    "profile": {
+      "workflow_modes": {
+        "value": "Migration, backup, sync",
+        "notes": "CloudFuze markets migrations for files, chats, emails, and tenant data, alongside backup and sync-style workflows.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "execution_model": {
+        "value": "Managed SaaS migration jobs",
+        "notes": "Current CloudFuze pages describe plan-based migration jobs between connected providers and SaaS environments.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "item_limit": {
+        "value": null,
+        "unit": null,
+        "notes": "Conditional: CloudFuze says transfer size depends on the active plan and trial type. Free trials are limited, while larger migrations can scale to terabytes or petabytes.",
+        "source_refs": [
+          1
+        ]
+      },
+      "included_storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Conditional: CloudFuze manages migrations between connected providers and does not market a standalone personal storage quota on the first-party pages reviewed.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "scheduled_runs": {
+        "value": null,
+        "notes": "Current first-party sources reviewed here do not clearly publish a dedicated scheduling model.",
+        "source_refs": [
+          1
+        ]
+      },
+      "provider_dependency": {
+        "value": "Connected-provider dependent",
+        "notes": "CloudFuze runs migrations between connected providers rather than exposing a standalone end-user storage bucket.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Quota and provider throttling",
+        "notes": "Conditional: CloudFuze says transfer speed depends on data size, folder structure, and vendor throttling, and that migrations halt when allowed data-transfer quota is exhausted.",
+        "source_refs": [
+          1
+        ]
+      }
+    },
     "verification_status": "pending",
     "reason": null
   },
   {
     "name": "CloudHQ",
     "url": "https://www.cloudhq.net/",
-    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Retention likely depends on the connected storage providers rather than a standalone CloudHQ storage policy.",
-        "source_refs": [
-          0
-        ]
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Standalone storage behavior for this migration candidate has not yet been verified.",
-        "source_refs": [
-          0
-        ]
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      }
-    },
+    "summary": "Cloud sync, backup, and migration service for keeping data moving between connected cloud apps and storage providers.",
     "account": {
-      "required": null,
-      "benefits": "Account requirements and workflow differences are still pending first-party review.",
+      "required": true,
+      "benefits": "An account is required to set up sync, backup, migration, or cloud-to-cloud workflows.",
       "source_refs": [
-        0
+        2,
+        3
       ]
     },
     "developer": {
@@ -156,9 +153,10 @@
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The seed entry uses an HTTPS homepage, but detailed security claims still need first-party verification.",
+      "notes": "The reviewed first-party pages confirm HTTPS product surfaces, but they do not position cloudHQ as end-to-end encrypted cloud storage.",
       "source_refs": [
-        0
+        0,
+        2
       ]
     },
     "tags": [
@@ -168,58 +166,104 @@
     ],
     "sources": [
       {
-        "label": "User-provided seed URL",
+        "label": "cloudHQ homepage",
         "url": "https://www.cloudhq.net/",
-        "retrieved_at": "2026-04-28",
-        "notes": "Seed candidate added from the user-provided cloud-migration list. Full first-party verification is still pending."
+        "retrieved_at": "2026-04-30",
+        "notes": "Official homepage for cloudHQ."
+      },
+      {
+        "label": "cloudHQ file size upload limits",
+        "url": "https://support.cloudhq.net/file-size-upload-limit/",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official support article stating that provider limits vary and that the cloudHQ free plan upload limit is 150 MB."
+      },
+      {
+        "label": "cloudHQ getting started sync",
+        "url": "https://www.cloudhq.net/getting_started/sync",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official getting-started page describing background sync and backup workflows between cloud apps."
+      },
+      {
+        "label": "cloudHQ sync wizard page",
+        "url": "https://www.cloudhq.net/sync",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official sync wizard page showing one-way and two-way cloud sync setup."
       }
     ],
+    "kind": "cloud_migration",
+    "profile": {
+      "workflow_modes": {
+        "value": "Sync, backup, migration",
+        "notes": "Current official pages position cloudHQ around sync, backup, and migration between cloud apps and storage providers.",
+        "source_refs": [
+          0,
+          2,
+          3
+        ]
+      },
+      "execution_model": {
+        "value": "Background connected-app sync",
+        "notes": "Current cloudHQ pages describe background sync and backup flows between connected apps and storage providers.",
+        "source_refs": [
+          2,
+          3
+        ]
+      },
+      "item_limit": {
+        "value": 150,
+        "unit": "MB",
+        "notes": "Official cloudHQ support says the free plan upload limit is 150 MB, while underlying provider limits still vary by connected cloud service and account type.",
+        "source_refs": [
+          1
+        ]
+      },
+      "included_storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Conditional: official pages position cloudHQ around sync and backup between cloud apps, not around a standalone personal storage quota.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "scheduled_runs": {
+        "value": null,
+        "notes": "Current first-party sources reviewed here do not clearly publish a dedicated scheduling model.",
+        "source_refs": [
+          1,
+          2
+        ]
+      },
+      "provider_dependency": {
+        "value": "Connected-provider dependent",
+        "notes": "cloudHQ works across connected providers and background sync flows rather than through a standalone storage bucket.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Provider and account dependent",
+        "notes": "Conditional: official support says file-size and upload behavior vary by connected cloud app and account type, while cloudHQ itself works continuously in the background to sync or back up data.",
+        "source_refs": [
+          1,
+          2
+        ]
+      }
+    },
     "verification_status": "pending",
     "reason": null
   },
   {
     "name": "Cloudsfer",
     "url": "https://www.cloudsfer.com/",
-    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Retention likely depends on the connected storage providers rather than a standalone Cloudsfer storage policy.",
-        "source_refs": [
-          0
-        ]
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Standalone storage behavior for this migration candidate has not yet been verified.",
-        "source_refs": [
-          0
-        ]
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      }
-    },
+    "summary": "Cloud migration, backup, and sync service for transferring files between connected storage providers with quota-based plans.",
     "account": {
-      "required": null,
-      "benefits": "Account requirements and workflow differences are still pending first-party review.",
+      "required": true,
+      "benefits": "An account is required to use trial quotas, create migrations, and run backup or sync jobs across providers.",
       "source_refs": [
-        0
+        1,
+        2
       ]
     },
     "developer": {
@@ -245,9 +289,10 @@
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The seed entry uses an HTTPS homepage, but detailed security claims still need first-party verification.",
+      "notes": "The reviewed first-party pages confirm HTTPS product surfaces, but they do not position Cloudsfer as end-to-end encrypted storage.",
       "source_refs": [
-        0
+        0,
+        1
       ]
     },
     "tags": [
@@ -257,134 +302,204 @@
     ],
     "sources": [
       {
-        "label": "User-provided seed URL",
+        "label": "Cloudsfer homepage",
         "url": "https://www.cloudsfer.com/",
-        "retrieved_at": "2026-04-28",
-        "notes": "Seed candidate added from the user-provided cloud-migration list. Full first-party verification is still pending."
+        "retrieved_at": "2026-04-30",
+        "notes": "Official homepage for cloud migration, backup, and sync workflows."
+      },
+      {
+        "label": "Cloudsfer FAQ",
+        "url": "https://cloudsfer.com/faq/",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official FAQ covering provider-dependent file-size limits, trial behavior, and approximate transfer speed per job."
+      },
+      {
+        "label": "Cloudsfer pricing",
+        "url": "https://cloudsfer.com/pricing/",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official pricing page showing quota-based plans such as 25 GB/month, 100 GB/month, and 250 GB/month."
       }
     ],
+    "kind": "cloud_migration",
+    "profile": {
+      "workflow_modes": {
+        "value": "Migration, sync, backup",
+        "notes": "Current official pages position Cloudsfer around migrations, sync, and backup jobs across connected providers.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "execution_model": {
+        "value": "Quota-based server-side transfers",
+        "notes": "Official FAQ and pricing position Cloudsfer as a quota-based transfer and sync platform between connected clouds.",
+        "source_refs": [
+          1,
+          2
+        ]
+      },
+      "item_limit": {
+        "value": null,
+        "unit": null,
+        "notes": "Conditional: official FAQ says file-size limits depend on the source and destination platform rather than on a universal Cloudsfer cap.",
+        "source_refs": [
+          1
+        ]
+      },
+      "included_storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Conditional: official pages frame Cloudsfer around moving or syncing provider-owned storage rather than providing a separate personal storage bucket.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "scheduled_runs": {
+        "value": null,
+        "notes": "Current first-party sources reviewed here do not clearly publish a dedicated scheduling model.",
+        "source_refs": [
+          1,
+          2
+        ]
+      },
+      "provider_dependency": {
+        "value": "Connected-provider dependent",
+        "notes": "Cloudsfer migrates, syncs, and backs up provider-owned storage rather than providing its own personal cloud bucket.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Quota and provider dependent",
+        "notes": "Conditional: official pricing is quota-based by plan, and the FAQ says transfer time depends on data size, file count, network speed, and platform limits, with roughly 5-7 GB/hour per job.",
+        "source_refs": [
+          1,
+          2
+        ]
+      }
+    },
     "verification_status": "pending",
     "reason": null
   },
   {
     "name": "Ctrlq",
     "url": null,
-    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources."
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Retention likely depends on the connected storage providers rather than a standalone Ctrlq storage policy."
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Standalone storage behavior for this migration candidate has not yet been verified."
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources."
-      }
-    },
+    "summary": "Current ctrlq.org is a Digital Inspiration community forum about Google Workspace and Apps Script, not a cloud-migration service.",
     "account": {
-      "required": null,
-      "benefits": "Account requirements and workflow differences are still pending first-party review."
+      "required": false,
+      "benefits": "No distinct cloud-migration account workflow was verified; the current official site is a discussion community."
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "Developer and automation support have not yet been verified from first-party sources."
+      "notes": "No public migration API or CLI is relevant for the current ctrlq.org forum surface."
     },
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification."
+        "notes": "The current official site is a community forum, not a file-transfer or cloud-migration product."
       }
     },
     "security": {
-      "https_only": false,
+      "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The user-provided seed link was HTTP-only, and current HTTPS behavior still needs verification."
+      "notes": "The current official forum is served over HTTPS, but it does not describe a migration-service security model."
     },
     "tags": [
       "cloud-migration",
-      "pending-review",
-      "multi-cloud"
+      "rejected",
+      "misclassified"
     ],
-    "sources": [],
-    "verification_status": "pending",
-    "reason": null
+    "sources": [
+      {
+        "label": "ctrlq.org homepage",
+        "url": "https://ctrlq.org/",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official current homepage showing Digital Inspiration community forum topics around Google Workspace and Apps Script rather than a cloud-migration service."
+      }
+    ],
+    "kind": "cloud_migration",
+    "profile": {
+      "workflow_modes": {
+        "value": "Not applicable",
+        "notes": "Current ctrlq.org is a community forum rather than a live cloud-migration product.",
+        "source_refs": [
+          0
+        ]
+      },
+      "execution_model": {
+        "value": "No current standalone service",
+        "notes": "Current ctrlq.org does not expose a migration product execution model.",
+        "source_refs": [
+          0
+        ]
+      },
+      "item_limit": {
+        "value": 0,
+        "unit": "MB",
+        "notes": "The current official site is a discussion forum, so there is no live cloud-migration file-size capability to preserve."
+      },
+      "included_storage": {
+        "value": 0,
+        "unit": "GB",
+        "notes": "The current ctrlq.org surface is a community forum rather than a hosted migration or storage product."
+      },
+      "scheduled_runs": {
+        "value": false,
+        "notes": "Current ctrlq.org is not a migration product.",
+        "source_refs": [
+          0
+        ]
+      },
+      "provider_dependency": {
+        "value": "Not applicable",
+        "notes": "Current ctrlq.org is not a migration or storage product.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Not applicable",
+        "notes": "No current migration-transfer capability is exposed by the official ctrlq.org forum."
+      }
+    },
+    "verification_status": "rejected",
+    "reason": "Current ctrlq.org is a Google Workspace community forum, not a cloud-migration product."
   },
   {
     "name": "FileStack",
     "url": "https://www.filestack.com/",
-    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Retention likely depends on the connected storage providers rather than a standalone FileStack storage policy.",
-        "source_refs": [
-          0
-        ]
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Standalone storage behavior for this migration candidate has not yet been verified.",
-        "source_refs": [
-          0
-        ]
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      }
-    },
+    "summary": "Developer-focused file upload and content-ingestion platform with cloud-storage integrations, not a dedicated cloud-to-cloud migration manager.",
     "account": {
-      "required": null,
-      "benefits": "Account requirements and workflow differences are still pending first-party review.",
+      "required": true,
+      "benefits": "An account is required to start the free trial, get an API key, and manage uploads, storage, transformations, and billing.",
       "source_refs": [
-        0
+        0,
+        1
       ]
     },
     "developer": {
-      "api_available": false,
-      "api_docs_url": null,
+      "api_available": true,
+      "api_docs_url": "https://www.filestack.com/docs/",
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "notes": "Official docs publish File, Management, Processing, Workflow, and SDK/API references for developers.",
       "source_refs": [
-        0
+        1
       ]
     },
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
+        "notes": "Official marketing says Filestack can upload any file type, subject to application-side rules and Filestack security policies.",
         "source_refs": [
-          0
+          1,
+          2
         ]
       }
     },
@@ -392,68 +507,105 @@
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The seed entry uses an HTTPS homepage, but detailed security claims still need first-party verification.",
+      "notes": "Official pages emphasize secure transfer, security policies, domain whitelisting, and content scanning, but they do not position Filestack as end-to-end encrypted migration storage.",
       "source_refs": [
-        0
+        1,
+        2
       ]
     },
     "tags": [
       "cloud-migration",
-      "pending-review",
-      "multi-cloud"
+      "rejected",
+      "developer-tool"
     ],
     "sources": [
       {
-        "label": "User-provided seed URL",
+        "label": "Filestack pricing",
+        "url": "https://www.filestack.com/pricing/",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official pricing page listing storage, bandwidth, uploads, and max-file-size limits by plan."
+      },
+      {
+        "label": "Filestack homepage",
         "url": "https://www.filestack.com/",
-        "retrieved_at": "2026-04-28",
-        "notes": "Seed candidate added from the user-provided cloud-migration list. Full first-party verification is still pending."
+        "retrieved_at": "2026-04-30",
+        "notes": "Official homepage positioning Filestack as a file uploader and upload API with cloud-storage integrations."
+      },
+      {
+        "label": "Filestack docs",
+        "url": "https://www.filestack.com/docs/",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official documentation hub covering APIs, SDKs, security, file upload, storage, and workflows."
       }
     ],
-    "verification_status": "pending",
-    "reason": null
+    "kind": "cloud_migration",
+    "profile": {
+      "workflow_modes": {
+        "value": "Upload and ingestion",
+        "notes": "Current Filestack product is a developer upload and content-ingestion platform rather than a cloud-to-cloud migration manager.",
+        "source_refs": [
+          1,
+          2
+        ]
+      },
+      "execution_model": {
+        "value": "Developer API pipeline",
+        "notes": "Current Filestack workflow is an API-driven upload/storage pipeline rather than a cloud migration runner.",
+        "source_refs": [
+          1,
+          2
+        ]
+      },
+      "item_limit": {
+        "value": 1,
+        "unit": "GB",
+        "notes": "Official pricing lists 1 GB max file size on the entry Start plan, with larger paid tiers increasing that cap.",
+        "source_refs": [
+          0
+        ]
+      },
+      "included_storage": {
+        "value": 50,
+        "unit": "GB",
+        "notes": "Official pricing gives the Start plan 50 GB of Filestack-managed storage.",
+        "source_refs": [
+          0
+        ]
+      },
+      "scheduled_runs": {
+        "value": false,
+        "notes": "Current Filestack product is not a scheduled cloud-to-cloud migration manager.",
+        "source_refs": [
+          1,
+          2
+        ]
+      },
+      "provider_dependency": {
+        "value": "Platform-managed storage optional",
+        "notes": "Filestack can use its managed storage or connected destinations, so storage behavior depends on product setup rather than on migration semantics.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "bandwidth_model": {
+        "value": "75 GB plan quota",
+        "notes": "Official pricing gives the Start plan 75 GB of bandwidth.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "verification_status": "rejected",
+    "reason": "Current Filestack is a developer upload and content-ingestion platform rather than a dedicated cloud-to-cloud migration service."
   },
   {
     "name": "Mover",
     "url": "https://mover.io/",
-    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Retention likely depends on the connected storage providers rather than a standalone Mover storage policy.",
-        "source_refs": [
-          0
-        ]
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Standalone storage behavior for this migration candidate has not yet been verified.",
-        "source_refs": [
-          0
-        ]
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      }
-    },
+    "summary": "Retired Microsoft-acquired cloud migration service whose supported provider-to-Microsoft 365 flows were folded into Migration Manager.",
     "account": {
-      "required": null,
-      "benefits": "Account requirements and workflow differences are still pending first-party review.",
+      "required": false,
+      "benefits": "No standalone Mover account onboarding remains for the retired service.",
       "source_refs": [
         0
       ]
@@ -463,7 +615,7 @@
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "notes": "No current public API or CLI is relevant for the retired standalone Mover service.",
       "source_refs": [
         0
       ]
@@ -471,9 +623,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
+        "notes": "Historical migrations targeted supported Microsoft 365 scenarios, but the standalone Mover product is retired.",
         "source_refs": [
-          0
+          0,
+          1
         ]
       }
     },
@@ -481,70 +634,100 @@
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The seed entry uses an HTTPS homepage, but detailed security claims still need first-party verification.",
+      "notes": "Current first-party surface is Microsoft retirement and Migration Manager documentation, not a live standalone transfer product.",
       "source_refs": [
-        0
+        0,
+        1
       ]
     },
     "tags": [
       "cloud-migration",
-      "pending-review",
-      "multi-cloud"
+      "retired"
     ],
     "sources": [
       {
-        "label": "User-provided seed URL",
-        "url": "https://mover.io/",
-        "retrieved_at": "2026-04-28",
-        "notes": "Seed candidate added from the user-provided cloud-migration list. Full first-party verification is still pending."
+        "label": "Microsoft Learn: Migrate to Microsoft 365",
+        "url": "https://learn.microsoft.com/en-us/sharepointmigration/migrate-to-sharepoint-online",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official Microsoft Learn page stating that Mover is retired, that supported source migrations are integrated into Migration Manager, and that individual/student use ended after October 31, 2024."
+      },
+      {
+        "label": "Microsoft Learn: Migration Admin role",
+        "url": "https://learn.microsoft.com/en-us/sharepointmigration/mm-migration-admin-role",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official Microsoft Learn page describing current Migration Manager capabilities for Google Drive, Dropbox, Box, Egnyte, and file-share migrations."
       }
     ],
-    "verification_status": "pending",
-    "reason": null
+    "kind": "cloud_migration",
+    "profile": {
+      "workflow_modes": {
+        "value": "Historical migration service",
+        "notes": "Mover was a migration product historically, but Microsoft retired the standalone service and folded supported flows into Migration Manager.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "execution_model": {
+        "value": "Retired; folded into Migration Manager",
+        "notes": "Current Microsoft documentation says supported flows now live in Migration Manager instead of a standalone Mover surface.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "item_limit": {
+        "value": 0,
+        "unit": "MB",
+        "notes": "Mover is retired for admin-led migrations, and individual/student use ended after October 31, 2024, so it no longer exposes a live standalone migration-size surface.",
+        "source_refs": [
+          0
+        ]
+      },
+      "included_storage": {
+        "value": 0,
+        "unit": "GB",
+        "notes": "Mover does not offer a current standalone storage or staging service after retirement.",
+        "source_refs": [
+          0
+        ]
+      },
+      "scheduled_runs": {
+        "value": false,
+        "notes": "The standalone Mover service is retired.",
+        "source_refs": [
+          0
+        ]
+      },
+      "provider_dependency": {
+        "value": "Not applicable",
+        "notes": "The standalone Mover service is retired.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Not applicable",
+        "notes": "No current standalone transfer quota applies because the service has been retired and integrated into Migration Manager.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    },
+    "verification_status": "rejected",
+    "reason": "Microsoft retired Mover and folded supported Google Drive, Box, Dropbox, and Egnyte migrations into Migration Manager."
   },
   {
     "name": "NetDrive",
     "url": "https://netdrive.net/",
-    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Retention likely depends on the connected storage providers rather than a standalone NetDrive storage policy.",
-        "source_refs": [
-          0
-        ]
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Standalone storage behavior for this migration candidate has not yet been verified.",
-        "source_refs": [
-          0
-        ]
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      }
-    },
+    "summary": "NetDrive and Bdrive CloudSync let users mount remote storage as local drives and run one-way sync tasks between local disks and cloud storages.",
     "account": {
-      "required": null,
-      "benefits": "Account requirements and workflow differences are still pending first-party review.",
+      "required": true,
+      "benefits": "CloudSync requires a Bdrive account ID to purchase, log in, and run syncing. Personal plans allow one authenticated account per device, while team plans support multiple users.",
       "source_refs": [
-        0
+        1,
+        4
       ]
     },
     "developer": {
@@ -552,17 +735,19 @@
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "notes": "No public API or CLI workflow was verified on current first-party NetDrive or CloudSync pages.",
       "source_refs": [
-        0
+        0,
+        2
       ]
     },
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
+        "notes": "Supported file types depend on the local or cloud storages being mounted or synchronized.",
         "source_refs": [
-          0
+          0,
+          2
         ]
       }
     },
@@ -570,9 +755,10 @@
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The seed entry uses an HTTPS homepage, but detailed security claims still need first-party verification.",
+      "notes": "Official docs expose HTTPS product surfaces and say CloudSync log files exclude credential information, but the product is not positioned as end-to-end encrypted storage.",
       "source_refs": [
-        0
+        0,
+        6
       ]
     },
     "tags": [
@@ -582,74 +768,141 @@
     ],
     "sources": [
       {
-        "label": "User-provided seed URL",
-        "url": "https://netdrive.net/",
-        "retrieved_at": "2026-04-28",
-        "notes": "Seed candidate added from the user-provided cloud-migration list. Full first-party verification is still pending."
+        "label": "NetDrive homepage",
+        "url": "https://www.netdrive.net/",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official homepage describing NetDrive as remote-storage mount software with background uploading and team-drive features."
+      },
+      {
+        "label": "NetDrive pricing",
+        "url": "https://www.netdrive.net/store/",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official pricing page showing free trials, personal versus team plans, and user-account limits."
+      },
+      {
+        "label": "Bdrive CloudSync about",
+        "url": "https://www.netdrive.net/wiki/cloudsync/about/",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official CloudSync overview stating that it synchronizes between storages automatically and that file transfer happens on the user's PC or Mac."
+      },
+      {
+        "label": "Bdrive CloudSync synchronize manual",
+        "url": "https://www.netdrive.net/wiki/cloudsync/application-manual/synchronize/",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official manual showing one-way synchronization behavior and task-based sync controls."
+      },
+      {
+        "label": "Bdrive CloudSync authentication",
+        "url": "https://netdrive.net/wiki/cloudsync/application-manual/authentication-in-cloudsync/",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official authentication guide explaining that CloudSync requires a Bdrive account ID and documenting personal-plan device-login behavior."
+      },
+      {
+        "label": "Bdrive CloudSync Dropbox config",
+        "url": "https://netdrive.net/wiki/cloudsync/application-manual/add-configure-a-task/dropbox-config/",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official task-configuration guide stating that users can control the bandwidth used from task options."
+      },
+      {
+        "label": "Bdrive CloudSync settings",
+        "url": "https://www.netdrive.net/wiki/cloudsync/application-manual/settings/",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official settings documentation stating that credential information is not included in CloudSync log files."
       }
     ],
+    "kind": "cloud_migration",
+    "profile": {
+      "workflow_modes": {
+        "value": "Mount, sync, CloudSync",
+        "notes": "Current NetDrive pages position the product around mounted cloud drives and CloudSync workflows.",
+        "source_refs": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "execution_model": {
+        "value": "Desktop-mounted client",
+        "notes": "Current NetDrive product works as a desktop-mounted cloud-drive client with CloudSync support.",
+        "source_refs": [
+          0,
+          2,
+          3
+        ]
+      },
+      "item_limit": {
+        "value": null,
+        "unit": null,
+        "notes": "Conditional: official pages describe syncing between connected storages but do not publish one universal per-file cap for NetDrive or CloudSync tasks.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "included_storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Conditional: NetDrive and CloudSync operate on linked local or cloud storages instead of marketing a separate hosted storage bucket.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "scheduled_runs": {
+        "value": null,
+        "notes": "Current first-party sources reviewed here do not clearly publish a dedicated scheduling model.",
+        "source_refs": [
+          2,
+          5
+        ]
+      },
+      "provider_dependency": {
+        "value": "Linked-storage dependent",
+        "notes": "NetDrive mounts and syncs linked cloud storage rather than selling a standalone storage bucket.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Provider dependent",
+        "notes": "Conditional: CloudSync lets users control bandwidth from task options, while file transfer happens on the user's PC or Mac.",
+        "source_refs": [
+          2,
+          5
+        ]
+      }
+    },
     "verification_status": "pending",
     "reason": null
   },
   {
     "name": "Odrive",
     "url": "https://www.odrive.com/",
-    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Retention likely depends on the connected storage providers rather than a standalone Odrive storage policy.",
-        "source_refs": [
-          0
-        ]
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Standalone storage behavior for this migration candidate has not yet been verified.",
-        "source_refs": [
-          0
-        ]
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      }
-    },
+    "summary": "Universal sync, sharing, backup, and CLI-capable client for linked cloud storage services, with current product messaging centered on Procore sync plus broader multi-storage documentation.",
     "account": {
-      "required": null,
-      "benefits": "Account requirements and workflow differences are still pending first-party review.",
+      "required": true,
+      "benefits": "Accounts are required to start a trial, link storage, create auth keys, and use desktop, web, backup, or CLI workflows.",
       "source_refs": [
-        0
+        1,
+        4
       ]
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
-      "cli_friendly": false,
-      "cli_example": null,
-      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "cli_friendly": true,
+      "cli_example": "odrive mount /my_local_sync_folder /",
+      "notes": "Official Sync Agent and CLI docs show scriptable desktop and headless workflows, but no separate public API docs were verified.",
       "source_refs": [
-        0
+        4
       ]
     },
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
+        "notes": "Supported file types depend on the linked storage services being synced, shared, or backed up through odrive.",
         "source_refs": [
           0
         ]
@@ -657,11 +910,12 @@
     },
     "security": {
       "https_only": true,
-      "e2ee": false,
+      "e2ee": true,
       "server_side_encryption": null,
-      "notes": "The seed entry uses an HTTPS homepage, but detailed security claims still need first-party verification.",
+      "notes": "Official security docs say odrive never stores user files, uses encrypted transport, encrypts stored authorization info, and offers premium zero-knowledge client-side encryption folders.",
       "source_refs": [
-        0
+        3,
+        5
       ]
     },
     "tags": [
@@ -671,58 +925,115 @@
     ],
     "sources": [
       {
-        "label": "User-provided seed URL",
-        "url": "https://www.odrive.com/",
-        "retrieved_at": "2026-04-28",
-        "notes": "Seed candidate added from the user-provided cloud-migration list. Full first-party verification is still pending."
+        "label": "Odrive Docs home",
+        "url": "https://docs.odrive.com/",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official documentation home describing odrive as a universal sync client with sharing, backup, and storage-linking features."
+      },
+      {
+        "label": "odrive pricing",
+        "url": "https://odrive.com/pricing",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official pricing page showing free-trial access, plan structure, encrypted transfers, and the statement that there are no limits from odrive while linked Procore storage limits still apply."
+      },
+      {
+        "label": "Odrive sync docs",
+        "url": "https://docs.odrive.com/docs/sync",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official sync documentation describing placeholder sync, reduced bandwidth usage, and reduced API call volume."
+      },
+      {
+        "label": "Odrive security FAQs",
+        "url": "https://docs.odrive.com/docs/security-faqs",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official security FAQ saying odrive does not store user files, uses encrypted transport, and encrypts stored authorization information."
+      },
+      {
+        "label": "Odrive Sync Agent and CLI docs",
+        "url": "https://docs.odrive.com/docs/odrive-sync-agent",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official Sync Agent and CLI documentation covering scriptable shell usage, auth keys, mount commands, and backup commands."
+      },
+      {
+        "label": "Odrive encryption docs",
+        "url": "https://docs.odrive.com/docs/security",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official documentation for premium zero-knowledge encryption folders with client-side encryption before files reach the cloud."
       }
     ],
+    "kind": "cloud_migration",
+    "profile": {
+      "workflow_modes": {
+        "value": "Sync, backup, sharing",
+        "notes": "Current odrive pages position the product around universal sync, backup, sharing, and linked cloud storage access.",
+        "source_refs": [
+          0,
+          1,
+          2,
+          4
+        ]
+      },
+      "execution_model": {
+        "value": "Desktop and headless sync agent",
+        "notes": "Current odrive docs describe desktop sync and a headless Sync Agent / CLI workflow.",
+        "source_refs": [
+          0,
+          4
+        ]
+      },
+      "item_limit": {
+        "value": null,
+        "unit": null,
+        "notes": "Conditional: official pricing says there are no limits from odrive and that linked Procore storage limits apply normally.",
+        "source_refs": [
+          1
+        ]
+      },
+      "included_storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Conditional: odrive never stores user files itself and pricing says there are no limits from odrive, so linked provider limits apply instead.",
+        "source_refs": [
+          1,
+          3
+        ]
+      },
+      "scheduled_runs": {
+        "value": null,
+        "notes": "Current first-party sources reviewed here do not clearly publish a dedicated scheduling model.",
+        "source_refs": [
+          2
+        ]
+      },
+      "provider_dependency": {
+        "value": "Linked-storage dependent",
+        "notes": "odrive links existing cloud storage providers and says its own limits do not override linked-provider storage limits.",
+        "source_refs": [
+          1,
+          2
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Reduced-bandwidth sync model",
+        "notes": "Conditional: sync docs say placeholder sync reduces unnecessary bandwidth usage and background API calls, so transfer behavior depends on what you sync and on linked services.",
+        "source_refs": [
+          2
+        ]
+      }
+    },
     "verification_status": "pending",
     "reason": null
   },
   {
     "name": "Otixo",
     "url": "https://otixo.com/",
-    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Retention likely depends on the connected storage providers rather than a standalone Otixo storage policy.",
-        "source_refs": [
-          0
-        ]
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Standalone storage behavior for this migration candidate has not yet been verified.",
-        "source_refs": [
-          0
-        ]
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      }
-    },
+    "summary": "Otixo's current We.Team product combines team collaboration, integrated third-party cloud drives, and encrypted personal or team cloud storage.",
     "account": {
-      "required": null,
-      "benefits": "Account requirements and workflow differences are still pending first-party review.",
+      "required": true,
+      "benefits": "Accounts are required to register with email, Google, or Apple and to access TeamSpaces, personal cloud storage, and connected external cloud drives.",
       "source_refs": [
-        0
+        0,
+        1
       ]
     },
     "developer": {
@@ -730,7 +1041,7 @@
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "notes": "No current public API or CLI workflow was verified on the official Otixo / We.Team pages reviewed.",
       "source_refs": [
         0
       ]
@@ -738,19 +1049,21 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
+        "notes": "Supported file types depend on the personal We.Team Cloud, TeamSpace file sharing, and the connected third-party cloud drives.",
         "source_refs": [
-          0
+          0,
+          1
         ]
       }
     },
     "security": {
       "https_only": true,
       "e2ee": false,
-      "server_side_encryption": null,
-      "notes": "The seed entry uses an HTTPS homepage, but detailed security claims still need first-party verification.",
+      "server_side_encryption": true,
+      "notes": "Official pricing says TeamSpace and personal We.Team Cloud storage are AES-256 encrypted, and the live product surfaces use HTTPS.",
       "source_refs": [
-        0
+        0,
+        1
       ]
     },
     "tags": [
@@ -760,56 +1073,87 @@
     ],
     "sources": [
       {
-        "label": "User-provided seed URL",
+        "label": "Otixo / We.Team homepage",
         "url": "https://otixo.com/",
-        "retrieved_at": "2026-04-28",
-        "notes": "Seed candidate added from the user-provided cloud-migration list. Full first-party verification is still pending."
+        "retrieved_at": "2026-04-30",
+        "notes": "Official homepage showing the current We.Team product, free registration flows, multi-cloud integrations, and encrypted We.Team Cloud positioning."
+      },
+      {
+        "label": "We.Team pricing",
+        "url": "https://we.team/en/pricing",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official pricing page listing free and paid TeamSpace storage, personal cloud-drive storage, unlimited integrations, and AES-256 encryption claims."
       }
     ],
+    "kind": "cloud_migration",
+    "profile": {
+      "workflow_modes": {
+        "value": "Cloud-drive access and collaboration",
+        "notes": "Current Otixo / We.Team pages focus on connected-cloud collaboration, storage access, and encrypted workspace storage.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "execution_model": {
+        "value": "Workspace with connected clouds",
+        "notes": "Current Otixo / We.Team product is a collaboration workspace layered over connected clouds and team storage.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "item_limit": {
+        "value": null,
+        "unit": null,
+        "notes": "Conditional: official We.Team pages describe integrations across many cloud drives and protocols, but they do not publish one universal per-file cap.",
+        "source_refs": [
+          0
+        ]
+      },
+      "included_storage": {
+        "value": 5,
+        "unit": "GB",
+        "notes": "Official pricing gives the free plan 5 GB of TeamSpace storage and 5 GB of personal We.Team Cloud Drive storage, while paid tiers raise TeamSpace storage per member.",
+        "source_refs": [
+          1
+        ]
+      },
+      "scheduled_runs": {
+        "value": null,
+        "notes": "Current first-party sources reviewed here do not clearly publish a dedicated scheduling model.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "provider_dependency": {
+        "value": "Mixed We.Team + connected providers",
+        "notes": "Current Otixo / We.Team combines its own encrypted storage with connected third-party cloud drives.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Plan and integration dependent",
+        "notes": "Conditional: official pages publish unlimited cloud integrations and meetings, but they do not give one standalone transfer-quota number for cloud-drive traffic.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    },
     "verification_status": "pending",
     "reason": null
   },
   {
     "name": "OxygenCloud",
     "url": "https://home.oxygencloud.com/",
-    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Retention likely depends on the connected storage providers rather than a standalone OxygenCloud storage policy.",
-        "source_refs": [
-          0
-        ]
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Standalone storage behavior for this migration candidate has not yet been verified.",
-        "source_refs": [
-          0
-        ]
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      }
-    },
+    "summary": "Legacy Oxygen Cloud branding now points to odrive product pages rather than a distinct standalone cloud-migration service.",
     "account": {
-      "required": null,
-      "benefits": "Account requirements and workflow differences are still pending first-party review.",
+      "required": false,
+      "benefits": "No distinct standalone OxygenCloud account workflow remains separate from odrive's current product flows.",
       "source_refs": [
         0
       ]
@@ -819,7 +1163,7 @@
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "notes": "No separate public OxygenCloud API or CLI surface was verified on the current official pages.",
       "source_refs": [
         0
       ]
@@ -827,9 +1171,10 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
+        "notes": "Current official pages describe the odrive storage-linking product rather than a distinct OxygenCloud file-policy surface.",
         "source_refs": [
-          0
+          0,
+          1
         ]
       }
     },
@@ -837,98 +1182,134 @@
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The seed entry uses an HTTPS homepage, but detailed security claims still need first-party verification.",
+      "notes": "The current official Oxygen Cloud pages are HTTPS odrive pages and no longer describe a separate standalone OxygenCloud security model.",
       "source_refs": [
-        0
+        0,
+        1
       ]
     },
     "tags": [
       "cloud-migration",
-      "pending-review",
-      "multi-cloud"
+      "rejected",
+      "duplicate"
     ],
     "sources": [
       {
-        "label": "User-provided seed URL",
-        "url": "https://home.oxygencloud.com/",
-        "retrieved_at": "2026-04-28",
-        "notes": "Seed candidate added from the user-provided cloud-migration list. Full first-party verification is still pending."
+        "label": "Oxygen Cloud homepage surface",
+        "url": "https://home.oxygencloud.com/homepage2c",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official Oxygen Cloud-branded page now marketing odrive's unified sync, sharing, backup, and encryption product."
+      },
+      {
+        "label": "Oxygen Cloud unified access page",
+        "url": "https://home.oxygencloud.com/features/unified-access",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official page showing odrive branding, linked-storage capabilities, and the current business-focused discontinuation notice for free consumer offering."
       }
     ],
-    "verification_status": "pending",
-    "reason": null
+    "kind": "cloud_migration",
+    "profile": {
+      "workflow_modes": {
+        "value": "Historical linked-storage access",
+        "notes": "Current Oxygen Cloud branding points at odrive pages rather than a distinct live migration service.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "execution_model": {
+        "value": "Superseded by odrive",
+        "notes": "Current Oxygen Cloud pages resolve to odrive product surfaces rather than a distinct execution model.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "item_limit": {
+        "value": 0,
+        "unit": "MB",
+        "notes": "Current Oxygen Cloud-branded pages are odrive product pages, so there is no distinct standalone OxygenCloud migration-size surface to preserve.",
+        "source_refs": [
+          0
+        ]
+      },
+      "included_storage": {
+        "value": 0,
+        "unit": "GB",
+        "notes": "No distinct standalone OxygenCloud storage service is still being marketed on the current official pages.",
+        "source_refs": [
+          0
+        ]
+      },
+      "scheduled_runs": {
+        "value": false,
+        "notes": "Current Oxygen Cloud branding points to odrive rather than a live standalone migration scheduler.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "provider_dependency": {
+        "value": "Not applicable",
+        "notes": "Current Oxygen Cloud pages are odrive-branded surfaces, not a standalone migration service.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Not applicable",
+        "notes": "The current official Oxygen Cloud domain is effectively an odrive-branded marketing surface rather than a separate standalone migration tool.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    },
+    "verification_status": "rejected",
+    "reason": "Current Oxygen Cloud pages are odrive-branded; this is better treated as a superseded duplicate of odrive than as a distinct standalone migration service."
   },
   {
     "name": "Skyvia",
     "url": "https://skyvia.com/",
-    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Retention likely depends on the connected storage providers rather than a standalone Skyvia storage policy.",
-        "source_refs": [
-          0
-        ]
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Standalone storage behavior for this migration candidate has not yet been verified.",
-        "source_refs": [
-          0
-        ]
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      }
-    },
+    "summary": "All-in-one cloud data platform for integration, backup, query, connect, and automation across cloud apps and databases, with plan-specific limits that vary by product.",
     "account": {
-      "required": null,
-      "benefits": "Account requirements and workflow differences are still pending first-party review.",
+      "required": true,
+      "benefits": "The official site exposes sign-in and sign-up flows for app.skyvia.com, and the docs describe product-specific free and paid subscriptions under a user account.",
       "source_refs": [
-        0
+        0,
+        3
       ]
     },
     "developer": {
-      "api_available": false,
+      "api_available": true,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "notes": "The official pricing page and product navigation advertise developer-facing access methods such as OData, ODBC, ADO.NET, and MCP endpoints, but a single canonical API docs URL was not captured in this pass.",
       "source_refs": [
-        0
+        0,
+        1
       ]
     },
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
+        "notes": "Supported objects and file-like content depend on the connected providers and the specific Skyvia product in use rather than one global file-type policy.",
         "source_refs": [
-          0
+          0,
+          2
         ]
       }
     },
     "security": {
       "https_only": true,
       "e2ee": false,
-      "server_side_encryption": null,
-      "notes": "The seed entry uses an HTTPS homepage, but detailed security claims still need first-party verification.",
+      "server_side_encryption": true,
+      "notes": "Official pages are served over HTTPS, and Skyvia Backup documentation says backed-up data are stored in secure Microsoft Azure cloud storage in encrypted form.",
       "source_refs": [
-        0
+        0,
+        2
       ]
     },
     "tags": [
@@ -938,56 +1319,103 @@
     ],
     "sources": [
       {
-        "label": "User-provided seed URL",
+        "label": "Skyvia homepage",
         "url": "https://skyvia.com/",
-        "retrieved_at": "2026-04-28",
-        "notes": "Seed candidate added from the user-provided cloud-migration list. Full first-party verification is still pending."
+        "retrieved_at": "2026-04-30",
+        "notes": "Official homepage describing Skyvia as an all-in-one cloud data platform with integration, backup, query, connect, and automation products."
+      },
+      {
+        "label": "Skyvia pricing",
+        "url": "https://skyvia.com/pricing",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official pricing page listing per-product limits, including uploaded file size, records per month, backup storage, snapshot storing time, query traffic, and connect traffic."
+      },
+      {
+        "label": "Skyvia Backup docs",
+        "url": "https://docs.skyvia.com/backup/",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official documentation stating that backed-up data are stored in secure Microsoft Azure cloud storage in encrypted form and explaining backup product behavior."
+      },
+      {
+        "label": "Skyvia subscription limits docs",
+        "url": "https://docs.skyvia.com/account-management/subscription-limits-and-plans-in-more-details.html",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official documentation describing product-specific free-versus-paid limits, including free backup retention behavior and product-specific quotas."
       }
     ],
+    "kind": "cloud_migration",
+    "profile": {
+      "workflow_modes": {
+        "value": "Integration, backup, automation",
+        "notes": "Current Skyvia pages position the product around integration, backup, automation, query, and connect workflows.",
+        "source_refs": [
+          0,
+          1,
+          3
+        ]
+      },
+      "execution_model": {
+        "value": "Server-side data platform",
+        "notes": "Current Skyvia pages position the product as a hosted data platform running integration, backup, and automation jobs.",
+        "source_refs": [
+          0,
+          1,
+          3
+        ]
+      },
+      "item_limit": {
+        "value": 400,
+        "unit": "MB",
+        "notes": "The official pricing page lists uploaded file size up to 400 MB for the data-integration plans.",
+        "source_refs": [
+          1
+        ]
+      },
+      "included_storage": {
+        "value": 1,
+        "unit": "GB",
+        "notes": "The official pricing page gives the free Backup plan 1 GB of storage. Other Skyvia products use different limits, so service-wide storage is still product-specific.",
+        "source_refs": [
+          1
+        ]
+      },
+      "scheduled_runs": {
+        "value": true,
+        "notes": "Current Skyvia positioning includes backup and automation workflows that run as account-managed jobs.",
+        "source_refs": [
+          0,
+          1,
+          3
+        ]
+      },
+      "provider_dependency": {
+        "value": "Product-plan dependent",
+        "notes": "Current Skyvia limits vary by product, while data sources and connected systems still shape what can move.",
+        "source_refs": [
+          0,
+          1,
+          3
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Product-plan dependent",
+        "notes": "Conditional: Skyvia publishes different traffic and throughput limits by product. Examples include limited query traffic on the free Query plan, 100 KB/month on the free Connect plan, and product-specific records-per-month limits for integration.",
+        "source_refs": [
+          1,
+          3
+        ]
+      }
+    },
     "verification_status": "pending",
     "reason": null
   },
   {
     "name": "UploadCloud",
     "url": "https://uploadcloud.net/",
-    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Retention likely depends on the connected storage providers rather than a standalone UploadCloud storage policy.",
-        "source_refs": [
-          0
-        ]
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Standalone storage behavior for this migration candidate has not yet been verified.",
-        "source_refs": [
-          0
-        ]
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources.",
-        "source_refs": [
-          0
-        ]
-      }
-    },
+    "summary": "Current uploadcloud.net does not expose a real cloud-migration product surface and instead responds with a bare placeholder page.",
     "account": {
-      "required": null,
-      "benefits": "Account requirements and workflow differences are still pending first-party review.",
+      "required": false,
+      "benefits": "No usable current account workflow was verified from the official UploadCloud pages.",
       "source_refs": [
         0
       ]
@@ -997,7 +1425,7 @@
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "This candidate still needs disambiguation against previously rejected host-style UploadCloud surfaces.",
+      "notes": "No current public API or CLI surface was verified from the placeholder-like official site.",
       "source_refs": [
         0
       ]
@@ -1005,7 +1433,7 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
+        "notes": "The current official UploadCloud site does not expose a working file-policy surface.",
         "source_refs": [
           0
         ]
@@ -1015,83 +1443,182 @@
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The seed entry uses an HTTPS homepage, but detailed security claims still need first-party verification.",
+      "notes": "The domain is HTTPS, but the current official surface is just a bare placeholder response and does not publish any migration-service security model.",
       "source_refs": [
         0
       ]
     },
     "tags": [
       "cloud-migration",
-      "pending-review",
-      "multi-cloud"
+      "rejected",
+      "placeholder-site"
     ],
     "sources": [
       {
-        "label": "User-provided seed URL",
+        "label": "UploadCloud homepage",
         "url": "https://uploadcloud.net/",
-        "retrieved_at": "2026-04-28",
-        "notes": "Seed candidate added from the user-provided cloud-migration list. Full first-party verification is still pending."
+        "retrieved_at": "2026-04-30",
+        "notes": "Current official homepage response is only a bare placeholder string rather than a real product surface."
       }
     ],
-    "verification_status": "pending",
-    "reason": null
+    "kind": "cloud_migration",
+    "profile": {
+      "workflow_modes": {
+        "value": "Not applicable",
+        "notes": "The current official UploadCloud site is only a placeholder response and does not expose a live migration workflow.",
+        "source_refs": [
+          0
+        ]
+      },
+      "execution_model": {
+        "value": "Placeholder site",
+        "notes": "Current UploadCloud pages return a placeholder response rather than a working service workflow.",
+        "source_refs": [
+          0
+        ]
+      },
+      "item_limit": {
+        "value": 0,
+        "unit": "MB",
+        "notes": "The current official surface returns a placeholder response instead of a working migration product.",
+        "source_refs": [
+          0
+        ]
+      },
+      "included_storage": {
+        "value": 0,
+        "unit": "GB",
+        "notes": "The current official UploadCloud site does not expose a working standalone migration or storage service.",
+        "source_refs": [
+          0
+        ]
+      },
+      "scheduled_runs": {
+        "value": false,
+        "notes": "Current UploadCloud site is only a placeholder response.",
+        "source_refs": [
+          0
+        ]
+      },
+      "provider_dependency": {
+        "value": "Not applicable",
+        "notes": "Current UploadCloud pages do not expose a working service.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Not applicable",
+        "notes": "The current official UploadCloud site does not expose a working transfer service or quota model.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "verification_status": "rejected",
+    "reason": "Current uploadcloud.net only exposes a placeholder response and does not present a real cloud-migration product."
   },
   {
     "name": "Zeropc",
     "url": null,
-    "summary": "Candidate cloud-migration service pending first-party verification for moving or syncing files between connected storage providers.",
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Detailed provider-to-provider transfer limits have not yet been verified from first-party sources."
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Retention likely depends on the connected storage providers rather than a standalone Zeropc storage policy."
-      },
-      "storage": {
-        "value": null,
-        "unit": null,
-        "notes": "Standalone storage behavior for this migration candidate has not yet been verified."
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "Transfer throughput and quotas have not yet been verified from first-party sources."
-      }
-    },
+    "summary": "Former cloud desktop and content navigator product whose current official domain has drifted into unrelated payday-loan content.",
     "account": {
-      "required": null,
-      "benefits": "Account requirements and workflow differences are still pending first-party review."
+      "required": false,
+      "benefits": "No trustworthy current account workflow remains on the official ZeroPC domain."
     },
     "developer": {
       "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "Developer and automation support have not yet been verified from first-party sources."
+      "notes": "No current public API or CLI relevant to a live ZeroPC migration service was verified."
     },
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification."
+        "notes": "The current official domain is repurposed and does not expose a trustworthy file-policy surface."
       }
     },
     "security": {
-      "https_only": false,
+      "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The user-provided seed link was HTTP-only, and current HTTPS behavior still needs verification."
+      "notes": "The current official pages are HTTPS, but the domain has drifted into unrelated payday-loan content and does not publish a trustworthy service-security story."
     },
     "tags": [
       "cloud-migration",
-      "pending-review",
-      "multi-cloud"
+      "rejected",
+      "repurposed-domain"
     ],
-    "sources": [],
-    "verification_status": "pending",
-    "reason": null
+    "sources": [
+      {
+        "label": "ZeroPC homepage",
+        "url": "https://www.zeropc.com/",
+        "retrieved_at": "2026-04-30",
+        "notes": "Current official homepage has drifted into payday-loan content instead of a cloud desktop or migration product."
+      },
+      {
+        "label": "ZeroPC login page",
+        "url": "https://www.zeropc.com/signin",
+        "retrieved_at": "2026-04-30",
+        "notes": "Current official login page still carries ZeroPC branding but is surrounded by payday-loan content, which undermines trust in the live service."
+      },
+      {
+        "label": "ZeroPC press page",
+        "url": "https://www.zeropc.com/press",
+        "retrieved_at": "2026-04-30",
+        "notes": "Official press page preserves historical ZeroDesktop/ZeroPC product references, showing the domain once hosted a different cloud product."
+      }
+    ],
+    "kind": "cloud_migration",
+    "profile": {
+      "workflow_modes": {
+        "value": "Historical cloud desktop",
+        "notes": "ZeroPC historically offered a cloud desktop/content navigator, but the current domain is repurposed and no longer trustworthy.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "execution_model": {
+        "value": "Repurposed domain",
+        "notes": "The current ZeroPC domain is repurposed and no longer exposes a trustworthy cloud workflow.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "item_limit": {
+        "value": 0,
+        "unit": "MB",
+        "notes": "The current official domain no longer exposes a trustworthy live migration or cloud-management product surface."
+      },
+      "included_storage": {
+        "value": 0,
+        "unit": "GB",
+        "notes": "The current official domain no longer markets a working cloud-storage or migration service."
+      },
+      "scheduled_runs": {
+        "value": false,
+        "notes": "Current ZeroPC domain is repurposed and no longer exposes a live service.",
+        "source_refs": [
+          0
+        ]
+      },
+      "provider_dependency": {
+        "value": "Not applicable",
+        "notes": "Current ZeroPC domain is repurposed and no longer markets a trustworthy service.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Not applicable",
+        "notes": "No current trustworthy transfer product is exposed by the official ZeroPC domain."
+      }
+    },
+    "verification_status": "rejected",
+    "reason": "The current ZeroPC domain is repurposed and no longer presents a trustworthy live cloud-migration or cloud-management product."
   }
 ]
