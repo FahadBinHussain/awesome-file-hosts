@@ -96,6 +96,13 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -199,6 +206,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -306,6 +320,13 @@
       "allowed_file_types": {
         "mode": "all_except_prohibited",
         "notes": "4shared says you can upload any files that meet its Terms of Use and explicitly lists common document, music, video, image, and archive formats. Illegal, pornographic, or copyrighted materials are prohibited.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -446,6 +467,13 @@
           0,
           3
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -563,6 +591,13 @@
         "source_refs": [
           3
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -671,6 +706,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The API docs imply some disallowed and banned file types through error codes, but the cited public pages do not publish a full allowlist.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -805,6 +847,13 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -918,6 +967,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -1050,6 +1106,13 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -1168,6 +1231,13 @@
         "source_refs": [
           1
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -1279,6 +1349,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -1365,6 +1442,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The homepage does not publish a detailed restrictions list, but it presents the service as a general file-sharing flow.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -1485,6 +1569,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -1595,6 +1686,13 @@
         "source_refs": [
           1
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -1628,14 +1726,14 @@
           0
         ]
       },
-        "bandwidth": {
-          "value": null,
-          "unit": null,
-          "notes": "Bandwidth is conditional. Cozy's official desktop limitations page does not publish a neat transfer cap, but it explicitly frames sync around personal-use expectations, large files being uploaded or downloaded in one time, and practical network-bandwidth constraints.",
-          "source_refs": [
-            3
-          ]
-        },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is conditional. Cozy's official desktop limitations page does not publish a neat transfer cap, but it explicitly frames sync around personal-use expectations, large files being uploaded or downloaded in one time, and practical network-bandwidth constraints.",
+        "source_refs": [
+          3
+        ]
+      },
       "storage_account": {
         "value": 5,
         "unit": "GB",
@@ -1691,23 +1789,30 @@
         "retrieved_at": "2026-04-26",
         "notes": "Discovery free plan with 5 GB cloud storage."
       },
-        {
-          "label": "Download",
-          "url": "https://en.cozy.io/download",
-          "retrieved_at": "2026-04-26",
-          "notes": "Windows, GNU/Linux, Android, and iOS app availability."
-        },
-        {
-          "label": "Desktop limitations",
-          "url": "https://docs.cozy.io/en/cozy-desktop/usage/limitations/",
-          "retrieved_at": "2026-04-29",
-          "notes": "Official Twake Desktop limitations page describing personal-use expectations, large-file handling, and network-bandwidth constraints."
-        }
-      ],
+      {
+        "label": "Download",
+        "url": "https://en.cozy.io/download",
+        "retrieved_at": "2026-04-26",
+        "notes": "Windows, GNU/Linux, Android, and iOS app availability."
+      },
+      {
+        "label": "Desktop limitations",
+        "url": "https://docs.cozy.io/en/cozy-desktop/usage/limitations/",
+        "retrieved_at": "2026-04-29",
+        "notes": "Official Twake Desktop limitations page describing personal-use expectations, large-file handling, and network-bandwidth constraints."
+      }
+    ],
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -1851,6 +1956,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -1958,6 +2070,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -2060,6 +2179,13 @@
       "allowed_file_types": {
         "mode": "all_except_prohibited",
         "notes": "The official FAQ says many file types are allowed, while copyrighted or illegal content may be removed.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -2172,6 +2298,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -2272,6 +2405,13 @@
       "allowed_file_types": {
         "mode": "all_except_prohibited",
         "notes": "The service describes general file hosting with browser-side encryption and references file name, size, and mimetype rather than a narrow allowlist.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -2392,6 +2532,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The accessible current public pages emphasize document, media, and collaboration workflows, but do not foreground a complete allowed-file-types policy.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -2536,6 +2683,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -2600,6 +2754,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -2727,6 +2888,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -2820,6 +2988,13 @@
       "allowed_file_types": {
         "mode": "all_except_prohibited",
         "notes": "Easyupload says users can upload any file as long as it is legal, with law-violating or infringing content removed under the terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -2930,6 +3105,13 @@
         "source_refs": [
           0,
           1
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
         ]
       }
     }
@@ -3048,6 +3230,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -3146,6 +3335,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -3259,6 +3455,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -3366,6 +3569,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -3469,6 +3679,13 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -3554,6 +3771,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -3707,6 +3931,13 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -3855,6 +4086,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -3950,6 +4188,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -3984,16 +4229,16 @@
           2
         ]
       },
-        "bandwidth": {
-          "value": null,
-          "unit": null,
-          "notes": "Bandwidth is conditional. Filen's free docs still do not publish a separate transfer quota, while current first-party pages say they do not restrict speed and paid plans explicitly market uncapped transfer and uploads.",
-          "source_refs": [
-            0,
-            6
-          ]
-        }
-      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is conditional. Filen's free docs still do not publish a separate transfer quota, while current first-party pages say they do not restrict speed and paid plans explicitly market uncapped transfer and uploads.",
+        "source_refs": [
+          0,
+          6
+        ]
+      }
+    },
     "account": {
       "required": true,
       "benefits": "A Filen account is required to use the encrypted drive, desktop client, mobile apps, API, and CLI workflows.",
@@ -4062,23 +4307,30 @@
         "retrieved_at": "2026-04-29",
         "notes": "Current API docs say the Filen API is publicly documented for external developers."
       },
-        {
-          "label": "CLI docs introduction",
-          "url": "https://docs.filen.io/docs/cli/",
-          "retrieved_at": "2026-04-29",
-          "notes": "Current CLI docs cover installation, syncing, network-drive mounting, and WebDAV/S3 mirror workflows."
-        },
-        {
-          "label": "Pricing",
-          "url": "https://filen.io/pricing",
-          "retrieved_at": "2026-04-29",
-          "notes": "Current plan page highlighting paid tiers with uncapped transfer and uploads."
-        }
-      ],
+      {
+        "label": "CLI docs introduction",
+        "url": "https://docs.filen.io/docs/cli/",
+        "retrieved_at": "2026-04-29",
+        "notes": "Current CLI docs cover installation, syncing, network-drive mounting, and WebDAV/S3 mirror workflows."
+      },
+      {
+        "label": "Pricing",
+        "url": "https://filen.io/pricing",
+        "retrieved_at": "2026-04-29",
+        "notes": "Current plan page highlighting paid tiers with uncapped transfer and uploads."
+      }
+    ],
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The current official pages do not foreground a detailed file-type restriction list on the accessible surfaces checked here.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -4174,6 +4426,13 @@
       "allowed_file_types": {
         "mode": "all_except_prohibited",
         "notes": "The current terms broadly allow file uploads but prohibit malware, illegal material, certain copyright violations, misleading files, and some public-file categories.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -4294,6 +4553,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -4401,6 +4667,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -4550,6 +4823,13 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -4687,6 +4967,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -4797,6 +5084,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -4927,6 +5221,13 @@
         "source_refs": [
           1
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -5019,6 +5320,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -5124,6 +5432,13 @@
         "source_refs": [
           1
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -5209,6 +5524,13 @@
       "allowed_file_types": {
         "mode": "all_except_prohibited",
         "notes": "The homepage currently says all file types are supported, though prohibited or abusive content may still be restricted under the service rules.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -5330,6 +5652,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -5448,6 +5777,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -5581,6 +5917,13 @@
           5,
           6
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -5693,6 +6036,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -5795,6 +6145,13 @@
         "notes": "Litterbox follows Catbox's blocked-extension policy and rejects executable-risk file types such as .exe, .scr, .cpl, .doc, and .jar.",
         "source_refs": [
           1
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
         ]
       }
     }
@@ -5914,6 +6271,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -6058,6 +6422,13 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -6168,6 +6539,13 @@
       "allowed_file_types": {
         "mode": "documents-images-media",
         "notes": "MiMedia officially supports common image, video, audio, and document formats including JPG, PNG, MP4, MP3, PDF, DOCX, XLSX, and PPTX.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -6283,6 +6661,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -6420,6 +6805,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -6545,6 +6937,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -6665,6 +7064,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -6781,6 +7187,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -6891,6 +7304,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -7008,6 +7428,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -7109,6 +7536,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "Free uploads focus on audio formats such as .mp3, .m4a, .wav, .ogg, .flac, .aif, and .aiff. Free registered users can also upload .zip files, while supporters can upload any file type.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -7247,6 +7681,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -7313,6 +7754,13 @@
         "notes": "The current terms page describes general content restrictions but does not publish a short whitelist/blacklist matrix on the marketing surface.",
         "source_refs": [
           2
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
         ]
       }
     },
@@ -7447,6 +7895,13 @@
           2,
           7
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "security": {
@@ -7555,14 +8010,14 @@
           0
         ]
       },
-        "bandwidth": {
-          "value": null,
-          "unit": null,
-          "notes": "Bandwidth is conditional. Rakuten Drive's official transfer support page does not publish a neat traffic quota, but free transfer behavior is still constrained by workflow and plan: free links expire after 48 hours, the Chrome extension large-attachment flow is capped at 3 times in 48 hours with one-time recovery, and paid tiers lift those limits.",
-          "source_refs": [
-            1
-          ]
-        }
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is conditional. Rakuten Drive's official transfer support page does not publish a neat traffic quota, but free transfer behavior is still constrained by workflow and plan: free links expire after 48 hours, the Chrome extension large-attachment flow is capped at 3 times in 48 hours with one-time recovery, and paid tiers lift those limits.",
+        "source_refs": [
+          1
+        ]
+      }
     },
     "account": {
       "required": true,
@@ -7622,6 +8077,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The accessible current pages checked here do not foreground a full allowed-file-types policy.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -7743,6 +8205,13 @@
           1,
           3
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -7860,6 +8329,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -7944,6 +8420,13 @@
         "notes": "The official FAQ says users may upload any file types as long as they adhere to the terms and conditions.",
         "source_refs": [
           1
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
         ]
       }
     },
@@ -8104,6 +8587,13 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -8227,6 +8717,13 @@
         "source_refs": [
           2
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -8312,6 +8809,13 @@
       "allowed_file_types": {
         "mode": "all_except_prohibited",
         "notes": "The homepage FAQ says TempSend accepts any file extension, while explicitly forbidding copyrighted or illegal content.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -8464,6 +8968,13 @@
           0,
           4
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -8592,6 +9103,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -8694,6 +9212,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -8764,6 +9289,13 @@
         "source_refs": [
           0,
           1
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
         ]
       }
     },
@@ -8905,6 +9437,13 @@
         "source_refs": [
           2
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -9025,6 +9564,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -9142,6 +9688,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -9242,6 +9795,140 @@
       "allowed_file_types": {
         "mode": "all_except_prohibited",
         "notes": "The homepage currently says there are no restrictions on file types for uploads, though prohibited content may still be restricted under the service terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
+      }
+    }
+  },
+  {
+    "name": "UploadNow",
+    "url": "https://uploadnow.io/",
+    "summary": "Free-first file sharing and cloud storage service with guest uploads, unlimited download count and speed, and optional accounts for permanent storage plus advanced file management.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Not published: the active upload page and public help text do not expose one clean guest per-file cap.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Conditional: public FAQ says accounts can store files without time limitations; guest-link lifetime is not published as one clean number on the current public pages reviewed.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Conditional: the public UI exposes guest upload/storage flows and account upgrades, but it does not publish one clean free storage quota in the public text reviewed.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Unlimited: the official homepage says the number and speed of downloads are illimited for free uploads.",
+        "source_refs": [
+          0
+        ]
+      },
+      "max_file_size_account": {
+        "value": null,
+        "unit": null,
+        "notes": "Not published: public account-upgrade messaging says account users get larger limits, but one clean per-file account cap was not published on the pages reviewed.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "storage_account": {
+        "value": null,
+        "unit": null,
+        "notes": "Conditional: the FAQ says accounts can store files without time limitations, but the public pages reviewed do not publish one clean free-account storage quota.",
+        "source_refs": [
+          1
+        ]
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "No registration is required for upload or download. Accounts add file management and storage without time limitations according to the public FAQ.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The site exposes an API navigation item, but the current public API page is placeholder text and does not publish usable API docs.",
+      "source_refs": [
+        2
+      ]
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": true,
+      "notes": "Official pages say data is encrypted in transit using SSL/TLS and at rest using 256-bit encryption, but they do not claim end-to-end encryption.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "file-sharing",
+      "cloud-storage",
+      "guest-upload"
+    ],
+    "sources": [
+      {
+        "label": "UploadNow homepage",
+        "url": "https://uploadnow.io/",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official homepage verified in a live browser: guest uploads are active, all file types are accepted, downloads are described as unlimited, and the service positions itself as essentially free with optional account upgrades."
+      },
+      {
+        "label": "UploadNow FAQ",
+        "url": "https://uploadnow.io/faq",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official FAQ verified in a live browser: UploadNow says it is essentially free and accounts can store files without time limitations."
+      },
+      {
+        "label": "UploadNow API page",
+        "url": "https://uploadnow.io/use-api",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official API navigation exists, but the current page is placeholder text and does not publish usable public API documentation."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "all_except_prohibited",
+        "notes": "The official homepage says all file types are accepted, including files, images, video, audio, and PDF documents, subject to abuse and terms-of-use rules.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -9378,6 +10065,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -9498,6 +10192,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -9605,6 +10306,13 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -9705,6 +10413,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -9836,6 +10551,13 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -9935,6 +10657,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -10052,6 +10781,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     }
   },
@@ -10164,6 +10900,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]

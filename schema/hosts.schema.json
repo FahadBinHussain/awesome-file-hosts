@@ -154,6 +154,9 @@
                 "$ref": "#/$defs/sourceRefList"
               }
             }
+          },
+          "public_sharing": {
+            "$ref": "#/$defs/booleanField"
           }
         }
       },
@@ -249,6 +252,28 @@
         "unit": {
           "type": [
             "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_refs": {
+          "$ref": "#/$defs/sourceRefList"
+        }
+      }
+    },
+    "booleanField": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "notes"
+      ],
+      "properties": {
+        "value": {
+          "type": [
+            "boolean",
             "null"
           ]
         },

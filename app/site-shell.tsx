@@ -400,7 +400,7 @@ export function ExplorerApp({ data }: Props) {
                   <div className="grid gap-3">
                     {[
                       {
-                        label: "Alternative methods",
+                        label: "Other ways to share",
                         count: data.stats.alternativeMethods,
                         helper: data.alternatives.map((item) => item.name).join(", ")
                       },
@@ -434,7 +434,7 @@ export function ExplorerApp({ data }: Props) {
                   <div className="text-sm font-medium text-[var(--text-primary)]">How we separate them</div>
                   <div className="grid gap-4">
                     <InfoPair
-                      label="Alternative methods"
+                      label="Other ways to share"
                       value="Products like messaging apps or social networks that can deliver files, even though that is not their primary job."
                     />
                     <InfoPair

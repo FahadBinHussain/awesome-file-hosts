@@ -49,6 +49,7 @@ type HostSortKey =
   | "storage_account"
   | "retention"
   | "bandwidth"
+  | "public_sharing"
   | "api"
   | "cli"
   | "e2ee"
@@ -62,6 +63,7 @@ type QueueSortKey =
   | "storage_account"
   | "retention"
   | "bandwidth"
+  | "public_sharing"
   | "api"
   | "cli"
   | "e2ee"
@@ -220,6 +222,18 @@ const hostColumnDefs: HostColumn[] = [
         value={host.developer.api_available ? "Yes" : "No"}
         record={host}
         refs={host.developer.source_refs}
+      />
+    )
+  },
+  {
+    id: "public_sharing",
+    label: "Public share",
+    width: "118px",
+    render: (host) => (
+      <CitedValue
+        value={booleanFieldLabel(host.content.public_sharing?.value)}
+        record={host}
+        refs={host.content.public_sharing?.source_refs}
       />
     )
   },
@@ -390,6 +404,18 @@ const queueColumnDefs: QueueColumn[] = [
         value={candidate.developer.api_available ? "Yes" : "No"}
         record={candidate}
         refs={candidate.developer.source_refs}
+      />
+    )
+  },
+  {
+    id: "public_sharing",
+    label: "Public share",
+    width: "118px",
+    render: (candidate) => (
+      <CitedValue
+        value={booleanFieldLabel(candidate.content.public_sharing?.value)}
+        record={candidate}
+        refs={candidate.content.public_sharing?.source_refs}
       />
     )
   },
@@ -925,14 +951,14 @@ function statusTone(status: CandidateRecord["verification_status"]) {
 }
 
 function adjacentKindLabel(kind: AdjacentRecord["kind"]) {
-  if (kind === "alternative") return "Alternative method";
+  if (kind === "alternative") return "Other way to share";
   if (kind === "mirror_uploader") return "Mirror uploader";
   return "Cloud migration";
 }
 
 function serviceModeLabel(mode: ServiceMode) {
   if (mode === "hosts") return "Hosts";
-  if (mode === "alternatives") return "Alternative methods";
+  if (mode === "alternatives") return "Other ways to share";
   if (mode === "mirrors") return "Mirror uploaders";
   return "Cloud migration";
 }
@@ -971,6 +997,18 @@ function sortDirectionLabel(direction: "asc" | "desc") {
   return direction === "asc" 
     ? "↑ Ascending" 
     : "↓ Descending";
+}
+
+function booleanFieldLabel(value: boolean | null | undefined) {
+  if (value === true) return "Yes";
+  if (value === false) return "No";
+  return "Unknown";
+}
+
+function booleanSortValue(value: boolean | null | undefined) {
+  if (value === true) return 1;
+  if (value === false) return 0;
+  return null;
 }
 
 function gridTemplate(columns: Array<{ width: string }>) {
@@ -1031,6 +1069,8 @@ function hostSortValue(host: HostRecord, key: HostSortKey) {
       return host.sortMetrics.storageAccountMb;
     case "bandwidth":
       return host.sortMetrics.bandwidthMb;
+    case "public_sharing":
+      return booleanSortValue(host.content.public_sharing?.value);
     case "api":
       return host.developer.api_available ? 1 : 0;
     case "cli":
@@ -1087,6 +1127,8 @@ function queueSortValue(candidate: CandidateRecord, key: QueueSortKey) {
       return candidate.sortMetrics.retentionDays;
     case "bandwidth":
       return candidate.sortMetrics.bandwidthMb;
+    case "public_sharing":
+      return booleanSortValue(candidate.content.public_sharing?.value);
     case "api":
       return candidate.developer.api_available ? 1 : 0;
     case "cli":
@@ -1259,6 +1301,16 @@ function CandidateDetailPanel({ candidate }: { candidate: CandidateRecord | null
             <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Allowed file types</div>
             <div className="text-sm text-[var(--text-primary)]">
               {candidate.content.allowed_file_types.notes} <SourceRefLinks record={candidate} refs={candidate.content.allowed_file_types.source_refs} />
+            </div>
+          </div>
+          <div className="space-y-1.5">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Public sharing</div>
+            <div className="text-sm text-[var(--text-primary)]">
+              {booleanFieldLabel(candidate.content.public_sharing?.value)}{" "}
+              <SourceRefLinks record={candidate} refs={candidate.content.public_sharing?.source_refs} />
+            </div>
+            <div className="text-xs italic text-[var(--text-muted)]">
+              {candidate.content.public_sharing?.notes ?? "Public link or share-page support has not been verified yet."}
             </div>
           </div>
           <div className="space-y-1.5">
@@ -1945,7 +1997,7 @@ export function DatasetApp({ data }: Props) {
           : [];
   const currentSearchPlaceholder: Record<DatasetMode, string> = {
     hosts: isQueueMode ? "Search host candidate, source, or reason..." : "Search host, tag, or limit...",
-    alternatives: isQueueMode ? "Search alternative candidate, source, or reason..." : "Search service, tag, or behavior...",
+    alternatives: isQueueMode ? "Search sharing candidate, source, or reason..." : "Search service, tag, or behavior...",
     mirrors: isQueueMode ? "Search mirror candidate, source, or reason..." : "Search mirror, host coverage, or capability...",
     migration: isQueueMode ? "Search migration candidate, provider, or reason..." : "Search migration tool, provider, or workflow..."
   };
@@ -1992,7 +2044,8 @@ export function DatasetApp({ data }: Props) {
         host.filters.retentionLabel,
         host.datasetLabels.storageGuestLabel,
         host.datasetLabels.storageAccountLabel,
-        host.filters.bandwidthLabel
+        host.filters.bandwidthLabel,
+        booleanFieldLabel(host.content.public_sharing?.value)
       ]
         .join(" ")
         .toLowerCase();
@@ -2097,7 +2150,8 @@ export function DatasetApp({ data }: Props) {
         candidate.filters.retentionLabel,
         candidate.datasetLabels.storageGuestLabel,
         candidate.datasetLabels.storageAccountLabel,
-        candidate.filters.bandwidthLabel
+        candidate.filters.bandwidthLabel,
+        booleanFieldLabel(candidate.content.public_sharing?.value)
       ]
         .join(" ")
         .toLowerCase();
@@ -2313,7 +2367,7 @@ export function DatasetApp({ data }: Props) {
                   Verified hosts
                 </ToolbarButton>
                 <ToolbarButton active={mode === "alternatives"} onClick={() => selectMode("alternatives")}>
-                  Alternative methods
+                  Other ways to share
                 </ToolbarButton>
                 <ToolbarButton active={mode === "mirrors"} onClick={() => selectMode("mirrors")}>
                   Mirror uploaders

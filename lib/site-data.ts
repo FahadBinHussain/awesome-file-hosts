@@ -54,6 +54,7 @@ type SharedServiceFields = {
       mode: string;
       notes: string;
     } & SourceRefsField;
+    public_sharing?: BooleanField;
   };
   tags: string[];
   sources: SourceRecord[];

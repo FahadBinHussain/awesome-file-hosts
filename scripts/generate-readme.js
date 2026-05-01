@@ -61,6 +61,13 @@ function validateBooleanField(name, field) {
   validateSourceRefs(`${name}.source_refs`, field.source_refs);
 }
 
+function validateOptionalBooleanField(name, field) {
+  if (field === undefined) {
+    return;
+  }
+  validateBooleanField(name, field);
+}
+
 function validateSourceRefs(name, refs) {
   if (refs === undefined) {
     return;
@@ -123,6 +130,10 @@ function validateSharedServiceFields(record, options = {}) {
   validateSourceRefs(
     `${record.name}.content.allowed_file_types.source_refs`,
     record.content.allowed_file_types.source_refs
+  );
+  validateOptionalBooleanField(
+    `${record.name}.content.public_sharing`,
+    record.content.public_sharing
   );
 
   assert(typeof record.security.https_only === "boolean", `${record.name}.security.https_only must be boolean`);
@@ -242,6 +253,7 @@ function validateHost(host) {
     `${host.name}.content.allowed_file_types.source_refs`,
     host.content.allowed_file_types.source_refs
   );
+  validateOptionalBooleanField(`${host.name}.content.public_sharing`, host.content.public_sharing);
 
   assert(typeof host.security.https_only === "boolean", `${host.name}.security.https_only must be boolean`);
   assert(typeof host.security.e2ee === "boolean", `${host.name}.security.e2ee must be boolean`);
@@ -285,7 +297,8 @@ function validateHost(host) {
     host.account.source_refs,
     host.developer.source_refs,
     host.security.source_refs,
-    host.content.allowed_file_types.source_refs
+    host.content.allowed_file_types.source_refs,
+    host.content.public_sharing?.source_refs
   ]) {
     for (const ref of refs || []) {
       assert(ref <= maxSourceIndex, `${host.name} source ref ${ref} is out of range`);
@@ -307,6 +320,7 @@ function validateAlternativeProfile(record) {
     record.developer.source_refs,
     record.security.source_refs,
     record.content.allowed_file_types.source_refs,
+    record.content.public_sharing?.source_refs,
     record.profile.primary_use.source_refs,
     record.profile.sharing_surface.source_refs,
     record.profile.max_file_size.source_refs,
@@ -331,6 +345,7 @@ function validateMirrorProfile(record) {
     record.developer.source_refs,
     record.security.source_refs,
     record.content.allowed_file_types.source_refs,
+    record.content.public_sharing?.source_refs,
     record.profile.max_file_size.source_refs,
     record.profile.guest_uploads.source_refs,
     record.profile.remote_import.source_refs,
@@ -356,6 +371,7 @@ function validateCloudMigrationProfile(record) {
     record.developer.source_refs,
     record.security.source_refs,
     record.content.allowed_file_types.source_refs,
+    record.content.public_sharing?.source_refs,
     record.profile.workflow_modes.source_refs,
     record.profile.execution_model.source_refs,
     record.profile.item_limit.source_refs,
@@ -475,6 +491,10 @@ function validateCandidate(candidate) {
     `${candidate.name}.content.allowed_file_types.source_refs`,
     candidate.content.allowed_file_types.source_refs
   );
+  validateOptionalBooleanField(
+    `${candidate.name}.content.public_sharing`,
+    candidate.content.public_sharing
+  );
 
   assert(typeof candidate.security.https_only === "boolean", `${candidate.name}.security.https_only must be boolean`);
   assert(typeof candidate.security.e2ee === "boolean", `${candidate.name}.security.e2ee must be boolean`);
@@ -524,7 +544,8 @@ function validateCandidate(candidate) {
     candidate.account.source_refs,
     candidate.developer.source_refs,
     candidate.security.source_refs,
-    candidate.content.allowed_file_types.source_refs
+    candidate.content.allowed_file_types.source_refs,
+    candidate.content.public_sharing?.source_refs
   ]) {
     for (const ref of refs || []) {
       assert(ref <= maxSourceIndex, `${candidate.name} source ref ${ref} is out of range`);
@@ -731,7 +752,7 @@ function buildReadme(
   lines.push(`- ${sortedHosts.length} verified hosts checked against current public sources as of ${lastUpdated}.`);
   lines.push(`- ${pendingCount} main-host leads still in review and ${rejectedCount} rejected entries preserved in [` + "`data/candidates.json`" + "](data/candidates.json) with reasons and references.");
   lines.push(
-    `- ${pendingAlternativeCandidates} alternative-method candidates, ${pendingMirrorCandidates} mirror-uploader candidates, and ${pendingCloudMigrationCandidates} cloud-migration candidates staged in their own pending files.`
+    `- ${pendingAlternativeCandidates} other-ways-to-share candidates, ${pendingMirrorCandidates} mirror-uploader candidates, and ${pendingCloudMigrationCandidates} cloud-migration candidates staged in their own pending files.`
   );
   lines.push("- A free-first dataset that prioritizes genuinely usable free tiers, guest flows, and honest headline limits.");
   lines.push("- A source-backed dataset designed for both human browsing and machine reuse.");
@@ -757,8 +778,8 @@ function buildReadme(
   lines.push("");
   lines.push("- Dataset: [`data/hosts.json`](data/hosts.json)");
   lines.push("- Candidate backlog: [`data/candidates.json`](data/candidates.json)");
-  lines.push("- Alternative methods: [`data/alternatives.json`](data/alternatives.json)");
-  lines.push("- Alternative method candidates: [`data/alternatives_candidates.json`](data/alternatives_candidates.json)");
+  lines.push("- Other ways to share: [`data/alternatives.json`](data/alternatives.json)");
+  lines.push("- Other ways to share candidates: [`data/alternatives_candidates.json`](data/alternatives_candidates.json)");
   lines.push("- Mirror uploaders: [`data/mirror_uploaders.json`](data/mirror_uploaders.json)");
   lines.push("- Mirror uploader candidates: [`data/mirror_uploaders_candidates.json`](data/mirror_uploaders_candidates.json)");
   lines.push("- Cloud migration tools: [`data/cloud_migration.json`](data/cloud_migration.json)");

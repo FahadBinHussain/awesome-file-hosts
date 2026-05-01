@@ -1,5 +1,128 @@
 [
   {
+    "name": "Mirrored",
+    "url": "https://www.mirrored.to/",
+    "summary": "Mirror-uploader service that uploads files to multiple downstream hosts and returns an aggregate download page.",
+    "account": {
+      "required": false,
+      "benefits": "Guest uploads are supported for hosts that allow anonymous uploads. Accounts add file management and the ability to upload into the user's own accounts on supported hosts.",
+      "source_refs": [
+        1
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://www.mirrored.to/p/api-doc?lang=en",
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Mirrored publishes official HTTPS API documentation for uploads, account info, and file information.",
+      "source_refs": [
+        2
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types depend on selected downstream hosts; the current homepage lists regular file hosts and a separate group of video-only hosts.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The live product and API documentation are served over HTTPS. Mirrored does not position itself as end-to-end encrypted storage.",
+      "source_refs": [
+        0,
+        2
+      ]
+    },
+    "tags": [
+      "mirror-uploader",
+      "remote-url",
+      "api"
+    ],
+    "sources": [
+      {
+        "label": "Mirrored homepage",
+        "url": "https://www.mirrored.to/",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official homepage verified in a live browser: active local-file and remote-URL upload forms, 750 MB regular upload limit, multiple host choices, and current free service messaging."
+      },
+      {
+        "label": "Mirrored FAQ",
+        "url": "https://www.mirrored.to/p/faq",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official FAQ covering anonymous uploads, non-hosting behavior, and mirror-service workflow."
+      },
+      {
+        "label": "Mirrored API docs",
+        "url": "https://www.mirrored.to/p/api-doc?lang=en",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official API documentation for authenticated HTTPS uploads and file/account info."
+      }
+    ],
+    "kind": "mirror_uploader",
+    "profile": {
+      "max_file_size": {
+        "value": 750,
+        "unit": "MB",
+        "notes": "The current official homepage says regular users can upload up to 750 MB per file, while PRO users can upload up to 3 GB per file.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "guest_uploads": {
+        "value": true,
+        "notes": "Guest uploads are supported for hosts that allow anonymous uploads. Accounts add file management and the ability to upload into the user's own accounts on supported hosts.",
+        "source_refs": [
+          1
+        ]
+      },
+      "remote_import": {
+        "value": true,
+        "notes": "The current official upload page exposes a Remote URL Upload mode.",
+        "source_refs": [
+          0
+        ]
+      },
+      "torrent_import": {
+        "value": null,
+        "notes": "Current first-party pages reviewed here do not clearly publish a torrent import workflow.",
+        "source_refs": [
+          0,
+          1,
+          2
+        ]
+      },
+      "stores_files_itself": {
+        "value": false,
+        "notes": "Official FAQ says Mirrored is not a file-hosting site; mirrored files live on downstream hosts and Mirrored keeps aggregate links.",
+        "source_refs": [
+          1
+        ]
+      },
+      "retention_model": {
+        "value": "Link database plus downstream hosts",
+        "notes": "Conditional: Mirrored stores aggregate links and background-mirrors files to downstream hosts, so long-term availability depends on both Mirrored's link database and the selected mirror hosts.",
+        "source_refs": [
+          1
+        ]
+      },
+      "downstream_dependency": {
+        "value": "Downstream hosts determine delivery",
+        "notes": "Mirrored availability and download behavior depend on the selected downstream hosts and their own rules.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    }
+  },
+  {
     "name": "MultiUp",
     "url": "https://multiup.io/en/",
     "summary": "Mirror-uploader service that can upload a file once and fan it out to multiple downstream file hosts.",

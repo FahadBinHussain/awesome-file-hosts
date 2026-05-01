@@ -18,9 +18,9 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 
 ## What this includes
 
-- 88 verified hosts checked against current public sources as of 2026-04-30.
-- 1 main-host leads still in review and 153 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
-- 0 alternative-method candidates, 7 mirror-uploader candidates, and 7 cloud-migration candidates staged in their own pending files.
+- 89 verified hosts checked against current public sources as of 2026-05-01.
+- 22 main-host leads still in review and 153 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
+- 0 other-ways-to-share candidates, 0 mirror-uploader candidates, and 0 cloud-migration candidates staged in their own pending files.
 - A free-first dataset that prioritizes genuinely usable free tiers, guest flows, and honest headline limits.
 - A source-backed dataset designed for both human browsing and machine reuse.
 - A bias toward open-source, open-protocol, and automation-friendly services when the evidence supports them.
@@ -117,6 +117,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [Ulozto](https://ulozto.net/) - Modern cloud storage service whose free account starts at 1 GB and can unlock 25 GB after card verification, with official mobile apps, Windows backup tooling, end-to-end encryption claims, and a resumable upload API. _(Max: 1 GB | Retention: No automatic expiry | Account: Yes | API | CLI | E2EE)_
 - [Upload.ee](https://www.upload.ee/) - Estonian file host with anonymous uploads, broad file-type support, and clear free retention rules for guest and registered users. _(Max: 100 MB | Retention: 50 days | Account: No)_
 - [UploadFiles.io](https://ufile.io/) - Free file sharing service with no-registration guest uploads, 5 GB max file size, optional expiry controls, and an upgrade path to free managed storage. _(Max: 5 GB | Retention: 30 days | Account: No)_
+- [UploadNow](https://uploadnow.io/) - Free-first file sharing and cloud storage service with guest uploads, unlimited download count and speed, and optional accounts for permanent storage plus advanced file management. _(Max: Not published | Retention: Conditional | Account: No)_
 - [UsersDrive](https://usersdrive.com/) - No-account file hosting service with password-protected links, remote URL uploads, and a clearly published max upload size on the public upload form. _(Max: 5250 MB | Retention: 14 days | Account: No)_
 - [vgy.me](https://vgy.me/) - Simple image host with anonymous uploads, a public upload API, and longer retention for account-linked images. _(Max: 20 MB | Retention: Conditional | Account: No | API | CLI)_
 - [ViKiNG FiLE](https://vikingfile.com/) - Anonymous file host advertising unlimited file size and storage, with a public API and 15-day free retention after the last download. _(Max: Unlimited | Retention: 15 days | Account: No | API | CLI)_
@@ -130,8 +131,8 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 
 - Dataset: [`data/hosts.json`](data/hosts.json)
 - Candidate backlog: [`data/candidates.json`](data/candidates.json)
-- Alternative methods: [`data/alternatives.json`](data/alternatives.json)
-- Alternative method candidates: [`data/alternatives_candidates.json`](data/alternatives_candidates.json)
+- Other ways to share: [`data/alternatives.json`](data/alternatives.json)
+- Other ways to share candidates: [`data/alternatives_candidates.json`](data/alternatives_candidates.json)
 - Mirror uploaders: [`data/mirror_uploaders.json`](data/mirror_uploaders.json)
 - Mirror uploader candidates: [`data/mirror_uploaders_candidates.json`](data/mirror_uploaders_candidates.json)
 - Cloud migration tools: [`data/cloud_migration.json`](data/cloud_migration.json)

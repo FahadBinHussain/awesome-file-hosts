@@ -128,6 +128,9 @@
                 "notes": { "type": "string" },
                 "source_refs": { "$ref": "#/$defs/sourceRefs" }
               }
+            },
+            "public_sharing": {
+              "$ref": "#/$defs/booleanField"
             }
           }
         },

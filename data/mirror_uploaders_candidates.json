@@ -1,7 +1,7 @@
 [
   {
     "name": "EmbedUpload",
-    "url": null,
+    "url": "https://embedupload.com/",
     "summary": "Candidate mirror-uploader service pending first-party verification for upload-once fan-out across multiple downstream hosts.",
     "account": {
       "required": null,
@@ -28,9 +28,17 @@
     },
     "tags": [
       "mirror-uploader",
-      "pending-review"
+      "rejected",
+      "dead-service"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "label": "EmbedUpload homepage test",
+        "url": "https://embedupload.com/",
+        "retrieved_at": "2026-05-01",
+        "notes": "Live browser test reached a Sedo domain-parking page instead of an active mirror-uploader product."
+      }
+    ],
     "kind": "mirror_uploader",
     "profile": {
       "max_file_size": {
@@ -63,8 +71,8 @@
         "notes": "Bandwidth behavior has not yet been verified from first-party sources."
       }
     },
-    "verification_status": "pending",
-    "reason": null
+    "verification_status": "rejected",
+    "reason": "Rejected after live browser test on 2026-05-01: the official domain resolves to a Sedo parked page, not a usable mirror-uploader service."
   },
   {
     "name": "Go4up",
@@ -107,14 +115,15 @@
     },
     "tags": [
       "mirror-uploader",
-      "pending-review"
+      "rejected",
+      "dead-service"
     ],
     "sources": [
       {
-        "label": "User-provided seed URL",
+        "label": "Go4up homepage test",
         "url": "https://go4up.com/",
-        "retrieved_at": "2026-04-28",
-        "notes": "Seed candidate added from the user-provided mirror-uploader list. Full first-party verification is still pending."
+        "retrieved_at": "2026-05-01",
+        "notes": "Live browser test redirected to a Sedo domain-parking page instead of an active mirror-uploader product."
       }
     ],
     "kind": "mirror_uploader",
@@ -164,8 +173,8 @@
         ]
       }
     },
-    "verification_status": "pending",
-    "reason": null
+    "verification_status": "rejected",
+    "reason": "Rejected after live browser test on 2026-05-01: the official domain redirects to a Sedo parked page, not an active mirror-uploader service."
   },
   {
     "name": "Mirrorace",
@@ -210,31 +219,32 @@
     },
     "tags": [
       "mirror-uploader",
-      "pending-review"
+      "rejected",
+      "uploads-disabled"
     ],
     "sources": [
       {
         "label": "MirrorAce homepage",
         "url": "https://mirrorace.com/",
-        "retrieved_at": "2026-04-30",
-        "notes": "Official homepage describing MirrorAce as a file mirroring service with remote URL uploads and file management."
+        "retrieved_at": "2026-05-01",
+        "notes": "Official homepage verified in a live browser. The page currently says uploading has been disabled, so the service is not publishable as usable today."
       },
       {
         "label": "MirrorAce FAQ",
         "url": "https://mirrorace.com/faq",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official FAQ covering 5 GB upload size, guest uploads, non-hosting behavior, and retention of mirrored links."
       },
       {
         "label": "MirrorAce account types",
         "url": "https://mirrorace.com/account/types",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official account-types page showing 10 GB file size for no-account and free-account uploads."
       },
       {
         "label": "MirrorAce API documentation",
         "url": "https://mirrorace.com/api",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official API docs for upload, remote upload, file info, authenticated API credentials, and a current example response showing a 10 GB max_file_size."
       }
     ],
@@ -298,8 +308,8 @@
         ]
       }
     },
-    "verification_status": "pending",
-    "reason": null
+    "verification_status": "rejected",
+    "reason": "Rejected after live browser test on 2026-05-01: the official homepage currently says uploading has been disabled, so it is not meaningfully usable today."
   },
   {
     "name": "Mirrored",
@@ -325,7 +335,7 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "Allowed file types probably depend on downstream hosts, but that still needs first-party verification.",
+        "notes": "Allowed file types depend on selected downstream hosts; the current homepage lists regular file hosts and a separate group of video-only hosts.",
         "source_refs": [
           0
         ]
@@ -335,32 +345,34 @@
       "https_only": true,
       "e2ee": false,
       "server_side_encryption": null,
-      "notes": "The seed entry uses an HTTPS homepage, but deeper security claims still need first-party verification.",
+      "notes": "The live product and API documentation are served over HTTPS. Mirrored does not position itself as end-to-end encrypted storage.",
       "source_refs": [
-        0
+        0,
+        2
       ]
     },
     "tags": [
       "mirror-uploader",
-      "pending-review"
+      "remote-url",
+      "api"
     ],
     "sources": [
       {
         "label": "Mirrored homepage",
         "url": "https://www.mirrored.to/",
-        "retrieved_at": "2026-04-30",
-        "notes": "Official homepage describing Mirrored as a multi-host mirror uploader and showing current free-vs-PRO per-file upload limits."
+        "retrieved_at": "2026-05-01",
+        "notes": "Official homepage verified in a live browser: active local-file and remote-URL upload forms, 750 MB regular upload limit, multiple host choices, and current free service messaging."
       },
       {
         "label": "Mirrored FAQ",
         "url": "https://www.mirrored.to/p/faq",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official FAQ covering anonymous uploads, non-hosting behavior, and mirror-service workflow."
       },
       {
         "label": "Mirrored API docs",
         "url": "https://www.mirrored.to/p/api-doc?lang=en",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official API documentation for authenticated HTTPS uploads and file/account info."
       }
     ],
@@ -371,7 +383,7 @@
         "unit": "MB",
         "notes": "The current official homepage says regular users can upload up to 750 MB per file, while PRO users can upload up to 3 GB per file.",
         "source_refs": [
-          1,
+          0,
           2
         ]
       },
@@ -383,12 +395,10 @@
         ]
       },
       "remote_import": {
-        "value": null,
-        "notes": "Current first-party pages reviewed here do not clearly publish a remote URL import workflow.",
+        "value": true,
+        "notes": "The current official upload page exposes a Remote URL Upload mode.",
         "source_refs": [
-          0,
-          1,
-          2
+          0
         ]
       },
       "torrent_import": {
@@ -423,7 +433,7 @@
         ]
       }
     },
-    "verification_status": "pending",
+    "verification_status": "verified",
     "reason": null
   },
   {
@@ -467,14 +477,15 @@
     },
     "tags": [
       "mirror-uploader",
-      "pending-review"
+      "rejected",
+      "dead-service"
     ],
     "sources": [
       {
-        "label": "User-provided seed URL",
+        "label": "MultiFileMirror homepage test",
         "url": "https://multifilemirror.com/",
-        "retrieved_at": "2026-04-28",
-        "notes": "Seed candidate added from the user-provided mirror-uploader list. Full first-party verification is still pending."
+        "retrieved_at": "2026-05-01",
+        "notes": "Live browser test reached a ParkLogic-style parked domain page saying the domain may be for sale."
       }
     ],
     "kind": "mirror_uploader",
@@ -524,12 +535,12 @@
         ]
       }
     },
-    "verification_status": "pending",
-    "reason": null
+    "verification_status": "rejected",
+    "reason": "Rejected after live browser test on 2026-05-01: the official domain is parked/for sale, not an active mirror-uploader service."
   },
   {
     "name": "UploadMagnet",
-    "url": null,
+    "url": "https://uploadmagnet.com/",
     "summary": "Candidate mirror-uploader service pending first-party verification for upload-once fan-out across multiple downstream hosts.",
     "account": {
       "required": null,
@@ -556,9 +567,17 @@
     },
     "tags": [
       "mirror-uploader",
-      "pending-review"
+      "rejected",
+      "dead-service"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "label": "UploadMagnet homepage test",
+        "url": "https://uploadmagnet.com/",
+        "retrieved_at": "2026-05-01",
+        "notes": "Live browser test failed with DNS_PROBE_FINISHED_NXDOMAIN."
+      }
+    ],
     "kind": "mirror_uploader",
     "profile": {
       "max_file_size": {
@@ -591,8 +610,8 @@
         "notes": "Bandwidth behavior has not yet been verified from first-party sources."
       }
     },
-    "verification_status": "pending",
-    "reason": null
+    "verification_status": "rejected",
+    "reason": "Rejected after live browser test on 2026-05-01: the expected official domain does not resolve, so no current service can be verified."
   },
   {
     "name": "UpMirror",
@@ -635,14 +654,15 @@
     },
     "tags": [
       "mirror-uploader",
-      "pending-review"
+      "rejected",
+      "dead-service"
     ],
     "sources": [
       {
-        "label": "User-provided seed URL",
+        "label": "UpMirror homepage test",
         "url": "https://www.upmirror.info/",
-        "retrieved_at": "2026-04-28",
-        "notes": "Seed candidate added from the user-provided mirror-uploader list. Full first-party verification is still pending."
+        "retrieved_at": "2026-05-01",
+        "notes": "Live browser test returned only the text OK, with no product surface or upload workflow to verify."
       }
     ],
     "kind": "mirror_uploader",
@@ -692,7 +712,7 @@
         ]
       }
     },
-    "verification_status": "pending",
-    "reason": null
+    "verification_status": "rejected",
+    "reason": "Rejected after live browser test on 2026-05-01: the official URL returns only a bare OK response and exposes no usable upload or mirror workflow."
   }
 ]

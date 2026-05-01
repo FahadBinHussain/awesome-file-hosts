@@ -29,6 +29,12 @@ function InfoPair({
   );
 }
 
+function booleanFieldLabel(value: boolean | null | undefined) {
+  if (value === true) return "Yes";
+  if (value === false) return "No";
+  return "Unknown";
+}
+
 export function HostDetailPanel({ host }: { host: HostRecord | null }) {
   if (!host) {
     return (
@@ -162,6 +168,13 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
             value={host.content.allowed_file_types.notes}
             host={host}
             refs={host.content.allowed_file_types.source_refs}
+          />
+          <InfoPair
+            label="Public sharing"
+            value={booleanFieldLabel(host.content.public_sharing?.value)}
+            host={host}
+            refs={host.content.public_sharing?.source_refs}
+            notes={host.content.public_sharing?.notes ?? "Public link or share-page support has not been verified yet."}
           />
           <InfoPair
             label="Developer support"

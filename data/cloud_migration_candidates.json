@@ -40,21 +40,28 @@
     },
     "tags": [
       "cloud-migration",
-      "pending-review",
-      "multi-cloud"
+      "multi-cloud",
+      "rejected",
+      "paid-first"
     ],
     "sources": [
       {
         "label": "CloudFuze homepage",
         "url": "https://www.cloudfuze.com/",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official homepage describing CloudFuze as an enterprise migration and SaaS-governance platform."
       },
       {
         "label": "CloudFuze FAQ",
         "url": "https://www.cloudfuze.com/faqs/",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official FAQ covering free-trial limits, account creation, plan-dependent migration size, provider throttling, and security behavior."
+      },
+      {
+        "label": "CloudFuze pricing",
+        "url": "https://www.cloudfuze.com/pricing/",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official pricing page describes quote/demo-oriented paid migration licensing rather than a durable free plan."
       }
     ],
     "kind": "cloud_migration",
@@ -115,8 +122,8 @@
         ]
       }
     },
-    "verification_status": "pending",
-    "reason": null
+    "verification_status": "rejected",
+    "reason": "Rejected for the free-first dataset after current official review: CloudFuze is a paid migration service with only a limited trial/demo path, not a durable practical free tier."
   },
   {
     "name": "CloudHQ",
@@ -161,32 +168,33 @@
     },
     "tags": [
       "cloud-migration",
-      "pending-review",
-      "multi-cloud"
+      "multi-cloud",
+      "sync",
+      "backup"
     ],
     "sources": [
       {
         "label": "cloudHQ homepage",
         "url": "https://www.cloudhq.net/",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official homepage for cloudHQ."
       },
       {
         "label": "cloudHQ file size upload limits",
         "url": "https://support.cloudhq.net/file-size-upload-limit/",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official support article stating that provider limits vary and that the cloudHQ free plan upload limit is 150 MB."
       },
       {
         "label": "cloudHQ getting started sync",
         "url": "https://www.cloudhq.net/getting_started/sync",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official getting-started page describing background sync and backup workflows between cloud apps."
       },
       {
         "label": "cloudHQ sync wizard page",
         "url": "https://www.cloudhq.net/sync",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official sync wizard page showing one-way and two-way cloud sync setup."
       }
     ],
@@ -227,11 +235,12 @@
         ]
       },
       "scheduled_runs": {
-        "value": null,
-        "notes": "Current first-party sources reviewed here do not clearly publish a dedicated scheduling model.",
+        "value": true,
+        "notes": "Official support describes unlimited sync and backup on the free plan, with plan-specific limits such as the 150 MB free transfer limit.",
         "source_refs": [
           1,
-          2
+          2,
+          3
         ]
       },
       "provider_dependency": {
@@ -251,7 +260,7 @@
         ]
       }
     },
-    "verification_status": "pending",
+    "verification_status": "verified",
     "reason": null
   },
   {
@@ -297,26 +306,27 @@
     },
     "tags": [
       "cloud-migration",
-      "pending-review",
-      "multi-cloud"
+      "multi-cloud",
+      "sync",
+      "backup"
     ],
     "sources": [
       {
         "label": "Cloudsfer homepage",
         "url": "https://www.cloudsfer.com/",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official homepage for cloud migration, backup, and sync workflows."
       },
       {
         "label": "Cloudsfer FAQ",
         "url": "https://cloudsfer.com/faq/",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official FAQ covering provider-dependent file-size limits, trial behavior, and approximate transfer speed per job."
       },
       {
         "label": "Cloudsfer pricing",
         "url": "https://cloudsfer.com/pricing/",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official pricing page showing quota-based plans such as 25 GB/month, 100 GB/month, and 250 GB/month."
       }
     ],
@@ -356,8 +366,8 @@
         ]
       },
       "scheduled_runs": {
-        "value": null,
-        "notes": "Current first-party sources reviewed here do not clearly publish a dedicated scheduling model.",
+        "value": true,
+        "notes": "Official FAQ and pricing describe scheduled, repeat, delta, sync, and backup workflows, with advanced scheduling depending on plan.",
         "source_refs": [
           1,
           2
@@ -373,14 +383,14 @@
       },
       "bandwidth_model": {
         "value": "Quota and provider dependent",
-        "notes": "Conditional: official pricing is quota-based by plan, and the FAQ says transfer time depends on data size, file count, network speed, and platform limits, with roughly 5-7 GB/hour per job.",
+        "notes": "Conditional: official pricing gives the always-free/trial tier 250 MB of data volume and larger paid quotas, while the FAQ says throughput also depends on data size, file count, network speed, and platform limits.",
         "source_refs": [
           1,
           2
         ]
       }
     },
-    "verification_status": "pending",
+    "verification_status": "verified",
     "reason": null
   },
   {
@@ -763,50 +773,51 @@
     },
     "tags": [
       "cloud-migration",
-      "pending-review",
-      "multi-cloud"
+      "multi-cloud",
+      "rejected",
+      "trial-only"
     ],
     "sources": [
       {
         "label": "NetDrive homepage",
         "url": "https://www.netdrive.net/",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official homepage describing NetDrive as remote-storage mount software with background uploading and team-drive features."
       },
       {
         "label": "NetDrive pricing",
         "url": "https://www.netdrive.net/store/",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official pricing page showing free trials, personal versus team plans, and user-account limits."
       },
       {
         "label": "Bdrive CloudSync about",
         "url": "https://www.netdrive.net/wiki/cloudsync/about/",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official CloudSync overview stating that it synchronizes between storages automatically and that file transfer happens on the user's PC or Mac."
       },
       {
         "label": "Bdrive CloudSync synchronize manual",
         "url": "https://www.netdrive.net/wiki/cloudsync/application-manual/synchronize/",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official manual showing one-way synchronization behavior and task-based sync controls."
       },
       {
         "label": "Bdrive CloudSync authentication",
         "url": "https://netdrive.net/wiki/cloudsync/application-manual/authentication-in-cloudsync/",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official authentication guide explaining that CloudSync requires a Bdrive account ID and documenting personal-plan device-login behavior."
       },
       {
         "label": "Bdrive CloudSync Dropbox config",
         "url": "https://netdrive.net/wiki/cloudsync/application-manual/add-configure-a-task/dropbox-config/",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official task-configuration guide stating that users can control the bandwidth used from task options."
       },
       {
         "label": "Bdrive CloudSync settings",
         "url": "https://www.netdrive.net/wiki/cloudsync/application-manual/settings/",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official settings documentation stating that credential information is not included in CloudSync log files."
       }
     ],
@@ -874,8 +885,8 @@
         ]
       }
     },
-    "verification_status": "pending",
-    "reason": null
+    "verification_status": "rejected",
+    "reason": "Rejected for the free-first dataset after current official review: NetDrive/CloudSync is free to try only, with paid licenses after the short trial."
   },
   {
     "name": "Odrive",
@@ -920,45 +931,52 @@
     },
     "tags": [
       "cloud-migration",
-      "pending-review",
-      "multi-cloud"
+      "multi-cloud",
+      "rejected",
+      "paid-first"
     ],
     "sources": [
       {
         "label": "Odrive Docs home",
         "url": "https://docs.odrive.com/",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official documentation home describing odrive as a universal sync client with sharing, backup, and storage-linking features."
       },
       {
         "label": "odrive pricing",
         "url": "https://odrive.com/pricing",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official pricing page showing free-trial access, plan structure, encrypted transfers, and the statement that there are no limits from odrive while linked Procore storage limits still apply."
       },
       {
         "label": "Odrive sync docs",
         "url": "https://docs.odrive.com/docs/sync",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official sync documentation describing placeholder sync, reduced bandwidth usage, and reduced API call volume."
       },
       {
         "label": "Odrive security FAQs",
         "url": "https://docs.odrive.com/docs/security-faqs",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official security FAQ saying odrive does not store user files, uses encrypted transport, and encrypts stored authorization information."
       },
       {
         "label": "Odrive Sync Agent and CLI docs",
         "url": "https://docs.odrive.com/docs/odrive-sync-agent",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official Sync Agent and CLI documentation covering scriptable shell usage, auth keys, mount commands, and backup commands."
       },
       {
         "label": "Odrive encryption docs",
         "url": "https://docs.odrive.com/docs/security",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official documentation for premium zero-knowledge encryption folders with client-side encryption before files reach the cloud."
+      },
+      {
+        "label": "odrive free-consumer offering announcement",
+        "url": "https://www.odrive.com/announcement",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official announcement says odrive discontinued its free consumer offering effective March 31, 2026."
       }
     ],
     "kind": "cloud_migration",
@@ -1021,8 +1039,8 @@
         ]
       }
     },
-    "verification_status": "pending",
-    "reason": null
+    "verification_status": "rejected",
+    "reason": "Rejected for the free-first dataset after current official review: odrive discontinued its free consumer offering effective 2026-03-31, which is now in the past."
   },
   {
     "name": "Otixo",
@@ -1068,36 +1086,36 @@
     },
     "tags": [
       "cloud-migration",
-      "pending-review",
-      "multi-cloud"
+      "multi-cloud",
+      "cloud-drive",
+      "workspace"
     ],
     "sources": [
       {
         "label": "Otixo / We.Team homepage",
         "url": "https://otixo.com/",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official homepage showing the current We.Team product, free registration flows, multi-cloud integrations, and encrypted We.Team Cloud positioning."
       },
       {
         "label": "We.Team pricing",
         "url": "https://we.team/en/pricing",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official pricing page listing free and paid TeamSpace storage, personal cloud-drive storage, unlimited integrations, and AES-256 encryption claims."
       }
     ],
     "kind": "cloud_migration",
     "profile": {
       "workflow_modes": {
-        "value": "Cloud-drive access and collaboration",
-        "notes": "Current Otixo / We.Team pages focus on connected-cloud collaboration, storage access, and encrypted workspace storage.",
+        "value": "Cloud-drive access, transfer, collaboration",
+        "notes": "Official We.Team pricing lists personal cloud drive storage, third-party cloud-drive integrations, and transfer of files/folders from third-party cloud drives to the personal cloud drive.",
         "source_refs": [
-          0,
           1
         ]
       },
       "execution_model": {
-        "value": "Workspace with connected clouds",
-        "notes": "Current Otixo / We.Team product is a collaboration workspace layered over connected clouds and team storage.",
+        "value": "Workspace with personal and connected clouds",
+        "notes": "The current Otixo / We.Team product combines workspace file sharing, personal We.Team Cloud Drive storage, and connected third-party cloud drives.",
         "source_refs": [
           0,
           1
@@ -1144,7 +1162,7 @@
         ]
       }
     },
-    "verification_status": "pending",
+    "verification_status": "verified",
     "reason": null
   },
   {
@@ -1314,32 +1332,33 @@
     },
     "tags": [
       "cloud-migration",
-      "pending-review",
-      "multi-cloud"
+      "multi-cloud",
+      "rejected",
+      "out-of-scope"
     ],
     "sources": [
       {
         "label": "Skyvia homepage",
         "url": "https://skyvia.com/",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official homepage describing Skyvia as an all-in-one cloud data platform with integration, backup, query, connect, and automation products."
       },
       {
         "label": "Skyvia pricing",
         "url": "https://skyvia.com/pricing",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official pricing page listing per-product limits, including uploaded file size, records per month, backup storage, snapshot storing time, query traffic, and connect traffic."
       },
       {
         "label": "Skyvia Backup docs",
         "url": "https://docs.skyvia.com/backup/",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official documentation stating that backed-up data are stored in secure Microsoft Azure cloud storage in encrypted form and explaining backup product behavior."
       },
       {
         "label": "Skyvia subscription limits docs",
         "url": "https://docs.skyvia.com/account-management/subscription-limits-and-plans-in-more-details.html",
-        "retrieved_at": "2026-04-30",
+        "retrieved_at": "2026-05-01",
         "notes": "Official documentation describing product-specific free-versus-paid limits, including free backup retention behavior and product-specific quotas."
       }
     ],
@@ -1406,8 +1425,8 @@
         ]
       }
     },
-    "verification_status": "pending",
-    "reason": null
+    "verification_status": "rejected",
+    "reason": "Rejected as out of scope for this file-hosting-oriented section: Skyvia is a database/cloud-app data integration and backup platform, not a practical file-host or cloud-drive migration tool for the directory."
   },
   {
     "name": "UploadCloud",

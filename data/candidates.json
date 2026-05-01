@@ -48,6 +48,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -149,6 +153,13 @@
         "source_refs": [
           0,
           1
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
         ]
       }
     },
@@ -284,6 +295,10 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -392,6 +407,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -477,6 +499,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -578,6 +604,10 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -687,6 +717,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -781,6 +818,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -880,6 +921,10 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -1019,6 +1064,13 @@
           0,
           3
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -1147,6 +1199,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -1266,6 +1322,13 @@
         "source_refs": [
           3
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -1379,6 +1442,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -1478,6 +1548,10 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -1582,6 +1656,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "reason": "The current anonymfile.com domain redirects to FileFast instead of operating as a distinct host. It is better treated as an alias of an existing entry than as a separate verified service.",
@@ -1683,10 +1761,101 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
     "reason": "The current service is an incentive-driven premium filehost with affiliate monetization and throttled free downloads, so it does not meet the repo's curation bar."
+  },
+  {
+    "name": "Backblaze",
+    "url": null,
+    "summary": "Backblaze appears in Wikipedia's comparison of online backup services and needs first-party verification before inclusion in this free-first file-host database.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum file size is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and free-tier behavior still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer API and CLI support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types still need first-party verification."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Security properties have not yet been verified from first-party sources."
+    },
+    "tags": [
+      "online-backup",
+      "pending-review",
+      "wikipedia-seed"
+    ],
+    "sources": [
+      {
+        "label": "Wikipedia comparison of online backup services",
+        "url": "https://en.wikipedia.org/wiki/Comparison_of_online_backup_services",
+        "retrieved_at": "2026-05-01",
+        "notes": "Third-party seed list only. The article comparison table lists this provider, but every field still needs first-party verification before publication."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
   },
   {
     "name": "Backblaze B2",
@@ -1816,10 +1985,104 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
     "reason": "Verified as an active Backblaze B2 cloud storage service with a 10 GB free tier, 1 GB/day free downloads, public Native and S3-compatible APIs, and official mobile access."
+  },
+  {
+    "name": "Baidu Cloud",
+    "url": null,
+    "summary": "Baidu Cloud appears in Wikipedia's comparison of online backup services and needs first-party verification before inclusion in this free-first file-host database.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum file size is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and free-tier behavior still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer API and CLI support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types still need first-party verification."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Security properties have not yet been verified from first-party sources."
+    },
+    "tags": [
+      "online-backup",
+      "pending-review",
+      "wikipedia-seed"
+    ],
+    "sources": [
+      {
+        "label": "Wikipedia comparison of online backup services",
+        "url": "https://en.wikipedia.org/wiki/Comparison_of_online_backup_services",
+        "retrieved_at": "2026-05-01",
+        "notes": "Third-party seed list only. The article comparison table lists this provider, but every field still needs first-party verification before publication."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
   },
   {
     "name": "Baidu Pan",
@@ -1967,10 +2230,101 @@
           1,
           5
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
     "reason": "Current free-user onboarding appears practically inaccessible from Bangladesh: the registration form rejects Bangladeshi mobile numbers as incorrectly formatted, and SMS-login verification codes are not arriving in user-provided tests. For a free-first dataset, that makes the service fail the practical accessibility bar."
+  },
+  {
+    "name": "Barracuda Backup Service",
+    "url": null,
+    "summary": "Barracuda Backup Service appears in Wikipedia's comparison of online backup services and needs first-party verification before inclusion in this free-first file-host database.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum file size is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and free-tier behavior still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer API and CLI support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types still need first-party verification."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Security properties have not yet been verified from first-party sources."
+    },
+    "tags": [
+      "online-backup",
+      "pending-review",
+      "wikipedia-seed"
+    ],
+    "sources": [
+      {
+        "label": "Wikipedia comparison of online backup services",
+        "url": "https://en.wikipedia.org/wiki/Comparison_of_online_backup_services",
+        "retrieved_at": "2026-05-01",
+        "notes": "Third-party seed list only. The article comparison table lists this provider, but every field still needs first-party verification before publication."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
   },
   {
     "name": "BayFiles",
@@ -2052,6 +2406,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -2119,6 +2477,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -2232,6 +2594,10 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -2347,6 +2713,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -2481,9 +2854,103 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
+    "reason": null
+  },
+  {
+    "name": "Carbonite",
+    "url": null,
+    "summary": "Carbonite appears in Wikipedia's comparison of online backup services and needs first-party verification before inclusion in this free-first file-host database.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum file size is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and free-tier behavior still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer API and CLI support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types still need first-party verification."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Security properties have not yet been verified from first-party sources."
+    },
+    "tags": [
+      "online-backup",
+      "pending-review",
+      "wikipedia-seed"
+    ],
+    "sources": [
+      {
+        "label": "Wikipedia comparison of online backup services",
+        "url": "https://en.wikipedia.org/wiki/Comparison_of_online_backup_services",
+        "retrieved_at": "2026-05-01",
+        "notes": "Third-party seed list only. The article comparison table lists this provider, but every field still needs first-party verification before publication."
+      }
+    ],
+    "verification_status": "pending",
     "reason": null
   },
   {
@@ -2553,6 +3020,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -2666,6 +3137,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -2754,6 +3232,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The homepage does not publish a detailed restrictions list, but it presents the service as a general file-sharing flow.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -2873,6 +3358,13 @@
       "allowed_file_types": {
         "mode": "all_except_prohibited",
         "notes": "The public pages describe storage for photos, videos, presentations, contacts, and other files, but do not publish a narrow allowlist.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -3003,10 +3495,101 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
     "reason": "The service follows the incentive-driven premium filehost pattern with download throttling, download timers, and payout pages, so it does not meet the repo's curation bar."
+  },
+  {
+    "name": "CloudMe",
+    "url": null,
+    "summary": "CloudMe appears in Wikipedia's comparison of online backup services and needs first-party verification before inclusion in this free-first file-host database.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum file size is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and free-tier behavior still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer API and CLI support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types still need first-party verification."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Security properties have not yet been verified from first-party sources."
+    },
+    "tags": [
+      "online-backup",
+      "pending-review",
+      "wikipedia-seed"
+    ],
+    "sources": [
+      {
+        "label": "Wikipedia comparison of online backup services",
+        "url": "https://en.wikipedia.org/wiki/Comparison_of_online_backup_services",
+        "retrieved_at": "2026-05-01",
+        "notes": "Third-party seed list only. The article comparison table lists this provider, but every field still needs first-party verification before publication."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
   },
   {
     "name": "Cloudup",
@@ -3115,9 +3698,103 @@
         "source_refs": [
           1
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
+    "reason": null
+  },
+  {
+    "name": "Comodo Backup",
+    "url": null,
+    "summary": "Comodo Backup appears in Wikipedia's comparison of online backup services and needs first-party verification before inclusion in this free-first file-host database.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum file size is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and free-tier behavior still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer API and CLI support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types still need first-party verification."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Security properties have not yet been verified from first-party sources."
+    },
+    "tags": [
+      "online-backup",
+      "pending-review",
+      "wikipedia-seed"
+    ],
+    "sources": [
+      {
+        "label": "Wikipedia comparison of online backup services",
+        "url": "https://en.wikipedia.org/wiki/Comparison_of_online_backup_services",
+        "retrieved_at": "2026-05-01",
+        "notes": "Third-party seed list only. The article comparison table lists this provider, but every field still needs first-party verification before publication."
+      }
+    ],
+    "verification_status": "pending",
     "reason": null
   },
   {
@@ -3233,9 +3910,103 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
+    "reason": null
+  },
+  {
+    "name": "CrashPlan",
+    "url": null,
+    "summary": "CrashPlan appears in Wikipedia's comparison of online backup services and needs first-party verification before inclusion in this free-first file-host database.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum file size is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and free-tier behavior still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer API and CLI support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types still need first-party verification."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Security properties have not yet been verified from first-party sources."
+    },
+    "tags": [
+      "online-backup",
+      "pending-review",
+      "wikipedia-seed"
+    ],
+    "sources": [
+      {
+        "label": "Wikipedia comparison of online backup services",
+        "url": "https://en.wikipedia.org/wiki/Comparison_of_online_backup_services",
+        "retrieved_at": "2026-05-01",
+        "notes": "Third-party seed list only. The article comparison table lists this provider, but every field still needs first-party verification before publication."
+      }
+    ],
+    "verification_status": "pending",
     "reason": null
   },
   {
@@ -3349,6 +4120,10 @@
           1,
           3
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -3434,6 +4209,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -3576,6 +4355,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -3702,6 +4488,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "reason": "The current public product is not a clean general-purpose free host. It is explicitly marketed as a webmaster-only host, mixes premium and payout-host patterns, and the live download surfaces are dominated by premium direct-download upsells and partner-style piracy traffic.",
@@ -3801,6 +4591,10 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -3914,6 +4708,10 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -4030,6 +4828,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -4143,6 +4945,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -4252,6 +5058,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -4351,6 +5164,10 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -4458,6 +5275,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -4543,6 +5367,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -4654,6 +5482,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -4759,6 +5594,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -4826,6 +5668,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -4956,6 +5802,10 @@
         "source_refs": [
           4
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -5023,6 +5873,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -5142,6 +5996,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The accessible current public pages emphasize document, media, and collaboration workflows, but do not foreground a complete allowed-file-types policy.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -5266,6 +6127,10 @@
           1,
           3
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -5339,6 +6204,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -5482,6 +6351,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -5536,6 +6412,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface."
       }
     },
     "verification_status": "verified",
@@ -5602,6 +6482,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -5731,9 +6618,103 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
+    "reason": null
+  },
+  {
+    "name": "Dropmysite",
+    "url": null,
+    "summary": "Dropmysite appears in Wikipedia's comparison of online backup services and needs first-party verification before inclusion in this free-first file-host database.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum file size is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and free-tier behavior still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer API and CLI support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types still need first-party verification."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Security properties have not yet been verified from first-party sources."
+    },
+    "tags": [
+      "online-backup",
+      "pending-review",
+      "wikipedia-seed"
+    ],
+    "sources": [
+      {
+        "label": "Wikipedia comparison of online backup services",
+        "url": "https://en.wikipedia.org/wiki/Comparison_of_online_backup_services",
+        "retrieved_at": "2026-05-01",
+        "notes": "Third-party seed list only. The article comparison table lists this provider, but every field still needs first-party verification before publication."
+      }
+    ],
+    "verification_status": "pending",
     "reason": null
   },
   {
@@ -5804,6 +6785,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -5933,6 +6918,10 @@
         "source_refs": [
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -6031,9 +7020,103 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
+    "reason": null
+  },
+  {
+    "name": "Egnyte",
+    "url": null,
+    "summary": "Egnyte appears in Wikipedia's comparison of online backup services and needs first-party verification before inclusion in this free-first file-host database.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum file size is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and free-tier behavior still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer API and CLI support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types still need first-party verification."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Security properties have not yet been verified from first-party sources."
+    },
+    "tags": [
+      "online-backup",
+      "pending-review",
+      "wikipedia-seed"
+    ],
+    "sources": [
+      {
+        "label": "Wikipedia comparison of online backup services",
+        "url": "https://en.wikipedia.org/wiki/Comparison_of_online_backup_services",
+        "retrieved_at": "2026-05-01",
+        "notes": "Third-party seed list only. The article comparison table lists this provider, but every field still needs first-party verification before publication."
+      }
+    ],
+    "verification_status": "pending",
     "reason": null
   },
   {
@@ -6137,6 +7220,10 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -6204,6 +7291,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -6332,6 +7423,10 @@
           1,
           3
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -6459,6 +7554,10 @@
         "source_refs": [
           3
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -6520,6 +7619,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -6630,6 +7733,13 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -6697,6 +7807,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -6786,6 +7900,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -6905,6 +8023,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -7005,6 +8130,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -7114,6 +8246,13 @@
       "allowed_file_types": {
         "mode": "all_except_prohibited",
         "notes": "The terms prohibit illegal, copyrighted, malicious, obscene, and abusive uses, but the service otherwise accepts arbitrary uploaded content.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -7240,6 +8379,10 @@
         "source_refs": [
           3
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -7301,6 +8444,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -7374,6 +8521,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -7473,6 +8624,10 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -7558,6 +8713,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -7661,6 +8820,10 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "reason": "The surviving public indexed surface under FileCat has drifted into unrelated article-farm content, so there is no longer a trustworthy current file-host product to verify.",
@@ -7762,6 +8925,10 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -7849,6 +9016,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -7954,6 +9125,13 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -8027,6 +9205,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -8114,6 +9296,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -8269,6 +9458,13 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -8419,6 +9615,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -8535,6 +9738,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -8629,6 +9836,13 @@
       "allowed_file_types": {
         "mode": "all_except_prohibited",
         "notes": "The terms prohibit malware, copyrighted material without permission, spam, encrypted archive file lists, and other disallowed content.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -8766,6 +9980,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -8839,6 +10060,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -8948,6 +10173,10 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "reason": "The current FileQ product is centered on uploader monetization through PPD, PPS, MIX, referral profits, and premium traffic plans. That puts it in the same payout-host bucket we reject elsewhere in the dataset.",
@@ -9072,6 +10301,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -9185,6 +10418,10 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -9279,6 +10516,13 @@
       "allowed_file_types": {
         "mode": "all_except_prohibited",
         "notes": "The current terms broadly allow file uploads but prohibit malware, illegal material, certain copyright violations, misleading files, and some public-file categories.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -9401,6 +10645,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -9462,6 +10713,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -9561,6 +10816,10 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -9678,6 +10937,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -9808,6 +11071,10 @@
         "source_refs": [
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -9907,6 +11174,10 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "reason": "The current official surface is built around upload-and-earn monetization, premium upsells, and a website-owner affiliate posture. That makes it a poor fit for the repo's free-first curation bar.",
@@ -9992,6 +11263,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -10059,6 +11334,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -10132,6 +11411,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -10247,6 +11530,10 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -10332,6 +11619,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -10447,6 +11738,10 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -10534,6 +11829,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -10643,6 +11942,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -10794,6 +12100,13 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -10879,6 +12192,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -10999,6 +12316,10 @@
         "source_refs": [
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -11138,6 +12459,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -11211,6 +12539,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -11284,6 +12616,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -11396,6 +12732,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -11528,6 +12871,13 @@
         "source_refs": [
           1
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -11622,6 +12972,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -11723,6 +13080,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -11819,6 +13180,13 @@
         "source_refs": [
           1
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -11906,6 +13274,13 @@
       "allowed_file_types": {
         "mode": "all_except_prohibited",
         "notes": "The homepage currently says all file types are supported, though prohibited or abusive content may still be restricted under the service rules.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -12012,6 +13387,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -12099,6 +13478,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -12178,6 +13561,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -12295,6 +13682,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The accessible current public pages checked here do not foreground a full allowed-file-types policy.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -12450,10 +13844,188 @@
           3,
           5
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
     "reason": "IcerBox is active and now well sourced from first-party pages, but it still belongs outside the curated verified list because its official surface centers premium bandwidth and storage tiers, anti-debrid tooling, and uploader/webmaster earnings."
+  },
+  {
+    "name": "iCloud",
+    "url": null,
+    "summary": "iCloud appears in Wikipedia's comparison of online backup services and needs first-party verification before inclusion in this free-first file-host database.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum file size is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and free-tier behavior still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer API and CLI support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types still need first-party verification."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Security properties have not yet been verified from first-party sources."
+    },
+    "tags": [
+      "online-backup",
+      "pending-review",
+      "wikipedia-seed"
+    ],
+    "sources": [
+      {
+        "label": "Wikipedia comparison of online backup services",
+        "url": "https://en.wikipedia.org/wiki/Comparison_of_online_backup_services",
+        "retrieved_at": "2026-05-01",
+        "notes": "Third-party seed list only. The article comparison table lists this provider, but every field still needs first-party verification before publication."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
+  },
+  {
+    "name": "iDrive",
+    "url": null,
+    "summary": "iDrive appears in Wikipedia's comparison of online backup services and needs first-party verification before inclusion in this free-first file-host database.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum file size is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and free-tier behavior still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer API and CLI support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types still need first-party verification."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Security properties have not yet been verified from first-party sources."
+    },
+    "tags": [
+      "online-backup",
+      "pending-review",
+      "wikipedia-seed"
+    ],
+    "sources": [
+      {
+        "label": "Wikipedia comparison of online backup services",
+        "url": "https://en.wikipedia.org/wiki/Comparison_of_online_backup_services",
+        "retrieved_at": "2026-05-01",
+        "notes": "Third-party seed list only. The article comparison table lists this provider, but every field still needs first-party verification before publication."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
   },
   {
     "name": "Images.Gameru",
@@ -12563,6 +14135,10 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -12681,6 +14257,10 @@
         "source_refs": [
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -12804,9 +14384,103 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
+    "reason": null
+  },
+  {
+    "name": "Jungle Disk",
+    "url": null,
+    "summary": "Jungle Disk appears in Wikipedia's comparison of online backup services and needs first-party verification before inclusion in this free-first file-host database.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum file size is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and free-tier behavior still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer API and CLI support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types still need first-party verification."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Security properties have not yet been verified from first-party sources."
+    },
+    "tags": [
+      "online-backup",
+      "pending-review",
+      "wikipedia-seed"
+    ],
+    "sources": [
+      {
+        "label": "Wikipedia comparison of online backup services",
+        "url": "https://en.wikipedia.org/wiki/Comparison_of_online_backup_services",
+        "retrieved_at": "2026-05-01",
+        "notes": "Third-party seed list only. The article comparison table lists this provider, but every field still needs first-party verification before publication."
+      }
+    ],
+    "verification_status": "pending",
     "reason": null
   },
   {
@@ -12905,10 +14579,101 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
     "reason": "The current KatFile surfaces openly push premium plans, daily traffic quotas, faster paid downloads, referrals, and paid upgrades, which places it outside the repo's curation bar."
+  },
+  {
+    "name": "KeepVault",
+    "url": null,
+    "summary": "KeepVault appears in Wikipedia's comparison of online backup services and needs first-party verification before inclusion in this free-first file-host database.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum file size is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and free-tier behavior still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer API and CLI support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types still need first-party verification."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Security properties have not yet been verified from first-party sources."
+    },
+    "tags": [
+      "online-backup",
+      "pending-review",
+      "wikipedia-seed"
+    ],
+    "sources": [
+      {
+        "label": "Wikipedia comparison of online backup services",
+        "url": "https://en.wikipedia.org/wiki/Comparison_of_online_backup_services",
+        "retrieved_at": "2026-05-01",
+        "notes": "Third-party seed list only. The article comparison table lists this provider, but every field still needs first-party verification before publication."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
   },
   {
     "name": "Koofr",
@@ -13037,6 +14802,13 @@
           5,
           6
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -13150,6 +14922,10 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -13264,6 +15040,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -13363,6 +15146,10 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -13452,6 +15239,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "reason": "The accessible current official surface for this instance is too thin to support a trustworthy normalized entry. Rather than carry a barely sourced instance-host forever, it is rejected for insufficient current evidence.",
@@ -13557,9 +15348,103 @@
         "source_refs": [
           1
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
+    "reason": null
+  },
+  {
+    "name": "Livedrive",
+    "url": null,
+    "summary": "Livedrive appears in Wikipedia's comparison of online backup services and needs first-party verification before inclusion in this free-first file-host database.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum file size is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and free-tier behavior still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer API and CLI support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types still need first-party verification."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Security properties have not yet been verified from first-party sources."
+    },
+    "tags": [
+      "online-backup",
+      "pending-review",
+      "wikipedia-seed"
+    ],
+    "sources": [
+      {
+        "label": "Wikipedia comparison of online backup services",
+        "url": "https://en.wikipedia.org/wiki/Comparison_of_online_backup_services",
+        "retrieved_at": "2026-05-01",
+        "notes": "Third-party seed list only. The article comparison table lists this provider, but every field still needs first-party verification before publication."
+      }
+    ],
+    "verification_status": "pending",
     "reason": null
   },
   {
@@ -13670,6 +15555,10 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -13783,6 +15672,10 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -13903,6 +15796,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -14049,6 +15949,13 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -14148,6 +16055,10 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -14282,6 +16193,10 @@
           0,
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -14381,6 +16296,10 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -14486,6 +16405,10 @@
         "source_refs": [
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -14585,6 +16508,10 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -14697,6 +16624,13 @@
       "allowed_file_types": {
         "mode": "documents-images-media",
         "notes": "MiMedia officially supports common image, video, audio, and document formats including JPG, PNG, MP4, MP3, PDF, DOCX, XLSX, and PPTX.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -14823,6 +16757,10 @@
         "source_refs": [
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -14940,6 +16878,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -15053,6 +16998,10 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -15141,6 +17090,10 @@
           2,
           3
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "security": {
@@ -15320,6 +17273,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -15419,6 +17379,10 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -15492,6 +17456,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -15592,6 +17560,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -15665,6 +17637,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -15792,6 +17768,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -15905,6 +17888,10 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -16027,6 +18014,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -16145,6 +18139,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -16230,6 +18231,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -16297,6 +18302,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -16412,6 +18421,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -16511,6 +18527,10 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -16627,6 +18647,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -16733,6 +18760,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -16836,6 +18870,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -16904,6 +18945,13 @@
         "notes": "The current terms page describes general content restrictions but does not publish a short whitelist/blacklist matrix on the marketing surface.",
         "source_refs": [
           2
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
         ]
       }
     },
@@ -17014,10 +19062,101 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
     "reason": "PreFiles clearly fits the premium-locker pattern. Current public evidence centers on premium-link generators, premium resellers, and explicit free-user bypass language rather than a trustworthy free host experience."
+  },
+  {
+    "name": "Proton Drive",
+    "url": null,
+    "summary": "Proton Drive appears in Wikipedia's comparison of online backup services and needs first-party verification before inclusion in this free-first file-host database.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum file size is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and free-tier behavior still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer API and CLI support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types still need first-party verification."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Security properties have not yet been verified from first-party sources."
+    },
+    "tags": [
+      "online-backup",
+      "pending-review",
+      "wikipedia-seed"
+    ],
+    "sources": [
+      {
+        "label": "Wikipedia comparison of online backup services",
+        "url": "https://en.wikipedia.org/wiki/Comparison_of_online_backup_services",
+        "retrieved_at": "2026-05-01",
+        "notes": "Third-party seed list only. The article comparison table lists this provider, but every field still needs first-party verification before publication."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
   },
   {
     "name": "PutRe",
@@ -17186,6 +19325,13 @@
           2,
           7
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -17299,6 +19445,10 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -17403,6 +19553,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The accessible current pages checked here do not foreground a full allowed-file-types policy.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -17528,6 +19685,10 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -17613,6 +19774,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -17726,6 +19891,10 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -17799,6 +19968,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -17884,6 +20057,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -18003,6 +20180,13 @@
         "source_refs": [
           1,
           3
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
         ]
       }
     },
@@ -18143,6 +20327,10 @@
           3,
           5
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -18248,6 +20436,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -18323,6 +20515,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -18408,6 +20604,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -18521,6 +20721,10 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -18640,6 +20844,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -18725,6 +20936,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -18814,6 +21029,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -18940,6 +21159,10 @@
         "source_refs": [
           3
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -19026,6 +21249,13 @@
         "notes": "The official FAQ says users may upload any file types as long as they adhere to the terms and conditions.",
         "source_refs": [
           1
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
         ]
       }
     },
@@ -19168,6 +21398,10 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -19241,10 +21475,101 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
     "reason": "SolidFiles still has a recognizable file-hosting footprint, but the current public trail is not strong enough for the verified list. Current checks point to a degraded/no-valid-HTTPS surface and a surrounding premium-link-generator bypass ecosystem, which fails the repo's curation bar."
+  },
+  {
+    "name": "SpiderOak",
+    "url": null,
+    "summary": "SpiderOak appears in Wikipedia's comparison of online backup services and needs first-party verification before inclusion in this free-first file-host database.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum file size is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and free-tier behavior still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer API and CLI support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types still need first-party verification."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Security properties have not yet been verified from first-party sources."
+    },
+    "tags": [
+      "online-backup",
+      "pending-review",
+      "wikipedia-seed"
+    ],
+    "sources": [
+      {
+        "label": "Wikipedia comparison of online backup services",
+        "url": "https://en.wikipedia.org/wiki/Comparison_of_online_backup_services",
+        "retrieved_at": "2026-05-01",
+        "notes": "Third-party seed list only. The article comparison table lists this provider, but every field still needs first-party verification before publication."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
   },
   {
     "name": "Stashr",
@@ -19360,6 +21685,13 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -19457,10 +21789,101 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
     "reason": "The official site openly uses a premium-gated cyberlocker model with very slow free speeds, session intervals, small free upload limits, and uploader payout plans, which places it outside the repo's curation bar."
+  },
+  {
+    "name": "SugarSync",
+    "url": null,
+    "summary": "SugarSync appears in Wikipedia's comparison of online backup services and needs first-party verification before inclusion in this free-first file-host database.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum file size is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and free-tier behavior still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer API and CLI support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types still need first-party verification."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Security properties have not yet been verified from first-party sources."
+    },
+    "tags": [
+      "online-backup",
+      "pending-review",
+      "wikipedia-seed"
+    ],
+    "sources": [
+      {
+        "label": "Wikipedia comparison of online backup services",
+        "url": "https://en.wikipedia.org/wiki/Comparison_of_online_backup_services",
+        "retrieved_at": "2026-05-01",
+        "notes": "Third-party seed list only. The article comparison table lists this provider, but every field still needs first-party verification before publication."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
   },
   {
     "name": "SundryFiles",
@@ -19556,6 +21979,10 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -19681,9 +22108,103 @@
         "source_refs": [
           2
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
+    "reason": null
+  },
+  {
+    "name": "Syncplicity",
+    "url": null,
+    "summary": "Syncplicity appears in Wikipedia's comparison of online backup services and needs first-party verification before inclusion in this free-first file-host database.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum file size is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and free-tier behavior still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer API and CLI support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types still need first-party verification."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Security properties have not yet been verified from first-party sources."
+    },
+    "tags": [
+      "online-backup",
+      "pending-review",
+      "wikipedia-seed"
+    ],
+    "sources": [
+      {
+        "label": "Wikipedia comparison of online backup services",
+        "url": "https://en.wikipedia.org/wiki/Comparison_of_online_backup_services",
+        "retrieved_at": "2026-05-01",
+        "notes": "Third-party seed list only. The article comparison table lists this provider, but every field still needs first-party verification before publication."
+      }
+    ],
+    "verification_status": "pending",
     "reason": null
   },
   {
@@ -19748,10 +22269,101 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
     "reason": "SyncsOnline is active, but current public reputation data is bad enough that it should not stay in the curated backlog. Multiple current security/reputation sources flag it as suspicious or possible malware despite the domain being live."
+  },
+  {
+    "name": "Tarsnap",
+    "url": null,
+    "summary": "Tarsnap appears in Wikipedia's comparison of online backup services and needs first-party verification before inclusion in this free-first file-host database.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum file size is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and free-tier behavior still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer API and CLI support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types still need first-party verification."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Security properties have not yet been verified from first-party sources."
+    },
+    "tags": [
+      "online-backup",
+      "pending-review",
+      "wikipedia-seed"
+    ],
+    "sources": [
+      {
+        "label": "Wikipedia comparison of online backup services",
+        "url": "https://en.wikipedia.org/wiki/Comparison_of_online_backup_services",
+        "retrieved_at": "2026-05-01",
+        "notes": "Third-party seed list only. The article comparison table lists this provider, but every field still needs first-party verification before publication."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
   },
   {
     "name": "TempSend",
@@ -19835,6 +22447,13 @@
       "allowed_file_types": {
         "mode": "all_except_prohibited",
         "notes": "The homepage FAQ says TempSend accepts any file extension, while explicitly forbidding copyrighted or illegal content.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -19989,6 +22608,13 @@
           0,
           4
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -20116,6 +22742,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -20252,6 +22885,10 @@
         "source_refs": [
           3
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -20365,6 +23002,10 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -20517,10 +23158,101 @@
           4,
           6
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
     "reason": "Top4top is active and its own pages expose a real guest-upload and member-management surface, but the current public reputation trail is too noisy for the curated verified list. Multiple recent security or reputation sources still flag it as suspicious or blacklisted despite the service being live."
+  },
+  {
+    "name": "Tresorit",
+    "url": null,
+    "summary": "Tresorit appears in Wikipedia's comparison of online backup services and needs first-party verification before inclusion in this free-first file-host database.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum file size is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and free-tier behavior still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer API and CLI support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types still need first-party verification."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Security properties have not yet been verified from first-party sources."
+    },
+    "tags": [
+      "online-backup",
+      "pending-review",
+      "wikipedia-seed"
+    ],
+    "sources": [
+      {
+        "label": "Wikipedia comparison of online backup services",
+        "url": "https://en.wikipedia.org/wiki/Comparison_of_online_backup_services",
+        "retrieved_at": "2026-05-01",
+        "notes": "Third-party seed list only. The article comparison table lists this provider, but every field still needs first-party verification before publication."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
   },
   {
     "name": "Tresorit Send",
@@ -20618,6 +23350,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -20719,6 +23458,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -20792,6 +23535,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -20864,6 +23611,13 @@
         "source_refs": [
           0,
           1
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
         ]
       }
     },
@@ -21007,6 +23761,13 @@
         "source_refs": [
           2
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -21129,6 +23890,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -21242,10 +24010,101 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
     "reason": "The current UniBytes trail is no longer strong enough for the verified list. Current public records show the domain using Parklogic parking infrastructure, while the surviving file-host footprint is mostly old payout-host residue and premium-generator references."
+  },
+  {
+    "name": "Unitrends Vault2Cloud",
+    "url": null,
+    "summary": "Unitrends Vault2Cloud appears in Wikipedia's comparison of online backup services and needs first-party verification before inclusion in this free-first file-host database.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum file size is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and free-tier behavior still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer API and CLI support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types still need first-party verification."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Security properties have not yet been verified from first-party sources."
+    },
+    "tags": [
+      "online-backup",
+      "pending-review",
+      "wikipedia-seed"
+    ],
+    "sources": [
+      {
+        "label": "Wikipedia comparison of online backup services",
+        "url": "https://en.wikipedia.org/wiki/Comparison_of_online_backup_services",
+        "retrieved_at": "2026-05-01",
+        "notes": "Third-party seed list only. The article comparison table lists this provider, but every field still needs first-party verification before publication."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
   },
   {
     "name": "up07",
@@ -21315,6 +24174,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -21439,6 +24302,10 @@
         "source_refs": [
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -21524,6 +24391,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -21591,6 +24462,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -21710,6 +24585,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -21783,6 +24665,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -21856,6 +24742,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -21974,6 +24864,10 @@
         "source_refs": [
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -22059,6 +24953,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -22184,6 +25082,10 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -22297,6 +25199,10 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -22370,6 +25276,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -22484,6 +25394,10 @@
         "source_refs": [
           3
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -22557,6 +25471,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -22570,25 +25488,28 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "Conditional: the official pages market larger limits for account users and mention account file limits, but the accessible homepage does not publish one clean per-file upload-size cap.",
+        "notes": "Not published: the active upload page and public help text do not expose one clean guest per-file cap.",
         "source_refs": [
-          0
+          0,
+          1
         ]
       },
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "Conditional: anonymous uploads remain available while they are regularly downloaded, otherwise they expire after 7 days. With an UploadNow user account, files do not expire unless the user schedules deletion.",
+        "notes": "Conditional: public FAQ says accounts can store files without time limitations; guest-link lifetime is not published as one clean number on the current public pages reviewed.",
         "source_refs": [
-          0
+          0,
+          1
         ]
       },
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "Conditional: guest uploads remain accessible while regularly downloaded, while account plans add explicit storage limits and upgraded plans advertise storing files without limitations.",
+        "notes": "Conditional: the public UI exposes guest upload/storage flows and account upgrades, but it does not publish one clean free storage quota in the public text reviewed.",
         "source_refs": [
-          0
+          0,
+          1
         ]
       },
       "bandwidth": {
@@ -22602,35 +25523,37 @@
       "max_file_size_account": {
         "value": null,
         "unit": null,
-        "notes": "Conditional: account users get larger limits and advanced features according to the official plan text, but the accessible current surface does not publish one clean signed-in per-file upload-size cap.",
+        "notes": "Not published: public account-upgrade messaging says account users get larger limits, but one clean per-file account cap was not published on the pages reviewed.",
         "source_refs": [
-          0
+          0,
+          1
         ]
       },
       "storage_account": {
         "value": null,
         "unit": null,
-        "notes": "Conditional: the homepage and embedded plan text mention account storage limits for free users and larger or unrestricted storage on upgraded plans, but the accessible current surface does not publish one clean signed-in storage quota.",
+        "notes": "Conditional: the FAQ says accounts can store files without time limitations, but the public pages reviewed do not publish one clean free-account storage quota.",
         "source_refs": [
-          0
+          1
         ]
       }
     },
     "account": {
       "required": false,
-      "benefits": "No registration is required for upload or download. Accounts add permanent storage, folder downloads, scheduled expiry, trash, and advanced file-manager features.",
-        "source_refs": [
-          0
-        ]
+      "benefits": "No registration is required for upload or download. Accounts add file management and storage without time limitations according to the public FAQ.",
+      "source_refs": [
+        0,
+        1
+      ]
     },
     "developer": {
-      "api_available": true,
+      "api_available": false,
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The current first-party plan text advertises API access for account users, but a public API documentation URL was not surfaced in this pass.",
+      "notes": "The site exposes an API navigation item, but the current public API page is placeholder text and does not publish usable API docs.",
       "source_refs": [
-          0
+        2
       ]
     },
     "security": {
@@ -22639,19 +25562,32 @@
       "server_side_encryption": true,
       "notes": "Official pages say data is encrypted in transit using SSL/TLS and at rest using 256-bit encryption, but they do not claim end-to-end encryption.",
       "source_refs": [
-          0
+        0
       ]
     },
     "tags": [
       "file-sharing",
-      "pending-review"
+      "cloud-storage",
+      "guest-upload"
     ],
     "sources": [
       {
         "label": "UploadNow homepage",
         "url": "https://uploadnow.io/",
-        "retrieved_at": "2026-04-30",
-        "notes": "Official homepage and embedded translated content showing no-registration guest uploads, unlimited download count and speed, 7-day anonymous expiry, non-expiring account files, encryption at rest, and account-upgrade messaging."
+        "retrieved_at": "2026-05-01",
+        "notes": "Official homepage verified in a live browser: guest uploads are active, all file types are accepted, downloads are described as unlimited, and the service positions itself as essentially free with optional account upgrades."
+      },
+      {
+        "label": "UploadNow FAQ",
+        "url": "https://uploadnow.io/faq",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official FAQ verified in a live browser: UploadNow says it is essentially free and accounts can store files without time limitations."
+      },
+      {
+        "label": "UploadNow API page",
+        "url": "https://uploadnow.io/use-api",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official API navigation exists, but the current page is placeholder text and does not publish usable public API documentation."
       }
     ],
     "content": {
@@ -22661,10 +25597,17 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "reason": null,
-    "verification_status": "pending"
+    "verification_status": "verified"
   },
   {
     "name": "UploadOcean",
@@ -22774,6 +25717,10 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -22887,6 +25834,10 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -23017,6 +25968,10 @@
           2,
           3
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -23102,6 +26057,10 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -23215,6 +26174,10 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -23314,6 +26277,10 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -23408,6 +26375,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -23521,6 +26492,10 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -23594,6 +26569,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -23729,6 +26708,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -23841,6 +26827,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -23941,6 +26934,13 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -24040,6 +27040,10 @@
           0,
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -24181,6 +27185,10 @@
         "source_refs": [
           5
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -24254,6 +27262,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -24356,6 +27368,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -24489,6 +27508,13 @@
           1,
           2
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -24601,6 +27627,10 @@
         "source_refs": [
           1
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -24674,6 +27704,10 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "No verified allowed-file-types policy is preserved for this review-queue item."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
@@ -24787,6 +27821,13 @@
       "allowed_file_types": {
         "mode": "see-notes",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "source_refs": [
+          0
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
         "source_refs": [
           0
         ]
@@ -24907,6 +27948,13 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public link or share-page support is part of this verified candidate record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
       }
     },
     "verification_status": "verified",
@@ -24992,10 +28040,101 @@
         "source_refs": [
           0
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",
     "reason": "ZippyShare posted an official farewell notice and shut down in March 2023."
+  },
+  {
+    "name": "Zmanda Cloud Backup",
+    "url": null,
+    "summary": "Zmanda Cloud Backup appears in Wikipedia's comparison of online backup services and needs first-party verification before inclusion in this free-first file-host database.",
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum file size is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Retention is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth is not yet verified from first-party sources. This row was seeded from a third-party online-backup comparison table.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": null,
+      "benefits": "Account requirements and free-tier behavior still need first-party verification.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer API and CLI support have not yet been verified from first-party sources."
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Allowed file types still need first-party verification."
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Security properties have not yet been verified from first-party sources."
+    },
+    "tags": [
+      "online-backup",
+      "pending-review",
+      "wikipedia-seed"
+    ],
+    "sources": [
+      {
+        "label": "Wikipedia comparison of online backup services",
+        "url": "https://en.wikipedia.org/wiki/Comparison_of_online_backup_services",
+        "retrieved_at": "2026-05-01",
+        "notes": "Third-party seed list only. The article comparison table lists this provider, but every field still needs first-party verification before publication."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
   },
   {
     "name": "Zofile",
@@ -25109,6 +28248,10 @@
         "source_refs": [
           2
         ]
+      },
+      "public_sharing": {
+        "value": null,
+        "notes": "Public link or share-page support was not evaluated because this lead is rejected."
       }
     },
     "verification_status": "rejected",

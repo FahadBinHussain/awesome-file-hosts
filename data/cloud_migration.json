@@ -1,5 +1,269 @@
 [
   {
+    "name": "CloudHQ",
+    "url": "https://www.cloudhq.net/",
+    "summary": "Cloud sync, backup, and migration service for keeping data moving between connected cloud apps and storage providers.",
+    "account": {
+      "required": true,
+      "benefits": "An account is required to set up sync, backup, migration, or cloud-to-cloud workflows.",
+      "source_refs": [
+        2,
+        3
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The reviewed first-party pages confirm HTTPS product surfaces, but they do not position cloudHQ as end-to-end encrypted cloud storage.",
+      "source_refs": [
+        0,
+        2
+      ]
+    },
+    "tags": [
+      "cloud-migration",
+      "multi-cloud",
+      "sync",
+      "backup"
+    ],
+    "sources": [
+      {
+        "label": "cloudHQ homepage",
+        "url": "https://www.cloudhq.net/",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official homepage for cloudHQ."
+      },
+      {
+        "label": "cloudHQ file size upload limits",
+        "url": "https://support.cloudhq.net/file-size-upload-limit/",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official support article stating that provider limits vary and that the cloudHQ free plan upload limit is 150 MB."
+      },
+      {
+        "label": "cloudHQ getting started sync",
+        "url": "https://www.cloudhq.net/getting_started/sync",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official getting-started page describing background sync and backup workflows between cloud apps."
+      },
+      {
+        "label": "cloudHQ sync wizard page",
+        "url": "https://www.cloudhq.net/sync",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official sync wizard page showing one-way and two-way cloud sync setup."
+      }
+    ],
+    "kind": "cloud_migration",
+    "profile": {
+      "workflow_modes": {
+        "value": "Sync, backup, migration",
+        "notes": "Current official pages position cloudHQ around sync, backup, and migration between cloud apps and storage providers.",
+        "source_refs": [
+          0,
+          2,
+          3
+        ]
+      },
+      "execution_model": {
+        "value": "Background connected-app sync",
+        "notes": "Current cloudHQ pages describe background sync and backup flows between connected apps and storage providers.",
+        "source_refs": [
+          2,
+          3
+        ]
+      },
+      "item_limit": {
+        "value": 150,
+        "unit": "MB",
+        "notes": "Official cloudHQ support says the free plan upload limit is 150 MB, while underlying provider limits still vary by connected cloud service and account type.",
+        "source_refs": [
+          1
+        ]
+      },
+      "included_storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Conditional: official pages position cloudHQ around sync and backup between cloud apps, not around a standalone personal storage quota.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "scheduled_runs": {
+        "value": true,
+        "notes": "Official support describes unlimited sync and backup on the free plan, with plan-specific limits such as the 150 MB free transfer limit.",
+        "source_refs": [
+          1,
+          2,
+          3
+        ]
+      },
+      "provider_dependency": {
+        "value": "Connected-provider dependent",
+        "notes": "cloudHQ works across connected providers and background sync flows rather than through a standalone storage bucket.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Provider and account dependent",
+        "notes": "Conditional: official support says file-size and upload behavior vary by connected cloud app and account type, while cloudHQ itself works continuously in the background to sync or back up data.",
+        "source_refs": [
+          1,
+          2
+        ]
+      }
+    }
+  },
+  {
+    "name": "Cloudsfer",
+    "url": "https://www.cloudsfer.com/",
+    "summary": "Cloud migration, backup, and sync service for transferring files between connected storage providers with quota-based plans.",
+    "account": {
+      "required": true,
+      "benefits": "An account is required to use trial quotas, create migrations, and run backup or sync jobs across providers.",
+      "source_refs": [
+        1,
+        2
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Developer and automation support have not yet been verified from first-party sources.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The reviewed first-party pages confirm HTTPS product surfaces, but they do not position Cloudsfer as end-to-end encrypted storage.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "tags": [
+      "cloud-migration",
+      "multi-cloud",
+      "sync",
+      "backup"
+    ],
+    "sources": [
+      {
+        "label": "Cloudsfer homepage",
+        "url": "https://www.cloudsfer.com/",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official homepage for cloud migration, backup, and sync workflows."
+      },
+      {
+        "label": "Cloudsfer FAQ",
+        "url": "https://cloudsfer.com/faq/",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official FAQ covering provider-dependent file-size limits, trial behavior, and approximate transfer speed per job."
+      },
+      {
+        "label": "Cloudsfer pricing",
+        "url": "https://cloudsfer.com/pricing/",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official pricing page showing quota-based plans such as 25 GB/month, 100 GB/month, and 250 GB/month."
+      }
+    ],
+    "kind": "cloud_migration",
+    "profile": {
+      "workflow_modes": {
+        "value": "Migration, sync, backup",
+        "notes": "Current official pages position Cloudsfer around migrations, sync, and backup jobs across connected providers.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "execution_model": {
+        "value": "Quota-based server-side transfers",
+        "notes": "Official FAQ and pricing position Cloudsfer as a quota-based transfer and sync platform between connected clouds.",
+        "source_refs": [
+          1,
+          2
+        ]
+      },
+      "item_limit": {
+        "value": null,
+        "unit": null,
+        "notes": "Conditional: official FAQ says file-size limits depend on the source and destination platform rather than on a universal Cloudsfer cap.",
+        "source_refs": [
+          1
+        ]
+      },
+      "included_storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Conditional: official pages frame Cloudsfer around moving or syncing provider-owned storage rather than providing a separate personal storage bucket.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "scheduled_runs": {
+        "value": true,
+        "notes": "Official FAQ and pricing describe scheduled, repeat, delta, sync, and backup workflows, with advanced scheduling depending on plan.",
+        "source_refs": [
+          1,
+          2
+        ]
+      },
+      "provider_dependency": {
+        "value": "Connected-provider dependent",
+        "notes": "Cloudsfer migrates, syncs, and backs up provider-owned storage rather than providing its own personal cloud bucket.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Quota and provider dependent",
+        "notes": "Conditional: official pricing gives the always-free/trial tier 250 MB of data volume and larger paid quotas, while the FAQ says throughput also depends on data size, file count, network speed, and platform limits.",
+        "source_refs": [
+          1,
+          2
+        ]
+      }
+    }
+  },
+  {
     "name": "MultCloud",
     "url": "https://www.multcloud.com/",
     "summary": "Cloud-to-cloud migration tool for transferring, syncing, and backing up files between connected storage providers without manual download and re-upload.",
@@ -143,6 +407,127 @@
         "source_refs": [
           1,
           3
+        ]
+      }
+    }
+  },
+  {
+    "name": "Otixo",
+    "url": "https://otixo.com/",
+    "summary": "Otixo's current We.Team product combines team collaboration, integrated third-party cloud drives, and encrypted personal or team cloud storage.",
+    "account": {
+      "required": true,
+      "benefits": "Accounts are required to register with email, Google, or Apple and to access TeamSpaces, personal cloud storage, and connected external cloud drives.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "No current public API or CLI workflow was verified on the official Otixo / We.Team pages reviewed.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "Supported file types depend on the personal We.Team Cloud, TeamSpace file sharing, and the connected third-party cloud drives.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": true,
+      "notes": "Official pricing says TeamSpace and personal We.Team Cloud storage are AES-256 encrypted, and the live product surfaces use HTTPS.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "tags": [
+      "cloud-migration",
+      "multi-cloud",
+      "cloud-drive",
+      "workspace"
+    ],
+    "sources": [
+      {
+        "label": "Otixo / We.Team homepage",
+        "url": "https://otixo.com/",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official homepage showing the current We.Team product, free registration flows, multi-cloud integrations, and encrypted We.Team Cloud positioning."
+      },
+      {
+        "label": "We.Team pricing",
+        "url": "https://we.team/en/pricing",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official pricing page listing free and paid TeamSpace storage, personal cloud-drive storage, unlimited integrations, and AES-256 encryption claims."
+      }
+    ],
+    "kind": "cloud_migration",
+    "profile": {
+      "workflow_modes": {
+        "value": "Cloud-drive access, transfer, collaboration",
+        "notes": "Official We.Team pricing lists personal cloud drive storage, third-party cloud-drive integrations, and transfer of files/folders from third-party cloud drives to the personal cloud drive.",
+        "source_refs": [
+          1
+        ]
+      },
+      "execution_model": {
+        "value": "Workspace with personal and connected clouds",
+        "notes": "The current Otixo / We.Team product combines workspace file sharing, personal We.Team Cloud Drive storage, and connected third-party cloud drives.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "item_limit": {
+        "value": null,
+        "unit": null,
+        "notes": "Conditional: official We.Team pages describe integrations across many cloud drives and protocols, but they do not publish one universal per-file cap.",
+        "source_refs": [
+          0
+        ]
+      },
+      "included_storage": {
+        "value": 5,
+        "unit": "GB",
+        "notes": "Official pricing gives the free plan 5 GB of TeamSpace storage and 5 GB of personal We.Team Cloud Drive storage, while paid tiers raise TeamSpace storage per member.",
+        "source_refs": [
+          1
+        ]
+      },
+      "scheduled_runs": {
+        "value": null,
+        "notes": "Current first-party sources reviewed here do not clearly publish a dedicated scheduling model.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "provider_dependency": {
+        "value": "Mixed We.Team + connected providers",
+        "notes": "Current Otixo / We.Team combines its own encrypted storage with connected third-party cloud drives.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Plan and integration dependent",
+        "notes": "Conditional: official pages publish unlimited cloud integrations and meetings, but they do not give one standalone transfer-quota number for cloud-drive traffic.",
+        "source_refs": [
+          0,
+          1
         ]
       }
     }
