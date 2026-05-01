@@ -367,6 +367,7 @@ export type SiteData = {
 
 const DATA_DIR = path.join(process.cwd(), "data");
 const NO_EXPIRY_RETENTION_SORT_VALUE = 9_999_999;
+const UNLIMITED_SIZE_SORT_VALUE_MB = Number.MAX_SAFE_INTEGER;
 
 function hasNoAutomaticExpiryNotes(notes: string) {
   const normalized = notes.toLowerCase();
@@ -610,6 +611,19 @@ function normalizeToMb(value: number | null, unit: string | null) {
   return null;
 }
 
+function limitSortValueMb(limit: LimitField | null | undefined) {
+  if (!limit) return null;
+
+  const numericMb = normalizeToMb(limit.value, limit.unit);
+  if (numericMb !== null) return numericMb;
+
+  if (limitLabel(limit) === "Unlimited") {
+    return UNLIMITED_SIZE_SORT_VALUE_MB;
+  }
+
+  return null;
+}
+
 function normalizeRetentionToDays(value: number | null, unit: string | null) {
   if (value === null || unit === null) return null;
 
@@ -628,7 +642,7 @@ function retentionSortValue(limit: LimitField) {
     return numericDays;
   }
 
-  if (hasNoAutomaticExpiryNotes(limit.notes)) {
+  if (limitLabel(limit) === "Unlimited" || hasNoAutomaticExpiryNotes(limit.notes)) {
     return NO_EXPIRY_RETENTION_SORT_VALUE;
   }
 
@@ -840,23 +854,11 @@ function enrichRecord<T extends HostLikeBase>(record: T) {
     },
     sortMetrics: {
       freeModelRank: freeModelSortRank(record.free_model),
-      maxFileGuestMb: normalizeToMb(
-        guestMaxField(record)?.value ?? null,
-        guestMaxField(record)?.unit ?? null
-      ),
-      maxFileAccountMb: normalizeToMb(
-        accountMaxField(record)?.value ?? null,
-        accountMaxField(record)?.unit ?? null
-      ),
-      storageGuestMb: normalizeToMb(
-        guestStorageField(record)?.value ?? null,
-        guestStorageField(record)?.unit ?? null
-      ),
-      storageAccountMb: normalizeToMb(
-        accountStorageField(record)?.value ?? null,
-        accountStorageField(record)?.unit ?? null
-      ),
-      bandwidthMb: normalizeToMb(record.limits.bandwidth.value, record.limits.bandwidth.unit),
+      maxFileGuestMb: limitSortValueMb(guestMaxField(record)),
+      maxFileAccountMb: limitSortValueMb(accountMaxField(record)),
+      storageGuestMb: limitSortValueMb(guestStorageField(record)),
+      storageAccountMb: limitSortValueMb(accountStorageField(record)),
+      bandwidthMb: limitSortValueMb(record.limits.bandwidth),
       retentionDays: retentionSortValue(record.limits.retention)
     }
   };
@@ -878,7 +880,7 @@ function enrichAlternative(record: AlternativeService): AlternativeRecord {
     accountLabel: accountLabel(record.account.required),
     labels,
     sortMetrics: {
-      maxFileMb: normalizeToMb(record.profile.max_file_size.value, record.profile.max_file_size.unit)
+      maxFileMb: limitSortValueMb(record.profile.max_file_size)
     },
     searchText: [
       record.name,
@@ -915,7 +917,7 @@ function enrichMirror(record: MirrorUploaderService): MirrorUploaderRecord {
     accountLabel: accountLabel(record.account.required),
     labels,
     sortMetrics: {
-      maxFileMb: normalizeToMb(record.profile.max_file_size.value, record.profile.max_file_size.unit),
+      maxFileMb: limitSortValueMb(record.profile.max_file_size),
       guestUploads: booleanMetric(record.profile.guest_uploads.value),
       remoteImport: booleanMetric(record.profile.remote_import.value),
       torrentImport: booleanMetric(record.profile.torrent_import.value),
@@ -957,11 +959,8 @@ function enrichCloudMigration(record: CloudMigrationService): CloudMigrationReco
     accountLabel: accountLabel(record.account.required),
     labels,
     sortMetrics: {
-      itemLimitMb: normalizeToMb(record.profile.item_limit.value, record.profile.item_limit.unit),
-      includedStorageMb: normalizeToMb(
-        record.profile.included_storage.value,
-        record.profile.included_storage.unit
-      ),
+      itemLimitMb: limitSortValueMb(record.profile.item_limit),
+      includedStorageMb: limitSortValueMb(record.profile.included_storage),
       scheduledRuns: booleanMetric(record.profile.scheduled_runs.value)
     },
     searchText: [
