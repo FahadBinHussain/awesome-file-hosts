@@ -302,7 +302,7 @@ const hostColumnDefs: HostColumn[] = [
       </span>
     )
   },
-  { id: "sources", label: "Sources", width: "68px", render: (host) => String(host.sources.length) }
+  { id: "sources", label: "Sources", width: "104px", render: (host) => String(host.sources.length) }
 ];
 
 const queueColumnDefs: QueueColumn[] = [
@@ -495,7 +495,7 @@ const queueColumnDefs: QueueColumn[] = [
   {
     id: "sources",
     label: "Sources",
-    width: "68px",
+    width: "104px",
     render: (candidate) => String(candidate.sources.length)
   },
   {
@@ -609,7 +609,7 @@ const adjacentQueueColumnDefs: AdjacentQueueColumn[] = [
   {
     id: "sources",
     label: "Sources",
-    width: "68px",
+    width: "104px",
     render: (candidate) => String(candidate.sources.length)
   },
   {
@@ -2594,7 +2594,7 @@ export function DatasetApp({ data }: Props) {
             )}
           </div>
 
-          <div className="-mx-4 overflow-x-auto px-4 pb-2 scrollbar-subtle md:mx-0 md:px-0">
+          <div className="relative z-0 -mx-4 overflow-x-auto pb-2 scrollbar-subtle md:mx-0">
             {!isQueueMode && mode === "hosts" ? (
               <>
                 <div className="min-w-max text-sm">
