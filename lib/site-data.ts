@@ -367,6 +367,7 @@ export type SiteData = {
 
 const DATA_DIR = path.join(process.cwd(), "data");
 const NO_EXPIRY_RETENTION_SORT_VALUE = 9_999_999;
+const UNLIMITED_RETENTION_SORT_VALUE = NO_EXPIRY_RETENTION_SORT_VALUE + 1;
 const UNLIMITED_SIZE_SORT_VALUE_MB = Number.MAX_SAFE_INTEGER;
 
 function hasNoAutomaticExpiryNotes(notes: string) {
@@ -642,7 +643,11 @@ function retentionSortValue(limit: LimitField) {
     return numericDays;
   }
 
-  if (limitLabel(limit) === "Unlimited" || hasNoAutomaticExpiryNotes(limit.notes)) {
+  if (limitLabel(limit) === "Unlimited") {
+    return UNLIMITED_RETENTION_SORT_VALUE;
+  }
+
+  if (hasNoAutomaticExpiryNotes(limit.notes)) {
     return NO_EXPIRY_RETENTION_SORT_VALUE;
   }
 

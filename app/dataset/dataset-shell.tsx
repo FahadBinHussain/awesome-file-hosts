@@ -38,6 +38,7 @@ type Props = {
 };
 
 const NO_EXPIRY_RETENTION_SORT_VALUE = 9_999_999;
+const UNLIMITED_RETENTION_SORT_VALUE = NO_EXPIRY_RETENTION_SORT_VALUE + 1;
 
 type ServiceMode = "hosts" | "alternatives" | "mirrors" | "migration";
 type DatasetMode = ServiceMode;
@@ -1415,6 +1416,10 @@ function retentionSortRank(host: HostRecord) {
     return { kind: "unknown" as const, value: Number.POSITIVE_INFINITY };
   }
 
+  if (metric === UNLIMITED_RETENTION_SORT_VALUE || host.filters.retentionLabel === "Unlimited") {
+    return { kind: "unlimited" as const, value: UNLIMITED_RETENTION_SORT_VALUE };
+  }
+
   if (
     metric === NO_EXPIRY_RETENTION_SORT_VALUE ||
     host.filters.retentionLabel === "No automatic expiry"
@@ -2459,14 +2464,6 @@ export function DatasetApp({ data }: Props) {
         if (leftRank.kind === "unknown") return 1;
         if (rightRank.kind === "unknown") return -1;
 
-        if (leftRank.kind === "infinite" && rightRank.kind === "finite") {
-          return hostSort.direction === "asc" ? 1 : -1;
-        }
-
-        if (leftRank.kind === "finite" && rightRank.kind === "infinite") {
-          return hostSort.direction === "asc" ? -1 : 1;
-        }
-
         const comparison =
           leftRank.value < rightRank.value ? -1 : leftRank.value > rightRank.value ? 1 : 0;
         return hostSort.direction === "asc" ? comparison : comparison * -1;
@@ -2571,12 +2568,6 @@ export function DatasetApp({ data }: Props) {
         if (leftRank.kind === "unknown" && rightRank.kind === "unknown") return 0;
         if (leftRank.kind === "unknown") return 1;
         if (rightRank.kind === "unknown") return -1;
-        if (leftRank.kind === "infinite" && rightRank.kind === "finite") {
-          return queueSort.direction === "asc" ? 1 : -1;
-        }
-        if (leftRank.kind === "finite" && rightRank.kind === "infinite") {
-          return queueSort.direction === "asc" ? -1 : 1;
-        }
         const comparison = leftRank.value - rightRank.value;
         return queueSort.direction === "asc" ? comparison : comparison * -1;
       }
