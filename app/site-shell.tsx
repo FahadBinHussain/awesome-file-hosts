@@ -65,7 +65,7 @@ function PillButton({
       className={[
         "rounded-[var(--radius-pill)] border px-4 py-2 text-sm transition duration-300",
         active
-          ? "rounded-[var(--radius-pill)] border-[var(--accent)]/30 bg-[var(--accent-soft)] text-[var(--accent-content)]"
+          ? "rounded-[var(--radius-pill)] border-[var(--accent)]/30 bg-[var(--accent-soft)] text-[var(--accent-soft-content)]"
           : "rounded-[var(--radius-pill)] border-[var(--line)] bg-[var(--surface-1)] text-[var(--muted)] hover:border-[var(--line-strong)] hover:text-[var(--text-primary)]"
       ].join(" ")}
     >
@@ -274,7 +274,7 @@ export function ExplorerApp({ data }: Props) {
                 onClick={() => setApiOnly((value) => !value)}
                 className={`flex w-full items-center justify-between rounded-[var(--radius-panel)] border px-3 py-3 text-sm transition ${
                   apiOnly
-                    ? "border-[var(--accent)]/30 bg-[var(--accent-soft)] text-[var(--accent-content)]"
+                    ? "border-[var(--accent)]/30 bg-[var(--accent-soft)] text-[var(--accent-soft-content)]"
                     : "border-[var(--line)] text-[var(--muted)] hover:text-[var(--text-primary)]"
                 }`}
               >
@@ -288,7 +288,7 @@ export function ExplorerApp({ data }: Props) {
                 onClick={() => setGuestOnly((value) => !value)}
                 className={`flex w-full items-center justify-between rounded-[var(--radius-panel)] border px-3 py-3 text-sm transition ${
                   guestOnly
-                    ? "border-[var(--accent)]/30 bg-[var(--accent-soft)] text-[var(--accent-content)]"
+                    ? "border-[var(--accent)]/30 bg-[var(--accent-soft)] text-[var(--accent-soft-content)]"
                     : "border-[var(--line)] text-[var(--muted)] hover:text-[var(--text-primary)]"
                 }`}
               >
@@ -302,7 +302,7 @@ export function ExplorerApp({ data }: Props) {
                 onClick={() => setE2eeOnly((value) => !value)}
                 className={`flex w-full items-center justify-between rounded-[var(--radius-panel)] border px-3 py-3 text-sm transition ${
                   e2eeOnly
-                    ? "border-[var(--accent)]/30 bg-[var(--accent-soft)] text-[var(--accent-content)]"
+                    ? "border-[var(--accent)]/30 bg-[var(--accent-soft)] text-[var(--accent-soft-content)]"
                     : "border-[var(--line)] text-[var(--muted)] hover:text-[var(--text-primary)]"
                 }`}
               >

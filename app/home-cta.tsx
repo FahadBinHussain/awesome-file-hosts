@@ -17,7 +17,7 @@ export function HomeCTA() {
             {/* Badge */}
             <div className="mb-6 inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-[var(--accent)]/30 bg-[var(--accent-soft)] px-4 py-2">
               <div className="h-2 w-2 rounded-[var(--radius-pill)] bg-[var(--accent)] animate-pulse" />
-              <span className="text-xs font-semibold uppercase tracking-wider text-[var(--accent-content)]">
+              <span className="text-xs font-semibold uppercase tracking-wider text-[var(--accent-soft-content)]">
                 Ready to explore
               </span>
             </div>

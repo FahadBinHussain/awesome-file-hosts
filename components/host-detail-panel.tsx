@@ -89,7 +89,7 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
             href={host.url}
             target="_blank"
             rel="noreferrer"
-            className="group/link flex items-center gap-2 rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-1)] px-4 py-2.5 text-xs font-semibold text-[var(--text-secondary)] shadow-sm transition-all hover:border-[var(--accent)]/40 hover:bg-[var(--accent-soft)] hover:text-[var(--accent-content)] hover:shadow-[0_0_24px_-4px_var(--accent-glow)]"
+            className="group/link flex items-center gap-2 rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-1)] px-4 py-2.5 text-xs font-semibold text-[var(--text-secondary)] shadow-sm transition-all hover:border-[var(--accent)]/40 hover:bg-[var(--accent-soft)] hover:text-[var(--accent-soft-content)] hover:shadow-[0_0_24px_-4px_var(--accent-glow)]"
           >
             <LinkSimple size={14} weight="bold" className="transition-transform group-hover/link:translate-x-0.5" />
             <span>Open site</span>

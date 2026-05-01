@@ -1010,7 +1010,7 @@ function ToolbarButton({
       className={[
         "group relative inline-flex items-center gap-2 rounded-[var(--radius-pill)] border px-3.5 py-2 text-xs font-medium transition-all duration-200",
         active
-          ? "border-[var(--accent)]/30 bg-[var(--accent-soft)] text-[var(--accent-content)] shadow-[0_0_24px_-6px_var(--accent-glow)]"
+          ? "border-[var(--accent)]/30 bg-[var(--accent-soft)] text-[var(--accent-soft-content)] shadow-[0_0_24px_-6px_var(--accent-glow)]"
           : "border-[var(--line)] bg-[var(--surface-1)] text-[var(--text-secondary)] hover:border-[var(--accent)]/50 hover:text-[var(--text-primary)] hover:shadow-[0_0_20px_-6px_var(--accent-glow)]"
       ].join(" ")}
     >
@@ -1328,7 +1328,7 @@ function CandidateDetailPanel({ candidate }: { candidate: CandidateRecord | null
                 href={candidate.url}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-1)] px-3 py-2 text-[11px] font-semibold text-[var(--text-secondary)] transition-all hover:border-[var(--accent)]/40 hover:bg-[var(--accent-soft)] hover:text-[var(--accent-content)]"
+                className="inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-1)] px-3 py-2 text-[11px] font-semibold text-[var(--text-secondary)] transition-all hover:border-[var(--accent)]/40 hover:bg-[var(--accent-soft)] hover:text-[var(--accent-soft-content)]"
               >
                 <LinkSimple size={14} weight="bold" />
                 <span>Open site</span>
@@ -1566,7 +1566,7 @@ function AdjacentCandidateDetailPanel({ candidate }: { candidate: AdjacentCandid
                 href={candidate.url}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-1)] px-3 py-2 text-[11px] font-semibold text-[var(--text-secondary)] transition-all hover:border-[var(--accent)]/40 hover:bg-[var(--accent-soft)] hover:text-[var(--accent-content)]"
+                className="inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-1)] px-3 py-2 text-[11px] font-semibold text-[var(--text-secondary)] transition-all hover:border-[var(--accent)]/40 hover:bg-[var(--accent-soft)] hover:text-[var(--accent-soft-content)]"
               >
                 <LinkSimple size={14} weight="bold" />
                 <span>Open site</span>
@@ -2590,7 +2590,7 @@ export function DatasetApp({ data }: Props) {
                           "group relative inline-flex items-center gap-2 rounded-[var(--radius-pill)] border px-2.5 py-1.5 text-[11px] font-medium transition-all duration-200",
                           hidden
                             ? "border-[var(--line)] bg-transparent text-[var(--text-muted)] hover:border-[var(--text-muted)]/40 hover:text-[var(--text-secondary)]"
-                            : "border-[var(--accent)]/20 bg-[var(--accent-soft)] text-[var(--accent-content)]"
+                            : "border-[var(--accent)]/20 bg-[var(--accent-soft)] text-[var(--accent-soft-content)]"
                         ].join(" ")}
                       >
                         {hidden ? <EyeSlash size={13} /> : <Eye size={13} />}
@@ -2646,7 +2646,7 @@ export function DatasetApp({ data }: Props) {
                           "group relative inline-flex items-center gap-2 rounded-[var(--radius-pill)] border px-2.5 py-1.5 text-[11px] font-medium transition-all duration-200",
                           hidden
                             ? "border-[var(--line)] bg-transparent text-[var(--text-muted)] hover:border-[var(--text-muted)]/40 hover:text-[var(--text-secondary)]"
-                            : "border-[var(--accent)]/20 bg-[var(--accent-soft)] text-[var(--accent-content)]"
+                            : "border-[var(--accent)]/20 bg-[var(--accent-soft)] text-[var(--accent-soft-content)]"
                         ].join(" ")}
                       >
                         {hidden ? <EyeSlash size={13} /> : <Eye size={13} />}

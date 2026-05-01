@@ -33,9 +33,9 @@
 
   /* Text hierarchy */
   --text-primary: var(--color-base-content);
-  --text-secondary: color-mix(in oklab, var(--color-base-content) 72%, transparent);
-  --text-muted: color-mix(in oklab, var(--color-base-content) 52%, transparent);
-  --text-subtle: color-mix(in oklab, var(--color-base-content) 34%, transparent);
+  --text-secondary: color-mix(in oklab, var(--color-base-content) 78%, var(--color-base-100) 22%);
+  --text-muted: color-mix(in oklab, var(--color-base-content) 62%, var(--color-base-100) 38%);
+  --text-subtle: color-mix(in oklab, var(--color-base-content) 46%, var(--color-base-100) 54%);
   --text: var(--text-primary);
   --muted: var(--text-secondary);
   --soft: var(--text-muted);
@@ -45,6 +45,7 @@
   --accent-content: var(--color-primary-content);
   --accent-hover: color-mix(in oklab, var(--color-primary) 84%, white);
   --accent-soft: color-mix(in oklab, var(--color-primary) 16%, transparent);
+  --accent-soft-content: color-mix(in oklab, var(--color-primary) 72%, var(--color-base-content) 28%);
   --accent-glow: color-mix(in oklab, var(--color-primary) 28%, transparent);
 
   /* Reusable surfaces */

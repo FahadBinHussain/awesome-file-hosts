@@ -84,7 +84,7 @@ export function ThemeSwitcher() {
                 className={[
                   "w-full rounded-[var(--radius-control)] px-4 py-2 text-left text-sm capitalize transition-all",
                   theme === t
-                    ? "bg-[var(--accent-soft)] text-[var(--accent-content)] font-medium"
+                    ? "bg-[var(--accent-soft)] text-[var(--accent-soft-content)] font-medium"
                     : "text-[var(--text-secondary)] hover:bg-[var(--surface-3)] hover:text-[var(--text-primary)]"
                 ].join(" ")}
               >
