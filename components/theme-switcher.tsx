@@ -11,22 +11,53 @@ const themes = [
   "dim", "nord", "sunset"
 ];
 
+const themeChoices = ["system", ...themes];
+
+function systemTheme() {
+  return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+}
+
+function normalizeThemeChoice(theme: string | null) {
+  if (!theme) return "system";
+  return themeChoices.includes(theme) ? theme : "system";
+}
+
+function applyThemeChoice(theme: string) {
+  const resolvedTheme = theme === "system" ? systemTheme() : theme;
+  document.documentElement.setAttribute("data-theme", resolvedTheme);
+  return resolvedTheme;
+}
+
 export function ThemeSwitcher() {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("system");
+  const [resolvedTheme, setResolvedTheme] = useState("dark");
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") || "dark";
+    const savedTheme = normalizeThemeChoice(localStorage.getItem("theme"));
     setTheme(savedTheme);
-    document.documentElement.setAttribute("data-theme", savedTheme);
+    setResolvedTheme(applyThemeChoice(savedTheme));
+
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: light)");
+    const updateSystemTheme = () => {
+      const currentTheme = normalizeThemeChoice(localStorage.getItem("theme"));
+      if (currentTheme === "system") {
+        setResolvedTheme(applyThemeChoice(currentTheme));
+      }
+    };
+
+    mediaQuery.addEventListener("change", updateSystemTheme);
+    return () => mediaQuery.removeEventListener("change", updateSystemTheme);
   }, []);
 
   const changeTheme = (newTheme: string) => {
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
-    document.documentElement.setAttribute("data-theme", newTheme);
+    setResolvedTheme(applyThemeChoice(newTheme));
     setIsOpen(false);
   };
+
+  const buttonLabel = theme === "system" ? `system (${resolvedTheme})` : theme;
 
   return (
     <div className="relative z-[120] isolate">
@@ -36,7 +67,7 @@ export function ThemeSwitcher() {
         aria-label="Change theme"
       >
         <Palette size={14} weight="fill" />
-        <span className="hidden capitalize sm:inline">{theme}</span>
+        <span className="hidden capitalize sm:inline">{buttonLabel}</span>
       </button>
 
       {isOpen && (
@@ -46,7 +77,7 @@ export function ThemeSwitcher() {
             onClick={() => setIsOpen(false)}
           />
           <div className="absolute right-0 top-12 z-[10001] isolate max-h-96 w-48 overflow-auto rounded-[var(--radius-card)] border border-[var(--line-strong)] bg-[var(--bg)] p-2 shadow-[0_24px_80px_-24px_rgba(0,0,0,0.92),0_0_0_1px_var(--line)] scrollbar-subtle">
-            {themes.map((t) => (
+            {themeChoices.map((t) => (
               <button
                 key={t}
                 onClick={() => changeTheme(t)}
@@ -57,7 +88,10 @@ export function ThemeSwitcher() {
                     : "text-[var(--text-secondary)] hover:bg-[var(--surface-3)] hover:text-[var(--text-primary)]"
                 ].join(" ")}
               >
-                {t}
+                <span>{t}</span>
+                {t === "system" ? (
+                  <span className="ml-1 text-xs text-[var(--text-muted)]">({resolvedTheme})</span>
+                ) : null}
               </button>
             ))}
           </div>

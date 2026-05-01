@@ -14,8 +14,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <head>
         <Script id="theme-init" strategy="beforeInteractive">
           {`
-            const theme = localStorage.getItem('theme') || 'dark';
-            document.documentElement.setAttribute('data-theme', theme);
+            try {
+              const savedTheme = localStorage.getItem('theme') || 'system';
+              const theme = savedTheme === 'system'
+                ? (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
+                : savedTheme;
+              document.documentElement.setAttribute('data-theme', theme);
+            } catch {
+              document.documentElement.setAttribute('data-theme', 'dark');
+            }
           `}
         </Script>
       </head>
