@@ -45,7 +45,7 @@ export function HomeCTA() {
               </Link>
 
               <a
-                href="https://github.com/yourusername/awesome-file-hosts"
+                href="https://github.com/FahadBinHussain/awesome-file-hosts"
                 target="_blank"
                 rel="noreferrer"
                 className="group inline-flex min-h-[52px] items-center justify-center gap-2 rounded-[var(--radius-2xl)] border border-[var(--line)] bg-[var(--surface-1)] px-6 py-3.5 text-center font-semibold text-[var(--text-primary)] backdrop-blur-xl transition-all hover:border-[var(--line-strong)] hover:bg-[var(--surface-2)] sm:px-8 sm:py-4"

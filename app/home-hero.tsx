@@ -58,7 +58,7 @@ export function HomeHero({ stats }: { stats: { verifiedHosts: number; pendingCan
           </Link>
           
           <a
-            href="https://github.com/yourusername/awesome-file-hosts"
+            href="https://github.com/FahadBinHussain/awesome-file-hosts"
             target="_blank"
             rel="noreferrer"
             className="group inline-flex min-h-[52px] items-center justify-center gap-2 rounded-[var(--radius-2xl)] border border-[var(--line)] bg-[var(--hero-surface)] px-6 py-3.5 text-center font-semibold text-[var(--hero-heading)] backdrop-blur-xl transition-all hover:border-[var(--line-strong)] hover:bg-[var(--hero-surface-strong)] sm:px-8 sm:py-4"

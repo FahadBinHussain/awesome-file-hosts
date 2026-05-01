@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
   ArrowsDownUp,
   CheckCircle,
@@ -1056,6 +1056,10 @@ function gridTemplate(columns: Array<{ width: string }>) {
   return columns.map((column) => column.width).join(" ");
 }
 
+function SpreadsheetScroller({ children }: { children: ReactNode }) {
+  return <div className="min-w-max text-sm">{children}</div>;
+}
+
 function hostHeaderLabel(column: HostColumn) {
   if (column.id === "max_guest") return "w/o acc";
   if (column.id === "max_account") return "w/ acc";
@@ -1991,6 +1995,11 @@ function MobileAdjacentCard({
 }
 
 export function DatasetApp({ data }: Props) {
+  useEffect(() => {
+    document.body.classList.add("dataset-spreadsheet-scroll");
+    return () => document.body.classList.remove("dataset-spreadsheet-scroll");
+  }, []);
+
   const [mode, setMode] = useState<DatasetMode>("hosts");
   const [queueOpen, setQueueOpen] = useState(false);
   const [hostSort, setHostSort] = useState<SortState<HostSortKey>>({
@@ -2594,10 +2603,10 @@ export function DatasetApp({ data }: Props) {
             )}
           </div>
 
-          <div className="relative z-0 -mx-4 overflow-x-auto pb-2 scrollbar-subtle md:mx-0">
+          <div className="relative z-0 -mx-4 pb-2 md:mx-0">
             {!isQueueMode && mode === "hosts" ? (
               <>
-                <div className="min-w-max text-sm">
+                <SpreadsheetScroller>
                 <div className="sticky top-16 z-30 border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
                   {showGroupedMaxHeader || showGroupedStorageHeader ? (
                     <div
@@ -2771,11 +2780,11 @@ export function DatasetApp({ data }: Props) {
                     ))}
                   </button>
                 ))}
-                </div>
+                </SpreadsheetScroller>
               </>
             ) : !isQueueMode && isAdjacentMode ? (
               <>
-                <div className="min-w-max text-sm">
+                <SpreadsheetScroller>
                   <div className="sticky top-16 z-30 border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
                     <div className="grid" style={{ gridTemplateColumns: adjacentGridTemplate }}>
                       {visibleAdjacentColumns.map((column) => {
@@ -2837,11 +2846,11 @@ export function DatasetApp({ data }: Props) {
                       ))}
                     </button>
                   ))}
-                </div>
+                </SpreadsheetScroller>
               </>
             ) : mode === "hosts" ? (
               <>
-                <div className="min-w-max text-sm">
+                <SpreadsheetScroller>
                 <div className="sticky top-16 z-10 border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
                   {showGroupedQueueMaxHeader || showGroupedQueueStorageHeader ? (
                     <div
@@ -3028,11 +3037,11 @@ export function DatasetApp({ data }: Props) {
                     ))}
                   </button>
                 ))}
-                </div>
+                </SpreadsheetScroller>
               </>
             ) : (
               <>
-                <div className="min-w-max text-sm">
+                <SpreadsheetScroller>
                   <div className="sticky top-16 z-10 border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
                     <div className="grid" style={{ gridTemplateColumns: adjacentQueueGridTemplate }}>
                       {visibleAdjacentQueueColumns.map((column) => {
@@ -3110,7 +3119,7 @@ export function DatasetApp({ data }: Props) {
                       ))}
                     </button>
                   ))}
-                </div>
+                </SpreadsheetScroller>
               </>
             )}
           </div>
