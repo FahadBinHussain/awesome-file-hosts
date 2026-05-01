@@ -55,6 +55,7 @@ type HostSortKey =
   | "cli"
   | "e2ee"
   | "https"
+  | "tags"
   | "sources";
 type QueueSortKey =
   | "name"
@@ -70,8 +71,10 @@ type QueueSortKey =
   | "cli"
   | "e2ee"
   | "https"
+  | "tags"
   | "sources"
-  | "status";
+  | "status"
+  | "notes";
 type AdjacentQueueSortKey =
   | "name"
   | "kind"
@@ -81,7 +84,8 @@ type AdjacentQueueSortKey =
   | "cli"
   | "e2ee"
   | "https"
-  | "sources";
+  | "sources"
+  | "notes";
 
 type SortState<T extends string> = {
   key: T;
@@ -89,7 +93,7 @@ type SortState<T extends string> = {
 };
 
 type HostColumn = {
-  id: string;
+  id: HostSortKey;
   label: string;
   width: string;
   className?: string;
@@ -97,7 +101,7 @@ type HostColumn = {
 };
 
 type QueueColumn = {
-  id: string;
+  id: QueueSortKey;
   label: string;
   width: string;
   className?: string;
@@ -105,7 +109,7 @@ type QueueColumn = {
 };
 
 type AdjacentQueueColumn = {
-  id: AdjacentQueueSortKey | "notes";
+  id: AdjacentQueueSortKey;
   label: string;
   width: string;
   className?: string;
@@ -230,7 +234,7 @@ const hostColumnDefs: HostColumn[] = [
   {
     id: "free_model",
     label: "Free model",
-    width: "134px",
+    width: "152px",
     render: (host) => (
       <CitedValue
         value={host.filters.freeModelLabel}
@@ -242,7 +246,7 @@ const hostColumnDefs: HostColumn[] = [
   {
     id: "public_sharing",
     label: "Public share",
-    width: "118px",
+    width: "160px",
     render: (host) => (
       <CitedValue
         value={booleanFieldLabel(host.content.public_sharing?.value)}
@@ -254,7 +258,7 @@ const hostColumnDefs: HostColumn[] = [
   {
     id: "bandwidth",
     label: "Bandwidth",
-    width: "134px",
+    width: "150px",
     render: (host) => (
       <CitedValue value={host.filters.bandwidthLabel} record={host} refs={host.limits.bandwidth.source_refs} />
     )
@@ -400,7 +404,7 @@ const queueColumnDefs: QueueColumn[] = [
   {
     id: "bandwidth",
     label: "Bandwidth",
-    width: "134px",
+    width: "150px",
     render: (candidate) => (
       <CitedValue
         value={candidate.filters.bandwidthLabel}
@@ -424,7 +428,7 @@ const queueColumnDefs: QueueColumn[] = [
   {
     id: "free_model",
     label: "Free model",
-    width: "134px",
+    width: "152px",
     render: (candidate) => (
       <CitedValue
         value={candidate.filters.freeModelLabel}
@@ -436,7 +440,7 @@ const queueColumnDefs: QueueColumn[] = [
   {
     id: "public_sharing",
     label: "Public share",
-    width: "118px",
+    width: "160px",
     render: (candidate) => (
       <CitedValue
         value={booleanFieldLabel(candidate.content.public_sharing?.value)}
@@ -1096,6 +1100,35 @@ function queueHeaderLabel(column: QueueColumn) {
   return column.label;
 }
 
+function SortHeaderButton({
+  direction,
+  isSorted,
+  label,
+  onClick
+}: {
+  direction: "asc" | "desc";
+  isSorted: boolean;
+  label: ReactNode;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      onClick={onClick}
+      title={typeof label === "string" ? label : undefined}
+      className="inline-flex max-w-full min-w-0 items-center gap-1.5 transition-all hover:opacity-80"
+    >
+      <span className="whitespace-nowrap tracking-normal">{label}</span>
+      {isSorted ? (
+        <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded bg-[var(--accent-soft)] text-[11px]">
+          {direction === "asc" ? "↑" : "↓"}
+        </span>
+      ) : (
+        <ArrowsDownUp size={11} className="shrink-0" />
+      )}
+    </button>
+  );
+}
+
 function CitedValue({
   value,
   record,
@@ -1146,6 +1179,8 @@ function hostSortValue(host: HostRecord, key: HostSortKey) {
       return host.security.e2ee ? 1 : 0;
     case "https":
       return host.security.https_only ? 1 : 0;
+    case "tags":
+      return host.tags.join(" ").toLowerCase();
     case "sources":
       return host.sources.length;
   }
@@ -1206,10 +1241,14 @@ function queueSortValue(candidate: CandidateRecord, key: QueueSortKey) {
       return candidate.security.e2ee ? 1 : 0;
     case "https":
       return candidate.security.https_only ? 1 : 0;
+    case "tags":
+      return candidate.tags.join(" ").toLowerCase();
     case "sources":
       return candidate.sources.length;
     case "status":
       return candidate.verification_status;
+    case "notes":
+      return (candidate.reason ?? candidate.summary).toLowerCase();
   }
 }
 
@@ -1233,6 +1272,8 @@ function adjacentQueueSortValue(candidate: AdjacentCandidateRecord, key: Adjacen
       return candidate.security.https_only ? 1 : 0;
     case "sources":
       return candidate.sources.length;
+    case "notes":
+      return (candidate.reason ?? candidate.summary).toLowerCase();
   }
 }
 
@@ -2636,7 +2677,6 @@ export function DatasetApp({ data }: Props) {
                           return null;
                         }
 
-                        const sortable = column.id !== "tags";
                         const isSorted = hostSort.key === column.id;
 
                         return (
@@ -2644,28 +2684,17 @@ export function DatasetApp({ data }: Props) {
                             key={column.id}
                             style={{ gridColumn: String(index + 1), gridRow: "1 / span 2" }}
                             className={[
-                              "flex items-center px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
+                              "flex min-w-0 items-center overflow-hidden px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
                               column.id === "name" ? "sticky left-0 z-20 bg-[var(--bg-elevated)]" : "",
                               isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
                             ].join(" ")}
                           >
-                            {sortable ? (
-                              <button
-                                onClick={() => changeHostSort(column.id as HostSortKey)}
-                                className="inline-flex items-center gap-1.5 transition-all hover:opacity-80"
-                              >
-                                {hostHeaderLabel(column)}
-                                {isSorted ? (
-                                  <span className="flex h-4 w-4 items-center justify-center rounded bg-[var(--accent-soft)] text-[11px]">
-                                    {hostSort.direction === "asc" ? "↑" : "↓"}
-                                  </span>
-                                ) : (
-                                  <ArrowsDownUp size={11} />
-                                )}
-                              </button>
-                            ) : (
-                              hostHeaderLabel(column)
-                            )}
+                            <SortHeaderButton
+                              direction={hostSort.direction}
+                              isSorted={isSorted}
+                              label={hostHeaderLabel(column)}
+                              onClick={() => changeHostSort(column.id)}
+                            />
                           </div>
                         );
                       })}
@@ -2704,23 +2733,16 @@ export function DatasetApp({ data }: Props) {
                               key={column.id}
                               style={{ gridColumn: String(columnIndex + 1), gridRow: "2" }}
                               className={[
-                                "px-4 py-3 text-left text-[11px] uppercase tracking-[0.25em] font-bold transition-colors whitespace-nowrap",
+                                "min-w-0 overflow-hidden px-4 py-3 text-left text-[11px] uppercase tracking-[0.25em] font-bold transition-colors whitespace-nowrap",
                                 isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
                               ].join(" ")}
                             >
-                              <button
-                                onClick={() => changeHostSort(column.id as HostSortKey)}
-                                className="inline-flex items-center gap-1.5 transition-all hover:opacity-80"
-                              >
-                                {hostHeaderLabel(column)}
-                                {isSorted ? (
-                                  <span className="flex h-4 w-4 items-center justify-center rounded bg-[var(--accent-soft)] text-[11px]">
-                                    {hostSort.direction === "asc" ? "↑" : "↓"}
-                                  </span>
-                                ) : (
-                                  <ArrowsDownUp size={11} />
-                                )}
-                              </button>
+                              <SortHeaderButton
+                                direction={hostSort.direction}
+                                isSorted={isSorted}
+                                label={hostHeaderLabel(column)}
+                                onClick={() => changeHostSort(column.id)}
+                              />
                             </div>
                           );
                         })}
@@ -2731,34 +2753,22 @@ export function DatasetApp({ data }: Props) {
                       style={{ gridTemplateColumns: hostGridTemplate }}
                     >
                       {visibleHostColumns.map((column) => {
-                        const sortable = column.id !== "tags";
                         const isSorted = hostSort.key === column.id;
                         return (
                           <div
                             key={column.id}
                             className={[
-                              "px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
+                              "min-w-0 overflow-hidden px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
                               column.id === "name" ? "sticky left-0 z-20 bg-[var(--bg-elevated)]" : "",
                               isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
                             ].join(" ")}
                           >
-                            {sortable ? (
-                              <button
-                                onClick={() => changeHostSort(column.id as HostSortKey)}
-                                className="inline-flex items-center gap-1.5 transition-all hover:opacity-80"
-                              >
-                                {hostHeaderLabel(column)}
-                                {isSorted ? (
-                                  <span className="flex h-4 w-4 items-center justify-center rounded bg-[var(--accent-soft)] text-[11px]">
-                                    {hostSort.direction === "asc" ? "↑" : "↓"}
-                                  </span>
-                                ) : (
-                                  <ArrowsDownUp size={11} />
-                                )}
-                              </button>
-                            ) : (
-                              hostHeaderLabel(column)
-                            )}
+                            <SortHeaderButton
+                              direction={hostSort.direction}
+                              isSorted={isSorted}
+                              label={hostHeaderLabel(column)}
+                              onClick={() => changeHostSort(column.id)}
+                            />
                           </div>
                         );
                       })}
@@ -2808,24 +2818,17 @@ export function DatasetApp({ data }: Props) {
                           <div
                             key={column.id}
                             className={[
-                              "px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
+                              "min-w-0 overflow-hidden px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
                               column.id === "name" ? "sticky left-0 z-20 bg-[var(--bg-elevated)]" : "",
                               isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
                             ].join(" ")}
                           >
-                            <button
+                            <SortHeaderButton
+                              direction={adjacentSort.direction}
+                              isSorted={isSorted}
+                              label={column.label}
                               onClick={() => changeAdjacentSort(column.id)}
-                              className="inline-flex items-center gap-1.5 transition-all hover:opacity-80"
-                            >
-                              {column.label}
-                              {isSorted ? (
-                                <span className="flex h-4 w-4 items-center justify-center rounded bg-[var(--accent-soft)] text-[11px]">
-                                  {adjacentSort.direction === "asc" ? "↑" : "↓"}
-                                </span>
-                              ) : (
-                                <ArrowsDownUp size={11} />
-                              )}
-                            </button>
+                            />
                           </div>
                         );
                       })}
@@ -2881,7 +2884,6 @@ export function DatasetApp({ data }: Props) {
                           return null;
                         }
 
-                        const sortable = column.id !== "notes" && column.id !== "tags";
                         const isSorted = queueSort.key === column.id;
 
                         return (
@@ -2889,28 +2891,17 @@ export function DatasetApp({ data }: Props) {
                             key={column.id}
                             style={{ gridColumn: String(index + 1), gridRow: "1 / span 2" }}
                             className={[
-                              "flex items-center px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
+                              "flex min-w-0 items-center overflow-hidden px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
                               column.id === "name" ? "sticky left-0 z-20 bg-[var(--bg-elevated)]" : "",
                               isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
                             ].join(" ")}
                           >
-                            {sortable ? (
-                              <button
-                                onClick={() => changeQueueSort(column.id as QueueSortKey)}
-                                className="inline-flex items-center gap-1.5 transition-all hover:opacity-80"
-                              >
-                                {queueHeaderLabel(column)}
-                                {isSorted ? (
-                                  <span className="flex h-4 w-4 items-center justify-center rounded bg-[var(--accent-soft)] text-[11px]">
-                                    {queueSort.direction === "asc" ? "↑" : "↓"}
-                                  </span>
-                                ) : (
-                                  <ArrowsDownUp size={11} />
-                                )}
-                              </button>
-                            ) : (
-                              queueHeaderLabel(column)
-                            )}
+                            <SortHeaderButton
+                              direction={queueSort.direction}
+                              isSorted={isSorted}
+                              label={queueHeaderLabel(column)}
+                              onClick={() => changeQueueSort(column.id)}
+                            />
                           </div>
                         );
                       })}
@@ -2950,23 +2941,16 @@ export function DatasetApp({ data }: Props) {
                               key={column.id}
                               style={{ gridColumn: String(columnIndex + 1), gridRow: "2" }}
                               className={[
-                                "px-4 py-3 text-left text-[11px] uppercase tracking-[0.25em] font-bold transition-colors whitespace-nowrap",
+                                "min-w-0 overflow-hidden px-4 py-3 text-left text-[11px] uppercase tracking-[0.25em] font-bold transition-colors whitespace-nowrap",
                                 isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
                               ].join(" ")}
                             >
-                              <button
-                                onClick={() => changeQueueSort(column.id as QueueSortKey)}
-                                className="inline-flex items-center gap-1.5 transition-all hover:opacity-80"
-                              >
-                                {queueHeaderLabel(column)}
-                                {isSorted ? (
-                                  <span className="flex h-4 w-4 items-center justify-center rounded bg-[var(--accent-soft)] text-[11px]">
-                                    {queueSort.direction === "asc" ? "↑" : "↓"}
-                                  </span>
-                                ) : (
-                                  <ArrowsDownUp size={11} />
-                                )}
-                              </button>
+                              <SortHeaderButton
+                                direction={queueSort.direction}
+                                isSorted={isSorted}
+                                label={queueHeaderLabel(column)}
+                                onClick={() => changeQueueSort(column.id)}
+                              />
                             </div>
                           );
                         })}
@@ -2977,34 +2961,22 @@ export function DatasetApp({ data }: Props) {
                       style={{ gridTemplateColumns: queueGridTemplate }}
                     >
                       {visibleQueueColumns.map((column) => {
-                        const sortable = column.id !== "notes" && column.id !== "tags";
                         const isSorted = queueSort.key === column.id;
                         return (
                           <div
                             key={column.id}
                             className={[
-                              "px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
+                              "min-w-0 overflow-hidden px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
                               column.id === "name" ? "sticky left-0 z-20 bg-[var(--bg-elevated)]" : "",
                               isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
                             ].join(" ")}
                           >
-                            {sortable ? (
-                              <button
-                                onClick={() => changeQueueSort(column.id as QueueSortKey)}
-                                className="inline-flex items-center gap-1.5 transition-all hover:opacity-80"
-                              >
-                                {queueHeaderLabel(column)}
-                                {isSorted ? (
-                                  <span className="flex h-4 w-4 items-center justify-center rounded bg-[var(--accent-soft)] text-[11px]">
-                                    {queueSort.direction === "asc" ? "↑" : "↓"}
-                                  </span>
-                                ) : (
-                                  <ArrowsDownUp size={11} />
-                                )}
-                              </button>
-                            ) : (
-                              queueHeaderLabel(column)
-                            )}
+                            <SortHeaderButton
+                              direction={queueSort.direction}
+                              isSorted={isSorted}
+                              label={queueHeaderLabel(column)}
+                              onClick={() => changeQueueSort(column.id)}
+                            />
                           </div>
                         );
                       })}
@@ -3060,34 +3032,22 @@ export function DatasetApp({ data }: Props) {
                   <div className="border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
                     <div className="grid" style={{ gridTemplateColumns: adjacentQueueGridTemplate }}>
                       {visibleAdjacentQueueColumns.map((column) => {
-                        const sortable = column.id !== "notes";
                         const isSorted = adjacentQueueSort.key === column.id;
                         return (
                           <div
                             key={column.id}
                             className={[
-                              "px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
+                              "min-w-0 overflow-hidden px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
                               column.id === "name" ? "sticky left-0 z-20 bg-[var(--bg-elevated)]" : "",
                               isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
                             ].join(" ")}
                           >
-                            {sortable ? (
-                              <button
-                                onClick={() => changeAdjacentQueueSort(column.id as AdjacentQueueSortKey)}
-                                className="inline-flex items-center gap-1.5 transition-all hover:opacity-80"
-                              >
-                                {column.label}
-                                {isSorted ? (
-                                  <span className="flex h-4 w-4 items-center justify-center rounded bg-[var(--accent-soft)] text-[11px]">
-                                    {adjacentQueueSort.direction === "asc" ? "↑" : "↓"}
-                                  </span>
-                                ) : (
-                                  <ArrowsDownUp size={11} />
-                                )}
-                              </button>
-                            ) : (
-                              column.label
-                            )}
+                            <SortHeaderButton
+                              direction={adjacentQueueSort.direction}
+                              isSorted={isSorted}
+                              label={column.label}
+                              onClick={() => changeAdjacentQueueSort(column.id)}
+                            />
                           </div>
                         );
                       })}
