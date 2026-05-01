@@ -728,5 +728,163 @@
     },
     "verification_status": "rejected",
     "reason": "Rejected after live browser test on 2026-05-01: the official URL returns only a bare OK response and exposes no usable upload or mirror workflow."
+  },
+  {
+    "kind": "mirror_uploader",
+    "name": "Z-o-o-m",
+    "url": "https://z-o-o-m.eu/",
+    "summary": "Freeware Windows File & Image Uploader desktop app that uploads local files/folders to many downstream file and image hosts, supports host account settings, drag-and-drop queues, scheduler, speed limiter, proxy support, and Wine on Linux.",
+    "account": {
+      "required": false,
+      "benefits": "The program is freeware for common users; downstream host accounts can be configured per host, and a registered/donor version unlocks extra benefits.",
+      "source_refs": [
+        2,
+        3
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Z-o-o-m is a GUI desktop uploader. The cited first-party pages do not publish a public API or command-line workflow for automating Z-o-o-m itself.",
+      "source_refs": [
+        1,
+        2,
+        3
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "depends-on-downstream-hosts",
+        "notes": "Allowed file types depend on the selected downstream host. The program is positioned for both file and image uploads and supports choosing multiple hosts.",
+        "source_refs": [
+          0,
+          2
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "The app uploads to downstream hosts and returns/copies links; the help page documents link/history tabs and link-copy formatting.",
+        "source_refs": [
+          2
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The website is HTTPS. The privacy policy says account cookies/tokens can be stored locally and protected with AES-256 when the user sets a password, but downstream host storage security depends on each selected service.",
+      "source_refs": [
+        4
+      ]
+    },
+    "tags": [
+      "mirror-uploader",
+      "desktop-app",
+      "windows",
+      "freeware",
+      "multi-host",
+      "wine",
+      "account-support"
+    ],
+    "sources": [
+      {
+        "label": "Z-o-o-m homepage",
+        "url": "https://z-o-o-m.eu/",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official homepage verifies File & Image Uploader positioning, newest version 8.5.9 updated 2026-04-25, supported-host update history, and ongoing host/account support."
+      },
+      {
+        "label": "Z-o-o-m download page",
+        "url": "https://z-o-o-m.eu/down.htm",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official download page verifies the Windows executable, speed limiter, SOCKS/HTTP proxy support, adapter/IP binding, and Wine compatibility on Linux."
+      },
+      {
+        "label": "Z-o-o-m help page",
+        "url": "https://z-o-o-m.eu/help.htm",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official help page verifies upload queues, adding files/folders, drag-and-drop, starting/stopping/re-uploading, selecting one or multiple hosts, host account settings, scheduler, and link-copy formatting."
+      },
+      {
+        "label": "Z-o-o-m FAQ",
+        "url": "https://faq.z-o-o-m.eu/",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official FAQ verifies freeware status for common users, 10 GB/day freeware upload cap, up to 8 simultaneous files, registered-version benefits, and support/reporting workflow."
+      },
+      {
+        "label": "Z-o-o-m privacy policy",
+        "url": "https://z-o-o-m.eu/privacy.htm",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official privacy policy verifies anonymous website/software use, local storage of downstream host login cookies/tokens, optional AES-256 protection for saved settings, and Google API scopes for YouTube, Google Photos, and Google Drive uploads."
+      }
+    ],
+    "profile": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Z-o-o-m does not publish one universal per-file cap because selected downstream hosts determine file-size limits. The FAQ instead publishes a 10 GB/day freeware upload cap and up to 8 simultaneous files.",
+        "source_refs": [
+          3
+        ]
+      },
+      "guest_uploads": {
+        "value": true,
+        "notes": "The program is freeware for common users and can upload through supported host modules; downstream services may still require accounts for specific hosts or features.",
+        "source_refs": [
+          2,
+          3
+        ]
+      },
+      "remote_import": {
+        "value": false,
+        "notes": "The cited help and download pages describe local file/folder upload queues and host account settings, but do not publish a remote URL import workflow.",
+        "source_refs": [
+          1,
+          2
+        ]
+      },
+      "torrent_import": {
+        "value": false,
+        "notes": "The cited first-party pages do not publish a torrent or magnet import workflow.",
+        "source_refs": [
+          0,
+          2,
+          3
+        ]
+      },
+      "stores_files_itself": {
+        "value": false,
+        "notes": "Z-o-o-m is uploader software; files are stored by the selected downstream hosts, not by Z-o-o-m as a storage provider.",
+        "source_refs": [
+          0,
+          2,
+          4
+        ]
+      },
+      "retention_model": {
+        "value": "Downstream host retention",
+        "notes": "Retention depends on the selected downstream file/image host and any account used there; Z-o-o-m itself stores links/history/settings locally rather than hosting the files.",
+        "source_refs": [
+          2,
+          4
+        ]
+      },
+      "downstream_dependency": {
+        "value": "Selected downstream hosts determine upload, retention, and download behavior",
+        "notes": "The uploader's behavior depends on the selected host modules, downstream host limits, and configured account credentials.",
+        "source_refs": [
+          0,
+          2,
+          3
+        ]
+      }
+    },
+    "verification_status": "verified",
+    "reason": null
   }
 ]
