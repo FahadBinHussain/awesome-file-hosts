@@ -66,10 +66,12 @@
   --bad: var(--color-error);
   --bad-content: var(--color-error-content);
   --bad-soft: color-mix(in oklab, var(--color-error) 18%, transparent);
-  --hero-heading: white;
-  --hero-surface: color-mix(in oklab, white 5%, transparent);
-  --hero-surface-strong: color-mix(in oklab, white 8%, transparent);
-  --hero-secondary-glow: color-mix(in oklab, var(--color-secondary) 70%, white);
+  --hero-heading: var(--text-primary);
+  --hero-surface: color-mix(in oklab, var(--color-base-content) 3.5%, transparent);
+  --hero-surface-strong: color-mix(in oklab, var(--color-base-content) 7%, transparent);
+  --hero-highlight: color-mix(in oklab, var(--color-primary) 52%, var(--color-base-content) 48%);
+  --hero-highlight-2: color-mix(in oklab, var(--color-secondary) 52%, var(--color-base-content) 48%);
+  --hero-secondary-glow: color-mix(in oklab, var(--color-secondary) 70%, var(--color-base-content) 30%);
   
   /* Animation curves */
   --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
@@ -77,10 +79,8 @@
 }
 
 :root[data-theme="light"] {
-  --hero-heading: var(--text-primary);
   --hero-surface: color-mix(in oklab, var(--bg) 82%, var(--accent) 3%);
   --hero-surface-strong: color-mix(in oklab, var(--bg) 74%, var(--accent) 5%);
-  --hero-secondary-glow: color-mix(in oklab, var(--color-secondary) 78%, white);
 }
 
 * {

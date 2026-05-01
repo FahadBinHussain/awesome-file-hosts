@@ -28,13 +28,13 @@ export function HomeHero({ stats }: { stats: { verifiedHosts: number; pendingCan
         {/* Hero headline */}
         <div className="animate-fade-in-up mb-6 text-center" style={{ animationDelay: "0.1s" }}>
           <h1 className="mx-auto max-w-5xl text-4xl font-bold leading-[1.08] tracking-tight text-[var(--hero-heading)] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
-            The most comprehensive
-            <span className="relative mx-2 inline-block sm:mx-3">
-              <span className="relative z-10 bg-gradient-to-r from-[var(--accent)] via-[var(--hero-secondary-glow)] to-[var(--accent)] bg-clip-text text-transparent">
+            The most comprehensive{" "}
+            <span className="relative mx-1 inline-block sm:mx-2">
+              <span className="relative z-10 bg-gradient-to-r from-[var(--hero-highlight)] via-[var(--hero-highlight-2)] to-[var(--hero-highlight)] bg-clip-text text-transparent">
                 file host
               </span>
-              <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-[var(--accent)] via-[var(--hero-secondary-glow)] to-[var(--accent)] opacity-20 blur-2xl" />
-            </span>
+              <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-[var(--hero-highlight)] via-[var(--hero-highlight-2)] to-[var(--hero-highlight)] opacity-20 blur-2xl" />
+            </span>{" "}
             dataset on the internet
           </h1>
         </div>
