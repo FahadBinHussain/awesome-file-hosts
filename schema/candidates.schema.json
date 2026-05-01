@@ -10,6 +10,7 @@
       "name",
       "url",
       "summary",
+      "free_model",
       "limits",
       "account",
       "developer",
@@ -35,6 +36,9 @@
       "summary": {
         "type": "string",
         "minLength": 1
+      },
+      "free_model": {
+        "$ref": "#/$defs/freeModelField"
       },
       "limits": {
         "type": "object",
@@ -259,6 +263,32 @@
           "type": [
             "string",
             "null"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_refs": {
+          "$ref": "#/$defs/sourceRefs"
+        }
+      }
+    },
+    "freeModelField": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "value",
+        "notes"
+      ],
+      "properties": {
+        "value": {
+          "type": "string",
+          "enum": [
+            "free-forever",
+            "free-trial",
+            "credit-card-trial",
+            "paid-only",
+            "unknown"
           ]
         },
         "notes": {

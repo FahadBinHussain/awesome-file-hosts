@@ -61,6 +61,16 @@ function validateBooleanField(name, field) {
   validateSourceRefs(`${name}.source_refs`, field.source_refs);
 }
 
+function validateFreeModelField(name, field) {
+  assert(field && typeof field === "object", `${name} must be an object`);
+  assert(
+    ["free-forever", "free-trial", "credit-card-trial", "paid-only", "unknown"].includes(field.value),
+    `${name}.value must be a valid free model`
+  );
+  assert(typeof field.notes === "string", `${name}.notes must be a string`);
+  validateSourceRefs(`${name}.source_refs`, field.source_refs);
+}
+
 function validateOptionalBooleanField(name, field) {
   if (field === undefined) {
     return;
@@ -180,6 +190,7 @@ function validateHost(host) {
     "name",
     "url",
     "summary",
+    "free_model",
     "limits",
     "account",
     "developer",
@@ -196,6 +207,7 @@ function validateHost(host) {
   assert(typeof host.name === "string" && host.name.trim(), "name must be a non-empty string");
   assert(typeof host.url === "string" && /^https:\/\//.test(host.url), "url must be an https URL");
   assert(typeof host.summary === "string" && host.summary.trim(), "summary must be a non-empty string");
+  validateFreeModelField(`${host.name}.free_model`, host.free_model);
 
   validateLimitField(`${host.name}.limits.max_file_size`, host.limits.max_file_size);
   if (host.limits.max_file_size_guest !== undefined) {
@@ -286,6 +298,7 @@ function validateHost(host) {
 
   const maxSourceIndex = host.sources.length - 1;
   for (const refs of [
+    host.free_model.source_refs,
     host.limits.max_file_size.source_refs,
     host.limits.max_file_size_guest?.source_refs,
     host.limits.max_file_size_account?.source_refs,
@@ -404,6 +417,7 @@ function validateCandidate(candidate) {
     "name",
     "url",
     "summary",
+    "free_model",
     "limits",
     "account",
     "developer",
@@ -434,6 +448,7 @@ function validateCandidate(candidate) {
     typeof candidate.summary === "string" && candidate.summary.trim(),
     `${candidate.name}.summary must be a non-empty string`
   );
+  validateFreeModelField(`${candidate.name}.free_model`, candidate.free_model);
 
   validateLimitField(`${candidate.name}.limits.max_file_size`, candidate.limits.max_file_size);
   if (candidate.limits.max_file_size_guest !== undefined) {
@@ -533,6 +548,7 @@ function validateCandidate(candidate) {
 
   const maxSourceIndex = candidate.sources.length - 1;
   for (const refs of [
+    candidate.free_model.source_refs,
     candidate.limits.max_file_size.source_refs,
     candidate.limits.max_file_size_guest?.source_refs,
     candidate.limits.max_file_size_account?.source_refs,
@@ -685,8 +701,21 @@ function formatCli(host) {
   return "Yes";
 }
 
+function formatFreeModel(host) {
+  const labels = {
+    "free-forever": "Free forever",
+    "free-trial": "Free trial",
+    "credit-card-trial": "Credit-card trial",
+    "paid-only": "Paid only",
+    unknown: "Unknown"
+  };
+
+  return labels[host.free_model.value] ?? "Unknown";
+}
+
 function formatFeatureSummary(host) {
   const parts = [
+    `Free: ${formatFreeModel(host)}`,
     `Max: ${formatLimit(host.limits.max_file_size)}`,
     `Retention: ${formatLimit(host.limits.retention)}`,
     `Account: ${formatAccount(host.account.required)}`

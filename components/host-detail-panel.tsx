@@ -102,6 +102,13 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
 
         <div className="grid gap-4 sm:grid-cols-2">
           <InfoPair
+            label="Free model"
+            value={host.filters.freeModelLabel}
+            host={host}
+            refs={host.free_model.source_refs}
+            notes={host.free_model.notes}
+          />
+          <InfoPair
             label="Max file (guest)"
             value={host.filters.maxFileGuestLabel}
             host={host}

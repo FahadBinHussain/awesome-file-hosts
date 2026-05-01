@@ -43,6 +43,7 @@ type ServiceMode = "hosts" | "alternatives" | "mirrors" | "migration";
 type DatasetMode = ServiceMode;
 type HostSortKey =
   | "name"
+  | "free_model"
   | "max_guest"
   | "max_account"
   | "storage_guest"
@@ -57,6 +58,7 @@ type HostSortKey =
   | "sources";
 type QueueSortKey =
   | "name"
+  | "free_model"
   | "max_guest"
   | "max_account"
   | "storage_guest"
@@ -222,6 +224,18 @@ const hostColumnDefs: HostColumn[] = [
         value={host.developer.api_available ? "Yes" : "No"}
         record={host}
         refs={host.developer.source_refs}
+      />
+    )
+  },
+  {
+    id: "free_model",
+    label: "Free model",
+    width: "134px",
+    render: (host) => (
+      <CitedValue
+        value={host.filters.freeModelLabel}
+        record={host}
+        refs={host.free_model.source_refs}
       />
     )
   },
@@ -404,6 +418,18 @@ const queueColumnDefs: QueueColumn[] = [
         value={candidate.developer.api_available ? "Yes" : "No"}
         record={candidate}
         refs={candidate.developer.source_refs}
+      />
+    )
+  },
+  {
+    id: "free_model",
+    label: "Free model",
+    width: "134px",
+    render: (candidate) => (
+      <CitedValue
+        value={candidate.filters.freeModelLabel}
+        record={candidate}
+        refs={candidate.free_model.source_refs}
       />
     )
   },
@@ -1011,6 +1037,21 @@ function booleanSortValue(value: boolean | null | undefined) {
   return null;
 }
 
+function freeModelSortValue(value: HostRecord["free_model"]["value"]) {
+  switch (value) {
+    case "free-forever":
+      return 0;
+    case "free-trial":
+      return 1;
+    case "credit-card-trial":
+      return 2;
+    case "paid-only":
+      return 3;
+    case "unknown":
+      return 4;
+  }
+}
+
 function gridTemplate(columns: Array<{ width: string }>) {
   return columns.map((column) => column.width).join(" ");
 }
@@ -1057,6 +1098,8 @@ function hostSortValue(host: HostRecord, key: HostSortKey) {
   switch (key) {
     case "name":
       return host.name.toLowerCase();
+    case "free_model":
+      return freeModelSortValue(host.free_model.value);
     case "max_guest":
       return host.sortMetrics.maxFileGuestMb;
     case "max_account":
@@ -1115,6 +1158,8 @@ function queueSortValue(candidate: CandidateRecord, key: QueueSortKey) {
   switch (key) {
     case "name":
       return candidate.name.toLowerCase();
+    case "free_model":
+      return freeModelSortValue(candidate.free_model.value);
     case "max_guest":
       return candidate.sortMetrics.maxFileGuestMb;
     case "max_account":
@@ -1246,6 +1291,13 @@ function CandidateDetailPanel({ candidate }: { candidate: CandidateRecord | null
         ) : null}
 
         <div className="grid gap-4 sm:grid-cols-2">
+          <div className="space-y-1.5">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Free model</div>
+            <div className="text-sm text-[var(--text-primary)]">
+              {candidate.filters.freeModelLabel} <SourceRefLinks record={candidate} refs={candidate.free_model.source_refs} />
+            </div>
+            <div className="text-xs italic text-[var(--text-muted)]">{candidate.free_model.notes}</div>
+          </div>
           <div className="space-y-1.5">
             <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Max file (guest)</div>
             <div className="text-sm text-[var(--text-primary)]">
@@ -1601,6 +1653,12 @@ function MobileHostCard({
       </div>
       <div className="mt-4 grid grid-cols-2 gap-3 text-sm">
         <div className="rounded-[var(--radius-panel)] border border-[var(--line)] bg-[var(--surface-2)] p-3">
+          <div className="text-[10px] uppercase tracking-[0.2em] text-[var(--text-muted)]">Free model</div>
+          <div className="mt-1 text-[var(--text-primary)]">
+            <CitedValue value={host.filters.freeModelLabel} record={host} refs={host.free_model.source_refs} />
+          </div>
+        </div>
+        <div className="rounded-[var(--radius-panel)] border border-[var(--line)] bg-[var(--surface-2)] p-3">
           <div className="text-[10px] uppercase tracking-[0.2em] text-[var(--text-muted)]">Max file</div>
           <div className="mt-1 text-[var(--text-primary)]">
             <CitedValue
@@ -1685,6 +1743,16 @@ function MobileQueueCard({
         </span>
       </div>
         <div className="mt-4 grid gap-2 text-sm text-[var(--text-secondary)]">
+          <div>
+            <span className="mr-2 text-[10px] uppercase tracking-[0.2em] text-[var(--text-muted)]">Free model</span>
+            <div className="mt-1 text-[var(--text-primary)]">
+              <CitedValue
+                value={candidate.filters.freeModelLabel}
+                record={candidate}
+                refs={candidate.free_model.source_refs}
+              />
+            </div>
+          </div>
           <div>
             <span className="mr-2 text-[10px] uppercase tracking-[0.2em] text-[var(--text-muted)]">Retention</span>
             <div className="mt-1 text-[var(--text-primary)]">
@@ -2039,6 +2107,8 @@ export function DatasetApp({ data }: Props) {
         host.name,
         host.summary,
         host.tags.join(" "),
+        host.filters.freeModelLabel,
+        host.free_model.notes,
         host.datasetLabels.maxFileGuestLabel,
         host.datasetLabels.maxFileAccountLabel,
         host.filters.retentionLabel,
@@ -2145,6 +2215,8 @@ export function DatasetApp({ data }: Props) {
         candidate.summary,
         candidate.reason ?? "",
         candidate.tags.join(" "),
+        candidate.filters.freeModelLabel,
+        candidate.free_model.notes,
         candidate.filters.maxFileGuestLabel,
         candidate.filters.maxFileAccountLabel,
         candidate.filters.retentionLabel,

@@ -20,6 +20,19 @@ export type BooleanField = {
   source_refs?: number[];
 };
 
+export type FreeModelValue =
+  | "free-forever"
+  | "free-trial"
+  | "credit-card-trial"
+  | "paid-only"
+  | "unknown";
+
+export type FreeModelField = {
+  value: FreeModelValue;
+  notes: string;
+  source_refs?: number[];
+};
+
 type SourceRefsField = {
   source_refs?: number[];
 };
@@ -64,6 +77,7 @@ type HostLikeBase = SharedServiceFields & {
   name: string;
   url: string | null;
   summary: string;
+  free_model: FreeModelField;
   limits: {
     max_file_size: LimitField;
     max_file_size_guest?: LimitField;
@@ -169,6 +183,7 @@ export type HostRecord = Host & {
   id: string;
   accountLabel: "Required" | "Guest" | "Unknown";
   filters: {
+    freeModelLabel: string;
     maxFileLabel: string;
     maxFileGuestLabel: string;
     maxFileAccountLabel: string;
@@ -185,6 +200,7 @@ export type HostRecord = Host & {
     storageAccountLabel: string;
   };
   sortMetrics: {
+    freeModelRank: number;
     maxFileGuestMb: number | null;
     maxFileAccountMb: number | null;
     storageGuestMb: number | null;
@@ -204,6 +220,7 @@ export type CandidateRecord = Candidate &
     hasReferences: boolean;
     accountLabel: "Required" | "Guest" | "Unknown";
     filters: {
+      freeModelLabel: string;
       maxFileLabel: string;
       maxFileGuestLabel: string;
       maxFileAccountLabel: string;
@@ -220,6 +237,7 @@ export type CandidateRecord = Candidate &
       storageAccountLabel: string;
     };
     sortMetrics: {
+      freeModelRank: number;
       maxFileGuestMb: number | null;
       maxFileAccountMb: number | null;
       storageGuestMb: number | null;
@@ -561,6 +579,30 @@ function booleanMetric(value: boolean | null) {
   return value ? 1 : 0;
 }
 
+const FREE_MODEL_LABELS: Record<FreeModelValue, string> = {
+  "free-forever": "Free forever",
+  "free-trial": "Free trial",
+  "credit-card-trial": "Credit-card trial",
+  "paid-only": "Paid only",
+  unknown: "Unknown"
+};
+
+const FREE_MODEL_SORT_RANK: Record<FreeModelValue, number> = {
+  "free-forever": 0,
+  "free-trial": 1,
+  "credit-card-trial": 2,
+  "paid-only": 3,
+  unknown: 4
+};
+
+function freeModelLabel(field: FreeModelField) {
+  return FREE_MODEL_LABELS[field.value] ?? "Unknown";
+}
+
+function freeModelSortRank(field: FreeModelField) {
+  return FREE_MODEL_SORT_RANK[field.value] ?? FREE_MODEL_SORT_RANK.unknown;
+}
+
 function accountLabel(required: boolean | null): HostRecord["accountLabel"] {
   if (required === true) return "Required";
   if (required === false) return "Guest";
@@ -717,6 +759,7 @@ function enrichRecord<T extends HostLikeBase>(record: T) {
     id: slugify(record.name),
     accountLabel: accountLabel(record.account.required),
     filters: {
+      freeModelLabel: freeModelLabel(record.free_model),
       maxFileLabel: limitLabel(record.limits.max_file_size),
       maxFileGuestLabel: guestMaxLabel(record),
       maxFileAccountLabel: accountMaxLabel(record),
@@ -733,6 +776,7 @@ function enrichRecord<T extends HostLikeBase>(record: T) {
       storageAccountLabel: accountStorageComparableLabel(record)
     },
     sortMetrics: {
+      freeModelRank: freeModelSortRank(record.free_model),
       maxFileGuestMb: normalizeToMb(
         guestMaxField(record)?.value ?? null,
         guestMaxField(record)?.unit ?? null
