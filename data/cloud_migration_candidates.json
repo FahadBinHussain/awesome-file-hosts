@@ -26,7 +26,9 @@
         "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
         "source_refs": [
           0
-        ]
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
       }
     },
     "security": {
@@ -153,7 +155,9 @@
         "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
         "source_refs": [
           0
-        ]
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
       }
     },
     "security": {
@@ -291,7 +295,9 @@
         "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
         "source_refs": [
           0
-        ]
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
       }
     },
     "security": {
@@ -411,7 +417,9 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The current official site is a community forum, not a file-transfer or cloud-migration product."
+        "notes": "The current official site is a community forum, not a file-transfer or cloud-migration product.",
+        "allowed_extensions": [],
+        "blocked_extensions": []
       }
     },
     "security": {
@@ -425,29 +433,16 @@
       "rejected",
       "misclassified"
     ],
-    "sources": [
-      {
-        "label": "ctrlq.org homepage",
-        "url": "https://ctrlq.org/",
-        "retrieved_at": "2026-04-30",
-        "notes": "Official current homepage showing Digital Inspiration community forum topics around Google Workspace and Apps Script rather than a cloud-migration service."
-      }
-    ],
+    "sources": [],
     "kind": "cloud_migration",
     "profile": {
       "workflow_modes": {
         "value": "Not applicable",
-        "notes": "Current ctrlq.org is a community forum rather than a live cloud-migration product.",
-        "source_refs": [
-          0
-        ]
+        "notes": "Current ctrlq.org is a community forum rather than a live cloud-migration product."
       },
       "execution_model": {
         "value": "No current standalone service",
-        "notes": "Current ctrlq.org does not expose a migration product execution model.",
-        "source_refs": [
-          0
-        ]
+        "notes": "Current ctrlq.org does not expose a migration product execution model."
       },
       "item_limit": {
         "value": 0,
@@ -461,17 +456,11 @@
       },
       "scheduled_runs": {
         "value": false,
-        "notes": "Current ctrlq.org is not a migration product.",
-        "source_refs": [
-          0
-        ]
+        "notes": "Current ctrlq.org is not a migration product."
       },
       "provider_dependency": {
         "value": "Not applicable",
-        "notes": "Current ctrlq.org is not a migration or storage product.",
-        "source_refs": [
-          0
-        ]
+        "notes": "Current ctrlq.org is not a migration or storage product."
       },
       "bandwidth_model": {
         "value": "Not applicable",
@@ -479,7 +468,7 @@
       }
     },
     "verification_status": "rejected",
-    "reason": "Current ctrlq.org is a Google Workspace community forum, not a cloud-migration product."
+    "reason": "Rejected because current ctrlq.org no longer resolves to a usable source for this queue item and no cloud-migration product is verified."
   },
   {
     "name": "FileStack",
@@ -510,7 +499,9 @@
         "source_refs": [
           1,
           2
-        ]
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
       }
     },
     "security": {
@@ -637,7 +628,9 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
       }
     },
     "security": {
@@ -758,7 +751,9 @@
         "source_refs": [
           0,
           2
-        ]
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
       }
     },
     "security": {
@@ -916,7 +911,9 @@
         "notes": "Supported file types depend on the linked storage services being synced, shared, or backed up through odrive.",
         "source_refs": [
           0
-        ]
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
       }
     },
     "security": {
@@ -1071,7 +1068,9 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
       }
     },
     "security": {
@@ -1193,7 +1192,9 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
       }
     },
     "security": {
@@ -1317,7 +1318,9 @@
         "source_refs": [
           0,
           2
-        ]
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
       }
     },
     "security": {
@@ -1455,7 +1458,9 @@
         "notes": "The current official UploadCloud site does not expose a working file-policy surface.",
         "source_refs": [
           0
-        ]
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
       }
     },
     "security": {
@@ -1555,7 +1560,9 @@
     "content": {
       "allowed_file_types": {
         "mode": "see-notes",
-        "notes": "The current official domain is repurposed and does not expose a trustworthy file-policy surface."
+        "notes": "The current official domain is repurposed and does not expose a trustworthy file-policy surface.",
+        "allowed_extensions": [],
+        "blocked_extensions": []
       }
     },
     "security": {

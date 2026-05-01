@@ -13,9 +13,11 @@ export function SourceRefLinks({ record, refs, className }: Props) {
     return null;
   }
 
+  const uniqueRefs = [...new Set(refs)];
+
   return (
     <span className={className ?? "inline-flex items-center gap-0.5 whitespace-nowrap align-super"}>
-      {refs.map((ref) => {
+      {uniqueRefs.map((ref) => {
         const source = record.sources[ref];
         if (!source) {
           return null;

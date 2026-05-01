@@ -66,6 +66,8 @@ type SharedServiceFields = {
     allowed_file_types: {
       mode: string;
       notes: string;
+      allowed_extensions: string[];
+      blocked_extensions: string[];
     } & SourceRefsField;
     public_sharing?: BooleanField;
   };
@@ -192,6 +194,8 @@ export type HostRecord = Host & {
     storageGuestLabel: string;
     storageAccountLabel: string;
     bandwidthLabel: string;
+    allowedExtensionsLabel: string;
+    blockedExtensionsLabel: string;
   };
   datasetLabels: {
     maxFileGuestLabel: string;
@@ -229,6 +233,8 @@ export type CandidateRecord = Candidate &
       storageGuestLabel: string;
       storageAccountLabel: string;
       bandwidthLabel: string;
+      allowedExtensionsLabel: string;
+      blockedExtensionsLabel: string;
     };
     datasetLabels: {
       maxFileGuestLabel: string;
@@ -446,6 +452,61 @@ function booleanFieldLabel(field: BooleanField) {
   }
 
   return "Not published";
+}
+
+function extensionListLabel(extensions: string[], fallback: string) {
+  if (extensions.length > 0) {
+    return extensions.join(", ");
+  }
+
+  return fallback;
+}
+
+function allowedExtensionsLabel(record: SharedServiceFields) {
+  const fileTypes = record.content.allowed_file_types;
+  const mode = fileTypes.mode.toLowerCase();
+  const notes = fileTypes.notes.toLowerCase();
+
+  if (fileTypes.allowed_extensions.length > 0) {
+    return extensionListLabel(fileTypes.allowed_extensions, "Not published");
+  }
+
+  if (mode.includes("all") || mode.includes("any")) {
+    return "All / see notes";
+  }
+
+  if (mode.includes("image")) {
+    return "Images / see notes";
+  }
+
+  if (mode.includes("media")) {
+    return "Media / see notes";
+  }
+
+  if (
+    mode.includes("conditional") ||
+    mode.includes("dependent") ||
+    notes.includes("conditional") ||
+    notes.includes("depends") ||
+    notes.includes("depend") ||
+    notes.includes("varies") ||
+    notes.includes("downstream") ||
+    notes.includes("provider-dependent")
+  ) {
+    return "Conditional";
+  }
+
+  return "Not published";
+}
+
+function blockedExtensionsLabel(record: SharedServiceFields) {
+  const fileTypes = record.content.allowed_file_types;
+
+  if (fileTypes.blocked_extensions.length > 0) {
+    return extensionListLabel(fileTypes.blocked_extensions, "None published");
+  }
+
+  return "None published";
 }
 
 function mbComparableLabel(limit: LimitField) {
@@ -767,7 +828,9 @@ function enrichRecord<T extends HostLikeBase>(record: T) {
       storageLabel: limitLabel(record.limits.storage),
       storageGuestLabel: guestStorageLabel(record),
       storageAccountLabel: accountStorageLabel(record),
-      bandwidthLabel: limitLabel(record.limits.bandwidth)
+      bandwidthLabel: limitLabel(record.limits.bandwidth),
+      allowedExtensionsLabel: allowedExtensionsLabel(record),
+      blockedExtensionsLabel: blockedExtensionsLabel(record)
     },
     datasetLabels: {
       maxFileGuestLabel: guestMaxComparableLabel(record),
@@ -826,7 +889,9 @@ function enrichAlternative(record: AlternativeService): AlternativeRecord {
       labels.maxFileSize,
       labels.persistenceModel,
       labels.storageModel,
-      labels.bandwidthModel
+      labels.bandwidthModel,
+      record.content.allowed_file_types.allowed_extensions.join(" "),
+      record.content.allowed_file_types.blocked_extensions.join(" ")
     ]
       .join(" ")
       .toLowerCase()
@@ -866,7 +931,9 @@ function enrichMirror(record: MirrorUploaderService): MirrorUploaderRecord {
       labels.torrentImport,
       labels.storesFilesItself,
       labels.retentionModel,
-      labels.downstreamDependency
+      labels.downstreamDependency,
+      record.content.allowed_file_types.allowed_extensions.join(" "),
+      record.content.allowed_file_types.blocked_extensions.join(" ")
     ]
       .join(" ")
       .toLowerCase()
@@ -907,7 +974,9 @@ function enrichCloudMigration(record: CloudMigrationService): CloudMigrationReco
       labels.includedStorage,
       labels.scheduledRuns,
       labels.providerDependency,
-      labels.bandwidthModel
+      labels.bandwidthModel,
+      record.content.allowed_file_types.allowed_extensions.join(" "),
+      record.content.allowed_file_types.blocked_extensions.join(" ")
     ]
       .join(" ")
       .toLowerCase()
@@ -922,6 +991,7 @@ function enrichAdjacentCandidate<
     tags: string[];
     sources: SourceRecord[];
     account: { required: boolean | null };
+    content: SharedServiceFields["content"];
     profile: unknown;
   }
 >(record: T) {
@@ -935,6 +1005,8 @@ function enrichAdjacentCandidate<
       record.summary,
       record.reason ?? "",
       record.tags.join(" "),
+      record.content.allowed_file_types.allowed_extensions.join(" "),
+      record.content.allowed_file_types.blocked_extensions.join(" "),
       JSON.stringify(record.profile),
       record.sources.map((source) => `${source.label} ${source.notes}`).join(" ")
     ]

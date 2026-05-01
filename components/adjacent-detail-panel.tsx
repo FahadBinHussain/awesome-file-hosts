@@ -41,6 +41,39 @@ function kindLabel(kind: AdjacentRecord["kind"]) {
   return "Cloud migration";
 }
 
+function extensionListLabel(extensions: string[]) {
+  return extensions.join(", ");
+}
+
+function allowedExtensionLabel(record: AdjacentRecord) {
+  const fileTypes = record.content.allowed_file_types;
+  const mode = fileTypes.mode.toLowerCase();
+  const notes = fileTypes.notes.toLowerCase();
+
+  if (fileTypes.allowed_extensions.length > 0) return extensionListLabel(fileTypes.allowed_extensions);
+  if (mode.includes("all") || mode.includes("any")) return "All / see notes";
+  if (mode.includes("image")) return "Images / see notes";
+  if (mode.includes("media")) return "Media / see notes";
+  if (
+    mode.includes("conditional") ||
+    mode.includes("dependent") ||
+    notes.includes("conditional") ||
+    notes.includes("depends") ||
+    notes.includes("depend") ||
+    notes.includes("varies") ||
+    notes.includes("downstream") ||
+    notes.includes("provider-dependent")
+  ) {
+    return "Conditional";
+  }
+  return "Not published";
+}
+
+function blockedExtensionLabel(record: AdjacentRecord) {
+  const extensions = record.content.allowed_file_types.blocked_extensions;
+  return extensions.length > 0 ? extensionListLabel(extensions) : "None published";
+}
+
 export function AdjacentDetailPanel({ record }: { record: AdjacentRecord | null }) {
   if (!record) {
     return (
@@ -247,6 +280,18 @@ export function AdjacentDetailPanel({ record }: { record: AdjacentRecord | null 
           <InfoPair
             label="Allowed file types"
             value={record.content.allowed_file_types.notes}
+            record={record}
+            refs={record.content.allowed_file_types.source_refs}
+          />
+          <InfoPair
+            label="Allowed extensions"
+            value={allowedExtensionLabel(record)}
+            record={record}
+            refs={record.content.allowed_file_types.source_refs}
+          />
+          <InfoPair
+            label="Blocked extensions"
+            value={blockedExtensionLabel(record)}
             record={record}
             refs={record.content.allowed_file_types.source_refs}
           />

@@ -26,7 +26,9 @@
         "notes": "Allowed file types depend on selected downstream hosts; the current homepage lists regular file hosts and a separate group of video-only hosts.",
         "source_refs": [
           0
-        ]
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
       }
     },
     "security": {
@@ -90,8 +92,8 @@
         ]
       },
       "torrent_import": {
-        "value": null,
-        "notes": "Current first-party pages reviewed here do not clearly publish a torrent import workflow.",
+        "value": false,
+        "notes": "Current first-party pages expose local-file upload and remote URL upload modes, but do not publish a torrent or magnet import workflow.",
         "source_refs": [
           0,
           1,
@@ -151,7 +153,9 @@
         "notes": "Allowed file types and delivery behavior ultimately vary by the downstream hosts selected for mirroring.",
         "source_refs": [
           0
-        ]
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
       }
     },
     "security": {
@@ -251,6 +255,119 @@
         "source_refs": [
           0,
           1
+        ]
+      }
+    }
+  },
+  {
+    "name": "UploadOnAll",
+    "url": "https://www.uploadonall.com/",
+    "summary": "Mirror-uploader service that uploads one file to multiple downstream file-hosting mirrors, with a current 300 MB max file size and up to 10 selected mirrors.",
+    "account": {
+      "required": false,
+      "benefits": "The visible upload form supports guest use and asks users to choose downstream mirrors before uploading.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The cited first-party page does not document a public API or CLI workflow.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "downstream-dependent",
+        "notes": "Allowed file behavior depends on the selected downstream mirrors.",
+        "source_refs": [
+          0
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The current page is served over HTTPS, but UploadOnAll does not position itself as end-to-end encrypted storage.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "mirror-uploader",
+      "guest-upload"
+    ],
+    "sources": [
+      {
+        "label": "UploadOnAll homepage",
+        "url": "https://www.uploadonall.com/",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official homepage says maximum file size is 300 MB and users can choose up to 10 mirrors for free file upload."
+      },
+      {
+        "label": "Rentry limited file-host list",
+        "url": "https://rentry.org/xc48kg",
+        "retrieved_at": "2026-05-01",
+        "notes": "Seed list claimed 300 MB for UploadOnAll; official page confirms 300 MB. It was classified as a mirror uploader rather than a direct host."
+      }
+    ],
+    "kind": "mirror_uploader",
+    "profile": {
+      "max_file_size": {
+        "value": 300,
+        "unit": "MB",
+        "notes": "The official homepage says maximum file size is 300 MB.",
+        "source_refs": [
+          0
+        ]
+      },
+      "guest_uploads": {
+        "value": true,
+        "notes": "The visible upload form supports guest use.",
+        "source_refs": [
+          0
+        ]
+      },
+      "remote_import": {
+        "value": false,
+        "notes": "The current first-party page reviewed here only exposes local-file fan-out, not remote URL import.",
+        "source_refs": [
+          0
+        ]
+      },
+      "torrent_import": {
+        "value": false,
+        "notes": "The current first-party page reviewed here does not expose torrent import.",
+        "source_refs": [
+          0
+        ]
+      },
+      "stores_files_itself": {
+        "value": false,
+        "notes": "UploadOnAll is a mirror uploader: it sends the file to selected downstream hosts rather than acting as the final file host.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention_model": {
+        "value": "Downstream-host dependent",
+        "notes": "Retention depends on the selected downstream file hosts.",
+        "source_refs": [
+          0
+        ]
+      },
+      "downstream_dependency": {
+        "value": "Selected mirrors determine delivery",
+        "notes": "Availability and download behavior depend on the selected mirror hosts, several of which are older/dead-brand hosts in the current page list.",
+        "source_refs": [
+          0
         ]
       }
     }

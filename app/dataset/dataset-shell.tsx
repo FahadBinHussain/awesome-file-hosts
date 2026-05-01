@@ -51,6 +51,8 @@ type HostSortKey =
   | "retention"
   | "bandwidth"
   | "public_sharing"
+  | "allowed_extensions"
+  | "blocked_extensions"
   | "api"
   | "cli"
   | "e2ee"
@@ -67,6 +69,8 @@ type QueueSortKey =
   | "retention"
   | "bandwidth"
   | "public_sharing"
+  | "allowed_extensions"
+  | "blocked_extensions"
   | "api"
   | "cli"
   | "e2ee"
@@ -80,6 +84,8 @@ type AdjacentQueueSortKey =
   | "kind"
   | "status"
   | "account"
+  | "allowed_extensions"
+  | "blocked_extensions"
   | "api"
   | "cli"
   | "e2ee"
@@ -252,6 +258,30 @@ const hostColumnDefs: HostColumn[] = [
         value={booleanFieldLabel(host.content.public_sharing?.value)}
         record={host}
         refs={host.content.public_sharing?.source_refs}
+      />
+    )
+  },
+  {
+    id: "allowed_extensions",
+    label: "Allowed ext",
+    width: "180px",
+    render: (host) => (
+      <CitedValue
+        value={allowedExtensionLabel(host)}
+        record={host}
+        refs={host.content.allowed_file_types.source_refs}
+      />
+    )
+  },
+  {
+    id: "blocked_extensions",
+    label: "Blocked ext",
+    width: "180px",
+    render: (host) => (
+      <CitedValue
+        value={blockedExtensionLabel(host)}
+        record={host}
+        refs={host.content.allowed_file_types.source_refs}
       />
     )
   },
@@ -450,6 +480,30 @@ const queueColumnDefs: QueueColumn[] = [
     )
   },
   {
+    id: "allowed_extensions",
+    label: "Allowed ext",
+    width: "180px",
+    render: (candidate) => (
+      <CitedValue
+        value={allowedExtensionLabel(candidate)}
+        record={candidate}
+        refs={candidate.content.allowed_file_types.source_refs}
+      />
+    )
+  },
+  {
+    id: "blocked_extensions",
+    label: "Blocked ext",
+    width: "180px",
+    render: (candidate) => (
+      <CitedValue
+        value={blockedExtensionLabel(candidate)}
+        record={candidate}
+        refs={candidate.content.allowed_file_types.source_refs}
+      />
+    )
+  },
+  {
     id: "cli",
     label: "CLI",
     width: "92px",
@@ -564,6 +618,30 @@ const adjacentQueueColumnDefs: AdjacentQueueColumn[] = [
     width: "112px",
     render: (candidate) => (
       <CitedValue value={candidate.accountLabel} record={candidate} refs={candidate.account.source_refs} />
+    )
+  },
+  {
+    id: "allowed_extensions",
+    label: "Allowed ext",
+    width: "180px",
+    render: (candidate) => (
+      <CitedValue
+        value={allowedExtensionLabel(candidate)}
+        record={candidate}
+        refs={candidate.content.allowed_file_types.source_refs}
+      />
+    )
+  },
+  {
+    id: "blocked_extensions",
+    label: "Blocked ext",
+    width: "180px",
+    render: (candidate) => (
+      <CitedValue
+        value={blockedExtensionLabel(candidate)}
+        record={candidate}
+        refs={candidate.content.allowed_file_types.source_refs}
+      />
     )
   },
   {
@@ -691,6 +769,32 @@ const alternativeColumnDefs: AdjacentColumn<AlternativeRecord>[] = [
     sortValue: (record) => record.sortMetrics.maxFileMb
   },
   {
+    id: "allowed_extensions",
+    label: "Allowed ext",
+    width: "180px",
+    render: (record) => (
+      <CitedValue
+        value={allowedExtensionLabel(record)}
+        record={record}
+        refs={record.content.allowed_file_types.source_refs}
+      />
+    ),
+    sortValue: (record) => allowedExtensionLabel(record).toLowerCase()
+  },
+  {
+    id: "blocked_extensions",
+    label: "Blocked ext",
+    width: "180px",
+    render: (record) => (
+      <CitedValue
+        value={blockedExtensionLabel(record)}
+        record={record}
+        refs={record.content.allowed_file_types.source_refs}
+      />
+    ),
+    sortValue: (record) => blockedExtensionLabel(record).toLowerCase()
+  },
+  {
     id: "persistence_model",
     label: "Persistence",
     width: "146px",
@@ -778,6 +882,32 @@ const mirrorColumnDefs: AdjacentColumn<MirrorUploaderRecord>[] = [
       />
     ),
     sortValue: (record) => record.sortMetrics.maxFileMb
+  },
+  {
+    id: "allowed_extensions",
+    label: "Allowed ext",
+    width: "180px",
+    render: (record) => (
+      <CitedValue
+        value={allowedExtensionLabel(record)}
+        record={record}
+        refs={record.content.allowed_file_types.source_refs}
+      />
+    ),
+    sortValue: (record) => allowedExtensionLabel(record).toLowerCase()
+  },
+  {
+    id: "blocked_extensions",
+    label: "Blocked ext",
+    width: "180px",
+    render: (record) => (
+      <CitedValue
+        value={blockedExtensionLabel(record)}
+        record={record}
+        refs={record.content.allowed_file_types.source_refs}
+      />
+    ),
+    sortValue: (record) => blockedExtensionLabel(record).toLowerCase()
   },
   {
     id: "guest_uploads",
@@ -921,6 +1051,32 @@ const migrationColumnDefs: AdjacentColumn<CloudMigrationRecord>[] = [
     sortValue: (record) => record.sortMetrics.itemLimitMb
   },
   {
+    id: "allowed_extensions",
+    label: "Allowed ext",
+    width: "180px",
+    render: (record) => (
+      <CitedValue
+        value={allowedExtensionLabel(record)}
+        record={record}
+        refs={record.content.allowed_file_types.source_refs}
+      />
+    ),
+    sortValue: (record) => allowedExtensionLabel(record).toLowerCase()
+  },
+  {
+    id: "blocked_extensions",
+    label: "Blocked ext",
+    width: "180px",
+    render: (record) => (
+      <CitedValue
+        value={blockedExtensionLabel(record)}
+        record={record}
+        refs={record.content.allowed_file_types.source_refs}
+      />
+    ),
+    sortValue: (record) => blockedExtensionLabel(record).toLowerCase()
+  },
+  {
     id: "included_storage",
     label: "Included storage",
     width: "144px",
@@ -1041,6 +1197,54 @@ function booleanSortValue(value: boolean | null | undefined) {
   return null;
 }
 
+type ExtensionAwareRecord = SourceBackedRecord & {
+  content: {
+    allowed_file_types: {
+      mode: string;
+      notes: string;
+      allowed_extensions: string[];
+      blocked_extensions: string[];
+      source_refs?: number[];
+    };
+  };
+};
+
+function extensionListLabel(extensions: string[]) {
+  return extensions.join(", ");
+}
+
+function allowedExtensionLabel(record: ExtensionAwareRecord) {
+  const fileTypes = record.content.allowed_file_types;
+  const mode = fileTypes.mode.toLowerCase();
+  const notes = fileTypes.notes.toLowerCase();
+
+  if (fileTypes.allowed_extensions.length > 0) {
+    return extensionListLabel(fileTypes.allowed_extensions);
+  }
+
+  if (mode.includes("all") || mode.includes("any")) return "All / see notes";
+  if (mode.includes("image")) return "Images / see notes";
+  if (mode.includes("media")) return "Media / see notes";
+  if (
+    mode.includes("conditional") ||
+    mode.includes("dependent") ||
+    notes.includes("conditional") ||
+    notes.includes("depends") ||
+    notes.includes("depend") ||
+    notes.includes("varies") ||
+    notes.includes("downstream") ||
+    notes.includes("provider-dependent")
+  ) {
+    return "Conditional";
+  }
+  return "Not published";
+}
+
+function blockedExtensionLabel(record: ExtensionAwareRecord) {
+  const extensions = record.content.allowed_file_types.blocked_extensions;
+  return extensions.length > 0 ? extensionListLabel(extensions) : "None published";
+}
+
 function freeModelSortValue(value: HostRecord["free_model"]["value"]) {
   switch (value) {
     case "free-forever":
@@ -1132,15 +1336,19 @@ function SortHeaderButton({
 function CitedValue({
   value,
   record,
-  refs
+  refs,
+  title
 }: {
   value: string;
   record: SourceBackedRecord;
   refs?: number[];
+  title?: string;
 }) {
   return (
     <div className="min-w-0 leading-6 text-[var(--text-primary)]">
-      <span>{value}</span>
+      <span className="inline-block max-w-full truncate align-bottom" title={title ?? value}>
+        {value}
+      </span>
       {refs?.length ? " " : null}
       <SourceRefLinks
         record={record}
@@ -1171,6 +1379,10 @@ function hostSortValue(host: HostRecord, key: HostSortKey) {
       return host.sortMetrics.bandwidthMb;
     case "public_sharing":
       return booleanSortValue(host.content.public_sharing?.value);
+    case "allowed_extensions":
+      return allowedExtensionLabel(host).toLowerCase();
+    case "blocked_extensions":
+      return blockedExtensionLabel(host).toLowerCase();
     case "api":
       return host.developer.api_available ? 1 : 0;
     case "cli":
@@ -1233,6 +1445,10 @@ function queueSortValue(candidate: CandidateRecord, key: QueueSortKey) {
       return candidate.sortMetrics.bandwidthMb;
     case "public_sharing":
       return booleanSortValue(candidate.content.public_sharing?.value);
+    case "allowed_extensions":
+      return allowedExtensionLabel(candidate).toLowerCase();
+    case "blocked_extensions":
+      return blockedExtensionLabel(candidate).toLowerCase();
     case "api":
       return candidate.developer.api_available ? 1 : 0;
     case "cli":
@@ -1262,6 +1478,10 @@ function adjacentQueueSortValue(candidate: AdjacentCandidateRecord, key: Adjacen
       return candidate.verification_status;
     case "account":
       return candidate.accountLabel;
+    case "allowed_extensions":
+      return allowedExtensionLabel(candidate).toLowerCase();
+    case "blocked_extensions":
+      return blockedExtensionLabel(candidate).toLowerCase();
     case "api":
       return candidate.developer.api_available ? 1 : 0;
     case "cli":
@@ -1418,6 +1638,18 @@ function CandidateDetailPanel({ candidate }: { candidate: CandidateRecord | null
             <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Allowed file types</div>
             <div className="text-sm text-[var(--text-primary)]">
               {candidate.content.allowed_file_types.notes} <SourceRefLinks record={candidate} refs={candidate.content.allowed_file_types.source_refs} />
+            </div>
+          </div>
+          <div className="space-y-1.5">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Allowed extensions</div>
+            <div className="text-sm text-[var(--text-primary)]">
+              {allowedExtensionLabel(candidate)} <SourceRefLinks record={candidate} refs={candidate.content.allowed_file_types.source_refs} />
+            </div>
+          </div>
+          <div className="space-y-1.5">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Blocked extensions</div>
+            <div className="text-sm text-[var(--text-primary)]">
+              {blockedExtensionLabel(candidate)} <SourceRefLinks record={candidate} refs={candidate.content.allowed_file_types.source_refs} />
             </div>
           </div>
           <div className="space-y-1.5">
@@ -1612,6 +1844,27 @@ function AdjacentCandidateDetailPanel({ candidate }: { candidate: AdjacentCandid
             <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Account</div>
             <div className="text-sm text-[var(--text-primary)]">
               {candidate.account.benefits} <SourceRefLinks record={candidate} refs={candidate.account.source_refs} />
+            </div>
+          </div>
+          <div className="space-y-1.5">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Allowed file types</div>
+            <div className="text-sm text-[var(--text-primary)]">
+              {candidate.content.allowed_file_types.notes}{" "}
+              <SourceRefLinks record={candidate} refs={candidate.content.allowed_file_types.source_refs} />
+            </div>
+          </div>
+          <div className="space-y-1.5">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Allowed extensions</div>
+            <div className="text-sm text-[var(--text-primary)]">
+              {allowedExtensionLabel(candidate)}{" "}
+              <SourceRefLinks record={candidate} refs={candidate.content.allowed_file_types.source_refs} />
+            </div>
+          </div>
+          <div className="space-y-1.5">
+            <div className="text-[10px] uppercase tracking-[0.25em] text-[var(--text-muted)] font-semibold">Blocked extensions</div>
+            <div className="text-sm text-[var(--text-primary)]">
+              {blockedExtensionLabel(candidate)}{" "}
+              <SourceRefLinks record={candidate} refs={candidate.content.allowed_file_types.source_refs} />
             </div>
           </div>
           <div className="space-y-1.5">
@@ -2180,6 +2433,10 @@ export function DatasetApp({ data }: Props) {
         host.datasetLabels.storageGuestLabel,
         host.datasetLabels.storageAccountLabel,
         host.filters.bandwidthLabel,
+        allowedExtensionLabel(host),
+        blockedExtensionLabel(host),
+        host.content.allowed_file_types.allowed_extensions.join(" "),
+        host.content.allowed_file_types.blocked_extensions.join(" "),
         booleanFieldLabel(host.content.public_sharing?.value)
       ]
         .join(" ")
@@ -2288,6 +2545,10 @@ export function DatasetApp({ data }: Props) {
         candidate.datasetLabels.storageGuestLabel,
         candidate.datasetLabels.storageAccountLabel,
         candidate.filters.bandwidthLabel,
+        allowedExtensionLabel(candidate),
+        blockedExtensionLabel(candidate),
+        candidate.content.allowed_file_types.allowed_extensions.join(" "),
+        candidate.content.allowed_file_types.blocked_extensions.join(" "),
         booleanFieldLabel(candidate.content.public_sharing?.value)
       ]
         .join(" ")

@@ -50,14 +50,30 @@
           "bandwidth"
         ],
         "properties": {
-          "max_file_size": { "$ref": "#/$defs/limitField" },
-          "max_file_size_guest": { "$ref": "#/$defs/limitField" },
-          "max_file_size_account": { "$ref": "#/$defs/limitField" },
-          "retention": { "$ref": "#/$defs/limitField" },
-          "storage": { "$ref": "#/$defs/limitField" },
-          "storage_guest": { "$ref": "#/$defs/limitField" },
-          "storage_account": { "$ref": "#/$defs/limitField" },
-          "bandwidth": { "$ref": "#/$defs/limitField" }
+          "max_file_size": {
+            "$ref": "#/$defs/limitField"
+          },
+          "max_file_size_guest": {
+            "$ref": "#/$defs/limitField"
+          },
+          "max_file_size_account": {
+            "$ref": "#/$defs/limitField"
+          },
+          "retention": {
+            "$ref": "#/$defs/limitField"
+          },
+          "storage": {
+            "$ref": "#/$defs/limitField"
+          },
+          "storage_guest": {
+            "$ref": "#/$defs/limitField"
+          },
+          "storage_account": {
+            "$ref": "#/$defs/limitField"
+          },
+          "bandwidth": {
+            "$ref": "#/$defs/limitField"
+          }
         }
       },
       "account": {
@@ -132,7 +148,9 @@
             "additionalProperties": false,
             "required": [
               "mode",
-              "notes"
+              "notes",
+              "allowed_extensions",
+              "blocked_extensions"
             ],
             "properties": {
               "mode": {
@@ -144,6 +162,22 @@
               },
               "source_refs": {
                 "$ref": "#/$defs/sourceRefs"
+              },
+              "allowed_extensions": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^\\.[A-Za-z0-9][A-Za-z0-9+._*-]*$"
+                },
+                "uniqueItems": true
+              },
+              "blocked_extensions": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^\\.[A-Za-z0-9][A-Za-z0-9+._*-]*$"
+                },
+                "uniqueItems": true
               }
             }
           },
@@ -242,7 +276,8 @@
         "type": "integer",
         "minimum": 0
       },
-      "minItems": 1
+      "minItems": 1,
+      "uniqueItems": true
     },
     "limitField": {
       "type": "object",

@@ -21,25 +21,39 @@
       "reason"
     ],
     "allOf": [
-      { "$ref": "#/$defs/sharedCandidateFields" },
+      {
+        "$ref": "#/$defs/sharedCandidateFields"
+      },
       {
         "oneOf": [
           {
             "properties": {
-              "kind": { "const": "alternative" },
-              "profile": { "$ref": "#/$defs/alternativeProfile" }
+              "kind": {
+                "const": "alternative"
+              },
+              "profile": {
+                "$ref": "#/$defs/alternativeProfile"
+              }
             }
           },
           {
             "properties": {
-              "kind": { "const": "mirror_uploader" },
-              "profile": { "$ref": "#/$defs/mirrorProfile" }
+              "kind": {
+                "const": "mirror_uploader"
+              },
+              "profile": {
+                "$ref": "#/$defs/mirrorProfile"
+              }
             }
           },
           {
             "properties": {
-              "kind": { "const": "cloud_migration" },
-              "profile": { "$ref": "#/$defs/cloudMigrationProfile" }
+              "kind": {
+                "const": "cloud_migration"
+              },
+              "profile": {
+                "$ref": "#/$defs/cloudMigrationProfile"
+              }
             }
           }
         ]
@@ -49,84 +63,209 @@
   "$defs": {
     "sourceRefs": {
       "type": "array",
-      "items": { "type": "integer", "minimum": 0 },
-      "minItems": 1
+      "items": {
+        "type": "integer",
+        "minimum": 0
+      },
+      "minItems": 1,
+      "uniqueItems": true
     },
     "limitField": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["value", "unit", "notes"],
+      "required": [
+        "value",
+        "unit",
+        "notes"
+      ],
       "properties": {
-        "value": { "type": ["number", "null"] },
-        "unit": { "type": ["string", "null"] },
-        "notes": { "type": "string" },
-        "source_refs": { "$ref": "#/$defs/sourceRefs" }
+        "value": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "unit": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_refs": {
+          "$ref": "#/$defs/sourceRefs"
+        }
       }
     },
     "textField": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["value", "notes"],
+      "required": [
+        "value",
+        "notes"
+      ],
       "properties": {
-        "value": { "type": ["string", "null"] },
-        "notes": { "type": "string" },
-        "source_refs": { "$ref": "#/$defs/sourceRefs" }
+        "value": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_refs": {
+          "$ref": "#/$defs/sourceRefs"
+        }
       }
     },
     "booleanField": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["value", "notes"],
+      "required": [
+        "value",
+        "notes"
+      ],
       "properties": {
-        "value": { "type": ["boolean", "null"] },
-        "notes": { "type": "string" },
-        "source_refs": { "$ref": "#/$defs/sourceRefs" }
+        "value": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "notes": {
+          "type": "string"
+        },
+        "source_refs": {
+          "$ref": "#/$defs/sourceRefs"
+        }
       }
     },
     "sharedCandidateFields": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "kind": { "type": "string" },
-        "name": { "type": "string", "minLength": 1 },
-        "url": { "type": ["string", "null"] },
-        "summary": { "type": "string", "minLength": 1 },
+        "kind": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
         "account": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["required", "benefits"],
+          "required": [
+            "required",
+            "benefits"
+          ],
           "properties": {
-            "required": { "type": ["boolean", "null"] },
-            "benefits": { "type": "string" },
-            "source_refs": { "$ref": "#/$defs/sourceRefs" }
+            "required": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "benefits": {
+              "type": "string"
+            },
+            "source_refs": {
+              "$ref": "#/$defs/sourceRefs"
+            }
           }
         },
         "developer": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["api_available", "api_docs_url", "cli_friendly", "cli_example", "notes"],
+          "required": [
+            "api_available",
+            "api_docs_url",
+            "cli_friendly",
+            "cli_example",
+            "notes"
+          ],
           "properties": {
-            "api_available": { "type": "boolean" },
-            "api_docs_url": { "type": ["string", "null"] },
-            "cli_friendly": { "type": "boolean" },
-            "cli_example": { "type": ["string", "null"] },
-            "notes": { "type": "string" },
-            "source_refs": { "$ref": "#/$defs/sourceRefs" }
+            "api_available": {
+              "type": "boolean"
+            },
+            "api_docs_url": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "cli_friendly": {
+              "type": "boolean"
+            },
+            "cli_example": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "notes": {
+              "type": "string"
+            },
+            "source_refs": {
+              "$ref": "#/$defs/sourceRefs"
+            }
           }
         },
         "content": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["allowed_file_types"],
+          "required": [
+            "allowed_file_types"
+          ],
           "properties": {
             "allowed_file_types": {
               "type": "object",
               "additionalProperties": false,
-              "required": ["mode", "notes"],
+              "required": [
+                "mode",
+                "notes",
+                "allowed_extensions",
+                "blocked_extensions"
+              ],
               "properties": {
-                "mode": { "type": "string", "minLength": 1 },
-                "notes": { "type": "string" },
-                "source_refs": { "$ref": "#/$defs/sourceRefs" }
+                "mode": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "notes": {
+                  "type": "string"
+                },
+                "source_refs": {
+                  "$ref": "#/$defs/sourceRefs"
+                },
+                "allowed_extensions": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^\\.[A-Za-z0-9][A-Za-z0-9+._*-]*$"
+                  },
+                  "uniqueItems": true
+                },
+                "blocked_extensions": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^\\.[A-Za-z0-9][A-Za-z0-9+._*-]*$"
+                  },
+                  "uniqueItems": true
+                }
               }
             },
             "public_sharing": {
@@ -137,39 +276,87 @@
         "security": {
           "type": "object",
           "additionalProperties": false,
-          "required": ["https_only", "e2ee", "server_side_encryption", "notes"],
+          "required": [
+            "https_only",
+            "e2ee",
+            "server_side_encryption",
+            "notes"
+          ],
           "properties": {
-            "https_only": { "type": "boolean" },
-            "e2ee": { "type": "boolean" },
-            "server_side_encryption": { "type": ["boolean", "null"] },
-            "notes": { "type": "string" },
-            "source_refs": { "$ref": "#/$defs/sourceRefs" }
+            "https_only": {
+              "type": "boolean"
+            },
+            "e2ee": {
+              "type": "boolean"
+            },
+            "server_side_encryption": {
+              "type": [
+                "boolean",
+                "null"
+              ]
+            },
+            "notes": {
+              "type": "string"
+            },
+            "source_refs": {
+              "$ref": "#/$defs/sourceRefs"
+            }
           }
         },
         "tags": {
           "type": "array",
-          "items": { "type": "string", "minLength": 1 }
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
         },
         "sources": {
           "type": "array",
           "items": {
             "type": "object",
             "additionalProperties": false,
-            "required": ["label", "url", "retrieved_at", "notes"],
+            "required": [
+              "label",
+              "url",
+              "retrieved_at",
+              "notes"
+            ],
             "properties": {
-              "label": { "type": "string", "minLength": 1 },
-              "url": { "type": "string", "pattern": "^https://" },
-              "retrieved_at": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
-              "notes": { "type": "string" }
+              "label": {
+                "type": "string",
+                "minLength": 1
+              },
+              "url": {
+                "type": "string",
+                "pattern": "^https://"
+              },
+              "retrieved_at": {
+                "type": "string",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+              },
+              "notes": {
+                "type": "string"
+              }
             }
           }
         },
-        "profile": { "type": "object" },
+        "profile": {
+          "type": "object"
+        },
         "verification_status": {
           "type": "string",
-          "enum": ["pending", "verified", "rejected"]
+          "enum": [
+            "pending",
+            "verified",
+            "rejected"
+          ]
         },
-        "reason": { "type": ["string", "null"] }
+        "reason": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
       }
     },
     "alternativeProfile": {
@@ -184,12 +371,24 @@
         "bandwidth_model"
       ],
       "properties": {
-        "primary_use": { "$ref": "#/$defs/textField" },
-        "sharing_surface": { "$ref": "#/$defs/textField" },
-        "max_file_size": { "$ref": "#/$defs/limitField" },
-        "persistence_model": { "$ref": "#/$defs/textField" },
-        "storage_model": { "$ref": "#/$defs/textField" },
-        "bandwidth_model": { "$ref": "#/$defs/textField" }
+        "primary_use": {
+          "$ref": "#/$defs/textField"
+        },
+        "sharing_surface": {
+          "$ref": "#/$defs/textField"
+        },
+        "max_file_size": {
+          "$ref": "#/$defs/limitField"
+        },
+        "persistence_model": {
+          "$ref": "#/$defs/textField"
+        },
+        "storage_model": {
+          "$ref": "#/$defs/textField"
+        },
+        "bandwidth_model": {
+          "$ref": "#/$defs/textField"
+        }
       }
     },
     "mirrorProfile": {
@@ -205,13 +404,27 @@
         "downstream_dependency"
       ],
       "properties": {
-        "max_file_size": { "$ref": "#/$defs/limitField" },
-        "guest_uploads": { "$ref": "#/$defs/booleanField" },
-        "remote_import": { "$ref": "#/$defs/booleanField" },
-        "torrent_import": { "$ref": "#/$defs/booleanField" },
-        "stores_files_itself": { "$ref": "#/$defs/booleanField" },
-        "retention_model": { "$ref": "#/$defs/textField" },
-        "downstream_dependency": { "$ref": "#/$defs/textField" }
+        "max_file_size": {
+          "$ref": "#/$defs/limitField"
+        },
+        "guest_uploads": {
+          "$ref": "#/$defs/booleanField"
+        },
+        "remote_import": {
+          "$ref": "#/$defs/booleanField"
+        },
+        "torrent_import": {
+          "$ref": "#/$defs/booleanField"
+        },
+        "stores_files_itself": {
+          "$ref": "#/$defs/booleanField"
+        },
+        "retention_model": {
+          "$ref": "#/$defs/textField"
+        },
+        "downstream_dependency": {
+          "$ref": "#/$defs/textField"
+        }
       }
     },
     "cloudMigrationProfile": {
@@ -227,13 +440,27 @@
         "bandwidth_model"
       ],
       "properties": {
-        "workflow_modes": { "$ref": "#/$defs/textField" },
-        "execution_model": { "$ref": "#/$defs/textField" },
-        "item_limit": { "$ref": "#/$defs/limitField" },
-        "included_storage": { "$ref": "#/$defs/limitField" },
-        "scheduled_runs": { "$ref": "#/$defs/booleanField" },
-        "provider_dependency": { "$ref": "#/$defs/textField" },
-        "bandwidth_model": { "$ref": "#/$defs/textField" }
+        "workflow_modes": {
+          "$ref": "#/$defs/textField"
+        },
+        "execution_model": {
+          "$ref": "#/$defs/textField"
+        },
+        "item_limit": {
+          "$ref": "#/$defs/limitField"
+        },
+        "included_storage": {
+          "$ref": "#/$defs/limitField"
+        },
+        "scheduled_runs": {
+          "$ref": "#/$defs/booleanField"
+        },
+        "provider_dependency": {
+          "$ref": "#/$defs/textField"
+        },
+        "bandwidth_model": {
+          "$ref": "#/$defs/textField"
+        }
       }
     }
   }

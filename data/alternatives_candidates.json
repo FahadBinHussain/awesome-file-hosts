@@ -1,1 +1,146 @@
-[]
+[
+  {
+    "name": "Pixelfed",
+    "url": "https://pixelfed.org/",
+    "summary": "Decentralized, open-source photo-sharing social network that can be used as an account-based alternative way to publish and share images across the Fediverse.",
+    "account": {
+      "required": true,
+      "benefits": "Users need an account on a Pixelfed instance to publish posts; limits and moderation depend on the chosen instance.",
+      "source_refs": [
+        0,
+        2
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://github.com/pixelfed/pixelfed",
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Pixelfed is open-source ActivityPub software. API and upload behavior are instance/application oriented rather than a simple anonymous file-host API.",
+      "source_refs": [
+        1,
+        2
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "instance-dependent-media",
+        "notes": "Pixelfed is photo/video social publishing software; upload limits and accepted media types are configured by each instance.",
+        "source_refs": [
+          0,
+          2
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Pixelfed posts and albums are designed for public/federated photo sharing, subject to post privacy and instance settings.",
+        "source_refs": [
+          0,
+          2
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Pixelfed instances run over HTTPS, but public/federated posts are not positioned as end-to-end encrypted file storage.",
+      "source_refs": [
+        0,
+        1,
+        2
+      ]
+    },
+    "tags": [
+      "alternative-method",
+      "image-sharing",
+      "social-network",
+      "fediverse",
+      "open-source",
+      "activitypub"
+    ],
+    "sources": [
+      {
+        "label": "Pixelfed.social about page",
+        "url": "https://pixelfed.social/site/about",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official Pixelfed.social about page describes photo sharing, albums, comments, collections, and sign-up on an instance."
+      },
+      {
+        "label": "Pixelfed GitHub repository",
+        "url": "https://github.com/pixelfed/pixelfed",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official source repository describes Pixelfed as photo sharing for the fediverse and AGPL-licensed open-source software."
+      },
+      {
+        "label": "Pixelfed docs prerequisites",
+        "url": "https://pixelfed.github.io/docs-next/running-pixelfed/prerequisites.html",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official docs show upload/file limits are configured at the instance/server level."
+      },
+      {
+        "label": "FMHY Image Hosts",
+        "url": "https://fmhy.net/image-tools#image-hosts",
+        "retrieved_at": "2026-05-01",
+        "notes": "Seed list described Pixelfed as decentralized image sharing that requires sign-up; official sources support that classification."
+      }
+    ],
+    "kind": "alternative",
+    "profile": {
+      "primary_use": {
+        "value": "Federated photo-sharing social network",
+        "notes": "Pixelfed is primarily a decentralized social network for photo/video posts rather than a normal anonymous file-host.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "sharing_surface": {
+        "value": "Posts, albums, profiles, and ActivityPub federation",
+        "notes": "Sharing happens through posts, albums, profiles, and federated social distribution across instances.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Upload size depends on the Pixelfed instance and its server configuration; official docs reference instance/server upload settings.",
+        "source_refs": [
+          2
+        ]
+      },
+      "persistence_model": {
+        "value": "Instance-dependent account posts",
+        "notes": "Posts persist according to the selected instance's policies and the user's account/post deletion choices.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "storage_model": {
+        "value": "Instance-hosted social media storage",
+        "notes": "Storage is provided by each Pixelfed instance, not by a single central file-host pool.",
+        "source_refs": [
+          0,
+          1,
+          2
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Instance-dependent",
+        "notes": "Bandwidth and delivery behavior depend on the user's selected instance and federated delivery paths.",
+        "source_refs": [
+          0,
+          1,
+          2
+        ]
+      }
+    },
+    "verification_status": "verified",
+    "reason": null
+  }
+]

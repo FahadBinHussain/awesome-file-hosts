@@ -27,7 +27,9 @@
         "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
         "source_refs": [
           0
-        ]
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
       }
     },
     "security": {
@@ -163,7 +165,9 @@
         "notes": "Supported file types likely depend on the connected providers, but that still needs first-party verification.",
         "source_refs": [
           0
-        ]
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
       }
     },
     "security": {
@@ -288,13 +292,16 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The official pages position MultCloud as handling documents, images, music, videos, email artifacts, and other files present in connected cloud drives.",
+        "mode": "provider-dependent",
+        "notes": "Supported file behavior is provider-dependent. Official MultCloud pages describe moving documents, images, music, videos, email artifacts, and other files from connected cloud drives, while the limitations page says file-size, request, naming, and sync limits are imposed by each cloud provider.",
         "source_refs": [
           0,
           1,
-          2
-        ]
+          2,
+          4
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
       }
     },
     "security": {
@@ -440,7 +447,9 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
       }
     },
     "security": {
@@ -507,8 +516,8 @@
         ]
       },
       "scheduled_runs": {
-        "value": null,
-        "notes": "Current first-party sources reviewed here do not clearly publish a dedicated scheduling model.",
+        "value": false,
+        "notes": "No dedicated scheduled cloud-migration run feature is published in the current first-party Otixo / We.Team feature and pricing pages reviewed here; treat transfers as manual unless a source changes.",
         "source_refs": [
           0,
           1

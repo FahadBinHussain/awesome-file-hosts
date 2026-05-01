@@ -177,6 +177,18 @@ export function HostDetailPanel({ host }: { host: HostRecord | null }) {
             refs={host.content.allowed_file_types.source_refs}
           />
           <InfoPair
+            label="Allowed extensions"
+            value={host.filters.allowedExtensionsLabel}
+            host={host}
+            refs={host.content.allowed_file_types.source_refs}
+          />
+          <InfoPair
+            label="Blocked extensions"
+            value={host.filters.blockedExtensionsLabel}
+            host={host}
+            refs={host.content.allowed_file_types.source_refs}
+          />
+          <InfoPair
             label="Public sharing"
             value={booleanFieldLabel(host.content.public_sharing?.value)}
             host={host}

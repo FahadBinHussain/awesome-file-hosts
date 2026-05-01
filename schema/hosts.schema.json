@@ -144,7 +144,9 @@
             "additionalProperties": false,
             "required": [
               "mode",
-              "notes"
+              "notes",
+              "allowed_extensions",
+              "blocked_extensions"
             ],
             "properties": {
               "mode": {
@@ -156,6 +158,22 @@
               },
               "source_refs": {
                 "$ref": "#/$defs/sourceRefList"
+              },
+              "allowed_extensions": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^\\.[A-Za-z0-9][A-Za-z0-9+._*-]*$"
+                },
+                "uniqueItems": true
+              },
+              "blocked_extensions": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^\\.[A-Za-z0-9][A-Za-z0-9+._*-]*$"
+                },
+                "uniqueItems": true
               }
             }
           },

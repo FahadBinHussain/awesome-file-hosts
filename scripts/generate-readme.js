@@ -84,8 +84,24 @@ function validateSourceRefs(name, refs) {
   }
 
   assert(Array.isArray(refs) && refs.length > 0, `${name} must be a non-empty array when present`);
+  assert(new Set(refs).size === refs.length, `${name} must not contain duplicate refs`);
   for (const ref of refs) {
     assert(Number.isInteger(ref) && ref >= 0, `${name} must contain non-negative integers`);
+  }
+}
+
+function validateExtensionList(name, extensions) {
+  assert(Array.isArray(extensions), `${name} must be an array`);
+
+  const seen = new Set();
+  for (const extension of extensions) {
+    assert(typeof extension === "string", `${name} must contain strings`);
+    assert(
+      /^\.[A-Za-z0-9][A-Za-z0-9+._*-]*$/.test(extension),
+      `${name} entries must be dot-prefixed extensions`
+    );
+    assert(!seen.has(extension), `${name} must contain unique entries`);
+    seen.add(extension);
   }
 }
 
@@ -136,6 +152,14 @@ function validateSharedServiceFields(record, options = {}) {
   assert(
     typeof record.content.allowed_file_types.notes === "string",
     `${record.name}.content.allowed_file_types.notes must be a string`
+  );
+  validateExtensionList(
+    `${record.name}.content.allowed_file_types.allowed_extensions`,
+    record.content.allowed_file_types.allowed_extensions
+  );
+  validateExtensionList(
+    `${record.name}.content.allowed_file_types.blocked_extensions`,
+    record.content.allowed_file_types.blocked_extensions
   );
   validateSourceRefs(
     `${record.name}.content.allowed_file_types.source_refs`,
@@ -260,6 +284,14 @@ function validateHost(host) {
   assert(
     typeof host.content.allowed_file_types.notes === "string",
     `${host.name}.content.allowed_file_types.notes must be a string`
+  );
+  validateExtensionList(
+    `${host.name}.content.allowed_file_types.allowed_extensions`,
+    host.content.allowed_file_types.allowed_extensions
+  );
+  validateExtensionList(
+    `${host.name}.content.allowed_file_types.blocked_extensions`,
+    host.content.allowed_file_types.blocked_extensions
   );
   validateSourceRefs(
     `${host.name}.content.allowed_file_types.source_refs`,
@@ -501,6 +533,14 @@ function validateCandidate(candidate) {
   assert(
     typeof candidate.content.allowed_file_types.notes === "string",
     `${candidate.name}.content.allowed_file_types.notes must be a string`
+  );
+  validateExtensionList(
+    `${candidate.name}.content.allowed_file_types.allowed_extensions`,
+    candidate.content.allowed_file_types.allowed_extensions
+  );
+  validateExtensionList(
+    `${candidate.name}.content.allowed_file_types.blocked_extensions`,
+    candidate.content.allowed_file_types.blocked_extensions
   );
   validateSourceRefs(
     `${candidate.name}.content.allowed_file_types.source_refs`,
