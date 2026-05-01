@@ -2594,20 +2594,10 @@ export function DatasetApp({ data }: Props) {
             )}
           </div>
 
-          <div className="relative z-0">
+          <div className="-mx-4 overflow-x-auto px-4 pb-2 scrollbar-subtle md:mx-0 md:px-0">
             {!isQueueMode && mode === "hosts" ? (
               <>
-                <div className="grid gap-3 md:hidden">
-                  {filteredHosts.map((host) => (
-                    <MobileHostCard
-                      key={host.id}
-                      host={host}
-                      active={selectedHostId === host.id}
-                      onSelect={() => setSelectedHostId(host.id)}
-                    />
-                  ))}
-                </div>
-                <div className="hidden min-w-max text-sm md:block">
+                <div className="min-w-max text-sm">
                 <div className="sticky top-16 z-30 border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
                   {showGroupedMaxHeader || showGroupedStorageHeader ? (
                     <div
@@ -2785,17 +2775,7 @@ export function DatasetApp({ data }: Props) {
               </>
             ) : !isQueueMode && isAdjacentMode ? (
               <>
-                <div className="grid gap-3 md:hidden">
-                  {filteredAdjacentRows.map((record) => (
-                    <MobileAdjacentCard
-                      key={record.id}
-                      record={record}
-                      active={selectedHostId === record.id}
-                      onSelect={() => setSelectedHostId(record.id)}
-                    />
-                  ))}
-                </div>
-                <div className="hidden min-w-max text-sm md:block">
+                <div className="min-w-max text-sm">
                   <div className="sticky top-16 z-30 border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
                     <div className="grid" style={{ gridTemplateColumns: adjacentGridTemplate }}>
                       {visibleAdjacentColumns.map((column) => {
@@ -2861,17 +2841,7 @@ export function DatasetApp({ data }: Props) {
               </>
             ) : mode === "hosts" ? (
               <>
-                <div className="grid gap-3 md:hidden">
-                  {filteredCandidates.map((candidate) => (
-                    <MobileQueueCard
-                      key={candidate.id}
-                      candidate={candidate}
-                      active={selectedCandidateId === candidate.id}
-                      onSelect={() => setSelectedCandidateId(candidate.id)}
-                    />
-                  ))}
-                </div>
-                <div className="hidden min-w-max text-sm md:block">
+                <div className="min-w-max text-sm">
                 <div className="sticky top-16 z-10 border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
                   {showGroupedQueueMaxHeader || showGroupedQueueStorageHeader ? (
                     <div
@@ -3062,17 +3032,7 @@ export function DatasetApp({ data }: Props) {
               </>
             ) : (
               <>
-                <div className="grid gap-3 md:hidden">
-                  {filteredAdjacentCandidates.map((candidate) => (
-                    <MobileAdjacentQueueCard
-                      key={candidate.id}
-                      candidate={candidate}
-                      active={selectedCandidateId === candidate.id}
-                      onSelect={() => setSelectedCandidateId(candidate.id)}
-                    />
-                  ))}
-                </div>
-                <div className="hidden min-w-max text-sm md:block">
+                <div className="min-w-max text-sm">
                   <div className="sticky top-16 z-10 border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
                     <div className="grid" style={{ gridTemplateColumns: adjacentQueueGridTemplate }}>
                       {visibleAdjacentQueueColumns.map((column) => {
