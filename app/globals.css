@@ -95,10 +95,6 @@ body {
   overflow-x: clip;
 }
 
-body.dataset-spreadsheet-scroll {
-  overflow-x: auto;
-}
-
 html {
   width: 100%;
   background: 

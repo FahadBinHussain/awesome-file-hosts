@@ -1,7 +1,7 @@
 "use client";
 
-import type { ReactNode } from "react";
-import { useEffect, useMemo, useState } from "react";
+import type { ReactNode, UIEvent } from "react";
+import { Children, useMemo, useRef, useState } from "react";
 import {
   ArrowsDownUp,
   CheckCircle,
@@ -1057,7 +1057,27 @@ function gridTemplate(columns: Array<{ width: string }>) {
 }
 
 function SpreadsheetScroller({ children }: { children: ReactNode }) {
-  return <div className="min-w-max text-sm">{children}</div>;
+  const headerScrollerRef = useRef<HTMLDivElement>(null);
+  const [header, ...rows] = Children.toArray(children);
+
+  function syncHeaderScroll(event: UIEvent<HTMLDivElement>) {
+    if (headerScrollerRef.current) {
+      headerScrollerRef.current.scrollLeft = event.currentTarget.scrollLeft;
+    }
+  }
+
+  return (
+    <>
+      <div className="sticky top-16 z-30 overflow-hidden">
+        <div ref={headerScrollerRef} className="overflow-hidden">
+          <div className="min-w-max text-sm">{header}</div>
+        </div>
+      </div>
+      <div className="w-full overflow-x-auto [overflow-y:clip] scrollbar-subtle" onScroll={syncHeaderScroll}>
+        <div className="min-w-max text-sm">{rows}</div>
+      </div>
+    </>
+  );
 }
 
 function hostHeaderLabel(column: HostColumn) {
@@ -1995,11 +2015,6 @@ function MobileAdjacentCard({
 }
 
 export function DatasetApp({ data }: Props) {
-  useEffect(() => {
-    document.body.classList.add("dataset-spreadsheet-scroll");
-    return () => document.body.classList.remove("dataset-spreadsheet-scroll");
-  }, []);
-
   const [mode, setMode] = useState<DatasetMode>("hosts");
   const [queueOpen, setQueueOpen] = useState(false);
   const [hostSort, setHostSort] = useState<SortState<HostSortKey>>({
@@ -2607,7 +2622,7 @@ export function DatasetApp({ data }: Props) {
             {!isQueueMode && mode === "hosts" ? (
               <>
                 <SpreadsheetScroller>
-                <div className="sticky top-16 z-30 border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
+                <div className="border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
                   {showGroupedMaxHeader || showGroupedStorageHeader ? (
                     <div
                       className="grid"
@@ -2785,7 +2800,7 @@ export function DatasetApp({ data }: Props) {
             ) : !isQueueMode && isAdjacentMode ? (
               <>
                 <SpreadsheetScroller>
-                  <div className="sticky top-16 z-30 border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
+                  <div className="border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
                     <div className="grid" style={{ gridTemplateColumns: adjacentGridTemplate }}>
                       {visibleAdjacentColumns.map((column) => {
                         const isSorted = adjacentSort.key === column.id;
@@ -2851,7 +2866,7 @@ export function DatasetApp({ data }: Props) {
             ) : mode === "hosts" ? (
               <>
                 <SpreadsheetScroller>
-                <div className="sticky top-16 z-10 border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
+                <div className="border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
                   {showGroupedQueueMaxHeader || showGroupedQueueStorageHeader ? (
                     <div
                       className="grid"
@@ -3042,7 +3057,7 @@ export function DatasetApp({ data }: Props) {
             ) : (
               <>
                 <SpreadsheetScroller>
-                  <div className="sticky top-16 z-10 border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
+                  <div className="border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
                     <div className="grid" style={{ gridTemplateColumns: adjacentQueueGridTemplate }}>
                       {visibleAdjacentQueueColumns.map((column) => {
                         const sortable = column.id !== "notes";
