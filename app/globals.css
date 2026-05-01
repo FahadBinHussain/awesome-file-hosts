@@ -314,3 +314,41 @@ select {
 .animate-glow-pulse {
   animation: glow-pulse 3s ease-in-out infinite;
 }
+
+/* Keep the desktop finish, but remove expensive paint work on touch devices. */
+@media (hover: none), (pointer: coarse) {
+  html {
+    background-attachment: scroll;
+  }
+
+  body::before,
+  body::after {
+    display: none;
+  }
+
+  .backdrop-blur-sm,
+  .backdrop-blur-xl,
+  .backdrop-blur-2xl {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .row-enter,
+  .animate-fade-in,
+  .animate-fade-in-up,
+  .animate-slide-in-right,
+  .animate-float,
+  .animate-gradient-shift,
+  .animate-glow-pulse,
+  .animate-pulse,
+  .skeleton-shimmer {
+    animation: none !important;
+  }
+
+  [class*="hover:-translate"]:hover,
+  [class*="hover:translate"]:hover,
+  .group:hover [class*="group-hover:translate"],
+  .group:hover [class*="group-hover:scale"] {
+    transform: none !important;
+  }
+}
