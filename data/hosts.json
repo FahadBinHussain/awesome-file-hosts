@@ -1078,7 +1078,7 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "Bandwidth is not published as a clean numeric cap in the accessible first-party page.",
+        "notes": "No numeric transfer quota is listed on the official page; the site instead advertises global CDN delivery and high-speed transfers.",
         "source_refs": [
           0
         ]
@@ -1301,7 +1301,6 @@
         "notes": "Conditional: AXFC uses file-size-specific upload boards rather than publishing one current global maximum on the reviewed official pages; files must be posted to the board matching their size.",
         "source_refs": [
           0,
-          1,
           2
         ]
       },
@@ -2701,16 +2700,16 @@
       {
         "label": "FAQ",
         "url": "https://clicknupload.click/faq.html",
-        "retrieved_at": "2026-04-26",
+        "retrieved_at": "2026-05-02",
         "notes": "Current free-account upload limit, bandwidth, inactivity policy, and guest-vs-member behavior."
       }
     ],
     "content": {
       "allowed_file_types": {
         "mode": "all_except_prohibited",
-        "notes": "The user agreement prohibits illegal content, infringing material, and malware, but the live upload surface otherwise presents DropMeFiles as a general-purpose file sharing service.",
+        "notes": "The official FAQ says all kinds of files can be uploaded, except pornography, nudity, sexual images, offensive material, and copyrighted material.",
         "source_refs": [
-          0
+          1
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -3470,7 +3469,7 @@
   },
   {
     "name": "Cozy Cloud",
-    "url": "https://cozy.io/en/",
+    "url": "https://en.cozy.io/",
     "summary": "French personal cloud platform now branded around Cozy Cloud and Twake Workplace, with a free 5 GB tier and official desktop and mobile apps.",
     "free_model": {
       "value": "free-forever",
@@ -3524,7 +3523,7 @@
     },
     "account": {
       "required": true,
-      "benefits": "A free account includes 5 GB of Cozy Drive storage, 5 connector accounts, 2 connected devices, read-only office access, and a free plan that is not promotional.",
+      "benefits": "A free account includes 5 GB of cloud storage, instant chat messaging, simplified collaborative notes, mail allowance, unlimited authorized devices, and a free plan that is not temporary.",
       "source_refs": [
         1,
         2
@@ -3561,15 +3560,15 @@
     "sources": [
       {
         "label": "Homepage",
-        "url": "https://cozy.io/en/",
-        "retrieved_at": "2026-05-01",
+        "url": "https://en.cozy.io/",
+        "retrieved_at": "2026-05-02",
         "notes": "Current branding, free account availability, open-source positioning, privacy positioning, and France-hosted messaging."
       },
       {
         "label": "Pricing",
-        "url": "https://cozy.io/en/pricing",
-        "retrieved_at": "2026-05-01",
-        "notes": "Current free plan details, including 5 GB Cozy Drive storage, 5 connector accounts, 2 connected devices, and the statement that the free plan is not promotional."
+        "url": "https://en.cozy.io/pricing",
+        "retrieved_at": "2026-05-02",
+        "notes": "Current Discovery free plan details, including 5 GB cloud storage, instant chat messaging, simplified collaborative notes, mail allowance, unlimited authorized devices, and the statement that the free offer is not temporary."
       },
       {
         "label": "Download",
@@ -4040,10 +4039,19 @@
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "Storage quota is not published as a numeric free-plan value in the reviewed first-party pages.",
+        "notes": "Storage quota is conditional. The reviewed free/public pages do not publish a numeric free-plan storage quota; the premium page separately says premium accounts include unlimited space.",
         "source_refs": [
           0,
-          1
+          1,
+          4
+        ]
+      },
+      "storage_account": {
+        "value": null,
+        "unit": null,
+        "notes": "Unlimited: the premium page says premium accounts include unlimited space.",
+        "source_refs": [
+          4
         ]
       },
       "bandwidth": {
@@ -4113,6 +4121,12 @@
         "url": "https://fmhy.net/video-tools#video-file-hosts",
         "retrieved_at": "2026-05-01",
         "notes": "Used only as the discovery seed for this batch; host facts are verified against first-party pages where available."
+      },
+      {
+        "label": "Premium",
+        "url": "https://darkibox.com/premium",
+        "retrieved_at": "2026-05-02",
+        "notes": "Official premium page lists unlimited space, unlimited bandwidth, remote URL upload, and torrent upload for premium accounts."
       }
     ],
     "content": {
@@ -5342,7 +5356,6 @@
       "notes": "The cited first-party pages do not publish a public API or CLI upload workflow.",
       "source_refs": [
         0,
-        1,
         2
       ]
     },
@@ -6401,7 +6414,7 @@
   },
   {
     "name": "Dropload",
-    "url": "https://dropload.tv/",
+    "url": "https://dropload.pro/",
     "summary": "Video host with free accounts, browser/FTP/remote/API uploads, 70-day inactive free retention, and public API documentation.",
     "free_model": {
       "value": "free-forever",
@@ -6414,10 +6427,9 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "The current FAQ does not publish one clean free upload cap; older official feature pages and the PolyUploader seed disagree, so the dataset does not normalize a numeric cap here.",
+        "notes": "The current FAQ does not publish one clean free upload cap, so the dataset does not normalize a numeric cap here.",
         "source_refs": [
-          0,
-          2
+          0
         ]
       },
       "retention": {
@@ -6454,7 +6466,7 @@
     },
     "developer": {
       "api_available": true,
-      "api_docs_url": "https://dropload.tv/api.html",
+      "api_docs_url": "https://dropload.pro/api.html",
       "cli_friendly": true,
       "cli_example": "curl -X POST -F 'key=API_KEY' -F 'file=@video.mp4' https://s1.myvideo.com/upload/01",
       "notes": "Official API docs cover account, upload server, file upload, URL upload, file management, and folder endpoints with cURL examples.",
@@ -6516,13 +6528,13 @@
     "sources": [
       {
         "label": "Dropload FAQ",
-        "url": "https://dropload.tv/faq",
+        "url": "https://dropload.pro/faq",
         "retrieved_at": "2026-05-01",
         "notes": "Official FAQ verifies free-user retention, premium retention, no-space-limit/unlimited-bandwidth language, upload methods, and video formats."
       },
       {
         "label": "Dropload API",
-        "url": "https://dropload.tv/api.html",
+        "url": "https://dropload.pro/api.html",
         "retrieved_at": "2026-05-01",
         "notes": "Official API docs show account, upload, URL upload, file, folder, and cURL upload examples."
       },
@@ -10443,10 +10455,10 @@
     "summary": "Video hosting service with 15 GB free uploads, 60-day inactive free retention, all-video-format uploads, and cURL-friendly account API docs.",
     "free_model": {
       "value": "free-forever",
-      "notes": "The official API/sign-up surface is public and premium is optional; no paid-only upload gate is shown on the cited pages.",
+      "notes": "The official API/sign-up surface is public and the official rules describe free-user limits; premium is optional.",
       "source_refs": [
         0,
-        1
+        3
       ]
     },
     "limits": {
@@ -13612,7 +13624,7 @@
   },
   {
     "name": "Hexupload",
-    "url": "https://hexupload.net/",
+    "url": "https://hexload.com/",
     "summary": "Free-first cloud/file host with guest uploads, 15 GB uploads, 30-day active-file retention, bandwidth tiers, FTP/remote/API upload modes, and premium WebDAV.",
     "free_model": {
       "value": "free-forever",
@@ -13714,7 +13726,7 @@
     "sources": [
       {
         "label": "Hexupload homepage/FAQ",
-        "url": "https://hexupload.net/",
+        "url": "https://hexload.com/",
         "retrieved_at": "2026-05-01",
         "notes": "Official page verifies the free core service, guest upload, 15 GB per-file headline, 30-day active-file retention, bandwidth tiers, upload modes, API, FTP, WebDAV, and password protection."
       },
@@ -13825,18 +13837,25 @@
         "notes": "Current statement that recipients do not need an account to access shared files."
       },
       {
-        "label": "How to share files",
-        "url": "https://blog.hightail.com/hightail-101-how-to-share-files/",
-        "retrieved_at": "2026-05-01",
-        "notes": "Official Hightail blog says Hightail supports sharing any file type, while the current file-sharing page lists broad preview categories."
+        "label": "Supported preview formats",
+        "url": "https://hightail.zendesk.com/hc/en-us/articles/204901340-What-file-preview-formats-are-supported",
+        "retrieved_at": "2026-05-02",
+        "notes": "Official Hightail help center article listing supported preview extensions for images, video, audio, documents, PDFs, presentations, and CAD files."
+      },
+      {
+        "label": "Spaces upload and preview limits",
+        "url": "https://hightail.zendesk.com/hc/en-us/articles/217739147-Spaces-Upload-and-Preview-Limits",
+        "retrieved_at": "2026-05-02",
+        "notes": "Official Hightail help center article documenting plan-specific Spaces upload limits and preview limits."
       }
     ],
     "content": {
       "allowed_file_types": {
         "mode": "all-or-most",
-        "notes": "Hightail's official blog says it supports sharing any file type. The current product page separately lists preview categories such as images, documents, video, audio, CAD, HTML, and presentations.",
+        "notes": "Hightail's current help center publishes supported preview extensions and Spaces upload limits; the public file-sharing page separately positions Hightail for broad file sharing and previews. No upload extension blocklist is published on the cited pages.",
         "source_refs": [
           2,
+          3,
           1
         ],
         "allowed_extensions": [],
@@ -14397,10 +14416,10 @@
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The first-party page does not document a public API; third-party clients exist but are not first-party documentation.",
+      "notes": "The first-party page and upload script do not document a public API or first-party CLI workflow.",
       "source_refs": [
         0,
-        1
+        3
       ]
     },
     "security": {
@@ -15416,7 +15435,7 @@
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "Free storage quota is not published as a numeric quota; unlimited space is advertised only inside paid Pro plan cards.",
+        "notes": "No numeric free storage quota is listed on the cited official pages; unlimited space appears only in paid Pro plan cards.",
         "source_refs": [
           0
         ]
@@ -17312,7 +17331,7 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "A free-tier numeric max upload size was not published in the reviewed first-party pages; the premium page separately publishes 20 GB per file.",
+        "notes": "No free-tier numeric max upload size appears in the reviewed official homepage/API pages; the premium page separately lists 20 GB per file.",
         "source_refs": [
           0,
           1,
@@ -17420,12 +17439,14 @@
     "content": {
       "allowed_file_types": {
         "mode": "video-only",
-        "notes": "The service is described as a video hosting and streaming platform; a full extension allowlist was not published in the reviewed text.",
+        "notes": "The API describes uploading video files and uses .avi and .mp4 examples; no full extension allowlist is listed in the reviewed text.",
         "source_refs": [
-          0,
           1
         ],
-        "allowed_extensions": [],
+        "allowed_extensions": [
+          ".avi",
+          ".mp4"
+        ],
         "blocked_extensions": []
       },
       "public_sharing": {
@@ -17453,13 +17474,10 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "Conditional: the public instance pages reviewed here do not publish one current max upload size; Lutim upload size is deployment-configured at the instance/web-server level, so the effective cap depends on the operator configuration.",
+        "notes": "Conditional: the public instance pages reviewed here do not publish one current max upload size, so the effective cap remains instance/operator dependent.",
         "source_refs": [
           0,
-          1,
-          2,
-          3,
-          4
+          1
         ]
       },
       "retention": {
@@ -18302,7 +18320,7 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "A numeric max upload size was not published in the reviewed homepage, FAQ, or API page.",
+        "notes": "The reviewed official homepage, FAQ, and API page do not list a numeric max upload size.",
         "source_refs": [
           0,
           1,
@@ -18359,8 +18377,7 @@
       "notes": "The service is HTTPS; the reviewed pages do not claim end-to-end encryption.",
       "source_refs": [
         0,
-        1,
-        2
+        1
       ]
     },
     "tags": [
@@ -19257,12 +19274,12 @@
     },
     "limits": {
       "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Conditional: no standalone per-file maximum was verified; the free plan is primarily bounded by official free-user traffic limits of 1 GB/month upload and 3 GB/month download.",
+        "value": 500,
+        "unit": "MB",
+        "notes": "Official WebDAV authorization help says WebDAV and web upload size limits are the same and default to 500 MB; the free plan is still constrained by 1 GB/month upload traffic.",
         "source_refs": [
-          0,
-          1
+          1,
+          4
         ]
       },
       "retention": {
@@ -19304,13 +19321,12 @@
     },
     "developer": {
       "api_available": true,
-      "api_docs_url": null,
+      "api_docs_url": "https://help.jianguoyun.com/?p=2064",
       "cli_friendly": true,
-      "cli_example": null,
-      "notes": "Nutstore officially advertises WebDAV support in its app listing and site copy; that makes it usable from WebDAV-compatible clients and CLI tools, though a dedicated API docs URL was not verified.",
+      "cli_example": "curl -u \"email@example.com:APP_PASSWORD\" -T file.ext https://dav.jianguoyun.com/dav/path/file.ext",
+      "notes": "Nutstore officially documents third-party file access over WebDAV, including application passwords, upload/download/manage-file use, request-frequency limits, and the dav.jianguoyun.com endpoint. This is WebDAV access rather than a bespoke public REST API.",
       "source_refs": [
-        2,
-        3
+        4
       ]
     },
     "security": {
@@ -19353,16 +19369,21 @@
         "url": "https://apps.apple.com/cn/app/%E5%9D%9A%E6%9E%9C%E4%BA%91-%E5%9B%A2%E9%98%9F%E5%BF%85%E5%A4%87%E5%8A%9E%E5%85%AC%E7%BD%91%E7%9B%98/id444442371",
         "retrieved_at": "2026-05-01",
         "notes": "Official app listing describing WebDAV support and platform features."
+      },
+      {
+        "label": "Nutstore WebDAV authorization help",
+        "url": "https://help.jianguoyun.com/?p=2064",
+        "retrieved_at": "2026-05-02",
+        "notes": "Official help article documenting third-party WebDAV access, application passwords, the default 500 MB WebDAV/web upload limit, request-frequency limits, and the dav.jianguoyun.com endpoint."
       }
     ],
     "content": {
       "allowed_file_types": {
         "mode": "all-or-most",
-        "notes": "Nutstore's official help and app listing describe general cloud file management and upload traffic limits rather than an extension allowlist. Account, traffic, and policy limits still apply.",
+        "notes": "Official WebDAV help describes third-party apps uploading, downloading, and managing user file contents; no extension-specific allowlist is listed. Account, traffic, request-frequency, and policy limits still apply.",
         "source_refs": [
-          1,
-          2,
-          3
+          4,
+          1
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -19417,7 +19438,7 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "Bandwidth is not published as a numeric quota. The current official pages describe storage and upload limits, but no separate transfer-volume cap.",
+        "notes": "No numeric bandwidth quota is listed in the current official pages; they describe storage and upload limits, but no separate transfer-volume cap.",
         "source_refs": [
           0
         ]
@@ -21120,8 +21141,7 @@
         "notes": "Conservative published browser limit: the homepage shows 16 MB, while the API page shows 32 MB for the API upload path.",
         "source_refs": [
           0,
-          1,
-          2
+          1
         ]
       },
       "max_file_size_guest": {
@@ -21424,9 +21444,11 @@
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "No official public Proton Drive API documentation or first-party CLI was verified; third-party tooling notes that Proton Drive does not publish API docs.",
+      "notes": "No official public Proton Drive API documentation or first-party CLI was verified on the cited Proton product and support pages.",
       "source_refs": [
-        3
+        1,
+        5,
+        6
       ]
     },
     "security": {
@@ -21949,8 +21971,7 @@
       "value": "free-forever",
       "notes": "This published host has a verified free, guest, or free-account path in the dataset. Recheck first-party sources if the service moves to trial-only or paid-only access.",
       "source_refs": [
-        0,
-        1
+        0
       ]
     },
     "limits": {
@@ -23201,7 +23222,7 @@
     "content": {
       "allowed_file_types": {
         "mode": "all-or-most",
-        "notes": "SendSpace's official FAQ says users can upload any type of file otherwise, while preventing extensions commonly used by computer viruses. The exact extension blocklist is not published.",
+        "notes": "SendSpace's official FAQ says users can upload any type of file otherwise, while preventing extensions commonly used by computer viruses. The exact extension blocklist is not listed in the public FAQ.",
         "source_refs": [
           3
         ],
@@ -25034,7 +25055,7 @@
         "notes": "Conditional: the homepage says files are accessible 24/7 and the custom uploader exposes a Self Destruct flag, so retention depends on the uploader configuration and moderation rather than one published fixed expiry.",
         "source_refs": [
           0,
-          1
+          2
         ]
       },
       "storage": {
@@ -25067,9 +25088,10 @@
       "api_docs_url": null,
       "cli_friendly": true,
       "cli_example": null,
-      "notes": "The homepage advertises a versatile API and is built for ShareX/custom uploader workflows, but the linked first-party API docs were not separately fetched in this pass.",
+      "notes": "The homepage advertises a versatile API and links API documentation, and the official knowledgebase documents custom-uploader fields and upload endpoint behavior. No direct cURL-style CLI example is published in the captured first-party text.",
       "source_refs": [
-        0
+        0,
+        2
       ]
     },
     "security": {
@@ -28876,7 +28898,7 @@
       "retention": {
         "value": null,
         "unit": null,
-        "notes": "Conditional: public FAQ says accounts can store files without time limitations; guest-link lifetime is not published as one clean number on the current public pages reviewed.",
+        "notes": "Conditional: public FAQ says accounts can store files without time limitations; the current public pages reviewed do not state a single guest-link lifetime.",
         "source_refs": [
           0,
           1
@@ -28902,7 +28924,7 @@
       "max_file_size_account": {
         "value": null,
         "unit": null,
-        "notes": "Conditional: public account-upgrade messaging says account users get larger limits, but one clean per-file account cap was not published on the pages reviewed.",
+        "notes": "Conditional: public account-upgrade messaging says account users get larger limits, but the reviewed public pages do not state one clean per-file account cap.",
         "source_refs": [
           0,
           1
@@ -28911,7 +28933,7 @@
       "storage_account": {
         "value": null,
         "unit": null,
-        "notes": "Conditional: the FAQ says accounts can store files without time limitations, but the public pages reviewed do not publish one clean free-account storage quota.",
+        "notes": "Conditional: the FAQ says accounts can store files without time limitations, but the reviewed public pages do not state one clean free-account storage quota.",
         "source_refs": [
           1
         ]
@@ -29431,7 +29453,7 @@
       "api_docs_url": null,
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The footer links an API tool, but https://upzur.com/api returned a 404 during rendered testing, so no usable public API or CLI docs are verified.",
+      "notes": "The live homepage footer links an API tool, but the /api target returned a 404 during rendered testing, so no usable public API or CLI docs are verified.",
       "source_refs": [
         0,
         2
@@ -29486,10 +29508,10 @@
         "notes": "Official rendered FAQ verifies supported media/document/audio/video categories, legal-file policy, file privacy, deletion links, and hotlinking prohibition."
       },
       {
-        "label": "UpZur API link test",
-        "url": "https://upzur.com/api",
+        "label": "UpZur homepage API-footer check",
+        "url": "https://upzur.com/",
         "retrieved_at": "2026-05-01",
-        "notes": "Rendered test of the footer API link returned a 404, so a public API workflow is not verified despite the footer label."
+        "notes": "Live homepage used to verify the footer API label; the linked /api target returned a 404 during testing, so no public API workflow is verified despite the footer label."
       },
       {
         "label": "UpZur about page",
@@ -29921,7 +29943,7 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "A numeric max upload size was not published in the accessible official Videy pages reviewed.",
+        "notes": "The accessible official Videy homepage, terms, and upload surface do not list a numeric max upload size.",
         "source_refs": [
           0,
           1,
@@ -29939,7 +29961,7 @@
       "storage": {
         "value": null,
         "unit": null,
-        "notes": "No storage quota is published in the reviewed first-party pages.",
+        "notes": "No storage quota is listed in the reviewed first-party pages.",
         "source_refs": [
           0,
           1,
@@ -29949,7 +29971,7 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "No bandwidth quota is published in the reviewed first-party pages.",
+        "notes": "No bandwidth quota is listed in the reviewed first-party pages.",
         "source_refs": [
           0,
           1,
@@ -30018,7 +30040,7 @@
     "content": {
       "allowed_file_types": {
         "mode": "video-only",
-        "notes": "The official terms describe short-form video uploads; a full current extension allowlist was not published in the reviewed official pages.",
+        "notes": "The official terms describe short-form video uploads; no full current extension allowlist is listed in the reviewed official pages.",
         "source_refs": [
           1,
           2
@@ -30174,7 +30196,7 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "A numeric max upload size was not published in the reviewed first-party pages.",
+        "notes": "No numeric max upload size is shown in the reviewed first-party homepage, FAQ headings, or payments page.",
         "source_refs": [
           0,
           1,
@@ -30280,7 +30302,7 @@
     "content": {
       "allowed_file_types": {
         "mode": "video-only",
-        "notes": "The service is explicitly a cloud video hosting platform; a full extension allowlist was not published in the reviewed first-party pages.",
+        "notes": "The service is explicitly a cloud video hosting platform; no full extension allowlist is listed in the reviewed first-party pages.",
         "source_refs": [
           0,
           1,
@@ -30697,7 +30719,7 @@
       "max_file_size": {
         "value": null,
         "unit": null,
-        "notes": "A numeric max upload size was not published in the reviewed homepage, FAQ, or API index.",
+        "notes": "The official homepage, FAQ, and API reference list storage, retention, and upload flow details, but no numeric max upload size.",
         "source_refs": [
           0,
           1,

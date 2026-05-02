@@ -1041,7 +1041,7 @@
   },
   {
     "name": "Otixo",
-    "url": "https://otixo.com/",
+    "url": "https://we.team/",
     "summary": "Otixo's current We.Team product combines team collaboration, integrated third-party cloud drives, and encrypted personal or team cloud storage.",
     "account": {
       "required": true,
@@ -1092,7 +1092,7 @@
     "sources": [
       {
         "label": "Otixo / We.Team homepage",
-        "url": "https://otixo.com/",
+        "url": "https://we.team/",
         "retrieved_at": "2026-05-01",
         "notes": "Official homepage showing the current We.Team product, free registration flows, multi-cloud integrations, and encrypted We.Team Cloud positioning."
       },
