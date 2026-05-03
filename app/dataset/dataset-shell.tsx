@@ -2886,6 +2886,13 @@ export function DatasetApp({ data, initialViewMode, initialViewModeFromUrl }: Pr
               isSimpleMode ? "gap-2 bg-[var(--bg)] px-3 py-2" : "gap-4 p-4"
             ].join(" ")}
           >
+            <div className="flex items-center justify-between gap-3 lg:hidden">
+              <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--text-muted)]">
+                View
+              </div>
+              {renderViewModeToggle("shrink-0")}
+            </div>
+
             {!isSimpleMode ? (
             <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
               <div className="animate-fade-in-up">
@@ -2957,7 +2964,6 @@ export function DatasetApp({ data, initialViewMode, initialViewModeFromUrl }: Pr
               ].join(" ")}
             >
               <div className="flex flex-wrap items-center gap-2">
-                <div className="lg:hidden">{renderViewModeToggle()}</div>
                 <ToolbarButton active={mode === "hosts"} onClick={() => selectMode("hosts")}>
                   Verified hosts
                 </ToolbarButton>
