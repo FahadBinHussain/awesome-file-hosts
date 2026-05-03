@@ -1,9 +1,18 @@
 import fs from "node:fs";
 import path from "node:path";
 
+export type LimitStatus =
+  | "published"
+  | "unlimited"
+  | "no-automatic-expiry"
+  | "conditional"
+  | "not-published"
+  | "not-applicable";
+
 export type LimitField = {
   value: number | null;
   unit: string | null;
+  status?: LimitStatus;
   notes: string;
   source_refs?: number[];
 };
@@ -384,6 +393,45 @@ function hasNoAutomaticExpiryNotes(notes: string) {
   );
 }
 
+function limitStatusFromNotes(limit: LimitField): Exclude<LimitStatus, "published"> {
+  const notes = limit.notes.toLowerCase();
+
+  if (notes.includes("unlimited")) return "unlimited";
+  if (hasNoAutomaticExpiryNotes(limit.notes)) return "no-automatic-expiry";
+  if (notes.includes("conditional") || notes.includes("depends") || notes.includes("varies")) {
+    return "conditional";
+  }
+  if (
+    notes.includes("not applicable") ||
+    notes.includes("not a persistent") ||
+    notes.includes("not a reusable") ||
+    notes.includes("no current") ||
+    notes.includes("no storage offering")
+  ) {
+    return "not-applicable";
+  }
+
+  return "not-published";
+}
+
+function normalizedLimitStatus(limit: LimitField): LimitStatus {
+  if (limit.status) return limit.status;
+  if (limit.value !== null && limit.unit !== null) return "published";
+  return limitStatusFromNotes(limit);
+}
+
+function limitStatusLabel(status: Exclude<LimitStatus, "published">) {
+  const labels: Record<Exclude<LimitStatus, "published">, string> = {
+    unlimited: "Unlimited",
+    "no-automatic-expiry": "No automatic expiry",
+    conditional: "Conditional",
+    "not-published": "Not published",
+    "not-applicable": "Not applicable"
+  };
+
+  return labels[status];
+}
+
 function readDataFile<T>(
   filename:
     | "hosts.json"
@@ -407,15 +455,8 @@ function slugify(value: string) {
 
 function limitLabel(limit: LimitField) {
   if (limit.value === null || limit.unit === null) {
-    const notes = limit.notes.toLowerCase();
-    if (notes.includes("unlimited")) return "Unlimited";
-    if (hasNoAutomaticExpiryNotes(limit.notes)) {
-      return "No automatic expiry";
-    }
-    if (notes.includes("conditional") || notes.includes("depends") || notes.includes("varies")) {
-      return "Conditional";
-    }
-    return "Not published";
+    const status = normalizedLimitStatus(limit);
+    return status === "published" ? "Not published" : limitStatusLabel(status);
   }
 
   return `${formatComparableNumber(limit.value)} ${formatUnit(limit.value, limit.unit)}`;
@@ -618,7 +659,7 @@ function limitSortValueMb(limit: LimitField | null | undefined) {
   const numericMb = normalizeToMb(limit.value, limit.unit);
   if (numericMb !== null) return numericMb;
 
-  if (limitLabel(limit) === "Unlimited") {
+  if (normalizedLimitStatus(limit) === "unlimited") {
     return UNLIMITED_SIZE_SORT_VALUE_MB;
   }
 
@@ -643,11 +684,12 @@ function retentionSortValue(limit: LimitField) {
     return numericDays;
   }
 
-  if (limitLabel(limit) === "Unlimited") {
+  const status = normalizedLimitStatus(limit);
+  if (status === "unlimited") {
     return UNLIMITED_RETENTION_SORT_VALUE;
   }
 
-  if (hasNoAutomaticExpiryNotes(limit.notes)) {
+  if (status === "no-automatic-expiry") {
     return NO_EXPIRY_RETENTION_SORT_VALUE;
   }
 

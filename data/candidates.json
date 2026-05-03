@@ -16,11 +16,13 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "Retention is left blank because the corrupted entry has no recoverable host identity."
       },
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "Storage is left blank because the imported row has no usable service identifier."
       },
       "bandwidth": {
@@ -210,6 +212,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. The official page says files are valid for at least 30 days and up to 1 year, with lifetime calculated from file size.",
         "source_refs": [
           0
@@ -349,6 +352,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited public pages do not publish a clean numeric free storage quota.",
         "source_refs": [
           0,
@@ -475,6 +479,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: official homepage, pricing, and help pages say guest files can be removed after 15 days, registered files after 30 days from upload or 90 days after the last download, and Premium files are not subject to this rule.",
         "source_refs": [
           0,
@@ -485,6 +490,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: official pages position 1fichier as cloud storage with guest uploads, but they do not publish a reusable guest storage quota.",
         "source_refs": [
           0,
@@ -513,6 +519,7 @@
       "storage_account": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: help says Premium includes unrestricted Hot Storage plus 4 TB of Cold Storage, while Premium GOLD includes unrestricted Hot Storage plus 10 TB of Cold Storage. A standalone registered-user storage quota is not published.",
         "source_refs": [
           3
@@ -643,6 +650,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention depends on download activity. Current public pages describe free files as sharable for 30 days, while also saying free-member files may be removed after 7 days without downloads.",
         "source_refs": [
           0,
@@ -652,6 +660,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. The public upload flow does not publish a standalone guest storage quota, while the current download and premium comparison pages advertise unlimited storage for premium accounts and inactivity-based cleanup for free uploads.",
         "source_refs": [
           0,
@@ -758,6 +767,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current first-party retention window was found in the reviewed public crawl.",
         "source_refs": [
           0
@@ -766,6 +776,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current first-party account storage quota was found in the reviewed public crawl.",
         "source_refs": [
           0
@@ -993,6 +1004,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention depends on account activity. 4shared says free-account files remain available as long as you keep logging in at least once every 180 days; if you do not log in for 180 days, the account files are deleted, with popular files sometimes kept longer.",
         "source_refs": [
           3
@@ -1120,6 +1132,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the service is a 60-day trial; official knowledge-base text says non-upgraded accounts are deactivated and then get 30 more days to reactivate or remove data.",
         "source_refs": [
           1,
@@ -1385,6 +1398,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. Visitor files are deleted 7 days after the last download, while registered free-user files are deleted 30 days after the last download. Premium files are not deleted while shared.",
         "source_refs": [
           1
@@ -1393,6 +1407,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "Unlimited storage is currently advertised for both visitor and registered free tiers.",
         "source_refs": [
           1
@@ -1683,6 +1698,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "No automatic public-host expiry model applies. S3 object retention is account-controlled and billable, with lifecycle rules/retention configured by the bucket owner.",
         "source_refs": [
           1
@@ -1691,6 +1707,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Pay-as-you-go object storage; the official pricing page charges for stored objects, and the Free Tier is credit/time limited rather than permanent free storage.",
         "source_refs": [
           1
@@ -1817,6 +1834,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention depends on download activity. The terms say Android File Host generally will not delete uploaded files, but it may remove files with fewer than 10 downloads over 365 consecutive days.",
         "source_refs": [
           3
@@ -1825,6 +1843,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. Android File Host says it does not limit the number of files, but the terms still reserve the right to suspend service for excessive storage use, so no clean byte quota is published.",
         "source_refs": [
           0,
@@ -1960,6 +1979,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "The cited public pages do not describe an automatic expiry timer for normal stored files. Anonfile's privacy policy discusses account and file access as ongoing until the user requests account deletion, which supports treating standard stored files as remaining until the user deletes them.",
         "source_refs": [
           0,
@@ -2223,6 +2243,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the current redirect target is FileFast, whose first-party pages conflict between 10 GB and 100 GB of free storage.",
         "source_refs": [
           1,
@@ -2340,6 +2361,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. The uploader offers one day, one week, one fortnight, one month, or one quarter.",
         "source_refs": [
           0
@@ -2453,6 +2475,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "PolyUploader's seed table claimed infinite retention, but current direct verification did not return a usable first-party page to confirm the policy.",
         "source_refs": [
           0,
@@ -2462,6 +2485,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current storage quota could be confirmed because the direct homepage fetch failed and the only structured data is a third-party uploader seed.",
         "source_refs": [
           0,
@@ -2581,6 +2605,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the official homepage and affiliate page say partners can receive unlimited storage time and custom upgrades, but they do not publish one neutral retention rule for ordinary free users.",
         "source_refs": [
           0,
@@ -2590,6 +2615,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: official pages frame storage around partner upgrades and affiliate-specific benefits rather than one clean general-purpose free storage quota.",
         "source_refs": [
           0,
@@ -2710,6 +2736,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is uploader-configurable. The official upload page offers no expiry, a date/time expiry, or a duration in seconds, minutes, hours, or days.",
         "source_refs": [
           0
@@ -2718,6 +2745,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "AXFC is a public upload-board style host and does not publish a reusable personal storage quota on the cited pages.",
         "source_refs": [
           0
@@ -2954,6 +2982,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "Unlimited backup is advertised for the paid/trial computer-backup product, not as permanent free public hosting.",
         "source_refs": [
           2,
@@ -3072,6 +3101,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "No automatic expiry by default. Backblaze's B2 lifecycle documentation says B2 keeps uploaded files and file versions until the user deletes them or configures lifecycle rules to hide or delete older versions.",
         "source_refs": [
           4,
@@ -3221,6 +3251,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "Not modeled after rejection: the service was not reliably accessible during registration/SMS testing.",
         "source_refs": [
           2
@@ -3229,6 +3260,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "Not modeled after rejection: storage claims were not promoted because Bangladesh phone registration/SMS login could not be completed.",
         "source_refs": [
           2
@@ -3352,6 +3384,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "Files remain until deleted. Baidu's official help center says deleted files stay in the recycle bin for 10 days on ordinary accounts, 15 days for members, and 30 days for super members before permanent deletion.",
         "source_refs": [
           1,
@@ -3362,6 +3395,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited first-party pages still do not cleanly expose one stable default free-storage quota in accessible text. Current official help says every account has a free quota, mobile-app login can grant surprise bonus capacity, and some promotional capacity can expire, but it still does not publish one reliable base free number we can promote into the dataset.",
         "source_refs": [
           1,
@@ -3515,6 +3549,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "Retention is administrator-configured through backup schedules/policies, not a public file-host expiry rule.",
         "source_refs": [
           3
@@ -3523,6 +3558,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "Storage is subscription/capacity based and scalable, not an ongoing free public storage quota.",
         "source_refs": [
           2,
@@ -3758,6 +3794,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the current BayFiles homepage markets instant upload and sharing but does not publish a clean expiry or persistence policy.",
         "source_refs": [
           0
@@ -3766,6 +3803,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "Unlimited: the current BayFiles homepage explicitly advertises unlimited storage.",
         "source_refs": [
           0
@@ -3866,6 +3904,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current first-party retention policy was found for BDUpload.",
         "source_refs": [
           0,
@@ -3875,6 +3914,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current first-party storage quota was found for BDUpload.",
         "source_refs": [
           0,
@@ -4020,6 +4060,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The homepage advertises unlimited free storage, but it does not publish a numeric free storage quota.",
         "source_refs": [
           0
@@ -4283,6 +4324,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The official free-user plan advertises unlimited storage, but does not publish a numeric quota.",
         "source_refs": [
           1
@@ -4408,6 +4450,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "Files remain until deleted. Box stores deleted items in Trash for 30 days by default, after which free Individual accounts do not get the paid recovery grace period.",
         "source_refs": [
           0,
@@ -4558,6 +4601,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. Free files start at 15 days, each download adds 3 days up to 45 days, and files that get at least 15 downloads every 45 days live forever.",
         "source_refs": [
           1
@@ -4566,6 +4610,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. Buzzheavier's official help, pricing, and blog frame the free tier around activity-based file lifetime rather than a reusable personal quota: free files expire unless they keep getting downloaded, while paid plans sell permanent storage by the terabyte.",
         "source_refs": [
           0,
@@ -4698,6 +4743,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current first-party retention policy was found for Byse.",
         "source_refs": [
           0,
@@ -4708,6 +4754,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current first-party storage quota was found for Byse.",
         "source_refs": [
           0,
@@ -4838,6 +4885,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. The official page says files expire using a size-based formula with min_age 5 days and max_age 365 days.",
         "source_refs": [
           0
@@ -4959,6 +5007,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "The trial page advertises unlimited cloud space for computer backup, but it is trial/subscription backup rather than permanent free hosting.",
         "source_refs": [
           2
@@ -5207,6 +5256,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current public-instance retention window is useful while the hosted instance advertises a 0 Bytes upload cap.",
         "source_refs": [
           0,
@@ -5347,6 +5397,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No simple current file-retention window was found; the service is described as account-based cloud storage rather than temporary transfer.",
         "source_refs": [
           0,
@@ -5357,6 +5408,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "Pliki.pl describes Chomikuj as offering free, unrestricted storage space, but this could not be confirmed from an accessible first-party quota page.",
         "source_refs": [
           1
@@ -5502,6 +5554,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The current official FAQ describes unlimited storage for active files, but says the service should not be used to back up huge numbers of inactive files.",
         "source_refs": [
           0
@@ -5623,6 +5676,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. The current homepage lets users choose 10 minutes, 1 hour, 1 day, 1 week, or a one-view burn-after-reading expiration.",
         "source_refs": [
           0
@@ -5731,6 +5785,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "The product is presented as persistent cloud storage with 10 GB free forever for account holders. The cited first-party pages do not describe automatic deletion of normal stored files, so this is treated as remaining until the user deletes them.",
         "source_refs": [
           0
@@ -5866,6 +5921,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "R2 does not impose an automatic expiry for Standard objects by default; objects remain until deleted or lifecycle rules are configured.",
         "source_refs": [
           0,
@@ -6157,6 +6213,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited CloudMe pages do not publish an automatic expiry for files stored in an active account.",
         "source_refs": [
           0,
@@ -6278,6 +6335,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "Files remain until deleted. The official API docs describe streams and items as persistent user-managed objects that can be listed, updated, and deleted, and they do not describe automatic expiry for normal files or streams.",
         "source_refs": [
           0
@@ -6286,6 +6344,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. Cloudup's official API describes persistent user-managed streams and items that can be created, listed, updated, and deleted, but the cited public pages still do not publish a clean total free storage quota.",
         "source_refs": [
           0
@@ -6519,6 +6578,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "Retention is not modeled as a public link/file expiry rule because this lead is backup tooling, not a public hosting service.",
         "source_refs": [
           1,
@@ -6528,6 +6588,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "Storage is backup-license/online-storage dependent, not an ongoing free public storage quota.",
         "source_refs": [
           1,
@@ -6650,6 +6711,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "Twake is presented as a synchronized personal cloud where documents stay available across devices, and the pricing FAQ says data remains yours even if you downgrade back to the free plan. That supports treating normal stored files as remaining until the user deletes them.",
         "source_refs": [
           0,
@@ -6810,6 +6872,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "Endpoint backup includes unlimited cloud storage on paid/trial plans; Microsoft 365 backup includes pooled 50 GB per user with paid overage.",
         "source_refs": [
           1,
@@ -7202,6 +7265,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited public pages do not publish a numeric free account storage quota.",
         "source_refs": [
           0,
@@ -7332,6 +7396,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the official FAQ says downloaded files can stay active while files with no views or downloads are removed 30 days after upload. The rewards page also says accounts with no activity for more than one year and no files/data are deleted.",
         "source_refs": [
           1,
@@ -7341,6 +7406,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the official pages frame Dailyuploads as a file-hosting service with account-based management, but the accessible official surfaces do not publish a neat guest or free-account storage quota.",
         "source_refs": [
           0,
@@ -7754,6 +7820,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The homepage explicitly says account size is unlimited.",
         "source_refs": [
           0
@@ -7786,6 +7853,7 @@
       "storage_account": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The homepage explicitly says registered account size is unlimited.",
         "source_refs": [
           0
@@ -7794,6 +7862,7 @@
       "storage_guest": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. Guest uploads work without login, but they are not attached to a persistent guest account, so the service does not publish a reusable guest storage quota and instead treats guest uploads as standalone retained files.",
         "source_refs": [
           1
@@ -7904,6 +7973,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The current pricing page claims free and registered file retention is never-ending, but the service is not a clean public free-tier host because uploads are webmaster-gated.",
         "source_refs": [
           1
@@ -7912,6 +7982,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "The pricing page claims unlimited registered storage while also charging non-webmaster accounts for extra storage, so this remains conditional rather than a verified general free quota.",
         "source_refs": [
           1
@@ -8455,6 +8526,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "PolyUploader seeded 60 days and secondary history describes temporary/inactive-file deletion, but no current first-party retention policy was found.",
         "source_refs": [
           0,
@@ -9032,6 +9104,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The official plan table shows no Free storage quota and Unlimited storage for Registered users.",
         "source_refs": [
           1
@@ -9040,6 +9113,7 @@
       "storage_account": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The official plan table lists Registered storage as Unlimited rather than a numeric quota.",
         "source_refs": [
           1
@@ -9292,6 +9366,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The homepage advertises unlimited storage, but the plan table does not publish a separate numeric registered-free storage quota.",
         "source_refs": [
           0,
@@ -9450,6 +9525,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "Unlimited storage space in practice. DepositFiles says the size of its servers is nearly unlimited and that users can upload an unlimited number of files, even though it does not publish a tidy account-quota table.",
         "source_refs": [
           1
@@ -9679,6 +9755,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. DirectUpload offers anonymous image hosting with selectable auto-delete periods, while registered members can store their images free and lifelong; the service does not publish a clean byte quota.",
         "source_refs": [
           0
@@ -9799,6 +9876,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. The current upload page lets users choose 24 hours, 7 days, 30 days, or 90 days, but the actual expiry becomes the smaller of the chosen delay and the instance's size-based server limits: 0-96 MB files are kept 90 days, 96-954 MB files are kept 15 days, and 954 MB or larger files are kept 2 days.",
         "source_refs": [
           2
@@ -9940,6 +10018,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The homepage and plan page advertise unlimited account storage, but no numeric free storage quota is published.",
         "source_refs": [
           0,
@@ -10058,6 +10137,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "A WJunction participant cited 7-day automatic deletion, and the official account only discussed upgrading quality uploaders, so no reliable current retention policy is preserved.",
         "source_refs": [
           0
@@ -10066,6 +10146,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "An old official WJunction reply said DoraUpload did not limit disk space for upgraded uploaders, but this is not current first-party plan documentation.",
         "source_refs": [
           1
@@ -10356,6 +10437,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the official FAQ and premium comparison say free/anonymous files expire after 7 days without downloads, registered-user files after 30 days, and premium files never expire.",
         "source_refs": [
           2,
@@ -10365,6 +10447,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the current homepage advertises 100 GB working space, while the premium comparison shows no free-tier storage space, 100 GB for registered users, and 512 GB for premium.",
         "source_refs": [
           0,
@@ -10507,6 +10590,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current first-party retention policy was found for DownAce.",
         "source_refs": [
           0,
@@ -10518,6 +10602,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "Hypestat preserves the old title 'Free Unlimited Cloud File Hosting', but also shows parked-domain technology; no reliable current storage quota is available.",
         "source_refs": [
           0
@@ -10642,6 +10727,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited public homepage does not publish a current retention or no-expiry guarantee.",
         "source_refs": [
           0
@@ -10755,6 +10841,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. Drime says the free plan has no time restriction on the use of free space during normal use, but the Terms allow suspension or termination after 12 consecutive months of inactivity.",
         "source_refs": [
           1,
@@ -10895,6 +10982,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: official pages say free uploaders expire after one day, paid uploaders can be set to never expire, and uploaded files remain stored in the owner's Google Drive.",
         "source_refs": [
           1,
@@ -10904,6 +10992,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: official pages say DriveUploader itself has no storage limit, but all uploaded files are stored in the user's own Google Drive and are limited by that Drive capacity.",
         "source_refs": [
           0,
@@ -11039,6 +11128,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The current accessible first-party pages do not publish a clear free-file retention period.",
         "source_refs": [
           0
@@ -11047,6 +11137,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. The homepage says there is no storage limit, but no numeric free-account quota is published.",
         "source_refs": [
           0
@@ -11172,6 +11263,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "Third-party comparison and reseller pages describe unlimited storage, but no current first-party storage quota page was found.",
         "source_refs": [
           4,
@@ -11322,6 +11414,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "Dropbox does not publish an automatic expiry for files kept in storage; files remain until the user deletes them, after which deleted files are recoverable for a plan-dependent window.",
         "source_refs": [
           6
@@ -11486,6 +11579,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "Historical reporting says Dropden defaulted to one day and could be extended up to one year; current DropMB documents custom expiration/download limits without a simple default window.",
         "source_refs": [
           2,
@@ -11764,6 +11858,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is inconsistent across official pages. The pricing table says Registered files are deleted 80 days after last download, the FAQ says registered-user files expire 30 days after no downloads, and the terms mention 90 days for free accounts.",
         "source_refs": [
           1,
@@ -11922,6 +12017,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. The official FAQ advertises no space limit for advanced users, but no numeric free-account storage quota is published.",
         "source_refs": [
           0
@@ -12051,6 +12147,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is user-configurable. The homepage says users can set expiration dates and download limits, but it does not publish a default retention window.",
         "source_refs": [
           0
@@ -12173,6 +12270,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. This is an inference from the current official product positioning and live upload surface: DropMeAFile is presented as a temporary send-a-file flow rather than persistent storage, but the accessible official pages still do not publish a fixed expiry window.",
         "source_refs": [
           0,
@@ -12521,6 +12619,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The homepage uses forever-style storage marketing, but the cited public page does not publish a precise current retention guarantee.",
         "source_refs": [
           0
@@ -12529,6 +12628,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited public page does not publish a numeric storage quota.",
         "source_refs": [
           0
@@ -12769,6 +12869,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited first-party pages do not publish a numeric file-retention period.",
         "source_refs": [
           0,
@@ -12778,6 +12879,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. The homepage advertises unlimited free storage when using the EarnVids player, but no enforceable numeric quota is published.",
         "source_refs": [
           0
@@ -12903,6 +13005,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the official premium comparison says guest files are deleted 5 days after the last download, registered free files after 30 days, premium files after 365 days, and Premium Pro files never expire.",
         "source_refs": [
           1
@@ -12911,6 +13014,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the official premium comparison says guest users get no storage space, registered free users get 10 GB, and premium tiers are unlimited.",
         "source_refs": [
           1
@@ -13051,6 +13155,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. The homepage says links self-destruct, the pricing page says expiry depends on quota, and the privacy policy says files are deleted after the selected duration.",
         "source_refs": [
           0,
@@ -13297,6 +13402,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. Free uploads can be set to 1 day, 3 days, 7 days, 15 days, or 30 days, and the FAQ says free-user files can be stored for a maximum of 30 days.",
         "source_refs": [
           0
@@ -13305,6 +13411,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. Free uploads can be stored for a maximum of 30 days, while premium raises storage up to 5 TB and can keep files forever. The homepage does not publish a separate reusable free-account storage quota.",
         "source_refs": [
           0
@@ -13428,6 +13535,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The FAQ says the upload data volume is not limited and registered users get unlimited capacity, but it does not publish a numeric quota.",
         "source_refs": [
           1
@@ -13818,6 +13926,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is user-configurable. The uploader and API support setting a download deadline, but the cited pages do not publish a fixed default expiry.",
         "source_refs": [
           0,
@@ -13952,6 +14061,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The WJunction thread discusses download countdowns and speeds, but no reliable file-retention/deletion policy was found.",
         "source_refs": [
           0
@@ -13960,6 +14070,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The old official thread claims huge storage but does not publish a numeric storage quota.",
         "source_refs": [
           0
@@ -14089,6 +14200,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the official FAQ and affiliate page say registered users keep files 45 days after the last download, while heightened webmaster storage is described inconsistently as 100 days in the FAQ and 180 days on the affiliate page.",
         "source_refs": [
           1,
@@ -14098,6 +14210,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the official FAQ says registration provides unlimited storage space, but the accessible current anonymous storage allowance is not published cleanly.",
         "source_refs": [
           1
@@ -14123,6 +14236,7 @@
       "storage_account": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The official FAQ says registered users get unlimited storage space.",
         "source_refs": [
           1
@@ -14281,6 +14395,7 @@
       "storage_account": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The official premium comparison says premium users get unlimited file space.",
         "source_refs": [
           2
@@ -14403,6 +14518,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. The FAQ says users can choose an expiration date or leave the default where files are always available.",
         "source_refs": [
           0
@@ -14411,6 +14527,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The service is upload-and-share oriented and the cited public page does not publish a reusable free storage quota.",
         "source_refs": [
           0
@@ -14513,6 +14630,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The FAQ says files can expire, but the cited pages do not publish a numeric retention period.",
         "source_refs": [
           1
@@ -14521,6 +14639,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The FAQ describes online storage and remote backup capacity, but no numeric free storage quota is published.",
         "source_refs": [
           1
@@ -14644,6 +14763,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The official homepage and API docs do not publish a current numeric file-retention period.",
         "source_refs": [
           0,
@@ -14653,6 +14773,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The official pages do not publish a numeric free storage quota.",
         "source_refs": [
           0,
@@ -14891,6 +15012,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The official page reviewed here does not publish a retention or no-expiry guarantee.",
         "source_refs": [
           0,
@@ -14900,6 +15022,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "FastPic does not publish a personal storage quota for the free upload flow.",
         "source_refs": [
           0
@@ -15015,6 +15138,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current retention policy for public/free uploads was found on the accessible official pages.",
         "source_refs": [
           0,
@@ -15025,6 +15149,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The homepage and migration pages advertise unlimited space, but the current visible product is paid/ambiguous rather than a clear free storage plan.",
         "source_refs": [
           0,
@@ -15300,6 +15425,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "AlternativeTo claims unlimited space, but no current first-party storage quota text was available.",
         "source_refs": [
           2,
@@ -15430,6 +15556,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "FEX.NET is presented as account-based cloud storage where files remain safely accessible in the cloud from any device. The cited first-party pages do not describe automatic deletion of normal stored files, so this is treated as remaining until the user deletes them.",
         "source_refs": [
           0,
@@ -15439,6 +15566,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. FEX.NET is clearly presented as account-based cloud storage with ongoing plan tiers and persistent file access, but the accessible public text checked here still does not expose a clean current free-quota number.",
         "source_refs": [
           0,
@@ -15704,6 +15832,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the official premium comparison says anonymous files expire after 60 days after last download, registered files after 180 days, and premium files never expire; the rewards page also says no-view files are removed after 90 days.",
         "source_refs": [
           2,
@@ -15875,6 +16004,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The registration page advertises unlimited space for free members, but the public pages do not present a clean structured quota table.",
         "source_refs": [
           0
@@ -16424,6 +16554,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "The pricing table shows no Free storage space. Registered users get 488 GB, while the homepage has broader marketing claims.",
         "source_refs": [
           0,
@@ -16846,6 +16977,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No reliable current retention policy could be found for FileBonus.",
         "source_refs": [
           0,
@@ -16857,6 +16989,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No reliable current storage quota could be found for FileBonus.",
         "source_refs": [
           0,
@@ -17615,6 +17748,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "Retention is user-selected/temporary: the homepage includes a delete-after selector and the privacy page says files are stored for a limited amount of time before removal.",
         "source_refs": [
           0,
@@ -17740,6 +17874,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. FileDitch keeps files indefinitely while storage allows, and only removes the oldest files that have not been accessed in 30 days when disk space is genuinely needed.",
         "source_refs": [
           1
@@ -17748,6 +17883,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. The FAQ says there is no limit on the number of files you can upload, but files are only kept while capacity allows and inactive files can be reclaimed when disk space is genuinely needed.",
         "source_refs": [
           1
@@ -18008,6 +18144,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. The cited public pages do not publish a total free-member storage quota, and free-file availability is instead governed by the 90-day storage period shown in the official comparison table.",
         "source_refs": [
           0
@@ -18120,6 +18257,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. FileFast's first-party pages conflict on free storage: the FAQ says 10 GB with automatic expiration, while the premium page says 100 GB storage on the free plan. The dataset leaves the clean numeric quota unpublished until the official surfaces agree.",
         "source_refs": [
           1,
@@ -18155,6 +18293,7 @@
       "storage_account": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. The first-party pages conflict between 10 GB and 100 GB of free storage, so the dataset leaves the account storage quota unpublished pending a cleaner official statement.",
         "source_refs": [
           1,
@@ -18294,6 +18433,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "No automatic expiry. The current homepage says File Garden lets you upload any type of file to link elsewhere forever for free.",
         "source_refs": [
           0
@@ -18302,6 +18442,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. File Garden clearly positions itself as a persistent file-linking service where uploads can live forever for free, but the accessible official surfaces still do not publish a reusable personal storage quota.",
         "source_refs": [
           0,
@@ -18311,6 +18452,7 @@
       "storage_guest": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional for public/guest-facing uploads. File Garden presents files as living forever for free, but the accessible official surfaces do not publish a reusable guest storage quota and instead expose sharing-oriented public pipe flows.",
         "source_refs": [
           0,
@@ -18320,6 +18462,7 @@
       "storage_account": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional for signed-in users too. File Garden clearly has account-linked gardens and login flows, but the accessible official surfaces still do not publish a clean numeric personal storage quota.",
         "source_refs": [
           0,
@@ -18770,6 +18913,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. The API account response exposes storage fields, but no public numeric free quota is published.",
         "source_refs": [
           0
@@ -18921,6 +19065,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the official FAQ says free unregistered users have no storage volume, registered free users get 50 GB, and premium users get unlimited storage.",
         "source_refs": [
           0
@@ -19159,6 +19304,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional and slightly inconsistent. The homepage FAQ says files expire after 30 days of inactivity, while the pricing page says the Free plan auto-deletes after 20 days of inactivity. The upload UI also exposes shorter auto-remove choices.",
         "source_refs": [
           0,
@@ -19168,6 +19314,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The homepage and pricing page advertise unlimited free storage, but not a numeric quota.",
         "source_refs": [
           0,
@@ -19302,6 +19449,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "FileMoon/Byse marketing and third-party wrapper pages mention unlimited storage, but no current crawlable first-party quota table was available for the superseded FileMoon row.",
         "source_refs": [
           1,
@@ -19444,6 +19592,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. Current docs say data from inactive free accounts is deleted after 3 months of inactivity, with reminder emails sent beforehand.",
         "source_refs": [
           3
@@ -19599,6 +19748,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "A FileNext premium-key reseller says free and premium files are never deleted, but no current first-party retention page was found.",
         "source_refs": [
           3
@@ -19607,6 +19757,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No reliable current storage quota could be found for FileNext.",
         "source_refs": [
           0,
@@ -19891,6 +20042,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "The pricing comparison and FAQ say files are stored forever on all plans and remain until the user deletes them.",
         "source_refs": [
           0
@@ -19998,6 +20150,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited public pages do not publish a clear retention period for free uploads.",
         "source_refs": [
           0,
@@ -20007,6 +20160,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited public pages do not publish a numeric free storage quota.",
         "source_refs": [
           0,
@@ -20129,6 +20283,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. The homepage says guest files are deleted after 3 days, while the premium comparison page says registered free users get 20 days after the last download.",
         "source_refs": [
           0,
@@ -20138,6 +20293,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The premium comparison page advertises unlimited storage for registered free users and premium plans.",
         "source_refs": [
           2
@@ -20265,6 +20421,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the service clearly stores files for anonymous and signed-in use, but the accessible official pages do not publish one clean file-lifetime timer.",
         "source_refs": [
           0,
@@ -20275,6 +20432,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: anonymous and free download flows are documented, but no neat reusable guest-storage quota is published on the accessible official pages.",
         "source_refs": [
           0,
@@ -20303,6 +20461,7 @@
       "storage_account": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: official pages document upload statistics, files, folders, and premium traffic, but do not publish a clean signed-in storage quota.",
         "source_refs": [
           0,
@@ -20405,6 +20564,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited public page does not publish automatic expiry rules for guest or free-account files.",
         "source_refs": [
           0
@@ -20413,6 +20573,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. The official free cards describe upload limits and password-protected storage but do not publish a total free storage quota.",
         "source_refs": [
           0
@@ -20763,6 +20924,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "Files remain until deleted by the user as long as they stay within available account space. The Files.fm FAQ says registered users have permanent disk space for file storage, while files from non-registered users or files exceeding available space remain available for up to 60 days after upload depending on the set deletion period.",
         "source_refs": [
           2
@@ -20898,6 +21060,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No reliable current retention policy could be found for FilesABC.",
         "source_refs": [
           0
@@ -20906,6 +21069,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No reliable current storage quota could be found for FilesABC.",
         "source_refs": [
           0
@@ -21012,6 +21176,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The official pages describe storing and managing personal documents, but do not publish a public-host file-expiry policy.",
         "source_refs": [
           0,
@@ -21021,6 +21186,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The free plan is expressed as up to 50 documents, not as a reusable public-host storage quota.",
         "source_refs": [
           1
@@ -21129,6 +21295,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the service is clearly persistent and account-managed, and the official rules say client content is deleted after the validity period of the present agreement expires, but the accessible official pages do not publish one clean standalone content-retention timer.",
         "source_refs": [
           0,
@@ -21139,6 +21306,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: official API pricing shows storage is metered per GB for partners, but the accessible pages do not publish a flat account-storage quota.",
         "source_refs": [
           1
@@ -21266,6 +21434,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the premium features page says regular-account files live 60 days after last download while premium files do not expire automatically; the public upload flow exists, but no separate guest timer is published.",
         "source_refs": [
           3,
@@ -21275,6 +21444,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: public upload flow is available, but official pages do not publish a separate reusable guest-storage quota.",
         "source_refs": [
           1,
@@ -21412,6 +21582,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The current public pages do not provide a clean free-first retention story separate from the monetized host model.",
         "source_refs": [
           0,
@@ -21421,6 +21592,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The homepage advertises unlimited storage, but the stronger visible product story is upload-and-earn monetization and premium access.",
         "source_refs": [
           0
@@ -21536,6 +21708,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited pages do not publish a numeric free storage quota.",
         "source_refs": [
           0,
@@ -21647,6 +21820,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "Duplicate alias row; the canonical Filestore.to terms describe deletion conditions and no permanent-storage entitlement.",
         "source_refs": [
           3
@@ -21655,6 +21829,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "Duplicate alias row; the canonical Filestore.to pages do not publish a numeric free storage quota.",
         "source_refs": [
           0,
@@ -21786,6 +21961,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The terms say free-user files may be deleted if volume is exceeded or the contract term ends, and that users have no claim to permanent storage; no fixed current free retention window is published.",
         "source_refs": [
           3
@@ -21794,6 +21970,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited public pages describe cloud storage but do not publish a numeric free storage quota.",
         "source_refs": [
           0,
@@ -21919,6 +22096,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current source-verified retention figure is preserved because the live domain did not expose a usable page.",
         "source_refs": [
           1
@@ -21927,6 +22105,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current source-verified storage figure is preserved because the live domain did not expose a usable page.",
         "source_refs": [
           1
@@ -22272,6 +22451,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "A reseller page says premium files are never deleted, but no usable first-party retention policy was accessible.",
         "source_refs": [
           1
@@ -22280,6 +22460,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "A reseller page lists unlimited premium storage, but no usable first-party storage quota was accessible.",
         "source_refs": [
           1
@@ -22693,6 +22874,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The Free plan is described as active files space, but the cited pages do not publish a clean numeric free storage quota.",
         "source_refs": [
           1
@@ -23200,6 +23382,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "The upload UI includes a 'Don't autodelete' option, so images can be kept with no automatic expiry unless the uploader selects a shorter lifetime.",
         "source_refs": [
           0,
@@ -23209,6 +23392,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No numeric free-account storage quota is published on the cited pages.",
         "source_refs": [
           0,
@@ -23611,6 +23795,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "No automatic expiry: the official FAQ says free/non-account files are kept for unlimited days and premium-account files are also kept for unlimited days.",
         "source_refs": [
           1
@@ -23619,6 +23804,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the official FAQ says users can upload as many files as they want as long as each file respects the size limit and terms, but it does not publish a separate free storage quota.",
         "source_refs": [
           1
@@ -23645,6 +23831,7 @@
       "storage_account": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "Unlimited storage: the official premium page explicitly lists unlimited storage for premium accounts.",
         "source_refs": [
           2
@@ -23752,6 +23939,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the guest upload UI shows auto-delete after one year, while signing up can customize or disable image auto-delete.",
         "source_refs": [
           0
@@ -23760,6 +23948,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. Gifyu describes the free service as free forever and no-account-required, but the official pages reviewed do not publish a reusable numeric storage quota for free users.",
         "source_refs": [
           0,
@@ -23879,6 +24068,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention varies by account state. Active accounts keep files normally, but overloaded accounts can lose access to files after 10 days and risk deletion after 60 days if the overage is not resolved, while inactive free accounts are automatically deleted after 1 year without login.",
         "source_refs": [
           4,
@@ -24150,6 +24340,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No reliable numeric account-storage quota was found; sources describe file storage and mass upload, not a clean account quota.",
         "source_refs": [
           0,
@@ -24282,6 +24473,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No reliable current retention policy could be found for Global-Files.",
         "source_refs": [
           0,
@@ -24292,6 +24484,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No reliable current storage quota could be found for Global-Files.",
         "source_refs": [
           0,
@@ -24422,6 +24615,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. Gofile's official FAQ says free content is ephemeral by default and kept for 10 days, but it can remain available longer if it is actively downloaded.",
         "source_refs": [
           0
@@ -24430,6 +24624,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. Free accounts use temporary storage intended for quick sharing, while Premium advertises long-term multi-region storage. The current public pages still do not publish one clean numeric free-storage quota.",
         "source_refs": [
           0,
@@ -24547,6 +24742,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "PolyUploader preserved infinite retention for Gofile.to, but the current alias points to FileFast and no standalone Gofile.to retention policy should be carried forward.",
         "source_refs": [
           0,
@@ -24556,6 +24752,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No standalone current Gofile.to storage quota is retained because the domain is an alias/redirect case.",
         "source_refs": [
           1,
@@ -24688,6 +24885,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. The homepage describes safe video storage and backups, but no numeric free quota is published.",
         "source_refs": [
           0
@@ -24811,6 +25009,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "Google Drive does not publish an automatic expiry for files kept in storage; files remain until the user deletes them, after which they stay in Trash for 30 days before permanent deletion.",
         "source_refs": [
           4
@@ -25081,6 +25280,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited first-party pages do not publish a numeric free-file retention period.",
         "source_refs": [
           0,
@@ -25090,6 +25290,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. The homepage advertises unlimited storage and the API examples show storage_left as inf, but no numeric quota is published.",
         "source_refs": [
           0,
@@ -25208,6 +25409,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "Not applicable as a current host: HCL directed customers to migration/offboarding paths before the July 16, 2020 service end.",
         "source_refs": [
           1
@@ -25216,6 +25418,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current free public storage quota applies because the HCL Connections Cloud service has ended.",
         "source_refs": [
           1,
@@ -25336,6 +25539,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. The public page advertises premium 10 TB storage and broader high-storage options, but not one clean numeric guest/free-account quota.",
         "source_refs": [
           0
@@ -25590,6 +25794,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "Official HitFile product pages frame the service as free unlimited file storage and do not publish a hard total storage cap.",
         "source_refs": [
           0,
@@ -25957,6 +26162,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention depends on account activity rather than a fixed countdown. The homepage FAQ says files are stored as long as your account remains active.",
         "source_refs": [
           0
@@ -25965,6 +26171,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. The cited public pages do not publish a byte quota, but they do publish a daily upload-count limit for free accounts.",
         "source_refs": [
           0
@@ -26073,6 +26280,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The official FAQ says users can store any number of files and the terms describe the service as unlimited free space, but no numeric quota is published.",
         "source_refs": [
           0,
@@ -26200,6 +26408,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the official FAQ says free-tier storage duration is 30 days and premium is indefinite, while the promotional premium page separately claims free users keep files for 50 days and premium has no expiry.",
         "source_refs": [
           0,
@@ -26209,6 +26418,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the official pages describe long-term hosted storage and indefinite premium retention, but they do not publish a clean storage-space quota.",
         "source_refs": [
           0,
@@ -26437,6 +26647,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "The old official thread advertised files kept forever except DMCA/copyright removals; no current retention policy exists because the domain now appears parked.",
         "source_refs": [
           3
@@ -26565,6 +26776,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: i by Tikolu does not publish a retention or no-expiry guarantee; a direct first-party header check of a hosted sample returned HTTP 200 with a far-future cache Expires header, so tested objects can be long-lived but the retention policy remains unpublished.",
         "source_refs": [
           0,
@@ -26574,6 +26786,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The first-party page does not publish a numeric storage quota.",
         "source_refs": [
           0
@@ -26700,6 +26913,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "Files remain until deleted during normal cloud use. The public support center does not publish an automatic expiry rule for stored files.",
         "source_refs": [
           0,
@@ -26838,6 +27052,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the official policy text says content may be removed if it is unlawful, compromises server security, or uses excessive bandwidth, and ATT / DMCA takedowns also apply. No fixed universal expiry window is published.",
         "source_refs": [
           3,
@@ -26847,6 +27062,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: official first-party pages position IcerBox as account-centric cloud storage with paid storage packages, but they do not publish a reusable guest storage quota.",
         "source_refs": [
           1,
@@ -26876,6 +27092,7 @@
       "storage_account": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the official package pages publish paid account storage tiers of 500 GB, 750 GB, and 1 TB, but they do not publish one single storage quota that applies to every signed-in account state.",
         "source_refs": [
           1,
@@ -27013,6 +27230,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "No automatic expiry for active stored iCloud Drive files. Apple describes iCloud Drive as cloud storage where user changes sync across devices; files move to Recently Deleted only when the user deletes them, and deleted files can be recovered for 30 days.",
         "source_refs": [
           1,
@@ -27148,6 +27366,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "No automatic expiry for backed-up files in an active account. IDrive's True Archiving page says backed-up files remain available in the IDrive account unless the user deletes them manually or through Archive Cleanup, and files removed from a device are not automatically deleted from the cloud account.",
         "source_refs": [
           3
@@ -27276,6 +27495,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "The official homepage says files are stored forever on multiple servers using a CDN.",
         "source_refs": [
           0
@@ -27284,6 +27504,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "ImageBam does not publish a numeric free storage quota on the cited homepage.",
         "source_refs": [
           0
@@ -27398,6 +27619,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The FAQ says there is no daily upload-count limit, but it does not publish a numeric storage quota.",
         "source_refs": [
           1
@@ -27655,6 +27877,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "The official homepage says uploaded files are here to stay and can be accessed anytime, indicating no automatic expiry is published for normal uploads.",
         "source_refs": [
           0
@@ -27663,6 +27886,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "ImageVenue does not publish a numeric free storage quota on the cited page.",
         "source_refs": [
           0
@@ -27766,6 +27990,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "Retention is user-selectable. The upload UI includes a Don't autodelete option plus auto-delete choices from 5 minutes to 1 month.",
         "source_refs": [
           0
@@ -27774,6 +27999,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited public page does not publish a numeric storage quota.",
         "source_refs": [
           0
@@ -27883,6 +28109,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: uploaders can choose a no-expiry setting or select an explicit expiration range.",
         "source_refs": [
           0,
@@ -27892,6 +28119,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "No numeric free storage quota is listed on the cited official pages; unlimited space appears only in paid Pro plan cards.",
         "source_refs": [
           0
@@ -28006,6 +28234,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The official homepage says storage time is unlimited.",
         "source_refs": [
           0
@@ -28014,6 +28243,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The official homepage says storage space is unlimited.",
         "source_refs": [
           0
@@ -28122,6 +28352,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "No automatic expiry. IMGPile's official FAQ says uploads create permanent links unless the user deletes the post or the service removes it for policy reasons.",
         "source_refs": [
           1
@@ -28130,6 +28361,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. IMGPile does not publish a numeric personal storage quota, but it does publish upload-rate limits of up to 1,000 files per day per user or IP plus request burst limits.",
         "source_refs": [
           1,
@@ -28255,6 +28487,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited page does not publish an automatic file-expiry policy.",
         "source_refs": [
           0
@@ -28399,6 +28632,7 @@
       "storage_account": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "Unlimited storage: the official premium comparison says registered users have unlimited storage space, and premium users do as well.",
         "source_refs": [
           1
@@ -29031,6 +29265,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "Retention is configurable in Backup Vaults rather than a public-host expiry rule; Jungle Disk gives examples such as 731 or 2,557 days.",
         "source_refs": [
           3
@@ -29159,6 +29394,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the official FAQ says free-user files are deleted after 15 days without downloads, while the affiliate table says 30 days for free users and 365 days for premium users.",
         "source_refs": [
           1,
@@ -29168,6 +29404,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The official affiliate page explicitly says KatFile offers unlimited storage.",
         "source_refs": [
           2
@@ -29297,6 +29534,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "Current reviewed support pages and public product pages do not publish a dependable free-account storage quota.",
         "source_refs": [
           0,
@@ -29444,6 +29682,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current first-party retention policy could be verified because no active KeepVault service page was found.",
         "source_refs": [
           3
@@ -29580,6 +29819,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "Kepkuldes does not publish a numeric free storage quota on the cited page.",
         "source_refs": [
           0
@@ -29685,6 +29925,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. The live page presents a one-time-file workflow but does not publish a clean current expiry window.",
         "source_refs": [
           0
@@ -29795,6 +30036,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "Files remain until deleted during normal use. Deleted files are retained for 7 days on free accounts.",
         "source_refs": [
           3
@@ -29938,6 +30180,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. Official FAQ says at least 1 month for non-registered files, 3 months for registered users, and 5 months for premium, with TTL increasing after downloads/plays.",
         "source_refs": [
           1
@@ -29946,6 +30189,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "Homepage advertises unlimited disk space, but the service is also tied to premium and monetized uploader behavior.",
         "source_refs": [
           0
@@ -30212,6 +30456,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention depends on plan and interface policy. LimeWire's terms say the basic tier is subject to automatic deletion policies displayed in the interface, while the help center says account holders can manage and access files permanently.",
         "source_refs": [
           1,
@@ -30221,6 +30466,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. The public pages position LimeWire as a transfer and collaboration platform rather than advertising one clean free storage quota; the help center says account holders can manage and access files permanently, while the terms say basic-tier files remain subject to automatic deletion policies shown in the interface.",
         "source_refs": [
           1,
@@ -30333,6 +30579,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "Retention is instance-configured by Linx operators; the upstream project documents configurable expiration behavior rather than one public-host lifetime.",
         "source_refs": [
           2
@@ -30341,6 +30588,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage depends on the self-hosted operator's machine or deployment, so there is no universal public-host storage quota.",
         "source_refs": [
           2
@@ -30454,6 +30702,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The imported list claims short selectable expiries, but the accessible current official surface does not expose a trustworthy first-party retention statement.",
         "source_refs": [
           0
@@ -30462,6 +30711,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No trustworthy current storage policy could be established from the accessible official surface.",
         "source_refs": [
           0
@@ -30579,6 +30829,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. Litterbox lets the uploader choose 1 hour, 12 hours, 1 day, or 3 days for each upload.",
         "source_refs": [
           0
@@ -30707,6 +30958,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No public-host expiry rule applies; Livedrive is subscription backup/cloud storage, and no current first-party retention number was verified.",
         "source_refs": [
           1
@@ -30715,6 +30967,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage depends on paid account type. The official app listing confirms a monthly or annual subscription is required, but does not publish a current storage quota in fetched text.",
         "source_refs": [
           1
@@ -30833,6 +31086,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No per-account storage quota is published on the cited public page.",
         "source_refs": [
           0
@@ -31321,6 +31575,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "No automatic expiry when the uploader chooses the no-time-limit option. The official pages say images can be stored indefinitely, or deleted at first view or after a selected delay.",
         "source_refs": [
           0,
@@ -31330,6 +31585,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "Lutim does not publish a numeric personal storage quota on the cited pages.",
         "source_refs": [
           0,
@@ -31445,6 +31701,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "PolyUploader lists retention as infinite, but no first-party retention policy was crawlable, so this is kept as a note rather than a sortable no-expiry claim.",
         "source_refs": [
           0
@@ -31730,6 +31987,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "The homepage advertises free/unlimited storage, while the pricing page lists Member choices of 10 GB no-expiry storage or unlimited storage with activity cleanup.",
         "source_refs": [
           0,
@@ -31854,6 +32112,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "Files remain until deleted. MediaFire says content not in Trash is retained indefinitely for free registered accounts that are not abandoned, and a free registered account is not considered abandoned if it is accessed at least once every 8 months.",
         "source_refs": [
           4
@@ -31994,6 +32253,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "The official app listings describe user-controlled encrypted cloud storage where files can be uploaded, stored, renamed, shared, and deleted any time from any device. That supports treating normal stored files as remaining until the user deletes them.",
         "source_refs": [
           0,
@@ -32153,6 +32413,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited homepage does not publish a numeric file-retention period.",
         "source_refs": [
           0
@@ -32407,6 +32668,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The official FAQ says users can upload as many files as they want as long as each file follows the terms and size cap; it does not publish a separate total storage quota.",
         "source_refs": [
           5,
@@ -32433,6 +32695,7 @@
       "storage_account": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The official FAQ publishes a per-file premium cap but not a separate signed-in storage quota.",
         "source_refs": [
           5
@@ -32695,6 +32958,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: official error pages say files can expire, be deleted by the owner, or be deleted by administration for terms violations, but no stable retention timer is published.",
         "source_refs": [
           1,
@@ -32704,6 +32968,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the official login and file pages market centralized storage and big storage capacity, but no clean numeric storage quota is published on the accessible current pages.",
         "source_refs": [
           0,
@@ -33238,6 +33503,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "Files remain until deleted. MobiDrive says synced files stay between the local folder and cloud, deleted files remain in the Bin and can still be accessed online, and permanent removal only happens after Delete Forever from the Bin.",
         "source_refs": [
           2,
@@ -33371,6 +33637,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited homepage does not publish a retention period in fetched text.",
         "source_refs": [
           0
@@ -33490,6 +33757,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The FAQ describes online storage and remote backup capacity, but no numeric free/normal storage quota is published.",
         "source_refs": [
           0
@@ -33754,6 +34022,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "Current public summaries discuss configurable file-storage behavior, but an accessible first-party page confirming a current retention policy could not be reached during this review.",
         "source_refs": [
           0,
@@ -33765,6 +34034,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "Current public summaries do not publish a total free storage quota, and an accessible first-party page could not be reached during this review.",
         "source_refs": [
           0,
@@ -34183,6 +34453,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No reliable retention policy could be confirmed for MyFiles.onl.",
         "source_refs": [
           0,
@@ -34193,6 +34464,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No reliable storage quota could be confirmed for MyFiles.onl.",
         "source_refs": [
           0,
@@ -34506,6 +34778,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "FMHY seed note mentions: 5 GB note, forever retention. Exact retention behavior needs first-party verification before publication.",
         "source_refs": [
           0
@@ -34514,6 +34787,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "FMHY seed note mentions: 5 GB note, forever retention. Exact storage quota needs first-party verification before publication.",
         "source_refs": [
           0
@@ -34876,6 +35150,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "Authenticated clipboard retention options exist, but no public free upload path remains available for this queue item.",
         "source_refs": [
           0
@@ -34884,6 +35159,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No public free storage quota is preserved because this live service is password-protected.",
         "source_refs": [
           0
@@ -34987,6 +35263,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No reliable current retention policy could be confirmed for NovaFile.",
         "source_refs": [
           0,
@@ -34997,6 +35274,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No reliable current storage quota could be confirmed for NovaFile.",
         "source_refs": [
           0,
@@ -35117,6 +35395,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited official pages do not publish an automatic expiry for stored files in an active account.",
         "source_refs": [
           0,
@@ -35126,6 +35405,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Free-user space depends on uploaded data and is constrained by monthly traffic; official help says free users have 1 GB/month upload traffic and 3 GB/month download traffic.",
         "source_refs": [
           0,
@@ -35254,6 +35534,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. Current official help says unused cloud storage is frozen after 9 months without login, then files can be deleted after another 2 months if the account remains inactive.",
         "source_refs": [
           6
@@ -35538,6 +35819,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "OneDrive does not publish an automatic expiry for files kept in storage; files remain until the user deletes them, after which deleted files stay in the personal Recycle Bin for 30 days.",
         "source_refs": [
           3
@@ -35684,6 +35966,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. The homepage advertises unlimited storage when prioritizing the OneUpload player, but no numeric free quota is published.",
         "source_refs": [
           0
@@ -35798,6 +36081,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "Files remain until deleted. OpenDrive moves deleted items to Trash and allows restoration for up to 90 days before permanent removal.",
         "source_refs": [
           0,
@@ -36039,6 +36323,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "Object Storage does not impose automatic expiry by default; objects remain until deleted or lifecycle/retention settings are configured.",
         "source_refs": [
           1,
@@ -36180,6 +36465,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No reliable current retention policy could be found for OrtoFiles.",
         "source_refs": [
           0,
@@ -36190,6 +36476,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No reliable current storage quota could be found for OrtoFiles.",
         "source_refs": [
           0,
@@ -36438,6 +36725,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "OwnDrive sells the free plan as ongoing cloud storage that is upgradable any time, not as a temporary transfer shelf. The cited official pages do not describe automatic deletion of normal stored files, so this is treated as remaining until the user deletes them.",
         "source_refs": [
           0,
@@ -36691,6 +36979,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "pCloud does not publish an automatic expiry for standard stored files; files remain until the user deletes them, after which free-plan files stay in Trash for 15 days and paid-plan files for 30 days.",
         "source_refs": [
           3
@@ -36939,6 +37228,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "FMHY claims forever, but the official page reviewed here did not publish a retention or no-expiry guarantee.",
         "source_refs": [
           0,
@@ -36948,6 +37238,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "pic.maxiol does not publish a numeric storage quota on the cited page.",
         "source_refs": [
           0
@@ -37056,6 +37347,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The official page reviewed here does not publish a retention or no-expiry guarantee.",
         "source_refs": [
           0,
@@ -37065,6 +37357,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "Pikky does not publish a numeric free storage quota on the cited page.",
         "source_refs": [
           0
@@ -37189,6 +37482,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "No automatic expiry. Files are stored forever under the normal service flow.",
         "source_refs": [
           0
@@ -37197,6 +37491,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. Pillowcase stores files permanently under the normal service flow and supports anonymous, registered, and subscriber tiers, but the FAQ still does not publish a reusable personal storage quota.",
         "source_refs": [
           0
@@ -37441,6 +37736,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: uploaders can choose no auto-delete or explicit expiry intervals up to one year.",
         "source_refs": [
           0,
@@ -37450,6 +37746,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "PixVid does not publish a numeric personal storage quota on the cited pages.",
         "source_refs": [
           0,
@@ -37578,6 +37875,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. The current product surface says expiry can be set from 1 hour up to 2 weeks, and the self-destruct option can automatically delete the upload after all recipients have downloaded the file.",
         "source_refs": [
           0
@@ -37686,6 +37984,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The service is in shutdown; old FAQ retention claims are superseded by the current shutdown notice.",
         "source_refs": [
           0,
@@ -37813,6 +38112,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The official homepage does not publish a source-backed free retention window.",
         "source_refs": [
           0
@@ -37821,6 +38121,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The official homepage promotes storage and PRO membership but does not publish a free-account storage quota.",
         "source_refs": [
           0
@@ -37925,6 +38226,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "No automatic expiry for active stored files. Proton Drive's official guides describe stored cloud files as user-managed: files can be uploaded, downloaded, moved to Trash, or made online-only while remaining safely stored in the cloud.",
         "source_refs": [
           5,
@@ -38079,6 +38381,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "Files remain until deleted by the uploader or removed for terms-of-service violations.",
         "source_refs": [
           2,
@@ -38088,6 +38391,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. put.re exposes anonymous uploads and optional album-style management rather than a published reusable storage allowance, and its official feature pages only promise that files remain until deleted or removed for terms violations.",
         "source_refs": [
           0,
@@ -38118,6 +38422,7 @@
       "storage_guest": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. Anonymous uploads are supported and can optionally be organized through album-style management flows, but the official pages do not publish a reusable guest-storage quota.",
         "source_refs": [
           0,
@@ -38267,6 +38572,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. The official page offers 1 day, 7 days, 30 days, 1 year, or permanent storage duration.",
         "source_refs": [
           0
@@ -38275,6 +38581,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The service offers permanent retention as an option, but the cited page does not publish a reusable personal storage quota.",
         "source_refs": [
           0
@@ -38380,6 +38687,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The homepage says files automatically expire but does not publish the expiry duration.",
         "source_refs": [
           0
@@ -38628,6 +38936,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. Rakuten Drive Cloud behaves like normal cloud storage, while the free Transfer workflow uses 48-hour shared links.",
         "source_refs": [
           0,
@@ -38749,6 +39058,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The current homepage does not publish a crawlable retention period.",
         "source_refs": [
           0
@@ -38757,6 +39067,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The current homepage does not publish a numeric free storage quota.",
         "source_refs": [
           0
@@ -38862,6 +39173,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The FAQ says files can expire and be deleted automatically, but does not publish a numeric retention period.",
         "source_refs": [
           1
@@ -38870,6 +39182,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The public pages advertise unlimited storage upgrades, but no numeric free storage quota is published.",
         "source_refs": [
           0,
@@ -39006,6 +39319,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the homepage markets no apparent storage ceiling, while the live interface and Premium page show storage-plan quotas and storage-full warnings rather than one neat guest quota.",
         "source_refs": [
           0,
@@ -39032,6 +39346,7 @@
       "storage_account": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the Premium page lists tiered storage plans from 1 TB to 12 TB depending on duration and plan, rather than one universal signed-in quota.",
         "source_refs": [
           1
@@ -39143,6 +39458,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. The official upload UI lists multiple autodelete choices from minutes to longer time windows.",
         "source_refs": [
           0
@@ -39377,6 +39693,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. Registered members are advertised with no expiry, but the cited pages do not publish a total free storage quota.",
         "source_refs": [
           0,
@@ -40001,6 +40318,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. The public pricing page clearly says premium files have no expiration while subscribed, while the free tier remains a separate bandwidth-limited mode even though the accessible official surfaces do not cleanly publish the default free retention rule.",
         "source_refs": [
           2
@@ -40255,6 +40573,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "The official FAQ says free account files are kept forever and premium account files are kept forever.",
         "source_refs": [
           3
@@ -40263,6 +40582,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The official FAQ says users can upload as many files as they want, and the upgrade page says premium includes unlimited storage.",
         "source_refs": [
           3,
@@ -40426,6 +40746,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The homepage advertises unlimited storage for videos, but not a numeric quota.",
         "source_refs": [
           0
@@ -40544,6 +40865,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "SecureSend links can expire after 10 minutes, 24 hours, 1 week, 1 month, or be unlimited; stored-file retention is account/plan controlled rather than a public-host expiry rule.",
         "source_refs": [
           3
@@ -40699,6 +41021,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the homepage frames storage around active-download-based retention and premium permanent-storage upsells rather than a fixed free space quota.",
         "source_refs": [
           0
@@ -40723,6 +41046,7 @@
       "storage_account": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the homepage says free accounts extend inactive retention to 30 days, while premium offers permanent storage, but it does not publish a clean storage-space quota.",
         "source_refs": [
           0
@@ -40839,6 +41163,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "Imported metadata mentioned a 25+ day shelf life, but current public sources do not confirm a current retention policy.",
         "source_refs": [
           0,
@@ -40850,6 +41175,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "Imported metadata mentioned 600 MB free volume, but current public sources do not confirm a durable storage quota.",
         "source_refs": [
           0,
@@ -41511,6 +41837,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited public pages do not publish a numeric storage quota.",
         "source_refs": [
           0,
@@ -41648,6 +41975,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The Rentry seed claims forever, but the current official page reviewed here did not publish a clear retention guarantee in fetched text.",
         "source_refs": [
           0,
@@ -41657,6 +41985,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the official homepage says guests can upload up to 100 MB per file and registered users get more space, but it does not publish a clean free storage quota in the reviewed text.",
         "source_refs": [
           0
@@ -42024,6 +42353,7 @@
       "storage_account": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "Unlimited storage: the official premium comparison says registered users have unlimited storage space, restricted in practice to allowed game-mod uploads.",
         "source_refs": [
           2,
@@ -42152,6 +42482,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The official homepage and FAQ effectively describe unlimited uploads by count for free/non-account users: users can upload as many files as they want, though those files are only kept for 60 days unless upgraded.",
         "source_refs": [
           0,
@@ -42646,6 +42977,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No reliable current retention policy could be found for SolidFiles.",
         "source_refs": [
           0,
@@ -42657,6 +42989,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No reliable current storage quota could be found for SolidFiles.",
         "source_refs": [
           0,
@@ -42790,6 +43123,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "SpiderOakONE includes historical versions and point-in-time recovery, but the reviewed page does not publish a simple public-host expiry period.",
         "source_refs": [
           1
@@ -42913,6 +43247,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. Uploads can be set to 1 hour, 6 hours, 12 hours, 1 day, 7 days, 30 days, or forever. The FAQ says files are stored indefinitely by default, while the terms describe 30 days if no expiration time is set.",
         "source_refs": [
           0,
@@ -42923,6 +43258,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. Stashr stores files permanently by default unless the uploader chooses an expiration or download limit, but anonymous uploads are not tied to a reusable personal storage quota and the public pages do not publish one.",
         "source_refs": [
           1
@@ -43152,6 +43488,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited public pages do not publish a numeric retention period.",
         "source_refs": [
           0,
@@ -43161,6 +43498,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. The FAQ says premium can add storage and webmasters can request unlimited storage.",
         "source_refs": [
           1
@@ -43290,6 +43628,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No account storage quota was found for StreamBolt; the public evidence is video-host/upload-and-monetize oriented.",
         "source_refs": [
           0,
@@ -43417,6 +43756,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current retention policy can be verified because no usable first-party host surface is available.",
         "source_refs": [
           1
@@ -43425,6 +43765,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current storage quota can be verified because no usable first-party host surface is available.",
         "source_refs": [
           1
@@ -43686,6 +44027,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. The homepage advertises unlimited storage when prioritizing the StreamWish player, but no numeric free quota is published.",
         "source_refs": [
           0
@@ -43838,6 +44180,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the official FAQ and terms position SubyShare as cloud storage/backup, but they do not publish a clean reusable total storage quota for free users.",
         "source_refs": [
           0,
@@ -43967,6 +44310,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current first-party automatic file-expiry policy was found for synced account files. SugarSync is modeled as paid account storage rather than temporary public hosting.",
         "source_refs": [
           2,
@@ -44222,6 +44566,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The current first-party homepage does not publish a numeric file-retention period.",
         "source_refs": [
           0
@@ -44230,6 +44575,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. The homepage describes cloud storage with no limits on access, but no numeric free quota is published.",
         "source_refs": [
           0
@@ -44459,6 +44805,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the homepage says files are accessible 24/7 and the custom uploader exposes a Self Destruct flag, so retention depends on the uploader configuration and moderation rather than one published fixed expiry.",
         "source_refs": [
           0,
@@ -44468,6 +44815,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "sxcu.net publishes current total service storage used, but not a numeric per-user free storage quota.",
         "source_refs": [
           0
@@ -44593,6 +44941,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "Sync does not publish an automatic expiry for files kept in storage; files remain until the user deletes them, after which deleted files are kept for 30 days on the free plan.",
         "source_refs": [
           4
@@ -44735,6 +45084,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No public numeric retention term was found for Personal Edition files. The storage article notes that deleted files and previous versions can consume account storage.",
         "source_refs": [
           2
@@ -44743,6 +45093,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "Syncplicity accounts have storage quotas, but the cited first-party pages do not publish a current free Personal Edition quota amount.",
         "source_refs": [
           2,
@@ -44886,6 +45237,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The official FAQ says free/non-account and premium files are kept for unlimited days; this is stored as a note rather than a sortable permanent-retention claim because the row is rejected on safety grounds.",
         "source_refs": [
           0
@@ -44894,6 +45246,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The official homepage markets long-term storage/backup, but no numeric free or premium storage quota was found.",
         "source_refs": [
           1
@@ -45016,6 +45369,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "No automatic expiry by default. Synology's C2 Object Storage overview says there is no minimum storage duration policy; objects remain user-managed unless the user configures lifecycle, retention, or deletion behavior.",
         "source_refs": [
           1
@@ -45136,6 +45490,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited homepage does not publish a retention period in fetched text.",
         "source_refs": [
           0
@@ -45248,6 +45603,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "No automatic expiry was found. Tarsnap archives are immutable once created and remain until explicitly deleted by the user.",
         "source_refs": [
           4
@@ -45256,6 +45612,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "There is no fixed storage quota in the cited pricing model. Storage is metered at $0.25 per GB-month of encoded data.",
         "source_refs": [
           2
@@ -46072,6 +46429,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "Files remain until deleted. Tencent Weiyun's official mobile product page says deleted files can be recovered from the recycle bin for up to 45 days.",
         "source_refs": [
           0,
@@ -46239,6 +46597,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "TeraBox says it does not delete user files without permission, which supports treating normal stored files as having no automatic expiry; deleted files go through the Recycling Bin flow.",
         "source_refs": [
           2
@@ -46389,6 +46748,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the service clearly stores and shares user files, but the accessible official pages do not publish a clean file-retention timer for free or premium plans.",
         "source_refs": [
           0,
@@ -46399,6 +46759,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the FAQ confirms a free membership plan exists, but the accessible official pages do not publish a neat free-storage quota.",
         "source_refs": [
           3,
@@ -46545,6 +46906,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited public homepage does not publish a fixed current retention window.",
         "source_refs": [
           0
@@ -46553,6 +46915,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The homepage markets unlimited storage but does not publish a numeric free quota.",
         "source_refs": [
           0
@@ -46658,6 +47021,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "FMHY claims forever, but the official homepage text reviewed here did not publish a retention or no-expiry guarantee.",
         "source_refs": [
           0,
@@ -46667,6 +47031,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The official homepage says unlimited uploads, but does not publish a numeric account storage quota.",
         "source_refs": [
           0
@@ -46910,6 +47275,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "Retention is custom/policy-based rather than a public free-host expiry. The pricing table lists custom data retention policy and workspace expiry controls.",
         "source_refs": [
           2
@@ -46918,6 +47284,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "TitanFile lists storage as 'as much space as needed' for paid subscriptions, not a fixed ongoing free quota.",
         "source_refs": [
           2
@@ -47270,6 +47637,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the official pages do not publish a clean expiry timer, while indexed official member-folder and file-download pages show content remaining accessible across multiple years.",
         "source_refs": [
           7,
@@ -47279,6 +47647,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the homepage supports guest uploads and explicitly recommends registration and login to manage uploaded files, but it does not publish a neat reusable storage quota.",
         "source_refs": [
           3,
@@ -47972,6 +48341,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current retention policy could be confirmed for ttm.sh.",
         "source_refs": [
           0,
@@ -47982,6 +48352,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current storage quota could be confirmed for ttm.sh.",
         "source_refs": [
           0,
@@ -48113,6 +48484,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The official FAQ says there is no limit on the total size and number of stored files.",
         "source_refs": [
           0
@@ -48137,6 +48509,7 @@
       "storage_account": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The official FAQ says there is no limit on the total size and number of your files.",
         "source_refs": [
           0
@@ -48239,6 +48612,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No reliable current retention policy could be found from first-party TusFiles pages.",
         "source_refs": [
           0,
@@ -48250,6 +48624,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "Old third-party snippets mention very large disk-space claims, but no current first-party storage quota was found.",
         "source_refs": [
           2,
@@ -48403,6 +48778,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. UAFile does not publish a user quota, but the upload page shows current free server space and says files may be deleted when server space runs out.",
         "source_refs": [
           0,
@@ -48512,6 +48888,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The FAQ currently says free/non-account files and premium files are kept for unlimited days.",
         "source_refs": [
           1
@@ -48520,6 +48897,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The homepage advertises unlimited uploads but does not publish a numeric free storage quota.",
         "source_refs": [
           0
@@ -48787,6 +49165,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "Files remain until deleted. Ulozto positions Disk as personal backup and cloud storage, and the official Android app page explicitly describes automatic synchronization plus working with the File Recycle Bin, which supports treating normal stored files in an active account as persistent until the user deletes them.",
         "source_refs": [
           0,
@@ -49065,6 +49444,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "Retention is configurable rather than a public file-host expiry. Official pages describe retention from 90 days to forever.",
         "source_refs": [
           1,
@@ -49196,6 +49576,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No reliable current retention policy could be found for up07.me.",
         "source_refs": [
           0,
@@ -49207,6 +49588,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No reliable current storage quota could be found for up07.me.",
         "source_refs": [
           0,
@@ -49625,6 +50007,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited public page does not publish a current automatic file expiry window.",
         "source_refs": [
           0
@@ -49633,6 +50016,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "Up4Stream is account-based video hosting, but the cited public page does not publish one current free storage quota.",
         "source_refs": [
           0
@@ -49982,6 +50366,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "Scam Detector preserves a no-file-deletion claim, but no structured first-party retention policy was available.",
         "source_refs": [
           0
@@ -49990,6 +50375,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "Scam Detector preserves an unlimited-storage claim, but no structured first-party storage quota was available.",
         "source_refs": [
           0
@@ -50109,6 +50495,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. The cited public pages do not publish a total storage quota, and file availability instead depends on whether the uploader is anonymous or registered plus the service's inactivity-based retention rules.",
         "source_refs": [
           0
@@ -50240,6 +50627,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No reliable current retention policy could be found from accessible sources.",
         "source_refs": [
           0,
@@ -50250,6 +50638,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No reliable current storage quota could be found from accessible sources.",
         "source_refs": [
           0,
@@ -50389,6 +50778,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current file-retention policy was found in the accessible UploadBox evidence.",
         "source_refs": [
           0,
@@ -50399,6 +50789,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current storage quota was found; public summaries only preserve the domain title and infrastructure/reputation details.",
         "source_refs": [
           0,
@@ -51079,6 +51470,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "FileSearch describes free downloads indefinitely, but no first-party retention policy was found.",
         "source_refs": [
           4
@@ -51087,6 +51479,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "Scam Detector and Sur.ly preserve unlimited-storage wording, but no current structured quota page was found.",
         "source_refs": [
           2,
@@ -51226,6 +51619,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited public upload page does not publish a clear file-retention period.",
         "source_refs": [
           0
@@ -51234,6 +51628,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited public page does not publish a numeric free storage quota.",
         "source_refs": [
           0
@@ -51345,6 +51740,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The homepage promises long-term storage without premium or subscription, but does not publish a numeric free retention period.",
         "source_refs": [
           0
@@ -51353,6 +51749,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited page does not publish a numeric free storage quota.",
         "source_refs": [
           0
@@ -51460,6 +51857,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the official terms frame UploadGig as an online file storage service and allow storage for as long as the user keeps content on the platform, but they also reserve broad deletion and blocking rights and do not publish a fixed public free expiry timer.",
         "source_refs": [
           3
@@ -51468,6 +51866,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the homepage and terms clearly position UploadGig as an online file storage and sharing service, but the public pages do not publish a neat free storage quota.",
         "source_refs": [
           0,
@@ -51614,6 +52013,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "The official plan table shows no standalone storage space for Free, while Registered has 98 GB and Premium has unlimited storage.",
         "source_refs": [
           1
@@ -51754,6 +52154,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No formal retention policy was found; one Trustpilot reviewer alleges files are deleted frequently, so the row stays rejected rather than treated as stable storage.",
         "source_refs": [
           3
@@ -51762,6 +52163,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "Uploadify is described as upload storage, but no current numeric storage quota was found.",
         "source_refs": [
           0,
@@ -51896,6 +52298,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: public FAQ says accounts can store files without time limitations; the current public pages reviewed do not state a single guest-link lifetime.",
         "source_refs": [
           0,
@@ -51905,6 +52308,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the public UI exposes guest upload/storage flows and account upgrades, but it does not publish one clean free storage quota in the public text reviewed.",
         "source_refs": [
           0,
@@ -51931,6 +52335,7 @@
       "storage_account": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the FAQ says accounts can store files without time limitations, but the reviewed public pages do not state one clean free-account storage quota.",
         "source_refs": [
           1
@@ -52310,6 +52715,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the official premium comparison says anonymous files are deleted 1 day after the last download, registered files after 90 days, premium after 120 days, and premium pro after 360 days.",
         "source_refs": [
           1
@@ -52727,6 +53133,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The homepage says free accounts add more storage but does not publish a numeric free-account storage quota.",
         "source_refs": [
           0
@@ -53100,6 +53507,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the official FAQ positions Upstore as a cloud storage platform, but it does not publish a neat total free storage quota.",
         "source_refs": [
           0
@@ -53357,6 +53765,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. The FAQ says lost delete links can be handled by waiting until the file expires, but it does not publish a fixed current expiry window.",
         "source_refs": [
           2
@@ -53365,6 +53774,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "Uptomega is an account-capable file host, but the cited public pages do not publish one current free storage quota.",
         "source_refs": [
           0,
@@ -53624,6 +54034,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The current first-party homepage does not publish a numeric file-retention period.",
         "source_refs": [
           0
@@ -53632,6 +54043,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. The homepage advertises unlimited storage for free, but no numeric quota is published.",
         "source_refs": [
           0
@@ -53740,6 +54152,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current file-retention policy was found from first-party UsersCloud pages.",
         "source_refs": [
           1,
@@ -53750,6 +54163,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "Trustpilot preserves an 'unlimited cloud storage' external description, but no current first-party quota or storage policy was found.",
         "source_refs": [
           0
@@ -53895,6 +54309,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. The official pricing page lists no clean guest storage quota for the basic free upload flow, while registered free accounts are advertised with unlimited storage space.",
         "source_refs": [
           3
@@ -53928,6 +54343,7 @@
       "storage_account": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The current pricing page lists unlimited storage space for registered free accounts, but does not expose a numeric quota to normalize in the dataset.",
         "source_refs": [
           3
@@ -54040,6 +54456,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. Anonymous uploads are deleted after 6 months without views, while account-linked uploads are deleted after 1 year without views.",
         "source_refs": [
           0
@@ -54048,6 +54465,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. vgy.me says there is no restriction on how much disk space you can use, but mass uploads that consume too much space without approval may be deleted and banned.",
         "source_refs": [
           2
@@ -54169,6 +54587,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The cited public pages do not publish a numeric retention period.",
         "source_refs": [
           0,
@@ -54178,6 +54597,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The homepage advertises unlimited storage without additional costs, but no numeric quota is published.",
         "source_refs": [
           0
@@ -54302,6 +54722,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "Unlimited storage is advertised on the homepage for regular free use.",
         "source_refs": [
           0
@@ -54418,6 +54839,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "The homepage says Vinovo offers unlimited storage, but no numeric quota is published.",
         "source_refs": [
           0
@@ -54659,6 +55081,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No automatic file expiry applies to normal stored objects by default. Wasabi has a 90-day minimum storage duration for billing, and bucket lifecycle/object-lock settings can alter deletion behavior.",
         "source_refs": [
           2,
@@ -54969,6 +55392,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current retention policy was found for WebchinUpload.",
         "source_refs": [
           0,
@@ -54980,6 +55404,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current storage quota was found for WebchinUpload.",
         "source_refs": [
           0,
@@ -55114,6 +55539,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention depends on the chosen transfer setting. Free-account transfers can currently remain active for 1 to 3 days.",
         "source_refs": [
           0
@@ -55237,6 +55663,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention varies by the sender's chosen expiry-by-days or expiry-by-download-count setting; current public descriptions do not expose one universal default rule in accessible text.",
         "source_refs": [
           2
@@ -55245,6 +55672,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. WorkUpload's public pages frame the service around expiring shared files rather than a reusable personal cloud quota, while the current Patreon pages describe tier-dependent storage for paying supporters.",
         "source_refs": [
           2,
@@ -55384,6 +55812,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the FAQ says files automatically expire if they are not deleted manually, but no timer is published on the accessible official pages.",
         "source_refs": [
           1
@@ -55392,6 +55821,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: public upload flow exists, but the accessible official pages do not publish a separate guest storage quota.",
         "source_refs": [
           0,
@@ -55418,6 +55848,7 @@
       "storage_account": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "Unlimited: the homepage says premium membership includes unlimited storage, though the accessible official pages do not publish a separate non-premium account quota.",
         "source_refs": [
           0
@@ -55523,6 +55954,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No first-party WuShare file-retention policy was found.",
         "source_refs": [
           0,
@@ -55534,6 +55966,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No first-party WuShare storage quota was found.",
         "source_refs": [
           0,
@@ -55665,6 +56098,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Retention is conditional. The official page says files are kept for a minimum of 3 days and a maximum of 100 days depending on size.",
         "source_refs": [
           0
@@ -55782,6 +56216,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current retention policy could be confirmed from accessible XUP sources.",
         "source_refs": [
           0,
@@ -55792,6 +56227,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-applicable",
         "notes": "No current storage quota could be confirmed from accessible XUP sources.",
         "source_refs": [
           0,
@@ -55920,6 +56356,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "Files remain until deleted. Yandex says files are stored until you delete them if there are no access issues, with 30 days of Trash recovery, while permanent deletion can still happen after 2 years of not using Yandex Disk or after a space-overage block persists for 90 days.",
         "source_refs": [
           0,
@@ -56061,6 +56498,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. The cited public pages do not publish a total storage quota, and file availability instead depends on the 60-day activity rule rather than a reusable account-space allowance.",
         "source_refs": [
           0
@@ -56187,6 +56625,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "no-automatic-expiry",
         "notes": "Official indexed text indicates no automatic expiry/no time-limit style hosting; direct fetch was Cloudflare-challenged in this environment.",
         "source_refs": [
           1,
@@ -56196,6 +56635,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "unlimited",
         "notes": "Official indexed FAQ text describes free, unlimited storage space, but not a numeric per-account quota.",
         "source_refs": [
           1,
@@ -56334,6 +56774,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Storage is conditional. The homepage says users can store and manage data, but the cited public pages do not publish a total free storage quota.",
         "source_refs": [
           0,
@@ -56463,6 +56904,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "The FAQ says storage is unlimited for active files; this is conditional on activity and does not imply permanent storage.",
         "source_refs": [
           1
@@ -56701,6 +57143,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "No numeric public file-retention term was found for hosted files. The product focuses on backup retention/archiving rather than public file-host link expiry.",
         "source_refs": [
           1,
@@ -56710,6 +57153,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "Zmanda Cloud Storage is paid per TB rather than a fixed free quota; official pricing lists Zmanda Cloud Storage at $6.49/TB/month on Business and $6.99/TB/month on Business Plus.",
         "source_refs": [
           1
@@ -56829,6 +57273,7 @@
       "retention": {
         "value": null,
         "unit": null,
+        "status": "conditional",
         "notes": "Conditional: the old FAQ URL now returns 404, and the currently reachable official homepage and sample file pages do not publish a clean expiry timer.",
         "source_refs": [
           2,
@@ -56838,6 +57283,7 @@
       "storage": {
         "value": null,
         "unit": null,
+        "status": "not-published",
         "notes": "The current homepage presents Zofile as online storage and remote backup capacity, but it does not publish a neat account-storage quota.",
         "source_refs": [
           2

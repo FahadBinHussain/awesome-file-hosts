@@ -38,7 +38,25 @@ function validateLimitField(name, field) {
     `${name}.unit must be a string or null`
   );
   assert(typeof field.notes === "string", `${name}.notes must be a string`);
+  if (field.status !== undefined) {
+    assert(
+      [
+        "published",
+        "unlimited",
+        "no-automatic-expiry",
+        "conditional",
+        "not-published",
+        "not-applicable"
+      ].includes(field.status),
+      `${name}.status must be a known limit status`
+    );
+  }
   validateSourceRefs(`${name}.source_refs`, field.source_refs);
+}
+
+function validateStructuredNullLimit(name, field) {
+  if (!field || (field.value !== null && field.unit !== null)) return;
+  assert(field.status !== undefined, `${name}.status is required when this storage/retention limit is null`);
 }
 
 function validateTextField(name, field) {
@@ -241,12 +259,16 @@ function validateHost(host) {
     validateLimitField(`${host.name}.limits.max_file_size_account`, host.limits.max_file_size_account);
   }
   validateLimitField(`${host.name}.limits.retention`, host.limits.retention);
+  validateStructuredNullLimit(`${host.name}.limits.retention`, host.limits.retention);
   validateLimitField(`${host.name}.limits.storage`, host.limits.storage);
+  validateStructuredNullLimit(`${host.name}.limits.storage`, host.limits.storage);
   if (host.limits.storage_guest !== undefined) {
     validateLimitField(`${host.name}.limits.storage_guest`, host.limits.storage_guest);
+    validateStructuredNullLimit(`${host.name}.limits.storage_guest`, host.limits.storage_guest);
   }
   if (host.limits.storage_account !== undefined) {
     validateLimitField(`${host.name}.limits.storage_account`, host.limits.storage_account);
+    validateStructuredNullLimit(`${host.name}.limits.storage_account`, host.limits.storage_account);
   }
   validateLimitField(`${host.name}.limits.bandwidth`, host.limits.bandwidth);
 
@@ -490,12 +512,16 @@ function validateCandidate(candidate) {
     validateLimitField(`${candidate.name}.limits.max_file_size_account`, candidate.limits.max_file_size_account);
   }
   validateLimitField(`${candidate.name}.limits.retention`, candidate.limits.retention);
+  validateStructuredNullLimit(`${candidate.name}.limits.retention`, candidate.limits.retention);
   validateLimitField(`${candidate.name}.limits.storage`, candidate.limits.storage);
+  validateStructuredNullLimit(`${candidate.name}.limits.storage`, candidate.limits.storage);
   if (candidate.limits.storage_guest !== undefined) {
     validateLimitField(`${candidate.name}.limits.storage_guest`, candidate.limits.storage_guest);
+    validateStructuredNullLimit(`${candidate.name}.limits.storage_guest`, candidate.limits.storage_guest);
   }
   if (candidate.limits.storage_account !== undefined) {
     validateLimitField(`${candidate.name}.limits.storage_account`, candidate.limits.storage_account);
+    validateStructuredNullLimit(`${candidate.name}.limits.storage_account`, candidate.limits.storage_account);
   }
   validateLimitField(`${candidate.name}.limits.bandwidth`, candidate.limits.bandwidth);
 
@@ -638,7 +664,18 @@ function validateAdjacentCandidate(candidate) {
 }
 
 function formatLimit(field) {
-  if (field.value === null) {
+  if (field.value === null || field.unit === null) {
+    if (field.status) {
+      const labels = {
+        unlimited: "Unlimited",
+        "no-automatic-expiry": "No automatic expiry",
+        conditional: "Conditional",
+        "not-published": "Not published",
+        "not-applicable": "Not applicable"
+      };
+      return labels[field.status] || "Not published";
+    }
+
     const notes = field.notes.toLowerCase();
 
     if (notes.includes("unlimited")) {

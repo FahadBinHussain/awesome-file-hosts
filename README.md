@@ -18,7 +18,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 
 ## What this includes
 
-- 247 verified hosts checked against current public sources as of 2026-05-02.
+- 247 verified hosts checked against current public sources as of 2026-05-03.
 - 0 main-host leads still in review and 203 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
 - 0 other-ways-to-share candidates, 0 mirror-uploader candidates, and 0 cloud-migration candidates staged in their own pending files.
 - A free-first dataset that prioritizes genuinely usable free tiers, guest flows, and honest headline limits.
@@ -222,7 +222,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [storage.to](https://storage.to/) - Free no-account temporary file-sharing service with 25 GB uploads, 1-7 day expiry, 100 GB/day upload allowance, unlimited downloads, TLS/AES-256-at-rest security, desktop app, CLI, and ShareX support. _(Free: Free forever | Max: 25 GB | Retention: 7 days | Account: No | CLI)_
 - [StreamA2Z](https://streama2z.com/) - Video host with free accounts, 15 GB uploads, no published bandwidth limit, webmaster storage language, remote/API upload, and cURL examples. _(Free: Free forever | Max: 15 GB | Retention: Not published | Account: Yes | API | CLI)_
 - [Streamable](https://streamable.com/) - Short-form video sharing platform with a free 250 MB / 10 minute limit, 90-day free-account retention, URL/file uploads, and a limited read-only metadata/oEmbed API. _(Free: Free forever | Max: 250 MB | Retention: 90 days | Account: No | API | CLI)_
-- [Streamain](https://streamain.com/) - Free drag-and-drop MP4/WEBM video sharing service with unlimited-size and unlimited-time claims, password protection, and optional auto-delete settings. _(Free: Free forever | Max: Unlimited | Retention: Unlimited | Account: No)_
+- [Streamain](https://streamain.com/) - Free drag-and-drop MP4/WEBM video sharing service with unlimited-size and unlimited-time claims, password protection, and optional auto-delete settings. _(Free: Free forever | Max: Unlimited | Retention: No automatic expiry | Account: No)_
 - [StreamRuby](https://streamruby.com/) - Video hosting provider with HLS/adaptive playback, 20 GB uploads, 60-day no-download expiry, free 250 GB storage, and cURL-friendly API docs. _(Free: Free forever | Max: 20000 MB | Retention: 60 days | Account: Yes | API | CLI)_
 - [Streamtape](https://streamtape.com/) - Video host with unlimited storage/bandwidth claims, 15 GB uploads, Streamtape API support, remote upload, file/folder management, and monetized streaming. _(Free: Free forever | Max: 15 GB | Retention: Conditional | Account: Yes | API | CLI)_
 - [StreamWish](https://streamwish.com/) - Video host with HLS/CDN streaming, cURL-friendly API docs, 50 GB uploads, 120-day inactive-file retention, and explicit video-format support. _(Free: Free forever | Max: 50 GB | Retention: 120 days | Account: Yes | API | CLI)_
