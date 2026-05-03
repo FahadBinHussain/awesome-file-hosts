@@ -1225,16 +1225,41 @@ function allowedExtensionLabel(record: ExtensionAwareRecord) {
 
   if (mode.includes("all") || mode.includes("any")) return "All / see notes";
   if (mode.includes("image")) return "Images / see notes";
+  if (mode.includes("video")) return "Videos / see notes";
   if (mode.includes("media")) return "Media / see notes";
+  if (mode.includes("backup")) return "Backup / see notes";
+  if (mode.includes("mod")) return "Mods / see notes";
+  if (mode.includes("alias")) return "Alias / see notes";
+  if (mode.includes("generic") || mode.includes("general")) return "General / see notes";
+  if (mode.includes("configurable")) return "Configurable";
+  if (
+    mode.includes("unavailable") ||
+    mode.includes("retired") ||
+    mode.includes("not-usable") ||
+    mode.includes("not_usable") ||
+    mode.includes("shutdown") ||
+    mode.includes("dead") ||
+    mode.includes("repurposed") ||
+    mode.includes("misclassified") ||
+    mode.includes("not_applicable")
+  ) {
+    return "Unavailable";
+  }
+  if (mode.includes("unidentified")) return "Unidentified";
+  if (mode.includes("rejected")) return "Rejected / see notes";
+  if (mode.includes("unverified")) return "Unverified";
   if (
     mode.includes("conditional") ||
     mode.includes("dependent") ||
+    mode.includes("provider_dependent") ||
+    mode.includes("provider-dependent") ||
     notes.includes("conditional") ||
     notes.includes("depends") ||
     notes.includes("depend") ||
     notes.includes("varies") ||
     notes.includes("downstream") ||
-    notes.includes("provider-dependent")
+    notes.includes("provider-dependent") ||
+    notes.includes("provider dependent")
   ) {
     return "Conditional";
   }

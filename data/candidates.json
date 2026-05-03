@@ -58,7 +58,7 @@
     "sources": [],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unidentified_candidate",
         "notes": "File-type policy is blank because the candidate cannot be identified.",
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -169,8 +169,8 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not publish a detailed allowlist or blocklist.",
+        "mode": "all-or-most",
+        "notes": "The official upload page and API accept a generic file parameter with a 100 MB cap and 60-minute retention. No extension allowlist is published on the cited pages.",
         "source_refs": [
           0,
           1
@@ -725,10 +725,11 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy.",
+        "mode": "all-or-most",
+        "notes": "1FileSharing's official upload page presents a general file-upload flow with a 1 GB free upload limit and retention rules. No narrow extension allowlist or blocklist is published on the cited pages.",
         "source_refs": [
-          0
+          0,
+          1
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -839,7 +840,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_upload",
         "notes": "No current extension allowlist or blocklist was found in the reviewed first-party crawl.",
         "source_refs": [
           0
@@ -959,7 +960,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "The personal cloud-disk service shut down, so there is no current upload/content policy for a public host product.",
         "source_refs": [
           0,
@@ -1247,7 +1248,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_storage",
         "notes": "No specific extension allowlist or blocklist was found in the reviewed 4Sync pages; uploads are described as files/folders managed inside an account.",
         "source_refs": [
           0
@@ -1368,7 +1369,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unverified_secondary_only",
         "notes": "No current extension allowlist or blocklist could be confirmed for 9xupload.",
         "source_refs": [
           0,
@@ -2091,10 +2092,10 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The API docs imply some disallowed and banned file types through error codes, but the cited public pages do not publish a full allowlist.",
+        "mode": "conditional",
+        "notes": "The official API documentation includes upload errors for forbidden and banned file types, but the cited pages do not publish the full allowlist or blocklist.",
         "source_refs": [
-          0
+          1
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -2218,7 +2219,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -2347,7 +2348,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "alias_filefast_branding",
         "notes": "No distinct ANONYMFILE allowlist is preserved because the lead now resolves to FileFast-branded pages.",
         "source_refs": [
           0,
@@ -2553,7 +2554,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current extension allowlist or blocklist could be confirmed because the direct homepage did not return a usable host page.",
         "source_refs": [
           0,
@@ -2722,7 +2723,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_hosting",
         "notes": "No current extension allowlist or blocklist was found in the reviewed AusFile pages.",
         "source_refs": [
           0,
@@ -3243,7 +3244,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "backup_workloads",
         "notes": "Not promoted to verified host; see rejection reason.",
         "source_refs": [
           1
@@ -3430,15 +3431,20 @@
         "url": "https://help.backblaze.com/hc/en-us/articles/360039296494-How-to-set-Lifecycle-Rules-on-B2",
         "retrieved_at": "2026-04-29",
         "notes": "Official help article stating that B2 keeps uploaded files and versions by default until lifecycle rules are configured to hide or delete them."
+      },
+      {
+        "label": "Native upload API",
+        "url": "https://www.backblaze.com/apidocs/b2-upload-file",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official upload endpoint accepts a raw file body with caller-supplied file name, content length, checksum, and MIME type; unknown extensions can be stored as application/octet-stream."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages position B2 as general object storage, but they do not publish a simple consumer-style allowed-file-types list.",
+        "mode": "all-or-most",
+        "notes": "Backblaze B2 is object storage rather than an extension allowlist. The native upload API accepts a raw file body with caller-supplied metadata, and unknown extensions can be stored as application/octet-stream; normal legal, account, and bucket rules still apply.",
         "source_refs": [
-          1,
-          2
+          7
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -3520,7 +3526,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "rejected_registration_blocked",
         "notes": "Not promoted to verified host; see rejection reason.",
         "source_refs": [
           2
@@ -3820,7 +3826,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "backup_workloads",
         "notes": "Not promoted to verified host; see rejection reason.",
         "source_refs": [
           1
@@ -4219,7 +4225,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unverified_secondary_only",
         "notes": "No first-party extension allowlist or blocklist was found.",
         "source_refs": [
           0,
@@ -4477,7 +4483,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains that can be confirmed, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -4942,15 +4948,21 @@
         "url": "https://buzzheavier.com/blog/fresh_start",
         "retrieved_at": "2026-04-29",
         "notes": "Current official blog post explains the newer storage model: free files age out unless they keep getting downloaded, while the service treats long-term storage as a paid sustainability feature."
+      },
+      {
+        "label": "Terms",
+        "url": "https://buzzheavier.com/terms",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official terms list prohibited content categories such as child exploitation, terrorism, extreme gore, malware, and doxing rather than an extension allowlist."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages position Buzzheavier as a general file host, but they do not publish a complete first-party allowlist.",
+        "mode": "all-or-most",
+        "notes": "The official homepage positions Buzzheavier as a general file host with no file-size limit, and the official terms restrict prohibited content categories rather than publishing an extension allowlist.",
         "source_refs": [
           0,
-          1
+          5
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -5090,7 +5102,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "video_host",
         "notes": "Mirrored.to classifies ByseSx under video-only hosts, but no Byse first-party allowed-extension policy was found.",
         "source_refs": [
           3
@@ -5289,7 +5301,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "backup_workloads",
         "notes": "Not promoted to verified host; see rejection reason.",
         "source_refs": [
           1
@@ -5990,8 +6002,8 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The homepage does not publish a detailed restrictions list, but it presents the service as a general file-sharing flow.",
+        "mode": "all-or-most",
+        "notes": "CliUpload's official homepage and FAQ present browser and curl-based general file upload flows, including curl -T and multipart examples, with size, expiry, password, and encryption controls instead of a narrow extension allowlist.",
         "source_refs": [
           0
         ],
@@ -6536,14 +6548,27 @@
         "url": "https://www.cloudme.com/en/webdav",
         "retrieved_at": "2026-05-01",
         "notes": "Official WebDAV page with endpoint and supported platforms."
+      },
+      {
+        "label": "File storage apps",
+        "url": "https://www.cloudme.com/en/file-storage",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official CloudMe product page describes storing files with downloadable apps, mobile apps, and web access rather than an extension allowlist."
+      },
+      {
+        "label": "CloudMe user agreement",
+        "url": "https://www.cloudme.com/en/legal/eula",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official agreement covers the CloudMe service and API, says free accounts are automatically deleted after six months of user inactivity, restricts using free accounts for hosting, and provides the service as-is and as-available."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited pages do not publish a complete allowed-file-types policy.",
+        "mode": "all-or-most",
+        "notes": "CloudMe's official file-storage page describes general file storage across web, desktop, and mobile access. No upload extension allowlist is published on the cited official pages, so legal and account restrictions still apply.",
         "source_refs": [
-          0
+          3,
+          4
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -6875,7 +6900,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "backup_workloads",
         "notes": "Not promoted to verified host; see rejection reason.",
         "source_refs": [
           1
@@ -8017,7 +8042,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "The current owners say the old file-hosting service is gone and the domain is now a general news blog, so there is no current upload/content policy.",
         "source_refs": [
           0
@@ -8589,7 +8614,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No trustworthy current upload service is available to confirm a modern allowed-file-types policy.",
         "source_refs": [
           0,
@@ -8725,7 +8750,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No trustworthy current upload service is available to confirm a modern allowed-file-types policy.",
         "source_refs": [
           0,
@@ -9016,7 +9041,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_hosting_alias",
         "notes": "No extension-level allowlist or blocklist was found for the ddl.to alias. The current alias maps to DDownload, where terms govern user uploads and service enforcement rather than publishing a simple extension policy.",
         "source_refs": [
           2,
@@ -9157,7 +9182,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_hosting",
         "notes": "No extension-level allowlist or blocklist was found on the reviewed official pages. DDownload documents user/upload obligations and account enforcement, but not a simple allowed-extension policy.",
         "source_refs": [
           0,
@@ -9281,14 +9306,21 @@
         "url": "https://help.degoo.com/support/solutions/articles/77000531240-account-limits",
         "retrieved_at": "2026-04-29",
         "notes": "Official free-plan limits including 256 MB maximum upload file size and 3 GB per-file daily download allowance."
+      },
+      {
+        "label": "Backup files help",
+        "url": "https://help.degoo.com/support/solutions/articles/77000065549-how-do-i-backup-my-files-",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official Degoo help describes backing up selected files and folders from the app without publishing an extension allowlist."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "mode": "all-or-most",
+        "notes": "Degoo's official help describes backing up selected files and folders from the app and does not publish a narrow extension allowlist on the cited account-limit/help pages.",
         "source_refs": [
-          0
+          3,
+          4
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -9553,7 +9585,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current DesuFiles upload/product surface remains available to confirm an allowed-extension or blocked-extension policy.",
         "source_refs": [
           0,
@@ -9948,7 +9980,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains on the domain, so there is no current allowed-extension or blocked-extension policy for a host product.",
         "source_refs": [
           0
@@ -10477,7 +10509,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_historical_file_host",
         "notes": "The old support thread discusses adult-content allowance and general file-sharing, but no extension allowlist or blocklist was found.",
         "source_refs": [
           1
@@ -10935,7 +10967,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unverified_secondary_only",
         "notes": "No current first-party extension allowlist or blocklist was found.",
         "source_refs": [
           0,
@@ -11184,14 +11216,21 @@
         "url": "https://drime.cloud/blog-posts/top-6-best-free-cloud-storage-solutions-tested-and-approved-in-2025",
         "retrieved_at": "2026-04-29",
         "notes": "Current first-party article says the free plan has 20 GB of space without time restrictions during normal use."
+      },
+      {
+        "label": "Transfer page",
+        "url": "https://drime.cloud/transfer",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official Drime transfer page says users can quickly deliver any file and hand off up to 100 GB per transfer."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The accessible current public pages emphasize document, media, and collaboration workflows, but do not foreground a complete allowed-file-types policy.",
+        "mode": "all-or-most",
+        "notes": "The official Drime transfer page says users can deliver any file, while the homepage and app listing describe storing photos, videos, documents, and other files. Plan and policy limits still apply.",
         "source_refs": [
-          0
+          0,
+          5
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -11334,7 +11373,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "configurable_file_policy",
         "notes": "Official pages say the uploader owner can configure allowed file-type restrictions per uploader, rather than publishing one global allowed-file-types policy.",
         "source_refs": [
           1,
@@ -11460,7 +11499,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "general_file_hosting",
         "notes": "The homepage describes file-hosting storage and video uploads, but does not publish a complete extension allowlist or blocklist.",
         "source_refs": [
           0
@@ -12581,10 +12620,11 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy.",
+        "mode": "all-or-most",
+        "notes": "DropMeAFile's live upload page is a generic 'Drop Files Here' upload surface, and the company product listing describes sending files between computers or to other people. No narrow extension allowlist is published.",
         "source_refs": [
-          0
+          0,
+          1
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -12803,7 +12843,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "backup_workloads",
         "notes": "Dropmysite backs up website files and supported databases through FTP/SFTP/RSYNC and database connectors, not arbitrary public file-host uploads.",
         "source_refs": [
           2
@@ -14151,7 +14191,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "backup_and_cloud_storage",
         "notes": "The current official ElephantDrive product is positioned as paid backup and cloud storage rather than a public general-purpose file-host lead of the kind represented by this queue row.",
         "source_refs": [
           0,
@@ -14586,7 +14626,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_hosting",
         "notes": "The accessible official FAQ and download pages do not publish a tight allowed-file-types matrix; the service presents itself as general file hosting.",
         "source_refs": [
           0,
@@ -15235,14 +15275,21 @@
         "url": "https://docs.fast.io/storage.html",
         "retrieved_at": "2026-05-01",
         "notes": "Official storage endpoint documentation."
+      },
+      {
+        "label": "File API docs",
+        "url": "https://docs.fast.io/file.html",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official Fast.io file API docs describe files in storage, including file names, paths, byte size, MIME type, checksum, and folders."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited pages do not publish a complete allowed-file-types policy.",
+        "mode": "all-or-most",
+        "notes": "Fast.io's official file API models stored files by path, byte size, MIME type, checksum, and folder metadata rather than an extension allowlist. Storage-provider and plan limits still apply.",
         "source_refs": [
-          0
+          2,
+          3
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -15640,7 +15687,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_historical_file_host",
         "notes": "The old official thread says adult material was not allowed; no extension allowlist or blocklist was found.",
         "source_refs": [
           0
@@ -16471,10 +16518,12 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy.",
+        "mode": "all-or-most",
+        "notes": "File.AL's official homepage and account pages present a general file upload, remote URL upload, file manager, and sharing workflow. Upload approval, account, policy, retention, and bandwidth limits still apply.",
         "source_refs": [
-          0
+          0,
+          1,
+          2
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -17348,7 +17397,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unverified_secondary_only",
         "notes": "No current first-party extension allowlist or blocklist was found.",
         "source_refs": [
           2
@@ -17624,7 +17673,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current public-host file-policy surface remains to evaluate for this queue item.",
         "source_refs": [
           0,
@@ -17733,7 +17782,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains on the domain, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0
@@ -17854,7 +17903,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains on the domain, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -17971,17 +18020,28 @@
         "url": "https://www.filecloud.com/cloud-storage/",
         "retrieved_at": "2026-04-26",
         "notes": "Preserved review reference for this rejected queue item."
+      },
+      {
+        "label": "File type restrictions",
+        "url": "https://docs.filecloud.com/fcdoc/latest/server/filecloud-end-user-guide/restrictions-on-filenames-and-file-types-in-filecloud",
+        "retrieved_at": "2026-05-03",
+        "notes": "Official FileCloud docs say admins can allow or block file types; by default php, php5, phar, and phtml files cannot be uploaded."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "configurable",
-        "notes": "FileCloud is enterprise software where administrators can allow or block specified file extensions, so there is no single public allowlist for this candidate row.",
+        "mode": "configurable_with_default_blocklist",
+        "notes": "FileCloud is enterprise software where administrators can allow or block file extensions. Official docs say php, php5, phar, and phtml uploads are blocked by default, so there is no single universal public allowlist.",
         "source_refs": [
-          0
+          2
         ],
         "allowed_extensions": [],
-        "blocked_extensions": []
+        "blocked_extensions": [
+          ".phar",
+          ".php",
+          ".php5",
+          ".phtml"
+        ]
       },
       "public_sharing": {
         "value": true,
@@ -18100,7 +18160,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_transfer",
         "notes": "The indexed homepage describes general file transfer but no current extension allowlist or blocklist was found.",
         "source_refs": [
           0,
@@ -18497,14 +18557,27 @@
         "url": "https://www.filefactory.com/premium/",
         "retrieved_at": "2026-04-26",
         "notes": "Current free-vs-anonymous comparison with upload size, storage time, and download limit details."
+      },
+      {
+        "label": "Homepage",
+        "url": "https://www.filefactory.com/",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official homepage says users can upload, send, and receive any type of file up to 5 GB."
+      },
+      {
+        "label": "Acceptable use policy",
+        "url": "https://www.filefactory.com/legal/acceptableusepolicy",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official acceptable-use policy lists content restrictions and prohibited abuse categories."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "mode": "all-or-most",
+        "notes": "The official FileFactory homepage says users can upload, send, and receive any type of file up to the published file-size limit. Acceptable-use and copyright restrictions still apply.",
         "source_refs": [
-          0
+          1,
+          2
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -18844,7 +18917,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "all-or-most",
         "notes": "The current homepage says users can upload any type of file to link elsewhere.",
         "source_refs": [
           0
@@ -19450,7 +19523,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_storage",
         "notes": "The reviewed official pages position FileJoker as general cloud storage, but they do not publish a clean allowed-file-types matrix in the accessible FAQ.",
         "source_refs": [
           0
@@ -19849,7 +19922,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "video_host",
         "notes": "FileMoon is a video host and its API examples use video files; no first-party extension allowlist or blocklist was found for the superseded row.",
         "source_refs": [
           3,
@@ -20000,14 +20073,22 @@
         "url": "https://filen.io/pricing",
         "retrieved_at": "2026-04-29",
         "notes": "Current plan page highlighting paid tiers with uncapped transfer and uploads."
+      },
+      {
+        "label": "Web upload docs",
+        "url": "https://docs.filen.io/docs/web/uploading/",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official Filen web docs explain uploading files and folders through the web client, including drag-and-drop uploads and desktop-client sync uploads."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The current official pages do not foreground a detailed file-type restriction list on the accessible surfaces checked here.",
+        "mode": "all-or-most",
+        "notes": "Filen's official docs describe encrypted uploads of files and folders through the web and desktop clients without publishing an extension allowlist. Storage, account, and policy limits still apply.",
         "source_refs": [
-          0
+          1,
+          2,
+          7
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -20150,7 +20231,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_hosting_secondary",
         "notes": "Secondary evidence describes FileNext as a general file upload/share service, but no extension allowlist or blocklist was found.",
         "source_refs": [
           4
@@ -20678,7 +20759,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_hosting",
         "notes": "The public pages position FileQ as a general file host, but the reject decision is driven by its monetized cyberlocker model rather than its file-type policy.",
         "source_refs": [
           0,
@@ -20824,7 +20905,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_hosting",
         "notes": "No clean first-party allowed-file-types policy is surfaced on the accessible official pages reviewed in this pass.",
         "source_refs": [
           0
@@ -21068,7 +21149,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains that can be verified with confidence, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -21437,7 +21518,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unverified_secondary_only",
         "notes": "No current first-party extension allowlist or blocklist was found.",
         "source_refs": [
           0
@@ -21551,7 +21632,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "documents-focused",
+        "mode": "generic_document_storage",
         "notes": "The official product is framed around storing, organizing, and retrieving personal documents; no general allowed/blocked extension policy is published.",
         "source_refs": [
           0,
@@ -21690,7 +21771,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "legal-owner-content-only",
+        "mode": "generic_digital_content_distribution",
         "notes": "The homepage says FilesMonster only features content provided by legal owners and describes itself as digital content distribution.",
         "source_refs": [
           0
@@ -21842,7 +21923,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "media_file_hosting",
         "notes": "The official FAQ describes FileSpace as hosting files, images, videos, audio, and flash, and says hotlinking is not allowed.",
         "source_refs": [
           2
@@ -21961,7 +22042,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_hosting",
         "notes": "The upload page presents Filespayout as a general file host, but the reject decision is driven by the monetized payout-host model rather than the file-type policy.",
         "source_refs": [
           0,
@@ -22222,7 +22303,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_hosting_alias",
         "notes": "Duplicate alias row; the canonical Filestore.to terms describe broad file uploads with prohibited content categories rather than an extension list.",
         "source_refs": [
           3
@@ -22443,7 +22524,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "The live domain did not expose a usable current upload page for allowed-file-type verification.",
         "source_refs": [
           1
@@ -22579,7 +22660,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains on the domain, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0
@@ -22710,7 +22791,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_historical_file_host",
         "notes": "The old official thread describes general data sharing/storage, but no extension allowlist or blocklist was found.",
         "source_refs": [
           0
@@ -22852,7 +22933,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_blocked_policy_surface",
         "notes": "No current first-party extension allowlist or blocklist was accessible.",
         "source_refs": [
           0
@@ -22991,7 +23072,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains on the domain, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -23109,7 +23190,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0
@@ -23394,7 +23475,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -23512,7 +23593,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current public-host file-policy surface remains to evaluate for this queue item.",
         "source_refs": [
           0
@@ -23642,10 +23723,12 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "mode": "all-or-most",
+        "notes": "Free's official assistance pages describe Free Transfert as temporary file storage for sending and sharing files, with size, recipient, validity, and legal limits rather than a narrow extension allowlist.",
         "source_refs": [
-          0
+          0,
+          1,
+          2
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -24056,7 +24139,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0
@@ -24731,7 +24814,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_hosting_secondary",
         "notes": "Service-rule summaries forbid copyright violations, illegal files, spam-distributed links, and child-exploitation content; no extension allowlist was found.",
         "source_refs": [
           1
@@ -24866,7 +24949,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unverified_secondary_only",
         "notes": "No current first-party extension allowlist or blocklist was found.",
         "source_refs": [
           0
@@ -25000,10 +25083,11 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "mode": "all-or-most",
+        "notes": "The official API upload endpoint accepts a required multipart file field and the FAQ frames Gofile as general cloud storage for files and folders. Prohibited content and account restrictions still apply.",
         "source_refs": [
-          0
+          0,
+          1
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -25767,7 +25851,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_migration_notice",
         "notes": "Not promoted to verified host; see rejection reason.",
         "source_refs": [
           1
@@ -26808,7 +26892,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_sharing",
         "notes": "The official FAQ describes documents, images, videos, and similar shared files, but it does not publish a precise allowed-file-types policy on the reviewed pages.",
         "source_refs": [
           0
@@ -26916,7 +27000,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_discontinued",
         "notes": "No current public-host file-policy surface remains to evaluate for this queue item.",
         "source_refs": [
           0
@@ -27048,7 +27132,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_historical_file_host",
         "notes": "The old official thread says adult material was not allowed and DMCA/copyrighted files were deleted; no extension allowlist or blocklist was found.",
         "source_refs": [
           3
@@ -27316,14 +27400,28 @@
         "url": "https://icedrive.net/help/encryption",
         "retrieved_at": "2026-04-29",
         "notes": "Support center overview for zero-knowledge client-side encryption and related encryption help topics."
+      },
+      {
+        "label": "Folder upload help",
+        "url": "https://icedrive.net/help/web/can-i-upload-entire-folders",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official support says recursive folder uploads are supported in the web, mobile, and desktop apps and preserve folder structure."
+      },
+      {
+        "label": "Web app",
+        "url": "https://icedrive.net/apps/webapp",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official web-app page describes advanced browser uploads, multiple-file uploads, document/vector previews, and audio/video streaming."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The accessible current public pages checked here do not foreground a full allowed-file-types policy.",
+        "mode": "all-or-most",
+        "notes": "Icedrive's official support documents recursive file/folder uploads and the web app advertises multiple-file uploads, previews, and streaming. Preview compatibility is narrower than storage support.",
         "source_refs": [
-          0
+          1,
+          5,
+          6
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -27634,14 +27732,20 @@
         "url": "https://support.apple.com/guide/icloud/delete-files-mm3b7fcd0c10/icloud",
         "retrieved_at": "2026-05-01",
         "notes": "Official Apple support page explaining that iCloud Drive files are deleted when the user deletes them and can be recovered for 30 days after deletion."
+      },
+      {
+        "label": "iCloud Drive upload support",
+        "url": "https://support.apple.com/en-euro/guide/icloud/-mmad632d1df2/icloud",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official Apple support says iCloud Drive can upload selected files from a computer or phone/tablet, with app-specific folders limited to files the app can open."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited Apple pages do not publish a complete extension-based allowed-file-types policy for iCloud Drive.",
+        "mode": "conditional",
+        "notes": "Apple documents general iCloud Drive file uploads, but app-specific folders such as Pages, Numbers, and Keynote only accept files that the app can open.",
         "source_refs": [
-          1
+          5
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -27762,14 +27866,20 @@
         "url": "https://www.idrive.com/true-archiving",
         "retrieved_at": "2026-05-01",
         "notes": "Official IDrive page explaining that backed-up files are not automatically deleted from the cloud account when removed from a computer or mobile device."
+      },
+      {
+        "label": "Backup files FAQ",
+        "url": "https://www.idrive.com/online-backup-classic-faq",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official IDrive FAQ describes backing up files and folders and includes backup-set and exclude-file guidance rather than a narrow extension allowlist."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited pages do not publish a complete allowed-file-types policy for IDrive Basic.",
+        "mode": "all-or-most",
+        "notes": "IDrive's official backup FAQ describes backing up files and folders, with configurable excluded files and folders. That supports broad file backup, subject to policy, plan, and exclusion settings.",
         "source_refs": [
-          0
+          4
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -28155,7 +28265,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_historical_image_host",
         "notes": "The surviving public trail is mostly historical hotlinked image usage rather than a current trustworthy host policy surface.",
         "source_refs": [
           0,
@@ -29649,14 +29759,20 @@
         "url": "https://support.jumpshare.com/article/182-how-to-get-more-bandwidth-for-your-workspace",
         "retrieved_at": "2026-04-29",
         "notes": "Official support article listing 10 GB bandwidth per workspace per month for Jumpshare Basic."
+      },
+      {
+        "label": "Upload help",
+        "url": "https://support.jumpshare.com/article/138-how-to-upload-a-file",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official support says Jumpshare can view 200+ formats and lets supported-plan users upload files of any format and size to their Personal library."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "mode": "all-or-most",
+        "notes": "Jumpshare's official upload help says supported-plan users can upload files of any format and size to the Personal library. Free-plan quantity and size limits still apply separately.",
         "source_refs": [
-          0
+          5
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -30064,7 +30180,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_hosting",
         "notes": "No current extension allowlist or blocklist could be confirmed from the reviewed K2S pages.",
         "source_refs": [
           0,
@@ -30158,7 +30274,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_historical_backup",
         "notes": "Historical KeepVault backed up Windows computer/server files; no current accepted-file-type policy was verified from first-party pages.",
         "allowed_extensions": [],
         "blocked_extensions": [],
@@ -30404,7 +30520,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_upload",
         "notes": "The live page documents generic file upload and does not publish a current extension allowlist or blocklist.",
         "source_refs": [
           0
@@ -30850,7 +30966,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains that can be verified with confidence, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -30987,10 +31103,11 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "mode": "all-or-most",
+        "notes": "The current official LimeWire upload page says users can upload, edit, and share files of any size, and the terms describe file-sharing uploads and legal/prohibited-content limits.",
         "source_refs": [
-          0
+          0,
+          2
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -31734,7 +31851,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains that can be verified with confidence, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -31981,7 +32098,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_instance",
         "notes": "No live first-party extension allowlist or blocklist was reachable for this instance.",
         "source_refs": [
           1
@@ -32231,7 +32348,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_upload_secondary",
         "notes": "Secondary evidence confirms a file-hosting/upload identity, but no extension allowlist or blocklist was found.",
         "source_refs": [
           2
@@ -32366,7 +32483,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current public-host file-policy surface remains to evaluate for this queue item.",
         "source_refs": [
           0,
@@ -32656,14 +32773,21 @@
         "url": "https://www.mediafire.com/policies/terms_of_service.php",
         "retrieved_at": "2026-04-29",
         "notes": "Official terms stating premium accounts have transfer initiation limits while non-premium accounts have no transfer limits."
+      },
+      {
+        "label": "Homepage",
+        "url": "https://www3.mediafire.com/index.php",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official homepage says users can store and share any file type and highlights photos, videos, audio, docs, and ZIP bulk downloads."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "mode": "all-or-most",
+        "notes": "The official MediaFire homepage says users can store and share any file type. Account limits, copyright policy, and terms still apply.",
         "source_refs": [
-          0
+          5,
+          6
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -32820,11 +32944,12 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public app listings describe general file storage and sharing, but do not publish a full allowlist.",
+        "mode": "all-or-most",
+        "notes": "MEGA's official app listing describes encrypted cloud storage where users upload, search, store, download, stream, view, share, rename, and delete files from their devices. Transfer, storage, and policy limits still apply.",
         "source_refs": [
           0,
-          1
+          1,
+          2
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -33065,7 +33190,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_misaligned_product_identity",
         "notes": "No trustworthy current public-host file policy is preserved for the original megafile.io lead because the live product identity is misaligned.",
         "source_refs": [
           0,
@@ -33363,7 +33488,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains on the domain, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -33495,7 +33620,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "media_and_general_files",
         "notes": "The surviving official file pages explicitly mention video, music, books, programs, designs, and general digital materials, but the accessible current pages do not publish a clean formal allowed-file-types policy.",
         "source_refs": [
           2
@@ -33616,7 +33741,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -34041,14 +34166,21 @@
         "url": "https://support.mobisystems.com/hc/en-us/articles/9750562801437-Have-my-files-been-synced-in-MobiDrive",
         "retrieved_at": "2026-04-29",
         "notes": "Official support article saying files sync between the MobiDrive folder and cloud when the status is up to date."
+      },
+      {
+        "label": "Upload files help",
+        "url": "https://support.mobisystems.com/hc/en-us/articles/9726886160413-Upload-files-in-MobiDrive-Windows",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official MobiDrive Windows help describes copying files into the MobiDrive folder so they upload to MobiDrive cloud."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "mode": "all-or-most",
+        "notes": "MobiDrive's official upload help describes selecting files or folders for upload to cloud storage. No cited official page publishes a narrow extension allowlist, so account and policy limits still apply.",
         "source_refs": [
-          0
+          1,
+          5
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -34420,7 +34552,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains on the domain, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -34530,7 +34662,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unverified_secondary_only",
         "notes": "The cited public summaries do not clearly publish a complete allowed-file-types policy, and a reachable first-party policy page was not available during this review.",
         "source_refs": [
           0,
@@ -34730,14 +34862,20 @@
         "url": "https://info.myairbridge.com/en/plans",
         "retrieved_at": "2026-04-28",
         "notes": "Current free guest and free registered plan matrix showing 20 GB transfer limits and no included storage capacity."
+      },
+      {
+        "label": "Terms and conditions",
+        "url": "https://info.myairbridge.com/files/myairbridge-terms-and-conditions.pdf",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official terms state that MyAirBridge transfers all file types, while prohibited-use rules still restrict unlawful or harmful content."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "mode": "all-or-most",
+        "notes": "The official MyAirBridge terms state that MAB transfers all file types. Prohibited-use rules still apply to unlawful, infringing, malware, spam, or harmful content.",
         "source_refs": [
-          0
+          3
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -34855,7 +34993,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -35004,7 +35142,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_blocked_policy_surface",
         "notes": "No first-party extension allowlist or blocklist could be confirmed.",
         "source_refs": [
           0
@@ -35271,7 +35409,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unverified_seed_only",
         "notes": "Allowed and blocked file extensions need first-party verification.",
         "source_refs": [
           0
@@ -35557,7 +35695,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_publishing",
         "notes": "The reviewed official pages frame NitroFlare as a general file-publishing service but do not expose a clean public allowed-file-types matrix beyond normal policy enforcement.",
         "source_refs": [
           0
@@ -35643,7 +35781,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "not_applicable_clipboard",
         "notes": "The authenticated clipboard supports text/files, but this is not a public free upload host in its current state.",
         "source_refs": [
           0
@@ -35799,7 +35937,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current extension allowlist or blocklist could be confirmed from accessible sources.",
         "source_refs": [
           0,
@@ -36223,7 +36361,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -36636,17 +36774,95 @@
         "url": "https://support.opendrive.com/hc/en-us/articles/200364226-Can-I-recover-deleted-files",
         "retrieved_at": "2026-04-28",
         "notes": "Official OpenDrive support article saying deleted items go to Trash and can be restored for up to 90 days."
+      },
+      {
+        "label": "Upload file types",
+        "url": "https://support.opendrive.com/hc/en-us/articles/200364216-What-type-of-files-can-I-upload-to-my-OpenDrive-account",
+        "retrieved_at": "2026-05-03",
+        "notes": "Official support says OpenDrive has no restrictions on upload file types, while copyright and terms-of-use restrictions still apply."
+      },
+      {
+        "label": "Hotlink file types",
+        "url": "https://support.opendrive.com/hc/en-us/articles/200364196-What-type-of-files-can-I-hotlink",
+        "retrieved_at": "2026-05-03",
+        "notes": "Official support lists executable, script, installer, shortcut, database, registry, and similar extensions that cannot be hotlinked."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "mode": "all_uploads_with_hotlink_blocklist",
+        "notes": "OpenDrive support says uploads have no file-type restrictions, subject to copyright and terms. Hotlinking has a separate blocklist for executable, script, installer, shortcut, database, registry, and similar file extensions; those files can still be downloaded through the website.",
         "source_refs": [
-          0
+          4,
+          5
         ],
         "allowed_extensions": [],
-        "blocked_extensions": []
+        "blocked_extensions": [
+          ".ade",
+          ".adp",
+          ".app",
+          ".asp",
+          ".aspx",
+          ".bas",
+          ".bat",
+          ".cgi",
+          ".chm",
+          ".cmd",
+          ".com",
+          ".cpl",
+          ".crt",
+          ".csh",
+          ".dll",
+          ".exe",
+          ".fxp",
+          ".hlp",
+          ".hta",
+          ".htaccess",
+          ".htc",
+          ".inf",
+          ".ins",
+          ".isp",
+          ".its",
+          ".js",
+          ".jse",
+          ".ksh",
+          ".lnk",
+          ".mda",
+          ".mdb",
+          ".mde",
+          ".mdt",
+          ".mdw",
+          ".mdz",
+          ".msc",
+          ".msi",
+          ".msp",
+          ".mst",
+          ".ops",
+          ".pcd",
+          ".pif",
+          ".prf",
+          ".prg",
+          ".ps1",
+          ".ps1xml",
+          ".ps2",
+          ".ps2xml",
+          ".psc1",
+          ".psc2",
+          ".reg",
+          ".scf",
+          ".scr",
+          ".sct",
+          ".shb",
+          ".shs",
+          ".url",
+          ".vb",
+          ".vbe",
+          ".vbs",
+          ".vbscript",
+          ".wsc",
+          ".wsf",
+          ".wsh"
+        ]
       },
       "public_sharing": {
         "value": true,
@@ -36747,7 +36963,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current public-host file-policy surface remains to evaluate for this queue item.",
         "source_refs": [
           0
@@ -37020,7 +37236,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current first-party extension allowlist or blocklist could be found.",
         "source_refs": [
           0,
@@ -37281,10 +37497,11 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "mode": "all-or-most",
+        "notes": "OwnDrive's hosted drive plans are positioned as Nextcloud/ownCloud-style storage with file-management apps. The cited pages do not publish a narrow extension allowlist; plan and app-access limits still apply.",
         "source_refs": [
-          0
+          0,
+          1
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -37401,7 +37618,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "misclassified_infrastructure_service",
         "notes": "The current public surfaces are infrastructure and business-platform services rather than a public general-purpose upload host of the kind represented by this queue row.",
         "source_refs": [
           0,
@@ -37532,14 +37749,21 @@
         "url": "https://help.pcloud.com/article/file-recovery-and-history",
         "retrieved_at": "2026-04-28",
         "notes": "Official help center article explaining Trash retention periods for deleted files on free and paid plans."
+      },
+      {
+        "label": "Unlimited capabilities",
+        "url": "https://pcdn-www.pcloud.com/features/unlimited-capabilities.html",
+        "retrieved_at": "2026-05-03",
+        "notes": "Official pCloud feature page says users can upload any type of files regardless of size, with upload/download speeds limited by the internet provider rather than pCloud."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "mode": "any_file_type",
+        "notes": "The official pCloud feature page says users can upload any type of files. pCloud help still recommends avoiding constantly changing system/database-style files for sync, backup, or upload workflows.",
         "source_refs": [
-          0
+          0,
+          4
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -38138,14 +38362,21 @@
         "url": "https://pdx02.pixeldrain.com/api",
         "retrieved_at": "2026-04-26",
         "notes": "Current public API reference endpoint discovered from official docs/search."
+      },
+      {
+        "label": "Content policy",
+        "url": "https://docs.pixeldrain.com/content_policy/",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official content policy lists disallowed content categories such as copyright abuse, child abusive material, malware, doxing, revenge porn, terroristic propaganda, and gore."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "mode": "all-or-most",
+        "notes": "Pixeldrain's official filesystem docs support binary FTPS transfer, including files without extensions, while the official content policy restricts prohibited content categories rather than publishing an extension allowlist.",
         "source_refs": [
-          0
+          1,
+          3
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -38648,7 +38879,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "unknown",
+        "mode": "generic_file_hosting",
         "notes": "The official homepage did not publish a first-party allowed-file-types list.",
         "source_refs": [
           0
@@ -39195,7 +39426,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "unknown",
+        "mode": "generic_file_transfer",
         "notes": "The cited homepage does not publish a file type allowlist or blocklist.",
         "source_refs": [
           0
@@ -39354,7 +39585,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains on the domain, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -39482,10 +39713,12 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The accessible current pages checked here do not foreground a full allowed-file-types policy.",
+        "mode": "all-or-most",
+        "notes": "Rakuten Drive's official support describes uploading files and folders from web and mobile clients. No cited official page publishes a narrow extension allowlist, so plan and policy limits still apply.",
         "source_refs": [
-          0
+          0,
+          1,
+          2
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -39880,7 +40113,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_hosting",
         "notes": "The accessible official pages do not publish a clean file-type allowlist; use remains subject to terms, copyright, and abuse policies.",
         "source_refs": [
           0,
@@ -40108,7 +40341,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0
@@ -40373,7 +40606,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current public-host file-policy surface remains to evaluate for this queue item.",
         "source_refs": [
           0,
@@ -40514,7 +40747,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_hosting_adult_oriented",
         "notes": "The official WJunction thread says only legal adult files are allowed and illegal/cheating activity leads to bans; no extension allowlist or blocklist was found.",
         "source_refs": [
           2
@@ -40621,7 +40854,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0
@@ -40870,8 +41103,8 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The public docs say Rootz has file-type restrictions, but the currently accessible official surfaces do not expose the actual allowlist or blocklist text.",
+        "mode": "conditional",
+        "notes": "Rootz's public docs/DMCA surfaces confirm the service is a general file host, but the docs also indicate file-type restrictions without exposing the actual allowlist or blocklist.",
         "source_refs": [
           1,
           3
@@ -40994,7 +41227,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_upload_secondary",
         "notes": "Secondary evidence confirms a file-hosting/upload identity, but no extension allowlist or blocklist was found.",
         "source_refs": [
           2
@@ -41583,7 +41816,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "any_file_type",
         "notes": "The homepage markets files of any type and size, but a formal first-party allowlist is not the deciding issue for this rejected row.",
         "source_refs": [
           0
@@ -41734,7 +41967,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unverified_secondary_only",
         "notes": "No current extension allowlist or blocklist could be confirmed for SendFile.su.",
         "source_refs": [
           0,
@@ -41845,7 +42078,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains on the domain, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0
@@ -42116,7 +42349,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -42636,7 +42869,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0
@@ -42745,7 +42978,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "alias_filefast_branding",
         "notes": "No standalone current ShareFile content policy is preserved because the live domain now resolves to FileFast branding instead.",
         "source_refs": [
           0
@@ -42900,7 +43133,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "mods_only",
         "notes": "The official FAQ says ShareMods is for game modifications; full games, movies, music, books, software, and similar non-mod files are forbidden.",
         "source_refs": [
           3
@@ -43396,7 +43629,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains on the domain, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -43549,7 +43782,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_hosting_secondary",
         "notes": "ScamAdviser describes file-sharing of documents, audio, and video generally, but no extension allowlist or blocklist was found.",
         "source_refs": [
           0
@@ -44185,7 +44418,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "video_host",
         "notes": "StreamBolt is a video host; no first-party extension allowlist or blocklist was found beyond video-host positioning.",
         "source_refs": [
           0,
@@ -44300,7 +44533,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unverified_video_host",
         "notes": "No allowed-file-types policy can be verified from a first-party page.",
         "source_refs": [
           1
@@ -44741,7 +44974,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_hosting",
         "notes": "The reviewed official pages did not publish an extension allowlist or blocklist; the terms prohibit illegal, abusive, or infringing content rather than publishing extension-specific rules.",
         "source_refs": [
           1
@@ -44999,7 +45232,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -45608,7 +45841,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "configurable_file_policy",
         "notes": "Syncplicity can be general file storage, but administrators may restrict specific file types. The cited docs do not publish a universal public allowlist or blocklist.",
         "source_refs": [
           6,
@@ -46299,7 +46532,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "unknown",
+        "mode": "generic_file_upload",
         "notes": "The cited public page does not publish a file type allowlist or blocklist.",
         "source_refs": [
           0
@@ -46782,7 +47015,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_upload",
         "notes": "The cited first-party page does not publish a detailed allowed-extension or blocked-extension policy.",
         "source_refs": [
           0
@@ -47200,14 +47433,20 @@
         "url": "https://blog.terabox.com/terabox-december-2024-product-updates/",
         "retrieved_at": "2026-04-29",
         "notes": "Official blog post announcing the TeraBox open platform and saying it provides API capabilities for developers and businesses, but without enough accessible public detail to count as a practical free-tier API surface."
+      },
+      {
+        "label": "How to share files with TeraBox",
+        "url": "https://blog.terabox.com/how-to-share-files-with-terabox/",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official TeraBox blog says uploads support any format, including images, videos, audio, files, and similar content."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "mode": "all-or-most",
+        "notes": "The official TeraBox blog says users can upload files in any format, including documents, videos, photos, and other file types. This does not change the separate API status.",
         "source_refs": [
-          0
+          6
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -47741,7 +47980,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -48834,10 +49073,11 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "mode": "all-or-most",
+        "notes": "Tresorit Send's official help describes selecting files for upload and sharing up to 100 files per encrypted link. Preview support has a separate, narrower supported-format list.",
         "source_refs": [
-          0
+          0,
+          1
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -48969,7 +49209,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_temporary_file_upload",
         "notes": "No current extension allowlist or blocklist could be confirmed for ttm.sh.",
         "source_refs": [
           0,
@@ -49260,7 +49500,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_dead_site_discussion",
         "notes": "No current first-party extension allowlist or blocklist could be found.",
         "source_refs": [
           0,
@@ -49354,8 +49594,8 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The current public rules do not publish a full allowed-file-types policy beyond general service rules.",
+        "mode": "all-or-most",
+        "notes": "UAFile's official upload page describes choosing a file and publishing a link, with file-size, retention, server-space, and per-IP timing rules rather than an extension allowlist.",
         "source_refs": [
           0,
           1
@@ -49801,10 +50041,14 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "mode": "all-or-most",
+        "notes": "Ulozto's official cloud-drive pages and resumable upload API describe file and folder storage/upload workflows rather than a narrow extension allowlist. Account, plan, and policy limits still apply.",
         "source_refs": [
-          0
+          0,
+          1,
+          2,
+          3,
+          4
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -49935,7 +50179,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -50028,7 +50272,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "backup_workloads",
         "notes": "Unitrends protects backup workloads and offsite backup copies. The cited pages do not publish a public file-extension allowlist for upload hosting.",
         "source_refs": [
           1,
@@ -50216,7 +50460,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_historical_file_host",
         "notes": "No current first-party extension allowlist or blocklist could be found.",
         "source_refs": [
           0,
@@ -50719,7 +50963,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0
@@ -50981,7 +51225,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unverified_secondary_only",
         "notes": "No first-party extension allowlist or blocklist could be confirmed.",
         "source_refs": [
           0,
@@ -51275,7 +51519,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unverified_secondary_only",
         "notes": "HypeStat describes free upload/share behavior, but no current extension allowlist or blocklist could be confirmed.",
         "source_refs": [
           0,
@@ -51413,7 +51657,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unverified_secondary_only",
         "notes": "No current extension allowlist or blocklist could be confirmed for UploadBox.",
         "source_refs": [
           0,
@@ -51676,7 +51920,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0
@@ -51966,7 +52210,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -52120,7 +52364,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_misaligned_current_site",
         "notes": "Scam Detector preserves examples of supported content such as photos, documents, music, and software; no extension-level policy was found.",
         "source_refs": [
           2
@@ -52243,7 +52487,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_upload",
         "notes": "The cited upload page does not publish a detailed allowed-extension or blocked-extension policy.",
         "source_refs": [
           0
@@ -52795,7 +53039,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unverified_secondary_only",
         "notes": "No current extension allowlist or blocklist could be confirmed for Uploadify.",
         "source_refs": [
           0,
@@ -53073,7 +53317,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -53211,7 +53455,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -53490,7 +53734,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current allowed-file-types policy can be verified because the live homepage no longer exposes a working file-hosting product.",
         "source_refs": [
           0
@@ -53624,7 +53868,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current public-host file-policy surface remains to evaluate for this queue item.",
         "source_refs": [
           0,
@@ -53856,7 +54100,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "unknown",
+        "mode": "generic_file_upload",
         "notes": "The cited public page does not publish a file type allowlist or blocklist.",
         "source_refs": [
           0
@@ -53999,7 +54243,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains on the domain, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -54264,7 +54508,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -54797,7 +55041,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unverified_secondary_only",
         "notes": "No current UsersCloud extension allowlist or blocklist could be confirmed.",
         "source_refs": [
           0,
@@ -55339,8 +55583,8 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages present ViKiNG FiLE as a general-purpose host, but they do not publish a complete first-party allowlist.",
+        "mode": "all-or-most",
+        "notes": "The official ViKiNG FiLE upload page supports selecting or dropping files and selecting folders to upload, while the API documents general upload flows. No narrow extension allowlist is published.",
         "source_refs": [
           0,
           1
@@ -55589,7 +55833,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains on the domain, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0,
@@ -56046,7 +56290,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_historical_file_host",
         "notes": "No current extension allowlist or blocklist could be confirmed for WebchinUpload.",
         "source_refs": [
           0,
@@ -56169,14 +56413,22 @@
         "url": "https://help.wetransfer.com/hc/en-us/articles/200805659-Your-1-TB-WeTransfer-Pro-storage",
         "retrieved_at": "2026-04-29",
         "notes": "Current support article documenting storage quotas for paid WeTransfer subscription tiers."
+      },
+      {
+        "label": "Encrypted transfers",
+        "url": "https://help.wetransfer.com/hc/en-us/articles/30665297992722-How-to-Send-Encrypted-Files-with-WeTransfer",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official WeTransfer support says WeTransfer accepts any file type, including documents, images, videos, ZIP files, or anything else."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "mode": "all-or-most",
+        "notes": "Official WeTransfer support says transfers accept any file type, including documents, images, videos, ZIP files, or anything else. Transfer size, rolling quota, retention, and policy limits still apply.",
         "source_refs": [
-          0
+          0,
+          1,
+          3
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -56321,9 +56573,10 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages describe general file uploads and sharing, but do not publish a full allowlist.",
+        "mode": "all-or-most",
+        "notes": "WorkUpload's public profile and current summaries describe a general upload/sharing service with password protection and expiry controls. The first-party site is challenge-protected and no narrow extension allowlist is published.",
         "source_refs": [
+          0,
           1,
           2
         ],
@@ -56606,7 +56859,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unverified_secondary_only",
         "notes": "No current first-party extension allowlist or blocklist could be confirmed for WuShare.",
         "source_refs": [
           0,
@@ -56997,14 +57250,21 @@
         "url": "https://yandex.com/support/yandex-360/customers/disk/web/en/security",
         "retrieved_at": "2026-04-29",
         "notes": "Official security help stating files are stored until deleted when there are no access issues, with 30 days of Trash recovery and specific long-term deletion edge cases."
+      },
+      {
+        "label": "Upload files and folders",
+        "url": "https://www.yandex.com/support/yandex-360/customers/disk/web/en/uploading",
+        "retrieved_at": "2026-05-01",
+        "notes": "Official Yandex Disk help says users can upload files and folders, with plan-based file-size caps and antivirus checks."
       }
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
+        "mode": "all-or-most",
+        "notes": "Yandex Disk's official help says users can upload files and folders; problems are framed around file size, storage capacity, antivirus scanning, permissions, folder nesting, and names rather than a narrow extension allowlist.",
         "source_refs": [
-          0
+          3,
+          5
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -57136,7 +57396,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_hosting",
         "notes": "The cited public pages do not clearly publish a complete allowed-file-types policy; prohibited content may still apply under the service terms.",
         "source_refs": [
           0
@@ -57653,7 +57913,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_no_current_upload",
         "notes": "No current upload service remains, so there is no current allowed-file-types policy for a host product.",
         "source_refs": [
           0
@@ -57743,7 +58003,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "backup_workloads",
         "notes": "Zmanda protects workloads, file shares, and databases; the cited pages do not publish a public upload-hosting extension allowlist or blocklist.",
         "source_refs": [
           1,

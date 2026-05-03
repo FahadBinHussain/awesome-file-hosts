@@ -6376,7 +6376,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "general_file_hosting",
         "notes": "The homepage describes file-hosting storage and video uploads, but does not publish a complete extension allowlist or blocklist.",
         "source_refs": [
           0
@@ -17172,7 +17172,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_upload",
         "notes": "The live page documents generic file upload and does not publish a current extension allowlist or blocklist.",
         "source_refs": [
           0
@@ -20510,14 +20510,79 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "all-or-most",
-        "notes": "OpenDrive support says there are no upload file-type restrictions, subject to copyright and terms. Paid hotlinking has a separate extension blocklist for executable, script, web, and archive-style files; free accounts do not have hotlinking.",
+        "mode": "all_uploads_with_hotlink_blocklist",
+        "notes": "OpenDrive support says uploads have no file-type restrictions, subject to copyright and terms. Hotlinking has a separate blocklist for executable, script, installer, shortcut, database, registry, and similar file extensions; those files can still be downloaded through the website.",
         "source_refs": [
           4,
           5
         ],
         "allowed_extensions": [],
-        "blocked_extensions": []
+        "blocked_extensions": [
+          ".ade",
+          ".adp",
+          ".app",
+          ".asp",
+          ".aspx",
+          ".bas",
+          ".bat",
+          ".cgi",
+          ".chm",
+          ".cmd",
+          ".com",
+          ".cpl",
+          ".crt",
+          ".csh",
+          ".dll",
+          ".exe",
+          ".fxp",
+          ".hlp",
+          ".hta",
+          ".htaccess",
+          ".htc",
+          ".inf",
+          ".ins",
+          ".isp",
+          ".its",
+          ".js",
+          ".jse",
+          ".ksh",
+          ".lnk",
+          ".mda",
+          ".mdb",
+          ".mde",
+          ".mdt",
+          ".mdw",
+          ".mdz",
+          ".msc",
+          ".msi",
+          ".msp",
+          ".mst",
+          ".ops",
+          ".pcd",
+          ".pif",
+          ".prf",
+          ".prg",
+          ".ps1",
+          ".ps1xml",
+          ".ps2",
+          ".ps2xml",
+          ".psc1",
+          ".psc2",
+          ".reg",
+          ".scf",
+          ".scr",
+          ".sct",
+          ".shb",
+          ".shs",
+          ".url",
+          ".vb",
+          ".vbe",
+          ".vbs",
+          ".vbscript",
+          ".wsc",
+          ".wsf",
+          ".wsh"
+        ]
       },
       "public_sharing": {
         "value": true,
@@ -22515,7 +22580,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "unknown",
+        "mode": "generic_file_transfer",
         "notes": "The cited homepage does not publish a file type allowlist or blocklist.",
         "source_refs": [
           0
@@ -26258,7 +26323,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "unknown",
+        "mode": "generic_file_upload",
         "notes": "The cited public page does not publish a file type allowlist or blocklist.",
         "source_refs": [
           0
@@ -26733,7 +26798,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_upload",
         "notes": "The cited first-party page does not publish a detailed allowed-extension or blocked-extension policy.",
         "source_refs": [
           0
@@ -29161,7 +29226,7 @@
     ],
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "generic_file_upload",
         "notes": "The cited upload page does not publish a detailed allowed-extension or blocked-extension policy.",
         "source_refs": [
           0
@@ -29903,7 +29968,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "unknown",
+        "mode": "generic_file_upload",
         "notes": "The cited public page does not publish a file type allowlist or blocklist.",
         "source_refs": [
           0

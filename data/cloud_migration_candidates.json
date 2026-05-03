@@ -416,7 +416,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "not_applicable_forum",
         "notes": "The current official site is a community forum, not a file-transfer or cloud-migration product.",
         "allowed_extensions": [],
         "blocked_extensions": []
@@ -494,8 +494,8 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
-        "notes": "Official marketing says Filestack can upload any file type, subject to application-side rules and Filestack security policies.",
+        "mode": "any_file_type_with_app_rules",
+        "notes": "Official Filestack marketing says Filestack can upload any file type, subject to application-side rules and Filestack security policies.",
         "source_refs": [
           1,
           2
@@ -623,7 +623,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "retired_unavailable",
         "notes": "Historical migrations targeted supported Microsoft 365 scenarios, but the standalone Mover product is retired.",
         "source_refs": [
           0,
@@ -1187,7 +1187,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "provider_dependent_current_odrive",
         "notes": "Current official pages describe the odrive storage-linking product rather than a distinct OxygenCloud file-policy surface.",
         "source_refs": [
           0,
@@ -1454,7 +1454,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "unavailable_placeholder_site",
         "notes": "The current official UploadCloud site does not expose a working file-policy surface.",
         "source_refs": [
           0
@@ -1559,7 +1559,7 @@
     },
     "content": {
       "allowed_file_types": {
-        "mode": "see-notes",
+        "mode": "repurposed_unavailable",
         "notes": "The current official domain is repurposed and does not expose a trustworthy file-policy surface.",
         "allowed_extensions": [],
         "blocked_extensions": []
