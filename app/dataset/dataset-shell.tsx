@@ -1,7 +1,7 @@
 "use client";
 
 import type { ReactNode, UIEvent } from "react";
-import { Children, useMemo, useRef, useState } from "react";
+import { Children, useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowsDownUp,
   CheckCircle,
@@ -13,6 +13,7 @@ import {
   LinkSimple,
   MagnifyingGlass,
   ShieldCheck,
+  Table,
   TerminalWindow,
   X,
   XCircle
@@ -35,13 +36,17 @@ import type {
 
 type Props = {
   data: SiteData;
+  initialViewMode: DatasetViewMode;
+  initialViewModeFromUrl: boolean;
 };
 
 const NO_EXPIRY_RETENTION_SORT_VALUE = 9_999_999;
 const UNLIMITED_RETENTION_SORT_VALUE = NO_EXPIRY_RETENTION_SORT_VALUE + 1;
+const DATASET_VIEW_MODE_STORAGE_KEY = "awesome-file-hosts:dataset-view-mode";
 
 type ServiceMode = "hosts" | "alternatives" | "mirrors" | "migration";
 type DatasetMode = ServiceMode;
+type DatasetViewMode = "full" | "simple";
 type HostSortKey =
   | "name"
   | "free_model"
@@ -1150,6 +1155,53 @@ function serviceModeLabel(mode: ServiceMode) {
   return "Cloud migration";
 }
 
+function normalizeDatasetViewMode(value: string | null | undefined): DatasetViewMode | null {
+  if (value === "simple" || value === "full") return value;
+  return null;
+}
+
+function DatasetViewModeToggle({
+  mode,
+  onChange,
+  className = ""
+}: {
+  mode: DatasetViewMode;
+  onChange: (mode: DatasetViewMode) => void;
+  className?: string;
+}) {
+  return (
+    <div
+      className={[
+        "inline-flex rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-2)] p-1",
+        className
+      ].join(" ")}
+      aria-label="Dataset view mode"
+      role="group"
+    >
+      {([
+        { id: "full", label: "Full", icon: <Database size={14} weight="fill" /> },
+        { id: "simple", label: "Simple", icon: <Table size={14} weight="fill" /> }
+      ] satisfies Array<{ id: DatasetViewMode; label: string; icon: ReactNode }>).map((option) => (
+        <button
+          key={option.id}
+          type="button"
+          onClick={() => onChange(option.id)}
+          aria-pressed={mode === option.id}
+          className={[
+            "inline-flex h-8 items-center gap-1.5 rounded-[var(--radius-pill)] px-2.5 text-xs font-medium transition-colors",
+            mode === option.id
+              ? "bg-[var(--bg)] text-[var(--text-primary)] shadow-[var(--shadow-soft)]"
+              : "text-[var(--text-muted)] hover:text-[var(--text-primary)]"
+          ].join(" ")}
+        >
+          {option.icon}
+          <span>{option.label}</span>
+        </button>
+      ))}
+    </div>
+  );
+}
+
 function ToolbarButton({
   active,
   onClick,
@@ -1165,7 +1217,7 @@ function ToolbarButton({
     <button
       onClick={onClick}
       className={[
-        "group relative inline-flex items-center gap-2 rounded-[var(--radius-pill)] border px-3.5 py-2 text-xs font-medium transition-all duration-200",
+        "dataset-toolbar-button group relative inline-flex items-center gap-2 rounded-[var(--radius-pill)] border px-3.5 py-2 text-xs font-medium transition-all duration-200",
         active
           ? "border-[var(--accent)]/30 bg-[var(--accent-soft)] text-[var(--accent-soft-content)] shadow-[0_0_24px_-6px_var(--accent-glow)]"
           : "border-[var(--line)] bg-[var(--surface-1)] text-[var(--text-secondary)] hover:border-[var(--accent)]/50 hover:text-[var(--text-primary)] hover:shadow-[0_0_20px_-6px_var(--accent-glow)]"
@@ -1371,7 +1423,7 @@ function CitedValue({
   title?: string;
 }) {
   return (
-    <div className="min-w-0 leading-6 text-[var(--text-primary)]">
+    <div className="cited-value min-w-0 leading-6 text-[var(--text-primary)]">
       <span className="inline-block max-w-full truncate align-bottom" title={title ?? value}>
         {value}
       </span>
@@ -2338,7 +2390,9 @@ function MobileAdjacentCard({
   );
 }
 
-export function DatasetApp({ data }: Props) {
+export function DatasetApp({ data, initialViewMode, initialViewModeFromUrl }: Props) {
+  const [viewMode, setViewMode] = useState<DatasetViewMode>(initialViewMode);
+  const [viewModeReady, setViewModeReady] = useState(initialViewModeFromUrl);
   const [mode, setMode] = useState<DatasetMode>("hosts");
   const [queueOpen, setQueueOpen] = useState(false);
   const [hostSort, setHostSort] = useState<SortState<HostSortKey>>({
@@ -2368,6 +2422,43 @@ export function DatasetApp({ data }: Props) {
   const [hiddenAdjacentQueueColumns, setHiddenAdjacentQueueColumns] = useState<string[]>([]);
   const [selectedHostId, setSelectedHostId] = useState<string | null>(null);
   const [selectedCandidateId, setSelectedCandidateId] = useState<string | null>(null);
+  const isSimpleMode = viewMode === "simple";
+
+  useEffect(() => {
+    let savedMode: DatasetViewMode | null = null;
+    try {
+      savedMode = initialViewModeFromUrl
+        ? null
+        : normalizeDatasetViewMode(localStorage.getItem(DATASET_VIEW_MODE_STORAGE_KEY));
+    } catch {}
+    setViewMode(savedMode ?? initialViewMode);
+    setViewModeReady(true);
+  }, [initialViewMode, initialViewModeFromUrl]);
+
+  useEffect(() => {
+    if (!viewModeReady) return;
+
+    try {
+      localStorage.setItem(DATASET_VIEW_MODE_STORAGE_KEY, viewMode);
+      document.documentElement.setAttribute("data-dataset-mode", viewMode);
+
+      const url = new URL(window.location.href);
+      if (viewMode === "simple") {
+        url.searchParams.set("mode", "simple");
+      } else {
+        url.searchParams.delete("mode");
+      }
+      window.history.replaceState(window.history.state, "", `${url.pathname}${url.search}${url.hash}`);
+    } catch {
+      document.documentElement.setAttribute("data-dataset-mode", viewMode);
+    }
+
+    return () => {
+      if (document.documentElement.getAttribute("data-dataset-mode") === viewMode) {
+        document.documentElement.removeAttribute("data-dataset-mode");
+      }
+    };
+  }, [viewMode, viewModeReady]);
 
   const adjacentCollections: Record<Exclude<ServiceMode, "hosts">, AdjacentRecord[]> = {
     alternatives: data.alternatives,
@@ -2708,11 +2799,94 @@ export function DatasetApp({ data }: Props) {
     setSelectedCandidateId(null);
   }
 
+  function changeViewMode(nextMode: DatasetViewMode) {
+    setViewMode(nextMode);
+    setViewModeReady(true);
+  }
+
+  const renderViewModeToggle = (className = "") => (
+    <DatasetViewModeToggle mode={viewMode} onChange={changeViewMode} className={className} />
+  );
+  const tableHeaderClass = [
+    "dataset-table-header border-b border-[var(--line)] bg-[var(--bg-elevated)]",
+    isSimpleMode ? "" : "shadow-[var(--shadow-soft)] backdrop-blur-xl"
+  ].join(" ");
+  const headerCellClass = ({
+    isSorted,
+    sticky = false,
+    grouped = false,
+    flex = false
+  }: {
+    isSorted: boolean;
+    sticky?: boolean;
+    grouped?: boolean;
+    flex?: boolean;
+  }) =>
+    [
+      "dataset-header-cell min-w-0 overflow-hidden text-left uppercase transition-colors whitespace-nowrap",
+      flex ? "flex items-center" : "",
+      isSimpleMode
+        ? grouped
+          ? "px-3 py-1.5 text-[10px] font-semibold tracking-[0.12em]"
+          : "px-3 py-2 text-[11px] font-semibold tracking-[0.12em]"
+        : grouped
+          ? "px-4 py-3 text-[11px] font-bold tracking-[0.25em]"
+          : "px-4 py-4 text-xs font-bold tracking-[0.3em]",
+      sticky ? "sticky left-0 z-20 bg-[var(--bg-elevated)]" : "",
+      isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
+    ].join(" ");
+  const groupHeaderCellClass = [
+    "dataset-group-header-cell flex items-center justify-center border-x border-b border-[var(--line)]/60 text-center uppercase text-[var(--text-muted)]",
+    isSimpleMode
+      ? "px-3 py-1 text-[10px] font-semibold tracking-[0.12em]"
+      : "px-4 py-2 text-[11px] font-bold tracking-[0.3em]"
+  ].join(" ");
+  const rowButtonClass = (active: boolean) =>
+    [
+      "dataset-row group relative grid w-full cursor-pointer border-b border-[var(--line)]/50 text-left",
+      isSimpleMode ? "transition-colors duration-100" : "transition-all duration-200 row-enter",
+      active
+        ? "bg-[var(--accent-soft)]/50 hover:bg-[var(--accent-soft)]/70"
+        : isSimpleMode
+          ? "hover:bg-[var(--surface-1)]"
+          : "hover:-translate-x-0.5 hover:bg-[var(--surface-2)]"
+    ].join(" ");
+  const rowAccentClass = [
+    "dataset-row-accent absolute left-0 top-0 h-full w-[2px] bg-gradient-to-b from-[var(--accent)] to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100",
+    isSimpleMode ? "hidden" : ""
+  ].join(" ");
+  const rowCellClass = (active: boolean, sticky = false) =>
+    [
+      "dataset-row-cell align-top text-[var(--text-primary)] transition-colors",
+      isSimpleMode ? "px-3 py-1.5 text-[13px] leading-5" : "px-3 py-2.5",
+      active ? "bg-[var(--accent-soft)]/20" : "",
+      sticky ? "sticky left-0 z-10 bg-[var(--bg-elevated)]" : ""
+    ].join(" ");
+  const statusBadgeClass = (status: CandidateRecord["verification_status"]) =>
+    [
+      "dataset-status-badge inline-flex font-medium capitalize border",
+      isSimpleMode
+        ? "rounded-[var(--radius-control)] px-2 py-0.5 text-[10px]"
+        : "rounded-[var(--radius-pill)] px-2.5 py-1 text-[10px] backdrop-blur-sm",
+      statusTone(status)
+    ].join(" ");
+
   return (
-    <AppFrame current="dataset">
-      <div className="min-h-0 flex-1 px-4 py-6 md:px-6">
+    <AppFrame current="dataset" actions={renderViewModeToggle()}>
+      <div
+        className={[
+          "min-h-0 flex-1",
+          isSimpleMode ? "dataset-simple px-0 py-0" : "px-4 py-6 md:px-6"
+        ].join(" ")}
+      >
         <section className="min-h-0 overflow-visible bg-transparent">
-          <div className="relative z-20 flex flex-col gap-4 border-b border-[var(--line)] p-4">
+          <div
+            className={[
+              "relative z-20 flex flex-col border-b border-[var(--line)]",
+              isSimpleMode ? "gap-2 bg-[var(--bg)] px-3 py-2" : "gap-4 p-4"
+            ].join(" ")}
+          >
+            {!isSimpleMode ? (
             <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
               <div className="animate-fade-in-up">
                 <div className="flex items-center gap-2">
@@ -2774,9 +2948,16 @@ export function DatasetApp({ data }: Props) {
                 ))}
               </div>
             </div>
+            ) : null}
 
-            <div className="flex flex-col gap-3 xl:flex-row xl:items-center xl:justify-between">
-              <div className="flex flex-wrap gap-2">
+            <div
+              className={[
+                "flex flex-col xl:flex-row xl:items-center xl:justify-between",
+                isSimpleMode ? "gap-2" : "gap-3"
+              ].join(" ")}
+            >
+              <div className="flex flex-wrap items-center gap-2">
+                <div className="lg:hidden">{renderViewModeToggle()}</div>
                 <ToolbarButton active={mode === "hosts"} onClick={() => selectMode("hosts")}>
                   Verified hosts
                 </ToolbarButton>
@@ -2801,7 +2982,14 @@ export function DatasetApp({ data }: Props) {
                 </ToolbarButton>
               </div>
 
-              <div className="relative flex min-w-0 w-full flex-1 items-center gap-3 rounded-[var(--radius-card)] border border-[var(--line)] bg-[var(--surface-1)] px-4 py-2.5 shadow-sm xl:max-w-[28rem]">
+              <div
+                className={[
+                  "relative flex min-w-0 w-full flex-1 items-center gap-3 border border-[var(--line)] bg-[var(--surface-1)] xl:max-w-[28rem]",
+                  isSimpleMode
+                    ? "rounded-[var(--radius-control)] px-3 py-1.5"
+                    : "rounded-[var(--radius-card)] px-4 py-2.5 shadow-sm"
+                ].join(" ")}
+              >
                 <MagnifyingGlass size={18} className="text-[var(--text-muted)]" />
                 <input
                   value={search}
@@ -2864,7 +3052,7 @@ export function DatasetApp({ data }: Props) {
                           isAdjacentMode ? toggleAdjacentColumn(column.id) : toggleHostColumn(column.id)
                         }
                         className={[
-                          "group relative inline-flex items-center gap-2 rounded-[var(--radius-pill)] border px-2.5 py-1.5 text-[11px] font-medium transition-all duration-200",
+                          "dataset-column-chip group relative inline-flex items-center gap-2 rounded-[var(--radius-pill)] border px-2.5 py-1.5 text-[11px] font-medium transition-all duration-200",
                           hidden
                             ? "border-[var(--line)] bg-transparent text-[var(--text-muted)] hover:border-[var(--text-muted)]/40 hover:text-[var(--text-secondary)]"
                             : "border-[var(--accent)]/20 bg-[var(--accent-soft)] text-[var(--accent-soft-content)]"
@@ -2920,7 +3108,7 @@ export function DatasetApp({ data }: Props) {
                             : toggleAdjacentQueueColumn(column.id)
                         }
                         className={[
-                          "group relative inline-flex items-center gap-2 rounded-[var(--radius-pill)] border px-2.5 py-1.5 text-[11px] font-medium transition-all duration-200",
+                          "dataset-column-chip group relative inline-flex items-center gap-2 rounded-[var(--radius-pill)] border px-2.5 py-1.5 text-[11px] font-medium transition-all duration-200",
                           hidden
                             ? "border-[var(--line)] bg-transparent text-[var(--text-muted)] hover:border-[var(--text-muted)]/40 hover:text-[var(--text-secondary)]"
                             : "border-[var(--accent)]/20 bg-[var(--accent-soft)] text-[var(--accent-soft-content)]"
@@ -2936,11 +3124,11 @@ export function DatasetApp({ data }: Props) {
             )}
           </div>
 
-          <div className="relative z-0 -mx-4 pb-2 md:mx-0">
+          <div className={isSimpleMode ? "relative z-0 pb-0" : "relative z-0 -mx-4 pb-2 md:mx-0"}>
             {!isQueueMode && mode === "hosts" ? (
               <>
                 <SpreadsheetScroller>
-                <div className="border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
+                <div className={tableHeaderClass}>
                   {showGroupedMaxHeader || showGroupedStorageHeader ? (
                     <div
                       className="grid"
@@ -2960,11 +3148,11 @@ export function DatasetApp({ data }: Props) {
                           <div
                             key={column.id}
                             style={{ gridColumn: String(index + 1), gridRow: "1 / span 2" }}
-                            className={[
-                              "flex min-w-0 items-center overflow-hidden px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
-                              column.id === "name" ? "sticky left-0 z-20 bg-[var(--bg-elevated)]" : "",
-                              isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
-                            ].join(" ")}
+                            className={headerCellClass({
+                              isSorted,
+                              sticky: column.id === "name",
+                              flex: true
+                            })}
                           >
                             <SortHeaderButton
                               direction={hostSort.direction}
@@ -2979,7 +3167,7 @@ export function DatasetApp({ data }: Props) {
                       {showGroupedMaxHeader ? (
                         <div
                           style={{ gridColumn: `${maxGuestColumnIndex + 1} / span 2`, gridRow: "1" }}
-                          className="flex items-center justify-center border-x border-b border-[var(--line)]/60 px-4 py-2 text-center text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--text-muted)]"
+                          className={groupHeaderCellClass}
                         >
                           Max file size
                         </div>
@@ -2988,7 +3176,7 @@ export function DatasetApp({ data }: Props) {
                       {showGroupedStorageHeader ? (
                         <div
                           style={{ gridColumn: `${storageGuestColumnIndex + 1} / span 2`, gridRow: "1" }}
-                          className="flex items-center justify-center border-x border-b border-[var(--line)]/60 px-4 py-2 text-center text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--text-muted)]"
+                          className={groupHeaderCellClass}
                         >
                           Storage
                         </div>
@@ -3009,10 +3197,7 @@ export function DatasetApp({ data }: Props) {
                             <div
                               key={column.id}
                               style={{ gridColumn: String(columnIndex + 1), gridRow: "2" }}
-                              className={[
-                                "min-w-0 overflow-hidden px-4 py-3 text-left text-[11px] uppercase tracking-[0.25em] font-bold transition-colors whitespace-nowrap",
-                                isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
-                              ].join(" ")}
+                              className={headerCellClass({ isSorted, grouped: true })}
                             >
                               <SortHeaderButton
                                 direction={hostSort.direction}
@@ -3034,11 +3219,7 @@ export function DatasetApp({ data }: Props) {
                         return (
                           <div
                             key={column.id}
-                            className={[
-                              "min-w-0 overflow-hidden px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
-                              column.id === "name" ? "sticky left-0 z-20 bg-[var(--bg-elevated)]" : "",
-                              isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
-                            ].join(" ")}
+                            className={headerCellClass({ isSorted, sticky: column.id === "name" })}
                           >
                             <SortHeaderButton
                               direction={hostSort.direction}
@@ -3056,26 +3237,17 @@ export function DatasetApp({ data }: Props) {
                   <button
                     key={host.id}
                     onClick={() => setSelectedHostId(host.id)}
-                    className={[
-                      "group relative grid w-full cursor-pointer border-b border-[var(--line)]/50 text-left transition-all duration-200 row-enter",
-                      selectedHostId === host.id
-                        ? "bg-[var(--accent-soft)]/50 hover:bg-[var(--accent-soft)]/70"
-                        : "hover:-translate-x-0.5 hover:bg-[var(--surface-2)]"
-                    ].join(" ")}
+                    className={rowButtonClass(selectedHostId === host.id)}
                     style={{ 
                       gridTemplateColumns: hostGridTemplate,
                       animationDelay: `${Math.min(index * 0.012, 0.5)}s`
                     }}
                   >
-                    <div className="absolute left-0 top-0 h-full w-[2px] bg-gradient-to-b from-[var(--accent)] to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+                    <div className={rowAccentClass} />
                     {visibleHostColumns.map((column) => (
                       <div
                         key={`${host.id}-${column.id}`}
-                        className={[
-                          "px-3 py-2.5 align-top text-[var(--text-primary)] transition-colors",
-                          selectedHostId === host.id ? "bg-[var(--accent-soft)]/20" : "",
-                          column.id === "name" ? "sticky left-0 z-10 bg-[var(--bg-elevated)]" : ""
-                        ].join(" ")}
+                        className={rowCellClass(selectedHostId === host.id, column.id === "name")}
                       >
                         {column.render(host)}
                       </div>
@@ -3087,18 +3259,14 @@ export function DatasetApp({ data }: Props) {
             ) : !isQueueMode && isAdjacentMode ? (
               <>
                 <SpreadsheetScroller>
-                  <div className="border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
+                  <div className={tableHeaderClass}>
                     <div className="grid" style={{ gridTemplateColumns: adjacentGridTemplate }}>
                       {visibleAdjacentColumns.map((column) => {
                         const isSorted = adjacentSort.key === column.id;
                         return (
                           <div
                             key={column.id}
-                            className={[
-                              "min-w-0 overflow-hidden px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
-                              column.id === "name" ? "sticky left-0 z-20 bg-[var(--bg-elevated)]" : "",
-                              isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
-                            ].join(" ")}
+                            className={headerCellClass({ isSorted, sticky: column.id === "name" })}
                           >
                             <SortHeaderButton
                               direction={adjacentSort.direction}
@@ -3115,26 +3283,17 @@ export function DatasetApp({ data }: Props) {
                     <button
                       key={record.id}
                       onClick={() => setSelectedHostId(record.id)}
-                      className={[
-                        "group relative grid w-full cursor-pointer border-b border-[var(--line)]/50 text-left transition-all duration-200 row-enter",
-                        selectedHostId === record.id
-                          ? "bg-[var(--accent-soft)]/50 hover:bg-[var(--accent-soft)]/70"
-                          : "hover:-translate-x-0.5 hover:bg-[var(--surface-2)]"
-                      ].join(" ")}
+                      className={rowButtonClass(selectedHostId === record.id)}
                       style={{
                         gridTemplateColumns: adjacentGridTemplate,
                         animationDelay: `${Math.min(index * 0.012, 0.5)}s`
                       }}
                     >
-                      <div className="absolute left-0 top-0 h-full w-[2px] bg-gradient-to-b from-[var(--accent)] to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+                      <div className={rowAccentClass} />
                       {visibleAdjacentColumns.map((column) => (
                         <div
                           key={`${record.id}-${column.id}`}
-                          className={[
-                            "px-3 py-2.5 align-top text-[var(--text-primary)] transition-colors",
-                            selectedHostId === record.id ? "bg-[var(--accent-soft)]/20" : "",
-                            column.id === "name" ? "sticky left-0 z-10 bg-[var(--bg-elevated)]" : ""
-                          ].join(" ")}
+                          className={rowCellClass(selectedHostId === record.id, column.id === "name")}
                         >
                           {column.render(record as never)}
                         </div>
@@ -3146,7 +3305,7 @@ export function DatasetApp({ data }: Props) {
             ) : mode === "hosts" ? (
               <>
                 <SpreadsheetScroller>
-                <div className="border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
+                <div className={tableHeaderClass}>
                   {showGroupedQueueMaxHeader || showGroupedQueueStorageHeader ? (
                     <div
                       className="grid"
@@ -3167,11 +3326,11 @@ export function DatasetApp({ data }: Props) {
                           <div
                             key={column.id}
                             style={{ gridColumn: String(index + 1), gridRow: "1 / span 2" }}
-                            className={[
-                              "flex min-w-0 items-center overflow-hidden px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
-                              column.id === "name" ? "sticky left-0 z-20 bg-[var(--bg-elevated)]" : "",
-                              isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
-                            ].join(" ")}
+                            className={headerCellClass({
+                              isSorted,
+                              sticky: column.id === "name",
+                              flex: true
+                            })}
                           >
                             <SortHeaderButton
                               direction={queueSort.direction}
@@ -3186,7 +3345,7 @@ export function DatasetApp({ data }: Props) {
                       {showGroupedQueueMaxHeader ? (
                         <div
                           style={{ gridColumn: `${queueMaxGuestColumnIndex + 1} / span 2`, gridRow: "1" }}
-                          className="flex items-center justify-center border-x border-b border-[var(--line)]/60 px-4 py-2 text-center text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--text-muted)]"
+                          className={groupHeaderCellClass}
                         >
                           Max file size
                         </div>
@@ -3195,7 +3354,7 @@ export function DatasetApp({ data }: Props) {
                       {showGroupedQueueStorageHeader ? (
                         <div
                           style={{ gridColumn: `${queueStorageGuestColumnIndex + 1} / span 2`, gridRow: "1" }}
-                          className="flex items-center justify-center border-x border-b border-[var(--line)]/60 px-4 py-2 text-center text-[11px] font-bold uppercase tracking-[0.3em] text-[var(--text-muted)]"
+                          className={groupHeaderCellClass}
                         >
                           Storage
                         </div>
@@ -3217,10 +3376,7 @@ export function DatasetApp({ data }: Props) {
                             <div
                               key={column.id}
                               style={{ gridColumn: String(columnIndex + 1), gridRow: "2" }}
-                              className={[
-                                "min-w-0 overflow-hidden px-4 py-3 text-left text-[11px] uppercase tracking-[0.25em] font-bold transition-colors whitespace-nowrap",
-                                isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
-                              ].join(" ")}
+                              className={headerCellClass({ isSorted, grouped: true })}
                             >
                               <SortHeaderButton
                                 direction={queueSort.direction}
@@ -3242,11 +3398,7 @@ export function DatasetApp({ data }: Props) {
                         return (
                           <div
                             key={column.id}
-                            className={[
-                              "min-w-0 overflow-hidden px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
-                              column.id === "name" ? "sticky left-0 z-20 bg-[var(--bg-elevated)]" : "",
-                              isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
-                            ].join(" ")}
+                            className={headerCellClass({ isSorted, sticky: column.id === "name" })}
                           >
                             <SortHeaderButton
                               direction={queueSort.direction}
@@ -3264,34 +3416,20 @@ export function DatasetApp({ data }: Props) {
                   <button
                     key={candidate.id}
                     onClick={() => setSelectedCandidateId(candidate.id)}
-                    className={[
-                      "group relative grid w-full cursor-pointer border-b border-[var(--line)]/50 text-left transition-all duration-200 row-enter",
-                      selectedCandidateId === candidate.id
-                        ? "bg-[var(--accent-soft)]/50 hover:bg-[var(--accent-soft)]/70"
-                        : "hover:-translate-x-0.5 hover:bg-[var(--surface-2)]"
-                    ].join(" ")}
+                    className={rowButtonClass(selectedCandidateId === candidate.id)}
                     style={{ 
                       gridTemplateColumns: queueGridTemplate,
                       animationDelay: `${Math.min(index * 0.012, 0.5)}s`
                     }}
                   >
-                    <div className="absolute left-0 top-0 h-full w-[2px] bg-gradient-to-b from-[var(--accent)] to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+                    <div className={rowAccentClass} />
                     {visibleQueueColumns.map((column) => (
                       <div
                         key={`${candidate.id}-${column.id}`}
-                        className={[
-                          "px-3 py-2.5 align-top text-[var(--text-primary)] transition-colors",
-                          selectedCandidateId === candidate.id ? "bg-[var(--accent-soft)]/20" : "",
-                          column.id === "name" ? "sticky left-0 z-10 bg-[var(--bg-elevated)]" : ""
-                        ].join(" ")}
+                        className={rowCellClass(selectedCandidateId === candidate.id, column.id === "name")}
                       >
                         {column.id === "status" ? (
-                          <span
-                            className={[
-                              "inline-flex rounded-[var(--radius-pill)] px-2.5 py-1 text-[10px] font-medium capitalize backdrop-blur-sm border",
-                              statusTone(candidate.verification_status)
-                            ].join(" ")}
-                          >
+                          <span className={statusBadgeClass(candidate.verification_status)}>
                             {candidate.verification_status}
                           </span>
                         ) : (
@@ -3306,18 +3444,14 @@ export function DatasetApp({ data }: Props) {
             ) : (
               <>
                 <SpreadsheetScroller>
-                  <div className="border-b border-[var(--line)] bg-[var(--bg-elevated)] shadow-[var(--shadow-soft)] backdrop-blur-xl">
+                  <div className={tableHeaderClass}>
                     <div className="grid" style={{ gridTemplateColumns: adjacentQueueGridTemplate }}>
                       {visibleAdjacentQueueColumns.map((column) => {
                         const isSorted = adjacentQueueSort.key === column.id;
                         return (
                           <div
                             key={column.id}
-                            className={[
-                              "min-w-0 overflow-hidden px-4 py-4 text-left text-xs uppercase tracking-[0.3em] font-bold transition-colors whitespace-nowrap",
-                              column.id === "name" ? "sticky left-0 z-20 bg-[var(--bg-elevated)]" : "",
-                              isSorted ? "text-[var(--accent)]" : "text-[var(--text-muted)]"
-                            ].join(" ")}
+                            className={headerCellClass({ isSorted, sticky: column.id === "name" })}
                           >
                             <SortHeaderButton
                               direction={adjacentQueueSort.direction}
@@ -3334,34 +3468,20 @@ export function DatasetApp({ data }: Props) {
                     <button
                       key={candidate.id}
                       onClick={() => setSelectedCandidateId(candidate.id)}
-                      className={[
-                        "group relative grid w-full cursor-pointer border-b border-[var(--line)]/50 text-left transition-all duration-200 row-enter",
-                        selectedCandidateId === candidate.id
-                          ? "bg-[var(--accent-soft)]/50 hover:bg-[var(--accent-soft)]/70"
-                          : "hover:-translate-x-0.5 hover:bg-[var(--surface-2)]"
-                      ].join(" ")}
+                      className={rowButtonClass(selectedCandidateId === candidate.id)}
                       style={{
                         gridTemplateColumns: adjacentQueueGridTemplate,
                         animationDelay: `${Math.min(index * 0.012, 0.5)}s`
                       }}
                     >
-                      <div className="absolute left-0 top-0 h-full w-[2px] bg-gradient-to-b from-[var(--accent)] to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+                      <div className={rowAccentClass} />
                       {visibleAdjacentQueueColumns.map((column) => (
                         <div
                           key={`${candidate.id}-${column.id}`}
-                          className={[
-                            "px-3 py-2.5 align-top text-[var(--text-primary)] transition-colors",
-                            selectedCandidateId === candidate.id ? "bg-[var(--accent-soft)]/20" : "",
-                            column.id === "name" ? "sticky left-0 z-10 bg-[var(--bg-elevated)]" : ""
-                          ].join(" ")}
+                          className={rowCellClass(selectedCandidateId === candidate.id, column.id === "name")}
                         >
                           {column.id === "status" ? (
-                            <span
-                              className={[
-                                "inline-flex rounded-[var(--radius-pill)] px-2.5 py-1 text-[10px] font-medium capitalize backdrop-blur-sm border",
-                                statusTone(candidate.verification_status)
-                              ].join(" ")}
-                            >
+                            <span className={statusBadgeClass(candidate.verification_status)}>
                               {candidate.verification_status}
                             </span>
                           ) : (

@@ -25,6 +25,22 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             }
           `}
         </Script>
+        <Script id="dataset-mode-init" strategy="beforeInteractive">
+          {`
+            try {
+              const path = window.location.pathname.replace(/\\/$/, '');
+              if (path === '/dataset') {
+                const params = new URLSearchParams(window.location.search);
+                const requestedMode = params.get('mode');
+                const savedMode = localStorage.getItem('awesome-file-hosts:dataset-view-mode');
+                const mode = requestedMode === 'simple' || requestedMode === 'full' ? requestedMode : savedMode;
+                if (mode === 'simple') {
+                  document.documentElement.setAttribute('data-dataset-mode', 'simple');
+                }
+              }
+            } catch {}
+          `}
+        </Script>
       </head>
       <body>{children}</body>
     </html>

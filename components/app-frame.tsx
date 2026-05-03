@@ -6,6 +6,7 @@ import { ThemeSwitcher } from "./theme-switcher";
 type Props = {
   children: ReactNode;
   current: "home" | "dataset";
+  actions?: ReactNode;
 };
 
 function NavLink({
@@ -43,7 +44,7 @@ function NavLink({
   );
 }
 
-export function AppFrame({ children, current }: Props) {
+export function AppFrame({ children, current, actions }: Props) {
   return (
     <main className="min-h-[100dvh] w-full">
       <div className="flex min-h-[100dvh] w-full flex-col">
@@ -71,6 +72,7 @@ export function AppFrame({ children, current }: Props) {
                 icon={<Table size={18} weight={current === "dataset" ? "fill" : "regular"} />}
                 label="Dataset"
               />
+              {actions ? <div className="hidden shrink-0 items-center lg:flex">{actions}</div> : null}
               <div className="ml-2 h-6 w-[1px] bg-[var(--line)] sm:ml-4" />
               <ThemeSwitcher />
             </nav>
