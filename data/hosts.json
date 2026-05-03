@@ -2414,17 +2414,39 @@
         "url": "https://www.box.com/file-transfer",
         "retrieved_at": "2026-05-01",
         "notes": "Official Box file-transfer page says Box can transmit files of any type or size, while previews are available for 120+ file formats."
+      },
+      {
+        "label": "File types ignored or blocked by Box Sync and Box Drive",
+        "url": "https://support.box.com/hc/en-us/articles/360044195433-File-Types-Ignored-or-Blocked-by-Box-Sync-and-Box-Drive",
+        "retrieved_at": "2026-05-03",
+        "notes": "Official Box support lists ignored sync file types such as .tmp, .bak, .lnk, and .qbi, and blocked Box Sync/Drive file types including .pst, .qbw, .nd, .qbw.tlg, .des, .qba, .qba.tlg, .qbr, .qby, and .qdt."
       }
     ],
     "content": {
       "allowed_file_types": {
         "mode": "all-or-most",
-        "notes": "The official Box file-transfer page says users can transmit files of any type or size. Preview support is narrower, but upload/share support is positioned as any type, subject to plan and policy limits.",
+        "notes": "Box supports broad web upload/transfer, but official Box Sync and Box Drive docs list extension-like file types that are ignored or blocked from syncing. Box notes some blocked types can still be uploaded and stored through the website, but will not sync.",
         "source_refs": [
-          4
+          4,
+          5
         ],
         "allowed_extensions": [],
-        "blocked_extensions": []
+        "blocked_extensions": [
+          ".bak",
+          ".des",
+          ".lnk",
+          ".nd",
+          ".pst",
+          ".qba",
+          ".qba.tlg",
+          ".qbi",
+          ".qbr",
+          ".qbw",
+          ".qbw.tlg",
+          ".qby",
+          ".qdt",
+          ".tmp"
+        ]
       },
       "public_sharing": {
         "value": true,
@@ -4393,12 +4415,15 @@
     "content": {
       "allowed_file_types": {
         "mode": "video-only",
-        "notes": "The FAQ says all video format files can be uploaded; the homepage also says quickly upload any file type, so the verified classification remains video-focused.",
+        "notes": "The FAQ says video-format files can be uploaded, and the official API examples name .avi local video uploads and .mp4 remote video uploads.",
         "source_refs": [
-          0,
-          1
+          1,
+          2
         ],
-        "allowed_extensions": [],
+        "allowed_extensions": [
+          ".avi",
+          ".mp4"
+        ],
         "blocked_extensions": []
       },
       "public_sharing": {
@@ -6514,17 +6539,28 @@
         "url": "https://www.dropbox.com/features/cloud-storage",
         "retrieved_at": "2026-05-01",
         "notes": "Official Dropbox cloud-storage page says users can store any file or folder, from photos and videos to CAD files and PowerPoint presentations."
+      },
+      {
+        "label": "Dropbox files not syncing",
+        "url": "https://help.dropbox.com/sync/files-not-syncing",
+        "retrieved_at": "2026-05-03",
+        "notes": "Official Dropbox Help says files with suffixes such as desktop.ini, thumbs.db, .ds_store, icon\\r, .dropbox, and .dropbox.attr do not sync, and that temporary files often start with ~$ or .~."
       }
     ],
     "content": {
       "allowed_file_types": {
         "mode": "all-or-most",
-        "notes": "The official Dropbox cloud-storage page says users can store any file or folder. Dropbox preview support is narrower and plan-dependent, but storage is not presented as extension-limited.",
+        "notes": "Dropbox storage is broad, but official Dropbox Help says the sync client skips specific suffixes and temporary-file patterns. The blocked list here records extension-like ignored sync suffixes, not a complete upload blocklist.",
         "source_refs": [
-          8
+          8,
+          9
         ],
         "allowed_extensions": [],
-        "blocked_extensions": []
+        "blocked_extensions": [
+          ".dropbox",
+          ".dropbox.attr",
+          ".ds_store"
+        ]
       },
       "public_sharing": {
         "value": true,
@@ -7511,12 +7547,14 @@
     "content": {
       "allowed_file_types": {
         "mode": "media-only",
-        "notes": "The official product and API are video-oriented. API examples include video-file upload, URL upload of video files, subtitles, thumbnails, and playback/direct-link metadata.",
+        "notes": "The official API examples name .avi local video uploads and .mp4 remote video uploads for this video-oriented host.",
         "source_refs": [
-          0,
           1
         ],
-        "allowed_extensions": [],
+        "allowed_extensions": [
+          ".avi",
+          ".mp4"
+        ],
         "blocked_extensions": []
       },
       "public_sharing": {
@@ -10922,11 +10960,15 @@
     "content": {
       "allowed_file_types": {
         "mode": "media-only",
-        "notes": "The official FAQ says all video format files can be uploaded.",
+        "notes": "The FAQ says video-format files can be uploaded, and the official API examples name .avi local video uploads and .mp4 remote video uploads.",
         "source_refs": [
+          0,
           2
         ],
-        "allowed_extensions": [],
+        "allowed_extensions": [
+          ".avi",
+          ".mp4"
+        ],
         "blocked_extensions": []
       },
       "public_sharing": {
@@ -13536,9 +13578,10 @@
       "api_docs_url": "https://goodstream.one/api.html",
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "The homepage states uploads can be made via browser, remote URL, and API; the API documentation link is first-party, but detailed endpoint text was not captured in this pass.",
+      "notes": "The homepage and API documentation state uploads can be made via browser, remote URL, and API; the API page documents upload-server discovery and file upload endpoints.",
       "source_refs": [
-        0
+        0,
+        3
       ]
     },
     "security": {
@@ -13577,16 +13620,25 @@
         "url": "https://goodstream.one/make_money",
         "retrieved_at": "2026-05-01",
         "notes": "Official rules verify 25 GB maximum upload size, 30-day inactive deletion for free users, premium files never deleted, and third-party-app traffic exclusions."
+      },
+      {
+        "label": "GoodStream API",
+        "url": "https://goodstream.one/api.html",
+        "retrieved_at": "2026-05-03",
+        "notes": "Official API docs show video-file upload parameters with .avi local upload examples and .mp4 remote-upload examples."
       }
     ],
     "content": {
       "allowed_file_types": {
         "mode": "media-only",
-        "notes": "GoodStream is a video-hosting platform; legal adult video is allowed, while zoophilia and child sexual-abuse material are prohibited.",
+        "notes": "The official API examples name .avi local video uploads and .mp4 remote video uploads for this video-hosting platform.",
         "source_refs": [
-          0
+          3
         ],
-        "allowed_extensions": [],
+        "allowed_extensions": [
+          ".avi",
+          ".mp4"
+        ],
         "blocked_extensions": []
       },
       "public_sharing": {
@@ -15878,8 +15930,8 @@
       {
         "label": "ImgBB homepage",
         "url": "https://imgbb.com/",
-        "retrieved_at": "2026-05-01",
-        "notes": "Official homepage says uploads are limited to 32 MB and supports direct image links, BBCode, HTML thumbnails, and optional auto-delete."
+        "retrieved_at": "2026-05-03",
+        "notes": "Official homepage says uploads are limited to 32 MB, supports direct image links, BBCode, HTML thumbnails, optional auto-delete, and publishes the current image upload type allowlist in page config."
       },
       {
         "label": "ImgBB API",
@@ -15903,12 +15955,84 @@
     "content": {
       "allowed_file_types": {
         "mode": "images-only",
-        "notes": "API docs and homepage position ImgBB as an image upload service for binary, base64, or image URL uploads.",
+        "notes": "API docs and homepage position ImgBB as an image upload service; the current homepage config publishes this image-type allowlist.",
         "source_refs": [
           0,
           1
         ],
-        "allowed_extensions": [],
+        "allowed_extensions": [
+          ".arw",
+          ".avif",
+          ".bmp",
+          ".cr2",
+          ".cr3",
+          ".cur",
+          ".cut",
+          ".dcm",
+          ".dds",
+          ".dib",
+          ".dng",
+          ".emf",
+          ".exr",
+          ".fax",
+          ".fig",
+          ".fits",
+          ".fpx",
+          ".gbr",
+          ".gd",
+          ".gif",
+          ".hdr",
+          ".heic",
+          ".heif",
+          ".icns",
+          ".ico",
+          ".iff",
+          ".ilbm",
+          ".j2k",
+          ".jp2",
+          ".jpe",
+          ".jpeg",
+          ".jpg",
+          ".jpf",
+          ".jpm",
+          ".jpx",
+          ".jxl",
+          ".miff",
+          ".mng",
+          ".mpo",
+          ".nef",
+          ".nrrd",
+          ".orf",
+          ".pbm",
+          ".pcx",
+          ".pdf",
+          ".pgm",
+          ".pic",
+          ".pict",
+          ".png",
+          ".pnm",
+          ".ppm",
+          ".ps",
+          ".psb",
+          ".psd",
+          ".qoi",
+          ".raf",
+          ".raw",
+          ".rw2",
+          ".sgi",
+          ".sid",
+          ".sr2",
+          ".svg",
+          ".tga",
+          ".tif",
+          ".tiff",
+          ".vtf",
+          ".webp",
+          ".wmf",
+          ".xbm",
+          ".xcf",
+          ".xpm"
+        ],
         "blocked_extensions": []
       },
       "public_sharing": {
@@ -16942,8 +17066,8 @@
       {
         "label": "Kepkuldes homepage",
         "url": "https://kepkuldes.com/",
-        "retrieved_at": "2026-05-01",
-        "notes": "Official Hungarian homepage says uploaded images are automatically deleted after one week unless the user has Premium, and lists a 40 MB limit."
+        "retrieved_at": "2026-05-03",
+        "notes": "Official Hungarian homepage says uploaded images are automatically deleted after one week unless the user has Premium, lists a 40 MB limit, and publishes accepted image types as jpg/png/bmp/gif/jpeg in page config."
       },
       {
         "label": "FMHY Image Hosts",
@@ -16961,11 +17085,17 @@
     "content": {
       "allowed_file_types": {
         "mode": "images-only",
-        "notes": "The official upload page is image-focused and lists a picture upload flow.",
+        "notes": "The official upload page is image-focused, lists a picture upload flow, and publishes jpg/png/bmp/gif/jpeg as accepted image types in page config.",
         "source_refs": [
           0
         ],
-        "allowed_extensions": [],
+        "allowed_extensions": [
+          ".bmp",
+          ".gif",
+          ".jpeg",
+          ".jpg",
+          ".png"
+        ],
         "blocked_extensions": []
       },
       "public_sharing": {
@@ -17209,18 +17339,31 @@
         "url": "https://koofr.eu/help/create-upload-and-rename-files/what-types-of-files-can-i-upload-to-koofr/",
         "retrieved_at": "2026-04-29",
         "notes": "Current help says any file type can be uploaded to Koofr."
+      },
+      {
+        "label": "Koofr web app help",
+        "url": "https://app.koofr.net/help/web",
+        "retrieved_at": "2026-05-03",
+        "notes": "Official Koofr web app help says free accounts cannot share executables and other possibly malicious file types such as zip, rar, exe, apk, and html through public links, while account holders can still access/download those files through official Koofr apps."
       }
     ],
     "content": {
       "allowed_file_types": {
         "mode": "all-or-most",
-        "notes": "Current help and features pages say Koofr has no file-type limits and that users can upload any type of file.",
+        "notes": "Koofr upload/storage supports any file type, but official help says some file types are not available for download through free shared links. The blocked list records those free-share restrictions, not an upload blocklist.",
         "source_refs": [
           5,
-          6
+          6,
+          7
         ],
         "allowed_extensions": [],
-        "blocked_extensions": []
+        "blocked_extensions": [
+          ".apk",
+          ".exe",
+          ".html",
+          ".rar",
+          ".zip"
+        ]
       },
       "public_sharing": {
         "value": true,
@@ -20085,19 +20228,29 @@
       {
         "label": "Upload and save files and folders",
         "url": "https://support.microsoft.com/en-us/office/upload-and-save-files-and-folders-to-onedrive-a5710114-6aeb-4bf5-a336-dffa7cc0b77a",
-        "retrieved_at": "2026-05-01",
+        "retrieved_at": "2026-05-03",
         "notes": "Official Microsoft support says OneDrive can store over 300 types of files and gives browser upload instructions for files and folders."
+      },
+      {
+        "label": "OneDrive restrictions and limitations",
+        "url": "https://support.microsoft.com/en-us/office/restrictions-and-limitations-in-onedrive-and-sharepoint-64883a5d-228e-48f5-b3d2-eb39e07630fa",
+        "retrieved_at": "2026-05-03",
+        "notes": "Official Microsoft support explains OneDrive and SharePoint sync restrictions, including temporary TMP files not syncing and local-computer files such as desktop.ini and .ds_store not normally syncing."
       }
     ],
     "content": {
       "allowed_file_types": {
         "mode": "all-or-most",
-        "notes": "Microsoft support says OneDrive can store over 300 types of files. This is not a complete extension allowlist, but it supports broad file storage subject to Microsoft account and policy limits.",
+        "notes": "Microsoft says OneDrive can store many file types, but official sync restrictions list temporary TMP files and local-computer files such as .ds_store as normally not syncing. The blocked list records extension-like sync restrictions, not a complete upload blocklist.",
         "source_refs": [
-          5
+          5,
+          6
         ],
         "allowed_extensions": [],
-        "blocked_extensions": []
+        "blocked_extensions": [
+          ".ds_store",
+          ".tmp"
+        ]
       },
       "public_sharing": {
         "value": true,
@@ -23364,12 +23517,15 @@
     "content": {
       "allowed_file_types": {
         "mode": "videos-only",
-        "notes": "The homepage and API docs position SaveFiles as a video host. The homepage says legal adult content is allowed but CSAM is strictly prohibited.",
+        "notes": "The homepage and API docs position SaveFiles as a video host; official API examples name .avi local video uploads and .mp4 remote video uploads.",
         "source_refs": [
           0,
           1
         ],
-        "allowed_extensions": [],
+        "allowed_extensions": [
+          ".avi",
+          ".mp4"
+        ],
         "blocked_extensions": []
       },
       "public_sharing": {
@@ -23409,8 +23565,8 @@
       {
         "label": "SaveFiles API docs",
         "url": "https://savefiles.com/api.html",
-        "retrieved_at": "2026-05-01",
-        "notes": "Official API docs provide account, upload, remote URL, subtitle, file, folder, and cURL upload examples."
+        "retrieved_at": "2026-05-03",
+        "notes": "Official API docs cover account, upload server, video uploads, URL uploads, subtitle uploads, file info/list/edit/clone/delete, folder operations, cURL examples, .avi local upload examples, and .mp4 remote upload examples."
       },
       {
         "label": "PolyUploader supported-hosts table",
@@ -24516,11 +24672,15 @@
     "content": {
       "allowed_file_types": {
         "mode": "media-only",
-        "notes": "The FAQ says all video format files are allowed, subject to copyright restrictions.",
+        "notes": "The FAQ says video-format files are allowed, and the official API examples name .avi local video uploads and .mp4 remote video uploads.",
         "source_refs": [
-          1
+          1,
+          2
         ],
-        "allowed_extensions": [],
+        "allowed_extensions": [
+          ".avi",
+          ".mp4"
+        ],
         "blocked_extensions": []
       },
       "public_sharing": {
@@ -24966,11 +25126,15 @@
     "content": {
       "allowed_file_types": {
         "mode": "media-only",
-        "notes": "The FAQ says all video-format files can be uploaded.",
+        "notes": "The FAQ says video-format files can be uploaded, and the official API examples name .avi local video uploads and .mp4 remote video uploads.",
         "source_refs": [
-          0
+          0,
+          1
         ],
-        "allowed_extensions": [],
+        "allowed_extensions": [
+          ".avi",
+          ".mp4"
+        ],
         "blocked_extensions": []
       },
       "public_sharing": {
@@ -25073,8 +25237,8 @@
       {
         "label": "API",
         "url": "https://strtape.tech/api",
-        "retrieved_at": "2026-05-01",
-        "notes": "API page documents the Streamtape API base URL, HTTPS requirement, account, upload, remote upload, file/folder management, conversion, and embed endpoints."
+        "retrieved_at": "2026-05-03",
+        "notes": "API page documents the Streamtape API base URL, HTTPS requirement, account, upload, remote upload, file/folder management, conversion, embed endpoints, and .mp4 video examples."
       },
       {
         "label": "FMHY video file hosts seed",
@@ -25086,12 +25250,14 @@
     "content": {
       "allowed_file_types": {
         "mode": "video-only",
-        "notes": "The homepage and API are video-host oriented; the reviewed first-party pages do not publish a full extension allowlist.",
+        "notes": "The homepage and API are video-host oriented; official API examples name .mp4 video files, while subtitle and thumbnail flows are documented separately.",
         "source_refs": [
           0,
           1
         ],
-        "allowed_extensions": [],
+        "allowed_extensions": [
+          ".mp4"
+        ],
         "blocked_extensions": []
       },
       "public_sharing": {
@@ -27205,8 +27371,8 @@
       {
         "label": "ThumbSnap homepage",
         "url": "https://thumbsnap.com/",
-        "retrieved_at": "2026-05-01",
-        "notes": "Official homepage returned HTTP 200 in direct testing; meta text says free photo/video hosting with unlimited uploads up to 48 MB, and page JavaScript sets tsMaxSizeMb to 48."
+        "retrieved_at": "2026-05-03",
+        "notes": "Official homepage returned HTTP 200 in direct testing; meta text says free photo/video hosting with unlimited uploads up to 48 MB, the upload input accepts image/video MIME categories, and page code publishes image/video examples including AVIF/GIF/GIFV/JPEG/JPG/MP4/PNG/WEBM/WEBP."
       },
       {
         "label": "FMHY Image Hosts",
@@ -27224,11 +27390,21 @@
     "content": {
       "allowed_file_types": {
         "mode": "media-only",
-        "notes": "The upload input accepts image/* and video/*, and the page says Photo / Video upload.",
+        "notes": "The upload input accepts image/* and video/*, the page says Photo / Video upload, and current page code publishes these image/video examples. This is an evidence-backed example list, not a complete extension allowlist.",
         "source_refs": [
           0
         ],
-        "allowed_extensions": [],
+        "allowed_extensions": [
+          ".avif",
+          ".gif",
+          ".gifv",
+          ".jpeg",
+          ".jpg",
+          ".mp4",
+          ".png",
+          ".webm",
+          ".webp"
+        ],
         "blocked_extensions": []
       },
       "public_sharing": {
@@ -27687,18 +27863,32 @@
         "url": "https://support.tresorit.com/hc/en-us/articles/29714482095378-Upload-content",
         "retrieved_at": "2026-05-01",
         "notes": "Official Tresorit upload help says original folder structure, size, and format are preserved when uploading single files, multiple files, or folders."
+      },
+      {
+        "label": "Tresorit files excluded from sync",
+        "url": "https://support.tresorit.com/hc/en-us/articles/216114257-Files-excluded-from-sync",
+        "retrieved_at": "2026-05-03",
+        "notes": "Official Tresorit support lists excluded sync patterns including *.tmp, *.onetmp, *.kate-swp, *.lnk, *.crdownload, and *.part_*."
       }
     ],
     "content": {
       "allowed_file_types": {
         "mode": "all-or-most",
-        "notes": "Tresorit's upload help says uploaded single files, multiple files, and folders preserve original structure, size, and format. Basic-plan size/link limits still apply separately.",
+        "notes": "Tresorit upload help preserves original file format for uploads, but official sync help lists extension-like file patterns excluded from syncing. The blocked list records those sync exclusions, not a complete upload blocklist.",
         "source_refs": [
           5,
-          4
+          4,
+          6
         ],
         "allowed_extensions": [],
-        "blocked_extensions": []
+        "blocked_extensions": [
+          ".crdownload",
+          ".kate-swp",
+          ".lnk",
+          ".onetmp",
+          ".part_*",
+          ".tmp"
+        ]
       },
       "public_sharing": {
         "value": true,
@@ -28834,8 +29024,8 @@
       {
         "label": "FAQ",
         "url": "https://www.upload.ee/faq.html",
-        "retrieved_at": "2026-04-26",
-        "notes": "Current max upload size, retention rules, and registered-user advantages."
+        "retrieved_at": "2026-05-03",
+        "notes": "Current FAQ verifies max upload size, retention rules, registered-user advantages, broad file-format support, and the guest restriction on executable files: exe, msi, pif, com, and bat."
       },
       {
         "label": "Rules",
@@ -28847,12 +29037,18 @@
     "content": {
       "allowed_file_types": {
         "mode": "all_except_prohibited",
-        "notes": "The FAQ currently says Upload.ee supports all known and unknown file formats, but executables like exe, msi, pif, com, and bat can only be uploaded by registered users, and illegal/copyrighted content is forbidden.",
+        "notes": "Upload.ee supports all known and unknown file formats, but its FAQ says executable files with these extensions can only be uploaded by registered users. The blocked list records the guest/anonymous restriction.",
         "source_refs": [
-          0
+          1
         ],
         "allowed_extensions": [],
-        "blocked_extensions": []
+        "blocked_extensions": [
+          ".bat",
+          ".com",
+          ".exe",
+          ".msi",
+          ".pif"
+        ]
       },
       "public_sharing": {
         "value": true,
@@ -30626,12 +30822,13 @@
     "content": {
       "allowed_file_types": {
         "mode": "media-only",
-        "notes": "The API docs and homepage position the service around video upload and video streaming.",
+        "notes": "The official API examples name .mp4 video upload inputs, plus separate subtitle and poster upload flows.",
         "source_refs": [
-          0,
           1
         ],
-        "allowed_extensions": [],
+        "allowed_extensions": [
+          ".mp4"
+        ],
         "blocked_extensions": []
       },
       "public_sharing": {
@@ -31152,11 +31349,14 @@
     "content": {
       "allowed_file_types": {
         "mode": "media-only",
-        "notes": "The FAQ says users can upload any video format.",
+        "notes": "The FAQ says users can upload any video format; official API remote-upload examples use .mp4 video files.",
         "source_refs": [
-          0
+          0,
+          1
         ],
-        "allowed_extensions": [],
+        "allowed_extensions": [
+          ".mp4"
+        ],
         "blocked_extensions": []
       },
       "public_sharing": {
@@ -31196,8 +31396,8 @@
       {
         "label": "Vinovo API",
         "url": "https://vinovo.si/api",
-        "retrieved_at": "2026-05-01",
-        "notes": "Official API docs verify API-token account endpoints, upload server, cURL upload example, clone/copy, remote URL upload, and remote upload status/list endpoints."
+        "retrieved_at": "2026-05-03",
+        "notes": "Official API docs verify API-token account endpoints, upload server, cURL upload example, clone/copy, remote URL upload, remote upload status/list endpoints, and .mp4 remote upload examples."
       },
       {
         "label": "PolyUploader supported-hosts table",
