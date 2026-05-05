@@ -145,17 +145,21 @@ body::after {
   opacity: 0.5;
 }
 
-html[data-dataset-mode="simple"] {
+html[data-dataset-mode="simple"],
+html[data-dataset-mode="guided"] {
   background: var(--bg);
   background-attachment: scroll;
 }
 
 html[data-dataset-mode="simple"] body::before,
-html[data-dataset-mode="simple"] body::after {
+html[data-dataset-mode="simple"] body::after,
+html[data-dataset-mode="guided"] body::before,
+html[data-dataset-mode="guided"] body::after {
   display: none;
 }
 
-html[data-dataset-mode="simple"] .dataset-simple {
+html[data-dataset-mode="simple"] .dataset-simple,
+html[data-dataset-mode="guided"] .dataset-simple {
   background: var(--bg);
 }
 

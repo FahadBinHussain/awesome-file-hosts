@@ -46,7 +46,8 @@ const DATASET_VIEW_MODE_STORAGE_KEY = "awesome-file-hosts:dataset-view-mode";
 
 type ServiceMode = "hosts" | "alternatives" | "mirrors" | "migration";
 type DatasetMode = ServiceMode;
-type DatasetViewMode = "full" | "simple";
+type DatasetViewMode = "full" | "simple" | "guided";
+type GuidedIntent = "quick" | "large" | "private" | "developer" | "durable";
 type HostSortKey =
   | "name"
   | "free_model"
@@ -1156,7 +1157,7 @@ function serviceModeLabel(mode: ServiceMode) {
 }
 
 function normalizeDatasetViewMode(value: string | null | undefined): DatasetViewMode | null {
-  if (value === "simple" || value === "full") return value;
+  if (value === "simple" || value === "guided" || value === "full") return value;
   return null;
 }
 
@@ -1180,7 +1181,8 @@ function DatasetViewModeToggle({
     >
       {([
         { id: "full", label: "Full", icon: <Database size={14} weight="fill" /> },
-        { id: "simple", label: "Simple", icon: <Table size={14} weight="fill" /> }
+        { id: "simple", label: "Simple", icon: <Table size={14} weight="fill" /> },
+        { id: "guided", label: "Guided", icon: <Funnel size={14} weight="fill" /> }
       ] satisfies Array<{ id: DatasetViewMode; label: string; icon: ReactNode }>).map((option) => (
         <button
           key={option.id}
@@ -1433,6 +1435,391 @@ function CitedValue({
         refs={refs}
         className="inline-flex items-center gap-0.5 whitespace-nowrap align-super"
       />
+    </div>
+  );
+}
+
+function bestMaxFileMb(host: HostRecord) {
+  const values = [
+    host.sortMetrics.maxFileGuestMb,
+    host.sortMetrics.maxFileAccountMb
+  ].filter((value): value is number => typeof value === "number");
+  return values.length ? Math.max(...values) : null;
+}
+
+function bestStorageMb(host: HostRecord) {
+  const values = [
+    host.sortMetrics.storageGuestMb,
+    host.sortMetrics.storageAccountMb
+  ].filter((value): value is number => typeof value === "number");
+  return values.length ? Math.max(...values) : null;
+}
+
+function bandScore(value: number | null, bands: Array<[number, number]>) {
+  if (value === null) return 0;
+  return bands.reduce((score, [minimum, points]) => (value >= minimum ? points : score), 0);
+}
+
+function freeFirstScore(host: HostRecord) {
+  if (host.free_model.value === "free-forever") return 4;
+  if (host.free_model.value === "free-trial") return 1;
+  if (host.free_model.value === "credit-card-trial") return -1;
+  if (host.free_model.value === "paid-only") return -3;
+  return 0;
+}
+
+function retentionScore(host: HostRecord) {
+  const rank = retentionSortRank(host);
+  if (rank.kind === "unknown") return 0;
+  if (rank.value >= NO_EXPIRY_RETENTION_SORT_VALUE) return 5;
+  if (rank.value >= 365) return 4;
+  if (rank.value >= 90) return 3;
+  if (rank.value >= 30) return 2;
+  return 1;
+}
+
+function scoreGuidedHost(host: HostRecord, intent: GuidedIntent) {
+  let score = freeFirstScore(host);
+
+  if (host.security.https_only) score += 1;
+  if (host.sources.length >= 2) score += 1;
+
+  if (intent === "quick") {
+    score += host.account.required === false ? 5 : host.account.required === null ? 1 : -2;
+    score += host.content.public_sharing?.value === true ? 3 : 0;
+    score += bandScore(host.sortMetrics.maxFileGuestMb, [
+      [25, 1],
+      [100, 2],
+      [500, 3],
+      [1024, 4]
+    ]);
+    score += retentionScore(host) >= 2 ? 1 : 0;
+  }
+
+  if (intent === "large") {
+    score += bandScore(bestMaxFileMb(host), [
+      [100, 1],
+      [512, 2],
+      [1024, 3],
+      [5120, 5],
+      [10240, 6]
+    ]);
+    score += bandScore(bestStorageMb(host), [
+      [1024, 1],
+      [10240, 2],
+      [102400, 3]
+    ]);
+    score += host.content.public_sharing?.value === true ? 1 : 0;
+  }
+
+  if (intent === "private") {
+    score += host.security.e2ee ? 6 : 0;
+    score += host.security.https_only ? 2 : -2;
+    score += host.account.required === false ? 1 : 0;
+    score += host.content.public_sharing?.value === false ? 1 : 0;
+  }
+
+  if (intent === "developer") {
+    score += host.developer.api_available ? 6 : -3;
+    score += host.developer.cli_friendly ? 3 : 0;
+    score += host.security.https_only ? 1 : 0;
+    score += retentionScore(host) >= 2 ? 1 : 0;
+  }
+
+  if (intent === "durable") {
+    score += retentionScore(host) * 2;
+    score += bandScore(bestStorageMb(host), [
+      [1024, 1],
+      [10240, 2],
+      [102400, 3]
+    ]);
+    score += host.account.required === true ? 1 : 0;
+    score += host.free_model.value === "free-forever" ? 2 : 0;
+  }
+
+  return score;
+}
+
+function guidedReasons(host: HostRecord, intent: GuidedIntent) {
+  const reasons: string[] = [];
+
+  if (host.free_model.value === "free-forever") reasons.push("Free-first");
+  if (host.account.required === false) reasons.push("Guest uploads");
+  if (host.content.public_sharing?.value === true) reasons.push("Public sharing");
+  if (host.security.e2ee) reasons.push("E2EE");
+  if (host.developer.api_available) reasons.push("API");
+  if (host.developer.cli_friendly) reasons.push("CLI-friendly");
+
+  if (intent === "large" && bestMaxFileMb(host) !== null) reasons.unshift("Large-file fit");
+  if (intent === "durable" && retentionScore(host) >= 3) reasons.unshift("Better retention");
+  if (intent === "private" && host.security.https_only) reasons.unshift("HTTPS-only");
+  if (intent === "developer" && host.developer.api_available) reasons.unshift("Automation-ready");
+
+  return Array.from(new Set(reasons)).slice(0, 4);
+}
+
+function guidedCautions(host: HostRecord, intent: GuidedIntent) {
+  const cautions: string[] = [];
+
+  if (host.account.required === true) cautions.push("Account required");
+  if (bestMaxFileMb(host) === null) cautions.push("Max file size unclear");
+  if (host.sortMetrics.retentionDays === null) cautions.push("Retention unclear");
+  if (intent === "private" && !host.security.e2ee) cautions.push("No E2EE claim");
+  if (intent === "developer" && !host.developer.api_available) cautions.push("No API listed");
+  if (intent === "quick" && host.account.required !== false) cautions.push("May not be a fast guest upload");
+
+  return cautions.slice(0, 3);
+}
+
+function GuidedDatasetMode({
+  hosts,
+  intent,
+  onIntentChange,
+  onShowSpreadsheet,
+  onSelectHost,
+  selectedHostId
+}: {
+  hosts: HostRecord[];
+  intent: GuidedIntent;
+  onIntentChange: (intent: GuidedIntent) => void;
+  onShowSpreadsheet: () => void;
+  onSelectHost: (hostId: string) => void;
+  selectedHostId: string | null;
+}) {
+  const intentOptions: Array<{
+    id: GuidedIntent;
+    label: string;
+    helper: string;
+    icon: ReactNode;
+  }> = [
+    {
+      id: "quick",
+      label: "Quick upload",
+      helper: "No-account uploads and easy public sharing.",
+      icon: <GlobeHemisphereWest size={16} weight="fill" />
+    },
+    {
+      id: "large",
+      label: "Large files",
+      helper: "Bigger max file limits and useful storage.",
+      icon: <Database size={16} weight="fill" />
+    },
+    {
+      id: "private",
+      label: "Private sharing",
+      helper: "Encryption and stricter security signals.",
+      icon: <ShieldCheck size={16} weight="fill" />
+    },
+    {
+      id: "developer",
+      label: "Developer/API",
+      helper: "API, CLI, and automation-friendly workflows.",
+      icon: <TerminalWindow size={16} weight="fill" />
+    },
+    {
+      id: "durable",
+      label: "Long-term storage",
+      helper: "Retention and storage matter more than speed.",
+      icon: <CheckCircle size={16} weight="fill" />
+    }
+  ];
+  const recommendations = useMemo(() => {
+    return hosts
+      .map((host) => ({ host, score: scoreGuidedHost(host, intent) }))
+      .sort((left, right) => right.score - left.score || left.host.name.localeCompare(right.host.name))
+      .slice(0, 8);
+  }, [hosts, intent]);
+  const topScore = Math.max(...recommendations.map((item) => item.score), 1);
+
+  return (
+    <section className="dataset-guided px-3 py-4 md:px-6">
+      <div className="mx-auto grid w-full max-w-[1320px] gap-5 xl:grid-cols-[340px_minmax(0,1fr)]">
+        <aside className="min-w-0">
+          <div className="sticky top-20 space-y-3">
+            <div>
+              <div className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--text-muted)]">
+                Pick a need
+              </div>
+              <h1 className="mt-2 text-2xl font-semibold tracking-tight text-[var(--text-primary)]">
+                Find a host without learning every filter first.
+              </h1>
+              <p className="mt-2 text-sm leading-6 text-[var(--text-secondary)]">
+                Choose the closest goal. The results use the same verified records as the spreadsheet.
+              </p>
+            </div>
+
+            <div className="grid gap-2">
+              {intentOptions.map((option) => (
+                <button
+                  key={option.id}
+                  type="button"
+                  onClick={() => onIntentChange(option.id)}
+                  className={[
+                    "group flex w-full items-start gap-3 rounded-[var(--radius-control)] border p-3 text-left transition-colors",
+                    intent === option.id
+                      ? "border-[var(--accent)]/35 bg-[var(--accent-soft)] text-[var(--text-primary)]"
+                      : "border-[var(--line)] bg-[var(--surface-1)] text-[var(--text-secondary)] hover:border-[var(--line-strong)] hover:bg-[var(--surface-2)] hover:text-[var(--text-primary)]"
+                  ].join(" ")}
+                >
+                  <span className="mt-0.5 text-[var(--accent)]">{option.icon}</span>
+                  <span className="min-w-0">
+                    <span className="block text-sm font-semibold">{option.label}</span>
+                    <span className="mt-1 block text-xs leading-5 text-[var(--text-muted)]">{option.helper}</span>
+                  </span>
+                </button>
+              ))}
+            </div>
+
+            <button
+              type="button"
+              onClick={onShowSpreadsheet}
+              className="inline-flex w-full items-center justify-center gap-2 rounded-[var(--radius-control)] border border-[var(--line)] bg-[var(--bg-elevated)] px-3 py-2.5 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--accent)]/40 hover:text-[var(--text-primary)]"
+            >
+              <Table size={16} weight="fill" />
+              Show spreadsheet
+            </button>
+          </div>
+        </aside>
+
+        <div className="min-w-0">
+          <div className="mb-3 flex flex-wrap items-end justify-between gap-3">
+            <div>
+              <div className="text-[10px] font-semibold uppercase tracking-[0.24em] text-[var(--text-muted)]">
+                Recommended matches
+              </div>
+              <div className="mt-1 text-sm text-[var(--text-secondary)]">
+                Top {recommendations.length} verified hosts ranked for {intentOptions.find((item) => item.id === intent)?.label.toLowerCase()}.
+              </div>
+            </div>
+          </div>
+
+          <div className="grid gap-3">
+            {recommendations.map(({ host, score }, index) => (
+              <GuidedHostCard
+                key={host.id}
+                host={host}
+                score={score}
+                topScore={topScore}
+                intent={intent}
+                rank={index + 1}
+                active={selectedHostId === host.id}
+                onSelect={() => onSelectHost(host.id)}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function GuidedHostCard({
+  host,
+  score,
+  topScore,
+  intent,
+  rank,
+  active,
+  onSelect
+}: {
+  host: HostRecord;
+  score: number;
+  topScore: number;
+  intent: GuidedIntent;
+  rank: number;
+  active: boolean;
+  onSelect: () => void;
+}) {
+  const fit = Math.max(2, Math.min(5, Math.round((score / topScore) * 5)));
+  const accountMaxField =
+    host.limits.max_file_size_account ??
+    (host.account.required === true ? host.limits.max_file_size : host.limits.max_file_size_guest);
+  const accountStorageField =
+    host.limits.storage_account ??
+    (host.account.required === true ? host.limits.storage : host.limits.storage_guest);
+  const reasons = guidedReasons(host, intent);
+  const cautions = guidedCautions(host, intent);
+
+  return (
+    <article
+      className={[
+        "rounded-[var(--radius-panel)] border bg-[var(--surface-1)] p-4 transition-colors",
+        active ? "border-[var(--accent)]/45 bg-[var(--accent-soft)]/30" : "border-[var(--line)] hover:border-[var(--line-strong)]"
+      ].join(" ")}
+    >
+      <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+        <div className="min-w-0">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="rounded-[var(--radius-control)] bg-[var(--bg-elevated)] px-2 py-1 text-xs font-semibold text-[var(--text-muted)]">
+              #{rank}
+            </span>
+            <span className="rounded-[var(--radius-control)] bg-[var(--accent-soft)] px-2 py-1 text-xs font-semibold text-[var(--accent-soft-content)]">
+              {fit}/5 fit
+            </span>
+          </div>
+          <h2 className="mt-3 text-xl font-semibold tracking-tight text-[var(--text-primary)]">{host.name}</h2>
+          <p className="mt-1 max-w-3xl text-sm leading-6 text-[var(--text-secondary)]">{host.summary}</p>
+          <div className="mt-3 flex flex-wrap gap-1.5">
+            {reasons.map((reason) => (
+              <span
+                key={reason}
+                className="rounded-[var(--radius-control)] border border-[var(--line)] bg-[var(--bg)] px-2 py-1 text-xs text-[var(--text-secondary)]"
+              >
+                {reason}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex shrink-0 gap-2">
+          <a
+            href={host.url}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-[var(--radius-control)] border border-[var(--line)] bg-[var(--bg-elevated)] px-3 py-2 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--accent)]/40 hover:text-[var(--text-primary)]"
+          >
+            <LinkSimple size={15} weight="bold" />
+            Visit
+          </a>
+          <button
+            type="button"
+            onClick={onSelect}
+            className="rounded-[var(--radius-control)] border border-[var(--line)] bg-[var(--bg-elevated)] px-3 py-2 text-sm font-medium text-[var(--text-secondary)] transition-colors hover:border-[var(--accent)]/40 hover:text-[var(--text-primary)]"
+          >
+            Details
+          </button>
+        </div>
+      </div>
+
+      <div className="mt-4 grid gap-2 text-sm sm:grid-cols-2 xl:grid-cols-4">
+        <GuidedFact label="Account">
+          <CitedValue value={host.accountLabel} record={host} refs={host.account.source_refs} />
+        </GuidedFact>
+        <GuidedFact label="Max file">
+          <CitedValue value={host.datasetLabels.maxFileAccountLabel} record={host} refs={accountMaxField?.source_refs} />
+        </GuidedFact>
+        <GuidedFact label="Retention">
+          <CitedValue value={host.filters.retentionLabel} record={host} refs={host.limits.retention.source_refs} />
+        </GuidedFact>
+        <GuidedFact label="Storage">
+          <CitedValue value={host.datasetLabels.storageAccountLabel} record={host} refs={accountStorageField?.source_refs} />
+        </GuidedFact>
+      </div>
+
+      {cautions.length ? (
+        <div className="mt-3 text-xs leading-5 text-[var(--text-muted)]">
+          Watch: {cautions.join(" / ")}
+        </div>
+      ) : null}
+    </article>
+  );
+}
+
+function GuidedFact({ label, children }: { label: string; children: ReactNode }) {
+  return (
+    <div className="rounded-[var(--radius-control)] border border-[var(--line)] bg-[var(--bg)] px-3 py-2">
+      <div className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[var(--text-muted)]">{label}</div>
+      <div className="mt-1 min-w-0">{children}</div>
     </div>
   );
 }
@@ -2422,7 +2809,10 @@ export function DatasetApp({ data, initialViewMode, initialViewModeFromUrl }: Pr
   const [hiddenAdjacentQueueColumns, setHiddenAdjacentQueueColumns] = useState<string[]>([]);
   const [selectedHostId, setSelectedHostId] = useState<string | null>(null);
   const [selectedCandidateId, setSelectedCandidateId] = useState<string | null>(null);
+  const [guidedIntent, setGuidedIntent] = useState<GuidedIntent>("quick");
   const isSimpleMode = viewMode === "simple";
+  const isGuidedMode = viewMode === "guided";
+  const isPlainDatasetMode = isSimpleMode || isGuidedMode;
 
   useEffect(() => {
     let savedMode: DatasetViewMode | null = null;
@@ -2443,8 +2833,8 @@ export function DatasetApp({ data, initialViewMode, initialViewModeFromUrl }: Pr
       document.documentElement.setAttribute("data-dataset-mode", viewMode);
 
       const url = new URL(window.location.href);
-      if (viewMode === "simple") {
-        url.searchParams.set("mode", "simple");
+      if (viewMode === "simple" || viewMode === "guided") {
+        url.searchParams.set("mode", viewMode);
       } else {
         url.searchParams.delete("mode");
       }
@@ -2726,7 +3116,9 @@ export function DatasetApp({ data, initialViewMode, initialViewModeFromUrl }: Pr
   const selectedHost =
     selectedHostId === null
       ? null
-      : filteredHosts.find((host) => host.id === selectedHostId) ?? null;
+      : isGuidedMode
+        ? data.hosts.find((host) => host.id === selectedHostId) ?? null
+        : filteredHosts.find((host) => host.id === selectedHostId) ?? null;
   const selectedAdjacent =
     selectedHostId === null
       ? null
@@ -2802,6 +3194,11 @@ export function DatasetApp({ data, initialViewMode, initialViewModeFromUrl }: Pr
   function changeViewMode(nextMode: DatasetViewMode) {
     setViewMode(nextMode);
     setViewModeReady(true);
+    if (nextMode === "guided") {
+      setMode("hosts");
+      setQueueOpen(false);
+      setSelectedCandidateId(null);
+    }
   }
 
   const renderViewModeToggle = (className = "") => (
@@ -2877,14 +3274,14 @@ export function DatasetApp({ data, initialViewMode, initialViewModeFromUrl }: Pr
       <div
         className={[
           "min-h-0 flex-1",
-          isSimpleMode ? "dataset-simple px-0 py-0" : "px-4 py-6 md:px-6"
+          isPlainDatasetMode ? "dataset-simple px-0 py-0" : "px-4 py-6 md:px-6"
         ].join(" ")}
       >
         <section className="min-h-0 overflow-visible bg-transparent">
           <div
             className={[
               "relative z-20 flex flex-col border-b border-[var(--line)]",
-              isSimpleMode ? "gap-2 bg-[var(--bg)] px-3 py-2" : "gap-4 p-4"
+              isPlainDatasetMode ? "gap-2 bg-[var(--bg)] px-3 py-2" : "gap-4 p-4"
             ].join(" ")}
           >
             <div className="flex items-center justify-between gap-3 lg:hidden">
@@ -2894,7 +3291,7 @@ export function DatasetApp({ data, initialViewMode, initialViewModeFromUrl }: Pr
               {renderViewModeToggle("shrink-0")}
             </div>
 
-            {!isSimpleMode ? (
+            {!isPlainDatasetMode ? (
             <div className="flex flex-col gap-3 lg:flex-row lg:items-end lg:justify-between">
               <div className="animate-fade-in-up">
                 <div className="flex items-center gap-2">
@@ -2958,6 +3355,8 @@ export function DatasetApp({ data, initialViewMode, initialViewModeFromUrl }: Pr
             </div>
             ) : null}
 
+            {!isGuidedMode ? (
+            <>
             <div
               className={[
                 "flex flex-col xl:flex-row xl:items-center xl:justify-between",
@@ -3129,8 +3528,20 @@ export function DatasetApp({ data, initialViewMode, initialViewModeFromUrl }: Pr
                 </div>
               </div>
             )}
+            </>
+            ) : null}
           </div>
 
+          {isGuidedMode ? (
+            <GuidedDatasetMode
+              hosts={data.hosts}
+              intent={guidedIntent}
+              onIntentChange={setGuidedIntent}
+              onShowSpreadsheet={() => changeViewMode("simple")}
+              onSelectHost={setSelectedHostId}
+              selectedHostId={selectedHostId}
+            />
+          ) : (
           <div className={isSimpleMode ? "relative z-0 pb-0" : "relative z-0 -mx-4 pb-2 md:mx-0"}>
             {!isQueueMode && mode === "hosts" ? (
               <>
@@ -3502,6 +3913,7 @@ export function DatasetApp({ data, initialViewMode, initialViewModeFromUrl }: Pr
               </>
             )}
           </div>
+          )}
         </section>
 
       </div>

@@ -33,9 +33,11 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                 const params = new URLSearchParams(window.location.search);
                 const requestedMode = params.get('mode');
                 const savedMode = localStorage.getItem('awesome-file-hosts:dataset-view-mode');
-                const mode = requestedMode === 'simple' || requestedMode === 'full' ? requestedMode : savedMode;
-                if (mode === 'simple') {
-                  document.documentElement.setAttribute('data-dataset-mode', 'simple');
+                const mode = requestedMode === 'simple' || requestedMode === 'guided' || requestedMode === 'full'
+                  ? requestedMode
+                  : savedMode;
+                if (mode === 'simple' || mode === 'guided') {
+                  document.documentElement.setAttribute('data-dataset-mode', mode);
                 }
               }
             } catch {}

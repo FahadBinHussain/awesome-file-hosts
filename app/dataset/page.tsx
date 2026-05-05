@@ -15,8 +15,8 @@ export default async function DatasetPage({ searchParams }: DatasetPageProps) {
   const data = getSiteData();
   const params = await searchParams;
   const mode = firstParam(params?.mode);
-  const initialViewMode = mode === "simple" ? "simple" : "full";
-  const initialViewModeFromUrl = mode === "simple" || mode === "full";
+  const initialViewMode = mode === "simple" || mode === "guided" ? mode : "full";
+  const initialViewModeFromUrl = mode === "simple" || mode === "guided" || mode === "full";
 
   return (
     <DatasetApp
