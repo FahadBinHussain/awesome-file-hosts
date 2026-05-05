@@ -193,7 +193,40 @@ html[data-dataset-mode="simple"] .dataset-simple .dataset-table-header {
 }
 
 html[data-dataset-mode="simple"] .dataset-simple .dataset-row {
+  border-bottom-color: color-mix(in oklab, var(--color-base-content) 13%, transparent);
   transform: none !important;
+}
+
+html[data-dataset-mode="simple"] .dataset-simple .dataset-row-even {
+  --dataset-row-bg: color-mix(in oklab, var(--color-base-content) 1.6%, var(--bg) 98.4%);
+  background-color: var(--dataset-row-bg);
+}
+
+html[data-dataset-mode="simple"] .dataset-simple .dataset-row-odd {
+  --dataset-row-bg: color-mix(in oklab, var(--color-base-content) 4.8%, var(--bg) 95.2%);
+  background-color: var(--dataset-row-bg);
+}
+
+html[data-dataset-mode="simple"] .dataset-simple .dataset-row:hover:not(.dataset-row-active) {
+  --dataset-row-bg: color-mix(in oklab, var(--accent) 8%, var(--bg) 92%);
+  background-color: var(--dataset-row-bg);
+}
+
+html[data-dataset-mode="simple"] .dataset-simple .dataset-row-active {
+  --dataset-row-bg: color-mix(in oklab, var(--accent) 14%, var(--bg) 86%);
+  background-color: var(--dataset-row-bg);
+}
+
+html[data-dataset-mode="simple"] .dataset-simple .dataset-row-cell {
+  border-right: 1px solid color-mix(in oklab, var(--color-base-content) 9%, transparent);
+}
+
+html[data-dataset-mode="simple"] .dataset-simple .dataset-row-cell:last-child {
+  border-right: 0;
+}
+
+html[data-dataset-mode="simple"] .dataset-simple .dataset-row-cell.sticky {
+  background-color: var(--dataset-row-bg) !important;
 }
 
 html[data-dataset-mode="simple"] .dataset-simple .cited-value {

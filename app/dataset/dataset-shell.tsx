@@ -2841,12 +2841,13 @@ export function DatasetApp({ data, initialViewMode, initialViewModeFromUrl }: Pr
       ? "px-3 py-1 text-[10px] font-semibold tracking-[0.12em]"
       : "px-4 py-2 text-[11px] font-bold tracking-[0.3em]"
   ].join(" ");
-  const rowButtonClass = (active: boolean) =>
+  const rowButtonClass = (active: boolean, index: number) =>
     [
       "dataset-row group relative grid w-full cursor-pointer border-b border-[var(--line)]/50 text-left",
       isSimpleMode ? "transition-colors duration-100" : "transition-all duration-200 row-enter",
+      isSimpleMode ? (index % 2 === 0 ? "dataset-row-even" : "dataset-row-odd") : "",
       active
-        ? "bg-[var(--accent-soft)]/50 hover:bg-[var(--accent-soft)]/70"
+        ? "dataset-row-active bg-[var(--accent-soft)]/50 hover:bg-[var(--accent-soft)]/70"
         : isSimpleMode
           ? "hover:bg-[var(--surface-1)]"
           : "hover:-translate-x-0.5 hover:bg-[var(--surface-2)]"
@@ -3243,7 +3244,7 @@ export function DatasetApp({ data, initialViewMode, initialViewModeFromUrl }: Pr
                   <button
                     key={host.id}
                     onClick={() => setSelectedHostId(host.id)}
-                    className={rowButtonClass(selectedHostId === host.id)}
+                    className={rowButtonClass(selectedHostId === host.id, index)}
                     style={{ 
                       gridTemplateColumns: hostGridTemplate,
                       animationDelay: `${Math.min(index * 0.012, 0.5)}s`
@@ -3289,7 +3290,7 @@ export function DatasetApp({ data, initialViewMode, initialViewModeFromUrl }: Pr
                     <button
                       key={record.id}
                       onClick={() => setSelectedHostId(record.id)}
-                      className={rowButtonClass(selectedHostId === record.id)}
+                      className={rowButtonClass(selectedHostId === record.id, index)}
                       style={{
                         gridTemplateColumns: adjacentGridTemplate,
                         animationDelay: `${Math.min(index * 0.012, 0.5)}s`
@@ -3422,7 +3423,7 @@ export function DatasetApp({ data, initialViewMode, initialViewModeFromUrl }: Pr
                   <button
                     key={candidate.id}
                     onClick={() => setSelectedCandidateId(candidate.id)}
-                    className={rowButtonClass(selectedCandidateId === candidate.id)}
+                    className={rowButtonClass(selectedCandidateId === candidate.id, index)}
                     style={{ 
                       gridTemplateColumns: queueGridTemplate,
                       animationDelay: `${Math.min(index * 0.012, 0.5)}s`
@@ -3474,7 +3475,7 @@ export function DatasetApp({ data, initialViewMode, initialViewModeFromUrl }: Pr
                     <button
                       key={candidate.id}
                       onClick={() => setSelectedCandidateId(candidate.id)}
-                      className={rowButtonClass(selectedCandidateId === candidate.id)}
+                      className={rowButtonClass(selectedCandidateId === candidate.id, index)}
                       style={{
                         gridTemplateColumns: adjacentQueueGridTemplate,
                         animationDelay: `${Math.min(index * 0.012, 0.5)}s`
