@@ -318,6 +318,17 @@ select {
   100% { background-position: 400px 0; }
 }
 
+@keyframes loading-link-bar {
+  0% { transform: translateX(-80%); }
+  100% { transform: translateX(180%); }
+}
+
+@keyframes route-loading-bar {
+  0% { transform: translateX(-100%) scaleX(0.35); }
+  50% { transform: translateX(20%) scaleX(0.65); }
+  100% { transform: translateX(220%) scaleX(0.35); }
+}
+
 .animate-fade-in-up {
   animation: fade-in-up 0.5s var(--ease-out-expo) forwards;
 }
@@ -357,6 +368,39 @@ select {
   );
   background-size: 400px 100%;
   animation: shimmer 2s infinite linear;
+}
+
+.loading-link {
+  position: relative;
+}
+
+.loading-link-pending {
+  pointer-events: none;
+}
+
+.loading-link-bar {
+  position: absolute;
+  inset-inline: 0.75rem;
+  bottom: 0.25rem;
+  height: 2px;
+  overflow: hidden;
+  border-radius: var(--radius-pill);
+  background: color-mix(in oklab, currentColor 20%, transparent);
+}
+
+.loading-link-bar > span {
+  display: block;
+  height: 100%;
+  width: 45%;
+  border-radius: inherit;
+  background: currentColor;
+  animation: loading-link-bar 0.85s var(--ease-smooth) infinite;
+}
+
+.route-loading-bar {
+  width: 45%;
+  transform-origin: left center;
+  animation: route-loading-bar 1.2s var(--ease-fluid) infinite;
 }
 
 /* Premium pulse animation */
@@ -440,7 +484,9 @@ select {
   .animate-gradient-shift,
   .animate-glow-pulse,
   .animate-pulse,
-  .skeleton-shimmer {
+  .skeleton-shimmer,
+  .loading-link-bar > span,
+  .route-loading-bar {
     animation: none !important;
   }
 

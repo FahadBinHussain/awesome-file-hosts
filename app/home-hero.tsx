@@ -2,6 +2,7 @@
 
 import { ArrowRight, Database, GitBranch, ShieldCheck, Sparkle } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
+import { LoadingLink } from "@/components/loading-link";
 
 export function HomeHero({ stats }: { stats: { verifiedHosts: number; pendingCandidates: number; rejectedCandidates: number } }) {
   return (
@@ -48,14 +49,16 @@ export function HomeHero({ stats }: { stats: { verifiedHosts: number; pendingCan
 
         {/* CTA buttons */}
         <div className="animate-fade-in-up mb-14 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center md:mb-16 md:gap-4" style={{ animationDelay: "0.3s" }}>
-          <Link
+          <LoadingLink
             href="/dataset"
             className="group relative inline-flex min-h-[52px] items-center justify-center gap-2 overflow-hidden rounded-[var(--radius-2xl)] border border-[var(--accent)]/30 bg-[var(--accent)] px-6 py-3.5 text-center font-semibold text-[var(--accent-content)] shadow-[0_0_40px_-8px_var(--accent-glow)] transition-all hover:scale-[1.02] hover:shadow-[0_0_60px_-8px_var(--accent-glow)] sm:px-8 sm:py-4"
+            pendingClassName="scale-[0.99]"
+            loadingLabel="Loading dataset…"
           >
             <span className="relative z-10">Explore Dataset</span>
             <ArrowRight size={20} weight="bold" className="relative z-10 transition-transform group-hover:translate-x-1" />
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-          </Link>
+          </LoadingLink>
           
           <a
             href="https://github.com/FahadBinHussain/awesome-file-hosts"

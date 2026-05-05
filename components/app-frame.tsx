@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { Database, House, Table } from "@phosphor-icons/react/dist/ssr";
+import { LoadingLink } from "./loading-link";
 import { ThemeSwitcher } from "./theme-switcher";
 
 type Props = {
@@ -21,7 +22,7 @@ function NavLink({
   label: string;
 }) {
   return (
-    <Link
+    <LoadingLink
       href={href}
       className={[
         "group relative inline-flex items-center gap-1.5 px-2 py-2 text-sm font-medium transition-all duration-200 sm:gap-2 sm:px-3",
@@ -29,6 +30,7 @@ function NavLink({
           ? "text-[var(--text-primary)]"
           : "text-[var(--text-muted)] hover:text-[var(--text-primary)]"
       ].join(" ")}
+      loadingLabel={`Loading ${label}…`}
     >
       <span className={[
         "transition-all duration-200",
@@ -40,7 +42,7 @@ function NavLink({
       {active && (
         <div className="absolute -bottom-3 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[var(--accent)] to-transparent" />
       )}
-    </Link>
+    </LoadingLink>
   );
 }
 
