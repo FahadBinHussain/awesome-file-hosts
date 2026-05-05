@@ -196,9 +196,15 @@ html[data-dataset-mode="simple"] .dataset-simple .dataset-table-header {
   backdrop-filter: none;
 }
 
+.dataset-row {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 44px;
+}
+
 html[data-dataset-mode="simple"] .dataset-simple .dataset-row {
   border-bottom-color: color-mix(in oklab, var(--color-base-content) 13%, transparent);
   transform: none !important;
+  contain-intrinsic-size: auto 32px;
 }
 
 html[data-dataset-mode="simple"] .dataset-simple .dataset-row-even {
