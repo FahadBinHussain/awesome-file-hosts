@@ -1,5 +1,684 @@
 [
   {
+    "name": "Aurora Files",
+    "url": "https://afterlogic.org/aurora-files",
+    "summary": "Open-source self-hosted private cloud storage and file-sharing platform with web, mobile, desktop sync, public links, WebDAV, S3-backed storage, and optional browser-side encryption.",
+    "account": {
+      "required": true,
+      "benefits": "Users need an account on the deployed Aurora Files instance to manage files; external contacts can receive secure file and folder links.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://github.com/afterlogic/aurora-files",
+      "cli_friendly": true,
+      "cli_example": null,
+      "notes": "Aurora Files is developed on GitHub, can use S3-compatible storage, and exposes WebDAV-style access for compatible clients; automation still depends on the operator's deployment.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "deployment-dependent-storage",
+        "notes": "Aurora Files is a self-hosted storage platform; accepted file types, quotas, and enforcement depend on the instance configuration and backend storage.",
+        "source_refs": [
+          0,
+          1
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "The official page says users can share files and folders with teammates, teams, and external contacts via secure links.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": true,
+      "server_side_encryption": null,
+      "notes": "Transport policy is deployment-dependent for self-hosted instances. Aurora Files also advertises browser-side AES-256 encryption where the server does not receive encryption keys.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "tags": [
+      "alternative-method",
+      "self-hosted",
+      "open-source",
+      "cloud-storage",
+      "file-sharing",
+      "webdav",
+      "e2ee"
+    ],
+    "sources": [
+      {
+        "label": "Aurora Files product page",
+        "url": "https://afterlogic.org/aurora-files",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official product page describes Aurora Files as open-source private cloud storage for teams and personal users, with sharing, secure links, web/mobile/desktop access, browser-side AES-256 encryption, and S3-compatible storage support."
+      },
+      {
+        "label": "Aurora Files GitHub repository",
+        "url": "https://github.com/afterlogic/aurora-files",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official source repository identifies Aurora Files as an AGPLv3 open-source file storage platform."
+      },
+      {
+        "label": "Awesome Storage seed",
+        "url": "https://github.com/okhosting/awesome-storage",
+        "retrieved_at": "2026-05-06",
+        "notes": "Discovery seed listing Aurora Files under file sharing."
+      }
+    ],
+    "kind": "alternative",
+    "profile": {
+      "primary_use": {
+        "value": "Self-hosted private cloud storage",
+        "notes": "Aurora Files is a self-hosted file storage and sharing platform rather than a public file-hosting service.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "sharing_surface": {
+        "value": "User/team shares and secure external links",
+        "notes": "Sharing happens through instance accounts, team spaces, and secure file or folder links for external contacts.",
+        "source_refs": [
+          0
+        ]
+      },
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "No single public hosted limit applies; upload size and storage quotas depend on the instance and backend configuration.",
+        "source_refs": [
+          0
+        ]
+      },
+      "persistence_model": {
+        "value": "Instance-controlled storage",
+        "notes": "Files persist according to the deploying operator's storage, account, and retention policies.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage_model": {
+        "value": "Self-hosted filesystem or S3-compatible backend",
+        "notes": "Aurora Files can store data locally or on S3-compatible storage.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Deployment-dependent",
+        "notes": "Bandwidth depends on the server, network, and storage backend chosen by the operator.",
+        "source_refs": [
+          0
+        ]
+      }
+    }
+  },
+  {
+    "name": "Garage",
+    "url": "https://garagehq.deuxfleurs.fr/",
+    "summary": "Open-source S3-compatible object store designed for self-hosted, resilient storage across modest machines, with CLI/API workflows and static website/object delivery options.",
+    "account": {
+      "required": true,
+      "benefits": "Operators create buckets and access keys; end-user access depends on S3 credentials, public bucket policy, website hosting, or application integration.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://garagehq.deuxfleurs.fr/documentation/quick-start/",
+      "cli_friendly": true,
+      "cli_example": "aws s3 cp ./file.txt s3://default-bucket/file.txt",
+      "notes": "Garage implements the Amazon S3 API and the quick start documents AWS CLI uploads/downloads, bucket creation, keys, and the Garage administration CLI.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "object-storage",
+        "notes": "Garage stores S3 objects rather than applying a normal consumer file-host extension policy; object type and sharing policy depend on bucket/application configuration.",
+        "source_refs": [
+          0,
+          1
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Garage supports S3-compatible object access and static website hosting, but public delivery must be configured by the operator.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Transport and encryption are deployment-dependent. The quick start uses local HTTP examples, while production deployments normally sit behind operator-controlled TLS/reverse-proxy configuration.",
+      "source_refs": [
+        1
+      ]
+    },
+    "tags": [
+      "alternative-method",
+      "self-hosted",
+      "open-source",
+      "object-storage",
+      "s3",
+      "api",
+      "cli"
+    ],
+    "sources": [
+      {
+        "label": "Garage homepage",
+        "url": "https://garagehq.deuxfleurs.fr/",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official homepage describes Garage as an S3 object store, focused on reliability outside datacenters, redundancy, low requirements, and S3 compatibility."
+      },
+      {
+        "label": "Garage quick start",
+        "url": "https://garagehq.deuxfleurs.fr/documentation/quick-start/",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official quick start documents single-node deployment, bucket/key creation, AWS CLI uploads and downloads, and Garage administration commands."
+      },
+      {
+        "label": "Awesome Storage seed",
+        "url": "https://github.com/okhosting/awesome-storage",
+        "retrieved_at": "2026-05-06",
+        "notes": "Discovery seed listing Garage under S3-compatible file servers."
+      }
+    ],
+    "kind": "alternative",
+    "profile": {
+      "primary_use": {
+        "value": "Self-hosted S3-compatible object storage",
+        "notes": "Garage is an object store for operators and developers rather than a public consumer file host.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "sharing_surface": {
+        "value": "Buckets, S3 clients, presigned/public object access, and static sites",
+        "notes": "Sharing happens through S3-compatible object access, application integrations, or configured public/static website delivery.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "No hosted per-file limit applies; practical limits depend on S3 compatibility, node capacity, and deployment configuration.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "persistence_model": {
+        "value": "Operator-controlled object retention",
+        "notes": "Objects persist according to bucket configuration, cluster health, and operator retention/deletion policies.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "storage_model": {
+        "value": "Self-hosted replicated object storage",
+        "notes": "Garage stores data across operator-managed nodes and is designed for replication across zones.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Deployment-dependent",
+        "notes": "Throughput and egress depend on operator hardware, network, reverse proxy, and S3 client/application usage.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    }
+  },
+  {
+    "name": "LinShare",
+    "url": "https://linshare.app/",
+    "summary": "Open-source secure file-sharing platform for organizations, with on-premises deployment, shared spaces, guest accounts, quotas, upload-size controls, and governance features.",
+    "account": {
+      "required": true,
+      "benefits": "LinShare is account and organization oriented; administrators can create guest accounts for temporary upload/download access.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://github.com/linagora/linshare-core",
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The official page links to GitHub and positions LinShare as open source, but this row does not verify a simple public upload API or command-line file-host flow.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "admin-configured",
+        "notes": "LinShare administrators can define file-size and extension filtering rules by domain or user scope.",
+        "source_refs": [
+          0
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "LinShare supports shared spaces and guest accounts for external upload/download workflows, subject to administrator policy.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "LinShare promotes TLS protection and governance features, but transport and storage encryption depend on the deployed instance and operator policy.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "alternative-method",
+      "self-hosted",
+      "open-source",
+      "file-sharing",
+      "business",
+      "guest-access"
+    ],
+    "sources": [
+      {
+        "label": "LinShare product page",
+        "url": "https://linshare.app/",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official page describes LinShare as an open-source file-sharing platform with shared spaces, guest accounts, quota assignment, file-size and extension filtering, on-premises deployment, and GPL licensing."
+      },
+      {
+        "label": "LinShare core GitHub repository",
+        "url": "https://github.com/linagora/linshare-core",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official source repository for the LinShare core project."
+      },
+      {
+        "label": "Awesome Storage seed",
+        "url": "https://github.com/okhosting/awesome-storage",
+        "retrieved_at": "2026-05-06",
+        "notes": "Discovery seed listing LinShare under file sharing."
+      }
+    ],
+    "kind": "alternative",
+    "profile": {
+      "primary_use": {
+        "value": "Organization-controlled secure file sharing",
+        "notes": "LinShare targets businesses, governments, and organizations that want a governed self-hosted file-sharing platform.",
+        "source_refs": [
+          0
+        ]
+      },
+      "sharing_surface": {
+        "value": "Shared spaces, guest accounts, and managed uploads/downloads",
+        "notes": "Sharing is built around managed users, guests, shared spaces, and administrator-defined policies.",
+        "source_refs": [
+          0
+        ]
+      },
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Maximum upload size is configurable by administrators and can vary by domain, user, or account policy.",
+        "source_refs": [
+          0
+        ]
+      },
+      "persistence_model": {
+        "value": "Policy-controlled organizational storage",
+        "notes": "Retention and deletion depend on administrator policy, shared-space rules, and the deployed storage backend.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage_model": {
+        "value": "Self-hosted or provider-operated LinShare instance",
+        "notes": "The official page offers on-premises deployment and cloud/contact-us options rather than one fixed public storage tier.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Deployment-dependent",
+        "notes": "Bandwidth and transfer performance depend on the operator's infrastructure and policy.",
+        "source_refs": [
+          0
+        ]
+      }
+    }
+  },
+  {
+    "name": "Nextcloud",
+    "url": "https://nextcloud.com/files/",
+    "summary": "Open-source self-hosted cloud storage and file-sharing platform with public links, file drop, federated shares, WebDAV/client APIs, and optional hosted providers.",
+    "account": {
+      "required": true,
+      "benefits": "Users normally need an account on a Nextcloud instance or provider to manage files; public links and File Drop can expose selected files or folders to external recipients.",
+      "source_refs": [
+        0,
+        1,
+        2
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://docs.nextcloud.com/server/latest/developer_manual/client_apis/index.html",
+      "cli_friendly": true,
+      "cli_example": null,
+      "notes": "Nextcloud publishes client APIs, OCS share APIs, and WebDAV APIs; CLI friendliness is generally through WebDAV/rclone/curl-style clients and instance credentials.",
+      "source_refs": [
+        3
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "instance-dependent-storage",
+        "notes": "Nextcloud stores and shares files on a chosen server/provider; accepted file types, upload limits, and quota enforcement depend on instance configuration.",
+        "source_refs": [
+          0,
+          1,
+          2
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Official docs describe public link shares, File Drop, internal shares, and federated shares with other Nextcloud or ownCloud servers.",
+        "source_refs": [
+          1
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Security posture is instance-dependent. Nextcloud supports controlled sharing and encryption mechanisms, but end-to-end encryption is not the default behavior for all file sharing.",
+      "source_refs": [
+        0,
+        2
+      ]
+    },
+    "tags": [
+      "alternative-method",
+      "self-hosted",
+      "open-source",
+      "cloud-storage",
+      "file-sharing",
+      "webdav",
+      "api"
+    ],
+    "sources": [
+      {
+        "label": "Nextcloud Files product page",
+        "url": "https://nextcloud.com/files/",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official page describes Nextcloud Files as secure cloud storage and file-sharing software for sync, sharing, and collaboration."
+      },
+      {
+        "label": "Nextcloud file-sharing docs",
+        "url": "https://docs.nextcloud.com/server/latest/user_manual/en/files/sharing.html",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official user manual documents public link shares, File Drop, password protection, expiration dates, internal shares, and federation."
+      },
+      {
+        "label": "Nextcloud server GitHub repository",
+        "url": "https://github.com/nextcloud/server",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official source repository describes Nextcloud Server as a place to store, sync, and share data, with AGPL licensing."
+      },
+      {
+        "label": "Nextcloud client APIs",
+        "url": "https://docs.nextcloud.com/server/latest/developer_manual/client_apis/index.html",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official developer manual lists client APIs including OCS share APIs and WebDAV."
+      },
+      {
+        "label": "Awesome Storage seed",
+        "url": "https://github.com/okhosting/awesome-storage",
+        "retrieved_at": "2026-05-06",
+        "notes": "Discovery seed listing Nextcloud under file sharing."
+      }
+    ],
+    "kind": "alternative",
+    "profile": {
+      "primary_use": {
+        "value": "Self-hosted or provider-hosted cloud storage",
+        "notes": "Nextcloud is a full cloud storage, sync, and collaboration platform rather than a single public file host.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "sharing_surface": {
+        "value": "Public links, File Drop, internal shares, and federated shares",
+        "notes": "Nextcloud sharing includes public links, upload-only File Drop, internal account/group shares, and federation with compatible servers.",
+        "source_refs": [
+          1
+        ]
+      },
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "No universal public limit applies; limits are configured by the selected instance/provider and server environment.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "persistence_model": {
+        "value": "Instance/provider-controlled account storage",
+        "notes": "Files persist according to the instance/provider storage policy and user/account deletion choices.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "storage_model": {
+        "value": "Self-hosted server or hosted provider instance",
+        "notes": "Nextcloud can be installed by the user or used through a provider listed by Nextcloud.",
+        "source_refs": [
+          2
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Instance/provider-dependent",
+        "notes": "Bandwidth depends on the server, provider, and configured apps/infrastructure.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    }
+  },
+  {
+    "name": "ownCloud",
+    "url": "https://owncloud.com/",
+    "summary": "Open-source file sync and share platform with public links, guest and federated sharing, WebDAV APIs, desktop/mobile clients, and self-hosted or SaaS deployment options.",
+    "account": {
+      "required": true,
+      "benefits": "Users need an account on an ownCloud instance or SaaS workspace to manage files; public links and guest features can expose selected items externally.",
+      "source_refs": [
+        0,
+        1,
+        2
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://owncloud.dev/apis/",
+      "cli_friendly": true,
+      "cli_example": null,
+      "notes": "ownCloud Infinite Scale exposes HTTP APIs including WebDAV, and its GitHub README documents Docker-based self-hosting.",
+      "source_refs": [
+        2,
+        3
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "instance-dependent-storage",
+        "notes": "ownCloud is deployed per organization or SaaS workspace, so file-type policy, quotas, and upload limits depend on the selected instance and administrator policy.",
+        "source_refs": [
+          0,
+          1,
+          2
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Official docs and product pages describe public links for files/folders, password and expiry controls, drop folders, guest users, and federated sharing.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Security posture is instance-dependent. ownCloud emphasizes controlled sharing and data sovereignty, but transport and encryption details depend on deployment and edition configuration.",
+      "source_refs": [
+        0,
+        2
+      ]
+    },
+    "tags": [
+      "alternative-method",
+      "self-hosted",
+      "open-source",
+      "cloud-storage",
+      "file-sharing",
+      "webdav",
+      "api"
+    ],
+    "sources": [
+      {
+        "label": "ownCloud product page",
+        "url": "https://owncloud.com/",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official page describes ownCloud as a secure file-sharing and real-time collaboration platform with public links and SaaS/self-hosted options."
+      },
+      {
+        "label": "ownCloud public link docs",
+        "url": "https://doc.owncloud.com/server/next/classic_ui/files/public_link_shares.html",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official docs describe public link shares, drop folders, passwords, expiry dates, and permissions."
+      },
+      {
+        "label": "ownCloud Infinite Scale GitHub repository",
+        "url": "https://github.com/owncloud/ocis",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official repository describes ownCloud Infinite Scale as the new file sync and share platform and includes Docker quickstart instructions."
+      },
+      {
+        "label": "ownCloud APIs",
+        "url": "https://owncloud.dev/apis/",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official developer documentation describes ownCloud HTTP APIs including WebDAV and OpenAPI-backed services."
+      },
+      {
+        "label": "Awesome Storage seed",
+        "url": "https://github.com/okhosting/awesome-storage",
+        "retrieved_at": "2026-05-06",
+        "notes": "Discovery seed listing ownCloud under file sharing."
+      }
+    ],
+    "kind": "alternative",
+    "profile": {
+      "primary_use": {
+        "value": "Self-hosted or SaaS file sync and share",
+        "notes": "ownCloud is a full EFSS/cloud collaboration platform rather than a single public upload host.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "sharing_surface": {
+        "value": "Public links, guest users, drop folders, and federated shares",
+        "notes": "ownCloud sharing can include public links, guest users, upload-only drop folders, and federation.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "No universal public limit applies; limits depend on ownCloud edition, deployment, and administrator configuration.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "persistence_model": {
+        "value": "Instance/workspace-controlled account storage",
+        "notes": "Files persist according to the deployed instance or SaaS workspace policy and user/account deletion choices.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "storage_model": {
+        "value": "Self-hosted ownCloud instance or ownCloud.online SaaS",
+        "notes": "ownCloud can run on operator infrastructure or through ownCloud.online.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Instance/provider-dependent",
+        "notes": "Bandwidth depends on the server, provider, network, and deployment policy.",
+        "source_refs": [
+          0,
+          2
+        ]
+      }
+    }
+  },
+  {
     "name": "Pixelfed",
     "url": "https://pixelfed.org/",
     "summary": "Decentralized, open-source photo-sharing social network that can be used as an account-based alternative way to publish and share images across the Fediverse.",
@@ -137,6 +816,440 @@
           0,
           1,
           2
+        ]
+      }
+    }
+  },
+  {
+    "name": "ProjectSend",
+    "url": "https://www.projectsend.org/",
+    "summary": "Free open-source self-hosted client file-sharing portal with managed users, client groups, upload/download permissions, download limits, auto-expiration, and server-side encryption at rest.",
+    "account": {
+      "required": true,
+      "benefits": "ProjectSend is built around administrator-managed users and clients; clients can receive assigned files and upload files back according to permissions.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "ProjectSend publishes source/download/docs links, but this row does not verify a public upload API or command-line file-host flow.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "admin-configured",
+        "notes": "ProjectSend is self-hosted and permission-based; accepted file types, upload size, quotas, and expiration behavior depend on administrator configuration and server limits.",
+        "source_refs": [
+          0
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "ProjectSend is designed to share files securely with clients and allow clients to upload files back, though it is a client portal rather than an anonymous public file host.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": true,
+      "notes": "Transport security is deployment-dependent. The official feature list advertises AES-256-GCM server-side encryption for files at rest.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "alternative-method",
+      "self-hosted",
+      "open-source",
+      "file-sharing",
+      "client-portal",
+      "guest-access"
+    ],
+    "sources": [
+      {
+        "label": "ProjectSend homepage",
+        "url": "https://www.projectsend.org/",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official page describes ProjectSend as free open-source self-hosted file sharing with client-specific access, users/clients/groups, client uploads, download limits, disk quota management, auto-expiration, S3 support, and AES-256-GCM encryption at rest."
+      },
+      {
+        "label": "ProjectSend documentation",
+        "url": "https://projectsend.gitbook.io/projectsend/",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official documentation entry point linked from the ProjectSend homepage."
+      },
+      {
+        "label": "Awesome Storage seed",
+        "url": "https://github.com/okhosting/awesome-storage",
+        "retrieved_at": "2026-05-06",
+        "notes": "Discovery seed listing ProjectSend under file sharing."
+      }
+    ],
+    "kind": "alternative",
+    "profile": {
+      "primary_use": {
+        "value": "Self-hosted client file-sharing portal",
+        "notes": "ProjectSend is focused on controlled client file exchange rather than anonymous public hosting.",
+        "source_refs": [
+          0
+        ]
+      },
+      "sharing_surface": {
+        "value": "Client accounts, assigned files, upload-back flows, and managed permissions",
+        "notes": "Sharing happens through administrator-managed users, clients, groups, roles, and file permissions.",
+        "source_refs": [
+          0
+        ]
+      },
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "No universal public hosted limit applies; practical limits depend on PHP/server configuration and administrator policy.",
+        "source_refs": [
+          0
+        ]
+      },
+      "persistence_model": {
+        "value": "Administrator-controlled storage and expiration",
+        "notes": "ProjectSend supports auto-expiration and download limits; file lifetime depends on administrator/user configuration.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage_model": {
+        "value": "Self-hosted server storage with optional external/S3 destinations",
+        "notes": "ProjectSend runs on the operator's server and advertises S3 support and upload destination controls.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Deployment-dependent",
+        "notes": "Bandwidth depends on the web server, storage backend, and operator hosting plan.",
+        "source_refs": [
+          0
+        ]
+      }
+    }
+  },
+  {
+    "name": "Pydio Cells",
+    "url": "https://www.pydio.com/en/pydio-cells/overview",
+    "summary": "Open-core self-hosted document sharing and collaboration platform with workspaces/cells, secure file/folder sharing, public links, REST APIs, S3-compatible file-content access, and WebDAV.",
+    "account": {
+      "required": true,
+      "benefits": "Users need an account on a Pydio Cells deployment to manage workspaces and files; public links can expose selected resources externally.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://docs.pydio.com/latest/developer-guide/introduction/main-apis-presentation/",
+      "cli_friendly": true,
+      "cli_example": null,
+      "notes": "Pydio Cells publishes REST APIs, an S3-compatible API for file contents, and WebDAV access, so automation is possible with compatible clients and instance credentials.",
+      "source_refs": [
+        3,
+        4
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "instance-dependent-storage",
+        "notes": "Pydio Cells is deployed per organization; accepted file types, quota, and upload policy depend on workspace, datasource, and administrator configuration.",
+        "source_refs": [
+          0,
+          1,
+          3
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Official docs describe public links and Cells/folder sharing for internal and external collaborators.",
+        "source_refs": [
+          0,
+          1,
+          5
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Transport and storage security depend on deployment. Pydio positions Cells for compliance and secure document sharing, but this row does not treat end-to-end encryption as the default behavior.",
+      "source_refs": [
+        0,
+        2
+      ]
+    },
+    "tags": [
+      "alternative-method",
+      "self-hosted",
+      "open-source",
+      "document-sharing",
+      "file-sharing",
+      "api",
+      "webdav"
+    ],
+    "sources": [
+      {
+        "label": "Pydio Cells overview",
+        "url": "https://www.pydio.com/en/pydio-cells/overview",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official overview describes Pydio Cells as an open-core self-hosted document sharing, collaboration, and management platform with workspaces/cells and secure file/folder sharing."
+      },
+      {
+        "label": "Pydio sharing features docs",
+        "url": "https://docs.pydio.com/latest/admin-guide/quick-start/sharing-features/",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official docs describe public links, permissions, access restrictions, and sharing with users through Cells."
+      },
+      {
+        "label": "Pydio open-source page",
+        "url": "https://www.pydio.com/en/community/open-source",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official community page describes Pydio's open-source/open-core positioning."
+      },
+      {
+        "label": "Pydio main APIs",
+        "url": "https://docs.pydio.com/latest/developer-guide/introduction/main-apis-presentation/",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official developer docs describe REST APIs, S3-compatible file-content access, and WebDAV/other APIs."
+      },
+      {
+        "label": "Pydio REST API reference",
+        "url": "https://docs.pydio.com/latest/developer-guide/rest-api/index/",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official generated REST API reference lists service endpoints including Share Service."
+      },
+      {
+        "label": "Pydio Share Service API",
+        "url": "https://docs.pydio.com/latest/developer-guide/rest-api/share-service/index/",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official API docs describe CRUD operations for Cells and public links."
+      },
+      {
+        "label": "Awesome Storage seed",
+        "url": "https://github.com/okhosting/awesome-storage",
+        "retrieved_at": "2026-05-06",
+        "notes": "Discovery seed listing Pydio under file sharing."
+      }
+    ],
+    "kind": "alternative",
+    "profile": {
+      "primary_use": {
+        "value": "Self-hosted enterprise document sharing",
+        "notes": "Pydio Cells is a self-hosted document sharing and collaboration platform rather than a public anonymous file host.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "sharing_surface": {
+        "value": "Workspaces, Cells, public links, and collaborator shares",
+        "notes": "Sharing is built around workspaces/cells, public links, permissions, and collaborator access.",
+        "source_refs": [
+          0,
+          1,
+          5
+        ]
+      },
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "No universal public hosted limit applies; practical limits depend on deployment, datasource, and administrator policy.",
+        "source_refs": [
+          0,
+          3
+        ]
+      },
+      "persistence_model": {
+        "value": "Workspace/datasource-controlled storage",
+        "notes": "Persistence depends on the deployed storage datasource, workspace policy, and administrator/user actions.",
+        "source_refs": [
+          0,
+          3
+        ]
+      },
+      "storage_model": {
+        "value": "Self-hosted datasources with filesystem, S3-compatible, and WebDAV-accessible paths",
+        "notes": "Pydio Cells can connect to datasources and exposes file access through web UI, APIs, S3-compatible access, and WebDAV.",
+        "source_refs": [
+          0,
+          3,
+          4
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Deployment-dependent",
+        "notes": "Bandwidth depends on the organization's server, datasource, network, and policy.",
+        "source_refs": [
+          0,
+          3
+        ]
+      }
+    }
+  },
+  {
+    "name": "Seafile",
+    "url": "https://www.seafile.com/en/home/",
+    "summary": "Open-source file sync, cloud storage, and collaboration platform with public share links, upload links, granular permissions, Web APIs, WebDAV-related components, and optional client-side library encryption.",
+    "account": {
+      "required": true,
+      "benefits": "Users need an account on a Seafile server/provider to manage libraries; public share links and upload links can give outside users access without a Seafile account.",
+      "source_refs": [
+        0,
+        1,
+        2
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://manual.seafile.com/latest/develop/web_api_v2.1/",
+      "cli_friendly": true,
+      "cli_example": null,
+      "notes": "Seafile publishes Web API documentation and source repositories; CLI friendliness is generally through Web API/WebDAV/sync clients rather than a simple anonymous upload endpoint.",
+      "source_refs": [
+        2,
+        3
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "instance-dependent-storage",
+        "notes": "Seafile stores files in libraries on a chosen server/provider; accepted file types, quotas, and upload-size limits depend on deployment and administrator policy.",
+        "source_refs": [
+          0,
+          1,
+          2
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Official docs describe public share links for files/folders and upload links for folders that can be used without recipient login.",
+        "source_refs": [
+          1
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": true,
+      "server_side_encryption": null,
+      "notes": "Transport security depends on the deployment. Seafile's source docs describe encrypted libraries and client-side encryption, but encryption is a library/user choice rather than universal for all shares.",
+      "source_refs": [
+        2
+      ]
+    },
+    "tags": [
+      "alternative-method",
+      "self-hosted",
+      "open-source",
+      "cloud-storage",
+      "file-sharing",
+      "api",
+      "e2ee"
+    ],
+    "sources": [
+      {
+        "label": "Seafile homepage",
+        "url": "https://www.seafile.com/en/home/",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official homepage describes Seafile as file sync/share/cloud storage software with sharing permissions, password protection, expiration time, and access controls for share links."
+      },
+      {
+        "label": "Seafile sharing docs",
+        "url": "https://help.seafile.com/sharing_collaboration/sharing_files_and_folders/",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official user manual describes public share links, upload links, internal links, permissions, passwords, and expiration times."
+      },
+      {
+        "label": "Seafile GitHub repository",
+        "url": "https://github.com/haiwen/seafile",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official source repository describes Seafile as open-source cloud storage with file sharing, password-protected download links, upload links, groups, and client-side encryption."
+      },
+      {
+        "label": "Seafile Web API docs",
+        "url": "https://manual.seafile.com/latest/develop/web_api_v2.1/",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official admin manual points to current Seafile Web API documentation."
+      },
+      {
+        "label": "Awesome Storage seed",
+        "url": "https://github.com/okhosting/awesome-storage",
+        "retrieved_at": "2026-05-06",
+        "notes": "Discovery seed listing Seafile under file sharing."
+      }
+    ],
+    "kind": "alternative",
+    "profile": {
+      "primary_use": {
+        "value": "Self-hosted or provider-hosted file sync and share",
+        "notes": "Seafile is a file sync/share and collaboration platform rather than a single public anonymous file host.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "sharing_surface": {
+        "value": "Share links, upload links, libraries, groups, and internal links",
+        "notes": "Seafile can share files/folders with public links, upload-only links, users, groups, organizations, and internal links.",
+        "source_refs": [
+          1,
+          2
+        ]
+      },
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "No universal hosted limit applies; limits depend on the chosen server/provider and administrator configuration.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "persistence_model": {
+        "value": "Server/provider-controlled libraries",
+        "notes": "Files persist in Seafile libraries according to server/provider storage, retention, and user deletion policies.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "storage_model": {
+        "value": "Self-hosted or provider-hosted Seafile libraries",
+        "notes": "Seafile organizes stored files into libraries on a Seafile server/provider, with sync clients and web access.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Instance/provider-dependent",
+        "notes": "Bandwidth depends on the server, provider, clients, and administrator policy.",
+        "source_refs": [
+          0,
+          1
         ]
       }
     }
