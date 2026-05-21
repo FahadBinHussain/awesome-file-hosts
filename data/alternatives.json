@@ -1640,5 +1640,147 @@
         ]
       }
     }
+  },
+  {
+    "name": "YouTransfer",
+    "url": "https://www.youtransfer.io/",
+    "summary": "Open-source self-hosted file transfer and sharing app positioned as a WeTransfer-style alternative, installable with Docker or Node.js, but with an old maintenance footprint.",
+    "account": {
+      "required": false,
+      "benefits": "YouTransfer is deployed by the operator and is intended for direct file-transfer workflows; account requirements and access controls depend on the deployment.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://github.com/YouTransfer/YouTransfer",
+      "cli_friendly": true,
+      "cli_example": "docker run -d -v [path_to_upload_folder]:/opt/youtransfer/uploads -v [path_to_config_folder]:/opt/youtransfer/config -p 80:5000 remie/youtransfer:stable",
+      "notes": "Official pages document Docker and Node.js self-hosting from source. The GitHub repository says the project is looking for a new maintainer, and Docker Hub tags are old, so treat this as a maintenance-light self-hosted option rather than an actively operated service.",
+      "source_refs": [
+        0,
+        1,
+        2
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "deployment-dependent-storage",
+        "notes": "YouTransfer is self-hosted; upload limits, accepted file types, retention, and abuse controls depend on the operator's configuration and server environment.",
+        "source_refs": [
+          0,
+          1
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "The official page describes YouTransfer as a file transfer and sharing solution and a self-hosted alternative to Dropbox and WeTransfer.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    },
+    "security": {
+      "https_only": false,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Transport and storage security are deployment-dependent. Official quick-start examples use local HTTP endpoints and do not position YouTransfer as end-to-end encrypted by default.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "tags": [
+      "alternative-method",
+      "self-hosted",
+      "open-source",
+      "file-transfer",
+      "file-sharing",
+      "docker",
+      "maintenance-light"
+    ],
+    "sources": [
+      {
+        "label": "YouTransfer homepage",
+        "url": "https://www.youtransfer.io/",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official homepage describes YouTransfer as a simple self-hosted file transfer and sharing solution, includes Docker and Node.js quick-start instructions, and links to source/documentation."
+      },
+      {
+        "label": "YouTransfer GitHub repository",
+        "url": "https://github.com/YouTransfer/YouTransfer",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official source repository describes YouTransfer as a self-hosted file transfer and sharing solution, licensed under Apache 2.0, and notes that the project is looking for a new maintainer."
+      },
+      {
+        "label": "YouTransfer Docker image",
+        "url": "https://hub.docker.com/r/remie/youtransfer/",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official Docker Hub image page repeats the self-hosted file-transfer positioning and shows the image is old, with tags last pushed over 10 years ago."
+      },
+      {
+        "label": "Awesome Storage seed",
+        "url": "https://github.com/okhosting/awesome-storage",
+        "retrieved_at": "2026-05-06",
+        "notes": "Discovery seed listing YouTransfer under file sharing; structured facts are verified against first-party pages."
+      }
+    ],
+    "kind": "alternative",
+    "profile": {
+      "primary_use": {
+        "value": "Self-hosted file transfer and sharing",
+        "notes": "YouTransfer is a deploy-it-yourself transfer app rather than a public hosted file host.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "sharing_surface": {
+        "value": "Self-hosted WeTransfer-style upload and share flow",
+        "notes": "Sharing happens through the operator's deployed YouTransfer instance.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "No universal limit applies; maximum upload size depends on the deployment, storage path, reverse proxy, and application configuration.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "persistence_model": {
+        "value": "Deployment-controlled transfer storage",
+        "notes": "Retention depends on the operator's configuration and upload storage path.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "storage_model": {
+        "value": "Self-hosted upload folder",
+        "notes": "The Docker quick start mounts an upload folder into the container, so storage is supplied by the operator.",
+        "source_refs": [
+          0,
+          2
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Deployment-dependent",
+        "notes": "Bandwidth depends on the operator's server, network, reverse proxy, and storage backend.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    }
   }
 ]

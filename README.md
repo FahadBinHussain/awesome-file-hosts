@@ -18,7 +18,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 
 ## What this includes
 
-- 247 verified hosts checked against current public sources as of 2026-05-06.
+- 249 verified hosts checked against current public sources as of 2026-05-06.
 - 0 main-host leads still in review and 203 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
 - 0 other-ways-to-share candidates, 0 mirror-uploader candidates, and 0 cloud-migration candidates staged in their own pending files.
 - A free-first dataset that prioritizes genuinely usable free tiers, guest flows, and honest headline limits.
@@ -89,6 +89,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [DropMB](https://dropmb.com/) - Free file-sharing platform with guest uploads up to 512 MB total per share, optional expiration/download limits, password protection, and email sharing. _(Free: Free forever | Max: 512 MB | Retention: Conditional | Account: No)_
 - [DropMeAFile](https://dropmeafile.com/) - Simple no-account file-sharing service for sending files between computers or to other people. _(Free: Free forever | Max: Conditional | Retention: Conditional | Account: No)_
 - [DropMeFiles](https://dropmefiles.com/) - Browser-based file sharing service with no registration requirement, large free uploads, password protection, and selectable link lifetime. _(Free: Free forever | Max: 50 GB | Retention: 14 days | Account: No)_
+- [dropsha.re](https://dropsha.re/) - Free no-account zero-knowledge file sharing with 50 MB encrypted uploads, 7-day auto-deletion, Cloudflare R2 storage, and browser-side AES-256-GCM encryption. _(Free: Free forever | Max: 50 MB | Retention: 7 days | Account: No | CLI | E2EE)_
 - [Dubz](https://dubz.co/) - Simple free video host for quick link sharing with 100 MB uploads, popular video-format support, browser editing, and view-based retention language. _(Free: Free forever | Max: 100 MB | Retention: Conditional | Account: No)_
 - [DZ4Up](https://dz4up.com/) - Free file upload service with guest local and remote URL uploads, 2 GB maximum files, share-code output, optional email/password fields, and account folders. _(Free: Free forever | Max: 2 GB | Retention: Not published | Account: No)_
 - [EarnVids](https://earnvids.com/) - Video hosting and monetization service with free storage/traffic marketing, HLS playback, public video links, and official API documentation with cURL upload examples. _(Free: Free forever | Max: Not published | Retention: Not published | Account: Yes | API | CLI)_
@@ -127,6 +128,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [FileRift](https://filerift.com/) - Free file-sharing host with 1 GB guest uploads, 5 GB free-account upload limits, direct linking for code/text files, and password-protected storage. _(Free: Free forever | Max: 1 GB | Retention: Conditional | Account: No)_
 - [files.dp.ua](https://files.dp.ua/en/) - Anonymous file-sharing service with selectable expiry, optional password protection, and unusually large free upload limits. _(Free: Free forever | Max: 100 GB | Retention: 25 days | Account: No)_
 - [files.fm](https://files.fm/) - EU-based cloud storage and file-sharing platform with a free Basic tier, 5 GB max file size, apps across major platforms, and official API docs whose key access is gated to paid plans. _(Free: Free forever | Max: 5 GB | Retention: No automatic expiry | Account: Yes)_
+- [FileShot.io](https://fileshot.io/) - Privacy-first encrypted file-sharing service with no-account uploads, a free 50 GB storage allowance, 10 GB free files, 90-day free expiry, P2P mode, and browser-side zero-knowledge encryption. _(Free: Free forever | Max: 10 GB | Retention: 90 days | Account: No | E2EE)_
 - [Filester](https://filester.me/) - Anonymous beta file host with 10 GB uploads, 45-day no-download deletion, free account file/folder management, no blocked file types, and registered-user password protection. _(Free: Free forever | Max: 10 GB | Retention: 45 days | Account: No)_
 - [Filestore.to](https://filestore.to/) - German cloud-storage/file-sharing service with guest uploads up to 2 GB, generated public links, premium unlimited downloads, and legal restrictions on stored content. _(Free: Free forever | Max: 2 GB | Retention: Not published | Account: No)_
 - [Fireload](https://www.fireload.com/) - Freemium file-storage host with guest/free uploads, a 2 GB free/non-account cap, 60-day free inactivity retention, official API documentation, WebDAV navigation, and unmetered-bandwidth marketing. _(Free: Free forever | Max: 2 GB | Retention: 60 days | Account: No | API)_

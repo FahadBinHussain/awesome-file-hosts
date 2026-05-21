@@ -7205,6 +7205,134 @@
     }
   },
   {
+    "name": "dropsha.re",
+    "url": "https://dropsha.re/",
+    "summary": "Free no-account zero-knowledge file sharing with 50 MB encrypted uploads, 7-day auto-deletion, Cloudflare R2 storage, and browser-side AES-256-GCM encryption.",
+    "free_model": {
+      "value": "free-forever",
+      "notes": "The homepage and FAQ describe dropsha.re as a completely free no-registration file-sharing service with 50 MB uploads and 7-day retention.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "limits": {
+      "max_file_size": {
+        "value": 50,
+        "unit": "MB",
+        "notes": "The FAQ says users can upload any file type up to 50 MB, and repeats that 50 MB is the current per-file limit.",
+        "source_refs": [
+          1
+        ]
+      },
+      "retention": {
+        "value": 7,
+        "unit": "days",
+        "notes": "The FAQ says files are automatically deleted after 7 days and cannot be manually recovered after deletion.",
+        "source_refs": [
+          1
+        ]
+      },
+      "storage": {
+        "value": 0,
+        "unit": "GB",
+        "notes": "dropsha.re is a temporary encrypted share-link service with automatic 7-day deletion, not a persistent personal storage plan.",
+        "source_refs": [
+          1
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The FAQ says there are no explicit upload quotas beyond the 50 MB file limit and 7-day retention, but it does not publish a numeric download bandwidth allowance.",
+        "source_refs": [
+          1
+        ]
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "No account is needed; the FAQ says users can upload a file and share the link without registration or personal information.",
+      "source_refs": [
+        1
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": true,
+      "cli_example": null,
+      "notes": "The FAQ says share pages include customized curl and OpenSSL instructions for downloading and decrypting files, but no public upload API is documented.",
+      "source_refs": [
+        1
+      ]
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": true,
+      "server_side_encryption": true,
+      "notes": "The homepage, about page, and FAQ describe browser-side AES-256-GCM encryption, URL-fragment keys that are not sent to the server, HTTPS/TLS transport, and encrypted blobs stored on Cloudflare R2.",
+      "source_refs": [
+        0,
+        1,
+        2
+      ]
+    },
+    "tags": [
+      "file-sharing",
+      "guest-upload",
+      "temporary-transfer",
+      "e2ee",
+      "zero-knowledge",
+      "privacy"
+    ],
+    "sources": [
+      {
+        "label": "Homepage",
+        "url": "https://dropsha.re/",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official homepage describes dropsha.re as free zero-knowledge file sharing with client-side AES-256-GCM encryption, zero data collection, and local encryption before upload."
+      },
+      {
+        "label": "FAQ",
+        "url": "https://dropsha.re/faq/",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official FAQ verifies 50 MB files, 7-day automatic deletion, no account requirement, free use, any-file uploads, HTTPS, Cloudflare R2 storage, URL-fragment keys, and curl/OpenSSL download instructions."
+      },
+      {
+        "label": "About",
+        "url": "https://dropsha.re/about/",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official about page describes client-side encryption, zero server access, URL-fragment decryption keys, automatic cleanup, Cloudflare infrastructure, and no tracking/data collection."
+      },
+      {
+        "label": "free-for-dev storage seed",
+        "url": "https://github.com/ripienaar/free-for-dev",
+        "retrieved_at": "2026-05-06",
+        "notes": "Discovery seed listing dropsha.re in the Storage and Media Processing section; structured facts are verified against first-party pages."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "all",
+        "notes": "The FAQ says users can upload any file type up to 50 MB and that dropsha.re does not restrict file types because encryption happens client-side.",
+        "source_refs": [
+          1
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "The service creates encrypted share URLs whose fragment contains the decryption key for recipients.",
+        "source_refs": [
+          1,
+          2
+        ]
+      }
+    }
+  },
+  {
     "name": "Dubz",
     "url": "https://dubz.co/",
     "summary": "Simple free video host for quick link sharing with 100 MB uploads, popular video-format support, browser editing, and view-based retention language.",
@@ -12150,6 +12278,143 @@
       "public_sharing": {
         "value": true,
         "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
+        "source_refs": [
+          0
+        ]
+      }
+    }
+  },
+  {
+    "name": "FileShot.io",
+    "url": "https://fileshot.io/",
+    "summary": "Privacy-first encrypted file-sharing service with no-account uploads, a free 50 GB storage allowance, 10 GB free files, 90-day free expiry, P2P mode, and browser-side zero-knowledge encryption.",
+    "free_model": {
+      "value": "free-forever",
+      "notes": "The homepage pricing section lists a $0 free-forever plan with no credit card required, and the upload flow says no account is needed.",
+      "source_refs": [
+        0
+      ]
+    },
+    "limits": {
+      "max_file_size": {
+        "value": 10,
+        "unit": "GB",
+        "notes": "The pricing and FAQ sections list a 10 GB per-file limit for free users.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": 90,
+        "unit": "days",
+        "notes": "The free plan lists auto-expiry up to 90 days, and the FAQ says free files are kept for up to 90 days with optional shorter expiry or download-count limits.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage": {
+        "value": 50,
+        "unit": "GB",
+        "notes": "The free plan lists 50 GB total storage.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The free plan lists unlimited downloads, but the official page does not publish a numeric transfer-volume allowance.",
+        "source_refs": [
+          0
+        ]
+      },
+      "max_file_size_guest": {
+        "value": 10,
+        "unit": "GB",
+        "notes": "The homepage says no account is required, while the FAQ says free users can upload up to 10 GB per file.",
+        "source_refs": [
+          0
+        ]
+      },
+      "max_file_size_account": {
+        "value": 10,
+        "unit": "GB",
+        "notes": "The free account plan lists a 10 GB per-file limit.",
+        "source_refs": [
+          0
+        ]
+      },
+      "storage_account": {
+        "value": 50,
+        "unit": "GB",
+        "notes": "The free account plan lists 50 GB total storage.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "Uploads do not require an account; signing in unlocks file management, editing, tracking, and paid upgrade features.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The homepage advertises REST API access, API keys, and webhooks as Creator-tier paid features rather than part of the free file-sharing workflow.",
+      "source_refs": [
+        0
+      ]
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": true,
+      "server_side_encryption": true,
+      "notes": "The homepage describes client-side AES-256-GCM encryption, URL-fragment keys, zero-knowledge architecture, HTTPS/TLS security checks, and ciphertext-only server storage.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "file-sharing",
+      "guest-upload",
+      "free-account",
+      "e2ee",
+      "zero-knowledge",
+      "p2p",
+      "password-protection"
+    ],
+    "sources": [
+      {
+        "label": "Homepage and pricing",
+        "url": "https://fileshot.io/",
+        "retrieved_at": "2026-05-06",
+        "notes": "Official page verifies no-account encrypted uploads, free-forever pricing, 50 GB free storage, 10 GB free files, 90-day free expiry, password protection, unlimited downloads, P2P mode, and browser-side zero-knowledge encryption."
+      },
+      {
+        "label": "free-for-dev storage seed",
+        "url": "https://github.com/ripienaar/free-for-dev",
+        "retrieved_at": "2026-05-06",
+        "notes": "Discovery seed listing FileShot.io in the Storage and Media Processing section; structured facts are verified against first-party pages."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "all",
+        "notes": "The homepage and FAQ say FileShot accepts any format and any size in the upload flow, with the free plan capped at 10 GB per file.",
+        "source_refs": [
+          0
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "The upload flow creates encrypted share links, and recipients can download immediately with the full link and optional password.",
         "source_refs": [
           0
         ]
