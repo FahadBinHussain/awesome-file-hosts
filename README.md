@@ -18,7 +18,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 
 ## What this includes
 
-- 249 verified hosts checked against current public sources as of 2026-05-21.
+- 249 verified hosts checked against current public sources as of 2026-05-22.
 - 0 main-host leads still in review and 203 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
 - 0 other-ways-to-share candidates, 0 mirror-uploader candidates, and 0 cloud-migration candidates staged in their own pending files.
 - A free-first dataset that prioritizes genuinely usable free tiers, guest flows, and honest headline limits.
@@ -324,9 +324,3 @@ Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a PR.
 ## License
 
 MIT via [`LICENSE`](LICENSE).
-
-## Contributors
-
-<a href="https://github.com/FahadBinHussain/awesome-file-hosts/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=FahadBinHussain/awesome-file-hosts" alt="Contributors" />
-</a>
