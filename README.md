@@ -14,6 +14,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [Hosts](#hosts)
 - [Data](#data)
 - [Contributing](#contributing)
+- [Contributors](#contributors)
 - [License](#license)
 
 ## What this includes
@@ -315,6 +316,12 @@ npm run check
 ## Contributing
 
 Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a PR.
+
+## Contributors
+
+<a href="https://github.com/FahadBinHussain/awesome-file-hosts/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=FahadBinHussain/awesome-file-hosts" alt="Contributors" />
+</a>
 
 ## Automation
 

@@ -851,6 +851,7 @@ function buildReadme(
   lines.push("- [Hosts](#hosts)");
   lines.push("- [Data](#data)");
   lines.push("- [Contributing](#contributing)");
+  lines.push("- [Contributors](#contributors)");
   lines.push("- [License](#license)");
   lines.push("");
   lines.push("## What this includes");
@@ -908,6 +909,12 @@ function buildReadme(
   lines.push("## Contributing");
   lines.push("");
   lines.push("Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a PR.");
+  lines.push("");
+  lines.push("## Contributors");
+  lines.push("");
+  lines.push('<a href="https://github.com/FahadBinHussain/awesome-file-hosts/graphs/contributors">');
+  lines.push('  <img src="https://contrib.rocks/image?repo=FahadBinHussain/awesome-file-hosts" alt="Contributors" />');
+  lines.push("</a>");
   lines.push("");
   lines.push("## Automation");
   lines.push("");
