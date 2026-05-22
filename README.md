@@ -324,3 +324,9 @@ Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a PR.
 ## License
 
 MIT via [`LICENSE`](LICENSE).
+
+## Contributors
+
+<a href="https://github.com/FahadBinHussain/awesome-file-hosts/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=FahadBinHussain/awesome-file-hosts" alt="Contributors" />
+</a>
