@@ -23907,6 +23907,173 @@
     ]
   },
   {
+    "name": "Send Anywhere",
+    "url": "https://send-anywhere.com/",
+    "summary": "Cross-device file-transfer and share-link service with 10 GB free share links, 50 GB one-time key transfers, 48-hour default link retention, and a 10 GB/month free link-download allowance for link creators.",
+    "free_model": {
+      "value": "free-forever",
+      "notes": "First-party help pages describe free members, free share links, 6-digit key transfers, and a free monthly link-download allowance, with paid Email Add-on tiers for larger or longer-lived links.",
+      "source_refs": [
+        0,
+        2,
+        3
+      ]
+    },
+    "limits": {
+      "max_file_size": {
+        "value": 10,
+        "unit": "GB",
+        "notes": "Share links support up to 10 GB for free members. 6-digit key transfers can be up to 50 GB, and Directly To Device transfers can be up to 10 GB.",
+        "source_refs": [
+          0,
+          4
+        ]
+      },
+      "retention": {
+        "value": 48,
+        "unit": "hours",
+        "notes": "Share links are valid for 48 hours by default. Directly To Device files are kept on the server for up to 48 hours and are deleted earlier after receipt.",
+        "source_refs": [
+          0,
+          1,
+          5
+        ]
+      },
+      "storage": {
+        "value": 0,
+        "unit": "GB",
+        "notes": "Send Anywhere is a transfer service, not a persistent cloud storage plan. My Link capacity is temporary capacity for unexpired links, not durable storage.",
+        "source_refs": [
+          0,
+          6
+        ]
+      },
+      "bandwidth": {
+        "value": 10,
+        "unit": "GB/month",
+      "notes": "Free link creators have a 10 GB monthly download-data allowance for shared links. The policy notice says 6-digit key transfers remain unlimited for file transfers.",
+      "source_refs": [
+        2,
+        5
+      ]
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "The 6-digit key and direct transfer flows do not require recipient link accounts. Share-link management and My Link features are account-linked, and paid Email Add-on tiers add larger, longer-lived, password, and no-expiry link options.",
+      "source_refs": [
+        0,
+        3,
+        6
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Send Anywhere announced complete termination of the Open API server effective March 31, 2026; existing API keys and client-application file transfer functionality no longer work.",
+      "source_refs": [
+        7
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "all_except_prohibited",
+        "notes": "The help center describes general file and folder transfer methods, but link troubleshooting explicitly prohibits spam, illegal pornography, copyrighted materials, and similar misuse.",
+        "source_refs": [
+          3,
+          5
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Share Link uploads temporarily store files on the server and generate a copyable link; 6-digit key and Directly To Device provide alternate one-time transfer modes.",
+        "source_refs": [
+          0,
+          3
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": true,
+      "notes": "Send Anywhere says transfers are encrypted in transit, 6-digit key transfers send directly without server storage, and link/device files are temporarily encrypted on the server. The cited pages do not claim link-sharing is end-to-end encrypted.",
+      "source_refs": [
+        1,
+        8
+      ]
+    },
+    "tags": [
+      "file-transfer",
+      "guest-upload",
+      "temporary-transfer",
+      "mobile-apps",
+      "direct-device",
+      "link-sharing",
+      "policy-sensitive"
+    ],
+    "sources": [
+      {
+        "label": "Share-link help",
+        "url": "https://support.send-anywhere.com/hc/en-us/articles/115005114074-What-is-Share-link",
+        "retrieved_at": "2026-06-01",
+        "notes": "Official help page verifies temporary share links, 48-hour default validity, 10 GB free share-link size, paid larger link tiers, My Link management, and permanent deletion after expiry or sender deletion."
+      },
+      {
+        "label": "Server retention help",
+        "url": "https://support.send-anywhere.com/hc/en-us/articles/360005222894-How-long-the-transferred-files-are-kept-on-the-server",
+        "retrieved_at": "2026-06-01",
+        "notes": "Official help page verifies 6-digit key transfers are instant without server storage, share-link files are kept up to 48 hours by default, Directly To Device files are kept up to 48 hours, and deleted files cannot be recovered."
+      },
+      {
+        "label": "Free user policy notice",
+        "url": "https://support.send-anywhere.com/hc/en-us/articles/16479573128473-Notice-of-Policy-Change-for-Free-Users-2023-03-13",
+        "retrieved_at": "2026-06-01",
+        "notes": "Official notice verifies free-user link-download policy changed to 10 GB monthly download data per free account, while 6-digit key transfers remained unlimited for file transfers."
+      },
+      {
+        "label": "Send methods help",
+        "url": "https://support.send-anywhere.com/hc/en-us/articles/115005027493-How-can-I-send-files",
+        "retrieved_at": "2026-06-01",
+        "notes": "Official help page verifies 6-digit key, Share Link, and Directly To Device transfer modes, including 10-minute one-time keys and 48-hour links."
+      },
+      {
+        "label": "Transfer size help",
+        "url": "https://support.send-anywhere.com/hc/en-us/articles/360005223534-File-size-that-can-be-transferred-at-one-time",
+        "retrieved_at": "2026-06-01",
+        "notes": "Official help page verifies method-specific transfer limits: 50 GB for 6-digit key transfers, 10 GB free share links, and 10 GB Directly To Device transfers."
+      },
+      {
+        "label": "Link issue help",
+        "url": "https://support.send-anywhere.com/hc/en-us/articles/360003454153-I-am-unable-to-download-files-from-the-link",
+        "retrieved_at": "2026-06-01",
+        "notes": "Official help page verifies 48-hour default link validity, 10 GB/month free link-download data, link deletion/expiry behavior, supported browser notes, and policy-sensitive prohibited sharing examples."
+      },
+      {
+        "label": "My Link capacity help",
+        "url": "https://support.send-anywhere.com/hc/en-us/articles/16277697781785-I-can-t-create-new-link-anymore",
+        "retrieved_at": "2026-06-01",
+        "notes": "Official help page verifies free members can create up to 10 GB of expiring My Link capacity and that expired or deleted links free that temporary capacity."
+      },
+      {
+        "label": "API termination notice",
+        "url": "https://support.send-anywhere.com/hc/en-us/articles/54660040864025-End-of-support-for-Open-API-Service-26-3-31",
+        "retrieved_at": "2026-06-01",
+        "notes": "Official notice says the Open API server, existing API keys, and client-application file transfer functionality terminate effective March 31, 2026."
+      },
+      {
+        "label": "Transfer safety help",
+        "url": "https://support.send-anywhere.com/hc/en-us/articles/115003858693-Is-it-safe-to-transfer-files-with-Send-Anywhere",
+        "retrieved_at": "2026-06-01",
+        "notes": "Official help page describes encrypted transmission, direct 6-digit transfers without server storage, temporary encrypted server storage for links/device sends, and automatic deletion after expiry."
+      }
+    ]
+  },
+  {
     "name": "SendGB",
     "url": "https://www.sendgb.com/",
     "summary": "Free no-registration transfer service with 5 GB transfers, any-file uploads, up to 90-day conditional retention, up to 10 recipients, password protection, and paid larger-transfer/storage options.",
@@ -27969,6 +28136,169 @@
         "url": "https://www.linkedin.com/posts/mega-the-privacy-company_introducing-transferit-effortless-file-activity-7353287842812313601-MGEd",
         "retrieved_at": "2026-05-01",
         "notes": "Official MEGA post verifies Transfer.it is powered by MEGA, has no file size limits, supports sending 100 GB/1 TB or more for free, email delivery to people without MEGA accounts, and MEGA storage integration."
+      }
+    ]
+  },
+  {
+    "name": "TransferNow",
+    "url": "https://www.transfernow.net/",
+    "summary": "Free no-registration file-transfer service with 5 GB transfers, 7-day availability, password-protected email/link sharing, server-side encryption, and an authenticated API/SDK product.",
+    "free_model": {
+      "value": "free-forever",
+      "notes": "TransferNow's support and pricing pages describe a forever-free service for sending or receiving files up to 5 GB per transfer without registration.",
+      "source_refs": [
+        0,
+        1,
+        2
+      ]
+    },
+    "limits": {
+      "max_file_size": {
+        "value": 5,
+        "unit": "GB",
+        "notes": "The free service supports sends or receives up to 5 GB per transfer.",
+        "source_refs": [
+          0,
+          1,
+          2
+        ]
+      },
+      "retention": {
+        "value": 7,
+        "unit": "days",
+        "notes": "Free transfers are available for 7 days before automatically expiring.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "storage": {
+        "value": 0,
+        "unit": "GB",
+        "notes": "The free plan is a temporary transfer service and the pricing comparison lists no free storage.",
+        "source_refs": [
+          1
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited first-party free-plan pages publish per-transfer and retention limits, but not a numeric free bandwidth quota.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "TransferNow says users do not need to register to send or download files. Accounts and paid plans add transfer management, history, larger files, customization, and storage.",
+      "source_refs": [
+        2,
+        1
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://developers.transfernow.net/api-docs/",
+      "cli_friendly": true,
+      "cli_example": "curl -XPOST \"https://api.transfernow.net/v1/transfers\" -H \"Content-Type: application/json\" -H \"x-api-key: PUT_YOUR_API_KEY_HERE\"",
+      "notes": "TransferNow publishes authenticated HTTP API and Node.js SDK documentation with curl examples. The API product is separate from the ordinary free transfer flow and is advertised as a 14-day no-card trial / paid API service, so do not treat API access as the default free-hosting path.",
+      "source_refs": [
+        3,
+        4
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "all-or-most",
+        "notes": "TransferNow describes sharing files and folders such as photos, videos, and documents, but the cited first-party pages do not publish a narrow extension allowlist or blocklist.",
+        "source_refs": [
+          5,
+          6,
+          1
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "TransferNow supports both email delivery and generated transfer links for free sends.",
+        "source_refs": [
+          5,
+          6,
+          1
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": true,
+      "notes": "TransferNow documents SSL/TLS in transit, AES-256 storage encryption, antivirus checks, password protection, and optional SSE-C/passphrase behavior. Because ordinary transfers still have abuse-review language, this entry does not mark the service as generally end-to-end encrypted.",
+      "source_refs": [
+        7,
+        1
+      ]
+    },
+    "tags": [
+      "file-transfer",
+      "guest-upload",
+      "temporary-transfer",
+      "email-transfer",
+      "password-protection",
+      "api",
+      "cli",
+      "premium-upgrade"
+    ],
+    "sources": [
+      {
+        "label": "Free service FAQ",
+        "url": "https://support.transfernow.net/en/article/is-transfernow-free-1gzfosb/",
+        "retrieved_at": "2026-06-01",
+        "notes": "Official support article verifies the forever-free version, 5 GB send/receive limit, optional password protection, 7-day expiry, and paid-plan upgrade path."
+      },
+      {
+        "label": "Pricing",
+        "url": "https://www.transfernow.net/en/prices",
+        "retrieved_at": "2026-06-01",
+        "notes": "Official pricing page verifies the Free plan, no registration, 5 GB per transfer, 7-day availability, tracking, password protection, simple file reception, no storage, API/SDK product link, and security comparison notes."
+      },
+      {
+        "label": "Registration FAQ",
+        "url": "https://support.transfernow.net/en/article/do-i-have-to-register-to-use-the-service-weqmw0/",
+        "retrieved_at": "2026-06-01",
+        "notes": "Official support article says registration is not required to send or download files, and restates the 5 GB free transfer limit."
+      },
+      {
+        "label": "API docs",
+        "url": "https://developers.transfernow.net/api-docs/",
+        "retrieved_at": "2026-06-01",
+        "notes": "Official API docs verify HTTP endpoints, API-key authentication, transfer creation, multipart upload URLs, file download/delete/search, Node.js SDK, and curl examples."
+      },
+      {
+        "label": "API pricing",
+        "url": "https://developers.transfernow.net/en/pricing",
+        "retrieved_at": "2026-06-01",
+        "notes": "Official API pricing page verifies the developer API is a separate no-card 14-day trial and usage-priced product rather than the ordinary free transfer tier."
+      },
+      {
+        "label": "Email transfer guide",
+        "url": "https://www.transfernow.net/en/how-to/send-large-files-email",
+        "retrieved_at": "2026-06-01",
+        "notes": "Official guide verifies sending files and folders through an email transfer form, password and expiry controls, storage region selection, preview/streaming options, and recipient download links."
+      },
+      {
+        "label": "Share-link guide",
+        "url": "https://www.transfernow.net/en/how-to/share-large-files-link",
+        "retrieved_at": "2026-06-01",
+        "notes": "Official guide verifies link-based sharing, file/folder uploads, management links, password/security controls, and free link creation."
+      },
+      {
+        "label": "Security",
+        "url": "https://www.transfernow.net/en/explore/security",
+        "retrieved_at": "2026-06-01",
+        "notes": "Official security page verifies TLS in transit, AES-256 stored-file encryption, password protection, optional SSE-C/passphrase behavior, antivirus checks, and permanent deletion after expiry or user deletion."
       }
     ]
   },
