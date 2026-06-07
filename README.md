@@ -19,7 +19,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 
 ## What this includes
 
-- 251 verified hosts checked against current public sources as of 2026-06-03.
+- 251 verified hosts checked against current public sources as of 2026-06-01.
 - 0 main-host leads still in review and 203 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
 - 0 other-ways-to-share candidates, 0 mirror-uploader candidates, and 0 cloud-migration candidates staged in their own pending files.
 - A free-first dataset that prioritizes genuinely usable free tiers, guest flows, and honest headline limits.

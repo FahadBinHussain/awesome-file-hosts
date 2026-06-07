@@ -813,6 +813,16 @@ function formatFeatureSummary(host) {
   return parts.join(" | ");
 }
 
+function getLatestRetrievedAt(items) {
+  const dates = items
+    .flatMap((item) => item.sources ?? [])
+    .map((source) => source.retrieved_at)
+    .filter(Boolean)
+    .sort();
+
+  return dates.at(-1) ?? new Date().toISOString().slice(0, 10);
+}
+
 function buildReadme(
   hosts,
   candidates,
@@ -821,7 +831,7 @@ function buildReadme(
   cloudMigrationCandidates
 ) {
   const sortedHosts = [...hosts].sort((a, b) => a.name.localeCompare(b.name));
-  const lastUpdated = new Date().toISOString().slice(0, 10);
+  const lastUpdated = getLatestRetrievedAt(sortedHosts);
   const pendingCount = candidates.filter((candidate) => candidate.verification_status === "pending").length;
   const rejectedCount = candidates.filter((candidate) => candidate.verification_status === "rejected").length;
   const pendingAlternativeCandidates = alternativeCandidates.filter(
