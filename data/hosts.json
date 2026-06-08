@@ -953,6 +953,156 @@
     }
   },
   {
+    "name": "anon.li Drop",
+    "url": "https://anon.li/",
+    "summary": "Account-based zero-knowledge file-drop service with browser-side encryption, 5 GB free encrypted drops, 3-day expiry, download limits, REST API docs, and CLI documentation.",
+    "free_model": {
+      "value": "free-forever",
+      "notes": "The official pricing page says the Drop free plan is free, not a trial, and includes 5 GB max files, 5 GB bandwidth, 3-day expiry, end-to-end encryption, and download limits.",
+      "source_refs": [
+        2
+      ]
+    },
+    "limits": {
+      "max_file_size": {
+        "value": 5,
+        "unit": "GB",
+        "notes": "The official getting-started and pricing pages list 5 GB as the free Drop maximum file size.",
+        "source_refs": [
+          1,
+          2
+        ]
+      },
+      "retention": {
+        "value": 3,
+        "unit": "days",
+        "notes": "The official pricing page lists 3-day file expiry for the free Drop plan.",
+        "source_refs": [
+          2
+        ]
+      },
+      "storage": {
+        "value": 0,
+        "unit": "GB",
+        "notes": "anon.li Drop is a temporary encrypted sharing flow rather than a persistent personal cloud-storage plan; the free tier is expressed as max file size, bandwidth, expiry, and download limits.",
+        "source_refs": [
+          1,
+          2
+        ]
+      },
+      "bandwidth": {
+        "value": 5,
+        "unit": "GB",
+        "notes": "The official pricing page lists 5 GB bandwidth for the free Drop plan.",
+        "source_refs": [
+          2
+        ]
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "A free account is used to upload and manage drops from the dashboard. Recipients can decrypt and download with only the shared link.",
+      "source_refs": [
+        1,
+        2
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://anon.li/docs/api/index",
+      "cli_friendly": true,
+      "cli_example": null,
+      "notes": "anon.li publishes REST API documentation for Drop and a documentation hub with CLI guides for uploading, downloading, listing, and managing encrypted file drops.",
+      "source_refs": [
+        3,
+        6
+      ]
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": true,
+      "server_side_encryption": null,
+      "notes": "Official security documentation says Drop encrypts and decrypts files in the browser with AES-256-GCM, keeps keys client-side in the URL fragment, and leaves the server with encrypted blobs and access controls only.",
+      "source_refs": [
+        0,
+        4
+      ]
+    },
+    "tags": [
+      "file-sharing",
+      "temporary-transfer",
+      "free-account",
+      "e2ee",
+      "zero-knowledge",
+      "api",
+      "cli"
+    ],
+    "sources": [
+      {
+        "label": "Homepage",
+        "url": "https://anon.li/",
+        "retrieved_at": "2026-06-08",
+        "notes": "Current homepage positions Drop as browser-side end-to-end encrypted file sharing with share links, recipient browser decryption, REST API, CLI, and open-source security-sensitive behavior."
+      },
+      {
+        "label": "Getting Started docs",
+        "url": "https://anon.li/docs/getting-started",
+        "retrieved_at": "2026-06-08",
+        "notes": "Official getting-started page documents Drop upload flow, shared-link model, automatic expiration, download limits, free-plan limits, and account-based dashboard use."
+      },
+      {
+        "label": "Pricing",
+        "url": "https://anon.li/pricing",
+        "retrieved_at": "2026-06-08",
+        "notes": "Official pricing page lists the free Drop plan with 5 GB bandwidth, 5 GB max file size, 3-day expiry, end-to-end encryption, and download limits."
+      },
+      {
+        "label": "Documentation hub",
+        "url": "https://anon.li/docs",
+        "retrieved_at": "2026-06-08",
+        "notes": "Official docs hub lists CLI drop commands and Drop API documentation for uploading, downloading, listing, managing, and sharing encrypted drops."
+      },
+      {
+        "label": "Security docs",
+        "url": "https://anon.li/docs/security",
+        "retrieved_at": "2026-06-08",
+        "notes": "Official security docs describe Drop as zero-knowledge, with client-side AES-256-GCM encryption and keys that never reach the server."
+      },
+      {
+        "label": "Acceptable Use Policy",
+        "url": "https://anon.li/docs/legal/aup",
+        "retrieved_at": "2026-06-08",
+        "notes": "Official AUP lists prohibited uses and calls out file-sharing abuse, including using Drop as general-purpose backup, CDN, or cold storage without sharing intent."
+      },
+      {
+        "label": "Developer API docs",
+        "url": "https://anon.li/docs/api/index",
+        "retrieved_at": "2026-06-08",
+        "notes": "Official API documentation describes developer-friendly REST APIs for encrypted file sharing, API-key authentication, base URL, quotas, and Drop API support."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "all_except_prohibited",
+        "notes": "The cited first-party pages position Drop as generic encrypted file sharing but prohibit abuse categories and using Drop as backup, CDN, or cold storage without sharing intent.",
+        "source_refs": [
+          0,
+          5
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Drop is explicitly built around sharing encrypted links that recipients can open and decrypt in their browser.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    }
+  },
+  {
     "name": "AnonFile",
     "url": "https://anonfile.co/",
     "summary": "Privacy-focused file hosting service with browser-side encryption, no-account sharing, public API docs, and optional free accounts.",

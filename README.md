@@ -19,7 +19,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 
 ## What this includes
 
-- 251 verified hosts checked against current public sources as of 2026-06-01.
+- 252 verified hosts checked against current public sources as of 2026-06-08.
 - 0 main-host leads still in review and 203 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
 - 0 other-ways-to-share candidates, 0 mirror-uploader candidates, and 0 cloud-migration candidates staged in their own pending files.
 - A free-first dataset that prioritizes genuinely usable free tiers, guest flows, and honest headline limits.
@@ -45,6 +45,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [4shared](https://www.4shared.com/) - Long-running cloud storage and file-sharing service with a free 15 GB tier, 2 GB max uploads, and official mobile apps. _(Free: Free forever | Max: 2048 MB | Retention: Conditional | Account: Yes)_
 - [Akira Box](https://akirabox.com/) - Freemium file-sharing host with guest uploads, 5 GB free guest files, 20 GB free registered uploads, and longer retention for account users. _(Free: Free forever | Max: 5 GB | Retention: Conditional | Account: No)_
 - [Android File Host](https://androidfilehost.com/) - Large Android-focused file hosting network for developers with unlimited downloads, multiple mirrors, and a public beta API. _(Free: Free forever | Max: Conditional | Retention: Conditional | Account: Yes | API)_
+- [anon.li Drop](https://anon.li/) - Account-based zero-knowledge file-drop service with browser-side encryption, 5 GB free encrypted drops, 3-day expiry, download limits, REST API docs, and CLI documentation. _(Free: Free forever | Max: 5 GB | Retention: 3 days | Account: Yes | API | CLI | E2EE)_
 - [AnonFile](https://anonfile.co/) - Privacy-focused file hosting service with browser-side encryption, no-account sharing, public API docs, and optional free accounts. _(Free: Free forever | Max: Unlimited | Retention: No automatic expiry | Account: No | API | CLI | E2EE)_
 - [AnonTransfer](https://anontransfer.com/) - General file-transfer host with anonymous uploads, 10 GB free-plan uploads, 30-day anonymous/free retention, first-party encryption claims, and optional permanent account storage. _(Free: Free forever | Max: 10 GB | Retention: 30 days | Account: No | E2EE)_
 - [Anoxinon Share](https://share.anoxinon.de/) - Jirafeau-based sharing tool with 100 MB uploads, optional one-time download/password controls, and selectable expiries up to one quarter. _(Free: Free forever | Max: 100 MB | Retention: Conditional | Account: No)_
