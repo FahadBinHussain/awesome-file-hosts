@@ -19,7 +19,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 
 ## What this includes
 
-- 252 verified hosts checked against current public sources as of 2026-06-08.
+- 253 verified hosts checked against current public sources as of 2026-06-19.
 - 6 main-host leads still in review and 203 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
 - 0 other-ways-to-share candidates, 0 mirror-uploader candidates, and 0 cloud-migration candidates staged in their own pending files.
 - A free-first dataset that prioritizes genuinely usable free tiers, guest flows, and honest headline limits.
@@ -223,6 +223,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [SharePlace](https://shareplace.org/) - File hosting service with browser uploads, account-based management, and a documented public API. _(Free: Free forever | Max: 500 MB | Retention: 60 days | Account: No | API)_
 - [SlightURL](https://slighturl.com/) - Free URL shortener and file-sharing service with 200 MB file uploads, temporary links, analytics, QR codes, and a free Bearer-token REST API. _(Free: Free forever | Max: 200 MB | Retention: 24 hours | Account: No | API)_
 - [Smash](https://fromsmash.com/) - Freemium large-file transfer service with no-account free sends, 2 GB priority free transfers, non-priority larger uploads, 7-day free availability, AES/SSL security claims, and paid API/SDK products. _(Free: Free forever | Max: Not published | Retention: 7 days | Account: No | API)_
+- [Snapy](https://snapy.host/) - Free no-signup hosting that turns a file, an HTML page, or a built static site (React or Next export) into a clean public link in seconds, with optional password, email-gate, expiry, QR codes, and per-link analytics. _(Free: Free forever | Max: 100 MB | Retention: No automatic expiry | Account: No)_
 - [Stashr](https://stashr.wtf/) - Guest-friendly file-sharing host with 500 MB files, selectable expiry or download limits, and optional client-side encryption. _(Free: Free forever | Max: 500 MB | Retention: Conditional | Account: No | E2EE)_
 - [storage.to](https://storage.to/) - Free no-account temporary file-sharing service with 25 GB uploads, 1-7 day expiry, 100 GB/day upload allowance, unlimited downloads, TLS/AES-256-at-rest security, desktop app, CLI, and ShareX support. _(Free: Free forever | Max: 25 GB | Retention: 7 days | Account: No | CLI)_
 - [StreamA2Z](https://streama2z.com/) - Video host with free accounts, 15 GB uploads, no published bandwidth limit, webmaster storage language, remote/API upload, and cURL examples. _(Free: Free forever | Max: 15 GB | Retention: Not published | Account: Yes | API | CLI)_
