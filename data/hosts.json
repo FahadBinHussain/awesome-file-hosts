@@ -24101,11 +24101,11 @@
       "bandwidth": {
         "value": 10,
         "unit": "GB/month",
-      "notes": "Free link creators have a 10 GB monthly download-data allowance for shared links. The policy notice says 6-digit key transfers remain unlimited for file transfers.",
-      "source_refs": [
-        2,
-        5
-      ]
+        "notes": "Free link creators have a 10 GB monthly download-data allowance for shared links. The policy notice says 6-digit key transfers remain unlimited for file transfers.",
+        "source_refs": [
+          2,
+          5
+        ]
       }
     },
     "account": {
@@ -25000,6 +25000,141 @@
         "url": "https://api.fromsmash.com/",
         "retrieved_at": "2026-05-01",
         "notes": "Official API page verifies API/SDK availability for large-file upload/transfer integrations and a 100 GB, 14-day free trial for developers."
+      }
+    ]
+  },
+  {
+    "name": "Snapy",
+    "url": "https://snapy.host/",
+    "summary": "Free no-signup hosting that turns a file, an HTML page, or a built static site (React or Next export) into a clean public link in seconds, with optional password, email-gate, expiry, QR codes, and per-link analytics.",
+    "free_model": {
+      "value": "free-forever",
+      "notes": "The homepage offers instant links with no signup and lists no paid plan on the upload flow.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "limits": {
+      "max_file_size": {
+        "value": 100,
+        "unit": "MB",
+        "notes": "The homepage and features page state uploads are up to 100 MB each.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Links are permanent by default; the upload flow optionally lets a link stop working after 1, 7, or 30 days.",
+        "source_refs": [
+          0,
+          1
+        ],
+        "status": "no-automatic-expiry"
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Snapy is link-based publishing/sharing rather than a persistent storage product; the public pages do not publish a total free storage quota.",
+        "source_refs": [
+          0,
+          1
+        ],
+        "status": "not-applicable"
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited public pages do not publish a numeric bandwidth cap.",
+        "source_refs": [
+          0,
+          1
+        ],
+        "status": "not-published"
+      },
+      "max_file_size_guest": {
+        "value": 100,
+        "unit": "MB",
+        "notes": "Guest uploads work with no signup and use the same 100 MB per-file limit.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "Uploads and public links work with no signup; the analytics page and the collected viewer-email list are accessed through the private link returned at upload time.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The cited public pages document a browser upload flow but do not publish an API or CLI.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "The pages list PDFs, images, text files, and ZIP archives, and also support hosting an HTML page or a zipped multi-file static site (React or Next export) served as a viewable page; the public pages do not publish a full allow/block list.",
+        "source_refs": [
+          0,
+          1
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Every upload returns a clean public link; links can optionally be protected with a password or an email gate.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The service is served over HTTPS and offers optional per-link password protection; the cited public pages do not claim end-to-end encryption.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "tags": [
+      "file-hosting",
+      "static-site-hosting",
+      "guest-upload",
+      "html-hosting",
+      "analytics",
+      "qr-code",
+      "password-protection"
+    ],
+    "sources": [
+      {
+        "label": "Homepage",
+        "url": "https://snapy.host/",
+        "retrieved_at": "2026-06-19",
+        "notes": "Official homepage: instant links with no signup, up to 100 MB per file, PDF/images/HTML/text/ZIP support, optional password and viewer-email gate, optional 1/7/30-day expiry, QR codes, and a private analytics page."
+      },
+      {
+        "label": "Features",
+        "url": "https://snapy.host/features",
+        "retrieved_at": "2026-06-19",
+        "notes": "Official features page: host a multi-file project by uploading a zipped web folder (React or Next export), permanent links by default, password and email-gate options, per-link QR code, bundles into one listing page, and private per-link stats."
       }
     ]
   },
