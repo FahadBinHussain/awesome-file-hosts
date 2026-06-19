@@ -28,7 +28,8 @@
       "bandwidth": {
         "value": null,
         "unit": null,
-        "notes": "Bandwidth is left blank because there is no domain or service page to inspect."
+        "notes": "Bandwidth is left blank because there is no domain or service page to inspect.",
+        "status": "not-published"
       }
     },
     "account": {
@@ -116,7 +117,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -232,7 +234,8 @@
         "notes": "Bandwidth is conditional. The official FAQ publishes historical outgoing traffic of 10-40 TB/month but no per-user quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -365,7 +368,8 @@
         "notes": "Bandwidth is conditional. The premium page advertises direct downloads, maximum speeds, and no limit on the amount of downloads for premium, but the cited pages do not publish a numeric free transfer quota.",
         "source_refs": [
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -505,7 +509,8 @@
         "source_refs": [
           1,
           3
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": 50,
@@ -673,7 +678,8 @@
         "notes": "Bandwidth varies by plan. The download page says free downloads run at 10 Mbps with a 60-second wait, while premium downloads run at maximum speed and the premium comparison says there are no limits on the amount of downloads.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -789,7 +795,8 @@
         "notes": "No current first-party bandwidth or download-volume quota was found in the reviewed public crawl.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -1025,7 +1032,8 @@
         "notes": "Unlimited bandwidth volume within account-space limits. The official help page says there are no restrictions on the amount of data that can be transferred, as long as uploads and downloads stay within the size of your account space.",
         "source_refs": [
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -1452,7 +1460,8 @@
         "notes": "Unlimited. A current official Akira Box article says the service imposes no sharing restrictions on downloads, recipients, or bandwidth.",
         "source_refs": [
           5
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -1594,7 +1603,8 @@
         "source_refs": [
           1,
           4
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -1752,7 +1762,8 @@
         "notes": "Data transfer is priced rather than provided as a simple free public-host bandwidth allowance.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -1890,7 +1901,8 @@
         "source_refs": [
           0,
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -2414,7 +2426,8 @@
         "notes": "The cited page does not publish a numeric bandwidth cap.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -2532,7 +2545,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -2790,7 +2804,8 @@
         "notes": "The cited official pages do not publish a numeric transfer quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -3107,7 +3122,8 @@
         "notes": "The official page does not publish a numeric bandwidth or transfer quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -3222,7 +3238,8 @@
         "notes": "The product advertises unlimited backup speed for computer backup, but no simple free public-host transfer quota applies.",
         "source_refs": [
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -3504,7 +3521,8 @@
         "notes": "Not modeled after rejection: bandwidth/download-speed behavior was not promoted because account access could not be completed.",
         "source_refs": [
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -3640,7 +3658,8 @@
         "notes": "Bandwidth is conditional. Baidu's current official help says the Mac client does not impose upload or download speed throttling, but the cited first-party pages still do not publish one clean universal free-user traffic quota across web, desktop, and sharing flows.",
         "source_refs": [
           5
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -3803,7 +3822,8 @@
         "notes": "No free public-host bandwidth allowance applies; this is enterprise backup/replication infrastructure.",
         "source_refs": [
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -3930,7 +3950,8 @@
         "notes": "Bandwidth is conditional. The live homepage does not publish a transfer-volume cap, but files can only be downloaded once.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -4047,7 +4068,8 @@
         "notes": "Conditional: the current homepage promises fast and secure transfers and no hidden fees, but it does not publish a neat numeric transfer cap.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -4160,7 +4182,8 @@
         "source_refs": [
           0,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -4304,7 +4327,8 @@
         "notes": "Bandwidth is conditional. The homepage advertises full-speed downloads without a speed limit, but it does not publish a numeric transfer quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -4507,6 +4531,142 @@
     "reason": "Rejected because the surviving BezSms trail is stale and low-confidence, with no current trustworthy host surface to publish."
   },
   {
+    "name": "BorgBase",
+    "url": "https://borgbase.com/",
+    "summary": "Dedicated hosting for Borg and Restic backup repositories with 10 GB free tier, client-side encryption, append-only mode, and monitoring.",
+    "free_model": {
+      "value": "free-forever",
+      "notes": "10 GB storage, 2 repositories, no credit card required.",
+      "source_refs": [
+        0
+      ]
+    },
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Not specified. Borg/Restic repositories handle deduplication at the block level, so individual file size is not a meaningful constraint.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Configurable via Borg/Restic tools. Append-only mode available to prevent deletion. Files persist as long as the repository is active on BorgBase.",
+        "source_refs": [
+          0
+        ],
+        "status": "no-automatic-expiry"
+      },
+      "storage": {
+        "value": 10,
+        "unit": "GB",
+        "notes": "10 GB on free plan. Paid plans: 250 GB (Small $24/yr), 1 TB (Medium $80/yr), 2 TB (Large $150/yr) with flexible quotas up to 4x included.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "No upload/download/API call charges under fair use policy.",
+        "source_refs": [
+          0
+        ],
+        "status": "not-published"
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "Web interface, monitoring, alerts, API access, guided setup, multiple regions (EU/US), append-only mode, 2FA, free migration services.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://docs.borgbase.com/api",
+      "cli_friendly": true,
+      "cli_example": "borg create --compression lz4 ssh://REPO_ID@REPO_ID.repo.borgbase.com/./repo::'{hostname}-{now}'",
+      "notes": "GraphQL API at https://api.borgbase.com/graphql. Python client and Ansible role available. Works with Borg, Borgmatic, Vorta, Pika Backup.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "backup-only",
+        "notes": "Backup data only — Borg and Restic repositories. Not a general file hosting service.",
+        "source_refs": [
+          0
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": false,
+        "notes": "Backup repository hosting; no public sharing or link generation feature.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": true,
+      "server_side_encryption": null,
+      "notes": "Client-side encryption (Borg/Restic), server never sees plaintext. SSH for Borg connections. Append-only mode, 2FA, isolated repositories, GDPR compliant.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "backup",
+      "borg",
+      "restic",
+      "encrypted",
+      "e2e",
+      "api",
+      "cli",
+      "ssh",
+      "append-only",
+      "monitoring",
+      "deduplication",
+      "compression",
+      "gdpr",
+      "open-source"
+    ],
+    "sources": [
+      {
+        "label": "Homepage",
+        "url": "https://borgbase.com/",
+        "retrieved_at": "2026-06-19",
+        "notes": "Main product page with feature overview."
+      },
+      {
+        "label": "API Documentation",
+        "url": "https://docs.borgbase.com/api",
+        "retrieved_at": "2026-06-19",
+        "notes": "GraphQL API reference."
+      },
+      {
+        "label": "Pricing",
+        "url": "https://docs.borgbase.com/pricing",
+        "retrieved_at": "2026-06-19",
+        "notes": "Free and paid plan details."
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/borgbase",
+        "retrieved_at": "2026-06-19",
+        "notes": "Open source projects including API client and Ansible role."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": "Specialized backup hosting only — not general-purpose file hosting."
+  },
+  {
     "name": "Bowfile",
     "url": "https://bowfile.com/",
     "summary": "Freemium file host with free uploads up to 20 GB, unlimited advertised free storage, 20-day free retention, and account-authenticated API documentation.",
@@ -4568,7 +4728,8 @@
         "notes": "Bandwidth is conditional. Free downloads are speed-limited and advert-supported, while paid plans remove ads and raise download speed.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -4703,7 +4864,8 @@
         "notes": "Bandwidth varies by traffic type. Box pricing currently documents fair-use thresholds of 10 GB per user per month for shared-link downloads on Individual plans and 1 TB per user per month for uploaded/downloaded traffic.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": 250,
@@ -4880,7 +5042,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -5030,7 +5193,8 @@
           0,
           3,
           4
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -5165,7 +5329,8 @@
         "notes": "The official page does not publish a numeric bandwidth or transfer quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -5279,7 +5444,8 @@
         "notes": "No public-host bandwidth allowance applies; Carbonite is backup-client software with a trial/subscription model.",
         "source_refs": [
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -5407,7 +5573,8 @@
         "notes": "No numeric download-volume quota was found; the page advertises direct-link temporary uploads and a speed-test endpoint.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -5540,7 +5707,8 @@
           0,
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -5826,7 +5994,8 @@
         "notes": "The official FAQ currently says bandwidth is unlimited for free users.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_guest": {
         "value": 2,
@@ -5956,7 +6125,8 @@
         "notes": "Bandwidth is conditional. The live upload UI does not publish a numeric throughput cap, but it does make effective transfer availability depend on the sender's chosen share mode, including 10 minutes, 1 hour, 1 day, 1 week, or a one-view burn-after-reading option.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -6065,7 +6235,8 @@
         "notes": "Bandwidth is unlimited on the Beeline network. The official homepage says Beeline customers can use the service without limits on-network, while no clean general cap is published for other networks.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       },
       "storage_account": {
         "value": 10,
@@ -6203,7 +6374,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -6494,7 +6666,8 @@
         "notes": "The cited CloudMe pages do not publish a numeric transfer quota for free accounts.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -6629,7 +6802,8 @@
         "notes": "Bandwidth is conditional. Cloudup's official public docs do not publish a file-transfer quota, but the API documentation does impose request rate limiting of 2500 requests per hour for authenticated use.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": 200,
@@ -6761,7 +6935,8 @@
         "notes": "No numeric bandwidth quota is published; the homepage advertises unlimited upload and download speed without artificial throttling.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -6876,7 +7051,8 @@
         "source_refs": [
           1,
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -7005,7 +7181,8 @@
         "notes": "Bandwidth is conditional. Cozy's official desktop limitations page does not publish a neat transfer cap, but it explicitly frames sync around personal-use expectations, large files being uploaded or downloaded in one time, and practical network-bandwidth constraints.",
         "source_refs": [
           3
-        ]
+        ],
+        "status": "not-published"
       },
       "storage_account": {
         "value": 5,
@@ -7158,7 +7335,8 @@
         "notes": "No public-host bandwidth allowance applies; this is endpoint/Microsoft 365 backup with paid subscription billing.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -7418,7 +7596,8 @@
         "notes": "The official page does not publish a numeric bandwidth or transfer quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -7552,7 +7731,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -7693,7 +7873,8 @@
         "notes": "Conditional: the official terms prohibit mirrored traffic, direct-link abuse, traffic manipulation, and excessive bandwidth use, and reserve the right to suspend or delete accounts for those patterns.",
         "source_refs": [
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -8105,7 +8286,8 @@
         "notes": "Bandwidth is conditional on file size and plan. The official pages do not publish a clean quota cap, but free downloads above 200 MB are restricted to premium users.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_guest": {
         "value": 2,
@@ -8269,7 +8451,8 @@
           1,
           5,
           6
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -8822,7 +9005,8 @@
         "source_refs": [
           2,
           4
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -8966,7 +9150,8 @@
           0,
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -9108,7 +9293,8 @@
         "source_refs": [
           0,
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -9405,7 +9591,8 @@
         "notes": "The official plan table lists Free, Premium, and Registered download volume as Unlimited, without a numeric transfer cap.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -10051,7 +10238,8 @@
         "source_refs": [
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -10181,7 +10369,8 @@
           0,
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -10315,7 +10504,8 @@
         "source_refs": [
           0,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -10442,7 +10632,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -10599,7 +10790,8 @@
         "notes": "The FAQ says free members have download speed limits, but it does not publish a numeric transfer quota.",
         "source_refs": [
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -10751,7 +10943,8 @@
         "notes": "The current official comparison says free, registered, and premium tiers all have unlimited download volume, while premium affects speed and waiting/captcha restrictions.",
         "source_refs": [
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -10900,7 +11093,8 @@
           1,
           2,
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -11030,7 +11224,8 @@
         "notes": "The cited public homepage does not publish a numeric bandwidth or transfer quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -11147,7 +11342,8 @@
         "notes": "The pricing page lists the free plan with unlimited bandwidth.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -11298,7 +11494,8 @@
           0,
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -11439,7 +11636,8 @@
         "notes": "Bandwidth is conditional. Premium marketing promises unlimited speed, but no numeric free transfer quota is published.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": 5,
@@ -11724,7 +11922,8 @@
         "notes": "Bandwidth varies by sharing mode. Dropbox says sharing activity can be interrupted for exceeding bandwidth limits or for links that are downloaded too many times in one day, but it does not publish one clean Basic-plan transfer quota.",
         "source_refs": [
           7
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": 2,
@@ -11912,7 +12111,8 @@
           1,
           2,
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -12336,7 +12536,8 @@
         "notes": "Bandwidth is advertised as unlimited in the official FAQ, but no numeric free transfer quota is published.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -12475,7 +12676,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -12598,7 +12800,8 @@
         "notes": "The cited public pages do not publish a clean bandwidth cap.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -12711,7 +12914,8 @@
         "notes": "The homepage describes unlimited upload/download speed for the public no-registration flow.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -12820,7 +13024,8 @@
         "source_refs": [
           2,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -12905,6 +13110,147 @@
     "reason": "Rejected because Dropmysite is website/server/database backup with a short trial, not a general ongoing free file-hosting service."
   },
   {
+    "name": "Dropshare",
+    "url": "https://dropshare.cloud/",
+    "summary": "macOS/iOS file-sharing utility that uploads to 36+ cloud providers you configure — stores nothing on its own servers. 7-day free trial, then paid license required.",
+    "free_model": {
+      "value": "free-trial",
+      "notes": "7-day unrestricted trial, no payment details required. After trial, requires paid license ($39.10 personal, one-off purchase). Also available via Setapp subscription. No perpetual free tier.",
+      "source_refs": [
+        0
+      ]
+    },
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Depends on configured storage provider (e.g. S3: 5 TB, Backblaze B2: 10 GB).",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Configurable per connection; supports automatic deletion.",
+        "source_refs": [
+          0
+        ],
+        "status": "not-published"
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Your own cloud provider — Dropshare stores nothing centrally. Dropshare Cloud (their hosted storage) was discontinued in late 2023.",
+        "source_refs": [
+          0
+        ],
+        "status": "not-published"
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Depends on your configured storage provider/plan.",
+        "source_refs": [
+          0
+        ],
+        "status": "not-published"
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "No Dropshare account needed — it is a client app that uploads to your cloud accounts. App license required ($39.10 personal, up to 3 Macs per license).",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://kb.dropshare.app/how-to/how-can-i-enable-dropshare-integrations.html",
+      "cli_friendly": true,
+      "cli_example": "Install via app Preferences > General > Install CLI; then upload files and capture screenshots from terminal.",
+      "notes": "URL scheme API (dropshare5:///action/...) for macOS integration. MCP server available for AI agents. Raycast extension, Clop, Dockside integrations.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "all-or-most",
+        "notes": "Any file type — no restrictions on file content. Upload via drag-and-drop, keyboard shortcut, share menu, Shortcuts automation, CLI, Finder integration, clipboard, upload zone.",
+        "source_refs": [
+          0
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Landing pages and share links supported via configured storage providers.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": true,
+      "server_side_encryption": null,
+      "notes": "Client-side AES encryption before upload (Dropshare 6.11+). Decryption key embedded in URL fragment. Data sovereignty: nothing stored on Dropshare infrastructure. Depends on configured provider for transport security.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "macos",
+      "ios",
+      "native-app",
+      "cli",
+      "api",
+      "url-scheme",
+      "encryption",
+      "e2ee",
+      "s3",
+      "cloud-agnostic",
+      "screen-capture",
+      "screen-recording",
+      "annotation",
+      "landing-page",
+      "mcp",
+      "one-off-purchase",
+      "setapp",
+      "no-central-storage"
+    ],
+    "sources": [
+      {
+        "label": "Homepage",
+        "url": "https://dropshare.cloud/",
+        "retrieved_at": "2026-06-19",
+        "notes": "Main product page (HTTP — SSL certificate invalid at time of retrieval)."
+      },
+      {
+        "label": "CLI Docs",
+        "url": "https://kb.dropshare.app/how-to/how-to-install-the-dropshare-for-mac-cli.html",
+        "retrieved_at": "2026-06-19",
+        "notes": "CLI installation and usage documentation."
+      },
+      {
+        "label": "Upload Encryption",
+        "url": "https://kb.dropshare.app/how-to/how-to-use-upload-encryption.html",
+        "retrieved_at": "2026-06-19",
+        "notes": "Client-side AES encryption and URL fragment key delivery."
+      },
+      {
+        "label": "GitHub MCP",
+        "url": "https://github.com/DropshareApp/dropshare-mcp",
+        "retrieved_at": "2026-06-19",
+        "notes": "Model Context Protocol server for AI agent integration."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": "macOS/iOS only; no perpetual free tier (7-day trial only); actual storage depends on user's own cloud provider."
+  },
+  {
     "name": "DZ4Up",
     "url": "https://dz4up.com/",
     "summary": "Free file upload service with guest local and remote URL uploads, 2 GB maximum files, share-code output, optional email/password fields, and account folders.",
@@ -12948,7 +13294,8 @@
         "notes": "Bandwidth is conditional. The homepage says premium users get no waiting time and direct downloads, but it does not publish a numeric free transfer quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -13061,7 +13408,8 @@
         "notes": "Crawled Mdia Load tier tables list download volume as unlimited, but no separate first-party bandwidth policy was found.",
         "source_refs": [
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -13199,7 +13547,8 @@
         "notes": "Bandwidth is conditional. The homepage advertises unlimited free traffic when using the EarnVids player, but no numeric transfer quota is published.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -13352,7 +13701,8 @@
         "notes": "Conditional: the official premium comparison says guest users get 100 MB of download volume per day, registered free users get 5 GB/day, premium users 500 GB/day, and Premium Pro is unlimited.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -13488,7 +13838,8 @@
         "notes": "No per-user transfer cap is published on the cited public pages.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -13608,7 +13959,8 @@
         "notes": "No numeric download bandwidth cap is published on the cited public pages.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -13733,7 +14085,8 @@
         "notes": "Unlimited. The homepage says there is no download or bandwidth limit for uploaded files.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -13857,7 +14210,8 @@
         "notes": "Bandwidth is conditional. The FAQ says registered users have unlimited data flow, but free slow downloads are limited to one file at a time and no numeric transfer quota is published.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -13976,7 +14330,8 @@
         "source_refs": [
           2,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -14259,7 +14614,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -14348,6 +14704,132 @@
     "reason": null
   },
   {
+    "name": "Ente",
+    "url": "https://ente.io/",
+    "summary": "Open-source, end-to-end encrypted cloud storage for photos, authenticators (2FA), and documents with 10 GB free tier and cross-platform apps.",
+    "free_model": {
+      "value": "free-forever",
+      "notes": "10 GB free forever for Ente Photos. Ente Auth (2FA) is completely free. Ente Locker free for up to 100 items.",
+      "source_refs": [
+        0
+      ]
+    },
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Max file size not explicitly stated on public pages.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Permanent while account is active. 3x replication across locations.",
+        "source_refs": [
+          0
+        ],
+        "status": "not-published"
+      },
+      "storage": {
+        "value": 10,
+        "unit": "GB",
+        "notes": "10 GB free, expandable with paid plans.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth not specified in public documentation.",
+        "source_refs": [
+          0
+        ],
+        "status": "not-published"
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "End-to-end encrypted cloud backup, cross-platform sync (iOS, Android, Web, Desktop), on-device face recognition, zero-knowledge AI search, curated memories, family plans, public links, shared albums, smart albums, hidden photos, legacy contacts.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": true,
+      "cli_example": "ente export",
+      "notes": "CLI available for export and Auth decryption (Go-based). No public third-party API documentation found. Self-hostable under AGPL-3.0.",
+      "source_refs": [
+        0,
+        2
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "all-or-most",
+        "notes": "Photos (images, videos), documents (Locker), 2FA tokens (Auth). Primary focus is photo backup and management.",
+        "source_refs": [
+          0
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public links and shared albums supported.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": true,
+      "server_side_encryption": null,
+      "notes": "End-to-end encryption with zero-knowledge architecture. Server never sees plaintext. Externally audited by Cure53, Symbolic Software, and Fallible. Open source (AGPL-3.0). Self-hostable.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "e2ee",
+      "open-source",
+      "photos",
+      "backup",
+      "privacy",
+      "zero-knowledge",
+      "self-hostable",
+      "cross-platform",
+      "encrypted"
+    ],
+    "sources": [
+      {
+        "label": "Homepage",
+        "url": "https://ente.io/",
+        "retrieved_at": "2026-06-19",
+        "notes": "Main product page with feature overview and free tier details."
+      },
+      {
+        "label": "About",
+        "url": "https://ente.io/about",
+        "retrieved_at": "2026-06-19",
+        "notes": "Company background and product positioning."
+      },
+      {
+        "label": "GitHub",
+        "url": "https://github.com/ente-io/ente",
+        "retrieved_at": "2026-06-19",
+        "notes": "Open source repository with 27k+ stars. CLI source in /cli directory."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
+  },
+  {
     "name": "EuropeUp",
     "url": "https://www.europeup.com/",
     "summary": "Rejected affiliate cyberlocker lead: EuropeUp has old support-thread evidence for free file hosting up to 10 GB, but current trust/review evidence is weak and payout-oriented.",
@@ -14392,7 +14874,8 @@
         "notes": "The old official thread says free downloads are unlimited under fair use, but no current numeric bandwidth policy is available.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -14533,7 +15016,8 @@
         "source_refs": [
           1,
           3
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": null,
@@ -14692,7 +15176,8 @@
         "source_refs": [
           2,
           3
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": 100,
@@ -14849,7 +15334,8 @@
         "notes": "Unlimited. The official page says there is no bandwidth or download limit and that files can be shared as fast as possible.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -14962,7 +15448,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_guest": {
         "value": 10240,
@@ -15097,7 +15584,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -15351,7 +15839,8 @@
         "notes": "FastPic does not publish a numeric free bandwidth quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -15480,7 +15969,8 @@
         "notes": "The Netshare migration page advertises unlimited-speed downloads, but no numeric free bandwidth quota was found.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -15626,7 +16116,8 @@
         "notes": "The old official thread says speed, file-size limits, and bandwidth were customizable for PPS uploaders, so no single current bandwidth figure is retained.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -15756,7 +16247,8 @@
         "source_refs": [
           2,
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -15899,7 +16391,8 @@
           0,
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -16170,7 +16663,8 @@
         "notes": "The current official premium comparison lists download volume as unlimited across anonymous, registered, and premium tiers.",
         "source_refs": [
           3
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": 5000,
@@ -16333,7 +16827,8 @@
         "notes": "The registration page advertises unlimited traffic for free members, but the public pages do not present a clean numeric bandwidth cap.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -16588,7 +17083,8 @@
         "source_refs": [
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -16751,7 +17247,8 @@
         "notes": "The pricing page says sharing count is unlimited, but it does not publish a bandwidth cap.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -16894,7 +17391,8 @@
         "notes": "The official pricing table lists Free and Registered download volume as Unlimited, while premium plans publish daily transfer amounts.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -17036,7 +17534,8 @@
         "notes": "Bandwidth is conditional. Filebin does not publish a numeric bandwidth cap, but the live homepage says uploads can be rejected whenever the overall service storage capacity limit is reached.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -17326,7 +17825,8 @@
           1,
           2,
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -18101,7 +18601,8 @@
         "source_refs": [
           0,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -18225,7 +18726,8 @@
         "notes": "Bandwidth is conditional. FileDitch does not publish a transfer-volume allowance, but the FAQ says uploads are protected by rate limiting and automated abuse prevention, and hotlinking or embedding from external sites is not supported.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -18516,7 +19018,8 @@
         "notes": "Bandwidth varies by account type and time window. The current comparison page says premium downloads are unlimited, while free members face hourly download limits and anonymous users are even more restricted.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -18851,7 +19354,8 @@
           1,
           2,
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -18978,7 +19482,8 @@
         "notes": "The public app does not publish a numeric transfer quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -19084,7 +19589,8 @@
         "notes": "The homepage does not publish a numeric transfer quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -19189,7 +19695,8 @@
         "notes": "No numeric bandwidth cap is published on the cited public page.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -19299,7 +19806,8 @@
         "source_refs": [
           2,
           3
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": 50,
@@ -19470,7 +19978,8 @@
         "notes": "Conditional: the official FAQ says free downloads have limited speed, may allow only one simultaneous download, and impose a 90 to 120 second waiting time.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -19587,7 +20096,8 @@
         "notes": "Bandwidth is conditional. The published terms do not give a clean numeric throughput cap, but they prohibit automated interaction and any use that interferes with normal operation, and they reserve the right to suspend, restrict, or terminate access at any time.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -19704,7 +20214,8 @@
         "notes": "The homepage says there are no upload or download speed limits, but it does not publish a numeric transfer quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -19842,7 +20353,8 @@
           1,
           3,
           4
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -19991,7 +20503,8 @@
         "source_refs": [
           0,
           6
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -20324,7 +20837,8 @@
         "source_refs": [
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -20447,7 +20961,8 @@
         "notes": "The pricing comparison says bandwidth is unlimited on all plans.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -20559,7 +21074,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -20690,7 +21206,8 @@
         "notes": "Bandwidth is conditional. The premium comparison page says registered users get 150 GB in 1 day while premium users get unlimited bandwidth.",
         "source_refs": [
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -20832,7 +21349,8 @@
           0,
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": null,
@@ -20970,7 +21488,8 @@
         "notes": "The official free cards advertise fast upload speeds but no numeric bandwidth cap.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -21330,7 +21849,8 @@
         "source_refs": [
           0,
           2
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": 5,
@@ -21466,7 +21986,8 @@
         "notes": "No reliable current bandwidth policy could be found for FilesABC.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -21704,7 +22225,8 @@
         "source_refs": [
           2,
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -21843,7 +22365,8 @@
         "source_refs": [
           2,
           3
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": null,
@@ -21989,7 +22512,8 @@
         "notes": "The homepage advertises unrestricted premium upload and download behavior, but no clean free-first bandwidth story is presented apart from the monetized host model.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -22107,7 +22631,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -22227,7 +22752,8 @@
         "notes": "Duplicate alias row; the canonical Filestore.to premium page describes unrestricted premium downloads without a numeric free quota.",
         "source_refs": [
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -22368,7 +22894,8 @@
         "notes": "Bandwidth is conditional. The premium page says premium is required for unrestricted ad-free downloads, but no numeric free transfer quota is published.",
         "source_refs": [
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -22502,7 +23029,8 @@
         "notes": "No current source-verified bandwidth figure is preserved because the live domain did not expose a usable page.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -22725,7 +23253,8 @@
           0,
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -22857,7 +23386,8 @@
         "notes": "A reseller page lists unlimited premium download volume, but no usable first-party bandwidth policy was accessible.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -23272,7 +23802,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -23665,7 +24196,8 @@
         "source_refs": [
           0,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -23793,7 +24325,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -23932,7 +24465,8 @@
         "notes": "Bandwidth varies by user type. The features page publishes different free download speeds and waiting times, such as 150 KB/s for guests and 300 KB/s for free accounts, instead of one clean quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_guest": {
         "value": 20,
@@ -24204,7 +24738,8 @@
         "source_refs": [
           0,
           2
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": 300,
@@ -24348,7 +24883,8 @@
         "notes": "Unlimited. Gifyu's official About page says users can host images without view restrictions and that unlimited bandwidth is subject only to fair-use rules at extreme scales.",
         "source_refs": [
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -24476,7 +25012,8 @@
         "notes": "Bandwidth is conditional. GiGa does not publish one numeric free-plan transfer quota, and the official help says streaming uses separately generated preview files whose quality depends on the file size and the viewer's internet connection while the original file remains downloadable.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": 1,
@@ -24630,7 +25167,8 @@
         "notes": "The official homepage does not publish a numeric bandwidth quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -24887,7 +25425,8 @@
           0,
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -25154,7 +25693,8 @@
         "notes": "Historical Gofile.to pages advertised unlimited bandwidth, but the current alias points to FileFast and should not be published as a separate bandwidth claim.",
         "source_refs": [
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -25286,7 +25826,8 @@
         "source_refs": [
           0,
           2
-        ]
+        ],
+        "status": "not-published"
       },
       "retention_account": {
         "value": null,
@@ -25427,7 +25968,8 @@
         "notes": "Bandwidth varies by workflow. Google publishes some Drive operational transfer limits, such as a 750 GB per-user upload and copy limit within 24 hours for shared-drive workflows, but the cited public pages do not publish one clean consumer Google Drive bandwidth cap.",
         "source_refs": [
           5
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": 15,
@@ -25574,7 +26116,8 @@
         "notes": "Bandwidth is conditional. The FAQ says uploads and downloads are unlimited but gives connection-speed examples rather than a numeric transfer quota.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -25701,7 +26244,8 @@
         "notes": "The homepage advertises no bandwidth and speed limit, but no numeric free transfer quota is published.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -25829,7 +26373,8 @@
         "notes": "No current public-host bandwidth allowance applies because the cloud service is discontinued.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -26074,7 +26619,8 @@
         "notes": "Bandwidth is conditional. Hightail's free Lite plan is governed by recipient-sharing limits rather than a published transfer-volume cap: Lite users can send to 30 recipients per file send and all online plans are capped at 200 file-send recipients per day.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -26336,7 +26882,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -26581,7 +27128,8 @@
         "notes": "Unlimited bandwidth. The homepage FAQ explicitly says there are no bandwidth limits, while still reserving the right to suspend hotlinking in cases of abuse.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -26691,7 +27239,8 @@
         "notes": "The official FAQ says there are no transfer limits, but no numeric bandwidth quota is published.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -26830,7 +27379,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -27065,7 +27615,8 @@
         "notes": "The old official thread advertised unlimited speed for premium users and resumable downloads for free users, but no current bandwidth policy exists.",
         "source_refs": [
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -27197,7 +27748,8 @@
         "source_refs": [
           0,
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -27490,7 +28042,8 @@
           2,
           3,
           4
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": null,
@@ -27664,7 +28217,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -27805,7 +28359,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -27940,7 +28495,8 @@
         "notes": "ImageBam does not publish a numeric free bandwidth quota on the cited homepage.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -28068,7 +28624,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -28334,7 +28891,8 @@
         "notes": "ImageVenue does not publish a numeric free bandwidth quota on the cited page.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -28458,7 +29016,8 @@
         "notes": "The cited public page does not publish a numeric bandwidth or transfer quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -28579,7 +29138,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -28774,7 +29334,8 @@
         "notes": "The official homepage does not publish a numeric free bandwidth quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -28894,7 +29455,8 @@
         "source_refs": [
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -29034,7 +29596,8 @@
         "notes": "The cited page does not publish a numeric bandwidth cap.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -29160,7 +29723,8 @@
         "notes": "Unlimited: the official premium comparison lists download volume as unlimited for free, registered, and premium tiers.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": 2048,
@@ -29311,7 +29875,8 @@
           0,
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -29445,7 +30010,8 @@
         "notes": "The FAQ documents token-bucket rate limiting for uploads/downloads but does not publish a numeric transfer quota.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -29569,7 +30135,8 @@
         "notes": "The official pages do not publish a numeric free transfer bandwidth quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -29832,7 +30399,8 @@
         "notes": "Unlimited within available connection speed: Jungle Disk says users can upload and download as much as their bandwidth allows.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -30249,7 +30817,8 @@
         "notes": "No current first-party public-host bandwidth allowance could be verified; historical coverage says there were no additional bandwidth fees.",
         "source_refs": [
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -30378,7 +30947,8 @@
         "notes": "Kepkuldes does not publish a numeric free bandwidth quota on the cited page.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -30498,7 +31068,8 @@
         "notes": "The live page does not publish a numeric bandwidth quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -30767,7 +31338,8 @@
         "notes": "Official FAQ says non-premium downloads are limited after 5 GB in 24 hours, dropping to 150 kb/s.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -30849,6 +31421,132 @@
     },
     "verification_status": "rejected",
     "reason": "Rejected from the verified host table because the official homepage explicitly promotes sharing files to make money and a make-money program, putting it in the payout-host bucket despite the real 1 GB free upload path."
+  },
+  {
+    "name": "Lensdump",
+    "url": "https://lensdump.com/",
+    "summary": "Premium image and video hosting platform, forever free for personal use but new account registration is currently restricted to paid donation subscribers.",
+    "free_model": {
+      "value": "free-forever",
+      "notes": "Free for personal use, but new account registrations are restricted to donation subscribers ($7+/month) due to past abuse. Existing free accounts remain functional. Commercial use requires paid plan.",
+      "source_refs": [
+        0
+      ]
+    },
+    "limits": {
+      "max_file_size": {
+        "value": null,
+        "unit": null,
+        "notes": "Max file size not explicitly stated on public pages.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Files stored until user requests deletion or account termination. Deduplication may remove duplicates.",
+        "source_refs": [
+          0
+        ],
+        "status": "not-published"
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Storage limit not explicitly stated. Platform hosts 6.5M+ images across 43k+ users.",
+        "source_refs": [
+          0
+        ],
+        "status": "not-published"
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "Bandwidth not explicitly stated. Hotlinking allowed only for personal use on public forums, not as CDN.",
+        "source_refs": [
+          0
+        ],
+        "status": "not-published"
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "Guest upload possible. Account provides upload management, albums, NSFW flags, API access. Donation tiers add skip moderation, priority support, hotlink/CDN access, commercial usage.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://lensdump.com/api-v1",
+      "cli_friendly": true,
+      "cli_example": "curl --fail-with-body -X POST -H \"X-API-Key: YOUR_API_KEY\" -H \"Content-Type: multipart/form-data\" -F \"source=@image.jpeg\" https://lensdump.com/api/1/upload",
+      "notes": "API v1.1 with upload by file, base64, or URL. ShareX support. Supports expiration (ISO 8601 duration format), deduplication, and NSFW flags.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "images-and-video",
+        "notes": "Images and videos only. Malware/viruses/spyware automatically deleted. NSFW content allowed with flag. Commercial use prohibited on free accounts.",
+        "source_refs": [
+          0
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public links and embed codes provided for uploaded media.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "HTTPS only. No E2EE or server-side encryption mentioned. 100% ad-free. Data deletion available upon request.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "media-hosting",
+      "image-hosting",
+      "video-hosting",
+      "api",
+      "cli",
+      "sharex",
+      "freemium",
+      "ad-free",
+      "temporary"
+    ],
+    "sources": [
+      {
+        "label": "Homepage",
+        "url": "https://lensdump.com/",
+        "retrieved_at": "2026-06-19",
+        "notes": "Main product page with registration restriction notice."
+      },
+      {
+        "label": "API Documentation",
+        "url": "https://lensdump.com/api-v1",
+        "retrieved_at": "2026-06-19",
+        "notes": "API v1.1 reference with upload endpoint and parameters."
+      },
+      {
+        "label": "Donate/Pricing",
+        "url": "https://lensdump.com/page/donate",
+        "retrieved_at": "2026-06-19",
+        "notes": "Donation tiers and feature gating details."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": "New account registration currently restricted to paid subscribers; free tier exists but is not practically accessible for new users."
   },
   {
     "name": "LetsUpload",
@@ -31045,7 +31743,8 @@
         "notes": "Bandwidth is conditional. LimeWire's current terms say file-sharing usage limits vary by Basic versus Pro and Pro+ tiers and are communicated in the interface, but the public pages do not publish one clean universal transfer-volume cap.",
         "source_refs": [
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -31167,7 +31866,8 @@
         "notes": "Bandwidth depends on the self-hosted operator's network, so there is no universal public-host bandwidth quota.",
         "source_refs": [
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -31290,7 +31990,8 @@
         "notes": "No trustworthy current bandwidth policy could be established from the accessible official surface.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -31417,7 +32118,8 @@
         "source_refs": [
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -31546,7 +32248,8 @@
         "notes": "No free public-host bandwidth allowance applies; Livedrive account features are subscription-gated.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -31665,7 +32368,8 @@
         "notes": "No bandwidth cap is published on the cited public page.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -31920,7 +32624,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -32038,7 +32743,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -32166,7 +32872,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -32290,7 +32997,8 @@
         "source_refs": [
           0,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -32568,7 +33276,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -32701,7 +33410,8 @@
         "source_refs": [
           0,
           5
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -32848,7 +33558,8 @@
         "notes": "Bandwidth varies by transfer quota state. Current MEGA App Store developer support text says free accounts get a transfer quota that depends on system utilisation and the total amount of data transferred during the last six hours.",
         "source_refs": [
           5
-        ]
+        ],
+        "status": "not-published"
       },
       "storage_account": {
         "value": 20,
@@ -33008,7 +33719,8 @@
         "notes": "The homepage says users will not hit a bandwidth/download limit and the membership table lists download volume as unlimited.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       },
       "storage_account": {
         "value": 187000,
@@ -33257,7 +33969,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": 200,
@@ -33557,7 +34270,8 @@
         "source_refs": [
           0,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -33805,7 +34519,8 @@
         "notes": "Bandwidth is conditional. MiMedia says upload time depends on file size and internet connection, and one official support article says the average user can upload between 2 GB and 4 GB per day.",
         "source_refs": [
           4
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -34100,7 +34815,8 @@
         "notes": "Bandwidth is unlimited. Current official help says Mail.ru does not limit upload or download speed and that transfer speed depends only on the user's internet connection.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -34239,7 +34955,8 @@
         "notes": "The cited homepage does not publish a numeric bandwidth cap.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -34351,7 +35068,8 @@
         "notes": "The cited pages do not publish a numeric bandwidth quota; premium plans advertise unlimited download and maximum speed.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -34634,7 +35352,8 @@
           1,
           2,
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -34776,7 +35495,8 @@
         "source_refs": [
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_guest": {
         "value": 20,
@@ -35067,7 +35787,8 @@
         "source_refs": [
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -35387,7 +36108,8 @@
         "notes": "FMHY does not provide a verified numeric transfer quota in the seed entry; first-party verification is required.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -35499,7 +36221,8 @@
           1,
           2,
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -35632,7 +36355,8 @@
         "notes": "Conditional: the current official free-download page shows a 180 second wait, maximum 20 kb/s speed, one concurrent download, non-resumable downloads, and VPN blocking, while premium removes those limits.",
         "source_refs": [
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -35759,7 +36483,8 @@
         "notes": "No public free bandwidth quota is preserved because this live service is password-protected.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -36143,7 +36868,8 @@
         "notes": "No numeric bandwidth quota is listed in the current official pages; they describe storage and upload limits, but no separate transfer-volume cap.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -36427,7 +37153,8 @@
         "notes": "Bandwidth varies by sharing mode. Microsoft says sharing is limited in basic or storage-only OneDrive and that those limits reset after 24 hours, but it does not publish one clean free-plan transfer quota.",
         "source_refs": [
           4
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": 5,
@@ -36582,7 +37309,8 @@
         "notes": "The homepage says there are no bandwidth limitations, but does not publish a numeric transfer quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       },
       "retention_account": {
         "value": 365,
@@ -37026,7 +37754,8 @@
         "notes": "Oracle documents 50,000 Object Storage API requests per month in Always Free; transfer/egress behavior depends on account and region.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -37174,7 +37903,8 @@
           0,
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -37305,7 +38035,8 @@
         "source_refs": [
           0,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -37429,7 +38160,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       },
       "storage_account": {
         "value": 1,
@@ -37823,7 +38555,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -37940,7 +38673,8 @@
         "notes": "pic.maxiol does not publish a numeric free bandwidth quota on the cited page.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -38059,7 +38793,8 @@
         "notes": "Pikky does not publish a numeric free bandwidth quota on the cited page.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -38193,7 +38928,8 @@
         "notes": "The FAQ does not publish a separate bandwidth cap.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -38264,6 +39000,147 @@
       }
     },
     "verification_status": "verified",
+    "reason": null
+  },
+  {
+    "name": "Pinata",
+    "url": "https://pinata.cloud/",
+    "summary": "Managed IPFS pinning and file storage platform with 1 GB free tier, dedicated gateways, TypeScript SDK, Go CLI, and 25 GB max file uploads.",
+    "free_model": {
+      "value": "free-forever",
+      "notes": "Free plan with 1 GB storage, 500 pinned files, 10 GB bandwidth/month, 10k requests/month, 1 gateway. No credit card required.",
+      "source_refs": [
+        0
+      ]
+    },
+    "limits": {
+      "max_file_size": {
+        "value": 25,
+        "unit": "GB",
+        "notes": "25 GB per individual upload on both Public and Private IPFS. Files >100 MB require TUS resumable uploads. Recommended max for reliability: 15 GB.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Files persist on IPFS as long as pinned (permanent by default). Optional expiration via expires_at Unix timestamp. No auto-deletion unless expiring.",
+        "source_refs": [
+          0
+        ],
+        "status": "not-published"
+      },
+      "storage": {
+        "value": 1,
+        "unit": "GB",
+        "notes": "1 GB on free plan. Paid plans: 1 TB (Picnic $20/mo), 5 TB (Fiesta $100/mo).",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": 10,
+        "unit": "GB",
+        "notes": "10 GB/month on free plan. Paid plans: 500 GB (Picnic), 2.5 TB (Fiesta).",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "API keys (JWT + API key/secret), dedicated gateway domain, web dashboard, file groups/organization, key-value metadata, webhooks, analytics, workspaces (team collaboration), access control.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://docs.pinata.cloud/api-reference",
+      "cli_friendly": true,
+      "cli_example": "pinata upload --name \"myfile.txt\" --network public /path/to/file.txt",
+      "notes": "REST API at https://api.pinata.cloud/v3/. Official TypeScript SDK (npm i pinata), React hooks, Expo hooks. Go-based CLI. OpenAPI specs available. Supports TUS resumable uploads for large files.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "all-or-most",
+        "notes": "Open to most file types including text, JSON, images, video, audio, documents, CAR files. HTML files restricted to dedicated gateway with custom domain. Binary files case-by-case. CAR files require paid plan.",
+        "source_refs": [
+          0
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public IPFS network provides permanent public content-addressed links via gateways.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "All API endpoints use HTTPS. Private IPFS is a separate network layer but not E2EE. JWT-based auth with scoped API keys. Signed upload URLs and CID signatures available.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "permanent",
+      "ipfs",
+      "pinning",
+      "api",
+      "cli",
+      "sdk",
+      "typescript",
+      "web3",
+      "nft",
+      "decentralized",
+      "cdn",
+      "gateway",
+      "free-tier",
+      "resumable-uploads"
+    ],
+    "sources": [
+      {
+        "label": "Homepage",
+        "url": "https://pinata.cloud/",
+        "retrieved_at": "2026-06-19",
+        "notes": "Main product page."
+      },
+      {
+        "label": "Pricing",
+        "url": "https://pinata.cloud/pricing",
+        "retrieved_at": "2026-06-19",
+        "notes": "Free and paid plan details with limits table."
+      },
+      {
+        "label": "API Reference",
+        "url": "https://docs.pinata.cloud/api-reference",
+        "retrieved_at": "2026-06-19",
+        "notes": "REST API documentation with OpenAPI specs."
+      },
+      {
+        "label": "Limits",
+        "url": "https://docs.pinata.cloud/account-management/limits.md",
+        "retrieved_at": "2026-06-19",
+        "notes": "Detailed rate limits and file size constraints."
+      },
+      {
+        "label": "CLI Docs",
+        "url": "https://docs.pinata.cloud/tools/cli/ipfs.md",
+        "retrieved_at": "2026-06-19",
+        "notes": "Go-based CLI reference with upload and file management commands."
+      }
+    ],
+    "verification_status": "pending",
     "reason": null
   },
   {
@@ -38457,7 +39334,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -38592,7 +39470,8 @@
         "notes": "Bandwidth is conditional. The current product surface says transfer speed depends primarily on the sender's internet connection quality and that uploads are split into smaller chunks for stability, but it does not publish a clean transfer-volume cap.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -38704,7 +39583,8 @@
         "source_refs": [
           0,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -38830,7 +39710,8 @@
         "notes": "The official homepage does not publish a free bandwidth quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -38946,7 +39827,8 @@
         "source_refs": [
           0,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -39104,7 +39986,8 @@
         "source_refs": [
           2,
           7
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_guest": {
         "value": 200,
@@ -39290,7 +40173,8 @@
         "notes": "The cited homepage does not publish a numeric bandwidth cap.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -39404,7 +40288,8 @@
         "notes": "No bandwidth cap is published on the cited public page.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -39654,7 +40539,8 @@
         "notes": "Bandwidth is conditional. Rakuten Drive's official transfer support page does not publish a neat traffic quota, but free transfer behavior is still constrained by workflow and plan: free links expire after 48 hours, the Chrome extension large-attachment flow is capped at 3 times in 48 hours with one-time recovery, and paid tiers lift those limits.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -39778,7 +40664,8 @@
         "notes": "The current homepage does not publish a numeric bandwidth quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -39895,7 +40782,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -40032,7 +40920,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": 80,
@@ -40177,7 +41066,8 @@
         "notes": "The cited page does not publish a numeric bandwidth cap.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -40406,7 +41296,8 @@
         "source_refs": [
           0,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -40915,7 +41806,8 @@
         "notes": "The cited page does not publish a numeric bandwidth cap.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -41037,7 +41929,8 @@
         "notes": "Bandwidth is conditional. The current pricing page describes the free tier as limited bandwidth, while premium removes that limit.",
         "source_refs": [
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -41169,7 +42062,8 @@
         "source_refs": [
           0,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -41295,7 +42189,8 @@
         "source_refs": [
           2,
           4
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": 10,
@@ -41457,7 +42352,8 @@
         "notes": "The homepage FAQ says everyone gets unlimited bandwidth, without publishing a numeric cap.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -41590,7 +42486,8 @@
           2,
           1,
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -41895,7 +42792,8 @@
           1,
           2,
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -42144,7 +43042,8 @@
         "source_refs": [
           0,
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -42553,7 +43452,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -42699,7 +43599,8 @@
         "notes": "The official homepage says it does not cap bandwidth, but no numeric quota is published.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -43042,7 +43943,8 @@
         "notes": "Unlimited: the official premium comparison lists free and registered download volume as unlimited, while a premium traffic plan is separately capped at 24 GB in 3 days.",
         "source_refs": [
           2
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": 2024,
@@ -43198,7 +44100,8 @@
         "source_refs": [
           0,
           3
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_guest": {
         "value": 500,
@@ -43341,7 +44244,8 @@
         "notes": "No bandwidth cap is published on the cited public page.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -43450,7 +44354,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -43709,7 +44614,8 @@
           1,
           2,
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -43845,7 +44751,8 @@
         "notes": "No free public-host bandwidth quota is listed; SpiderOakONE is paid backup/sync/share storage.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -43973,7 +44880,8 @@
         "source_refs": [
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -44212,7 +45120,8 @@
         "notes": "The FAQ says there are no bandwidth limitations, but no numeric transfer quota is published.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -44348,7 +45257,8 @@
         "source_refs": [
           2,
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -44483,7 +45393,8 @@
         "notes": "No current bandwidth policy can be verified because no usable first-party host surface is available.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -44595,7 +45506,8 @@
         "source_refs": [
           0,
           3
-        ]
+        ],
+        "status": "not-published"
       },
       "storage_account": {
         "value": 500,
@@ -44751,7 +45663,8 @@
           0,
           1,
           4
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -44903,7 +45816,8 @@
         "notes": "Conditional: the official terms say registered and no-account users can only download at speeds up to 300 kilobits/s, with at least 60 minutes between download sessions. Premium users can download 40 GB in 24 hours.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -45043,7 +45957,8 @@
         "source_refs": [
           2,
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -45297,7 +46212,8 @@
         "notes": "The cited first-party page does not publish a numeric free bandwidth quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -45412,7 +46328,8 @@
         "notes": "The support guide says there is no usage limit for receiving a SwissTransfer send, but it does not publish a numeric bandwidth quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -45538,7 +46455,8 @@
         "source_refs": [
           0,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -45672,7 +46590,8 @@
         "source_refs": [
           2,
           3
-        ]
+        ],
+        "status": "not-published"
       },
       "storage_account": {
         "value": 5,
@@ -45817,7 +46736,8 @@
         "source_refs": [
           2,
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -45968,7 +46888,8 @@
         "notes": "The official homepage says premium members get no waiting time and direct downloads, but no numeric bandwidth quota was found.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -46220,7 +47141,8 @@
         "notes": "The cited homepage does not publish a numeric bandwidth cap.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -46359,7 +47281,8 @@
         "notes": "Bandwidth is metered rather than free/public-host style; the official price is $0.25 per GB of encoded data transferred.",
         "source_refs": [
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -46510,7 +47433,8 @@
         "notes": "Users can set maximum downloads from 0 to 100, but no bandwidth quota is published.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -46616,7 +47540,8 @@
         "notes": "The official page does not publish a numeric bandwidth or transfer quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -46729,7 +47654,8 @@
         "notes": "The official page does not publish a numeric bandwidth or download quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -46838,7 +47764,8 @@
         "notes": "The API docs publish request/download rate limits, but no ordinary bandwidth quota.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -46957,7 +47884,8 @@
         "notes": "The cited public page does not publish a numeric transfer quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_guest": {
         "value": 100,
@@ -47076,7 +48004,8 @@
         "notes": "The homepage FAQ describes uploads and downloads as unlimited and says users can upload and download as much as they would like.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -47188,7 +48117,8 @@
           0,
           1,
           6
-        ]
+        ],
+        "status": "not-published"
       },
       "storage_account": {
         "value": 10,
@@ -47353,7 +48283,8 @@
         "notes": "The official TeraBox blog says free users can download any number of files without limitations, and that free-plan downloads can be of unlimited size so long as the device has enough memory.",
         "source_refs": [
           4
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": 20,
@@ -47514,7 +48445,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": null,
@@ -47668,7 +48600,8 @@
         "notes": "The cited public homepage does not publish a numeric bandwidth or transfer quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -47784,7 +48717,8 @@
         "notes": "ThumbSnap does not publish a numeric free bandwidth quota on the cited homepage.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -48047,7 +48981,8 @@
         "notes": "No public bandwidth quota was found on the official pricing page.",
         "source_refs": [
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -48168,7 +49103,8 @@
         "notes": "The homepage says unlimited downloads during the 7-day file lifetime, but does not publish a numeric transfer cap.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -48283,7 +49219,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -48412,7 +49349,8 @@
         "source_refs": [
           6,
           8
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": 400,
@@ -48643,7 +49581,8 @@
         "notes": "The current rendered comparison uses download-count limits rather than a numeric bandwidth cap: unlimited downloads during the free-until-1-August period, then 100 downloads on the free plan.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -48761,7 +49700,8 @@
         "notes": "The Free/Bronze plan says unlimited bandwidth, and the FAQ says no download limits are in place, but no numeric bandwidth quota is published.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -48870,7 +49810,8 @@
         "notes": "The cited Tresorit Basic page does not publish a numeric bandwidth cap.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -49022,7 +49963,8 @@
         "notes": "Bandwidth is conditional. The current Tresorit Send guide says each shared file can be downloaded up to 10 times, but the cited public pages do not publish a transfer-volume cap.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -49147,7 +50089,8 @@
           0,
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -49419,7 +50362,8 @@
           1,
           2,
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -49570,7 +50514,8 @@
         "notes": "Bandwidth varies by per-IP rate limits. The current upload page limits new file additions to once every 3 minutes per IP and new file downloads to once every 5 minutes per IP, but does not publish a clean transfer-volume cap.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -49688,7 +50633,8 @@
         "notes": "The homepage advertises unlimited bandwidth, but no numeric free transfer quota is published.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_guest": {
         "value": 5,
@@ -49837,7 +50783,8 @@
         "source_refs": [
           2,
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -50248,7 +51195,8 @@
         "notes": "No public bandwidth quota was found. The offsite storage page says customers should not pay ingress, egress, or recovery upcharges.",
         "source_refs": [
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -50389,7 +51337,8 @@
           1,
           2,
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -50526,7 +51475,8 @@
         "notes": "The cited pages do not publish a numeric free transfer quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": 1,
@@ -50657,7 +51607,8 @@
         "notes": "Unlimited: the official premium page shows unlimited bandwidth across the anonymous, registered, and premium tiers it currently publishes.",
         "source_refs": [
           3
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": 3000,
@@ -50811,7 +51762,8 @@
         "notes": "Bandwidth is conditional. The public page emphasizes CDN streaming but does not publish a free-user transfer quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -51027,7 +51979,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       },
       "storage_account": {
         "value": 25,
@@ -51170,7 +52123,8 @@
         "notes": "Scam Detector preserves an unlimited-bandwidth claim, but no structured first-party bandwidth policy was available.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -51290,7 +52244,8 @@
         "notes": "Bandwidth varies by connection and current service conditions. The upload page advertises zero waiting time and maximum download speed, but the cited public pages do not publish a numeric bandwidth cap.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_guest": {
         "value": 100,
@@ -51443,7 +52398,8 @@
           0,
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -51594,7 +52550,8 @@
           0,
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -51724,7 +52681,8 @@
         "notes": "Conditional: the official comparison page clearly shows premium download volume as unlimited, but the guest and free-registered columns currently display zeroes instead of a stable human-readable traffic allowance.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": 2048,
@@ -51825,6 +52783,148 @@
     },
     "verification_status": "rejected",
     "reason": "The official site openly promotes premium plans, affiliate-style earning programs, and reseller flows, which puts it outside the repo's curation bar."
+  },
+  {
+    "name": "Uploadcare",
+    "url": "https://uploadcare.com/",
+    "summary": "Complete file-handling platform for web and mobile apps with uploads, storage, processing, and CDN delivery. 1 GB free tier with API, CLI, and SDKs.",
+    "free_model": {
+      "value": "free-forever",
+      "notes": "Free tier with 1 GB storage, 5 GB traffic/month, 1,000 operations/month, 500 MB max file size. No credit card required. New accounts get a trial with full Pro features.",
+      "source_refs": [
+        0
+      ]
+    },
+    "limits": {
+      "max_file_size": {
+        "value": 500,
+        "unit": "MB",
+        "notes": "500 MB on free plan. Pro: 1 GB, Business: 10 GB, Enterprise: up to 5 TB.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "notes": "Unlimited while active. Unstored files have limited retention; files must be stored to persist indefinitely.",
+        "source_refs": [
+          0
+        ],
+        "status": "not-published"
+      },
+      "storage": {
+        "value": 1,
+        "unit": "GB",
+        "notes": "1 GB on free plan. Cumulative counter (does not reset each cycle). Only originals count, not transformed derivatives.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": 5,
+        "unit": "GB",
+        "notes": "5 GB/month on free plan. Pro: 75 GB, Business: 200 GB.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "Unique project with dedicated API keys, storage, and settings. Dashboard for file management, usage monitoring. Upload API, REST API, URL API. Webhooks, metadata, integrations. CDN delivery. Signed uploads, signed URLs, malware scanning.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://uploadcare.com/docs/",
+      "cli_friendly": true,
+      "cli_example": "uploadcare file upload hero.jpg",
+      "notes": "Three APIs: Upload API, REST API, URL API. Official CLI (Go, zero dependencies, JSON/NDJSON output, --dry-run, piped batch operations). SDKs for JS, Node, PHP, Python, iOS, Android, Ruby, Java, Go, Rust.",
+      "source_refs": [
+        0
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "all-or-most",
+        "notes": "Any file type (images, videos, documents). MIME type filtering and malware scanning (ClamAV) available. NSFW content detection for blocking.",
+        "source_refs": [
+          0
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "CDN delivery from global edge network with signed URLs for secure access.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "HTTPS-only by default. Signed uploads and signed URLs for time-limited access. DDoS protection. ClamAV malware scanning. SOC 2 Type 2, GDPR, HIPAA (Enterprise). 99.9% uptime SLA on paid plans.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "permanent",
+      "cdn",
+      "api",
+      "cli",
+      "image-processing",
+      "video-processing",
+      "document-conversion",
+      "malware-scanning",
+      "signed-uploads",
+      "signed-urls",
+      "enterprise",
+      "soc2",
+      "hipaa",
+      "gdpr",
+      "dev-friendly"
+    ],
+    "sources": [
+      {
+        "label": "Homepage",
+        "url": "https://uploadcare.com/",
+        "retrieved_at": "2026-06-19",
+        "notes": "Main product page."
+      },
+      {
+        "label": "Pricing",
+        "url": "https://uploadcare.com/pricing",
+        "retrieved_at": "2026-06-19",
+        "notes": "Free and paid plan details with overage rates."
+      },
+      {
+        "label": "Documentation",
+        "url": "https://uploadcare.com/docs/",
+        "retrieved_at": "2026-06-19",
+        "notes": "Full API and integration documentation."
+      },
+      {
+        "label": "CLI Product Page",
+        "url": "https://uploadcare.com/products/cli/",
+        "retrieved_at": "2026-06-19",
+        "notes": "CLI features, installation, and example commands."
+      },
+      {
+        "label": "Security",
+        "url": "https://uploadcare.com/products/security/",
+        "retrieved_at": "2026-06-19",
+        "notes": "Security features including signed uploads, DDoS protection, compliance."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
   },
   {
     "name": "UploadCD",
@@ -52284,7 +53384,8 @@
           2,
           3,
           4
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -52429,7 +53530,8 @@
         "notes": "The cited public page does not publish a numeric free transfer quota.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_guest": {
         "value": 5.98,
@@ -52550,7 +53652,8 @@
         "notes": "The homepage advertises upload and download speeds without bandwidth limitations, but no numeric quota is published.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -52668,7 +53771,8 @@
         "notes": "Conditional: the official premium page gives premium users 100 GB daily traffic and maximum speed, but the public free-tier traffic cap is not cleanly published.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -52822,7 +53926,8 @@
         "notes": "The official plan table says Free download volume is Unlimited, but it does not publish a numeric transfer cap.",
         "source_refs": [
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -52968,7 +54073,8 @@
           0,
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -53110,7 +54216,8 @@
         "notes": "Unlimited: the official homepage says the number and speed of downloads are illimited for free uploads.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": null,
@@ -53935,7 +55042,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_guest": {
         "value": 5,
@@ -54078,7 +55186,8 @@
         "notes": "The homepage says there is no download-count limit inside the 24-hour window unless the uploader enables destroy-after-opening, but it does not publish a bandwidth cap.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -54577,7 +55686,8 @@
         "source_refs": [
           0,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -54715,7 +55825,8 @@
         "notes": "The premium table says download volume is unlimited across Free, Registered, and Premium, but no numeric bandwidth quota is published.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -54844,7 +55955,8 @@
         "notes": "Bandwidth is conditional. The homepage advertises unlimited bandwidth for free, but no numeric quota is published.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -54964,7 +56076,8 @@
         "notes": "Cocoleech lists an unlimited daily limit for its own UsersCloud generator, but that is a third-party debrid limit rather than a UsersCloud storage plan.",
         "source_refs": [
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -55266,7 +56379,8 @@
         "notes": "Unlimited. The homepage says there is no speed throttling.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -55403,7 +56517,8 @@
         "notes": "The homepage says there are no limits or capping for speed, but no numeric transfer quota is published.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -55529,7 +56644,8 @@
         "notes": "Unlimited. The homepage says there is no speed limit.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -55647,7 +56763,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -55901,7 +57018,8 @@
         "notes": "Wasabi lists ingress, egress, and API requests as free under policy limits; free egress is considered reasonable when monthly egress is less than or equal to active storage volume.",
         "source_refs": [
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -56040,7 +57158,8 @@
           3,
           4,
           5
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": 6,
@@ -56220,7 +57339,8 @@
           1,
           2,
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -56492,7 +57612,8 @@
         "source_refs": [
           2,
           4
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_guest": {
         "value": 2,
@@ -56641,7 +57762,8 @@
         "notes": "Conditional: the homepage says premium members get premium bandwidth and lightning fast download speed, so transfer behavior varies by tier even though no free-tier numeric cap is published.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_account": {
         "value": null,
@@ -56788,7 +57910,8 @@
         "notes": "NeoDebrid lists a 25 GB/day cap for its own generator; no native WuShare bandwidth policy was found.",
         "source_refs": [
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -56925,7 +58048,8 @@
         "notes": "The cited page does not publish a numeric per-user bandwidth cap.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -57050,7 +58174,8 @@
           0,
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -57324,7 +58449,8 @@
         "notes": "Bandwidth is conditional. Your File Store does not publish a numeric transfer cap, and the current official download pages insert a setup/wait step before delivering the file and explicitly ask users to support the free service through adverts.",
         "source_refs": [
           3
-        ]
+        ],
+        "status": "not-published"
       },
       "max_file_size_guest": {
         "value": 500,
@@ -57464,7 +58590,8 @@
           0,
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -57601,7 +58728,8 @@
         "notes": "Bandwidth is conditional. Premium removes waiting and direct-download restrictions; the cited pages do not publish a numeric free bandwidth cap.",
         "source_refs": [
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -57731,7 +58859,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -57980,7 +59109,8 @@
         "source_refs": [
           1,
           2
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
@@ -58110,7 +59240,8 @@
         "source_refs": [
           2,
           3
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
