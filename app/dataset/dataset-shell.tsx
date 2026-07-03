@@ -2389,14 +2389,16 @@ function FloatingInspector({
 }) {
   return (
     <div className="pointer-events-none fixed inset-x-3 bottom-3 top-20 z-40 flex items-start justify-end sm:inset-x-auto sm:right-4 sm:top-28 sm:w-[min(460px,calc(100vw-2rem))] md:right-6 md:top-32 md:bottom-6 md:w-[min(460px,calc(100vw-3rem))]">
-      <div className="pointer-events-auto relative max-h-full w-full overflow-auto rounded-[var(--radius-card)] border border-[var(--line)] bg-[color-mix(in_oklab,var(--bg)_92%,transparent)] pt-16 p-4 shadow-[var(--shadow-raised),0_0_0_1px_var(--line)] backdrop-blur-2xl animate-slide-in-right">
-        <button
-          onClick={onClose}
-          className="absolute right-4 top-4 z-50 inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-1)] text-[var(--text-muted)] shadow-[var(--shadow-soft)] transition-all hover:border-[var(--accent)]/30 hover:bg-[var(--accent-soft)] hover:text-[var(--text-primary)] hover:shadow-[0_0_16px_-4px_var(--accent-glow)]"
-          aria-label="Close inspector"
-        >
-          <X size={16} weight="bold" />
-        </button>
+      <div className="pointer-events-auto relative max-h-full w-full overflow-auto rounded-[var(--radius-card)] border border-[var(--line)] bg-[color-mix(in_oklab,var(--bg)_92%,transparent)] p-4 shadow-[var(--shadow-raised),0_0_0_1px_var(--line)] backdrop-blur-2xl animate-slide-in-right">
+        <div className="sticky top-0 z-50 mb-4 flex justify-end">
+          <button
+            onClick={onClose}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-1)] text-[var(--text-muted)] shadow-[var(--shadow-soft)] transition-all hover:border-[var(--accent)]/30 hover:bg-[var(--accent-soft)] hover:text-[var(--text-primary)] hover:shadow-[0_0_16px_-4px_var(--accent-glow)]"
+            aria-label="Close inspector"
+          >
+            <X size={16} weight="bold" />
+          </button>
+        </div>
         <div className="animate-fade-in" style={{ animationDelay: "0.1s" }}>
           {children}
         </div>
