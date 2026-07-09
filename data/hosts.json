@@ -21145,6 +21145,142 @@
     }
   },
   {
+    "name": "Origrid",
+    "url": "https://origrid.io",
+    "summary": "Large-file host with a one-click anonymous upload gate, a clean single-button download page with no fake buttons, tiered activity-based retention, and a REST API with webhooks for uploaders.",
+    "free_model": {
+      "value": "free-forever",
+      "notes": "Anonymous and free-account uploads work without payment; a paid Plus tier removes ads and file expiry and raises the per-file cap.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "limits": {
+      "max_file_size": {
+        "value": 25,
+        "unit": "GB",
+        "notes": "Free uploads (anonymous or free account) are capped at 25 GB per file. The paid Plus tier raises this to 50 GB per file.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "retention": {
+        "value": 30,
+        "unit": "days",
+        "notes": "Retention counts from the last download. Anonymous uploads last 7 days, free accounts 30 days, and Plus files never expire while subscribed.",
+        "source_refs": [
+          1
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Transfer-style host: files are kept per the retention rules rather than counting against a fixed personal storage quota.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "No published transfer/bandwidth quota on downloads; the download page works with adblockers and shows a single real download button.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "Anonymous one-click uploads work without an account. Free accounts extend retention to 30 days and add folders, uploader analytics (downloads, referrers, countries), remote upload, and REST API keys. Plus removes ads, removes file expiry, and raises the per-file cap to 50 GB.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://origrid.io/api",
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "Origrid exposes a REST API with webhook support; API keys are generated in the account panel with no waitlist, and upload requests authenticate via Bearer token or X-API-Key header. Remote upload (fetch from a URL) is also supported.",
+      "source_refs": [
+        2
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "all_except_prohibited",
+        "notes": "General-purpose file host. The public abuse and DMCA pages describe a takedown process and prohibit illegal content such as CSAM and malware rather than publishing an extension allowlist.",
+        "source_refs": [
+          4
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Every upload produces a public share/download page with a single real download button and no fake buttons.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The service runs over HTTPS. The public pages do not claim end-to-end encryption for stored files. A public status page and a public speed-test page are available.",
+      "source_refs": [
+        0,
+        3
+      ]
+    },
+    "tags": [
+      "file-sharing",
+      "guest-upload",
+      "api",
+      "remote-upload",
+      "webhooks",
+      "folders",
+      "activity-based-retention"
+    ],
+    "sources": [
+      {
+        "label": "Homepage",
+        "url": "https://origrid.io",
+        "retrieved_at": "2026-07-09",
+        "notes": "Anonymous one-click uploader on the home page and a single-button, adblock-friendly download page with no fake buttons."
+      },
+      {
+        "label": "Pricing",
+        "url": "https://origrid.io/pricing",
+        "retrieved_at": "2026-07-09",
+        "notes": "Free tier at 25 GB per file with tiered retention (7 days anonymous, 30 days free account); paid Plus tier at 50 GB per file, no ads, and no expiry while subscribed."
+      },
+      {
+        "label": "API Docs",
+        "url": "https://origrid.io/api",
+        "retrieved_at": "2026-07-09",
+        "notes": "REST API with webhook support and API-key auth (Bearer / X-API-Key); keys are issued in the account panel. Remote upload from a URL is supported."
+      },
+      {
+        "label": "Status & Speedtest",
+        "url": "https://origrid.io/status",
+        "retrieved_at": "2026-07-09",
+        "notes": "Public status page plus a public speed-test page for measuring real download throughput."
+      },
+      {
+        "label": "Abuse / DMCA",
+        "url": "https://origrid.io/dmca",
+        "retrieved_at": "2026-07-09",
+        "notes": "Public abuse and DMCA takedown process; prohibits illegal content such as CSAM and malware."
+      }
+    ]
+  },
+  {
     "name": "Oshi.at",
     "url": "https://oshi.at/",
     "summary": "Open-source anonymous ephemeral file-sharing service with command-line PUT uploads, configurable expiry, per-upload management, and optional instant destruction.",
