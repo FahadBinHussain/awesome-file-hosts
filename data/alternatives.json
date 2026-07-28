@@ -25,7 +25,7 @@
     "content": {
       "allowed_file_types": {
         "mode": "all_except_prohibited",
-        "notes": "The terms prohibit illegal or infringing content, malware, scams, and personal or commercial information obtained without permission; no narrower file-extension policy is published.",
+        "notes": "The usage notes prohibit illegal, infringing, or malicious files; no narrower file-extension policy is published.",
         "source_refs": [
           2
         ],
@@ -72,10 +72,10 @@
         "notes": "Official guide documents link, QR-code, pickup-code, and same-WiFi sharing; both pages must stay open, and the service does not retain a long-lived downloadable file copy."
       },
       {
-        "label": "8ma Quick Transfer terms",
-        "url": "https://t.8ma.co/en/terms",
+        "label": "8ma Quick Transfer usage notes",
+        "url": "https://t.8ma.co/about/en/terms.html",
         "retrieved_at": "2026-07-28",
-        "notes": "Official terms document the temporary-transfer purpose, prohibited-content rules, peer-to-peer availability limits, local resume behavior, and absence of cloud file backup."
+        "notes": "Official usage notes document browser and page-state requirements, network limitations, same-WiFi safety guidance, and prohibited-content rules."
       }
     ],
     "kind": "alternative",
