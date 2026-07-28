@@ -1,5 +1,135 @@
 [
   {
+    "name": "8ma Quick Transfer",
+    "url": "https://t.8ma.co/en/?from=github-awesome-file-hosts",
+    "summary": "Free browser-to-browser P2P file and folder transfer with no account or installation, supporting files up to 200 GB and folders with up to 20,000 files in desktop Chrome and Edge.",
+    "account": {
+      "required": false,
+      "benefits": "No account is used; the sender shares a temporary link, QR code, or 8-character pickup code.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "8ma Quick Transfer is a browser-oriented transfer service and does not publish a file upload API or CLI.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "all_except_prohibited",
+        "notes": "The terms prohibit illegal or infringing content, malware, scams, and personal or commercial information obtained without permission; no narrower file-extension policy is published.",
+        "source_refs": [
+          2
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Recipients join a live transfer with a temporary link, QR code, or 8-character pickup code while both pages remain open.",
+        "source_refs": [
+          1
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": true,
+      "server_side_encryption": null,
+      "notes": "The service uses secure browser-to-browser peer connections and does not upload or retain a long-lived server copy of file contents; no separate application-layer encryption is claimed.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "tags": [
+      "alternative-method",
+      "p2p",
+      "e2ee",
+      "guest-upload",
+      "webrtc",
+      "folder-sharing"
+    ],
+    "sources": [
+      {
+        "label": "8ma Quick Transfer product",
+        "url": "https://t.8ma.co/en/",
+        "retrieved_at": "2026-07-28",
+        "notes": "Official product page describes free browser-based peer-to-peer file and folder transfer with no sign-up or installation, a 200 GB per-file limit, and up to 20,000 files per folder in desktop Chrome and Edge."
+      },
+      {
+        "label": "8ma Quick Transfer product guide",
+        "url": "https://t.8ma.co/about/en/",
+        "retrieved_at": "2026-07-28",
+        "notes": "Official guide documents link, QR-code, pickup-code, and same-WiFi sharing; both pages must stay open, and the service does not retain a long-lived downloadable file copy."
+      },
+      {
+        "label": "8ma Quick Transfer terms",
+        "url": "https://t.8ma.co/en/terms",
+        "retrieved_at": "2026-07-28",
+        "notes": "Official terms document the temporary-transfer purpose, prohibited-content rules, peer-to-peer availability limits, local resume behavior, and absence of cloud file backup."
+      }
+    ],
+    "kind": "alternative",
+    "profile": {
+      "primary_use": {
+        "value": "Browser-to-browser P2P file and folder sharing",
+        "notes": "8ma Quick Transfer is a live transfer service rather than a cloud file host.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "sharing_surface": {
+        "value": "Temporary link, QR code, 8-character pickup code, or same-WiFi discovery",
+        "notes": "The sender and receiver keep their browser pages open for the live transfer.",
+        "source_refs": [
+          1
+        ]
+      },
+      "max_file_size": {
+        "value": 200,
+        "unit": "GB",
+        "notes": "Desktop Chrome and Edge support files up to 200 GB; folder selection supports up to 20,000 files.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "persistence_model": {
+        "value": "Ephemeral live transfer",
+        "notes": "The platform does not retain a long-lived downloadable copy, and both pages must remain open during transfer.",
+        "source_refs": [
+          1
+        ]
+      },
+      "storage_model": {
+        "value": "No platform file storage",
+        "notes": "File contents move between the sender and receiver rather than being uploaded to cloud storage first.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "bandwidth_model": {
+        "value": "Peer and connection dependent",
+        "notes": "Throughput depends on the sender, receiver, browsers, routers, firewalls, and current network conditions.",
+        "source_refs": [
+          1,
+          2
+        ]
+      }
+    }
+  },
+  {
     "name": "Aurora Files",
     "url": "https://afterlogic.org/aurora-files",
     "summary": "Open-source self-hosted private cloud storage and file-sharing platform with web, mobile, desktop sync, public links, WebDAV, S3-backed storage, and optional browser-side encryption.",
