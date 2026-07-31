@@ -4663,7 +4663,7 @@
         "notes": "Open source projects including API client and Ansible role."
       }
     ],
-    "verification_status": "pending",
+    "verification_status": "rejected",
     "reason": "Specialized backup hosting only — not general-purpose file hosting."
   },
   {
@@ -13247,8 +13247,8 @@
         "notes": "Model Context Protocol server for AI agent integration."
       }
     ],
-    "verification_status": "pending",
-    "reason": "macOS/iOS only; no perpetual free tier (7-day trial only); actual storage depends on user's own cloud provider."
+    "verification_status": "rejected",
+    "reason": "Not a public file host: macOS/iOS client utility that uploads to user-configured cloud providers; no Dropshare-operated central storage. No perpetual free tier (7-day trial, then paid license)."
   },
   {
     "name": "DZ4Up",
@@ -14701,132 +14701,6 @@
       }
     ],
     "verification_status": "verified",
-    "reason": null
-  },
-  {
-    "name": "Ente",
-    "url": "https://ente.io/",
-    "summary": "Open-source, end-to-end encrypted cloud storage for photos, authenticators (2FA), and documents with 10 GB free tier and cross-platform apps.",
-    "free_model": {
-      "value": "free-forever",
-      "notes": "10 GB free forever for Ente Photos. Ente Auth (2FA) is completely free. Ente Locker free for up to 100 items.",
-      "source_refs": [
-        0
-      ]
-    },
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "Max file size not explicitly stated on public pages.",
-        "source_refs": [
-          0
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Permanent while account is active. 3x replication across locations.",
-        "source_refs": [
-          0
-        ],
-        "status": "not-published"
-      },
-      "storage": {
-        "value": 10,
-        "unit": "GB",
-        "notes": "10 GB free, expandable with paid plans.",
-        "source_refs": [
-          0
-        ]
-      },
-      "bandwidth": {
-        "value": null,
-        "unit": null,
-        "notes": "Bandwidth not specified in public documentation.",
-        "source_refs": [
-          0
-        ],
-        "status": "not-published"
-      }
-    },
-    "account": {
-      "required": true,
-      "benefits": "End-to-end encrypted cloud backup, cross-platform sync (iOS, Android, Web, Desktop), on-device face recognition, zero-knowledge AI search, curated memories, family plans, public links, shared albums, smart albums, hidden photos, legacy contacts.",
-      "source_refs": [
-        0
-      ]
-    },
-    "developer": {
-      "api_available": false,
-      "api_docs_url": null,
-      "cli_friendly": true,
-      "cli_example": "ente export",
-      "notes": "CLI available for export and Auth decryption (Go-based). No public third-party API documentation found. Self-hostable under AGPL-3.0.",
-      "source_refs": [
-        0,
-        2
-      ]
-    },
-    "content": {
-      "allowed_file_types": {
-        "mode": "all-or-most",
-        "notes": "Photos (images, videos), documents (Locker), 2FA tokens (Auth). Primary focus is photo backup and management.",
-        "source_refs": [
-          0
-        ],
-        "allowed_extensions": [],
-        "blocked_extensions": []
-      },
-      "public_sharing": {
-        "value": true,
-        "notes": "Public links and shared albums supported.",
-        "source_refs": [
-          0
-        ]
-      }
-    },
-    "security": {
-      "https_only": true,
-      "e2ee": true,
-      "server_side_encryption": null,
-      "notes": "End-to-end encryption with zero-knowledge architecture. Server never sees plaintext. Externally audited by Cure53, Symbolic Software, and Fallible. Open source (AGPL-3.0). Self-hostable.",
-      "source_refs": [
-        0
-      ]
-    },
-    "tags": [
-      "e2ee",
-      "open-source",
-      "photos",
-      "backup",
-      "privacy",
-      "zero-knowledge",
-      "self-hostable",
-      "cross-platform",
-      "encrypted"
-    ],
-    "sources": [
-      {
-        "label": "Homepage",
-        "url": "https://ente.io/",
-        "retrieved_at": "2026-06-19",
-        "notes": "Main product page with feature overview and free tier details."
-      },
-      {
-        "label": "About",
-        "url": "https://ente.io/about",
-        "retrieved_at": "2026-06-19",
-        "notes": "Company background and product positioning."
-      },
-      {
-        "label": "GitHub",
-        "url": "https://github.com/ente-io/ente",
-        "retrieved_at": "2026-06-19",
-        "notes": "Open source repository with 27k+ stars. CLI source in /cli directory."
-      }
-    ],
-    "verification_status": "pending",
     "reason": null
   },
   {
@@ -31545,8 +31419,8 @@
         "notes": "Donation tiers and feature gating details."
       }
     ],
-    "verification_status": "pending",
-    "reason": "New account registration currently restricted to paid subscribers; free tier exists but is not practically accessible for new users."
+    "verification_status": "rejected",
+    "reason": "Free tier not practically accessible: new account registration restricted to paid donation subscribers; free tier is closed to new users."
   },
   {
     "name": "LetsUpload",
@@ -39000,147 +38874,6 @@
       }
     },
     "verification_status": "verified",
-    "reason": null
-  },
-  {
-    "name": "Pinata",
-    "url": "https://pinata.cloud/",
-    "summary": "Managed IPFS pinning and file storage platform with 1 GB free tier, dedicated gateways, TypeScript SDK, Go CLI, and 25 GB max file uploads.",
-    "free_model": {
-      "value": "free-forever",
-      "notes": "Free plan with 1 GB storage, 500 pinned files, 10 GB bandwidth/month, 10k requests/month, 1 gateway. No credit card required.",
-      "source_refs": [
-        0
-      ]
-    },
-    "limits": {
-      "max_file_size": {
-        "value": 25,
-        "unit": "GB",
-        "notes": "25 GB per individual upload on both Public and Private IPFS. Files >100 MB require TUS resumable uploads. Recommended max for reliability: 15 GB.",
-        "source_refs": [
-          0
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Files persist on IPFS as long as pinned (permanent by default). Optional expiration via expires_at Unix timestamp. No auto-deletion unless expiring.",
-        "source_refs": [
-          0
-        ],
-        "status": "not-published"
-      },
-      "storage": {
-        "value": 1,
-        "unit": "GB",
-        "notes": "1 GB on free plan. Paid plans: 1 TB (Picnic $20/mo), 5 TB (Fiesta $100/mo).",
-        "source_refs": [
-          0
-        ]
-      },
-      "bandwidth": {
-        "value": 10,
-        "unit": "GB",
-        "notes": "10 GB/month on free plan. Paid plans: 500 GB (Picnic), 2.5 TB (Fiesta).",
-        "source_refs": [
-          0
-        ]
-      }
-    },
-    "account": {
-      "required": true,
-      "benefits": "API keys (JWT + API key/secret), dedicated gateway domain, web dashboard, file groups/organization, key-value metadata, webhooks, analytics, workspaces (team collaboration), access control.",
-      "source_refs": [
-        0
-      ]
-    },
-    "developer": {
-      "api_available": true,
-      "api_docs_url": "https://docs.pinata.cloud/api-reference",
-      "cli_friendly": true,
-      "cli_example": "pinata upload --name \"myfile.txt\" --network public /path/to/file.txt",
-      "notes": "REST API at https://api.pinata.cloud/v3/. Official TypeScript SDK (npm i pinata), React hooks, Expo hooks. Go-based CLI. OpenAPI specs available. Supports TUS resumable uploads for large files.",
-      "source_refs": [
-        0
-      ]
-    },
-    "content": {
-      "allowed_file_types": {
-        "mode": "all-or-most",
-        "notes": "Open to most file types including text, JSON, images, video, audio, documents, CAR files. HTML files restricted to dedicated gateway with custom domain. Binary files case-by-case. CAR files require paid plan.",
-        "source_refs": [
-          0
-        ],
-        "allowed_extensions": [],
-        "blocked_extensions": []
-      },
-      "public_sharing": {
-        "value": true,
-        "notes": "Public IPFS network provides permanent public content-addressed links via gateways.",
-        "source_refs": [
-          0
-        ]
-      }
-    },
-    "security": {
-      "https_only": true,
-      "e2ee": false,
-      "server_side_encryption": null,
-      "notes": "All API endpoints use HTTPS. Private IPFS is a separate network layer but not E2EE. JWT-based auth with scoped API keys. Signed upload URLs and CID signatures available.",
-      "source_refs": [
-        0
-      ]
-    },
-    "tags": [
-      "permanent",
-      "ipfs",
-      "pinning",
-      "api",
-      "cli",
-      "sdk",
-      "typescript",
-      "web3",
-      "nft",
-      "decentralized",
-      "cdn",
-      "gateway",
-      "free-tier",
-      "resumable-uploads"
-    ],
-    "sources": [
-      {
-        "label": "Homepage",
-        "url": "https://pinata.cloud/",
-        "retrieved_at": "2026-06-19",
-        "notes": "Main product page."
-      },
-      {
-        "label": "Pricing",
-        "url": "https://pinata.cloud/pricing",
-        "retrieved_at": "2026-06-19",
-        "notes": "Free and paid plan details with limits table."
-      },
-      {
-        "label": "API Reference",
-        "url": "https://docs.pinata.cloud/api-reference",
-        "retrieved_at": "2026-06-19",
-        "notes": "REST API documentation with OpenAPI specs."
-      },
-      {
-        "label": "Limits",
-        "url": "https://docs.pinata.cloud/account-management/limits.md",
-        "retrieved_at": "2026-06-19",
-        "notes": "Detailed rate limits and file size constraints."
-      },
-      {
-        "label": "CLI Docs",
-        "url": "https://docs.pinata.cloud/tools/cli/ipfs.md",
-        "retrieved_at": "2026-06-19",
-        "notes": "Go-based CLI reference with upload and file management commands."
-      }
-    ],
-    "verification_status": "pending",
     "reason": null
   },
   {
@@ -52783,148 +52516,6 @@
     },
     "verification_status": "rejected",
     "reason": "The official site openly promotes premium plans, affiliate-style earning programs, and reseller flows, which puts it outside the repo's curation bar."
-  },
-  {
-    "name": "Uploadcare",
-    "url": "https://uploadcare.com/",
-    "summary": "Complete file-handling platform for web and mobile apps with uploads, storage, processing, and CDN delivery. 1 GB free tier with API, CLI, and SDKs.",
-    "free_model": {
-      "value": "free-forever",
-      "notes": "Free tier with 1 GB storage, 5 GB traffic/month, 1,000 operations/month, 500 MB max file size. No credit card required. New accounts get a trial with full Pro features.",
-      "source_refs": [
-        0
-      ]
-    },
-    "limits": {
-      "max_file_size": {
-        "value": 500,
-        "unit": "MB",
-        "notes": "500 MB on free plan. Pro: 1 GB, Business: 10 GB, Enterprise: up to 5 TB.",
-        "source_refs": [
-          0
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "notes": "Unlimited while active. Unstored files have limited retention; files must be stored to persist indefinitely.",
-        "source_refs": [
-          0
-        ],
-        "status": "not-published"
-      },
-      "storage": {
-        "value": 1,
-        "unit": "GB",
-        "notes": "1 GB on free plan. Cumulative counter (does not reset each cycle). Only originals count, not transformed derivatives.",
-        "source_refs": [
-          0
-        ]
-      },
-      "bandwidth": {
-        "value": 5,
-        "unit": "GB",
-        "notes": "5 GB/month on free plan. Pro: 75 GB, Business: 200 GB.",
-        "source_refs": [
-          0
-        ]
-      }
-    },
-    "account": {
-      "required": true,
-      "benefits": "Unique project with dedicated API keys, storage, and settings. Dashboard for file management, usage monitoring. Upload API, REST API, URL API. Webhooks, metadata, integrations. CDN delivery. Signed uploads, signed URLs, malware scanning.",
-      "source_refs": [
-        0
-      ]
-    },
-    "developer": {
-      "api_available": true,
-      "api_docs_url": "https://uploadcare.com/docs/",
-      "cli_friendly": true,
-      "cli_example": "uploadcare file upload hero.jpg",
-      "notes": "Three APIs: Upload API, REST API, URL API. Official CLI (Go, zero dependencies, JSON/NDJSON output, --dry-run, piped batch operations). SDKs for JS, Node, PHP, Python, iOS, Android, Ruby, Java, Go, Rust.",
-      "source_refs": [
-        0
-      ]
-    },
-    "content": {
-      "allowed_file_types": {
-        "mode": "all-or-most",
-        "notes": "Any file type (images, videos, documents). MIME type filtering and malware scanning (ClamAV) available. NSFW content detection for blocking.",
-        "source_refs": [
-          0
-        ],
-        "allowed_extensions": [],
-        "blocked_extensions": []
-      },
-      "public_sharing": {
-        "value": true,
-        "notes": "CDN delivery from global edge network with signed URLs for secure access.",
-        "source_refs": [
-          0
-        ]
-      }
-    },
-    "security": {
-      "https_only": true,
-      "e2ee": false,
-      "server_side_encryption": null,
-      "notes": "HTTPS-only by default. Signed uploads and signed URLs for time-limited access. DDoS protection. ClamAV malware scanning. SOC 2 Type 2, GDPR, HIPAA (Enterprise). 99.9% uptime SLA on paid plans.",
-      "source_refs": [
-        0
-      ]
-    },
-    "tags": [
-      "permanent",
-      "cdn",
-      "api",
-      "cli",
-      "image-processing",
-      "video-processing",
-      "document-conversion",
-      "malware-scanning",
-      "signed-uploads",
-      "signed-urls",
-      "enterprise",
-      "soc2",
-      "hipaa",
-      "gdpr",
-      "dev-friendly"
-    ],
-    "sources": [
-      {
-        "label": "Homepage",
-        "url": "https://uploadcare.com/",
-        "retrieved_at": "2026-06-19",
-        "notes": "Main product page."
-      },
-      {
-        "label": "Pricing",
-        "url": "https://uploadcare.com/pricing",
-        "retrieved_at": "2026-06-19",
-        "notes": "Free and paid plan details with overage rates."
-      },
-      {
-        "label": "Documentation",
-        "url": "https://uploadcare.com/docs/",
-        "retrieved_at": "2026-06-19",
-        "notes": "Full API and integration documentation."
-      },
-      {
-        "label": "CLI Product Page",
-        "url": "https://uploadcare.com/products/cli/",
-        "retrieved_at": "2026-06-19",
-        "notes": "CLI features, installation, and example commands."
-      },
-      {
-        "label": "Security",
-        "url": "https://uploadcare.com/products/security/",
-        "retrieved_at": "2026-06-19",
-        "notes": "Security features including signed uploads, DDoS protection, compliance."
-      }
-    ],
-    "verification_status": "pending",
-    "reason": null
   },
   {
     "name": "UploadCD",
