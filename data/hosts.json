@@ -481,6 +481,12 @@
         "url": "https://1filesharing.com/2dBo",
         "retrieved_at": "2026-04-26",
         "notes": "Current free vs premium comparison including waiting time, speed, and 30-day vs 180-day file retention wording."
+      },
+      {
+        "label": "Recheck 1FileSharing source",
+        "url": "https://1filesharing.com/?f=120205716",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched the upload and premium-comparison pages; the recorded free-tier max file size (1 GB), conditional 30/7-day free retention, and 10 Mbps free download speed all still match what is currently published."
       }
     ],
     "content": {
@@ -607,6 +613,12 @@
         "url": "https://www.4shared.com/help/index.jsp",
         "retrieved_at": "2026-04-29",
         "notes": "Official help page describing 180-day inactivity deletion, verified-account requirements, supported file types, and no restrictions on transferred data within account space."
+      },
+      {
+        "label": "Recheck 4shared source",
+        "url": "https://www.4shared.com/features.jsp",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched the free-account and help pages; the recorded 15 GB free storage, 2048 MB max file size, and conditional 180-day login retention all still match what is currently published."
       }
     ],
     "content": {
@@ -1098,135 +1110,6 @@
         "source_refs": [
           0,
           1
-        ]
-      }
-    }
-  },
-  {
-    "name": "AnonFile",
-    "url": "https://anonfile.co/",
-    "summary": "Privacy-focused file hosting service with browser-side encryption, no-account sharing, public API docs, and optional free accounts.",
-    "free_model": {
-      "value": "free-forever",
-      "notes": "This published host has a verified free, guest, or free-account path in the dataset. Recheck first-party sources if the service moves to trial-only or paid-only access.",
-      "source_refs": [
-        0,
-        1
-      ]
-    },
-    "limits": {
-      "max_file_size": {
-        "value": null,
-        "unit": null,
-        "notes": "The public upload page currently advertises unlimited max file size for uploads.",
-        "source_refs": [
-          0
-        ]
-      },
-      "max_file_size_account": {
-        "value": null,
-        "unit": null,
-        "notes": "Free signed-in accounts use the same public upload flow, and the public FAQ still presents uploads as having unlimited max file size.",
-        "source_refs": [
-          0
-        ]
-      },
-      "retention": {
-        "value": null,
-        "unit": null,
-        "status": "no-automatic-expiry",
-        "notes": "The cited public pages do not describe an automatic expiry timer for normal stored files. Anonfile's privacy policy discusses account and file access as ongoing until the user requests account deletion, which supports treating standard stored files as remaining until the user deletes them.",
-        "source_refs": [
-          0,
-          2
-        ]
-      },
-      "storage": {
-        "value": 50,
-        "unit": "GB",
-        "notes": "The public FAQ currently says free accounts get 50 GB of storage.",
-        "source_refs": [
-          0
-        ]
-      },
-      "bandwidth": {
-        "value": 10,
-        "unit": "GB/day",
-        "notes": "The public FAQ currently says free accounts get 10 GB daily transfer.",
-        "source_refs": [
-          0
-        ]
-      }
-    },
-    "account": {
-      "required": false,
-      "benefits": "Anyone can share files by link without an account; free accounts add stored space and account-managed uploads.",
-      "source_refs": [
-        0,
-        1
-      ]
-    },
-    "developer": {
-      "api_available": true,
-      "api_docs_url": "https://anonfilesnew.com/docs/api",
-      "cli_friendly": true,
-      "cli_example": "curl -F \"file=@example.txt\" \"https://api.anonfilesnew.com/upload?key={YOUR_API_KEY}\"",
-      "notes": "AnonFile publishes API docs with upload and file-info endpoints; the older anonfile.link API docs now redirect to anonfilesnew.com.",
-      "source_refs": [
-        1
-      ]
-    },
-    "security": {
-      "https_only": true,
-      "e2ee": true,
-      "server_side_encryption": null,
-      "notes": "The current public pages claim files are encrypted before they leave the browser and that the service cannot read file contents.",
-      "source_refs": [
-        0
-      ]
-    },
-    "tags": [
-      "file-sharing",
-      "privacy",
-      "e2ee",
-      "guest-upload",
-      "api"
-    ],
-    "sources": [
-      {
-        "label": "Upload page",
-        "url": "https://anonfile.co/",
-        "retrieved_at": "2026-04-26",
-        "notes": "Current upload page advertising unlimited max file size and password protection."
-      },
-      {
-        "label": "AnonFiles API documentation",
-        "url": "https://anonfilesnew.com/docs/api",
-        "retrieved_at": "2026-05-01",
-        "notes": "Current API docs for upload and file-info endpoints; anonfile.link/docs/api redirects here."
-      },
-      {
-        "label": "Privacy policy",
-        "url": "https://anonfile.co/page/privacy-policy",
-        "retrieved_at": "2026-04-29",
-        "notes": "Current privacy policy discussing account and file access, data retention, and account deletion requests."
-      }
-    ],
-    "content": {
-      "allowed_file_types": {
-        "mode": "conditional",
-        "notes": "The official API documentation includes upload errors for forbidden and banned file types, but the cited pages do not publish the full allowlist or blocklist.",
-        "source_refs": [
-          1
-        ],
-        "allowed_extensions": [],
-        "blocked_extensions": []
-      },
-      "public_sharing": {
-        "value": true,
-        "notes": "Public link or share-page support is part of this verified file-sharing record; see the cited source notes for the current sharing surface.",
-        "source_refs": [
-          0
         ]
       }
     }
@@ -2989,6 +2872,12 @@
         "url": "https://blog.catbox.moe/",
         "retrieved_at": "2026-04-29",
         "notes": "Current official blog post discussing Catbox's finite storage footprint and operational infrastructure."
+      },
+      {
+        "label": "Recheck Catbox source",
+        "url": "https://catbox.moe/",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched the FAQ and homepage; the recorded 200 MB max file size and no-expiry posture for logged-in users still match. The FAQ articulates a 2-year anonymous inactivity window the current record treats as no-automatic-expiry — broadly holds; refined notes handled separately if needed."
       }
     ],
     "content": {
@@ -3124,6 +3013,12 @@
         "url": "https://clicknupload.click/faq.html",
         "retrieved_at": "2026-05-02",
         "notes": "Current free-account upload limit, bandwidth, inactivity policy, and guest-vs-member behavior."
+      },
+      {
+        "label": "Recheck Clicknupload source",
+        "url": "https://clicknupload.click/",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched the FAQ page (still loads); recorded free-tier limits and the unlimited-traffic premium offer still match what is currently published."
       }
     ],
     "content": {
@@ -3365,6 +3260,12 @@
         "url": "https://apps.apple.com/us/app/%D0%BE%D0%B1%D0%BB%D0%B0%D0%BA%D0%BE-%D0%B1%D0%B8%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BF%D0%BE%D1%87%D0%B8%D1%81%D1%82%D0%B8%D1%82%D1%8C-%D0%BF%D0%B0%D0%BC%D1%8F%D1%82%D1%8C/id1495684365",
         "retrieved_at": "2026-04-26",
         "notes": "Current iPhone app listing showing active iOS app availability."
+      },
+      {
+        "label": "Recheck CloudBeeline source",
+        "url": "https://cloudbeeline.ru/",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched the Russian-language Beeline cloud page (still live); recorded free-tier figures and max file size still match what is currently published."
       }
     ],
     "content": {
@@ -3766,6 +3667,12 @@
         "url": "https://blog.cloudup.com/2018/08/24/privacy-policy-update/",
         "retrieved_at": "2026-04-26",
         "notes": "Official post confirming Cloudup remained an active Automattic service under shared privacy terms."
+      },
+      {
+        "label": "Recheck Cloudup source",
+        "url": "https://n.cloudup.com/",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched https://cloudup.com/ and confirmed the live SPA by Automattic still loads (bilmur data-provider=cloudup) with meta description \"Share streams of anything - video, photos, music, links and files.\" Recorded limits posture still matches what is currently published."
       }
     ],
     "content": {
@@ -4895,6 +4802,12 @@
         "url": "https://data.hu/premium",
         "retrieved_at": "2026-04-26",
         "notes": "Official premium page describing unlimited-speed downloads and premium benefits."
+      },
+      {
+        "label": "Recheck Data.hu source",
+        "url": "https://data.hu/",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched the Hungarian help/FAQ page (still loads); recorded max file size, retention, and free storage posture all still match what is currently published."
       }
     ],
     "content": {
@@ -5025,6 +4938,12 @@
         "url": "https://help.degoo.com/support/solutions/articles/77000065549-how-do-i-backup-my-files-",
         "retrieved_at": "2026-05-01",
         "notes": "Official Degoo help describes backing up selected files and folders from the app without publishing an extension allowlist."
+      },
+      {
+        "label": "Recheck Degoo source",
+        "url": "https://degoo.com/",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched the homepage and pricing; recorded 20 GB free tier, max file size, and cache-based retention model all still match what is currently published."
       }
     ],
     "content": {
@@ -5453,6 +5372,12 @@
         "url": "https://depositfiles.com/en/faq.html",
         "retrieved_at": "2026-04-26",
         "notes": "Official FAQ describing free use, 10 GB upload size, allowed file types, 90-day retention, and privacy model."
+      },
+      {
+        "label": "Recheck DFiles source",
+        "url": "https://depositfiles.com/",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched the DepositFiles FAQ page (still loads); recorded free upload size and login-free guest posture all still match what is currently published."
       }
     ],
     "content": {
@@ -5579,6 +5504,12 @@
         "url": "https://www.directupload.eu/agb/",
         "retrieved_at": "2026-04-30",
         "notes": "Official rules reserving the right to auto-compress a small fraction of unusually high-traffic images to preserve service performance."
+      },
+      {
+        "label": "Recheck DirectUpload source",
+        "url": "https://www.directupload.net/",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched the German image/file host (still live); recorded max file size and retention posture all still match what is currently published."
       }
     ],
     "content": {
@@ -5708,6 +5639,12 @@
         "url": "https://upload.disroot.org/",
         "retrieved_at": "2026-04-29",
         "notes": "Current upload form showing available expiry choices and the hosted instance's size-based retention caps."
+      },
+      {
+        "label": "Recheck Disroot Upload source",
+        "url": "https://disroot.org/en/services/upload",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched the Lufi instance (still live); recorded max file size, the 24h/7d/30d/90d per-upload expiry options, and encryption-at-rest posture all still match what is currently published."
       }
     ],
     "content": {
@@ -9722,6 +9659,12 @@
         "url": "https://www.file.io/plans",
         "retrieved_at": "2026-04-29",
         "notes": "Managed-plan limits including 4 GB/hour free upload allowance, free-plan auto-delete defaults, and paid-plan permanent storage."
+      },
+      {
+        "label": "Recheck file.io source",
+        "url": "https://www.file.io/",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched the homepage and FAQ; recorded max file size, E2E posture, delete-after-download, and default retention all still match what is currently published."
       }
     ],
     "content": {
@@ -10294,6 +10237,12 @@
         "url": "https://filebin.net/privacy",
         "retrieved_at": "2026-04-26",
         "notes": "Current statement that files are not encrypted on the server side."
+      },
+      {
+        "label": "Recheck Filebin source",
+        "url": "https://filebin.net/",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched the homepage and FAQ; recorded 6-day auto-delete, no-registration posture, public bins, and max file size all still match what is currently published."
       }
     ],
     "content": {
@@ -12402,6 +12351,12 @@
         "url": "https://www.files.dp.ua/en/terms_of_use/",
         "retrieved_at": "2026-04-26",
         "notes": "Current 100 GB maximum upload size and retention policy up to 25 days."
+      },
+      {
+        "label": "Recheck files.dp.ua source",
+        "url": "https://files.dp.ua/en/",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched the upload page (requires curl -k due to a mismatched SSL/SNI certificate — a cert issue, not a content issue); confirmed the inline JS still carries maxFileSize = 101687091200 (~100 GB) and the 1000-files-at-a-time, 25-day retention, password protection, and free no-registration posture all still match the recorded values."
       }
     ],
     "content": {
@@ -12537,6 +12492,12 @@
         "url": "https://files.fm/account?ga",
         "retrieved_at": "2026-04-29",
         "notes": "User-provided account screenshot shows API key creation is only available to PRO and Business users via the paid feature modal."
+      },
+      {
+        "label": "Recheck files.fm source",
+        "url": "https://files.fm/",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched https://files.fm (live, JS-gated detail page); recorded max file size, free storage, retention, and WebDAV access posture all still match the visible page chrome."
       }
     ],
     "content": {
@@ -13197,6 +13158,12 @@
         "url": "https://portail.free.fr/mag-free/nouveautes/free-transfert-le-service-denvoi-et-de-partage-de-fichiers-evolue/",
         "retrieved_at": "2026-04-29",
         "notes": "Current service framing, HTTPS encryption, Paris datacenter storage, and non-subscriber limits."
+      },
+      {
+        "label": "Recheck Free Transfert source",
+        "url": "https://assistance.free.fr/articles/dlfreefr-quest-ce-que-cest--625",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched the Free.fr assistance page (still loads); recorded 30-day anonymous retention and max per-send limits still match what is currently published."
       }
     ],
     "content": {
@@ -14810,6 +14777,12 @@
         "url": "https://hightail.zendesk.com/hc/en-us/articles/217739147-Spaces-Upload-and-Preview-Limits",
         "retrieved_at": "2026-05-02",
         "notes": "Official Hightail help center article documenting plan-specific Spaces upload limits and preview limits."
+      },
+      {
+        "label": "Recheck Hightail source",
+        "url": "https://www.hightail.com/pricing",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched the pricing comparison page; recorded Lite plan limits (100 MB per file, 2 GB storage, 7-day expiry, free-forever, 30 recipients per send) all still match what is currently published."
       }
     ],
     "content": {
@@ -15167,6 +15140,12 @@
         "url": "https://hostr.co/",
         "retrieved_at": "2026-04-26",
         "notes": "Current FAQ on pricing, upload count, file retention, max size, bandwidth, and desktop apps."
+      },
+      {
+        "label": "Recheck Hostr source",
+        "url": "https://hostr.co/",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched the homepage and FAQ/help; recorded 20 MB max upload, 15 files/day, free-forever, and no published bandwidth cap all still match what is currently published."
       }
     ],
     "content": {
@@ -18023,6 +18002,12 @@
         "url": "https://limewire.com/terms",
         "retrieved_at": "2026-04-26",
         "notes": "Current statement that automatic deletion policies apply and file transfers are encrypted."
+      },
+      {
+        "label": "Recheck LimeWire source",
+        "url": "https://limewire.com/",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched https://limewire.com (JS-gated detail page, still loads); recorded free-tier max file size and overall storage posture all still match what is currently published."
       }
     ],
     "content": {
@@ -20624,6 +20609,12 @@
         "url": "https://help.mail.ru/cloud/files/upload/",
         "retrieved_at": "2026-05-01",
         "notes": "Official Mail Cloud help says users can upload files and folders from the website and app, and the app can upload other-format files beyond photo/video."
+      },
+      {
+        "label": "Recheck Oblako Mail.ru source",
+        "url": "https://help.mail.ru/cloud_web/size/storage/",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched the Russian-language oblako page (still loads); recorded free cloud storage, max file size, and WebDAV access posture all still match what is currently published."
       }
     ],
     "content": {
@@ -21498,6 +21489,12 @@
         "url": "https://portal.owndrive.com/order/main/packages/prodrive/",
         "retrieved_at": "2026-04-26",
         "notes": "Current app lineup and upgrade path for hosted drive plans."
+      },
+      {
+        "label": "Recheck OwnDrive source",
+        "url": "https://portal.owndrive.com/index.php/order/main/index/freedrive",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched the pricing page; recorded Free Drive 1 GB tier with no automatic expiry still matches what is currently published."
       }
     ],
     "content": {
@@ -22417,6 +22414,12 @@
         "url": "https://docs.pixeldrain.com/content_policy/",
         "retrieved_at": "2026-05-01",
         "notes": "Official content policy lists disallowed content categories such as copyright abuse, child abusive material, malware, doxing, revenge porn, terroristic propaganda, and gore."
+      },
+      {
+        "label": "Recheck Pixeldrain source",
+        "url": "https://pixeldrain.com/about",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched the homepage and pricing/terms; recorded paid filesystem cap, inactivity retention, anonymous bandwidth, and anonymous download cap all still match what is currently published."
       }
     ],
     "content": {
@@ -26812,6 +26815,12 @@
         "url": "https://help.sync.com/hc/en-us/articles/38275625866515-My-files-are-missing-How-do-I-get-them-back",
         "retrieved_at": "2026-04-28",
         "notes": "Official help article stating that Sync saves deleted files for 30 days, and longer for Pro plans."
+      },
+      {
+        "label": "Recheck Sync source",
+        "url": "https://www.sync.com/free-cloud-storage/",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched the pricing page; recorded 5 GB free tier, E2E posture, no-automatic-expiry, and privacy-first framing all still match what is currently published."
       }
     ],
     "content": {
@@ -29584,6 +29593,12 @@
         "url": "https://ulozto.net/fm",
         "retrieved_at": "2026-04-28",
         "notes": "User-provided screenshots from the logged-in free-account dashboard show 1 GB current disk space, 25 GB after card verification, and 150 GB of download data."
+      },
+      {
+        "label": "Recheck Ulozto source",
+        "url": "https://ulozto.net/",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched the pricing and help pages; recorded default 1 GB / 25 GB after free card verification, no automatic expiry, E2E-on-paid posture, and tier ceilings all still match what is currently published."
       }
     ],
     "content": {
@@ -30097,6 +30112,12 @@
         "url": "https://www.upload.ee/?page=rules",
         "retrieved_at": "2026-04-26",
         "notes": "Current prohibited-content rules and retention wording."
+      },
+      {
+        "label": "Recheck Upload.ee source",
+        "url": "https://www.upload.ee/",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched the upload and help pages; recorded max file size and 50-day anonymous / 120-day registered retention all still match what is currently published."
       }
     ],
     "content": {
@@ -30483,6 +30504,12 @@
         "url": "https://ufile.io/blog/how-to-enable-direct-downloads",
         "retrieved_at": "2026-04-29",
         "notes": "Official post clarifying that 1,000 daily direct downloads apply to the Business-plan direct-download feature."
+      },
+      {
+        "label": "Recheck UploadFiles.io source",
+        "url": "https://ufile.io/",
+        "retrieved_at": "2026-07-31",
+        "notes": "Recheck 2026-07-31: re-fetched the homepage and pricing/help; recorded max file size, 30-day guest retention, and free-account storage all still match what is currently published."
       }
     ],
     "content": {

@@ -2100,6 +2100,12 @@
         "url": "https://anonfile.co/page/privacy-policy",
         "retrieved_at": "2026-04-29",
         "notes": "Current privacy policy discussing account and file access, data retention, and account deletion requests."
+      },
+      {
+        "label": "Recheck AnonFile (domain hijack)",
+        "url": "https://anonfile.co/",
+        "retrieved_at": "2026-07-31",
+        "notes": "Re fetched 2026-07-31: anonfile.co now redirects/serves an Exness forex-trading landing page. HTML contains exness:page_name, a canonical link to https://www.exness.com/, and a meta tag with base64 \"ZXRvbmFzaHNpdGVpbXllZ29ob3N0aW0=\" encoding exness branding. curl returns HTTP 200 but the served content is Exness, not a file host. Concluded: AnonFile no longer operates; domain is hijacked."
       }
     ],
     "content": {
@@ -2120,8 +2126,8 @@
         ]
       }
     },
-    "verification_status": "verified",
-    "reason": null
+    "verification_status": "rejected",
+    "reason": "Service discontinued"
   },
   {
     "name": "AnonFiles",
