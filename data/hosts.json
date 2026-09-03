@@ -21150,7 +21150,7 @@
     "summary": "Large-file host with a one-click anonymous upload gate, a clean single-button download page with no fake buttons, tiered activity-based retention, and a REST API with webhooks for uploaders.",
     "free_model": {
       "value": "free-forever",
-      "notes": "Anonymous and free-account uploads work without payment; a paid Plus tier removes ads and file expiry and raises the per-file cap.",
+      "notes": "Anonymous and free-account uploads work without payment; paid tiers (Plus, Uploader Pro) remove ads and file expiry and raise the per-file cap.",
       "source_refs": [
         0,
         1
@@ -21160,7 +21160,7 @@
       "max_file_size": {
         "value": 25,
         "unit": "GB",
-        "notes": "Free uploads (anonymous or free account) are capped at 25 GB per file. The paid Plus tier raises this to 50 GB per file.",
+        "notes": "Free uploads (anonymous or free account) are capped at 25 GB per file. Paid tiers raise it: Plus 30 GB per file, Uploader Pro 50 GB per file.",
         "source_refs": [
           0,
           1
@@ -21181,7 +21181,8 @@
         "source_refs": [
           0,
           1
-        ]
+        ],
+        "status": "not-applicable"
       },
       "bandwidth": {
         "value": null,
@@ -21189,12 +21190,13 @@
         "notes": "No published transfer/bandwidth quota on downloads; the download page works with adblockers and shows a single real download button.",
         "source_refs": [
           0
-        ]
+        ],
+        "status": "not-published"
       }
     },
     "account": {
       "required": false,
-      "benefits": "Anonymous one-click uploads work without an account. Free accounts extend retention to 30 days and add folders, uploader analytics (downloads, referrers, countries), remote upload, and REST API keys. Plus removes ads, removes file expiry, and raises the per-file cap to 50 GB.",
+      "benefits": "Anonymous one-click uploads work without an account. Free accounts extend retention to 30 days and add folders, uploader analytics (downloads, referrers, countries), remote upload, and REST API keys. Plus removes ads and file expiry and raises the per-file cap to 30 GB with 250 GB of storage; Uploader Pro raises it to 50 GB per file with 1 TB of storage and adds webhooks and mirrors.",
       "source_refs": [
         0,
         1
@@ -21205,7 +21207,7 @@
       "api_docs_url": "https://origrid.io/api",
       "cli_friendly": false,
       "cli_example": null,
-      "notes": "Origrid exposes a REST API with webhook support; API keys are generated in the account panel with no waitlist, and upload requests authenticate via Bearer token or X-API-Key header. Remote upload (fetch from a URL) is also supported.",
+      "notes": "Origrid exposes a REST API with webhook support; API keys are generated in the account panel with no waitlist. Requests authenticate with either `Authorization: Bearer ogk_…` or an `X-API-Key` header — both are shown on the public /api page. Remote upload (fetch from a URL) is also supported.",
       "source_refs": [
         2
       ]
@@ -21251,31 +21253,31 @@
       {
         "label": "Homepage",
         "url": "https://origrid.io",
-        "retrieved_at": "2026-07-09",
+        "retrieved_at": "2026-09-03",
         "notes": "Anonymous one-click uploader on the home page and a single-button, adblock-friendly download page with no fake buttons."
       },
       {
         "label": "Pricing",
         "url": "https://origrid.io/pricing",
-        "retrieved_at": "2026-07-09",
-        "notes": "Free tier at 25 GB per file with tiered retention (7 days anonymous, 30 days free account); paid Plus tier at 50 GB per file, no ads, and no expiry while subscribed."
+        "retrieved_at": "2026-09-03",
+        "notes": "Free tier at 25 GB per file with tiered retention (7 days anonymous, 30 days free account); Plus at 30 GB per file and Uploader Pro at 50 GB per file, both without ads and without expiry while subscribed."
       },
       {
         "label": "API Docs",
         "url": "https://origrid.io/api",
-        "retrieved_at": "2026-07-09",
-        "notes": "REST API with webhook support and API-key auth (Bearer / X-API-Key); keys are issued in the account panel. Remote upload from a URL is supported."
+        "retrieved_at": "2026-09-03",
+        "notes": "REST API with webhook support and API-key auth; the page documents both `Authorization: Bearer ogk_…` and `X-API-Key`. Keys are issued in the account panel. Remote upload from a URL is supported."
       },
       {
         "label": "Status & Speedtest",
         "url": "https://origrid.io/status",
-        "retrieved_at": "2026-07-09",
+        "retrieved_at": "2026-09-03",
         "notes": "Public status page plus a public speed-test page for measuring real download throughput."
       },
       {
         "label": "Abuse / DMCA",
         "url": "https://origrid.io/dmca",
-        "retrieved_at": "2026-07-09",
+        "retrieved_at": "2026-09-03",
         "notes": "Public abuse and DMCA takedown process; prohibits illegal content such as CSAM and malware."
       }
     ]
@@ -24237,11 +24239,11 @@
       "bandwidth": {
         "value": 10,
         "unit": "GB/month",
-      "notes": "Free link creators have a 10 GB monthly download-data allowance for shared links. The policy notice says 6-digit key transfers remain unlimited for file transfers.",
-      "source_refs": [
-        2,
-        5
-      ]
+        "notes": "Free link creators have a 10 GB monthly download-data allowance for shared links. The policy notice says 6-digit key transfers remain unlimited for file transfers.",
+        "source_refs": [
+          2,
+          5
+        ]
       }
     },
     "account": {
