@@ -19,7 +19,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 
 ## What this includes
 
-- 254 verified hosts checked against current public sources as of 2026-07-31.
+- 255 verified hosts checked against current public sources as of 2026-09-03.
 - 0 main-host leads still in review and 207 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
 - 0 other-ways-to-share candidates, 0 mirror-uploader candidates, and 0 cloud-migration candidates staged in their own pending files.
 - A free-first dataset that prioritizes genuinely usable free tiers, guest flows, and honest headline limits.
@@ -194,6 +194,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [OneUpload](https://oneupload.to/) - Video host with free player access, premium-only downloads, no-bandwidth-limit marketing, API documentation navigation, and 30-day inactive free-video retention. _(Free: Free forever | Max: Not published | Retention: 30 days | Account: Yes | API)_
 - [OpenDrive](https://www.opendrive.com/) - Cloud storage, backup, and sync service with a free personal plan, official apps across major platforms, and a public API. _(Free: Free forever | Max: 100 MB | Retention: No automatic expiry | Account: Yes | API)_
 - [Oracle Cloud Infrastructure Object Storage](https://www.oracle.com/cloud/storage/object-storage/) - OCI object storage with Always Free capacity, 10 TiB objects, REST/S3-compatible APIs, CLI access, and public/pre-authenticated sharing options. _(Free: Free forever | Max: 10 TiB | Retention: No automatic expiry | Account: Yes | API | CLI)_
+- [Origrid](https://origrid.io) - Large-file host with a one-click anonymous upload gate, a clean single-button download page with no fake buttons, tiered activity-based retention, and a REST API with webhooks for uploaders. _(Free: Free forever | Max: 25 GB | Retention: 30 days | Account: No | API)_
 - [Oshi.at](https://oshi.at/) - Open-source anonymous ephemeral file-sharing service with command-line PUT uploads, configurable expiry, per-upload management, and optional instant destruction. _(Free: Free forever | Max: Not published | Retention: 1 day | Account: No | API | CLI)_
 - [OwnDrive](https://owndrive.com/) - Hosted personal cloud service with a 1 GB free tier and limited access to built-in apps, positioned as a lightweight Nextcloud-style drive. _(Free: Free forever | Max: 1 GB | Retention: No automatic expiry | Account: Yes)_
 - [pCloud](https://www.pcloud.com/) - Cloud storage service with a free tier, official apps across major desktop and mobile platforms, and a public developer API. _(Free: Free forever | Max: 10 GB | Retention: No automatic expiry | Account: Yes | API)_
