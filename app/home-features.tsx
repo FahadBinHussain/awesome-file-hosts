@@ -1,40 +1,51 @@
 "use client";
 
-import { CheckCircle, Code, Database, FileText, GitBranch, Lock, MagnifyingGlass, ShieldCheck } from "@phosphor-icons/react/dist/ssr";
+import { useRef } from "react";
+import {
+  DatabaseIcon,
+  ShieldCheckIcon,
+  LockIcon,
+  MagnifyingGlassIcon,
+  CodeIcon,
+  GitBranchIcon,
+  FileTextIcon,
+  CheckCircleIcon,
+  type AnimatedIconHandle,
+} from "./animated-feature-icons";
 
 const features = [
   {
-    icon: Database,
+    icon: DatabaseIcon,
     title: "JSON-First Architecture",
     description: "The dataset lives in structured JSON files. The README is generated. The site is a lens, not the source.",
     gradient: "from-blue-500 to-cyan-400"
   },
   {
-    icon: ShieldCheck,
+    icon: ShieldCheckIcon,
     title: "Source-Backed Verification",
     description: "Every field links to public evidence. No guesswork, no assumptions, no stale data presented as fact.",
     gradient: "from-emerald-500 to-teal-400"
   },
   {
-    icon: Lock,
+    icon: LockIcon,
     title: "Transparent Review Queue",
     description: "Pending candidates and rejected entries stay visible with reasons and references. Nothing disappears.",
     gradient: "from-purple-500 to-pink-400"
   },
   {
-    icon: MagnifyingGlass,
+    icon: MagnifyingGlassIcon,
     title: "Advanced Filtering",
     description: "Filter by API availability, guest uploads, E2EE, tags, and more. Find exactly what you need.",
     gradient: "from-amber-500 to-orange-400"
   },
   {
-    icon: Code,
+    icon: CodeIcon,
     title: "Developer-Friendly",
     description: "JSON schemas, TypeScript types, and a clean data structure ready for automation and integration.",
     gradient: "from-rose-500 to-red-400"
   },
   {
-    icon: GitBranch,
+    icon: GitBranchIcon,
     title: "Open Contribution",
     description: "Submit hosts, challenge decisions, improve evidence. The dataset grows through community verification.",
     gradient: "from-indigo-500 to-blue-400"
@@ -42,6 +53,7 @@ const features = [
 ];
 
 export function HomeFeatures() {
+  const iconRefs = useRef<(AnimatedIconHandle | null)[]>([]);
   return (
     <section className="relative w-full overflow-hidden px-4 py-20 md:py-32">
       <div className="mx-auto max-w-7xl">
@@ -69,14 +81,14 @@ export function HomeFeatures() {
               key={feature.title}
               className="group relative overflow-hidden rounded-[var(--radius-3xl)] border border-[var(--line)] bg-[var(--surface-1)] p-5 backdrop-blur-xl transition-all hover:border-[var(--line-strong)] hover:bg-[var(--surface-2)] animate-fade-in-up sm:p-6 lg:p-8"
               style={{ animationDelay: `${i * 0.1}s` }}
+              onMouseEnter={() => iconRefs.current[i]?.startAnimation()}
+              onMouseLeave={() => iconRefs.current[i]?.stopAnimation()}
             >
-              <div className="relative z-10">
-                <div className={`mb-5 inline-flex rounded-[var(--radius-2xl)] bg-gradient-to-br ${feature.gradient} p-4 shadow-lg`}>
-                  <feature.icon size={28} weight="bold" className="text-[var(--accent-content)]" />
-                </div>
-                <h3 className="mb-3 text-lg font-bold text-[var(--hero-heading)] sm:text-xl">{feature.title}</h3>
-                <p className="leading-relaxed text-[var(--text-secondary)]">{feature.description}</p>
+              <div className={`mb-5 inline-flex rounded-[var(--radius-2xl)] bg-gradient-to-br ${feature.gradient} p-4 shadow-lg`}>
+                <feature.icon className="text-[var(--accent-content)]" ref={(el) => { iconRefs.current[i] = el; }} />
               </div>
+              <h3 className="mb-3 text-lg font-bold text-[var(--hero-heading)] sm:text-xl">{feature.title}</h3>
+              <p className="leading-relaxed text-[var(--text-secondary)]">{feature.description}</p>
               <div className={`absolute -right-12 -top-12 h-48 w-48 rounded-[var(--radius-pill)] bg-gradient-to-br ${feature.gradient} opacity-0 blur-3xl transition-opacity group-hover:opacity-[0.08]`} />
             </div>
           ))}
@@ -85,17 +97,19 @@ export function HomeFeatures() {
         {/* Trust indicators */}
         <div className="mt-16 grid gap-4 sm:gap-5 md:grid-cols-3 md:gap-6 lg:mt-20">
           {[
-            { icon: FileText, label: "Evidence-First", value: "Every claim sourced" },
-            { icon: CheckCircle, label: "Queue-Aware", value: "Rejections preserved" },
-            { icon: Database, label: "Machine-Readable", value: "JSON + TypeScript" }
+            { icon: FileTextIcon, label: "Evidence-First", value: "Every claim sourced" },
+            { icon: CheckCircleIcon, label: "Queue-Aware", value: "Rejections preserved" },
+            { icon: DatabaseIcon, label: "Machine-Readable", value: "JSON + TypeScript" }
           ].map((item, i) => (
             <div
               key={item.label}
               className="flex items-center gap-4 rounded-[var(--radius-2xl)] border border-[var(--line)] bg-[var(--surface-1)] p-6 backdrop-blur-xl animate-fade-in-up"
               style={{ animationDelay: `${0.6 + i * 0.1}s` }}
+              onMouseEnter={() => iconRefs.current[6 + i]?.startAnimation()}
+              onMouseLeave={() => iconRefs.current[6 + i]?.stopAnimation()}
             >
               <div className="flex h-14 w-14 items-center justify-center rounded-[var(--radius-2xl)] bg-[var(--accent-soft)]">
-                <item.icon size={24} weight="bold" className="text-[var(--accent)]" />
+                <item.icon size={24} className="text-[var(--accent)]" ref={(el) => { iconRefs.current[6 + i] = el; }} />
               </div>
               <div>
                 <div className="text-sm font-semibold uppercase tracking-wider text-[var(--text-muted)]">
