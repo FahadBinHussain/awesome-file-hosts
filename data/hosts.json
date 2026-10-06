@@ -28543,7 +28543,7 @@
         "label": "Transfer.it rendered app",
         "url": "https://transfer.it/start",
         "retrieved_at": "2026-05-01",
-        "notes": "Official rendered app was checked with agent-browser. It verifies file/folder upload UI, features and comparison sections, free-until-1-August-2026 banner, current unlimited transfer size/transfers/downloads/recipients, 90-day expiry, and post-August free plan with 100-download limit."
+        "notes": "Official rendered app was checked with the browser-use skill. It verifies file/folder upload UI, features and comparison sections, free-until-1-August-2026 banner, current unlimited transfer size/transfers/downloads/recipients, 90-day expiry, and post-August free plan with 100-download limit."
       },
       {
         "label": "MEGA official LinkedIn post",
