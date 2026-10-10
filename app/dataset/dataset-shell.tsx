@@ -10,8 +10,10 @@ import {
   EyeSlash,
   Funnel,
   GlobeHemisphereWest,
+  Hourglass,
   LinkSimple,
   MagnifyingGlass,
+  Prohibit,
   ShieldCheck,
   Table,
   TerminalWindow,
@@ -42,6 +44,15 @@ type Props = {
 
 const NO_EXPIRY_RETENTION_SORT_VALUE = 9_999_999;
 const UNLIMITED_RETENTION_SORT_VALUE = NO_EXPIRY_RETENTION_SORT_VALUE + 1;
+const RETENTION_FLOOR_OPTIONS: { value: string; label: string }[] = [
+  { value: "", label: "Retention: any" },
+  { value: "1", label: "Kept at least 1 day" },
+  { value: "7", label: "Kept at least 7 days" },
+  { value: "30", label: "Kept at least 30 days" },
+  { value: "90", label: "Kept at least 90 days" },
+  { value: "365", label: "Kept at least 1 year" },
+  { value: "no-expiry", label: "Kept until deleted" }
+];
 const DATASET_VIEW_MODE_STORAGE_KEY = "awesome-file-hosts:dataset-view-mode";
 
 type ServiceMode = "hosts" | "alternatives" | "mirrors" | "migration";
@@ -1894,6 +1905,24 @@ function retentionSortRank(host: HostRecord) {
   return { kind: "finite" as const, value: metric };
 }
 
+function retentionFloorDays(floor: string) {
+  if (floor === "") return null;
+  if (floor === "no-expiry") return NO_EXPIRY_RETENTION_SORT_VALUE;
+  return Number(floor);
+}
+
+function normalizeExtensionQuery(input: string) {
+  const trimmed = input.trim().toLowerCase();
+  if (trimmed === "") return "";
+  return trimmed.startsWith(".") ? trimmed : `.${trimmed}`;
+}
+
+function hostBlocksExtension(host: HostRecord, extension: string) {
+  return host.content.allowed_file_types.blocked_extensions.some(
+    (item) => item.toLowerCase() === extension
+  );
+}
+
 function queueSortValue(candidate: CandidateRecord, key: QueueSortKey) {
   switch (key) {
     case "name":
@@ -2804,6 +2833,8 @@ export function DatasetApp({ data, initialViewMode, initialViewModeFromUrl }: Pr
   const [apiOnly, setApiOnly] = useState(false);
   const [guestOnly, setGuestOnly] = useState(false);
   const [e2eeOnly, setE2eeOnly] = useState(false);
+  const [retentionFloor, setRetentionFloor] = useState("");
+  const [blocksExtension, setBlocksExtension] = useState("");
   const [queueStatus, setQueueStatus] = useState<"all" | CandidateRecord["verification_status"]>("all");
   const [hiddenHostColumns, setHiddenHostColumns] = useState<string[]>([]);
   const [hiddenAdjacentColumns, setHiddenAdjacentColumns] = useState<string[]>([]);
@@ -2933,6 +2964,8 @@ export function DatasetApp({ data, initialViewMode, initialViewModeFromUrl }: Pr
 
   const filteredHosts = useMemo(() => {
     const query = search.trim().toLowerCase();
+    const floorDays = retentionFloorDays(retentionFloor);
+    const blockedExtension = normalizeExtensionQuery(blocksExtension);
     const rows = currentHostRows.filter((host) => {
       const haystack = [
         host.name,
@@ -2959,7 +2992,11 @@ export function DatasetApp({ data, initialViewMode, initialViewModeFromUrl }: Pr
         (query === "" || haystack.includes(query)) &&
         (!apiOnly || host.developer.api_available) &&
         (!guestOnly || host.account.required === false) &&
-        (!e2eeOnly || host.security.e2ee)
+        (!e2eeOnly || host.security.e2ee) &&
+        (floorDays === null ||
+          (typeof host.sortMetrics.retentionDays === "number" &&
+            host.sortMetrics.retentionDays >= floorDays)) &&
+        (blockedExtension === "" || !hostBlocksExtension(host, blockedExtension))
       );
     });
 
@@ -2989,7 +3026,7 @@ export function DatasetApp({ data, initialViewMode, initialViewModeFromUrl }: Pr
       const comparison = compareHostSortValues(leftValue, rightValue);
       return hostSort.direction === "asc" ? comparison : comparison * -1;
     });
-  }, [apiOnly, currentHostRows, e2eeOnly, guestOnly, hostSort, search]);
+  }, [apiOnly, blocksExtension, currentHostRows, e2eeOnly, guestOnly, hostSort, retentionFloor, search]);
 
   const filteredAdjacentRows = useMemo(() => {
     if (!isAdjacentMode) {
@@ -3447,6 +3484,57 @@ export function DatasetApp({ data, initialViewMode, initialViewModeFromUrl }: Pr
                     <ShieldCheck size={16} />
                     E2EE only
                   </ToolbarButton>
+                  {!isAdjacentMode ? (
+                    <>
+                      <div className="group inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-1)] px-3.5 py-2 text-xs font-medium text-[var(--text-secondary)] transition-all duration-200 hover:border-[var(--accent)]/50 hover:shadow-[0_0_20px_-6px_var(--accent-glow)]">
+                        <Hourglass
+                          size={16}
+                          className={[
+                            "transition-transform duration-200 group-hover:scale-110",
+                            retentionFloor ? "scale-110 text-[var(--accent)]" : "text-[var(--text-muted)]"
+                          ].join(" ")}
+                        />
+                        <select
+                          value={retentionFloor}
+                          onChange={(event) => setRetentionFloor(event.target.value)}
+                          className="cursor-pointer bg-transparent text-xs font-medium text-[var(--text-primary)] outline-none"
+                        >
+                          {RETENTION_FLOOR_OPTIONS.map((option) => (
+                            <option
+                              key={option.value}
+                              value={option.value}
+                              className="bg-[var(--surface-1)] text-[var(--text-primary)]"
+                            >
+                              {option.label}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                      <div className="group inline-flex items-center gap-2 rounded-[var(--radius-pill)] border border-[var(--line)] bg-[var(--surface-1)] px-3.5 py-2 text-xs font-medium text-[var(--text-secondary)] transition-all duration-200 hover:border-[var(--accent)]/50 hover:shadow-[0_0_20px_-6px_var(--accent-glow)]">
+                        <Prohibit
+                          size={16}
+                          className={[
+                            "transition-transform duration-200 group-hover:scale-110",
+                            blocksExtension ? "scale-110 text-[var(--accent)]" : "text-[var(--text-muted)]"
+                          ].join(" ")}
+                        />
+                        <input
+                          value={blocksExtension}
+                          onChange={(event) => setBlocksExtension(event.target.value)}
+                          placeholder="Doesn't block extension"
+                          className="w-44 bg-transparent text-xs text-[var(--text-primary)] outline-none placeholder:text-[var(--text-subtle)]"
+                        />
+                        {blocksExtension ? (
+                          <button
+                            onClick={() => setBlocksExtension("")}
+                            className="rounded-full p-0.5 text-[var(--text-muted)] transition hover:bg-[var(--surface-4)] hover:text-[var(--text-primary)]"
+                          >
+                            <X size={12} />
+                          </button>
+                        ) : null}
+                      </div>
+                    </>
+                  ) : null}
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {(isAdjacentMode ? currentAdjacentColumns : hostColumnDefs).map((column) => {
