@@ -24315,6 +24315,155 @@
     ]
   },
   {
+    "name": "SEAL",
+    "url": "https://seal.net/",
+    "summary": "No-account encrypted file transfer for people and AI workflows, with up to 1 GB free per seal, browser-side encryption, expiring links, password and single-use controls, plus one-time paid upgrades for larger transfers.",
+    "free_model": {
+      "value": "free-forever",
+      "notes": "The official pricing page provides a free per-transfer path with up to 1 GB per seal and no subscription requirement. Larger transfers use optional one-time purchases.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "limits": {
+      "max_file_size": {
+        "value": 1,
+        "unit": "GB",
+        "notes": "The free tier supports up to 1 GB per seal. Paid one-time transfer tiers raise total seal capacity, while an individual file can be up to 10 GB.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "retention": {
+        "value": 7,
+        "unit": "days",
+        "notes": "Free seals can remain available for up to 7 days. One-time paid tiers provide longer validity periods.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "storage": {
+        "value": 0,
+        "unit": "GB",
+        "notes": "SEAL is designed for temporary encrypted transfers rather than persistent personal cloud storage.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The official public pages do not publish a separate numeric bandwidth quota. Transfer capacity is expressed as the total size allowed for each seal.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "Neither the sender nor the recipient needs an account for the standard web transfer flow. The sender receives a separate management link for controls and activity.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://seal.net/docs/sdk",
+      "cli_friendly": true,
+      "cli_example": "npx -y sealnet-mcp",
+      "notes": "SEAL publishes SDK documentation and an MCP package for agent workflows. The MCP package can be launched with npx, and the docs cover programmatic file transfer flows.",
+      "source_refs": [
+        4,
+        5
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "all_except_prohibited",
+        "notes": "The web interface supports files and folders. The terms prohibit unlawful, infringing, malicious, abusive, and otherwise disallowed content rather than publishing a narrow extension allowlist.",
+        "source_refs": [
+          0,
+          3
+        ],
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Each transfer creates a recipient link, with optional password, expiry, single-use, opening-limit, and revocation controls.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": true,
+      "server_side_encryption": null,
+      "notes": "Files are encrypted in the sender's browser before upload, and the decryption material is kept in the URL fragment rather than sent to the server. Revocation prevents future access but cannot remove copies already downloaded by recipients.",
+      "source_refs": [
+        0,
+        2
+      ]
+    },
+    "tags": [
+      "file-sharing",
+      "guest-upload",
+      "temporary-transfer",
+      "e2ee",
+      "password-protection",
+      "single-use",
+      "api",
+      "cli",
+      "mcp"
+    ],
+    "sources": [
+      {
+        "label": "SEAL homepage",
+        "url": "https://seal.net/",
+        "retrieved_at": "2026-10-01",
+        "notes": "Official homepage verifies the no-account send flow, browser-side encryption, files and folders, recipient links, sender management link, expiry, password, single-use, opening-limit, activity, and revocation controls."
+      },
+      {
+        "label": "SEAL pricing",
+        "url": "https://seal.net/pricing",
+        "retrieved_at": "2026-10-01",
+        "notes": "Official pricing page verifies the free per-seal allowance and optional one-time paid tiers for larger transfers and longer validity."
+      },
+      {
+        "label": "SEAL privacy policy",
+        "url": "https://seal.net/legal/privacy",
+        "retrieved_at": "2026-10-01",
+        "notes": "Official privacy policy describes client-side encryption and the service's handling of encrypted transfer data."
+      },
+      {
+        "label": "SEAL terms",
+        "url": "https://seal.net/legal/terms",
+        "retrieved_at": "2026-10-01",
+        "notes": "Official terms describe permitted use, prohibited content, and service limitations."
+      },
+      {
+        "label": "SEAL SDK docs",
+        "url": "https://seal.net/docs/sdk",
+        "retrieved_at": "2026-10-01",
+        "notes": "Official SDK documentation for programmatic file-transfer workflows."
+      },
+      {
+        "label": "SEAL MCP docs",
+        "url": "https://seal.net/docs/mcp",
+        "retrieved_at": "2026-10-01",
+        "notes": "Official MCP documentation for AI-agent file transfer workflows and the sealnet-mcp package."
+      }
+    ]
+  },
+  {
     "name": "Send Anywhere",
     "url": "https://send-anywhere.com/",
     "summary": "Cross-device file-transfer and share-link service with 10 GB free share links, 50 GB one-time key transfers, 48-hour default link retention, and a 10 GB/month free link-download allowance for link creators.",
