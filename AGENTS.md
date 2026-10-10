@@ -124,7 +124,8 @@ Leave pending (`verification_status: "pending"`):
 
 ## Gotchas
 
-- `npm run generate` will refuse silent drift: if any record breaks a schema assertion it throws and writes nothing. Do not "just remove a field to make it pass" without checking the schema — the assertions encode real dataset invariants.
+- `npm run check` false-positives on Windows clones with `git config core.autocrlf true`: the generated README is LF while the checked-out README is CRLF, so it reports "README.md is out of date" even on a clean tree. Confirm with `git diff README.md` after `npm run generate` — an empty diff means line-endings, not stale data. CI on ubuntu is unaffected; setting `core.autocrlf false` in the clone also fixes it.
+- `npm run generate` will refuse silent drift: if any record breaks a schema assertion it throws and writes nothing. Do not "just remove a field to make it pass" without checking the schema - the assertions encode real dataset invariants.
 - `storage` and `retention` nulls require a `status`; `max_file_size` and `bandwidth` nulls do not. Easy to mix up.
 - Extension strings must be dot-prefixed (`.zip`, not `zip`) and unique within each list.
 - `retrieved_at` must be `YYYY-MM-DD` (regex-validated); today = `2026-07-31` for this session.
