@@ -15013,6 +15013,179 @@
     "reason": "The service openly uses a premium-gated cyberlocker model with one-file-per-day free downloads, very slow free speeds, and an affiliate payout program, which puts it outside the repo's curation bar."
   },
   {
+    "name": "Exocortex",
+    "url": "https://cortexbin.com/",
+    "summary": "Free temporary file hosting and plain-text sharing through direct expiring links with public, unlisted, password, or private access modes, a raw-link subdomain for scripts, and a documented REST API. Anonymous uploads up to 95 MB per file and up to 10 GB for signed-in free accounts.",
+    "free_model": {
+      "value": "free-forever",
+      "notes": "The developers page publishes free web limits for anonymous and signed-in use without payment. Paid plans with card and crypto billing exist, but the documented free tiers are ongoing.",
+      "source_refs": [
+        2,
+        3
+      ]
+    },
+    "limits": {
+      "max_file_size": {
+        "value": 10,
+        "unit": "GB",
+        "notes": "Best documented free per-file ceiling: 10 GB for a signed-in free account. Anonymous uploads cap at 95 MB per file and plain text at 5 MB.",
+        "source_refs": [
+          2
+        ]
+      },
+      "max_file_size_guest": {
+        "value": 95,
+        "unit": "MB",
+        "notes": "Anonymous file uploads are capped at 95 MB per file, up to 100 files per batch; plain text caps at 5 MB.",
+        "source_refs": [
+          1,
+          2
+        ]
+      },
+      "max_file_size_account": {
+        "value": 10,
+        "unit": "GB",
+        "notes": "Signed-in free accounts upload up to 10 GB per file; uploads above 95 MB use the multipart web uploader.",
+        "source_refs": [
+          2
+        ]
+      },
+      "retention": {
+        "value": 30,
+        "unit": "days",
+        "notes": "Selectable expiry of 7, 14, or 30 days. Owner-managed content can be marked permanent with no scheduled automatic expiry, and burner links self-delete after a chosen number of completed views.",
+        "source_refs": [
+          1,
+          3
+        ]
+      },
+      "storage": {
+        "value": 20,
+        "unit": "GB",
+        "notes": "Registered Free active library and network storage are 20 GB; the anonymous equivalents are 10 GB. Storage applies while links are active.",
+        "source_refs": [
+          2
+        ]
+      },
+      "storage_guest": {
+        "value": 10,
+        "unit": "GB",
+        "notes": "Anonymous active library and network storage are 10 GB.",
+        "source_refs": [
+          2
+        ]
+      },
+      "storage_account": {
+        "value": 20,
+        "unit": "GB",
+        "notes": "Registered Free active library and network storage are 20 GB.",
+        "source_refs": [
+          2
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "status": "not-published",
+        "notes": "No published download bandwidth cap. Published transfer quotas are upload-side: 6 GB per 24h anonymous and 12 GB per 24h signed-in, with rate lanes of 120-180 requests per minute.",
+        "source_refs": [
+          2
+        ]
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "Guest uploads work without an account. A free account raises the per-file ceiling to 10 GB, storage to 20 GB, keeps ownership across devices, and issues API keys for programmatic access.",
+      "source_refs": [
+        1,
+        2
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://cortexbin.com/developers",
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "The developers page documents a REST API over ordinary HTTP: create, read, update, and delete shares, a library listing endpoint, raw GET/HEAD links on raw.cortexbin.com, and curl examples for fetching. Programmatic writes require a registered account API key; no first-party CLI is published.",
+      "source_refs": [
+        2
+      ]
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "Terms state that password mode is not client-side end-to-end encryption, and private links open only for the signed-in owner or the guest browser holding the creator credential. No server-side encryption detail is published beyond general technical measures.",
+      "source_refs": [
+        3
+      ]
+    },
+    "tags": [
+      "file-sharing",
+      "guest-upload",
+      "temporary-transfer",
+      "text-hosting",
+      "raw-links",
+      "api",
+      "password-protection"
+    ],
+    "sources": [
+      {
+        "label": "Homepage",
+        "url": "https://cortexbin.com/",
+        "retrieved_at": "2026-10-12",
+        "notes": "Free file and text hosting positioning, link formats (viewer and raw), and the public Discover feed."
+      },
+      {
+        "label": "Upload page",
+        "url": "https://cortexbin.com/upload",
+        "retrieved_at": "2026-10-12",
+        "notes": "Upload form: up to 100 files at 95 MB each, access modes, expiry choice, burner option, and link formats."
+      },
+      {
+        "label": "Developers page",
+        "url": "https://cortexbin.com/developers",
+        "retrieved_at": "2026-10-12",
+        "notes": "REST API reference plus published free web limits: 95 MB anonymous and 10 GB signed-in files, 7/14/30-day expiries, 10-20 GB libraries, and upload/rate quotas."
+      },
+      {
+        "label": "Terms",
+        "url": "https://cortexbin.com/terms",
+        "retrieved_at": "2026-10-12",
+        "notes": "Access modes and link security, 7/14/30-day expiry with permanent owner-managed content, operator in Italy, and paid plan billing."
+      },
+      {
+        "label": "Acceptable Use Policy",
+        "url": "https://cortexbin.com/acceptable-use",
+        "retrieved_at": "2026-10-12",
+        "notes": "Prohibited content categories: illegal and dangerous content, malware, rights violations, and service abuse."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "all_except_prohibited",
+        "notes": "Files, batches, and plain text are accepted; the Acceptable Use Policy prohibits illegal, dangerous, malware, and rights-violating content rather than publishing an extension allowlist. Unsupported types are rejected with HTTP 415.",
+        "allowed_extensions": [],
+        "blocked_extensions": [],
+        "source_refs": [
+          1,
+          4
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Public links appear in the Discover listing; unlisted, password-protected, and private modes keep links out of it. Raw links return plain text with no viewer.",
+        "source_refs": [
+          0,
+          1,
+          3
+        ]
+      }
+    },
+    "verification_status": "pending",
+    "reason": null
+  },
+  {
     "name": "ExtMatrix",
     "url": null,
     "summary": "Premium-gated cyberlocker with free uploads, public file links, official API endpoints, and sharp free-versus-premium restrictions.",
