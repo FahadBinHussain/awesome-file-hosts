@@ -19,7 +19,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 
 ## What this includes
 
-- 254 verified hosts checked against current public sources as of 2026-07-31.
+- 255 verified hosts checked against current public sources as of 2026-10-01.
 - 0 main-host leads still in review and 207 rejected entries preserved in [`data/candidates.json`](data/candidates.json) with reasons and references.
 - 0 other-ways-to-share candidates, 0 mirror-uploader candidates, and 0 cloud-migration candidates staged in their own pending files.
 - A free-first dataset that prioritizes genuinely usable free tiers, guest flows, and honest headline limits.
@@ -217,6 +217,7 @@ Explore the full interface in the site app at `/` and the spreadsheet-style data
 - [Riseup Share](https://share.riseup.net/) - Up1-based temporary sharing service from Riseup with 50 MB uploads, 12-hour retention, and CLI/source links. _(Free: Free forever | Max: 50 MB | Retention: 12 hours | Account: No | CLI)_
 - [Rootz](https://rootz.so/) - File-sharing platform with public upload and remote-upload flows, API documentation, and a free tier limited by bandwidth rather than bundled account storage. _(Free: Free forever | Max: 25 GB | Retention: Conditional | Account: No | API)_
 - [SaveFiles](https://savefiles.com/) - Video hosting service with free signup, unlimited advertised video storage and bandwidth, 15-day free inactivity cleanup, FTP/remote/API uploads, and payout-focused sharing. _(Free: Free forever | Max: Not published | Retention: 15 days | Account: Yes | API | CLI)_
+- [SEAL](https://seal.net/) - No-account encrypted file transfer for people and AI workflows, with up to 1 GB free per seal, browser-side encryption, expiring links, password and single-use controls, plus one-time paid upgrades for larger transfers. _(Free: Free forever | Max: 1 GB | Retention: 7 days | Account: No | API | CLI | E2EE)_
 - [Send Anywhere](https://send-anywhere.com/) - Cross-device file-transfer and share-link service with 10 GB free share links, 50 GB one-time key transfers, 48-hour default link retention, and a 10 GB/month free link-download allowance for link creators. _(Free: Free forever | Max: 10 GB | Retention: 48 hours | Account: No)_
 - [SendGB](https://www.sendgb.com/) - Free no-registration transfer service with 5 GB transfers, any-file uploads, up to 90-day conditional retention, up to 10 recipients, password protection, and paid larger-transfer/storage options. _(Free: Free forever | Max: 5 GB | Retention: 90 days | Account: No)_
 - [SendSpace](https://www.sendspace.com/) - Transfer-oriented file sharing service with a current 300 MB free upload limit and optional recipient delivery without requiring recipient accounts. _(Free: Free forever | Max: 300 MB | Retention: 30 days | Account: No)_
