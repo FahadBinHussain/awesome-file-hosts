@@ -23539,6 +23539,103 @@
     "reason": "Rejected because FileUpload.pw is blocked behind a hostile first-party firewall for this review path and the usable public evidence is premium-key/debrid oriented."
   },
   {
+    "name": "filez.stream",
+    "url": "https://filez.stream/",
+    "summary": "Account-free file sharing with browser-side encryption, unlimited uploads, files up to 500 GB, and a daily full-speed download allowance followed by slower downloads.",
+    "free_model": {
+      "value": "free-forever",
+      "notes": "The homepage offers uploads without an account and describes a daily download speed allowance; its exact current quota and any donation conditions need review.",
+      "source_refs": [
+        0
+      ]
+    },
+    "limits": {
+      "max_file_size": {
+        "value": 500,
+        "unit": "GB",
+        "notes": "The homepage advertises files up to 500 GB.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "status": "not-published",
+        "notes": "The homepage reviewed does not publish a retention period."
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "status": "not-published",
+        "notes": "A total storage allowance was not found on the homepage reviewed."
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "status": "not-published",
+        "notes": "The homepage describes a per-downloader daily full-speed allowance followed by a slower speed, but the current allowance and slow speed need confirmation.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "The homepage says no account is needed; it describes a browser key for managing uploaded files.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "No public API or CLI documentation was found on the homepage reviewed."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": true,
+      "server_side_encryption": null,
+      "notes": "The homepage says files are encrypted in the browser before upload; implementation and key-handling details need review.",
+      "source_refs": [
+        0
+      ]
+    },
+    "tags": [
+      "file-host",
+      "guest-upload",
+      "large-file",
+      "client-side-encryption"
+    ],
+    "sources": [
+      {
+        "label": "filez.stream homepage",
+        "url": "https://filez.stream/",
+        "retrieved_at": "2026-10-19",
+        "notes": "Homepage advertises no account, browser-side encryption, unlimited uploads, files up to 500 GB, and a daily per-downloader full-speed allowance followed by a slower speed."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "The homepage reviewed does not document a file-type allowlist or policy.",
+        "allowed_extensions": [],
+        "blocked_extensions": []
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "The service provides shareable file links.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "verification_status": "pending",
+    "reason": null
+  },
+  {
     "name": "FireDrop",
     "url": null,
     "summary": "Former file-sharing brand whose current domain is parked, with only historical app and reputation traces left behind.",
