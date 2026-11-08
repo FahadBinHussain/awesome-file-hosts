@@ -51190,6 +51190,131 @@
     "verification_status": "rejected",
     "reason": "Rejected because Vault2Cloud/Unitrends cloud storage is enterprise backup/DR, not an ongoing free file-hosting plan."
   },
+    {
+    "name": "Unlockify Stream",
+    "url": "https://stream.unlockify.ink/",
+    "summary": "Free video-hosting service with no-login uploads up to 1.9 GB, public playback links, downloads, direct VLC streaming, and subtitle tools.",
+    "free_model": {
+      "value": "free-forever",
+      "notes": "The homepage states that use is currently free with no paid pricing plans; the web upload flow displays a per-browser upload allowance of 10.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "limits": {
+      "max_file_size": {
+        "value": 1.9,
+        "unit": "GB",
+        "notes": "The homepage advertises video uploads up to 1.9 GB.",
+        "source_refs": [
+          0
+        ]
+      },
+      "max_file_size_guest": {
+        "value": 1.9,
+        "unit": "GB",
+        "notes": "The homepage offers up to 1.9 GB per video without account registration.",
+        "source_refs": [
+          0
+        ]
+      },
+      "retention": {
+        "value": null,
+        "unit": null,
+        "status": "not-published",
+        "notes": "A guaranteed lifetime or fixed deletion schedule for uploaded videos is not published on the reviewed homepage or terms.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "status": "not-published",
+        "notes": "No numeric personal storage quota is published; the service is presented as public video sharing rather than an account-based storage drive.",
+        "source_refs": [
+          0
+        ]
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "status": "not-published",
+        "notes": "No numeric free download or transfer allowance is published; the terms note that traffic may be limited when necessary.",
+        "source_refs": [
+          1
+        ]
+      }
+    },
+    "account": {
+      "required": false,
+      "benefits": "Browser uploads and playback links can be created without a website account; Telegram bot upload is optional.",
+      "source_refs": [
+        0
+      ]
+    },
+    "developer": {
+      "api_available": false,
+      "api_docs_url": null,
+      "cli_friendly": false,
+      "cli_example": null,
+      "notes": "No public upload API or command-line upload documentation is linked from the reviewed official pages."
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The site uses HTTPS and creates public video links. It does not claim end-to-end encryption; public links are not confidential storage.",
+      "source_refs": [
+        0,
+        1
+      ]
+    },
+    "tags": [
+      "video-hosting",
+      "guest-upload",
+      "streaming",
+      "public-sharing",
+      "telegram"
+    ],
+    "sources": [
+      {
+        "label": "Official homepage",
+        "url": "https://stream.unlockify.ink/",
+        "retrieved_at": "2026-11-08",
+        "notes": "States free no-account video uploads up to 1.9 GB, ten web uploads per browser, playback/download/VLC links, and subtitle tools."
+      },
+      {
+        "label": "Terms and Conditions",
+        "url": "https://stream.unlockify.ink/terms-and-conditions",
+        "retrieved_at": "2026-11-08",
+        "notes": "Describes free access, optional advertising, Telegram dependency, public-link visibility, permitted use, and potential traffic restrictions."
+      }
+    ],
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "The homepage lists MP4, MKV, MOV, WebM, and other video formats. No complete published file-type allowlist is provided; the terms prohibit unlawful or infringing uploads.",
+        "allowed_extensions": [],
+        "blocked_extensions": [],
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "public_sharing": {
+        "value": true,
+        "notes": "Uploads generate public playable pages, downloadable access, and direct streaming links.",
+        "source_refs": [
+          0
+        ]
+      }
+    },
+    "verification_status": "pending",
+    "reason": null
+  },
   {
     "name": "up07",
     "url": null,
