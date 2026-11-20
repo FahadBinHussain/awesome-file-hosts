@@ -20384,7 +20384,7 @@
       "retention": {
         "value": 90,
         "unit": "days",
-        "notes": "First-party FAQ (Nov 2026): guest files may expire after 30 days, free user files after 90 days, premium files kept without the normal expiry limit while the plan is active. The old PolyUploader 10-day claim is stale.",
+        "notes": "First-party FAQ (Nov 2026): guest files may expire after 30 days, free user files after 90 days, premium files kept without the normal expiry limit while the plan is active. The old PolyUploader 10-day claim is stale. In practice the 90-day expiry is not enforced: files uploaded 2026-06-11 and 2026-07-24 were still live in the account listing on 2026-11-20 (162 and 119 days later), and a full live check the same day found all 145 linked files present with 0 broken — retention behaves as effectively unlimited for files that survive upload.",
         "source_refs": [
           0,
           7
@@ -20496,7 +20496,7 @@
         "label": "FileMoon FAQs",
         "url": "https://filemoon.org/en/faqs",
         "retrieved_at": "2026-11-20",
-        "notes": "First-party FAQ: guest uploads up to 1 GB, free registered users up to 2 GB (conflicts with the API docs' 4 GB free limit), premium without the standard size limit; guest files may expire after 30 days, free files after 90 days, premium files kept without the normal expiry limit while the plan is active."
+        "notes": "First-party FAQ: guest uploads up to 1 GB, free registered users up to 2 GB (conflicts with the API docs' 4 GB free limit), premium without the standard size limit; guest files may expire after 30 days, free files after 90 days, premium files kept without the normal expiry limit while the plan is active. In practice the 90-day expiry is not enforced: files uploaded 2026-06-11 and 2026-07-24 were still live in the account listing on 2026-11-20 (162 and 119 days later), and a full live check the same day found all 145 linked files present with 0 broken."
       },
       {
         "label": "FileMoon Premium membership",
