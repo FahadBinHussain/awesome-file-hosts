@@ -20358,44 +20358,44 @@
   {
     "name": "FileMoon",
     "url": "https://filemoon.sx",
-    "summary": "Rejected superseded video-host row: FileMoon registration now directs users to Byse, while the legacy FileMoon/API ecosystem remains visible through API docs and uploader tooling.",
+    "summary": "Rejected superseded video-host row: FileMoon registration now directs users to Byse, but the FileMoon service and first-party API remain live and usable for existing accounts (verified Nov 2026). Uploads carry an undocumented video-duration cap: a ~12-hour mp4 was rejected 'video is too long' while larger shorter files uploaded fine. FileMoon may also delete a just-uploaded file after a failed internal transfer (observed 2026-11-20: removed 2 minutes after a verified upload, notified by email 'Files removed due to transfer errors').",
     "free_model": {
       "value": "unknown",
-      "notes": "PolyUploader preserves historical free/upload limits, but FileMoon registration is closed and points users to Byse, so no current standalone free model is retained.",
+      "notes": "First-party pages (Nov 2026) document a free registered tier: 4 GB per file per the API docs and premium comparison (the FAQ states 2 GB, conflicting), 90-day file retention, 30 GB storage. Kept 'unknown' because new registration via FileMoon was closed as of May 2026 and points users to Byse.",
       "source_refs": [
-        0,
         1,
-        2
+        6,
+        7,
+        8
       ]
     },
     "limits": {
       "max_file_size": {
-        "value": 50,
+        "value": 4,
         "unit": "GB",
-        "notes": "PolyUploader preserved a 50 GB FileMoon upload-size claim; current FileMoon registration is closed and the successor surface does not expose a crawlable first-party limit table here.",
+        "notes": "First-party API docs and premium comparison (Nov 2026): registered Free accounts limited to 4 GB per file, Premium 15 GB per file; the FAQ states 2 GB for free registered users, conflicting with the API docs. The old PolyUploader 50 GB claim is stale. Separate from size, uploads also face an undocumented video-duration cap: a 905 MB / 11h55m mp4 was rejected twice with 'video is too long' (observed 2026-11-20) while a 1.12 GB shorter video uploaded fine, so duration — not size — is the trigger; the exact duration cap is unpublished.",
         "source_refs": [
           0,
-          1
+          6,
+          7,
+          8
         ]
       },
       "retention": {
-        "value": 10,
+        "value": 90,
         "unit": "days",
-        "notes": "PolyUploader preserved a 10-day retention claim for FileMoon; FileMoon itself is now superseded by Byse for new registrations.",
+        "notes": "First-party FAQ (Nov 2026): guest files may expire after 30 days, free user files after 90 days, premium files kept without the normal expiry limit while the plan is active. The old PolyUploader 10-day claim is stale.",
         "source_refs": [
           0,
-          1
+          7
         ]
       },
       "storage": {
-        "value": null,
-        "unit": null,
-        "status": "not-applicable",
-        "notes": "FileMoon/Byse marketing and third-party wrapper pages mention unlimited storage, but no current crawlable first-party quota table was available for the superseded FileMoon row.",
+        "value": 30,
+        "unit": "GB",
+        "notes": "First-party premium comparison and terms (Nov 2026): Free accounts are subject to a 30 GB storage limit, with a 60-day grace period after reaching it and no automatic deletion; premium plans carry larger storage (200 GB to 7 TB by plan).",
         "source_refs": [
-          1,
-          3,
-          4
+          8
         ]
       },
       "bandwidth": {
@@ -20419,13 +20419,14 @@
     },
     "developer": {
       "api_available": true,
-      "api_docs_url": "https://filemoon.art/api",
+      "api_docs_url": "https://filemoon.org/en/api-docs",
       "cli_friendly": true,
-      "cli_example": "curl -F key=API_KEY -F file=@video.mp4 https://moon-upload-server-01.filemoon.to/upload/01",
-      "notes": "FileMoon exposes key-based API documentation for account info, upload server discovery, file upload, remote upload, file info/listing, folders, and HLS links; WJunction discussion says API paths moved to filemoonapi.com.",
+      "cli_example": "curl -X POST https://filemoon.org/api/v1/files/upload -H 'Authorization: Bearer TOKEN' -F file=@video.mp4",
+      "notes": "FileMoon exposes a first-party REST API (base https://filemoon.org/api/v1) with Bearer-token auth, a 60 req/min rate limit, chunked upload with 90 MB chunks, and endpoints for account, files, subtitles, remote upload, and HLS/Cast playback; the legacy key-based API (filemoonapi.com / moon-upload-server upload hosts) also remains in use.",
       "source_refs": [
         3,
-        5
+        5,
+        6
       ]
     },
     "security": {
@@ -20445,7 +20446,8 @@
       "api",
       "api-key-required",
       "superseded",
-      "byse-successor"
+      "byse-successor",
+      "video-duration-cap"
     ],
     "sources": [
       {
@@ -20483,15 +20485,34 @@
         "url": "https://www.wjunction.com/threads/filemoon-byse-discussion.270853/",
         "retrieved_at": "2026-05-02",
         "notes": "Byse support discussion confirms API-domain migration/troubleshooting and describes Byse as the new FileMoon platform context."
+      },
+      {
+        "label": "FileMoon API documentation",
+        "url": "https://filemoon.org/en/api-docs",
+        "retrieved_at": "2026-11-20",
+        "notes": "First-party REST API docs (base https://filemoon.org/api/v1): Bearer-token auth, 60 req/min rate limit, chunked upload with 90 MB chunks; registered Free accounts limited to 4 GB per file, Premium 15 GB per file. No video-duration limit is documented here; the duration cap was observed first-hand 2026-11-20: an 11h55m 905 MB mp4 was rejected twice with 'video is too long' while a 1.12 GB shorter video uploaded fine."
+      },
+      {
+        "label": "FileMoon FAQs",
+        "url": "https://filemoon.org/en/faqs",
+        "retrieved_at": "2026-11-20",
+        "notes": "First-party FAQ: guest uploads up to 1 GB, free registered users up to 2 GB (conflicts with the API docs' 4 GB free limit), premium without the standard size limit; guest files may expire after 30 days, free files after 90 days, premium files kept without the normal expiry limit while the plan is active."
+      },
+      {
+        "label": "FileMoon Premium membership",
+        "url": "https://filemoon.org/en/premium",
+        "retrieved_at": "2026-11-20",
+        "notes": "First-party premium comparison: free Users tier 30 GB storage and 4 GB max file size with a 60-day grace after reaching 30 GB and no automatic deletion; Premium 15 GB max file size with larger storage by plan (200 GB to 7 TB)."
       }
     ],
     "content": {
       "allowed_file_types": {
         "mode": "video_host",
-        "notes": "FileMoon is a video host and its API examples use video files; no first-party extension allowlist or blocklist was found for the superseded row.",
+        "notes": "FileMoon is a video host and its API examples use video files; the API docs state remote upload blocks non-video responses, and audio-only .m4a uploads were rejected first-hand ('Not video file format', observed 2026-11-19). No first-party extension allowlist or blocklist was found for the superseded row.",
         "source_refs": [
           3,
-          4
+          4,
+          6
         ],
         "allowed_extensions": [],
         "blocked_extensions": []
