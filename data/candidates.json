@@ -11599,6 +11599,149 @@
     "reason": "This is a Google Drive upload intake layer rather than a standalone public file-hosting service."
   },
   {
+    "name": "DROP",
+    "url": "https://drop.space/",
+    "summary": "Browser-based temporary file delivery and upload-only file requests. Senders sign in to share a download link. Recipients and invited uploaders can use their links without an account.",
+    "free_model": {
+      "value": "unknown",
+      "notes": "The reviewed public guides document access and transfer limits but do not state a permanent free-tier commitment or a trial duration.",
+      "source_refs": [
+        0,
+        3
+      ]
+    },
+    "limits": {
+      "max_file_size": {
+        "value": 10,
+        "unit": "GB",
+        "notes": "10,000,000,000 bytes for the entire transfer. One file may use the full allowance. Multiple files share it.",
+        "source_refs": [
+          0,
+          1
+        ]
+      },
+      "retention": {
+        "value": 72,
+        "unit": "hours",
+        "notes": "For a signed-in or claimed transfer, measured from transfer creation. An unclaimed direct upload expires after 24 hours. Each request delivery has its own expiry.",
+        "source_refs": [
+          3,
+          6
+        ]
+      },
+      "storage": {
+        "value": null,
+        "unit": null,
+        "notes": "Time-limited deliveries. No persistent account storage allowance is listed.",
+        "source_refs": [
+          0,
+          6
+        ],
+        "status": "not-applicable"
+      },
+      "bandwidth": {
+        "value": null,
+        "unit": null,
+        "notes": "The cited documentation lists a transfer size limit; no numerical monthly or daily bandwidth allowance is specified.",
+        "source_refs": [
+          0,
+          1
+        ]
+      }
+    },
+    "account": {
+      "required": true,
+      "benefits": "The sender signs in to turn a direct upload into a shareable download link. Creating a file request also requires sign-in. The download recipient and a guest submitting to an existing request do not need accounts.",
+      "source_refs": [
+        0,
+        2,
+        3
+      ]
+    },
+    "developer": {
+      "api_available": true,
+      "api_docs_url": "https://drop.space/en/agent-file-transfer/",
+      "cli_friendly": true,
+      "cli_example": null,
+      "notes": "A compatible command-line MCP client can connect using a personal credential. The authenticated agent sends selected files and can receive enabled request deliveries.",
+      "source_refs": [
+        4
+      ]
+    },
+    "content": {
+      "allowed_file_types": {
+        "mode": "see-notes",
+        "notes": "The terms require rights to share the files and prohibit unlawful, infringing or malicious content. The terms do not provide an extension allowlist.",
+        "allowed_extensions": [],
+        "blocked_extensions": [],
+        "source_refs": [
+          5
+        ]
+      }
+    },
+    "security": {
+      "https_only": true,
+      "e2ee": false,
+      "server_side_encryption": null,
+      "notes": "The service documents HTTPS in transit and access to originals to deliver or preview them. The cited evidence does not specify a storage encryption algorithm.",
+      "source_refs": [
+        2
+      ]
+    },
+    "tags": [
+      "file-transfer",
+      "temporary-transfer",
+      "file-request",
+      "mcp"
+    ],
+    "sources": [
+      {
+        "label": "Transfer limits and accounts",
+        "url": "https://drop.space/en/about/",
+        "retrieved_at": "2026-11-21",
+        "notes": "Product identity, total size and lifetime of a transfer."
+      },
+      {
+        "label": "Current configuration",
+        "url": "https://drop.space/api/config",
+        "retrieved_at": "2026-11-21",
+        "notes": "Public configuration exposes the total size limit in bytes."
+      },
+      {
+        "label": "Browser permission tests",
+        "url": "https://drop.space/en/evidence/",
+        "retrieved_at": "2026-11-21",
+        "notes": "Who can download a shared file, what guests can see on a request, and how HTTPS differs from end-to-end encryption."
+      },
+      {
+        "label": "Account-free client submissions",
+        "url": "https://drop.space/en/request-files/",
+        "retrieved_at": "2026-11-21",
+        "notes": "The request owner signs in. Each client can upload without registering."
+      },
+      {
+        "label": "Agent integration",
+        "url": "https://drop.space/en/agent-file-transfer/",
+        "retrieved_at": "2026-11-21",
+        "notes": "Authenticated MCP connection and file processing permissions."
+      },
+      {
+        "label": "Terms of service",
+        "url": "https://drop.space/terms",
+        "retrieved_at": "2026-11-21",
+        "notes": "Upload rights and prohibited content."
+      },
+      {
+        "label": "Transfer lifetime",
+        "url": "https://drop.space/en/blog/expired-transfer/",
+        "retrieved_at": "2026-11-21",
+        "notes": "24-hour unclaimed window and 72-hour total lifetime after claiming; expiry is measured from creation."
+      }
+    ],
+    "verification_status": "pending",
+    "reason": null
+  },
+  {
     "name": "Drop.download",
     "url": "https://drop.download/",
     "summary": "Free account file host with 5 GB uploads, unlimited-storage marketing, FTP/API navigation, and premium download upgrades.",
